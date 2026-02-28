@@ -4,101 +4,92 @@ title: Chats & Social Media
 
 As a final step of your build automation process, you may want to report errors or announce a new version through different chats and social media channels. NUKE comes with basic support for the most common platforms.
 
-<Tabs>
-  <TabItem value="slack" label="Slack" default>
+=== "Slack"
 
-You can send a [Slack](https://slack.com/) messages as follows:
+    You can send a [Slack](https://slack.com/) messages as follows:
 
-```csharp
-// using static Nuke.Common.Tools.Slack.SlackTasks;
+    ```csharp
+    // using static Nuke.Common.Tools.Slack.SlackTasks;
+    
+    [Parameter] [Secret] readonly string SlackWebhook;
+    
+    Target Send => _ => _
+        .Executes(async () =>
+        {
+            await SendSlackMessageAsync(_ => _
+                    .SetText("Hello from NUKE!"),
+                SlackWebhook);
+        });
+    ```
 
-[Parameter] [Secret] readonly string SlackWebhook;
+    !!! note
+        For more advanced scenarios, check out [SlackAPI](https://github.com/Inumedia/SlackAPI) or [SlackNet](https://github.com/soxtoby/SlackNet).
 
-Target Send => _ => _
-    .Executes(async () =>
-    {
-        await SendSlackMessageAsync(_ => _
-                .SetText("Hello from NUKE!"),
-            SlackWebhook);
-    });
-```
+=== "Microsoft Teams"
 
-:::note
-For more advanced scenarios, check out the [SlackAPI](https://github.com/Inumedia/SlackAPI) or [SlackNet](https://github.com/soxtoby/SlackNet) project.
-:::
+    You can send a [Microsoft Teams](https://www.microsoft.com/en/microsoft-teams/group-chat-software) messages as follows:
 
-  </TabItem>
-  <TabItem value="teams" label="Microsoft Teams">
+    ```csharp
+    // using static Nuke.Common.Tools.Teams.TeamsTasks;
+    
+    [Parameter] [Secret] readonly string TeamsWebhook;
+    
+    Target Send => _ => _
+        .Executes(async () =>
+        {
+            await SendTeamsMessageAsync(_ => _
+                    .SetText("Hello from NUKE!"),
+                TeamsWebhook)
+        });
+    ```
 
-You can send a [Microsoft Teams](https://www.microsoft.com/en/microsoft-teams/group-chat-software) messages as follows:
+=== "Twitter"
 
-```csharp
-// using static Nuke.Common.Tools.Teams.TeamsTasks;
+    You can send a [Twitter](https://twitter.com/) messages as follows:
 
-[Parameter] [Secret] readonly string TeamsWebhook;
+    ```csharp
+    // using static Nuke.Common.Tools.Twitter.TwitterTasks;
 
-Target Send => _ => _
-    .Executes(async () =>
-    {
-        await SendTeamsMessageAsync(_ => _
-                .SetText("Hello from NUKE!"),
-            TeamsWebhook)
-    });
-```
+    [Parameter] [Secret] readonly string TwitterConsumerKey;
+    [Parameter] [Secret] readonly string TwitterConsumerSecret;
+    [Parameter] [Secret] readonly string TwitterAccessToken;
+    [Parameter] [Secret] readonly string TwitterAccessTokenSecret;
 
-  </TabItem>
-  <TabItem value="twitter" label="Twitter">
+    Target Send => _ => _
+        .Executes(async () =>
+        {
+            await SendTweetAsync(
+                message: "Hello from NUKE",
+                TwitterConsumerKey,
+                TwitterConsumerSecret,
+                TwitterAccessToken,
+                TwitterAccessTokenSecret);
+        });
+    ```
 
-You can send a [Twitter](https://twitter.com/) messages as follows:
+    !!! note
+        For more advanced scenarios, check out the [Tweetinvi](https://github.com/linvi/tweetinvi) project.
 
-```csharp
-// using static Nuke.Common.Tools.Twitter.TwitterTasks;
 
-[Parameter] [Secret] readonly string TwitterConsumerKey;
-[Parameter] [Secret] readonly string TwitterConsumerSecret;
-[Parameter] [Secret] readonly string TwitterAccessToken;
-[Parameter] [Secret] readonly string TwitterAccessTokenSecret;
+=== "Gitter"
 
-Target Send => _ => _
-    .Executes(async () =>
-    {
-        await SendTweetAsync(
-            message: "Hello from NUKE",
-            TwitterConsumerKey,
-            TwitterConsumerSecret,
-            TwitterAccessToken,
-            TwitterAccessTokenSecret);
-    });
-```
+    You can send a [Gitter](https://gitter.im/) messages as follows:
 
-:::note
-For more advanced scenarios, check out the [Tweetinvi](https://github.com/linvi/tweetinvi) project.
-:::
+    ```csharp
+    // using static Nuke.Common.Tools.Gitter.GitterTasks;
+    
+    [Parameter] readonly string GitterRoomId;
+    [Parameter] [Secret] readonly string GitterAuthToken;
+    
+    Target Send => _ => _
+        .Executes(() =>
+        {
+            SendGitterMessage(
+                message: "Hello from NUKE",
+                GitterRoomId,
+                GitterAuthToken);
+        });
+    ```
 
-  </TabItem>
-  <TabItem value="gitter" label="Gitter">
-
-You can send a [Gitter](https://gitter.im/) messages as follows:
-
-```csharp
-// using static Nuke.Common.Tools.Gitter.GitterTasks;
-
-[Parameter] readonly string GitterRoomId;
-[Parameter] [Secret] readonly string GitterAuthToken;
-
-Target Send => _ => _
-    .Executes(() =>
-    {
-        SendGitterMessage(
-            message: "Hello from NUKE",
-            GitterRoomId,
-            GitterAuthToken);
-    });
-```
-
-:::note
-For more advanced scenarios, check out the [gitter-api-pcl](https://github.com/uwp-squad/gitter-api-pcl) project.
-:::
-
-  </TabItem>
-</Tabs>
+    !!! note
+        For more advanced scenarios, check out the [gitter-api-pcl](https://github.com/uwp-squad/gitter-api-pcl) project.
