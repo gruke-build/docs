@@ -1,0 +1,80 @@
+site_name: "GRUKE Docs"
+site_url: !ENV READTHEDOCS_CANONICAL_URL
+repo_url: "https://github.com/GreemDev/NUKE-Docs"
+repo_name: "GRUKE"
+theme:
+  name: material
+  logo: favicon.ico
+  favicon: favicon.ico
+  features:
+    - header.autohide
+    - navigation.expand
+    - navigation.instant
+  palette:
+    - scheme: slate
+      primary: red
+      accent: pink
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    - scheme: default
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+extra_javascript:
+    - javascript/readthedocs.js
+
+nav:
+  - Introduction: introduction.md
+  - "Getting Started":
+    - Installation: 01-getting-started/01-installation.md
+    - Setup: 01-getting-started/02-setup.md
+    - Execution: 01-getting-started/03-execution.md
+    - Telemetry: 01-getting-started/07-telemetry.md
+  - Fundamentals:
+    - Builds: 02-fundamentals/04-builds.md
+    - Targets: 02-fundamentals/05-targets.md
+    - Parameters: 02-fundamentals/06-parameters.md
+    - Logging: 02-fundamentals/10-logging.md
+    - Assertions: 02-fundamentals/14-assertions.md
+  - "Common Tasks":
+    - "Constructing Paths": 03-common/03-paths.md
+    - "Repository Insights": 03-common/05-repository.md
+    - "Dats Serialization": 03-common/06-serialization.md
+    - "Versioning Artifacts": 03-common/10-versioning.md
+    - "Solution & Project Model": 03-common/07-solution-project-model.md
+    - "CLI Tools": 03-common/08-cli-tools.md
+    - "Archive Compression": 03-common/09-compression.md
+    - "Chats & Social Media": 03-common/11-chats.md
+  - "Build Sharing":
+    - "Global Builds": 04-sharing/01-global-builds.md
+    - "Build Components": 04-sharing/02-build-components.md
+  - "CI/CD Support":
+    - AppVeyor: 05-cicd/appveyor.md
+    - "Azure Pipelines": 05-cicd/azure-pipelines.md
+    - BitBucket: 05-cicd/bitbucket.md
+    - "GitHub Actions": 05-cicd/github-actions.md
+    - GitLab: 05-cicd/gitlab.md
+    - Jenkins: 05-cicd/jenkins.md
+    - "Space Automation": 05-cicd/space-automation.md
+    - "TeamCity": 05-cicd/teamcity.md
+  - "Global Tool":
+    - "Shell Completion": 06-global-tool/00-shell-completion.md
+    - "Adding NuGet Packages": 06-global-tool/01-packages.md
+    - "Managing Secrets": 06-global-tool/02-secrets.md
+    - "Navigation": 06-global-tool/03-navigation.md
+    - "Converting from Cake": 06-global-tool/04-cake.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc
+extra:
+  social:
+    - icon: fontawesome/regular/heart
+      link: https://github.com/sponsors/GreemDev
+      name: Support the Project
