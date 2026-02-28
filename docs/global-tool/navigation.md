@@ -6,7 +6,7 @@ Over time, you might accumulate more and more projects that are built using NUKE
 
 ## Configuration
 
-Add the following functions to your shell configuration (similar as for [shell completion](00-shell-completion.md)):
+Add the following functions to your shell configuration (similar as for [shell completion](shell-completion.md)):
 
 ```
 function nuke/ { nuke :PushWithChosenRootDirectory; cd $(nuke :GetNextDirectory) }

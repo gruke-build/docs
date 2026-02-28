@@ -4,7 +4,7 @@ title: Managing Secrets
 
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 
-Historically, secret values like passwords or auth-tokens are often saved as environment variables on local machines or CI/CD servers. This imposes both, security issues because other processes can access these environment variables and inconveniences when a build must be executed locally for emergency reasons (server downtime). NUKE has an integrated encryption utility, which can be used to save and load secret values to and from [parameter files](../02-fundamentals/06-parameters.md#passing-values-through-parameter-files).
+Historically, secret values like passwords or auth-tokens are often saved as environment variables on local machines or CI/CD servers. This imposes both, security issues because other processes can access these environment variables and inconveniences when a build must be executed locally for emergency reasons (server downtime). NUKE has an integrated encryption utility, which can be used to save and load secret values to and from [parameter files](../fundamentals/parameters.md#passing-values-through-parameter-files).
 
 :::danger
 Our [custom encryption utility](https://github.com/nuke-build/nuke/blob/develop/source/Nuke.Utilities/Security/EncryptionUtility.cs) is provided "AS IS" without warranty of any kind.

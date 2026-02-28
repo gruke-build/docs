@@ -12,7 +12,7 @@ readonly string MyParameter;
 ```
 
 :::tip
-You can set default values for parameters as you would normally do through field and property initializers. You can also use static [build base properties](04-builds.md#base-properties) like `IsLocalBuild` or `IsServerBuild` for environmental adjustments:
+You can set default values for parameters as you would normally do through field and property initializers. You can also use static [build base properties](builds.md#base-properties) like `IsLocalBuild` or `IsServerBuild` for environmental adjustments:
 
 ```csharp
 [Parameters]
@@ -38,7 +38,7 @@ nuke --my-parameter <value>
 ```
 
 :::tip
-With the global tool installed and [shell completion](../06-global-tool/00-shell-completion.md) configured, you can pass parameters much faster and avoid any typos.
+With the global tool installed and [shell completion](../global-tool/shell-completion.md) configured, you can pass parameters much faster and avoid any typos.
 :::
 
 ### Passing Values through Parameter Files
@@ -87,7 +87,7 @@ SET NUKE_MY_PARAMETER = <value>
 
 ## Required Parameters
 
-You can specify a parameter as a [target requirement](../02-fundamentals/05-targets.md#requirements) using the following shorthand syntax:
+You can specify a parameter as a [target requirement](../fundamentals/targets.md#requirements) using the following shorthand syntax:
 
 <!-- snippet: parameters-requirements -->
 ```cs
@@ -113,18 +113,18 @@ When parameters are meant to hold **secret values** like passwords or authentica
 ```
 <!-- endSnippet -->
 
-Marking a parameter as a secret allows you to use the [secret management](../06-global-tool/02-secrets.md) through the global tool.
+Marking a parameter as a secret allows you to use the [secret management](../global-tool/secrets.md) through the global tool.
 
 ## Unlisting Parameters
 
-Just like targets, your parameters will automatically show up in the [build help text](../01-getting-started/03-execution.md#help-text) along with their description. You can opt out from this behavior by setting the `List` property:
+Just like targets, your parameters will automatically show up in the [build help text](../getting-started/execution.md#help-text) along with their description. You can opt out from this behavior by setting the `List` property:
 
 ```csharp
 [Parameter(List = false)]
 readonly string MyParameter;
 ```
 
-Unlisted parameters can be passed as normal and are still available through [shell completion](../06-global-tool/00-shell-completion.md).
+Unlisted parameters can be passed as normal and are still available through [shell completion](../global-tool/shell-completion.md).
 
 ## Supported Types
 
@@ -186,7 +186,7 @@ enum CustomType
 ```
 
 :::info
-Members of enumeration types automatically show up during [shell completion](../06-global-tool/00-shell-completion.md).
+Members of enumeration types automatically show up during [shell completion](../global-tool/shell-completion.md).
 :::
 
   </TabItem>
@@ -204,7 +204,7 @@ public class Configuration : Enumeration
 ```
 
 :::info
-Members of enumeration classes automatically show up during [shell completion](../06-global-tool/00-shell-completion.md).
+Members of enumeration classes automatically show up during [shell completion](../global-tool/shell-completion.md).
 :::
 
   </TabItem>

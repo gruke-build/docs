@@ -4,7 +4,7 @@ title: Build Execution
 
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 
-After you've [set up a build](02-setup.md) you can run it either through the global tool or one of the installed bootstrapping scripts:
+After you've [set up a build](setup.md) you can run it either through the global tool or one of the installed bootstrapping scripts:
 
 <Tabs>
   <TabItem value="global-tool" label="Global Tool" default>
@@ -34,11 +34,11 @@ nuke [arguments]
 </Tabs>
 
 :::info
-This document discusses the default build arguments (also referred to as parameters). You will learn how to [define custom parameters](../02-fundamentals/06-parameters.md) in a following chapter.
+This document discusses the default build arguments (also referred to as parameters). You will learn how to [define custom parameters](../fundamentals/parameters.md) in a following chapter.
 :::
 
 :::tip
-The global tool makes running builds a lot easier. Once you've configured the [shell completion](../06-global-tool/00-shell-completion.md), you can enter arguments much faster and avoid any typos. It also allows you to run a build from anywhere below the root directory without having to go back to where the bootstrapping scripts are located.
+The global tool makes running builds a lot easier. Once you've configured the [shell completion](../global-tool/shell-completion.md), you can enter arguments much faster and avoid any typos. It also allows you to run a build from anywhere below the root directory without having to go back to where the bootstrapping scripts are located.
 :::
 
 ## Build Summary
@@ -228,12 +228,12 @@ In order to get a better understanding of how your builds are structured, you ca
 nuke --plan
 ```
 
-Hovering a target will show its individual execution plan, that means, all targets that are going to be executed when one specific target is invoked. The style of an edge (solid/dashed/yellow) between two targets indicates their [dependency relation](../02-fundamentals/05-targets.md#dependencies) (execution/ordering/trigger):
+Hovering a target will show its individual execution plan, that means, all targets that are going to be executed when one specific target is invoked. The style of an edge (solid/dashed/yellow) between two targets indicates their [dependency relation](../fundamentals/targets.md#dependencies) (execution/ordering/trigger):
 
 ![Visualizing Execution Plans](plan.gif)
 
 :::info
 
-When no targets are hovered, the execution plan for the [default targets](../02-fundamentals/04-builds.md) is highlighted.
+When no targets are hovered, the execution plan for the [default targets](../fundamentals/builds.md) is highlighted.
 
 :::

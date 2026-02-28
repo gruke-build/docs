@@ -4,7 +4,7 @@ title: Build Setup
 
 import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
 
-After [installing the NUKE global tool](01-installation.md), you can call it from anywhere on your machine to set up a new build:
+After [installing the NUKE global tool](installation.md), you can call it from anywhere on your machine to set up a new build:
 
 ```powershell
 # terminal-command
@@ -25,7 +25,7 @@ During the setup, you'll be asked several questions to configure your build to y
     terminalFontFamily="'JetBrains Mono', Consolas, Menlo, 'Bitstream Vera Sans Mono', monospace"
     loop={true}/>
 
-**Congratulations!** 🥳 Your first build has now been set up, and you can [run the build](03-execution.md) with the default implementation!
+**Congratulations!** 🥳 Your first build has now been set up, and you can [run the build](execution.md) with the default implementation!
 
 ## Effective Changes
 

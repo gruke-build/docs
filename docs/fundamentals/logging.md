@@ -2,7 +2,7 @@
 title: Logging
 ---
 
-As with any other application, good logging greatly reduces the time to detect the source of errors and fix them quickly. NUKE integrates with [Serilog](https://serilog.net/) and prepares a console and file logger for you. Most functions with side effects will automatically log their performed actions. This also includes [invocations of CLI tools](../03-common/08-cli-tools.md). Of course, you can also add your own log messages:
+As with any other application, good logging greatly reduces the time to detect the source of errors and fix them quickly. NUKE integrates with [Serilog](https://serilog.net/) and prepares a console and file logger for you. Most functions with side effects will automatically log their performed actions. This also includes [invocations of CLI tools](../common/cli-tools.md). Of course, you can also add your own log messages:
 
 ```csharp
 // using Serilog;
@@ -15,7 +15,7 @@ Log.Error("This is an error message");
 ```
 
 :::tip
-For error messages, you most certainly want to use [assertions](14-assertions.md) instead to also fail the build.
+For error messages, you most certainly want to use [assertions](assertions.md) instead to also fail the build.
 :::
 
 ## Console Sink
@@ -108,7 +108,7 @@ In the following image you can see that the verbose message is hidden because th
 </p>
 
 :::tip
-Error and warning log messages are repeated right before the [build summary](../01-getting-started/03-execution.md#build-summary) to give you a quick-look at what went wrong.
+Error and warning log messages are repeated right before the [build summary](../getting-started/execution.md#build-summary) to give you a quick-look at what went wrong.
 :::
 
 ## File Sinks

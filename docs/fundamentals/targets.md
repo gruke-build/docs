@@ -187,7 +187,7 @@ class Build : NukeBuild
 
 ## Conditional Execution
 
-Apart from [skipping targets manually](../01-getting-started/03-execution.md#skipping-targets), you can also programmatically decide whether a target should be skipped. Depending on the use-case, you can choose between dynamic and static conditions.
+Apart from [skipping targets manually](../getting-started/execution.md#skipping-targets), you can also programmatically decide whether a target should be skipped. Depending on the use-case, you can choose between dynamic and static conditions.
 
 <Tabs>
   <TabItem value="dynamic-conditions" label="Dynamic Conditions">
@@ -318,7 +318,7 @@ class Build : NukeBuild
 
 ## Unlisting Targets
 
-It is good practice to follow the [single-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle) when implementing targets. However, you may not want to expose every target through the [build help text](../01-getting-started/03-execution.md#help-text). For cases like this, you can un-list a target:
+It is good practice to follow the [single-responsibility principle](https://en.wikipedia.org/wiki/Single-responsibility_principle) when implementing targets. However, you may not want to expose every target through the [build help text](../getting-started/execution.md#help-text). For cases like this, you can un-list a target:
 
 ```csharp
 class Build : NukeBuild

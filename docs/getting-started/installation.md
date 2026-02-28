@@ -11,13 +11,13 @@ dotnet tool install GreemDev.Nuke.GlobalTool --global
 
 From now on, you can use the global tool to:
 
-- [Set up new builds](02-setup.md)
-- [Run existing builds](03-execution.md)
-- [Leverage shell completion](../06-global-tool/00-shell-completion.md)
-- [Add tool & library packages](../06-global-tool/01-packages.md)
-- [Navigate around root directories](../06-global-tool/03-navigation.md)
-- [Convert CAKE build scripts](../06-global-tool/04-cake.md)
-- [Manage secrets in parameter files](../06-global-tool/02-secrets.md)
+- [Set up new builds](setup.md)
+- [Run existing builds](execution.md)
+- [Leverage shell completion](../global-tool/shell-completion.md)
+- [Add tool & library packages](../global-tool/packages.md)
+- [Navigate around root directories](../global-tool/navigation.md)
+- [Convert CAKE build scripts](../global-tool/cake.md)
+- [Manage secrets in parameter files](../global-tool/secrets.md)
 
 :::note
 If you're running on Linux-based systems, it's worth checking if the `gruke` global tool is available. This can be verified with `where gruke`. If the global tool is not found, you have to manually add `$HOME/.dotnet/tools` to your terminal configuration:

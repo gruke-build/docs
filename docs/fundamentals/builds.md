@@ -44,7 +44,7 @@ class Build : NukeBuild
 </Tabs>
 
 :::info
-You will learn how to [write target definitions](05-targets.md) in the next chapter.
+You will learn how to [write target definitions](targets.md) in the next chapter.
 :::
 
 ## Base Properties
@@ -77,11 +77,11 @@ With the `Host` property you can determine the running environment, for instance
 
 ---
 
-Since `Host`, `IsLocalBuild`, and `IsServerBuild` are static properties, you can conveniently use them in [static conditions](05-targets.md#conditional-execution) to skip targets (including their dependencies) in local or server builds.
+Since `Host`, `IsLocalBuild`, and `IsServerBuild` are static properties, you can conveniently use them in [static conditions](targets.md#conditional-execution) to skip targets (including their dependencies) in local or server builds.
 :::
 
 :::info
-Learn more about the `AbsolutePath` class and how it's used for [path construction](../03-common/03-paths.md).
+Learn more about the `AbsolutePath` class and how it's used for [path construction](../common/paths.md).
 :::
 
 ### Build Status
@@ -111,7 +111,7 @@ abstract class NukeBuild
 ```
 
 :::tip
-You can examine the status of targets by using any of the appropriate `ICollection<ExecutableTarget>`. For instance, to check if a target has failed, you can write `FailedTargets.Contains(MyTarget)`. This pattern is especially useful with [dynamic conditions](05-targets.md#conditional-execution).
+You can examine the status of targets by using any of the appropriate `ICollection<ExecutableTarget>`. For instance, to check if a target has failed, you can write `FailedTargets.Contains(MyTarget)`. This pattern is especially useful with [dynamic conditions](targets.md#conditional-execution).
 :::
 
 ## Build Events

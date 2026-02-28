@@ -27,7 +27,7 @@ classDiagram
     ITest : + Target Test
 ```
 
-The component stubs from above can be translated into code as follows, whereas the `INukeBuild` base interface allows the components to use [build base properties](../02-fundamentals/04-builds.md#base-properties):
+The component stubs from above can be translated into code as follows, whereas the `INukeBuild` base interface allows the components to use [build base properties](../fundamentals/builds.md#base-properties):
 
 ```csharp
 interface ICompile : INukeBuild
@@ -60,7 +60,7 @@ class Build : NukeBuild, ICompile, IPack, ITest
 
 ## Parameters
 
-In build components, you can use [parameters](../02-fundamentals/06-parameters.md) and other auto-injection attributes, like [`GitRepositoryAttribute`](../03-common/05-repository.md) or [`SolutionAttribute`](../03-common/07-solution-project-model.md), similar as in regular build classes. Though, since interfaces can't define instance fields or properties, the `INukeBuild` base interface provides a helper method that caches and returns resolved values for you:
+In build components, you can use [parameters](../fundamentals/parameters.md) and other auto-injection attributes, like [`GitRepositoryAttribute`](../common/repository.md) or [`SolutionAttribute`](../common/solution-project-model.md), similar as in regular build classes. Though, since interfaces can't define instance fields or properties, the `INukeBuild` base interface provides a helper method that caches and returns resolved values for you:
 
 ```csharp
 interface IComponent : INukeBuild
@@ -109,7 +109,7 @@ interface IComponent2 : INukeBuild
 
 ## Dependencies
 
-You can define [dependencies](../02-fundamentals/05-targets.md#dependencies) between targets similar as in regular build classes. Since targets from components cannot easily be referenced from their inheritors[^1], you must pass the component type as a generic parameter and provide the target through a lambda expression:
+You can define [dependencies](../fundamentals/targets.md#dependencies) between targets similar as in regular build classes. Since targets from components cannot easily be referenced from their inheritors[^1], you must pass the component type as a generic parameter and provide the target through a lambda expression:
 
 ```csharp
 class Build : NukeBuild, IComponent
@@ -140,7 +140,7 @@ class Build : NukeBuild, IComponent
 
 ### Loose Dependencies
 
-Apart from [regular dependencies](../02-fundamentals/05-targets.md#dependencies), you can also define loose dependencies that only get applied when the respective component is also inherited. This allows you to compose your build more flexibly without imposing a particular inheritance chain:
+Apart from [regular dependencies](../fundamentals/targets.md#dependencies), you can also define loose dependencies that only get applied when the respective component is also inherited. This allows you to compose your build more flexibly without imposing a particular inheritance chain:
 
 <Tabs>
   <TabItem value="execution" label="Execution Dependencies">

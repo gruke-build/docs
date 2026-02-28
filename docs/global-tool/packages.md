@@ -2,7 +2,7 @@
 title: Adding NuGet Packages
 ---
 
-In many cases, build automation relies on third-party tools. NUKE provides you with a great [API for working with CLI tools](../03-common/08-cli-tools.md), however, it is the responsibility of a build project to reference these tools in the form of NuGet packages and define their exact versions.
+In many cases, build automation relies on third-party tools. NUKE provides you with a great [API for working with CLI tools](../common/cli-tools.md), however, it is the responsibility of a build project to reference these tools in the form of NuGet packages and define their exact versions.
 
 You can add a NuGet package to a build project by calling:
 
