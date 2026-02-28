@@ -96,7 +96,7 @@ The returned object is a collection of standard and error output.
         </Project>
         ```
 
-    While it would be possible to magically download required packages, this explicit approach ensures that your builds are reproducible at any time. If a package is not referenced, the resulting error message will include a command to [install the package via the global tool](../06-global-tool/01-packages.md).
+    While it would be possible to magically download required packages, this explicit approach ensures that your builds are reproducible at any time. If a package is not referenced, the resulting error message will include a command to [install the package via the global tool](../global-tool/packages.md).
 
 ## Fluent API
 
