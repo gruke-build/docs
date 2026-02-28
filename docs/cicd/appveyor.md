@@ -6,9 +6,8 @@ Running on [AppVeyor](https://www.appveyor.com/) will automatically enable custo
 
 ![AppVeyor Log Output](appveyor.webp)
 
-:::info
-Please refer to the official [AppVeyor documentation](https://www.appveyor.com/docs/) for questions not covered here.
-:::
+!!! info
+    Please refer to the official [AppVeyor documentation](https://www.appveyor.com/docs/) for questions not covered here.
 
 ## Environment Variables
 
@@ -25,12 +24,11 @@ Target Print => _ => _
     });
 ```
 
-<details>
-<summary>Exhaustive list of strongly-typed properties</summary>
+??? "Exhaustive list of all strongly-typed properties"
 
-```csharp
-class AppVeyor
-{
+    ```csharp
+    class AppVeyor
+    {
     string   AccountName                     { get; }
     string   ApiUrl                          { get; }
     string   BuildFolder                     { get; }
@@ -65,10 +63,8 @@ class AppVeyor
     string   RepositoryTagName               { get; }
     bool     ScheduledBuild                  { get; }
     string   Url                             { get; }
-}
-```
-
-</details>
+    }
+    ```
 
 ## Configuration Generation
 
@@ -81,24 +77,20 @@ You can generate [build pipeline files](https://appveyor.com/docs/appveyor-yml/)
 class Build : NukeBuild { /* ... */ }
 ``` 
 
-<details>
-<summary>Generated output</summary>
+??? "Generated output"
 
-```yaml title="appveyor.yml"
+    ```yaml title="appveyor.yml"
 
-image:
-  - Visual Studio 2022
+    image:
+      - Visual Studio 2022
 
-build_script:
-  - cmd: .\build.cmd Compile
-  - sh: ./build.cmd Compile
-```
+    build_script:
+        - cmd: .\build.cmd Compile
+        - sh: ./build.cmd Compile
+    ```
 
-</details>
-
-:::info
-Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the pipelines file.
-:::
+!!! info
+    Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the pipelines file.
 
 ## Artifacts
 
@@ -110,18 +102,16 @@ Target Pack => _ => _
     .Executes(() => { /* Implementation */ });
 ```
 
-<details>
-<summary>Generated output</summary>
+??? "Generated output"
 
-```yaml title="appveyor.yml"
-artifacts:
-  - path: output/packages/*.nupkg
-```
-</details>
+    ```yaml title="appveyor.yml"
+    artifacts:
+      - path: output/packages/*.nupkg
+    ```
 
 After your build has finished, those artifacts will be listed under the artifacts tab:
 
-<p style={{maxWidth:'900px'}}>
+<p style={{maxWidth:'900px'}} markdown="span">
 
 ![AppVeyor Artifacts Tab](appveyor-artifacts.webp)
 
