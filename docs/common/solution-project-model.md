@@ -58,9 +58,8 @@ readonly Solution Solution;
 Project GlobalToolProject => Solution.Nuke_GlobalTool;
 ```
 
-:::info
-For every `SolutionAttribute` with the `GenerateProjects` property enabled, the source generator will create a new type with the same name as the field. In the example above, the type `Nuke.Common.ProjectModel.Solution` is silently replaced by a new type `global::Solution` that is local to your project. Therefore, the field name and type must always be the same.
-:::
+!!! info
+    For every `SolutionAttribute` with the `GenerateProjects` property enabled, the source generator will create a new type with the same name as the field. In the example above, the type `Nuke.Common.ProjectModel.Solution` is silently replaced by a new type `global::Solution` that is local to your project. Therefore, the field name and type must always be the same.
 
 ### Creating Solutions
 
@@ -102,6 +101,5 @@ var compiledFiles = project.GetItems<AbsolutePath>("Compile");
 
 However, behind the scenes, these methods will still load the project through the `Microsoft.Build` package.
 
-:::caution
-It is **strongly discouraged** to use anything but MSBuild to examine project files. Other approaches, like reading and parsing the XML, are very fragile against the complex evaluation logic that is inherent for project files.
-:::
+!!! warning
+    It is **strongly discouraged** to use anything but MSBuild to examine project files. Other approaches, like reading and parsing the XML, are very fragile against the complex evaluation logic that is inherent for project files.
