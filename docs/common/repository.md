@@ -29,7 +29,7 @@ Target Print => _ => _
 <!-- endSnippet -->
 
 :::tip
-Repository insights allow you to design your targets in a flexible manner using [requirements](../02-fundamentals/05-targets.md#requirements), [conditional execution](../02-fundamentals/05-targets.md#conditional-execution), or hybrid implementations:
+Repository insights allow you to design your targets in a flexible manner using [requirements](../fundamentals/targets.md#requirements), [conditional execution](../fundamentals/targets.md#conditional-execution), or hybrid implementations:
 
 <!-- snippet: repository-information-use-cases -->
 ```cs

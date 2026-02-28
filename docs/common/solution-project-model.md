@@ -6,7 +6,7 @@ Particularly when building .NET applications, your build may require information
 
 ## Working with Solutions
 
-The easiest way to load your solution is to create a new `Solution` field, add the `SolutionAttribute`, and define the file path into the default [parameters file](../02-fundamentals/06-parameters.md#passing-values-through-parameter-files):
+The easiest way to load your solution is to create a new `Solution` field, add the `SolutionAttribute`, and define the file path into the default [parameters file](../fundamentals/parameters.md#passing-values-through-parameter-files):
 
 ```csharp
 [Solution]
