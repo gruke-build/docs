@@ -6,9 +6,8 @@ Running on [GitLab](https://about.gitlab.com/) will automatically enable custom 
 
 ![GitLab Log Output](gitlab.webp)
 
-:::info
-Please refer to the official [GitLab documentation](https://docs.gitlab.com/) for questions not covered here.
-:::
+!!! info
+    Please refer to the official [GitLab documentation](https://docs.gitlab.com/) for questions not covered here.
 
 ## Environment Variables
 
@@ -25,51 +24,47 @@ Target Print => _ => _
     });
 ```
 
-<details>
-<summary>Exhaustive list of strongly-typed properties</summary>
-
-```csharp
-class GitLab
-{
-    bool                    Ci                    { get; }
-    string                  CommitRefName         { get; }
-    string                  CommitRefSlug         { get; }
-    string                  CommitSha             { get; }
-    string                  CommitTag             { get; }
-    string                  ConfigPath            { get; }
-    bool                    DisposableEnvironment { get; }
-    string                  GitLabUserEmail       { get; }
-    long                    GitLabUserId          { get; }
-    string                  GitLabUserLogin       { get; }
-    string                  GitLabUserName        { get; }
-    long                    JobId                 { get; }
-    bool                    JobManual             { get; }
-    string                  JobName               { get; }
-    string                  JobStage              { get; }
-    string                  JobToken              { get; }
-    long                    PipelineId            { get; }
-    string                  PipelineSource        { get; }
-    bool                    PipelineTriggered     { get; }
-    string                  ProjectDirectory      { get; }
-    long                    ProjectId             { get; }
-    string                  ProjectName           { get; }
-    string                  ProjectNamespace      { get; }
-    string                  ProjectPath           { get; }
-    string                  ProjectPathSlug       { get; }
-    string                  ProjectUrl            { get; }
-    GitLabProjectVisibility ProjectVisibility     { get; }
-    string                  Registry              { get; }
-    string                  RegistryImage         { get; }
-    string                  RegistryPassword      { get; }
-    string                  RegistryUser          { get; }
-    string                  RepositoryUrl         { get; }
-    string                  RunnerDescription     { get; }
-    long                    RunnerId              { get; }
-    string                  RunnerTags            { get; }
-    string                  ServerName            { get; }
-    string                  ServerRevision        { get; }
-    string                  ServerVersion         { get; }
-}
-```
-
-</details>
+??? note "Exhaustive list of strongly-typed properties"
+    ```csharp
+    class GitLab
+    {
+        bool                    Ci                    { get; }
+        string                  CommitRefName         { get; }
+        string                  CommitRefSlug         { get; }
+        string                  CommitSha             { get; }
+        string                  CommitTag             { get; }
+        string                  ConfigPath            { get; }
+        bool                    DisposableEnvironment { get; }
+        string                  GitLabUserEmail       { get; }
+        long                    GitLabUserId          { get; }
+        string                  GitLabUserLogin       { get; }
+        string                  GitLabUserName        { get; }
+        long                    JobId                 { get; }
+        bool                    JobManual             { get; }
+        string                  JobName               { get; }
+        string                  JobStage              { get; }
+        string                  JobToken              { get; }
+        long                    PipelineId            { get; }
+        string                  PipelineSource        { get; }
+        bool                    PipelineTriggered     { get; }
+        string                  ProjectDirectory      { get; }
+        long                    ProjectId             { get; }
+        string                  ProjectName           { get; }
+        string                  ProjectNamespace      { get; }
+        string                  ProjectPath           { get; }
+        string                  ProjectPathSlug       { get; }
+        string                  ProjectUrl            { get; }
+        GitLabProjectVisibility ProjectVisibility     { get; }
+        string                  Registry              { get; }
+        string                  RegistryImage         { get; }
+        string                  RegistryPassword      { get; }
+        string                  RegistryUser          { get; }
+        string                  RepositoryUrl         { get; }
+        string                  RunnerDescription     { get; }
+        long                    RunnerId              { get; }
+        string                  RunnerTags            { get; }
+        string                  ServerName            { get; }
+        string                  ServerRevision        { get; }
+        string                  ServerVersion         { get; }
+    }
+    ```
