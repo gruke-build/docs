@@ -6,9 +6,8 @@ Running on [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/p
 
 ![Azure Pipelines Log Output](azure-pipelines.webp)
 
-:::info
-Please refer to the official [Azure Pipelines documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops) for questions not covered here.
-:::
+!!! info
+    Please refer to the official [Azure Pipelines documentation](https://docs.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops) for questions not covered here.
 
 ## Environment Variables
 
@@ -25,66 +24,63 @@ Target Print => _ => _
     });
 ```
 
-<details>
-<summary>Exhaustive list of strongly-typed properties</summary>
+??? note "Exhaustive list of strongly-typed properties"
 
-```csharp
-class AzurePipelines
-{
-    string                       AccessToken                    { get; }
-    string                       AgentBuildDirectory            { get; }
-    string                       AgentHomeDirectory             { get; }
-    long                         AgentId                        { get; }
-    AzurePipelinesJobStatus      AgentJobStatus                 { get; }
-    string                       AgentMachineName               { get; }
-    string                       AgentName                      { get; }
-    string                       AgentWorkFolder                { get; }
-    string                       ArtifactStagingDirectory       { get; }
-    string                       BinariesDirectory              { get; }
-    long                         BuildId                        { get; }
-    string                       BuildNumber                    { get; }
-    AzurePipelinesBuildReason    BuildReason                    { get; }
-    string                       BuildUri                       { get; }
-    Guid                         CollectionId                   { get; }
-    string                       DefaultWorkingDirectory        { get; }
-    long                         DefinitionId                   { get; }
-    string                       DefinitionName                 { get; }
-    long                         DefinitionVersion              { get; }
-    string                       JobDisplayName                 { get; }
-    Guid                         JobId                          { get; }
-    string                       PhaseName                      { get; }
-    long?                        PullRequestId                  { get; }
-    string                       PullRequestSourceBranch        { get; }
-    string                       PullRequestTargetBranch        { get; }
-    string                       QueuedBy                       { get; }
-    Guid                         QueuedById                     { get; }
-    bool                         RepositoryClean                { get; }
-    bool                         RepositoryGitSubmoduleCheckout { get; }
-    string                       RepositoryLocalPath            { get; }
-    string                       RepositoryName                 { get; }
-    AzurePipelinesRepositoryType RepositoryProvider             { get; }
-    string                       RepositoryTfvcWorkspace        { get; }
-    string                       RepositoryUri                  { get; }
-    string                       RequestedFor                   { get; }
-    string                       RequestedForEmail              { get; }
-    Guid                         RequestedForId                 { get; }
-    string                       SourceBranch                   { get; }
-    string                       SourceBranchName               { get; }
-    string                       SourceDirectory                { get; }
-    string                       SourceTfvcShelveset            { get; }
-    string                       SourceVersion                  { get; }
-    string                       StageDisplayName               { get; }
-    string                       StageName                      { get; }
-    string                       StagingDirectory               { get; }
-    Guid                         TaskInstanceId                 { get; }
-    string                       TeamFoundationCollectionUri    { get; }
-    string                       TeamProject                    { get; }
-    Guid                         TeamProjectId                  { get; }
-    string                       TestResultsDirectory           { get; }
-}
-```
-
-</details>
+    ```csharp
+    class AzurePipelines
+    {
+        string                       AccessToken                    { get; }
+        string                       AgentBuildDirectory            { get; }
+        string                       AgentHomeDirectory             { get; }
+        long                         AgentId                        { get; }
+        AzurePipelinesJobStatus      AgentJobStatus                 { get; }
+        string                       AgentMachineName               { get; }
+        string                       AgentName                      { get; }
+        string                       AgentWorkFolder                { get; }
+        string                       ArtifactStagingDirectory       { get; }
+        string                       BinariesDirectory              { get; }
+        long                         BuildId                        { get; }
+        string                       BuildNumber                    { get; }
+        AzurePipelinesBuildReason    BuildReason                    { get; }
+        string                       BuildUri                       { get; }
+        Guid                         CollectionId                   { get; }
+        string                       DefaultWorkingDirectory        { get; }
+        long                         DefinitionId                   { get; }
+        string                       DefinitionName                 { get; }
+        long                         DefinitionVersion              { get; }
+        string                       JobDisplayName                 { get; }
+        Guid                         JobId                          { get; }
+        string                       PhaseName                      { get; }
+        long?                        PullRequestId                  { get; }
+        string                       PullRequestSourceBranch        { get; }
+        string                       PullRequestTargetBranch        { get; }
+        string                       QueuedBy                       { get; }
+        Guid                         QueuedById                     { get; }
+        bool                         RepositoryClean                { get; }
+        bool                         RepositoryGitSubmoduleCheckout { get; }
+        string                       RepositoryLocalPath            { get; }
+        string                       RepositoryName                 { get; }
+        AzurePipelinesRepositoryType RepositoryProvider             { get; }
+        string                       RepositoryTfvcWorkspace        { get; }
+        string                       RepositoryUri                  { get; }
+        string                       RequestedFor                   { get; }
+        string                       RequestedForEmail              { get; }
+        Guid                         RequestedForId                 { get; }
+        string                       SourceBranch                   { get; }
+        string                       SourceBranchName               { get; }
+        string                       SourceDirectory                { get; }
+        string                       SourceTfvcShelveset            { get; }
+        string                       SourceVersion                  { get; }
+        string                       StageDisplayName               { get; }
+        string                       StageName                      { get; }
+        string                       StagingDirectory               { get; }
+        Guid                         TaskInstanceId                 { get; }
+        string                       TeamFoundationCollectionUri    { get; }
+        string                       TeamProject                    { get; }
+        Guid                         TeamProjectId                  { get; }
+        string                       TestResultsDirectory           { get; }
+    }
+    ```
 
 ## Configuration Generation
 
@@ -97,29 +93,25 @@ You can generate [build pipeline files](https://docs.microsoft.com/en-us/azure/d
 class Build : NukeBuild { /* ... */ }
 ``` 
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```yaml title="azure-pipelines.yml"
-stages:
-  - stage: ubuntu_latest
-    displayName: 'ubuntu-latest'
-    pool:
-      vmImage: 'ubuntu-latest'
-    jobs:
-      - job: Compile
-        displayName: 'Compile'
-        steps:
-          - task: CmdLine@2
-            inputs:
-              script: './build.cmd Compile --skip'
-```
+    ```yaml title="azure-pipelines.yml"
+    stages:
+      - stage: ubuntu_latest
+       displayName: 'ubuntu-latest'
+       pool:
+         vmImage: 'ubuntu-latest'
+       jobs:
+         - job: Compile
+           displayName: 'Compile'
+           steps:
+             - task: CmdLine@2
+               inputs:
+                 script: './build.cmd Compile --skip'
+    ```
 
-</details>
-
-:::info
-Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the pipelines file.
-:::
+!!! info
+    Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the pipelines file.
 
 ### Artifacts
 
@@ -131,20 +123,18 @@ Target Pack => _ => _
     .Executes(() => { /* Implementation */ });
 ```
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```yaml title="azure-pipelines.yml"
-- task: PublishBuildArtifacts@1
-  inputs:
-    artifactName: packages
-    pathtoPublish: 'output/packages'
-```
-</details>
+    ```yaml title="azure-pipelines.yml"
+    - task: PublishBuildArtifacts@1
+      inputs:
+        artifactName: packages
+        pathtoPublish: 'output/packages'
+    ```
 
 After your build has finished, those artifacts will be listed under the artifacts tab:
 
-<p style={{maxWidth:'900px'}}>
+<p style={{maxWidth:'900px'}} markdown="span">
 
 ![Azure Pipelines Artifacts Tab](azure-pipelines-artifacts-light.webp#gh-light-mode-only)
 ![Azure Pipelines Artifacts Tab](azure-pipelines-artifacts-dark.webp#gh-dark-mode-only)
@@ -165,22 +155,17 @@ class Build : NukeBuild
 }
 ```
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
+    ```yaml title="azure-pipelines.yml"
+    - task: CmdLine@2
+      inputs:
+        script: './build.cmd Publish --skip'
+      env:
+        NuGetApiKey: $(NuGetApiKey)
+    ```
 
-```yaml title="azure-pipelines.yml"
-- task: CmdLine@2
-  inputs:
-    script: './build.cmd Publish --skip'
-  env:
-    NuGetApiKey: $(NuGetApiKey)
-```
-
-</details>
-
-:::note
-If you're facing any issues, make sure that the name in the Azure Pipelines settings is the same as generated into the pipelines file. 
-:::
+!!! note
+    If you're facing any issues, make sure that the name in the Azure Pipelines settings is the same as generated into the pipelines file.
 
 ### Using Access Tokens
 
@@ -202,43 +187,36 @@ class Build : NukeBuild
 }
 ```
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```yaml title="azure-pipelines.yml"
-- task: CmdLine@2
-  inputs:
-    script: './build.cmd Release --skip'
-  env:
-    SYSTEM_ACCESSTOKEN: $(System.AccessToken)
-
-```
-
-</details>
+    ```yaml title="azure-pipelines.yml"
+    - task: CmdLine@2
+      inputs:
+        script: './build.cmd Release --skip'
+      env:
+        SYSTEM_ACCESSTOKEN: $(System.AccessToken)
+    ```
 
 ### Caching
 
 By default, the generated pipeline file will include [caching tasks](https://docs.microsoft.com/en-us/azure/devops/pipelines/release/caching) to reduce the time for installing the .NET SDK (if not preinstalled) and restoring NuGet packages.
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```yaml title="azure-pipelines.yml"
-- task: Cache@2
-  displayName: Cache (nuke-temp)
-  inputs:
-    key: $(Agent.OS) | nuke-temp | **/global.json, **/*.csproj
-    restoreKeys: $(Agent.OS) | nuke-temp
-    path: .nuke/temp
-- task: Cache@2
-  displayName: Cache (nuget-packages)
-  inputs:
-    key: $(Agent.OS) | nuget-packages | **/global.json, **/*.csproj
-    restoreKeys: $(Agent.OS) | nuget-packages
-    path: $(HOME)/.nuget/packages
-```
-
-</details>
+    ```yaml title="azure-pipelines.yml"
+    - task: Cache@2
+      displayName: Cache (nuke-temp)
+      inputs:
+        key: $(Agent.OS) | nuke-temp | **/global.json, **/*.csproj
+        restoreKeys: $(Agent.OS) | nuke-temp
+        path: .nuke/temp
+    - task: Cache@2
+      displayName: Cache (nuget-packages)
+      inputs:
+        key: $(Agent.OS) | nuget-packages | **/global.json, **/*.csproj
+        restoreKeys: $(Agent.OS) | nuget-packages
+        path: $(HOME)/.nuget/packages
+    ```
 
 You can customize the caching tasks by overwriting the following properties:
 
