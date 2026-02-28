@@ -121,8 +121,12 @@ Target Pack => _ => _
 After your build has finished, those artifacts will be listed under the _Summary_ tab:
 
 
+<p style={{maxWidth:'900px'}} markdown="span">
+
 ![GitHub Actions Artifacts Tab](github-actions-artifacts-light.webp#gh-light-mode-only)
 ![GitHub Actions Artifacts Tab](github-actions-artifacts-dark.webp#gh-dark-mode-only)
+
+</p>
 
 ### Importing Secrets
 
