@@ -28,42 +28,40 @@ Target Print => _ => _
 ```
 <!-- endSnippet -->
 
-:::tip
-Repository insights allow you to design your targets in a flexible manner using [requirements](../fundamentals/targets.md#requirements), [conditional execution](../fundamentals/targets.md#conditional-execution), or hybrid implementations:
+!!! tip
+    Repository insights allow you to design your targets in a flexible manner using [requirements](../fundamentals/targets.md#requirements), [conditional execution](../fundamentals/targets.md#conditional-execution), or hybrid implementations:
 
-<!-- snippet: repository-information-use-cases -->
-```cs
-[GitRepository] readonly GitRepository Repository;
-string OriginalRepositoryUrl => "https://github.com/nuke-build/nuke";
+    <!-- snippet: repository-information-use-cases -->
+    ```cs
+    [GitRepository] readonly GitRepository Repository;
+    string OriginalRepositoryUrl => "https://github.com/nuke-build/nuke";
 
-Target Deploy => _ => _
-    .Requires(() => Repository.IsOnMainOrMasterBranch());
+    Target Deploy => _ => _
+        .Requires(() => Repository.IsOnMainOrMasterBranch());
 
-Target CheckMilestone => _ => _
-    .OnlyWhenStatic(() => Repository.HttpsUrl.EqualsOrdinalIgnoreCase(OriginalRepositoryUrl));
+    Target CheckMilestone => _ => _
+        .OnlyWhenStatic(() => Repository.HttpsUrl.EqualsOrdinalIgnoreCase(OriginalRepositoryUrl));
 
-Target Hotfix => _ => _
-    .Executes(() =>
-    {
-        if (Repository.IsOnHotfixBranch())
-            FinishHotfix();
-        else
-            CreateHotfix();
-    });
-```
-<!-- endSnippet -->
-:::tip
+    Target Hotfix => _ => _
+        .Executes(() =>
+        {
+            if (Repository.IsOnHotfixBranch())
+                FinishHotfix();
+            else
+                CreateHotfix();
+        });
+    ```
+    <!-- endSnippet -->
 
-:::info
-You can also manually create a `GitRepository` instance:
+    !!! info
+        You can also manually create a `GitRepository` instance:
 
-```c#
-var repository1 = GitRepository.FromLocalDirectory(directory);
-var repository2 = GitRepository.FromUrl(url);
-```
+        ```c#
+        var repository1 = GitRepository.FromLocalDirectory(directory);
+        var repository2 = GitRepository.FromUrl(url);
+        ```
 
-The only difference between `FromUrl` and `FromLocalDirectory` is that the latter can initialize more properties, including `Commit`, `Tags`, and `RemoteBranch`.
-:::
+        The only difference between `FromUrl` and `FromLocalDirectory` is that the latter can initialize more properties, including `Commit`, `Tags`, and `RemoteBranch`.
 
 ## GitHub Integration
 
