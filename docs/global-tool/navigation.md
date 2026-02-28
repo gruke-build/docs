@@ -26,6 +26,5 @@ The global tool comes with a handful of functions for improved navigation:
 | `nuke/`  | Lists subdirectories that are root directories |
 | `nuke-`  | Navigates to the last root directory           |
 
-:::note
-The `nuke-` command is only supported on shells that set the `TERM_SESSION_ID` or `WT_SESSION` environment variable. As of now, this includes [iTerm](https://iterm2.com/) and the [Windows Terminal](https://github.com/microsoft/terminal).
-:::
+!!! note
+    The `nuke-` command is only supported on shells that set the `TERM_SESSION_ID` or `WT_SESSION` environment variable. As of now, this includes [iTerm](https://iterm2.com/) and the [Windows Terminal](https://github.com/microsoft/terminal).
