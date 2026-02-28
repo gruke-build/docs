@@ -2,50 +2,37 @@
 title: Build Execution
 ---
 
-import AsciinemaPlayer from '@site/src/components/AsciinemaPlayer';
-
 After you've [set up a build](setup.md) you can run it either through the global tool or one of the installed bootstrapping scripts:
 
-<Tabs>
-  <TabItem value="global-tool" label="Global Tool" default>
+=== "Global Tool"
 
-```powershell
-# terminal-command
-nuke [arguments]
-```
+    ```powershell
+    gruke [arguments]
+    ```
 
-  </TabItem>
-  <TabItem value="windows" label="Windows" default>
+=== "Windows"
 
-```powershell
-# terminal-command
-.\build.cmd [arguments]
-```
+    ```powershell
+    .\build.cmd [arguments]
+    ```
 
-  </TabItem>
-  <TabItem value="linux" label="Linux" default>
+=== "Linux"
 
-```powershell
-# terminal-command
-./build.sh [arguments]
-```
+    ```powershell
+    ./build.sh [arguments]
+    ```
 
-</TabItem>
-</Tabs>
+!!! info
+    This document discusses the default build arguments (also referred to as parameters). You will learn how to [define custom parameters](../fundamentals/parameters.md) in a following chapter.
 
-:::info
-This document discusses the default build arguments (also referred to as parameters). You will learn how to [define custom parameters](../fundamentals/parameters.md) in a following chapter.
-:::
-
-:::tip
-The global tool makes running builds a lot easier. Once you've configured the [shell completion](../global-tool/shell-completion.md), you can enter arguments much faster and avoid any typos. It also allows you to run a build from anywhere below the root directory without having to go back to where the bootstrapping scripts are located.
-:::
+!!! tip
+    The global tool makes running builds a lot easier. Once you've configured the [shell completion](../global-tool/shell-completion.md), you can enter arguments much faster and avoid any typos. It also allows you to run a build from anywhere below the root directory without having to go back to where the bootstrapping scripts are located.
 
 ## Build Summary
 
 Once a build has finished running an execution plan, it will print a comprehensive summary with all involved targets, their outcome, duration, and additional metadata:
 
-<CodeBlock>
+```
 ═══════════════════════════════════════{'\n'}
 Target             Status      Duration{'\n'}
 ───────────────────────────────────────{'\n'}
@@ -58,7 +45,7 @@ Total                              2:08{'\n'}
 ═══════════════════════════════════════{'\n'}
 {'\n'}
 Build succeeded on {new Date().toLocaleString()}. ＼（＾ᴗ＾）／
-</CodeBlock>
+```
 
 [//]: # (## Default Parameters)
 [//]: # ()
@@ -78,55 +65,39 @@ Build succeeded on {new Date().toLocaleString()}. ＼（＾ᴗ＾）／
 
 You can invoke a single target or a set of targets either through positional or named arguments:
 
-<Tabs>
-  <TabItem value="positional-argument" label="Positional Argument" default>
+=== "Positional Argument"
 
-```powershell
-# terminal-command
-nuke <target> [other-targets...]
-```
+    ```powershell
+    gruke <target> [other-targets...]
+    ```
 
-  </TabItem>
-  <TabItem value="named-argument" label="Named Argument">
+=== "Named Argument"
 
-```powershell
-# terminal-command
-nuke [arguments...] --targets <target> [other-targets...]
-```
+    ```powershell
+    gruke [arguments...] --targets <target> [other-targets...]
+    ```
 
-  </TabItem>
-</Tabs>
-
-:::tip
-Passing targets as named arguments allows you to quickly overwrite the invoked targets without moving the caret to the front of a long invocation command.
-:::
+!!! tip
+    Passing targets as named arguments allows you to quickly overwrite the invoked targets without moving the caret to the front of a long invocation command.
 
 ## Skipping Targets
 
 You can skip all or individual targets from the execution plan that are not specifically invoked:
 
-<Tabs>
-  <TabItem value="skip-all" label="Skipping All Targets" default>
+=== "Skipping All Targets"
 
-```powershell
-# terminal-command
-nuke [targets] --skip
-```
+    ```powershell
+    gruke [targets] --skip
+    ```
 
-  </TabItem>
-  <TabItem value="skip-individual" label="Skipping Individual Targets">
+=== "Skipping Specific Targets"
 
-```powershell
-# terminal-command
-nuke [targets] --skip <other-targets...>
-```
+    ```powershell
+    gruke [targets] --skip <other-targets...>
+    ```
 
-  </TabItem>
-</Tabs>
-
-:::tip
-Skipping targets can greatly improve your troubleshooting experience. Irrelevant targets won't waste execution time, and there is no need to temporarily change dependencies between targets.
-:::
+!!! tip
+    Skipping targets can greatly improve your troubleshooting experience. Irrelevant targets won't waste execution time, and there is no need to temporarily change dependencies between targets.
 
 ## Aborting Builds
 
@@ -150,7 +121,7 @@ You can continue a failed or aborted build from the first point of failure:
 
 ```powershell
 # terminal-command
-nuke [arguments...] --continue
+gruke [arguments...] --continue
 ```
 
 All previously succeeded targets will be skipped automatically, which can save a lot of unnecessary execution time:
@@ -167,20 +138,18 @@ Total                              0:20
 ═══════════════════════════════════════
 ```
 
-:::tip
-When you combine the `--continue` argument with the [`dotnet watch`](https://docs.microsoft.com/dotnet/core/tools/dotnet-watch) command, you can establish a very tight feedback loop while working on your target implementation. Just go to the build project directory and call:
+!!! tip
+    When you combine the `--continue` argument with the [`dotnet watch`](https://docs.microsoft.com/dotnet/core/tools/dotnet-watch) command, you can establish a very tight feedback loop while working on your target implementation. Just go to the build project directory and call:
 
-```powershell
-# terminal-command
-dotnet watch run -- [arguments..] --continue
-```
-:::
+    ```powershell
+    # terminal-command
+    dotnet watch run -- [arguments..] --continue
+    ```
 
-:::caution
-The state of the build instance is NOT serialized. I.e., if a succeeded target produced data for a failed target, that data won't be available during the continuation of the build.
+!!! warning
+    The state of the build instance is NOT serialized. I.e., if a succeeded target produced data for a failed target, that data won't be available during the continuation of the build.
 
-Moreover, a build can only reliably continue when the invocation is the same as in the previous attempt. That means that you can only add the `--continue` switch but not change any other arguments. If this rule is violated, the build will start from the very beginning.
-:::
+    Moreover, a build can only reliably continue when the invocation is the same as in the previous attempt. That means that you can only add the `--continue` switch but not change any other arguments. If this rule is violated, the build will start from the very beginning.
 
 ## Help Text
 
@@ -188,7 +157,7 @@ When you're coming back to a repository or build you haven't worked on in a whil
 
 ```powershell
 # terminal-command
-nuke --help
+gruke --help
 ```
 
 This allows you to inspect all available targets with their direct dependencies as well as parameters with their descriptions:
@@ -225,15 +194,12 @@ In order to get a better understanding of how your builds are structured, you ca
 
 ```powershell
 # terminal-command
-nuke --plan
+gruke --plan
 ```
 
 Hovering a target will show its individual execution plan, that means, all targets that are going to be executed when one specific target is invoked. The style of an edge (solid/dashed/yellow) between two targets indicates their [dependency relation](../fundamentals/targets.md#dependencies) (execution/ordering/trigger):
 
 ![Visualizing Execution Plans](plan.gif)
 
-:::info
-
-When no targets are hovered, the execution plan for the [default targets](../fundamentals/builds.md) is highlighted.
-
-:::
+!!! info
+    When no targets are hovered, the execution plan for the [default targets](../fundamentals/builds.md) is highlighted.
