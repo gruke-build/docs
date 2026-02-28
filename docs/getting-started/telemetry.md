@@ -63,7 +63,7 @@ The telemetry feature collects the following data:
 | All	    | Hashed Commit Sha (SHA256; first 6 characters)                                            |
 | All	    | Compile time of build project in seconds                                                  |
 | All	    | Target framework                                                                          |
-| All	    | Version of `Nuke.Common` and `Nuke.GlobalTool`                                            |
+| All	    | Version of `GreemDev.Nuke.Common` and `GreemDev.Nuke.GlobalTool`                          |
 | All	    | Host implementation (only non-custom)                                                     |
 | All	    | Build type (project/global tool)                                                          |
 | All	    | Number of executable targets                                                              |

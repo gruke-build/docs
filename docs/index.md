@@ -19,7 +19,7 @@ sidebar_position: 0
 
 ```powershell
 # terminal-command
-dotnet tool install Nuke.GlobalTool --global
+dotnet tool install GreemDev.Nuke.GlobalTool --global
 ```
 
 **2. Go to a repository of your choice and set up a build:**
@@ -46,7 +46,7 @@ Get a feeling how your Cake scripts would look like in NUKE.
 
 ```powershell
 # terminal-command
-dotnet tool install Nuke.GlobalTool --global
+dotnet tool install GreemDev.Nuke.GlobalTool --global
 ```
 
 **2. Go to a repository built with Cake.**
