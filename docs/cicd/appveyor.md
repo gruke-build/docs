@@ -97,7 +97,7 @@ build_script:
 </details>
 
 :::info
-Whenever you make changes to the attribute, you have to [run the build](../01-getting-started/03-execution.md) at least once to regenerate the pipelines file.
+Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the pipelines file.
 :::
 
 ## Artifacts

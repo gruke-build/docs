@@ -112,7 +112,7 @@ object Compile : BuildType({
 </details>
 
 :::info
-Whenever you make changes to the attribute, you have to [run the build](../01-getting-started/03-execution.md) at least once to regenerate the pipelines file.
+Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the pipelines file.
 :::
 
 ### Artifacts
@@ -145,7 +145,7 @@ After your build has finished, those artifacts will be listed under the artifact
 
 ### Importing Secrets
 
-If you want to use [secret variables](https://www.jetbrains.com/help/teamcity/storing-project-settings-in-version-control.html#Storing+Secure+Settings) from your TeamCity project, you can use the `ImportSecrets` property and `TeamCityToken` attribute to automatically load them into a [secret parameter](../02-fundamentals/06-parameters.md#secret-parameters) defined in your build:
+If you want to use [secret variables](https://www.jetbrains.com/help/teamcity/storing-project-settings-in-version-control.html#Storing+Secure+Settings) from your TeamCity project, you can use the `ImportSecrets` property and `TeamCityToken` attribute to automatically load them into a [secret parameter](../fundamentals/parameters.md#secret-parameters) defined in your build:
 
 ```csharp title="Build.cs"
 [TeamCity(

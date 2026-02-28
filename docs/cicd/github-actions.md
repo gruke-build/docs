@@ -94,7 +94,7 @@ jobs:
 </details>
 
 :::info
-Whenever you make changes to the attribute, you have to [run the build](../01-getting-started/03-execution.md) at least once to regenerate the workflow file.
+Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the workflow file.
 :::
 
 ### Artifacts
@@ -120,16 +120,13 @@ Target Pack => _ => _
 
 After your build has finished, those artifacts will be listed under the _Summary_ tab:
 
-<p style={{maxWidth:'900px'}}>
 
 ![GitHub Actions Artifacts Tab](github-actions-artifacts-light.webp#gh-light-mode-only)
 ![GitHub Actions Artifacts Tab](github-actions-artifacts-dark.webp#gh-dark-mode-only)
 
-</p>
-
 ### Importing Secrets
 
-If you want to use [encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#about-encrypted-secrets) from your organization or repository, you can use the `ImportSecrets` property to automatically load them into a [secret parameter](../02-fundamentals/06-parameters.md#secret-parameters) defined in your build:
+If you want to use [encrypted secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#about-encrypted-secrets) from your organization or repository, you can use the `ImportSecrets` property to automatically load them into a [secret parameter](../fundamentals/parameters.md#secret-parameters) defined in your build:
 
 ```csharp title="Build.cs"
 [GitHubActions(
