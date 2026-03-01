@@ -73,19 +73,18 @@ interface IComponent : INukeBuild
 }
 ```
 
-:::tip
-The `TryGetValue` method can return `null`, for instance, when a parameter is not available. If you want to provide a default value, you can use the [null-coalescing operator](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-coalescing-operator):
+!!! tip
+    The `TryGetValue` method can return `null`, for instance, when a parameter is not available. If you want to provide a default value, you can use the [null-coalescing operator](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-coalescing-operator):
 
-```csharp
-interface IComponent : INukeBuild
-{
-    [Parameter]
-    string Parameter => TryGetValue(() => Parameter) ?? "default";
-}
-```
+    ```csharp
+    interface IComponent : INukeBuild
+    {
+        [Parameter]
+        string Parameter => TryGetValue(() => Parameter) ?? "default";
+    }
+    ```
 
-Note that the fallback value is created on every property access, so you might want to cache it in a static field. 
-:::
+    Note that the fallback value is created on every property access, so you might want to cache it in a static field.
 
 ### Parameter Prefixes
 
@@ -122,190 +121,167 @@ class Build : NukeBuild, IComponent
 }
 ```
 
-:::tip
-When a build component only defines a single target, you can use the shorthand syntax and omit the lambda that specifies the target. For instance, the above example can become:
+!!! tip
+    When a build component only defines a single target, you can use the shorthand syntax and omit the lambda that specifies the target. For instance, the above example can become:
 
 
-```csharp
-class Build : NukeBuild, IComponent
-{
-    Target MyTarget => _ => _
-        .DependsOn<IComponent>()
-        .Executes(() =>
-        {
-        });
-}
-```
-:::
+    ```csharp
+    class Build : NukeBuild, IComponent
+    {
+        Target MyTarget => _ => _
+            .DependsOn<IComponent>()
+            .Executes(() =>
+            {
+            });
+    }
+    ```
 
 ### Loose Dependencies
 
 Apart from [regular dependencies](../fundamentals/targets.md#dependencies), you can also define loose dependencies that only get applied when the respective component is also inherited. This allows you to compose your build more flexibly without imposing a particular inheritance chain:
 
-<Tabs>
-  <TabItem value="execution" label="Execution Dependencies">
+=== "Execution Dependencies"
 
-```csharp title="Build.cs"
-interface IComponent1 : INukeBuild
-{
-    Target A => _ => _
-        // highlight-start
-        .TryDependentFor<IComponent2>()      // Choose this...
-        // highlight-end
-        .Executes(() => { });
-}
+    ```csharp title="Build.cs" hl_lines="4 11"
+    interface IComponent1 : INukeBuild
+    {
+        Target A => _ => _
+            .TryDependentFor<IComponent2>()      // Choose this...
+            .Executes(() => { });
+    }
 
-interface IComponent2 : INukeBuild
-{
-    Target B => _ => _
-        // highlight-start
-        .TryDependsOn<IComponent1>()         // ...or this!
-        // highlight-end
-        .Executes(() => { });
-}
-```
+    interface IComponent2 : INukeBuild
+    {
+        Target B => _ => _
+            .TryDependsOn<IComponent1>()         // ...or this!
+            .Executes(() => { });
+    }
+    ```
 
-  </TabItem>
-  <TabItem value="ordering" label="Ordering Dependencies">
 
-```csharp title="Build.cs"
-interface IComponent1 : INukeBuild
-{
-    Target A => _ => _
-        // highlight-start
-        .TryBefore<IComponent2>()            // Choose this...
-        // highlight-end
-        .Executes(() => { });
-}
+=== "Ordering Dependencies"
 
-interface IComponent2 : INukeBuild
-{
-    Target B => _ => _
-        // highlight-start
-        .TryAfter<IComponent1>()             // ...or this!
-        // highlight-end
-        .Executes(() => { });
-}
-```
+    ```csharp title="Build.cs" hl_lines="4 11"
+    interface IComponent1 : INukeBuild
+    {
+        Target A => _ => _
+            .TryBefore<IComponent2>()            // Choose this...
+            .Executes(() => { });
+    }
+    
+    interface IComponent2 : INukeBuild
+    {
+        Target B => _ => _
+            .TryAfter<IComponent1>()             // ...or this!
+            .Executes(() => { });
+    }
+    ```
 
-  </TabItem>
-  <TabItem value="triggers" label="Trigger Dependencies">
 
-```csharp title="Build.cs"
-interface IComponent1 : INukeBuild
-{
-    Target A => _ => _
-        // highlight-start
-        .TryTriggers<IComponent2>()          // Choose this...
-        // highlight-end
-        .Executes(() => { });
-}
+=== "Trigger Dependencies"
 
-interface IComponent2 : INukeBuild
-{
-    Target B => _ => _
-        // highlight-start
-        .TryTriggeredBy<IComponent1>()       // ...or this!
-        // highlight-end
-        .Executes(() => { });
-}
-```
+    ```csharp title="Build.cs" hl_lines="4 11"
+    interface IComponent1 : INukeBuild
+    {
+        Target A => _ => _
+            .TryTriggers<IComponent2>()          // Choose this...
+            .Executes(() => { });
+    }
 
-  </TabItem>
-</Tabs>
+    interface IComponent2 : INukeBuild
+    {
+        Target B => _ => _
+            .TryTriggeredBy<IComponent1>()       // ...or this!
+            .Executes(() => { });
+    }
+    ```
 
 ## Extensions and Overrides
 
 Another SOLID design principle that can be applied to build components is the [open-closed principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle). Once you have pulled a target into your build, it can be extended or overridden using [explicit interface implementations](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/interfaces/explicit-interface-implementation):
 
-<Tabs groupId="extensions-overrides">
-  <TabItem value="extensions" label="Extending Targets" default>
+=== "Extending Targets"
 
-```csharp
-class Build : NukeBuild, IComponent
-{
-    Target IComponent.Target => _ => _
-        .Inherit<IComponent>()
-        .Executes(() => { });
-}
-```
+    ```csharp
+    class Build : NukeBuild, IComponent
+    {
+        Target IComponent.Target => _ => _
+            .Inherit<IComponent>()
+            .Executes(() => { });
+    }
+    ```
 
-  </TabItem>
-  <TabItem value="overrides" label="Overriding Targets">
+=== "Overriding Targets"
 
-```csharp
-class Build : NukeBuild, IComponent
-{
-    Target IComponent.Target => _ => _
-        .Executes(() => { });
-}
-```
+    ```csharp
+    class Build : NukeBuild, IComponent
+    {
+        Target IComponent.Target => _ => _
+            .Executes(() => { });
+    }
+    ```
 
-  </TabItem>
-</Tabs>
+!!! tip
+    With build components you can push the separation of concerns as far as you wish. For instance, consider the following example where a common `ICompile` component only defines the dependency to the `IRestore` component. Another two derived types of `ICompile` provide the actual implementation of the target using the .NET CLI and MSBuild:
 
-:::tip
-With build components you can push the separation of concerns as far as you wish. For instance, consider the following example where a common `ICompile` component only defines the dependency to the `IRestore` component. Another two derived types of `ICompile` provide the actual implementation of the target using the .NET CLI and MSBuild:
+    ```mermaid
+    classDiagram
+        direction RL
 
-```mermaid
-classDiagram
-    direction RL
+        ICompile --|> IRestore : TryDependsOn
+        ICompileWithDotNet <|.. ICompile
+        ICompileWithMSBuild <|.. ICompile
 
-    ICompile --|> IRestore : TryDependsOn
-    ICompileWithDotNet <|.. ICompile
-    ICompileWithMSBuild <|.. ICompile
+        <<interface>> IRestore
+        IRestore : + Target Restore
 
-    <<interface>> IRestore
-    IRestore : + Target Restore
+        <<interface>> ICompile
+        ICompile : + Target Compile
 
-    <<interface>> ICompile
-    ICompile : + Target Compile
+        <<interface>> ICompileWithDotNet
+        ICompileWithDotNet : + Target Compile
 
-    <<interface>> ICompileWithDotNet
-    ICompileWithDotNet : + Target Compile
+        <<interface>> ICompileWithMSBuild
+        ICompileWithMSBuild : + Target Compile
+    ```
 
-    <<interface>> ICompileWithMSBuild
-    ICompileWithMSBuild : + Target Compile
-```
+    ```csharp
+    interface IRestore : INukeBuild
+    {
+        Target Restore => _ => _
+            .Executes(() => { /* Implementation */ });
+    }
 
-```csharp
-interface IRestore : INukeBuild
-{
-    Target Restore => _ => _
-        .Executes(() => { /* Implementation */ });
-}
+    interface ICompile : INukeBuild
+    {
+        Target Compile => _ => _
+            .TryDependsOn<IRestore>();
+    }
 
-interface ICompile : INukeBuild
-{
-    Target Compile => _ => _
-        .TryDependsOn<IRestore>();
-}
+    interface ICompileWithDotNet : ICompile
+    {
+        Target ICompile.Compile => _ => _
+            .Inherit<ICompile>()
+            .Executes(() => { /* .NET CLI implementation */ });
+    }
 
-interface ICompileWithDotNet : ICompile
-{
-    Target ICompile.Compile => _ => _
-        .Inherit<ICompile>()
-        .Executes(() => { /* .NET CLI implementation */ });
-}
+    interface ICompileWithMSBuild : ICompile
+    {
+        Target ICompile.Compile => _ => _
+            .Inherit<ICompile>()
+            .Executes(() => { /* MSBuild implementation */ });
+    }
+    ```
 
-interface ICompileWithMSBuild : ICompile
-{
-    Target ICompile.Compile => _ => _
-        .Inherit<ICompile>()
-        .Executes(() => { /* MSBuild implementation */ });
-}
-```
+    Targets that follow later in the execution plan can now reference the implementation-agnostic definition:
 
-Targets that follow later in the execution plan can now reference the implementation-agnostic definition:
-
-```csharp
-class Build : NukeBuild, ICompileWithDotNet
-{
-    Target Pack => _ => _
-        .DependsOn<ICompile>()
-        .Executes(() => { /* Implementation */ });
-}
-```
-:::
+    ```csharp
+    class Build : NukeBuild, ICompileWithDotNet
+    {
+        Target Pack => _ => _
+            .DependsOn<ICompile>()
+            .Executes(() => { /* Implementation */ });
+    }
+    ```
 
 [^1]: Interface default members behave like explicit interface implementations, which means that to access their members, the `this` reference must be cast explicitly to the interface type. For instance, `((IComponent)this).Target`.
