@@ -7,9 +7,8 @@ Running on [TeamCity](https://www.jetbrains.com/teamcity/) will automatically en
 ![TeamCity Log Output](teamcity-light.webp#gh-light-mode-only)
 ![TeamCity Log Output](teamcity-dark.webp#gh-dark-mode-only)
 
-:::info
-Please refer to the official [TeamCity documentation](https://www.jetbrains.com/help/teamcity/teamcity-documentation.html) for questions not covered here.
-:::
+!!! info
+    Please refer to the official [TeamCity documentation](https://www.jetbrains.com/help/teamcity/teamcity-documentation.html) for questions not covered here.
 
 ## Environment Variables
 
@@ -26,38 +25,35 @@ Target Print => _ => _
     });
 ```
 
-<details>
-<summary>Exhaustive list of strongly-typed properties</summary>
+??? note "Exhaustive list of strongly-typed properties"
 
-```csharp
-class TeamCity
-{
-    string                              AuthPassword            { get; }
-    string                              AuthUserId              { get; }
-    string                              BranchName              { get; }
-    string                              BuildConfiguration      { get; }
-    long                                BuildId                 { get; }
-    string                              BuildNumber             { get; }
-    string                              BuildTypeId             { get; }
-    string                              BuildVcsNumber          { get; }
-    IReadOnlyDictionary<string, string> ConfigurationProperties { get; }
-    bool                                IsBuildPersonal         { get; }
-    bool                                IsPullRequest           { get; }
-    string                              ProjectId               { get; }
-    string                              ProjectName             { get; }
-    long?                               PullRequestNumber       { get; }
-    string                              PullRequestSourceBranch { get; }
-    string                              PullRequestTargetBranch { get; }
-    string                              PullRequestTitle        { get; }
-    IReadOnlyCollection<string>         RecentlyFailedTests     { get; }
-    IReadOnlyDictionary<string, string> RunnerProperties        { get; }
-    string                              ServerUrl               { get; }
-    IReadOnlyDictionary<string, string> SystemProperties        { get; }
-    string                              Version                 { get; }
-}
-```
-
-</details>
+    ```csharp
+    class TeamCity
+    {
+        string                              AuthPassword            { get; }
+        string                              AuthUserId              { get; }
+        string                              BranchName              { get; }
+        string                              BuildConfiguration      { get; }
+        long                                BuildId                 { get; }
+        string                              BuildNumber             { get; }
+        string                              BuildTypeId             { get; }
+        string                              BuildVcsNumber          { get; }
+        IReadOnlyDictionary<string, string> ConfigurationProperties { get; }
+        bool                                IsBuildPersonal         { get; }
+        bool                                IsPullRequest           { get; }
+        string                              ProjectId               { get; }
+        string                              ProjectName             { get; }
+        long?                               PullRequestNumber       { get; }
+        string                              PullRequestSourceBranch { get; }
+        string                              PullRequestTargetBranch { get; }
+        string                              PullRequestTitle        { get; }
+        IReadOnlyCollection<string>         RecentlyFailedTests     { get; }
+        IReadOnlyDictionary<string, string> RunnerProperties        { get; }
+        string                              ServerUrl               { get; }
+        IReadOnlyDictionary<string, string> SystemProperties        { get; }
+        string                              Version                 { get; }
+    }
+    ```
 
 ## Configuration Generation
 
@@ -67,53 +63,49 @@ You can generate [build configuration files](https://www.jetbrains.com/help/team
 [TeamCity(
     VcsTriggeredTargets = new[] { nameof(Compile) })]
 class Build : NukeBuild { /* ... */ }
-``` 
-
-<details>
-<summary>Generated output</summary>
-
-```kotlin title=".teamcity/settings.kts"
-project {
-    buildType(Compile)
-}
-
-object Compile : BuildType({
-    name = "Compile"
-    vcs {
-        root(DslContext.settingsRoot)
-        cleanCheckout = true
-    }
-    steps {
-        exec {
-            path = "build.cmd"
-            arguments = "Compile"
-            conditions { contains("teamcity.agent.jvm.os.name", "Windows") }
-        }
-        exec {
-            path = "build.sh"
-            arguments = "Compile"
-            conditions { doesNotContain("teamcity.agent.jvm.os.name", "Windows") }
-        }
-    }
-    params {
-        text(
-            "teamcity.ui.runButton.caption",
-            "Compile",
-            display = ParameterDisplay.HIDDEN)
-    }
-    triggers {
-        vcs {
-            triggerRules = "+:**"
-        }
-    }
-})
 ```
 
-</details>
+??? note "Generated output"
 
-:::info
-Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the pipelines file.
-:::
+    ```kotlin title=".teamcity/settings.kts"
+    project {
+        buildType(Compile)
+    }
+
+    object Compile : BuildType({
+        name = "Compile"
+        vcs {
+            root(DslContext.settingsRoot)
+            cleanCheckout = true
+        }
+        steps {
+            exec {
+                path = "build.cmd"
+                arguments = "Compile"
+                conditions { contains("teamcity.agent.jvm.os.name", "Windows") }
+            }
+            exec {
+                path = "build.sh"
+                arguments = "Compile"
+                conditions { doesNotContain("teamcity.agent.jvm.os.name", "Windows") }
+            }
+        }
+        params {
+            text(
+                "teamcity.ui.runButton.caption",
+                "Compile",
+                display = ParameterDisplay.HIDDEN)
+        }
+        triggers {
+            vcs {
+                triggerRules = "+:**"
+            }
+        }
+    })
+    ```
+
+!!! info
+    Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the pipelines file.
 
 ### Artifacts
 
@@ -125,19 +117,17 @@ Target Pack => _ => _
     .Executes(() => { /* Implementation */ });
 ```
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```kotlin title=".teamcity/settings.kts"
-object Pack : BuildType({
-    artifactRules = "output/packages/*.nupkg => output/packages"
-}
-```
-</details>
+    ```kotlin title=".teamcity/settings.kts"
+    object Pack : BuildType({
+        artifactRules = "output/packages/*.nupkg => output/packages"
+    }
+    ``` 
 
 After your build has finished, those artifacts will be listed under the artifacts tab:
 
-<p style={{maxWidth:'780px'}}>
+<p style={{maxWidth:'780px'}} markdown="span">
 
 ![TeamCity Artifacts Tab](teamcity-artifacts.webp)
 
@@ -147,7 +137,7 @@ After your build has finished, those artifacts will be listed under the artifact
 
 If you want to use [secret variables](https://www.jetbrains.com/help/teamcity/storing-project-settings-in-version-control.html#Storing+Secure+Settings) from your TeamCity project, you can use the `ImportSecrets` property and `TeamCityToken` attribute to automatically load them into a [secret parameter](../fundamentals/parameters.md#secret-parameters) defined in your build:
 
-```csharp title="Build.cs"
+```csharp title="Build.cs"  
 [TeamCity(
     // ...
     ImportSecrets = new[] { nameof(NuGetApiKey) })]
@@ -158,26 +148,22 @@ class Build : NukeBuild
 }
 ```
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```yaml title=".teamcity/settings.kts"
-project {
-    params {
-        password (
-            "env.NuGetApiKey",
-            label = "NuGetApiKey",
-            value = "credentialsJSON:<guid>",
-            display = ParameterDisplay.HIDDEN)
+    ```yaml title=".teamcity/settings.kts"
+    project {
+        params {
+            password (
+                "env.NuGetApiKey",
+                label = "NuGetApiKey",
+                value = "credentialsJSON:<guid>",
+                display = ParameterDisplay.HIDDEN)
+        }
     }
-}
-```
+    ```
 
-</details>
-
-:::note
-If you're facing any issues, make sure that the name in the TeamCity settings is the same as generated into the pipelines file.
-:::
+!!! note
+    If you're facing any issues, make sure that the name in the TeamCity settings is the same as generated into the pipelines file.
 
 ## Using Credentials
 
