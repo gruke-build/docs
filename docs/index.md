@@ -22,7 +22,7 @@ NUKE brings your build automation to an even level with every other .NET project
 
 ## Build Status
 
-NUKE builds and tests itself on several CI/CD services, which helps to ensure a working integration with those systems. At the same time, the individual configuration files serve as examples for the [generation experience](https://www.nuke.build/docs/authoring-builds/ci-integration.html#configuration-generation):
+NUKE builds and tests itself on several CI/CD services, which helps to ensure a working integration with those systems. At the same time, the individual configuration files serve as examples for the:
 
 | Build Server   | Status                                                                                                                                                                                                                        |       Platform       | Configuration                                                                                    | 
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------:|--------------------------------------------------------------------------------------------------|
