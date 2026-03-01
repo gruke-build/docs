@@ -4,48 +4,41 @@ title: Build Anatomy
 
 A build project is a regular .NET console application. However, unlike regular console applications, NUKE chooses to name the main class `Build` instead of `Program`. This establishes a convention and allows easier navigation in your solution. The `Build` class must inherit from the `NukeBuild` base class and define a `Main` method to invoke the build execution and define any number of default targets:
 
-<Tabs>
-  <TabItem value="single" label="Single Default&nbsp;Target">
+=== "Single Default Target"
 
-```csharp title="Build.cs"
-class Build : NukeBuild
-{
-    public static int Main() => Execute<Build>(x => x.Compile);
+    ```csharp title="Build.cs"
+    class Build : NukeBuild
+    {
+        public static int Main() => Execute<Build>(x => x.Compile);
 
-    // Target definitions
-}
-```
+        // Target definitions
+    }
+    ```
 
-  </TabItem>
-  <TabItem value="multiple" label="Multiple Default&nbsp;Targets">
+=== "Multiple Default Targets"
 
-```csharp title="Build.cs"
-class Build : NukeBuild
-{
-    public static int Main() => Execute<Build>(x => x.Test, x => x.Pack);
+    ```csharp title="Build.cs"
+    class Build : NukeBuild
+    {
+        public static int Main() => Execute<Build>(x => x.Test, x => x.Pack);
 
-    // Target definitions
-}
-```
+        // Target definitions
+    }
+    ```
 
-  </TabItem>
-  <TabItem value="none" label="No Default&nbsp;Target">
+=== "No Default Target"
 
-```csharp title="Build.cs"
-class Build : NukeBuild
-{
-    public static int Main() => Execute<Build>();
+    ```csharp title="Build.cs"
+    class Build : NukeBuild
+    {
+        public static int Main() => Execute<Build>();
 
-    // Target definitions
-}
-```
+        // Target definitions
+    }
+    ```
 
-  </TabItem>
-</Tabs>
-
-:::info
-You will learn how to [write target definitions](targets.md) in the next chapter.
-:::
+!!! info
+    You will learn how to [write target definitions](targets.md) in the next chapter.
 
 ## Base Properties
 
@@ -72,17 +65,15 @@ abstract class NukeBuild
 }
 ```
 
-:::tip
-With the `Host` property you can determine the running environment, for instance with `Host is TeamCity`. Make sure to explore other implementations of the `Host` base class through your IDE.
+!!! tip
+    With the `Host` property you can determine the running environment, for instance with `Host is TeamCity`. Make sure to explore other implementations of the `Host` base class through your IDE.
 
----
+    ---
 
-Since `Host`, `IsLocalBuild`, and `IsServerBuild` are static properties, you can conveniently use them in [static conditions](targets.md#conditional-execution) to skip targets (including their dependencies) in local or server builds.
-:::
+    Since `Host`, `IsLocalBuild`, and `IsServerBuild` are static properties, you can conveniently use them in [static conditions](targets.md#conditional-execution) to skip targets (including their dependencies) in local or server builds.
 
-:::info
-Learn more about the `AbsolutePath` class and how it's used for [path construction](../common/paths.md).
-:::
+!!! info
+    Learn more about the `AbsolutePath` class and how it's used for [path construction](../common/paths.md).
 
 ### Build Status
 
@@ -110,9 +101,8 @@ abstract class NukeBuild
 }
 ```
 
-:::tip
-You can examine the status of targets by using any of the appropriate `ICollection<ExecutableTarget>`. For instance, to check if a target has failed, you can write `FailedTargets.Contains(MyTarget)`. This pattern is especially useful with [dynamic conditions](targets.md#conditional-execution).
-:::
+!!! tip
+    You can examine the status of targets by using any of the appropriate `ICollection<ExecutableTarget>`. For instance, to check if a target has failed, you can write `FailedTargets.Contains(MyTarget)`. This pattern is especially useful with [dynamic conditions](targets.md#conditional-execution).
 
 ## Build Events
 
