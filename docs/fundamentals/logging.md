@@ -14,102 +14,79 @@ Log.Warning("This is a warning message");
 Log.Error("This is an error message");
 ```
 
-:::tip
-For error messages, you most certainly want to use [assertions](assertions.md) instead to also fail the build.
-:::
+!!! tip
+    For error messages, you most certainly want to use [assertions](assertions.md) instead to also fail the build.
 
 ## Console Sink
 
 Based on your IDE and CI/CD service, the console sink is automatically configured with the [best-looking themes](https://github.com/serilog/serilog-sinks-console#themes). When your terminal supports [ANSI colors](https://en.wikipedia.org/wiki/ANSI_escape_code) (`TERM=xterm`), an ANSI theme is chosen. Otherwise, a simple [system-color](https://docs.microsoft.com/en-us/dotnet/api/system.consolecolor) theme is used.
 
-:::info
-Adaptive themes are particularly great for consistent colors in your CI/CD environment.
-:::
+!!! info
+    Adaptive themes are particularly great for consistent colors in your CI/CD environment.
 
 Log messages are only written to console when the appropriate `LogLevel` is set. You can change it by passing the `--verbosity` parameter:
 
-<Tabs groupId="logging">
-  <TabItem value="trace" label="Verbose" default>
+=== "Verbose"
 
-```powershell
-# terminal-command
-nuke --verbosity verbose
-```
+    ```powershell
+    gruke --verbosity verbose
+    ```
 
-  </TabItem>
-  <TabItem value="normal" label="Normal" default>
+=== "Normal"
 
-```powershell
-# terminal-command
-nuke --verbosity normal
-```
+    ```powershell
+    gruke --verbosity normal
+    ```
 
-  </TabItem>
-  <TabItem value="warning" label="Minimal" default>
+=== "Minimal"
 
-```powershell
-# terminal-command
-nuke --verbosity minimal
-```
+    ```powershell
+    gruke --verbosity minimal
+    ```
 
-  </TabItem>
-  <TabItem value="error" label="Quiet" default>
+=== "Quiet"
 
-```powershell
-# terminal-command
-nuke --verbosity quiet
-```
-
-  </TabItem>
-</Tabs>
+    ```powershell
+    gruke --verbosity quiet
+    ```
 
 Or by setting it directly in the build implementation:
 
-<Tabs groupId="logging">
-  <TabItem value="trace" label="Trace" default>
+=== "Trace"
 
-<!-- snippet: logging -->
-```csharp
-Logging.Level = LogLevel.Trace;
-```
-<!-- endSnippet -->
+    ```csharp
+    Logging.Level = LogLevel.Trace;
+    ```
 
-  </TabItem>
-  <TabItem value="normal" label="Normal">
+=== "Normal"
 
-```csharp
-Logging.Level = LogLevel.Normal;
-```
+    ```csharp
+    Logging.Level = LogLevel.Normal;
+    ```
 
-  </TabItem>
-  <TabItem value="warning" label="Warning">
+=== "Warning"
 
-```csharp
-Logging.Level = LogLevel.Warning;
-```
+    ```csharp
+    Logging.Level = LogLevel.Warning;
+    ```
 
-  </TabItem>
-  <TabItem value="error" label="Error">
+=== "Error"
 
-```csharp
-Logging.Level = LogLevel.Error;
-```
-
-  </TabItem>
-</Tabs>
+    ```csharp
+    Logging.Level = LogLevel.Error;
+    ```
 
 In the following image you can see that the verbose message is hidden because the current log level was set to `Normal`:
 
-<p style={{maxWidth:'380px'}}>
+<p style={{maxWidth:'380px'}} markdown="span">
 
 ![Logging Output in Console](logging-console-light.webp#gh-light-mode-only)
 ![Logging Output in Console](logging-console-dark.webp#gh-dark-mode-only)
 
 </p>
 
-:::tip
-Error and warning log messages are repeated right before the [build summary](../getting-started/execution.md#build-summary) to give you a quick-look at what went wrong.
-:::
+!!! tip
+    Error and warning log messages are repeated right before the [build summary](../getting-started/execution.md#build-summary) to give you a quick-look at what went wrong.
 
 ## File Sinks
 
@@ -129,16 +106,15 @@ With the sample logging from above, the file would like roughly like this:
 03:57:38.208 | E | Compile | This is an error message
 ```
 
-:::tip
-With the [Ideolog plugin](https://plugins.jetbrains.com/plugin/9746-ideolog) for [JetBrains Rider](https://jetbrains.com/rider/) you can view and inspect log files more comfortably. It automatically highlights messages according to their log level, allows collapsing irrelevant messages based on search terms, and will enable navigation for exception stack traces.
+!!! tip
+    With the [Ideolog plugin](https://plugins.jetbrains.com/plugin/9746-ideolog) for [JetBrains Rider](https://jetbrains.com/rider/) you can view and inspect log files more comfortably. It automatically highlights messages according to their log level, allows collapsing irrelevant messages based on search terms, and will enable navigation for exception stack traces.
 
-<p style={{maxWidth:'680px',marginBottom:'-24px'}}>
+    <p style={{maxWidth:'680px',marginBottom:'-24px'}} markdown="span">
 
-![Ideolog plugin in JetBrains Rider](logging-ideolog-light.webp#gh-light-mode-only)
-![Ideolog plugin in JetBrains Rider](logging-ideolog-dark.webp#gh-dark-mode-only)
+    ![Ideolog plugin in JetBrains Rider](logging-ideolog-light.webp#gh-light-mode-only)
+    ![Ideolog plugin in JetBrains Rider](logging-ideolog-dark.webp#gh-dark-mode-only)
 
-</p>
-:::
+    </p>
 
 ### Comparing Log Files
 
@@ -148,21 +124,18 @@ For the purpose of log comparison, local builds will create another log file wit
 {Level:u1} | {Target} | {Message:l}{NewLine}{Exception}
 ```
 
-:::info
-Only the last 5 build logs are kept.
-:::
+!!! info
+    Only the last 5 build logs are kept.
 
 With the same sample logging from above, the file now looks like this:
 
-<CodeBlock title={".nuke/temp/build." + new Date().toISOString().substring(0,19).replace("T", "_").replace(":", "-").replace(":", "-") + ".log"}>
-{`
+``` title=".nuke/temp/build.&lt;TIMESTAMP&gt;.log"
 V | Compile | This is a verbose message
 D | Compile | This is a debug message
 I | Compile | This is an information message
 W | Compile | This is a warning message
 E | Compile | This is an error message
-`.trim()}
-</CodeBlock>
+```
 
 With the comparison tool of your choice, you can then select two files and compare them. For instance, when you remove the debug message and add another warning message, the comparison tool will show the following:
 
