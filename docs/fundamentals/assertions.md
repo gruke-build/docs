@@ -12,55 +12,48 @@ Assert.Fail("This was unexpected!");
 
 Furthermore, you can use one of the following more specific assertion methods:
 
-<Tabs groupId="logging">
-  <TabItem value="nullness" label="Nullness" default>
 
-```csharp
-// Assert not-null fluently
-obj.NotNull().ToString();
+=== "Nullability"
 
-// Assert not-null explicitly
-Assert.NotNull(obj);
-```
+    ```csharp
+    // Assert not-null fluently
+    obj.NotNull().ToString();
 
-  </TabItem>
-  <TabItem value="conditions" label="Conditions">
+    // Assert not-null explicitly
+    Assert.NotNull(obj);
+    ```
 
-```csharp
-// Assert true condition
-Assert.True(response.IsSuccessStatusCode);
+=== "Conditions"
 
-// Assert false condition
-Assert.False(repository.IsOnMainBranch());
-```
+    ```csharp
+    // Assert true condition
+    Assert.True(response.IsSuccessStatusCode);
 
-  </TabItem>
-  <TabItem value="collections" label="Collections">
+    // Assert false condition
+    Assert.False(repository.IsOnMainBranch());
+    ```
 
-```csharp
-// Assert collection is not empty or empty
-Assert.NotEmpty(releaseNotes);
-Assert.Empty(errors);
+=== "Collections"
 
-// Assert collection count
-Assert.Count(packages, length: 5);
-Assert.HasSingleItem(matchingEntries);
-```
+    ```csharp
+    // Assert collection is not empty or empty
+    Assert.NotEmpty(releaseNotes);
+    Assert.Empty(errors);
 
-  </TabItem>
-  <TabItem value="files-directories" label="Files &amp; Directories">
+    // Assert collection count
+    Assert.Count(packages, length: 5);
+    Assert.HasSingleItem(matchingEntries);
+    ```
 
-```csharp
-// Assert file exists
-Assert.FileExists(file);
+=== "Files & Directories"
 
-// Assert directory exists
-Assert.DirectoryExists(directory);
-```
+    ```csharp
+    // Assert file exists
+    Assert.FileExists(file);
 
-  </TabItem>
-</Tabs>
+    // Assert directory exists
+    Assert.DirectoryExists(directory);
+    ```
 
-:::info
-Each of the above methods uses the [`CallerArgumentExpressionAttribute`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-10.0/caller-argument-expression) to capture usage details from the call-site. If you want to provide a more comprehensive explanation, you can pass the `message` parameter instead.
-:::
+!!! info
+    Each of the above methods uses the [`CallerArgumentExpressionAttribute`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-10.0/caller-argument-expression) to capture usage details from the call-site. If you want to provide a more comprehensive explanation, you can pass the `message` parameter instead.
