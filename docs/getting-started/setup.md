@@ -12,7 +12,16 @@ nuke :setup
 !!! tip
     Preferably, you should run the setup from inside an existing repository. NUKE will search for the next upwards `.git` or `.svn` directory to determine the _build root directory_. If neither is found, it will use the current directory. You can also pass the `--root` parameter to specify that the current directory should be used as a root directory.
 
-During the setup, you'll be asked several questions to configure your build to your preferences.
+During the setup, you'll be asked several questions to configure your build to your preferences:
+
+```asciinema-player
+{
+    "file": "../../tcasts/setup.cast",
+    "terminal_font_family": "'JetBrains Mono', Consolas, Menlo, 'Bitstream Vera Sans Mono', monospace",
+    "preload": true,
+    "loop": true
+}
+```
 
 **Congratulations!** 🥳 Your first build has now been set up, and you can [run the build](execution.md) with the default implementation!
 

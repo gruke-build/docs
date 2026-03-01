@@ -52,3 +52,17 @@ Add the following snippets to the configuration file of your shell:
     ```bash title="config.fish"
     complete -fc nuke --arguments '(nuke :complete (commandline -cp))'
     ```
+
+## Usage
+
+You can complete targets, parameters, and enumeration values by hitting the <kbd>TAB</kbd> key:
+
+```asciinema-player
+{
+    "file": "../../tcasts/shell-completion.cast",
+    "terminal_font_family": "'JetBrains Mono', Consolas, Menlo, 'Bitstream Vera Sans Mono', monospace",
+    "auto_play": true,
+    "preload": true,
+    "loop": true
+}
+```
