@@ -11,18 +11,17 @@ You can declare a parameter by adding the `Parameter` attribute to a field or pr
 readonly string MyParameter;
 ```
 
-:::tip
-You can set default values for parameters as you would normally do through field and property initializers. You can also use static [build base properties](builds.md#base-properties) like `IsLocalBuild` or `IsServerBuild` for environmental adjustments:
+!!! tip
+    You can set default values for parameters as you would normally do through field and property initializers. You can also use static [build base properties](builds.md#base-properties) like `IsLocalBuild` or `IsServerBuild` for environmental adjustments:
 
-```csharp
-[Parameters]
-readonly Configuration Configuration = IsServerBuild
-    ? Configuration.Release
-    : Configuration.Debug;
-```
+    ```csharp
+    [Parameters]
+    readonly Configuration Configuration = IsServerBuild
+        ? Configuration.Release
+        : Configuration.Debug;
+    ```
 
-Following best practices, you should mark all your parameters as `readonly`.
-:::
+    Following best practices, you should mark all your parameters as `readonly`.
 
 ## Passing Parameter Values
 
@@ -33,13 +32,11 @@ Parameters are resolved through different mechanisms, each supporting a differen
 In the most straightforward way, you can pass parameter values from the command-line through their [kebab-case](https://www.theserverside.com/definition/Kebab-case) names prefixed with a double-dash:
 
 ```powershell
-# terminal-command
-nuke --my-parameter <value>
+gruke --my-parameter <value>
 ```
 
-:::tip
-With the global tool installed and [shell completion](../global-tool/shell-completion.md) configured, you can pass parameters much faster and avoid any typos.
-:::
+!!! tip
+    With the global tool installed and [shell completion](../global-tool/shell-completion.md) configured, you can pass parameters much faster and avoid any typos.
 
 ### Passing Values through Parameter Files
 
@@ -55,26 +52,23 @@ Instead of providing default values in your `Build` class or repeatedly specifyi
 Besides the default `parameters.json` file, you can create additional profiles following the `parameters.<name>.json` naming pattern. These profiles can be loaded on-demand
 
 ```powershell
-# terminal-command
-nuke --profile <name> [other-profiles...]
+gruke --profile <name> [other-profiles...]
 ```
 
-:::info
-Profiles are applied in the order they are passed, whereas the default parameters file comes first.
-:::
+!!! info
+    Profiles are applied in the order they are passed, whereas the default parameters file comes first.
 
-:::tip
-Based on the `build.schema.json` file, you can easily configure your parameters inside your IDE using schema-completion:
+!!! tip
+    Based on the `build.schema.json` file, you can easily configure your parameters inside your IDE using schema-completion:
 
-<p style={{maxWidth:'550px'}}>
+    <p style={{maxWidth:'550px'}} markdown="span">
 
-![Completion in Parameter Files](parameter-file-completion-light.webp#gh-light-mode-only)
-![Completion in Parameter Files](parameter-file-completion-dark.webp#gh-dark-mode-only)
+    ![Completion in Parameter Files](parameter-file-completion-light.webp#gh-light-mode-only)
+    ![Completion in Parameter Files](parameter-file-completion-dark.webp#gh-dark-mode-only)
 
-</p>
+    </p>
 
-Remember, that the `build.schema.json` file must be regenerated whenever you add or change a parameter. For instance by calling `nuke --help`.
-:::
+    Remember, that the `build.schema.json` file must be regenerated whenever you add or change a parameter. For instance by calling `gruke --help`.
 
 ### Passing Values through Environment Variables
 
@@ -99,9 +93,8 @@ Target Deploy => _ => _
 ```
 <!-- endSnippet -->
 
-:::tip
-Using the shorthand syntax allows you to provide the value interactively when the build is executed locally.
-:::
+!!! tip
+    Using the shorthand syntax allows you to provide the value interactively when the build is executed locally.
 
 ## Secret Parameters
 
@@ -156,14 +149,13 @@ Target Print => _ => _
 ```
 <!-- endSnippet -->
 
-:::note
-By default, the whitespace character is used to pass multiple values for an array parameter. You can quote your values to treat them as single elements for the parameters. Additionally, you can provide a custom separator through the attribute (whitespace will still work as a separator):
+!!! note
+    By default, the whitespace character is used to pass multiple values for an array parameter. You can quote your values to treat them as single elements for the parameters. Additionally, you can provide a custom separator through the attribute (whitespace will still work as a separator):
 
-```csharp
-[Parameter(Separator = '+')]
-readonly int[] Numbers;
-```
-:::
+    ```csharp
+    [Parameter(Separator = '+')]
+    readonly int[] Numbers;
+    ```
 
 ### Custom Types
 
@@ -171,74 +163,66 @@ All the supported types from above use the [type converter](https://docs.microso
 
 Depending on your use-case, you can choose one of the following approaches to define your custom type that can convert from string values:
 
-<Tabs>
-  <TabItem value="enum-types" label="Enumeration Types">
+=== "Enumeration Types"
 
-[Enumeration types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum) define a set of named constants with underlying numeric value:
+    [Enumeration types](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/enum) define a set of named constants with underlying numeric value:
 
-```csharp
-enum CustomType
-{
-    One,
-    Two,
-    Three
-}
-```
-
-:::info
-Members of enumeration types automatically show up during [shell completion](../global-tool/shell-completion.md).
-:::
-
-  </TabItem>
-  <TabItem value="enum-classes" label="Enumeration Classes">
-
-[Enumeration classes](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types) are open for external extension. The `Enumeration` base class defines equality operators and implicit string conversion:
-
-```csharp
-[TypeConverter(typeof(TypeConverter<Configuration>))]
-public class Configuration : Enumeration
-{
-    public static Configuration Debug = new () { Value = nameof(Debug) };
-    public static Configuration Release = new () { Value = nameof(Release) };
-}
-```
-
-:::info
-Members of enumeration classes automatically show up during [shell completion](../global-tool/shell-completion.md).
-:::
-
-  </TabItem>
-  <TabItem value="custom-types" label="Custom Types">
-
-```csharp
-[TypeConverter(typeof(TypeConverter))]
-public class CustomType
-{
-    public class TypeConverter : System.ComponentModel.TypeConverter
+    ```csharp
+    enum CustomType
     {
-        public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
+        One,
+        Two,
+        Three
+    }
+    ```
+
+    !!! info
+        Members of enumeration types automatically show up during [shell completion](../global-tool/shell-completion.md).
+
+=== "Enumeration Classes"
+
+    [Enumeration classes](https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/enumeration-classes-over-enum-types) are open for external extension. The `Enumeration` base class defines equality operators and implicit string conversion:
+
+    ```csharp
+    [TypeConverter(typeof(TypeConverter<Configuration>))]
+    public class Configuration : Enumeration
+    {
+        public static Configuration Debug = new () { Value = nameof(Debug) };
+        public static Configuration Release = new () { Value = nameof(Release) };
+    }
+    ```
+
+    !!! info
+        Members of enumeration classes automatically show up during [shell completion](../global-tool/shell-completion.md).
+
+=== "Custom Types"
+
+    ```csharp
+    [TypeConverter(typeof(TypeConverter))]
+    public class CustomType
+    {
+        public class TypeConverter : System.ComponentModel.TypeConverter
         {
-            return sourceType == typeof(string) || base.CanConvertFrom(context, sourceType);
+            public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
+            {
+                return sourceType == typeof(string) || base.CanConvertFrom(context, sourceType);
+            }
+    
+            public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
+            {
+                if (value is string data)
+                    return new CustomType(data); 
+    
+                if (value is null)
+                    return null;
+    
+                return base.ConvertFrom(context, culture, value);
+            }
         }
-
-        public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
+    
+        public CustomType(string data)
         {
-            if (value is string data)
-                return new CustomType(data); 
-
-            if (value is null)
-                return null;
-
-            return base.ConvertFrom(context, culture, value);
+            // ...
         }
     }
-
-    public CustomType(string data)
-    {
-        // ...
-    }
-}
-```
-
-  </TabItem>
-</Tabs>
+    ```
