@@ -6,9 +6,8 @@ Running on [GitHub Actions](https://github.com/features/actions) will automatica
 
 ![GitHub Actions Log Output](github-actions.webp)
 
-:::info
-Please refer to the official [GitHub Actions documentation](https://docs.github.com/en/actions) for questions not covered here.
-:::
+!!! info
+    Please refer to the official [GitHub Actions documentation](https://docs.github.com/en/actions) for questions not covered here.
 
 ## Environment Variables
 
@@ -25,40 +24,37 @@ Target Print => _ => _
     });
 ```
 
-<details>
-<summary>Exhaustive list of strongly-typed properties</summary>
+??? note "Exhaustive list of strongly-typed properties"
 
-```csharp
-class GitHubActions
-{
-    string  Action            { get; }
-    string  Actor             { get; }
-    string  BaseRef           { get; }
-    string  EventName         { get; }
-    string  EventPath         { get; }
-    JObject GitHubContext     { get; }
-    JObject GitHubEvent       { get; }
-    string  HeadRef           { get; }
-    string  Home              { get; }
-    bool    IsPullRequest     { get; }
-    string  Job               { get; }
-    long    JobId             { get; }
-    string  PullRequestAction { get; }
-    int?    PullRequestNumber { get; }
-    string  Ref               { get; }
-    string  Repository        { get; }
-    string  RepositoryOwner   { get; }
-    long    RunId             { get; }
-    long    RunNumber         { get; }
-    string  ServerUrl         { get; }
-    string  Sha               { get; }
-    string  Token             { get; }
-    string  Workflow          { get; }
-    string  Workspace         { get; }
-}
-```
-
-</details>
+    ```csharp
+    class GitHubActions
+    {
+        string  Action            { get; }
+        string  Actor             { get; }
+        string  BaseRef           { get; }
+        string  EventName         { get; }
+        string  EventPath         { get; }
+        JObject GitHubContext     { get; }
+        JObject GitHubEvent       { get; }
+        string  HeadRef           { get; }
+        string  Home              { get; }
+        bool    IsPullRequest     { get; }
+        string  Job               { get; }
+        long    JobId             { get; }
+        string  PullRequestAction { get; }
+        int?    PullRequestNumber { get; }
+        string  Ref               { get; }
+        string  Repository        { get; }
+        string  RepositoryOwner   { get; }
+        long    RunId             { get; }
+        long    RunNumber         { get; }
+        string  ServerUrl         { get; }
+        string  Sha               { get; }
+        string  Token             { get; }
+        string  Workflow          { get; }
+        string  Workspace         { get; }
+    }
+    ```
 
 ## Configuration Generation
 
@@ -73,29 +69,25 @@ You can generate [workflow files](https://docs.github.com/en/actions/reference/w
 class Build : NukeBuild { /* ... */ }
 ``` 
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```yaml title=".github/workflows/continuous.yml"
-name: continuous
+    ```yaml title=".github/workflows/continuous.yml"
+    name: continuous
 
-on: [push]
+    on: [push]
 
-jobs:
-  ubuntu-latest:
-    name: ubuntu-latest
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run './build.cmd Compile'
-        run: ./build.cmd Compile
-```
+    jobs:
+      ubuntu-latest:
+        name: ubuntu-latest
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - name: Run './build.cmd Compile'
+            run: ./build.cmd Compile
+    ```
 
-</details>
-
-:::info
-Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the workflow file.
-:::
+!!! info
+    Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the workflow file.
 
 ### Artifacts
 
@@ -107,16 +99,14 @@ Target Pack => _ => _
     .Executes(() => { /* Implementation */ });
 ```
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```yaml title=".github/workflows/continuous.yml"
-- uses: actions/upload-artifact@v1
-  with:
-    name: packages
-    path: output/packages
-```
-</details>
+    ```yaml title=".github/workflows/continuous.yml"
+    - uses: actions/upload-artifact@v1
+      with:
+        name: packages
+        path: output/packages
+    ```
 
 After your build has finished, those artifacts will be listed under the _Summary_ tab:
 
@@ -142,21 +132,17 @@ class Build : NukeBuild
 }
 ```
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```yaml title=".github/workflows/continuous.yml"
-- name: Run './build.cmd Publish'
-  run: ./build.cmd Publish
-  env:
-    NuGetApiKey: ${{ secrets.NUGET_API_KEY }}
-```
+    ```yaml title=".github/workflows/continuous.yml"
+    - name: Run './build.cmd Publish'
+      run: ./build.cmd Publish
+      env:
+        NuGetApiKey: ${{ secrets.NUGET_API_KEY }}
+    ```
 
-</details>
-
-:::note
-If you're facing any issues, make sure that the name in the GitHub settings is the same as generated into the workflow file. 
-:::
+!!! note
+    If you're facing any issues, make sure that the name in the GitHub settings is the same as generated into the workflow file.
 
 ### Using the GitHub Token
 
@@ -178,36 +164,30 @@ class Build : NukeBuild
 }
 ```
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```yaml title=".github/workflows/continuous.yml"
-- name: Run './build.cmd Release'
-  run: ./build.cmd Publish
-  env:
-    GITHUB_CONTEXT: ${{ toJSON(github) }}
-```
-
-</details>
+    ```yaml title=".github/workflows/continuous.yml"
+    - name: Run './build.cmd Release'
+      run: ./build.cmd Publish
+      env:
+        GITHUB_CONTEXT: ${{ toJSON(github) }}
+    ```
 
 ### Caching
 
 By default, the generated workflow file will include a [caching step](https://github.com/actions/cache) to reduce the time for installing the .NET SDK (if not preinstalled) and restoring NuGet packages.
 
-<details>
-<summary>Generated output</summary>
+??? note "Generated output"
 
-```yaml title=".github/workflows/continuous.yml"
-- name: Cache .nuke/temp, ~/.nuget/packages
-  uses: actions/cache@v2
-  with:
-    path: |
-      .nuke/temp
-      ~/.nuget/packages
-    key: ${{ runner.os }}-${{ hashFiles('global.json', 'source/**/*.csproj') }}
-```
-
-</details>
+    ```yaml title=".github/workflows/continuous.yml"
+    - name: Cache .nuke/temp, ~/.nuget/packages
+      uses: actions/cache@v2
+      with:
+        path: |
+          .nuke/temp
+          ~/.nuget/packages
+        key: ${{ runner.os }}-${{ hashFiles('global.json', 'source/**/*.csproj') }}
+    ```
 
 You can customize the caching step by overwriting the following properties:
 
