@@ -6,7 +6,7 @@ After [installing the NUKE global tool](installation.md), you can call it from a
 
 ```powershell
 # terminal-command
-nuke :setup
+gruke :setup
 ```
 
 !!! tip

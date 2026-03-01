@@ -7,7 +7,7 @@ Typing long target names or parameters can be tedious and error-prone. The globa
 !!! info
     The shell completion feature relies on the presence of an up-to-date `.nuke/build.schema.json` file. This file is updated with every execution of your build project.
 
-    Whenever you add or change one of your targets or parameters, it is recommended to trigger your build once, for instance by calling `nuke --help`.
+    Whenever you add or change one of your targets or parameters, it is recommended to trigger your build once, for instance by calling `gruke --help`.
 
 ## Configuration
 
@@ -16,9 +16,9 @@ Add the following snippets to the configuration file of your shell:
 === "PowerShell"
 
     ```powershell title="Microsoft.PowerShell_profile.ps1"
-    Register-ArgumentCompleter -Native -CommandName nuke -ScriptBlock {
+    Register-ArgumentCompleter -Native -CommandName gruke -ScriptBlock {
         param($commandName, $wordToComplete, $cursorPosition)
-        nuke :complete "$wordToComplete" | ForEach-Object {
+        gruke :complete "$wordToComplete" | ForEach-Object {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
         }
     }
@@ -29,10 +29,10 @@ Add the following snippets to the configuration file of your shell:
     ```bash title=".zshrc"  
     _nuke_zsh_complete()
     {
-        local completions=("$(nuke :complete "$words")")
+        local completions=("$(gruke :complete "$words")")
         reply=( "${(ps:\n:)completions}" )
     }
-    compctl -K _nuke_zsh_complete nuke
+    compctl -K _nuke_zsh_complete gruke
     ```
 
 === "bash"
@@ -41,16 +41,16 @@ Add the following snippets to the configuration file of your shell:
     _nuke_bash_complete()
     {
         local word=${COMP_WORDS[COMP_CWORD]}
-        local completions="$(nuke :complete "${COMP_LINE}")"
+        local completions="$(gruke :complete "${COMP_LINE}")"
         COMPREPLY=( $(compgen -W "$completions" -- "$word") )
     }
-    complete -f -F _nuke_bash_complete nuke 
+    complete -f -F _nuke_bash_complete gruke
     ```
 
 === "fish"
 
     ```bash title="config.fish"
-    complete -fc nuke --arguments '(nuke :complete (commandline -cp))'
+    complete -fc gruke --arguments '(gruke :complete (commandline -cp))'
     ```
 
 ## Usage

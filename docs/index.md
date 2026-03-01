@@ -26,7 +26,7 @@ dotnet tool install GreemDev.Nuke.GlobalTool --global
 
 ```powershell
 # terminal-command
-nuke :setup
+gruke :setup
 ```
 
 **3. Run the build:**
@@ -55,7 +55,7 @@ dotnet tool install GreemDev.Nuke.GlobalTool --global
 
 ```powershell
 # terminal-command
-nuke :cake-convert
+gruke :cake-convert
 ```
 
 **4. Inspect the outcome (errors are expected).**

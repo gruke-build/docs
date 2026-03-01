@@ -9,10 +9,10 @@ Over time, you might accumulate more and more projects that are built using NUKE
 Add the following functions to your shell configuration (similar as for [shell completion](shell-completion.md)):
 
 ```
-function nuke/ { nuke :PushWithChosenRootDirectory; cd $(nuke :GetNextDirectory) }
-function nuke. { nuke :PushWithCurrentRootDirectory; cd $(nuke :GetNextDirectory) }
-function nuke.. { nuke :PushWithParentRootDirectory; cd $(nuke :GetNextDirectory) }
-function nuke- { nuke :PopDirectory; cd $(nuke :GetNextDirectory) }
+function nuke/ { gruke :PushWithChosenRootDirectory; cd $(gruke :GetNextDirectory) }
+function nuke. { gruke :PushWithCurrentRootDirectory; cd $(gruke :GetNextDirectory) }
+function nuke.. { gruke :PushWithParentRootDirectory; cd $(gruke :GetNextDirectory) }
+function nuke- { gruke :PopDirectory; cd $(gruke :GetNextDirectory) }
 ```
 
 ## Usage

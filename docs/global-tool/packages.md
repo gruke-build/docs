@@ -7,7 +7,7 @@ In many cases, build automation relies on third-party tools. NUKE provides you w
 You can add a NuGet package to a build project by calling:
 
 ```powershell
-nuke :add-package <package-id> [--version <package-version>]
+gruke :add-package <package-id> [--version <package-version>]
 ```
 
 !!! info
@@ -53,5 +53,5 @@ If you're browsing NuGet packages on [NuGet.org](https://nuget.org), you can als
     ```text
     Missing package reference/download.
     Run one of the following commands to install the package:
-      - nuke :add-package coverlet.console --version 3.1.0
+      - gruke :add-package coverlet.console --version 3.1.0
     ```

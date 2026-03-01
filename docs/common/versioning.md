@@ -15,7 +15,7 @@ NUKE supports 4 different tools that help generating version numbers from your r
 
     ```powershell title="Tool Installation"
     # terminal-command
-    nuke :add-package GitVersion.Tool
+    gruke :add-package GitVersion.Tool
     ```
 
     ```csharp title="Build.cs"
@@ -36,7 +36,7 @@ NUKE supports 4 different tools that help generating version numbers from your r
 
     ```powershell title="Tool Installation"
     # terminal-command
-    nuke :add-package Nerdbank.GitVersioning
+    gruke :add-package Nerdbank.GitVersioning
     ```
 
     ```csharp title="Build.cs"
@@ -57,7 +57,7 @@ NUKE supports 4 different tools that help generating version numbers from your r
 
     ```powershell title="Tool Installation"
     # terminal-command
-    nuke :add-package Octopus.OctoVersion.Tool
+    gruke :add-package Octopus.OctoVersion.Tool
     ```
 
     ```csharp title="Build.cs"
@@ -78,7 +78,7 @@ NUKE supports 4 different tools that help generating version numbers from your r
 
     ```powershell title="Tool Installation"
     # terminal-command
-    nuke :add-package minver-cli
+    gruke :add-package minver-cli
     ```
 
     ```csharp title="Build.cs"
@@ -93,7 +93,7 @@ NUKE supports 4 different tools that help generating version numbers from your r
     ```
 
 !!! info
-    Note that when the versioning tool fails to calculate version numbers, a warning will be logged and the attributed field remains uninitialized. In that case, you can try executing the issued command manually or `nuke --verbosity verbose` to reveal more detailed information. In most cases, the repository is either not initialized, has no commits, or is missing the tool-specific configuration file.
+    Note that when the versioning tool fails to calculate version numbers, a warning will be logged and the attributed field remains uninitialized. In that case, you can try executing the issued command manually or `gruke --verbosity verbose` to reveal more detailed information. In most cases, the repository is either not initialized, has no commits, or is missing the tool-specific configuration file.
 
 ## Dependency-based Versioning
 
