@@ -7,7 +7,7 @@ This imposes both, security issues because other processes can access these envi
 NUKE has an integrated encryption utility, which can be used to save and load secret values to and from [parameter files](../fundamentals/parameters.md#passing-values-through-parameter-files).
 
 !!! danger
-    Our [custom encryption utility](https://github.com/GreemDev/NUKE/blob/develop/source/Nuke.Utilities/Security/EncryptionUtility.cs) is provided "AS IS" without warranty of any kind.
+    Our [custom encryption utility](https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/Security/EncryptionUtility.cs) is provided "AS IS" without warranty of any kind.
 
     The implementation uses your password, a static salt, 10.000 iterations, and SHA256 to generate a [key-derivation function](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rfc2898derivebytes) ([RFC2898](https://datatracker.ietf.org/doc/html/rfc2898)), which is then used to create a crypto-stream to encrypt and decrypt values via [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).
 

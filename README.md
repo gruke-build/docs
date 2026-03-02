@@ -1,8 +1,6 @@
-# Docs for [GreemDev/NUKE](https://github.com/GreemDev/NUKE)
+# Docs for [GRUKE](https://github.com/gruke-build/src)
 
-The published site is WIP as I replace unrecognized features with mkdocs ones.
-
-The documentation files used to exist in-repo, but that was with some other documentation static generator I'm not using (this uses mkdocs).
+The documentation files used to exist in-repo, but that was with some other documentation static generator I'm not using (this uses [mkdocs](https://www.mkdocs.org/)).
 As such they have been moved to their own repository.
 
 See the deployment [here](https://gruke.readthedocs.io/).

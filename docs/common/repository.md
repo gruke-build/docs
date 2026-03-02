@@ -34,7 +34,7 @@ Target Print => _ => _
     <!-- snippet: repository-information-use-cases -->
     ```cs
     [GitRepository] readonly GitRepository Repository;
-    string OriginalRepositoryUrl => "https://github.com/GreemDev/NUKE";
+    string OriginalRepositoryUrl => "https://github.com/gruke-build/src";
 
     Target Deploy => _ => _
         .Requires(() => Repository.IsOnMainOrMasterBranch());
