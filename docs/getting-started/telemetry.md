@@ -77,4 +77,5 @@ The telemetry feature collects the following data:
 
 ## How to opt out
 
-The telemetry feature is enabled by default. To opt out, set the `NUKE_TELEMETRY_OPTOUT` environment variable to `1` or `true`.
+The telemetry feature is enabled by default. 
+To opt out, set the `NUKE_TELEMETRY_OPTOUT` environment variable to [`1` or `true`](https://github.com/GreemDev/NUKE/blob/master/source/Nuke.Build/Telemetry/Telemetry.cs#L38-L39).
