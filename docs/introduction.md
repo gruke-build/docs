@@ -51,3 +51,6 @@ gruke :cake-convert
 ```
 
 **4. Inspect the outcome (errors are expected).**
+
+
+**View the GRUKE C# API documentation [here](https://gruke-build.github.io/src/api/)!**
