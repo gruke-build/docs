@@ -24,47 +24,7 @@ Target Print => _ => _
     });
 ```
 
-??? "Exhaustive list of all strongly-typed properties"
-
-    ```csharp
-    class AppVeyor
-    {
-    string   AccountName                     { get; }
-    string   ApiUrl                          { get; }
-    string   BuildFolder                     { get; }
-    int      BuildId                         { get; }
-    int      BuildNumber                     { get; }
-    string   BuildVersion                    { get; }
-    string   BuildWorkerImage                { get; }
-    Tool     Cli                             { get; }
-    string   Configuration                   { get; }
-    bool     ForcedBuild                     { get; }
-    string   JobId                           { get; }
-    string   JobName                         { get; }
-    int      JobNumber                       { get; }
-    string   Platform                        { get; }
-    int      ProjectId                       { get; }
-    string   ProjectName                     { get; }
-    string   ProjectSlug                     { get; }
-    int?     PullRequestNumber               { get; }
-    string   PullRequestTitle                { get; }
-    bool     Rebuild                         { get; }
-    string   RepositoryBranch                { get; }
-    string   RepositoryCommitAuthor          { get; }
-    string   RepositoryCommitAuthorEmail     { get; }
-    string   RepositoryCommitMessage         { get; }
-    string   RepositoryCommitMessageExtended { get; }
-    string   RepositoryCommitSha             { get; }
-    DateTime RepositoryCommitTimestamp       { get; }
-    string   RepositoryName                  { get; }
-    string   RepositoryProvider              { get; }
-    string   RepositoryScm                   { get; }
-    bool     RepositoryTag                   { get; }
-    string   RepositoryTagName               { get; }
-    bool     ScheduledBuild                  { get; }
-    string   Url                             { get; }
-    }
-    ```
+A full reference of available variables and their documentation can be found [here](https://gruke-build.github.io/src/api/Nuke.Common.CI.AppVeyor.AppVeyor).
 
 ## Configuration Generation
 

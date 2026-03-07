@@ -24,37 +24,7 @@ Target Print => _ => _
     });
 ```
 
-??? note "Exhaustive list of strongly-typed properties"
-
-    ```csharp
-    class GitHubActions
-    {
-        string  Action            { get; }
-        string  Actor             { get; }
-        string  BaseRef           { get; }
-        string  EventName         { get; }
-        string  EventPath         { get; }
-        JObject GitHubContext     { get; }
-        JObject GitHubEvent       { get; }
-        string  HeadRef           { get; }
-        string  Home              { get; }
-        bool    IsPullRequest     { get; }
-        string  Job               { get; }
-        long    JobId             { get; }
-        string  PullRequestAction { get; }
-        int?    PullRequestNumber { get; }
-        string  Ref               { get; }
-        string  Repository        { get; }
-        string  RepositoryOwner   { get; }
-        long    RunId             { get; }
-        long    RunNumber         { get; }
-        string  ServerUrl         { get; }
-        string  Sha               { get; }
-        string  Token             { get; }
-        string  Workflow          { get; }
-        string  Workspace         { get; }
-    }
-    ```
+A full reference of available variables and their documentation can be found [here](https://gruke-build.github.io/src/api/Nuke.Common.CI.GitHubActions.GitHubActions).
 
 ## Configuration Generation
 

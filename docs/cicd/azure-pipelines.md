@@ -24,63 +24,7 @@ Target Print => _ => _
     });
 ```
 
-??? note "Exhaustive list of strongly-typed properties"
-
-    ```csharp
-    class AzurePipelines
-    {
-        string                       AccessToken                    { get; }
-        string                       AgentBuildDirectory            { get; }
-        string                       AgentHomeDirectory             { get; }
-        long                         AgentId                        { get; }
-        AzurePipelinesJobStatus      AgentJobStatus                 { get; }
-        string                       AgentMachineName               { get; }
-        string                       AgentName                      { get; }
-        string                       AgentWorkFolder                { get; }
-        string                       ArtifactStagingDirectory       { get; }
-        string                       BinariesDirectory              { get; }
-        long                         BuildId                        { get; }
-        string                       BuildNumber                    { get; }
-        AzurePipelinesBuildReason    BuildReason                    { get; }
-        string                       BuildUri                       { get; }
-        Guid                         CollectionId                   { get; }
-        string                       DefaultWorkingDirectory        { get; }
-        long                         DefinitionId                   { get; }
-        string                       DefinitionName                 { get; }
-        long                         DefinitionVersion              { get; }
-        string                       JobDisplayName                 { get; }
-        Guid                         JobId                          { get; }
-        string                       PhaseName                      { get; }
-        long?                        PullRequestId                  { get; }
-        string                       PullRequestSourceBranch        { get; }
-        string                       PullRequestTargetBranch        { get; }
-        string                       QueuedBy                       { get; }
-        Guid                         QueuedById                     { get; }
-        bool                         RepositoryClean                { get; }
-        bool                         RepositoryGitSubmoduleCheckout { get; }
-        string                       RepositoryLocalPath            { get; }
-        string                       RepositoryName                 { get; }
-        AzurePipelinesRepositoryType RepositoryProvider             { get; }
-        string                       RepositoryTfvcWorkspace        { get; }
-        string                       RepositoryUri                  { get; }
-        string                       RequestedFor                   { get; }
-        string                       RequestedForEmail              { get; }
-        Guid                         RequestedForId                 { get; }
-        string                       SourceBranch                   { get; }
-        string                       SourceBranchName               { get; }
-        string                       SourceDirectory                { get; }
-        string                       SourceTfvcShelveset            { get; }
-        string                       SourceVersion                  { get; }
-        string                       StageDisplayName               { get; }
-        string                       StageName                      { get; }
-        string                       StagingDirectory               { get; }
-        Guid                         TaskInstanceId                 { get; }
-        string                       TeamFoundationCollectionUri    { get; }
-        string                       TeamProject                    { get; }
-        Guid                         TeamProjectId                  { get; }
-        string                       TestResultsDirectory           { get; }
-    }
-    ```
+A full reference of available variables and their documentation can be found [here](https://gruke-build.github.io/src/api/Nuke.Common.CI.AzurePipelines.AzurePipelines).
 
 ## Configuration Generation
 

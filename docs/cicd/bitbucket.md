@@ -22,36 +22,4 @@ Target Print => _ => _
     });
 ```
 
-
-??? note "Exhaustive list of strongly-typed properties"
-
-    ```csharp
-    class Bitbucket
-    {
-        string Bookmark                     { get; }
-        string Branch                       { get; }
-        long   BuildNumber                  { get; }
-        string CloneDirectory               { get; }
-        string Commit                       { get; }
-        string DeploymentEnvironment        { get; }
-        string DeploymentEnvironmentUuid    { get; }
-        string ExitCode                     { get; }
-        string GitHttpOrigin                { get; }
-        string GitSshOrigin                 { get; }
-        int    ParallelStep                 { get; }
-        int    ParallelStepCount            { get; }
-        string PipelineUuid                 { get; }
-        string ProjectKey                   { get; }
-        string ProjectUuid                  { get; }
-        string PullRequestDestinationBranch { get; }
-        int    PullRequestId                { get; }
-        string RepositoryFullName           { get; }
-        string RepositorySlug               { get; }
-        string RepositoryUuid               { get; }
-        string StepOidcToken                { get; }
-        string StepTriggererUuid            { get; }
-        string StepUuid                     { get; }
-        string Tag                          { get; }
-        string Workspace                    { get; }
-    }
-    ```
+A full reference of available variables and their documentation can be found [here](https://gruke-build.github.io/src/api/Nuke.Common.CI.Bitbucket.Bitbucket).

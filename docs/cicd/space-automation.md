@@ -29,18 +29,4 @@ Target Print => _ => _
     });
 ```
 
-??? note "Exhaustive list of strongly-typed properties"
-
-    ```csharp
-    class SpaceAutomation
-    {
-        string ApiUrl          { get; }
-        string ClientId        { get; }
-        string ClientSecret    { get; }
-        string ExecutionNumber { get; }
-        string GitBranch       { get; }
-        string GitRevision     { get; }
-        string ProjectKey      { get; }
-        string RepositoryName  { get; }
-    }
-    ```
+A full reference of available variables and their documentation can be found [here](https://gruke-build.github.io/src/api/Nuke.Common.CI.SpaceAutomation.SpaceAutomation).

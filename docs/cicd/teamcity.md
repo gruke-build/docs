@@ -25,35 +25,7 @@ Target Print => _ => _
     });
 ```
 
-??? note "Exhaustive list of strongly-typed properties"
-
-    ```csharp
-    class TeamCity
-    {
-        string                              AuthPassword            { get; }
-        string                              AuthUserId              { get; }
-        string                              BranchName              { get; }
-        string                              BuildConfiguration      { get; }
-        long                                BuildId                 { get; }
-        string                              BuildNumber             { get; }
-        string                              BuildTypeId             { get; }
-        string                              BuildVcsNumber          { get; }
-        IReadOnlyDictionary<string, string> ConfigurationProperties { get; }
-        bool                                IsBuildPersonal         { get; }
-        bool                                IsPullRequest           { get; }
-        string                              ProjectId               { get; }
-        string                              ProjectName             { get; }
-        long?                               PullRequestNumber       { get; }
-        string                              PullRequestSourceBranch { get; }
-        string                              PullRequestTargetBranch { get; }
-        string                              PullRequestTitle        { get; }
-        IReadOnlyCollection<string>         RecentlyFailedTests     { get; }
-        IReadOnlyDictionary<string, string> RunnerProperties        { get; }
-        string                              ServerUrl               { get; }
-        IReadOnlyDictionary<string, string> SystemProperties        { get; }
-        string                              Version                 { get; }
-    }
-    ```
+A full reference of available variables and their documentation can be found [here](https://gruke-build.github.io/src/api/Nuke.Common.CI.TeamCity.TeamCity).
 
 ## Configuration Generation
 

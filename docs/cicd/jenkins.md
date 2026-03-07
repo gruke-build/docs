@@ -22,31 +22,4 @@ Target Print => _ => _
     });
 ```
 
-??? note "Exhaustive list of strongly-typed properties"
-
-    ```csharp
-    class Jenkins
-    {
-        string BranchName                  { get; }
-        string BuilDisplayName             { get; }
-        int    BuildNumber                 { get; }
-        string BuildTag                    { get; }
-        string ChangeId                    { get; }
-        int    ExecutorNumber              { get; }
-        string GitBranch                   { get; }
-        string GitCommit                   { get; }
-        string GitPreviousCommit           { get; }
-        string GitPreviousSuccessfulCommit { get; }
-        string GitUrl                      { get; }
-        string JenkinsHome                 { get; }
-        string JenkinsServerCookie         { get; }
-        string JobBaseName                 { get; }
-        string JobDisplayUrl               { get; }
-        string JobName                     { get; }
-        string NodeLabels                  { get; }
-        string NodeName                    { get; }
-        string RunChangesDisplayUrl        { get; }
-        string RunDisplayUrl               { get; }
-        string Workspace                   { get; }
-    }
-    ```
+A full reference of available variables and their documentation can be found [here](https://gruke-build.github.io/src/api/Nuke.Common.CI.Jenkins.Jenkins).
