@@ -24,47 +24,155 @@ Target Print => _ => _
     });
 ```
 
-??? note "Exhaustive list of strongly-typed properties"
-    ```csharp
-    class GitLab
-    {
-        bool                    Ci                    { get; }
-        string                  CommitRefName         { get; }
-        string                  CommitRefSlug         { get; }
-        string                  CommitSha             { get; }
-        string                  CommitTag             { get; }
-        string                  ConfigPath            { get; }
-        bool                    DisposableEnvironment { get; }
-        string                  GitLabUserEmail       { get; }
-        long                    GitLabUserId          { get; }
-        string                  GitLabUserLogin       { get; }
-        string                  GitLabUserName        { get; }
-        long                    JobId                 { get; }
-        bool                    JobManual             { get; }
-        string                  JobName               { get; }
-        string                  JobStage              { get; }
-        string                  JobToken              { get; }
-        long                    PipelineId            { get; }
-        string                  PipelineSource        { get; }
-        bool                    PipelineTriggered     { get; }
-        string                  ProjectDirectory      { get; }
-        long                    ProjectId             { get; }
-        string                  ProjectName           { get; }
-        string                  ProjectNamespace      { get; }
-        string                  ProjectPath           { get; }
-        string                  ProjectPathSlug       { get; }
-        string                  ProjectUrl            { get; }
-        GitLabProjectVisibility ProjectVisibility     { get; }
-        string                  Registry              { get; }
-        string                  RegistryImage         { get; }
-        string                  RegistryPassword      { get; }
-        string                  RegistryUser          { get; }
-        string                  RepositoryUrl         { get; }
-        string                  RunnerDescription     { get; }
-        long                    RunnerId              { get; }
-        string                  RunnerTags            { get; }
-        string                  ServerName            { get; }
-        string                  ServerRevision        { get; }
-        string                  ServerVersion         { get; }
-    }
+A full reference of available variables and their documentation can be found [here](https://gruke-build.github.io/src/api/Nuke.Common.CI.GitLab.GitLab).
+
+## Configuration Generation
+
+??? tip "Docker usage"
+    By default, the configuration generates with a .NET SDK Docker image matching that of your GRUKE build project.
+    You can have it not run in Docker by setting `UseDocker = false` (it defaults to true):
+    ```csharp title="Build.cs" hl_lines="3"
+    [GitLabCI(
+        InvokedTargets = [nameof(Compile)],
+        UseDocker = false
+    )]
+    class Build : NukeBuild { /* ... */ }
+    ``` 
+
+    and you can use a custom image by setting the `DockerImage` string in the attribute:
+
+    ```csharp title="Build.cs" hl_lines="3"
+    [GitLabCI(
+        InvokedTargets = [nameof(InvokePythonTool)],
+        DockerImage = "python:3.10"
+    )]
+    class Build : NukeBuild { /* ... */ }
+    ```
+
+You can generate [.gitlab-ci.yml](https://docs.gitlab.com/ci/yaml/) from your existing target definitions by adding the `GitLabCI` attribute. For instance, you can run the `Compile` target on every push with image:
+
+```csharp title="Build.cs"
+[GitLabCI(
+    InvokedTargets = [nameof(Compile)]
+)]
+class Build : NukeBuild { /* ... */ }
+``` 
+
+??? note "Generated output"
+    ```yaml title=".gitlab-ci.yml"
+    image: mcr.microsoft.com/dotnet/sdk:10.0.103
+
+    variables:
+      GIT_DEPTH: 0
+
+    stages:
+      - build
+
+    'Run: Compile':
+      stage: build
+      script:
+        - './build.sh Compile'
+    ```
+
+!!! info
+Whenever you make changes to the attribute, you have to [run the build](../getting-started/execution.md) at least once to regenerate the workflow file.
+
+### Artifacts
+
+If your targets produce artifacts, like packages or coverage reports, you can publish those directly from the target definition:
+
+```csharp
+Target Pack => _ => _
+    .Produces(PackagesDirectory / "*.nupkg")
+    .Executes(() => { /* Implementation */ });
+```
+
+Then enable artifact publishing in the `GitLabCI` attribute:
+
+```csharp title="Build.cs" hl_lines="3"
+[GitLabCI(
+    InvokedTargets = [nameof(Pack)],
+    UploadProducedArtifacts = true
+)]
+class Build : NukeBuild { /* ... */ }
+```
+
+??? tip "A note about automatic artifact publishing"
+    It's entirely possible you create artifacts you don't want uploaded to any given CI provider. 
+    In these cases, you can use `ExcludedArtifacts` on the `GitLabCI` attribute to exclude those files.
+
+    ```cs title="Build.cs"
+    [GitLabCI(
+        InvokedTargets = [nameof(Test)],
+        UploadProducedArtifacts = true,
+        ExcludedArtifacts = [ "output/packages/*.nupkg" ]
+    )]
+    class Build : NukeBuild { /* ... */ }
+    ```
+
+    This will simply generate as shown directly below this, but with the specified artifacts removed from the `paths` section.
+
+??? note "Generated output"
+
+    ```yaml title=".gitlab-ci.yml"
+    image: mcr.microsoft.com/dotnet/sdk:10.0.103
+
+    variables:
+      GIT_DEPTH: 0
+
+    stages:
+      - build
+
+    'Run: Test':
+      stage: build
+      script:
+        - './build.sh Test'
+      artifacts:
+        paths:
+          - output/test-results/*.trx
+          - output/test-results/*.xml
+          - output/packages/*.nupkg
+    ```
+
+After your build has finished, those artifacts will be listed under the _Job artifacts_ section on the right side of GitLab's job UI; 
+alternatively there's an 'Artifacts' tab in the same section as the other CI stuff.
+
+
+<p style={{maxWidth:'900px'}} markdown="span">
+
+![GitLab Artifacts Tab](gitlab-artifacts-light.webp#gh-light-mode-only)
+![GitLab Artifacts Tab](gitlab-artifacts-dark.webp#gh-dark-mode-only)
+
+</p>
+
+## Conditional execution
+
+By default, GitLab will run this new file for every push to every branch. You can control this with the `OnlyOnPushesToBranches` property in the `GitLabCI` attribute.
+The value can be any string, and has special handling for `null`:
+emitting `$CI_DEFAULT_BRANCH` in its place, allowing you to write `OnlyOnPushesToBranches = [ default ]` which reads as exactly what it does. "Only on pushes to default branch."
+
+```csharp title="Build.cs"
+[GitLabCI(
+    InvokedTargets = [nameof(Compile)],
+    OnlyOnPushesToBranches = [ "develop" ]
+)]
+class Build : NukeBuild { /* ... */ }
+``` 
+
+??? note "Generated output"
+    ```yaml title=".gitlab-ci.yml"
+    image: mcr.microsoft.com/dotnet/sdk:10.0.103
+
+    variables:
+      GIT_DEPTH: 0
+
+    stages:
+      - build
+
+    'Run: Compile':
+      stage: build
+      script:
+        - './build.sh Compile'
+      rules:
+        - if: $CI_COMMIT_BRANCH == 'develop'
     ```
