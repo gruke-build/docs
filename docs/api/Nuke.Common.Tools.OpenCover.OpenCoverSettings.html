@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class OpenCoverSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OpenCoverSettings | gruke ">
+      
+      <meta name="description" content="OpenCover is a code coverage tool for .NET 2 and above (Windows OSs only - no MONO), with support for 32 and 64 processes and covers both branch and sequence points.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_OpenCover_OpenCoverSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.OpenCover.OpenCoverSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings" class="text-break">
+Class OpenCoverSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.OpenCover.html">OpenCover</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>OpenCover is a code coverage tool for .NET 2 and above (Windows OSs only - no MONO), with support for 32 and 64 processes and covers both branch and sequence points.</p><p>For more details, visit the <a href="https://github.com/OpenCover/opencover">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class OpenCoverSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">OpenCoverSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddCoverByTests__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.AddCoverByTests&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddCoverByTests__1___0_System_String___">OpenCoverSettingsExtensions.AddCoverByTests&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddExcludeByAttributes__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.AddExcludeByAttributes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddExcludeByAttributes__1___0_System_String___">OpenCoverSettingsExtensions.AddExcludeByAttributes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddExcludeByFile__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.AddExcludeByFile&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddExcludeByFile__1___0_System_String___">OpenCoverSettingsExtensions.AddExcludeByFile&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddExcludeDirectories__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.AddExcludeDirectories&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddExcludeDirectories__1___0_System_String___">OpenCoverSettingsExtensions.AddExcludeDirectories&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddFilters__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.AddFilters&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddFilters__1___0_System_String___">OpenCoverSettingsExtensions.AddFilters&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddHideSkippedKinds__1___0_Nuke_Common_Tools_OpenCover_OpenCoverSkipping___">OpenCoverSettingsExtensions.AddHideSkippedKinds&lt;T&gt;(T, params OpenCoverSkipping[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddHideSkippedKinds__1___0_System_Collections_Generic_IEnumerable_Nuke_Common_Tools_OpenCover_OpenCoverSkipping__">OpenCoverSettingsExtensions.AddHideSkippedKinds&lt;T&gt;(T, IEnumerable&lt;OpenCoverSkipping&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddSearchDirectories__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.AddSearchDirectories&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_AddSearchDirectories__1___0_System_String___">OpenCoverSettingsExtensions.AddSearchDirectories&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ClearCoverByTests__1___0_">OpenCoverSettingsExtensions.ClearCoverByTests&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ClearExcludeByAttributes__1___0_">OpenCoverSettingsExtensions.ClearExcludeByAttributes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ClearExcludeByFile__1___0_">OpenCoverSettingsExtensions.ClearExcludeByFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ClearExcludeDirectories__1___0_">OpenCoverSettingsExtensions.ClearExcludeDirectories&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ClearFilters__1___0_">OpenCoverSettingsExtensions.ClearFilters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ClearHideSkippedKinds__1___0_">OpenCoverSettingsExtensions.ClearHideSkippedKinds&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ClearSearchDirectories__1___0_">OpenCoverSettingsExtensions.ClearSearchDirectories&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_DisableMergeByHash__1___0_">OpenCoverSettingsExtensions.DisableMergeByHash&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_DisableMergeOutput__1___0_">OpenCoverSettingsExtensions.DisableMergeOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_DisableNoDefaultFilters__1___0_">OpenCoverSettingsExtensions.DisableNoDefaultFilters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_DisableOldStyle__1___0_">OpenCoverSettingsExtensions.DisableOldStyle&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_DisablePerformanceCounters__1___0_">OpenCoverSettingsExtensions.DisablePerformanceCounters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_DisableSafeMode__1___0_">OpenCoverSettingsExtensions.DisableSafeMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_DisableService__1___0_">OpenCoverSettingsExtensions.DisableService&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_DisableShowUnvisited__1___0_">OpenCoverSettingsExtensions.DisableShowUnvisited&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_DisableSkipAutoProperties__1___0_">OpenCoverSettingsExtensions.DisableSkipAutoProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_EnableMergeByHash__1___0_">OpenCoverSettingsExtensions.EnableMergeByHash&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_EnableMergeOutput__1___0_">OpenCoverSettingsExtensions.EnableMergeOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_EnableNoDefaultFilters__1___0_">OpenCoverSettingsExtensions.EnableNoDefaultFilters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_EnableOldStyle__1___0_">OpenCoverSettingsExtensions.EnableOldStyle&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_EnablePerformanceCounters__1___0_">OpenCoverSettingsExtensions.EnablePerformanceCounters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_EnableSafeMode__1___0_">OpenCoverSettingsExtensions.EnableSafeMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_EnableService__1___0_">OpenCoverSettingsExtensions.EnableService&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_EnableShowUnvisited__1___0_">OpenCoverSettingsExtensions.EnableShowUnvisited&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_EnableSkipAutoProperties__1___0_">OpenCoverSettingsExtensions.EnableSkipAutoProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveCoverByTests__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.RemoveCoverByTests&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveCoverByTests__1___0_System_String___">OpenCoverSettingsExtensions.RemoveCoverByTests&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveExcludeByAttributes__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.RemoveExcludeByAttributes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveExcludeByAttributes__1___0_System_String___">OpenCoverSettingsExtensions.RemoveExcludeByAttributes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveExcludeByFile__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.RemoveExcludeByFile&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveExcludeByFile__1___0_System_String___">OpenCoverSettingsExtensions.RemoveExcludeByFile&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveExcludeDirectories__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.RemoveExcludeDirectories&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveExcludeDirectories__1___0_System_String___">OpenCoverSettingsExtensions.RemoveExcludeDirectories&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveFilters__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.RemoveFilters&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveFilters__1___0_System_String___">OpenCoverSettingsExtensions.RemoveFilters&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveHideSkippedKinds__1___0_Nuke_Common_Tools_OpenCover_OpenCoverSkipping___">OpenCoverSettingsExtensions.RemoveHideSkippedKinds&lt;T&gt;(T, params OpenCoverSkipping[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveHideSkippedKinds__1___0_System_Collections_Generic_IEnumerable_Nuke_Common_Tools_OpenCover_OpenCoverSkipping__">OpenCoverSettingsExtensions.RemoveHideSkippedKinds&lt;T&gt;(T, IEnumerable&lt;OpenCoverSkipping&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveSearchDirectories__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.RemoveSearchDirectories&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_RemoveSearchDirectories__1___0_System_String___">OpenCoverSettingsExtensions.RemoveSearchDirectories&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetMaximumVisitCount__1___0_">OpenCoverSettingsExtensions.ResetMaximumVisitCount&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetMergeByHash__1___0_">OpenCoverSettingsExtensions.ResetMergeByHash&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetMergeOutput__1___0_">OpenCoverSettingsExtensions.ResetMergeOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetNoDefaultFilters__1___0_">OpenCoverSettingsExtensions.ResetNoDefaultFilters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetOldStyle__1___0_">OpenCoverSettingsExtensions.ResetOldStyle&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetOutput__1___0_">OpenCoverSettingsExtensions.ResetOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetPerformanceCounters__1___0_">OpenCoverSettingsExtensions.ResetPerformanceCounters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetRegistration__1___0_">OpenCoverSettingsExtensions.ResetRegistration&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetSafeMode__1___0_">OpenCoverSettingsExtensions.ResetSafeMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetService__1___0_">OpenCoverSettingsExtensions.ResetService&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetShowUnvisited__1___0_">OpenCoverSettingsExtensions.ResetShowUnvisited&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetSkipAutoProperties__1___0_">OpenCoverSettingsExtensions.ResetSkipAutoProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetTargetArguments__1___0_">OpenCoverSettingsExtensions.ResetTargetArguments&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetTargetDirectory__1___0_">OpenCoverSettingsExtensions.ResetTargetDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetTargetExitCodeOffset__1___0_">OpenCoverSettingsExtensions.ResetTargetExitCodeOffset&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetTargetPath__1___0_">OpenCoverSettingsExtensions.ResetTargetPath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetTargetSettings_Nuke_Common_Tools_OpenCover_OpenCoverSettings_">OpenCoverSettingsExtensions.ResetTargetSettings(OpenCoverSettings)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ResetVerbosity__1___0_">OpenCoverSettingsExtensions.ResetVerbosity&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetCoverByTests__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.SetCoverByTests&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetCoverByTests__1___0_System_String___">OpenCoverSettingsExtensions.SetCoverByTests&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetExcludeByAttributes__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.SetExcludeByAttributes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetExcludeByAttributes__1___0_System_String___">OpenCoverSettingsExtensions.SetExcludeByAttributes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetExcludeByFile__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.SetExcludeByFile&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetExcludeByFile__1___0_System_String___">OpenCoverSettingsExtensions.SetExcludeByFile&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetExcludeDirectories__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.SetExcludeDirectories&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetExcludeDirectories__1___0_System_String___">OpenCoverSettingsExtensions.SetExcludeDirectories&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetFilters__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.SetFilters&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetFilters__1___0_System_String___">OpenCoverSettingsExtensions.SetFilters&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetHideSkippedKinds__1___0_Nuke_Common_Tools_OpenCover_OpenCoverSkipping___">OpenCoverSettingsExtensions.SetHideSkippedKinds&lt;T&gt;(T, params OpenCoverSkipping[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetHideSkippedKinds__1___0_System_Collections_Generic_IEnumerable_Nuke_Common_Tools_OpenCover_OpenCoverSkipping__">OpenCoverSettingsExtensions.SetHideSkippedKinds&lt;T&gt;(T, IEnumerable&lt;OpenCoverSkipping&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetMaximumVisitCount__1___0_System_Nullable_System_Int32__">OpenCoverSettingsExtensions.SetMaximumVisitCount&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetMergeByHash__1___0_System_Nullable_System_Boolean__">OpenCoverSettingsExtensions.SetMergeByHash&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetMergeOutput__1___0_System_Nullable_System_Boolean__">OpenCoverSettingsExtensions.SetMergeOutput&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetNoDefaultFilters__1___0_System_Nullable_System_Boolean__">OpenCoverSettingsExtensions.SetNoDefaultFilters&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetOldStyle__1___0_System_Nullable_System_Boolean__">OpenCoverSettingsExtensions.SetOldStyle&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetOutput__1___0_System_String_">OpenCoverSettingsExtensions.SetOutput&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetPerformanceCounters__1___0_System_Nullable_System_Boolean__">OpenCoverSettingsExtensions.SetPerformanceCounters&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetRegistration__1___0_Nuke_Common_Tools_OpenCover_RegistrationType_">OpenCoverSettingsExtensions.SetRegistration&lt;T&gt;(T, RegistrationType)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetSafeMode__1___0_System_Nullable_System_Boolean__">OpenCoverSettingsExtensions.SetSafeMode&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetSearchDirectories__1___0_System_Collections_Generic_IEnumerable_System_String__">OpenCoverSettingsExtensions.SetSearchDirectories&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetSearchDirectories__1___0_System_String___">OpenCoverSettingsExtensions.SetSearchDirectories&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetService__1___0_System_Nullable_System_Boolean__">OpenCoverSettingsExtensions.SetService&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetShowUnvisited__1___0_System_Nullable_System_Boolean__">OpenCoverSettingsExtensions.SetShowUnvisited&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetSkipAutoProperties__1___0_System_Nullable_System_Boolean__">OpenCoverSettingsExtensions.SetSkipAutoProperties&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetTargetArguments__1___0_System_String_">OpenCoverSettingsExtensions.SetTargetArguments&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetTargetDirectory__1___0_System_String_">OpenCoverSettingsExtensions.SetTargetDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetTargetExitCodeOffset__1___0_System_Nullable_System_Int32__">OpenCoverSettingsExtensions.SetTargetExitCodeOffset&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetTargetPath__1___0_System_String_">OpenCoverSettingsExtensions.SetTargetPath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetTargetSettings_Nuke_Common_Tools_OpenCover_OpenCoverSettings_Nuke_Common_Tooling_ToolOptions_">OpenCoverSettingsExtensions.SetTargetSettings(OpenCoverSettings, ToolOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_SetVerbosity__1___0_Nuke_Common_Tools_OpenCover_OpenCoverVerbosity_">OpenCoverSettingsExtensions.SetVerbosity&lt;T&gt;(T, OpenCoverVerbosity)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ToggleMergeByHash__1___0_">OpenCoverSettingsExtensions.ToggleMergeByHash&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ToggleMergeOutput__1___0_">OpenCoverSettingsExtensions.ToggleMergeOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ToggleNoDefaultFilters__1___0_">OpenCoverSettingsExtensions.ToggleNoDefaultFilters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ToggleOldStyle__1___0_">OpenCoverSettingsExtensions.ToggleOldStyle&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_TogglePerformanceCounters__1___0_">OpenCoverSettingsExtensions.TogglePerformanceCounters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ToggleSafeMode__1___0_">OpenCoverSettingsExtensions.ToggleSafeMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ToggleService__1___0_">OpenCoverSettingsExtensions.ToggleService&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ToggleShowUnvisited__1___0_">OpenCoverSettingsExtensions.ToggleShowUnvisited&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettingsExtensions.html#Nuke_Common_Tools_OpenCover_OpenCoverSettingsExtensions_ToggleSkipAutoProperties__1___0_">OpenCoverSettingsExtensions.ToggleSkipAutoProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>-coverbytest</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_CoverByTests">CoverByTests</a></li><li><code>-enableperformancecounters</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_PerformanceCounters">PerformanceCounters</a></li><li><code>-excludebyattribute</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_ExcludeByAttributes">ExcludeByAttributes</a></li><li><code>-excludebyfile</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_ExcludeByFile">ExcludeByFile</a></li><li><code>-excludedirs</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_ExcludeDirectories">ExcludeDirectories</a></li><li><code>-filter</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_Filters">Filters</a></li><li><code>-hideskipped</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_HideSkippedKinds">HideSkippedKinds</a></li><li><code>-log</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_Verbosity">Verbosity</a></li><li><code>-mergebyhash</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_MergeByHash">MergeByHash</a></li><li><code>-mergeoutput</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_MergeOutput">MergeOutput</a></li><li><code>-nodefaultfilters</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_NoDefaultFilters">NoDefaultFilters</a></li><li><code>-oldStyle</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_OldStyle">OldStyle</a></li><li><code>-output</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_Output">Output</a></li><li><code>-register</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_Registration">Registration</a></li><li><code>-returntargetcode</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetExitCodeOffset">TargetExitCodeOffset</a></li><li><code>-safemode</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_SafeMode">SafeMode</a></li><li><code>-searchdirs</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_SearchDirectories">SearchDirectories</a></li><li><code>-service</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_Service">Service</a></li><li><code>-showunvisited</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_ShowUnvisited">ShowUnvisited</a></li><li><code>-skipautoprops</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_SkipAutoProperties">SkipAutoProperties</a></li><li><code>-target</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetPath">TargetPath</a></li><li><code>-targetargs</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetArguments">TargetArguments</a></li><li><code>-targetdir</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetDirectory">TargetDirectory</a></li><li><code>-threshold</code> via <a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSettings.html#Nuke_Common_Tools_OpenCover_OpenCoverSettings_MaximumVisitCount">MaximumVisitCount</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_CoverByTests_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.CoverByTests*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_CoverByTests" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.CoverByTests">
+  CoverByTests
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gather coverage by test by analyzing the assemblies that match these filters for Test methods. Currently only MSTest, XUnit, and NUnit tests are supported; other frameworks can be added on request - please raise support request on GitHub.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; CoverByTests { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_ExcludeByAttributes_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.ExcludeByAttributes*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_ExcludeByAttributes" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.ExcludeByAttributes">
+  ExcludeByAttributes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exclude a class or method by filter(s) that match attributes that have been applied. An <code>*</code> can be used as a wildcard.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ExcludeByAttributes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_ExcludeByFile_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.ExcludeByFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_ExcludeByFile" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.ExcludeByFile">
+  ExcludeByFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exclude a class (or methods) by file-filter(s) that match the filenames. An <code>*</code> can be used as a wildcard.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ExcludeByFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_ExcludeDirectories_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.ExcludeDirectories*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_ExcludeDirectories" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.ExcludeDirectories">
+  ExcludeDirectories
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Assemblies being loaded from these locations will be ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ExcludeDirectories { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_Filters_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.Filters*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_Filters" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.Filters">
+  Filters
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A list of filters to apply to selectively include or exclude assemblies and classes from coverage results. Using PartCover syntax, where <code>(+|-)[Assembly-Filter]Type-Filter</code>. For example <code>+[Open*]*</code> includes all types in assemblies starting with <em>Open</em>, <code>-[*]Core.*</code> exclude all types in the <em>Core</em> namespace regardless of the assembly. If no filters are supplied then the default inclusive filter <code>+[*]*</code> is applied automatically. See Understanding Filters for more information.</p><ul><li>NOTE: Multiple filters can be applied by separating them with spaces and enclosing them with quotes: <code>-filter:"+[*]* -[A*]Name.*"</code></li><li>NOTE: Exclusion filters take precedence over inclusion filters.</li></ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Filters { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_HideSkippedKinds_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.HideSkippedKinds*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_HideSkippedKinds" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.HideSkippedKinds">
+  HideSkippedKinds
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove information from output file (-output:) that relates to classes/modules that have been skipped (filtered) due to the use of the switches <code>-excludebyfile</code>, <code>-excludebyattribute</code> and <code>-filter</code> or where the PDB is missing. Multiple arguments can be used by separating them with a semicolon, e.g. <code>-hideskipped:File;MissingPdb;Attribute</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;OpenCoverSkipping&gt; HideSkippedKinds { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverSkipping.html">OpenCoverSkipping</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_MaximumVisitCount_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.MaximumVisitCount*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_MaximumVisitCount" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.MaximumVisitCount">
+  MaximumVisitCount
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Limits the number of visit counts recorded/reported for an instrumentation point. May have some performance gains as it can reduce the number of messages sent from the profiler. Coverage results should not be affected but will have an obvious impact on the Visit Counts reported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? MaximumVisitCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_MergeByHash_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.MergeByHash*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_MergeByHash" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.MergeByHash">
+  MergeByHash
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Under some scenarios e.g. using MSTest, an assembly may be loaded many times from different locations. This option is used to merge the coverage results for an assembly regardless of where it was loaded assuming the assembly has the same file-hash in each location.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? MergeByHash { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_MergeOutput_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.MergeOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_MergeOutput" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.MergeOutput">
+  MergeOutput
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allow to merge the results with an existing file (specified by <code>-output</code> option). So the coverage from the output file will be loaded first (if exists).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? MergeOutput { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_NoDefaultFilters_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.NoDefaultFilters*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_NoDefaultFilters" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.NoDefaultFilters">
+  NoDefaultFilters
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A list of default exclusion filters are usually applied, this option can be used to turn them off. The default filters are:</p>
+<ul><li><code>-[System]*</code></li><li><code>-[System.*]*</code></li><li><code>-[mscorlib]*</code></li><li><code>-[mscorlib.*]*</code></li><li><code>-[Microsoft.VisualBasic]*</code></li></ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoDefaultFilters { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_OldStyle_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.OldStyle*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_OldStyle" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.OldStyle">
+  OldStyle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use old style instrumentation - the instrumentation is not Silverlight friendly and is provided to support environments where mscorlib instrumentation is not working. <em>ONLY</em> use this option if you are encountering <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.missingmethodexception">MissingMethodException</a> like errors when the code is run under OpenCover. The issue could be down to <em>ngen /Profile</em> of the mscorlib which then interferes with the instrumentation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? OldStyle { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_Output_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.Output*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_Output" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.Output">
+  Output
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The location and name of the output Xml file. If no value is supplied then the current directory will be used and the output filename will be <code>results.xml</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Output { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_PerformanceCounters_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.PerformanceCounters*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_PerformanceCounters" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.PerformanceCounters">
+  PerformanceCounters
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>Administrator</em> privileges required. Allows the monitoring in <em>Performance Monitor</em> of the following values (they are usually cleared at the end of a performance run):</p>
+<ul><li>messages remaining on the queue</li><li>number of messages processed</li></ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? PerformanceCounters { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_Registration_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.Registration*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_Registration" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.Registration">
+  Registration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use this switch to register and de-register the code coverage profiler. Alternatively use the optional user argument to do per-user registration where the user account does not have administrative permissions. Alternatively use an administrative account to register the profilers using the <em>regsvr32</em> utility. If you do not want to use the registry entries, use <code>-register:Path32</code> or <code>-register:Path64</code> to let opencover select the profiler for you. Depending on your choice it selects the <em>OpenCoverAssemblyLocation/x86/OpenCover.Profiler.dll</em> or <em>OpenCoverAssemblyLocation/x64/OpenCover.Profiler.dll</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RegistrationType Registration { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.OpenCover.RegistrationType.html">RegistrationType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_SafeMode_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.SafeMode*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_SafeMode" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.SafeMode">
+  SafeMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable or disable safemode - default is on/yes. When safemode is on OpenCover will use a common buffer for all threads in an instrumented process and this may have performance impacts depending on your code and its tests. Turning safemode off uses individual buffers for each thread but this may lead to data loss (uncovered code reported) if the runtime shuts down the instrumented process before the profiler has had time to retrieve the data and shunt it to the host for processing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SafeMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_SearchDirectories_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.SearchDirectories*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_SearchDirectories" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.SearchDirectories">
+  SearchDirectories
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Alternative locations to look for PDBs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; SearchDirectories { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_Service_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.Service*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_Service" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.Service">
+  Service
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The value provided in the target parameter is the name of a service rather than a name of a process. <em>Administrator</em> privileges recommended.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Service { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_ShowUnvisited_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.ShowUnvisited*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_ShowUnvisited" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.ShowUnvisited">
+  ShowUnvisited
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show a list of unvisited methods and classes after the coverage run is finished and the results are presented.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ShowUnvisited { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_SkipAutoProperties_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.SkipAutoProperties*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_SkipAutoProperties" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.SkipAutoProperties">
+  SkipAutoProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Neither track nor record auto-implemented properties. That is, skip getters and setters like these: <code>public bool Service { get; set; }</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SkipAutoProperties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetArguments_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.TargetArguments*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetArguments" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.TargetArguments">
+  TargetArguments
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arguments to be passed to the target process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TargetArguments { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetDirectory_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.TargetDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetDirectory" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.TargetDirectory">
+  TargetDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The path to the target directory; if the target argument already contains a path then this argument can be used to provide an alternate path where PDB files may be found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TargetDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetExitCodeOffset_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.TargetExitCodeOffset*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetExitCodeOffset" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.TargetExitCodeOffset">
+  TargetExitCodeOffset
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return the target process exit code instead of the OpenCover console exit code. Use the offset to return the OpenCover console at a value outside the range returned by the target process.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? TargetExitCodeOffset { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetPath_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.TargetPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_TargetPath" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.TargetPath">
+  TargetPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the target application or service that will be started; this can also be a path to the target application.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TargetPath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_Verbosity_" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.Verbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_OpenCover_OpenCoverSettings_Verbosity" data-uid="Nuke.Common.Tools.OpenCover.OpenCoverSettings.Verbosity">
+  Verbosity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Change the logging level, default is set to Info. Logging is based on log4net logging levels and appenders.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OpenCoverVerbosity Verbosity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.OpenCover.OpenCoverVerbosity.html">OpenCoverVerbosity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/OpenCover/OpenCover.Generated.cs/#L45" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DotNetRestoreSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DotNetRestoreSettings | gruke ">
+      
+      <meta name="description" content="The dotnet restore command uses NuGet to restore dependencies as well as project-specific tools that are specified in the project file. By default, the restoration of dependencies and tools are performed in parallel.Starting with .NET Core 2.0, you don&#39;t have to run dotnet restore because it&#39;s run implicitly by all commands, such as dotnet build and dotnet run, that require a restore to occur. It&#39;s still a valid command in certain scenarios where doing an explicit restore makes sense, such as continuous integration builds in Visual Studio Team Services or in build systems that need to explicitly control the time at which the restore occurs.In order to restore the dependencies, NuGet needs the feeds where the packages are located. Feeds are usually provided via the NuGet.config configuration file. A default configuration file is provided when the CLI tools are installed. You specify additional feeds by creating your own NuGet.config file in the project directory. You also specify additional feeds per invocation at a command prompt.For dependencies, you specify where the restored packages are placed during the restore operation using the --packages argument. If not specified, the default NuGet package cache is used, which is found in the .nuget/packages directory in the user&#39;s home directory on all operating systems (for example, /home/user1 on Linux or C:\Users\user1 on Windows).For project-specific tooling, dotnet restore first restores the package in which the tool is packed, and then proceeds to restore the tool&#39;s dependencies as specified in its project file.The behavior of the dotnet restore command is affected by some of the settings in the Nuget.Config file, if present. For example, setting the globalPackagesFolder in NuGet.Config places the restored NuGet packages in the specified folder. This is an alternative to specifying the --packages option on the dotnet restore command. For more information, see the NuGet.Config reference.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_DotNet_DotNetRestoreSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.DotNet.DotNetRestoreSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings" class="text-break">
+Class DotNetRestoreSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L357"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.DotNet.html">DotNet</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The <code>dotnet restore</code> command uses NuGet to restore dependencies as well as project-specific tools that are specified in the project file. By default, the restoration of dependencies and tools are performed in parallel.</p><p>Starting with .NET Core 2.0, you don't have to run <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-restore"><code>dotnet restore</code></a> because it's run implicitly by all commands, such as <code>dotnet build</code> and <code>dotnet run</code>, that require a restore to occur. It's still a valid command in certain scenarios where doing an explicit restore makes sense, such as <a href="https://docs.microsoft.com/en-us/vsts/build-release/apps/aspnet/build-aspnet-core">continuous integration builds in Visual Studio Team Services</a> or in build systems that need to explicitly control the time at which the restore occurs.</p><p>In order to restore the dependencies, NuGet needs the feeds where the packages are located. Feeds are usually provided via the <em>NuGet.config</em> configuration file. A default configuration file is provided when the CLI tools are installed. You specify additional feeds by creating your own <em>NuGet.config</em> file in the project directory. You also specify additional feeds per invocation at a command prompt.</p><p>For dependencies, you specify where the restored packages are placed during the restore operation using the <code>--packages</code> argument. If not specified, the default NuGet package cache is used, which is found in the <code>.nuget/packages</code> directory in the user's home directory on all operating systems (for example, <em>/home/user1</em> on Linux or <em>C:\Users\user1</em> on Windows).</p><p>For project-specific tooling, <code>dotnet restore</code> first restores the package in which the tool is packed, and then proceeds to restore the tool's dependencies as specified in its project file.</p><p>The behavior of the <code>dotnet restore</code> command is affected by some of the settings in the <em>Nuget.Config</em> file, if present. For example, setting the <code>globalPackagesFolder</code> in <em>NuGet.Config</em> places the restored NuGet packages in the specified folder. This is an alternative to specifying the <code>--packages</code> option on the <code>dotnet restore</code> command. For more information, see the <a href="https://docs.microsoft.com/nuget/schema/nuget-config-file">NuGet.Config reference</a>.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class DotNetRestoreSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">DotNetRestoreSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRestoreSettingsExtensions.AddAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddAuthors__1___0_System_String___">DotNetRestoreSettingsExtensions.AddAuthors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddNoWarns__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRestoreSettingsExtensions.AddNoWarns&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddNoWarns__1___0_System_Int32___">DotNetRestoreSettingsExtensions.AddNoWarns&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddPackageTags__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRestoreSettingsExtensions.AddPackageTags&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddPackageTags__1___0_System_String___">DotNetRestoreSettingsExtensions.AddPackageTags&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddProperty__1___0_System_String_System_Object_">DotNetRestoreSettingsExtensions.AddProperty&lt;T&gt;(T, string, object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddSources__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRestoreSettingsExtensions.AddSources&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddSources__1___0_System_String___">DotNetRestoreSettingsExtensions.AddSources&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddWarningsAsErrors__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRestoreSettingsExtensions.AddWarningsAsErrors&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_AddWarningsAsErrors__1___0_System_Int32___">DotNetRestoreSettingsExtensions.AddWarningsAsErrors&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ClearProperties__1___0_">DotNetRestoreSettingsExtensions.ClearProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ClearSources__1___0_">DotNetRestoreSettingsExtensions.ClearSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableContinuousIntegrationBuild__1___0_">DotNetRestoreSettingsExtensions.DisableContinuousIntegrationBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableDeterministicSourcePaths__1___0_">DotNetRestoreSettingsExtensions.DisableDeterministicSourcePaths&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableDeterministic__1___0_">DotNetRestoreSettingsExtensions.DisableDeterministic&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableDisableParallel__1___0_">DotNetRestoreSettingsExtensions.DisableDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableForceEvaluate__1___0_">DotNetRestoreSettingsExtensions.DisableForceEvaluate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableForce__1___0_">DotNetRestoreSettingsExtensions.DisableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableIgnoreFailedSources__1___0_">DotNetRestoreSettingsExtensions.DisableIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableLockedMode__1___0_">DotNetRestoreSettingsExtensions.DisableLockedMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableNoCache__1___0_">DotNetRestoreSettingsExtensions.DisableNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableNoDependencies__1___0_">DotNetRestoreSettingsExtensions.DisableNoDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisablePackageRequireLicenseAcceptance__1___0_">DotNetRestoreSettingsExtensions.DisablePackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisablePublishReadyToRun__1___0_">DotNetRestoreSettingsExtensions.DisablePublishReadyToRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisablePublishSingleFile__1___0_">DotNetRestoreSettingsExtensions.DisablePublishSingleFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisablePublishTrimmed__1___0_">DotNetRestoreSettingsExtensions.DisablePublishTrimmed&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableRunCodeAnalysis__1___0_">DotNetRestoreSettingsExtensions.DisableRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableTreatWarningsAsErrors__1___0_">DotNetRestoreSettingsExtensions.DisableTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_DisableUseLockFile__1___0_">DotNetRestoreSettingsExtensions.DisableUseLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableContinuousIntegrationBuild__1___0_">DotNetRestoreSettingsExtensions.EnableContinuousIntegrationBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableDeterministicSourcePaths__1___0_">DotNetRestoreSettingsExtensions.EnableDeterministicSourcePaths&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableDeterministic__1___0_">DotNetRestoreSettingsExtensions.EnableDeterministic&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableDisableParallel__1___0_">DotNetRestoreSettingsExtensions.EnableDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableForceEvaluate__1___0_">DotNetRestoreSettingsExtensions.EnableForceEvaluate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableForce__1___0_">DotNetRestoreSettingsExtensions.EnableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableIgnoreFailedSources__1___0_">DotNetRestoreSettingsExtensions.EnableIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableLockedMode__1___0_">DotNetRestoreSettingsExtensions.EnableLockedMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableNoCache__1___0_">DotNetRestoreSettingsExtensions.EnableNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableNoDependencies__1___0_">DotNetRestoreSettingsExtensions.EnableNoDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnablePackageRequireLicenseAcceptance__1___0_">DotNetRestoreSettingsExtensions.EnablePackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnablePublishReadyToRun__1___0_">DotNetRestoreSettingsExtensions.EnablePublishReadyToRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnablePublishSingleFile__1___0_">DotNetRestoreSettingsExtensions.EnablePublishSingleFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnablePublishTrimmed__1___0_">DotNetRestoreSettingsExtensions.EnablePublishTrimmed&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableRunCodeAnalysis__1___0_">DotNetRestoreSettingsExtensions.EnableRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableTreatWarningsAsErrors__1___0_">DotNetRestoreSettingsExtensions.EnableTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_EnableUseLockFile__1___0_">DotNetRestoreSettingsExtensions.EnableUseLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemoveAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRestoreSettingsExtensions.RemoveAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemoveAuthors__1___0_System_String___">DotNetRestoreSettingsExtensions.RemoveAuthors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemoveNoWarns__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRestoreSettingsExtensions.RemoveNoWarns&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemoveNoWarns__1___0_System_Int32___">DotNetRestoreSettingsExtensions.RemoveNoWarns&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemovePackageTags__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRestoreSettingsExtensions.RemovePackageTags&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemovePackageTags__1___0_System_String___">DotNetRestoreSettingsExtensions.RemovePackageTags&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemoveProperty__1___0_System_String_">DotNetRestoreSettingsExtensions.RemoveProperty&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemoveSources__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRestoreSettingsExtensions.RemoveSources&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemoveSources__1___0_System_String___">DotNetRestoreSettingsExtensions.RemoveSources&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemoveWarningsAsErrors__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRestoreSettingsExtensions.RemoveWarningsAsErrors&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_RemoveWarningsAsErrors__1___0_System_Int32___">DotNetRestoreSettingsExtensions.RemoveWarningsAsErrors&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetAssemblyVersion__1___0_">DotNetRestoreSettingsExtensions.ResetAssemblyVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetAuthors__1___0_">DotNetRestoreSettingsExtensions.ResetAuthors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetConfigFile__1___0_">DotNetRestoreSettingsExtensions.ResetConfigFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetContinuousIntegrationBuild__1___0_">DotNetRestoreSettingsExtensions.ResetContinuousIntegrationBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetCopyright__1___0_">DotNetRestoreSettingsExtensions.ResetCopyright&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetDescription__1___0_">DotNetRestoreSettingsExtensions.ResetDescription&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetDeterministicSourcePaths__1___0_">DotNetRestoreSettingsExtensions.ResetDeterministicSourcePaths&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetDeterministic__1___0_">DotNetRestoreSettingsExtensions.ResetDeterministic&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetDisableParallel__1___0_">DotNetRestoreSettingsExtensions.ResetDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetFileVersion__1___0_">DotNetRestoreSettingsExtensions.ResetFileVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetForceEvaluate__1___0_">DotNetRestoreSettingsExtensions.ResetForceEvaluate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetForce__1___0_">DotNetRestoreSettingsExtensions.ResetForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetIgnoreFailedSources__1___0_">DotNetRestoreSettingsExtensions.ResetIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetInformationalVersion__1___0_">DotNetRestoreSettingsExtensions.ResetInformationalVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetLockFilePath__1___0_">DotNetRestoreSettingsExtensions.ResetLockFilePath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetLockedMode__1___0_">DotNetRestoreSettingsExtensions.ResetLockedMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetNoCache__1___0_">DotNetRestoreSettingsExtensions.ResetNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetNoDependencies__1___0_">DotNetRestoreSettingsExtensions.ResetNoDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetNoWarn__1___0_">DotNetRestoreSettingsExtensions.ResetNoWarn&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPackageDirectory__1___0_">DotNetRestoreSettingsExtensions.ResetPackageDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPackageIconUrl__1___0_">DotNetRestoreSettingsExtensions.ResetPackageIconUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPackageId__1___0_">DotNetRestoreSettingsExtensions.ResetPackageId&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPackageLicenseUrl__1___0_">DotNetRestoreSettingsExtensions.ResetPackageLicenseUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPackageProjectUrl__1___0_">DotNetRestoreSettingsExtensions.ResetPackageProjectUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPackageReleaseNotes__1___0_">DotNetRestoreSettingsExtensions.ResetPackageReleaseNotes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPackageRequireLicenseAcceptance__1___0_">DotNetRestoreSettingsExtensions.ResetPackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPackageTags__1___0_">DotNetRestoreSettingsExtensions.ResetPackageTags&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPlatform__1___0_">DotNetRestoreSettingsExtensions.ResetPlatform&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetProjectFile__1___0_">DotNetRestoreSettingsExtensions.ResetProjectFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPublishProfile__1___0_">DotNetRestoreSettingsExtensions.ResetPublishProfile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPublishReadyToRun__1___0_">DotNetRestoreSettingsExtensions.ResetPublishReadyToRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPublishSingleFile__1___0_">DotNetRestoreSettingsExtensions.ResetPublishSingleFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetPublishTrimmed__1___0_">DotNetRestoreSettingsExtensions.ResetPublishTrimmed&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetRepositoryType__1___0_">DotNetRestoreSettingsExtensions.ResetRepositoryType&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetRepositoryUrl__1___0_">DotNetRestoreSettingsExtensions.ResetRepositoryUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetRunCodeAnalysis__1___0_">DotNetRestoreSettingsExtensions.ResetRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetRuntime__1___0_">DotNetRestoreSettingsExtensions.ResetRuntime&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetSymbolPackageFormat__1___0_">DotNetRestoreSettingsExtensions.ResetSymbolPackageFormat&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetTitle__1___0_">DotNetRestoreSettingsExtensions.ResetTitle&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetTreatWarningsAsErrors__1___0_">DotNetRestoreSettingsExtensions.ResetTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetUseLockFile__1___0_">DotNetRestoreSettingsExtensions.ResetUseLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetVerbosity__1___0_">DotNetRestoreSettingsExtensions.ResetVerbosity&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetVersionPrefix__1___0_">DotNetRestoreSettingsExtensions.ResetVersionPrefix&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetVersion__1___0_">DotNetRestoreSettingsExtensions.ResetVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetWarningLevel__1___0_">DotNetRestoreSettingsExtensions.ResetWarningLevel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ResetWarningsAsErrors__1___0_">DotNetRestoreSettingsExtensions.ResetWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetAssemblyVersion__1___0_System_String_">DotNetRestoreSettingsExtensions.SetAssemblyVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRestoreSettingsExtensions.SetAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetAuthors__1___0_System_String___">DotNetRestoreSettingsExtensions.SetAuthors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetConfigFile__1___0_System_String_">DotNetRestoreSettingsExtensions.SetConfigFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetContinuousIntegrationBuild__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetContinuousIntegrationBuild&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetCopyright__1___0_System_String_">DotNetRestoreSettingsExtensions.SetCopyright&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetDescription__1___0_System_String_">DotNetRestoreSettingsExtensions.SetDescription&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetDeterministicSourcePaths__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetDeterministicSourcePaths&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetDeterministic__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetDeterministic&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetDisableParallel__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetDisableParallel&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetFileVersion__1___0_System_String_">DotNetRestoreSettingsExtensions.SetFileVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetForceEvaluate__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetForceEvaluate&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetForce&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetIgnoreFailedSources__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetIgnoreFailedSources&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetInformationalVersion__1___0_System_String_">DotNetRestoreSettingsExtensions.SetInformationalVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetLockFilePath__1___0_System_String_">DotNetRestoreSettingsExtensions.SetLockFilePath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetLockedMode__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetLockedMode&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetNoCache__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetNoCache&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetNoDependencies__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetNoDependencies&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetNoWarns__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRestoreSettingsExtensions.SetNoWarns&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetNoWarns__1___0_System_Int32___">DotNetRestoreSettingsExtensions.SetNoWarns&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPackageDirectory__1___0_System_String_">DotNetRestoreSettingsExtensions.SetPackageDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPackageIconUrl__1___0_System_String_">DotNetRestoreSettingsExtensions.SetPackageIconUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPackageId__1___0_System_String_">DotNetRestoreSettingsExtensions.SetPackageId&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPackageLicenseUrl__1___0_System_String_">DotNetRestoreSettingsExtensions.SetPackageLicenseUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPackageProjectUrl__1___0_System_String_">DotNetRestoreSettingsExtensions.SetPackageProjectUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPackageReleaseNotes__1___0_System_String_">DotNetRestoreSettingsExtensions.SetPackageReleaseNotes&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPackageRequireLicenseAcceptance__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetPackageRequireLicenseAcceptance&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPackageTags__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRestoreSettingsExtensions.SetPackageTags&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPackageTags__1___0_System_String___">DotNetRestoreSettingsExtensions.SetPackageTags&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPlatform__1___0_System_String_">DotNetRestoreSettingsExtensions.SetPlatform&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetProjectFile__1___0_System_String_">DotNetRestoreSettingsExtensions.SetProjectFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetProperties__1___0_System_Collections_Generic_IDictionary_System_String_System_Object__">DotNetRestoreSettingsExtensions.SetProperties&lt;T&gt;(T, IDictionary&lt;string, object&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetProperty__1___0_System_String_System_Object_">DotNetRestoreSettingsExtensions.SetProperty&lt;T&gt;(T, string, object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPublishProfile__1___0_System_String_">DotNetRestoreSettingsExtensions.SetPublishProfile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPublishReadyToRun__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetPublishReadyToRun&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPublishSingleFile__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetPublishSingleFile&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetPublishTrimmed__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetPublishTrimmed&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetRepositoryType__1___0_System_String_">DotNetRestoreSettingsExtensions.SetRepositoryType&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetRepositoryUrl__1___0_System_String_">DotNetRestoreSettingsExtensions.SetRepositoryUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetRunCodeAnalysis__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetRunCodeAnalysis&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetRuntime__1___0_System_String_">DotNetRestoreSettingsExtensions.SetRuntime&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetSources__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRestoreSettingsExtensions.SetSources&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetSources__1___0_System_String___">DotNetRestoreSettingsExtensions.SetSources&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetSymbolPackageFormat__1___0_Nuke_Common_Tools_DotNet_DotNetSymbolPackageFormat_">DotNetRestoreSettingsExtensions.SetSymbolPackageFormat&lt;T&gt;(T, DotNetSymbolPackageFormat)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetTitle__1___0_System_String_">DotNetRestoreSettingsExtensions.SetTitle&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetTreatWarningsAsErrors__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetTreatWarningsAsErrors&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetUseLockFile__1___0_System_Nullable_System_Boolean__">DotNetRestoreSettingsExtensions.SetUseLockFile&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetVerbosity__1___0_Nuke_Common_Tools_DotNet_DotNetVerbosity_">DotNetRestoreSettingsExtensions.SetVerbosity&lt;T&gt;(T, DotNetVerbosity)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetVersionPrefix__1___0_System_String_">DotNetRestoreSettingsExtensions.SetVersionPrefix&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetVersion__1___0_System_String_">DotNetRestoreSettingsExtensions.SetVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetWarningLevel__1___0_System_Nullable_System_Int32__">DotNetRestoreSettingsExtensions.SetWarningLevel&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetWarningsAsErrors__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRestoreSettingsExtensions.SetWarningsAsErrors&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_SetWarningsAsErrors__1___0_System_Int32___">DotNetRestoreSettingsExtensions.SetWarningsAsErrors&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleContinuousIntegrationBuild__1___0_">DotNetRestoreSettingsExtensions.ToggleContinuousIntegrationBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleDeterministicSourcePaths__1___0_">DotNetRestoreSettingsExtensions.ToggleDeterministicSourcePaths&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleDeterministic__1___0_">DotNetRestoreSettingsExtensions.ToggleDeterministic&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleDisableParallel__1___0_">DotNetRestoreSettingsExtensions.ToggleDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleForceEvaluate__1___0_">DotNetRestoreSettingsExtensions.ToggleForceEvaluate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleForce__1___0_">DotNetRestoreSettingsExtensions.ToggleForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleIgnoreFailedSources__1___0_">DotNetRestoreSettingsExtensions.ToggleIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleLockedMode__1___0_">DotNetRestoreSettingsExtensions.ToggleLockedMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleNoCache__1___0_">DotNetRestoreSettingsExtensions.ToggleNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleNoDependencies__1___0_">DotNetRestoreSettingsExtensions.ToggleNoDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_TogglePackageRequireLicenseAcceptance__1___0_">DotNetRestoreSettingsExtensions.TogglePackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_TogglePublishReadyToRun__1___0_">DotNetRestoreSettingsExtensions.TogglePublishReadyToRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_TogglePublishSingleFile__1___0_">DotNetRestoreSettingsExtensions.TogglePublishSingleFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_TogglePublishTrimmed__1___0_">DotNetRestoreSettingsExtensions.TogglePublishTrimmed&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleRunCodeAnalysis__1___0_">DotNetRestoreSettingsExtensions.ToggleRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleTreatWarningsAsErrors__1___0_">DotNetRestoreSettingsExtensions.ToggleTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettingsExtensions_ToggleUseLockFile__1___0_">DotNetRestoreSettingsExtensions.ToggleUseLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;projectFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_ProjectFile">ProjectFile</a></li><li><code>--configfile</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_ConfigFile">ConfigFile</a></li><li><code>--disable-parallel</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_DisableParallel">DisableParallel</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Force">Force</a></li><li><code>--force-evaluate</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_ForceEvaluate">ForceEvaluate</a></li><li><code>--ignore-failed-sources</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_IgnoreFailedSources">IgnoreFailedSources</a></li><li><code>--lock-file-path</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_LockFilePath">LockFilePath</a></li><li><code>--locked-mode</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_LockedMode">LockedMode</a></li><li><code>--no-cache</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_NoCache">NoCache</a></li><li><code>--no-dependencies</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_NoDependencies">NoDependencies</a></li><li><code>--packages</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_PackageDirectory">PackageDirectory</a></li><li><code>--property</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Properties">Properties</a></li><li><code>--runtime</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Runtime">Runtime</a></li><li><code>--source</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Sources">Sources</a></li><li><code>--use-lock-file</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_UseLockFile">UseLockFile</a></li><li><code>--verbosity</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.html#Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Verbosity">Verbosity</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_ConfigFile_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.ConfigFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_ConfigFile" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.ConfigFile">
+  ConfigFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L365"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The NuGet configuration file (<em>NuGet.config</em>) to use for the restore operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConfigFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_DisableParallel_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.DisableParallel*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_DisableParallel" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.DisableParallel">
+  DisableParallel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L369"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disables restoring multiple projects in parallel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DisableParallel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Force_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.Force*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Force" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.Force">
+  Force
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L371"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Forces all dependencies to be resolved even if the last restore was successful. This is equivalent to deleting the <em>project.assets.json</em> file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Force { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_ForceEvaluate_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.ForceEvaluate*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_ForceEvaluate" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.ForceEvaluate">
+  ForceEvaluate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L389"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Forces restore to reevaluate all dependencies even if a lock file already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ForceEvaluate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_IgnoreFailedSources_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.IgnoreFailedSources*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_IgnoreFailedSources" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.IgnoreFailedSources">
+  IgnoreFailedSources
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L373"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only warn about failed sources if there are packages meeting the version requirement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnoreFailedSources { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_LockFilePath_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.LockFilePath*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_LockFilePath" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.LockFilePath">
+  LockFilePath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L387"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output location where project lock file is written. By default, this is 'PROJECT_ROOT\packages.lock.json'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LockFilePath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_LockedMode_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.LockedMode*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_LockedMode" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.LockedMode">
+  LockedMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L385"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't allow updating project lock file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? LockedMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_NoCache_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.NoCache*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_NoCache" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.NoCache">
+  NoCache
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L375"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies to not cache packages and HTTP requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoCache { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_NoDependencies_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.NoDependencies*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_NoDependencies" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.NoDependencies">
+  NoDependencies
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L377"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>When restoring a project with project-to-project (P2P) references, restore the root project and not the references.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoDependencies { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_PackageDirectory_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.PackageDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_PackageDirectory" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.PackageDirectory">
+  PackageDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L379"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the directory for restored packages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PackageDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_ProjectFile_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.ProjectFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_ProjectFile" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.ProjectFile">
+  ProjectFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L363"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Optional path to the project file to restore.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProjectFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Properties_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.Properties*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Properties" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.Properties">
+  Properties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L393"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set or override the specified project-level properties, where name is the property name and value is the property value. Specify each property separately, or use a semicolon or comma to separate multiple properties, as the following example shows:</p><p><code>--property:WarningLevel=2;OutDir=bin\Debug</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;string, object&gt; Properties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Runtime_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.Runtime*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Runtime" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.Runtime">
+  Runtime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L391"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies a runtime for the package restore. This is used to restore packages for runtimes not explicitly listed in the <code>&lt;RuntimeIdentifiers&gt;</code> tag in the <em>.csproj</em> file. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog">RID catalog</a>. Provide multiple RIDs by specifying this option multiple times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Runtime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Sources_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.Sources*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Sources" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.Sources">
+  Sources
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L381"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies a NuGet package source to use during the restore operation. This overrides all of the sources specified in the <em>NuGet.config</em> file(s). Multiple sources can be provided by specifying this option multiple times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Sources { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_UseLockFile_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.UseLockFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_UseLockFile" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.UseLockFile">
+  UseLockFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L383"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enables project lock file to be generated and used with restore.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseLockFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Verbosity_" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.Verbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRestoreSettings_Verbosity" data-uid="Nuke.Common.Tools.DotNet.DotNetRestoreSettings.Verbosity">
+  Verbosity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L367"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the verbosity level of the command. Allowed values are <code>q[uiet]</code>, <code>m[inimal]</code>, <code>n[ormal]</code>, <code>d[etailed]</code>, and <code>diag[nostic]</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DotNetVerbosity Verbosity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.DotNet.DotNetVerbosity.html">DotNetVerbosity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L357" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

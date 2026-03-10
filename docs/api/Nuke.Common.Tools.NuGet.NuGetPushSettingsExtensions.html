@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class NuGetPushSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NuGetPushSettingsExtensions | gruke ">
+      
+      <meta name="description" content="The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions" class="text-break">
+Class NuGetPushSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L522"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.NuGet.html">NuGet</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class NuGetPushSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">NuGetPushSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;targetPath&gt;</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_TargetPath">TargetPath</a></li><li><code>-ApiKey</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_ApiKey">ApiKey</a></li><li><code>-ConfigFile</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_ConfigFile">ConfigFile</a></li><li><code>-DisableBuffering</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_DisableBuffering">DisableBuffering</a></li><li><code>-ForceEnglishOutput</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_ForceEnglishOutput">ForceEnglishOutput</a></li><li><code>-NonInteractive</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_NonInteractive">NonInteractive</a></li><li><code>-NoSymbols</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_NoSymbols">NoSymbols</a></li><li><code>-Source</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_Source">Source</a></li><li><code>-SymbolApiKey</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_SymbolApiKey">SymbolApiKey</a></li><li><code>-SymbolSource</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_SymbolSource">SymbolSource</a></li><li><code>-Timeout</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_Timeout">Timeout</a></li><li><code>-Verbosity</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetPushSettings.html#Nuke_Common_Tools_NuGet_NuGetPushSettings_Verbosity">Verbosity</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_DisableDisableBuffering_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.DisableDisableBuffering*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_DisableDisableBuffering__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.DisableDisableBuffering``1(``0)">
+  DisableDisableBuffering&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L594"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disables buffering when pushing to an HTTP(s) server to decrease memory usages. Caution: when this option is used, integrated Windows authentication might not work.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDisableBuffering&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_DisableForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.DisableForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_DisableForceEnglishOutput__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.DisableForceEnglishOutput``1(``0)">
+  DisableForceEnglishOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L627"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableForceEnglishOutput&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_DisableNoSymbols_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.DisableNoSymbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_DisableNoSymbols__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.DisableNoSymbols``1(``0)">
+  DisableNoSymbols&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L577"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> If a symbols package exists, it will not be pushed to a symbol server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoSymbols&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_DisableNonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.DisableNonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_DisableNonInteractive__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.DisableNonInteractive``1(``0)">
+  DisableNonInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L644"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNonInteractive&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_EnableDisableBuffering_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.EnableDisableBuffering*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_EnableDisableBuffering__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.EnableDisableBuffering``1(``0)">
+  EnableDisableBuffering&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L591"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disables buffering when pushing to an HTTP(s) server to decrease memory usages. Caution: when this option is used, integrated Windows authentication might not work.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDisableBuffering&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_EnableForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.EnableForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_EnableForceEnglishOutput__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.EnableForceEnglishOutput``1(``0)">
+  EnableForceEnglishOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L624"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableForceEnglishOutput&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_EnableNoSymbols_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.EnableNoSymbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_EnableNoSymbols__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.EnableNoSymbols``1(``0)">
+  EnableNoSymbols&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L574"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> If a symbols package exists, it will not be pushed to a symbol server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoSymbols&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_EnableNonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.EnableNonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_EnableNonInteractive__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.EnableNonInteractive``1(``0)">
+  EnableNonInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L641"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNonInteractive&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetApiKey_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetApiKey*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetApiKey__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetApiKey``1(``0)">
+  ResetApiKey&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L539"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The API key for the target repository. If not present, the one specified in <em>%AppData%\NuGet\NuGet.Config</em> is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetApiKey&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetConfigFile_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetConfigFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetConfigFile__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetConfigFile``1(``0)">
+  ResetConfigFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L605"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The NuGet configuration file to apply. If not specified, <em>%AppData%\NuGet\NuGet.Config</em> is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetConfigFile&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetDisableBuffering_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetDisableBuffering*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetDisableBuffering__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetDisableBuffering``1(``0)">
+  ResetDisableBuffering&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L588"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disables buffering when pushing to an HTTP(s) server to decrease memory usages. Caution: when this option is used, integrated Windows authentication might not work.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDisableBuffering&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetForceEnglishOutput__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetForceEnglishOutput``1(``0)">
+  ResetForceEnglishOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L621"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetForceEnglishOutput&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetNoSymbols_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetNoSymbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetNoSymbols__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetNoSymbols``1(``0)">
+  ResetNoSymbols&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L571"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> If a symbols package exists, it will not be pushed to a symbol server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoSymbols&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetNonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetNonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetNonInteractive__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetNonInteractive``1(``0)">
+  ResetNonInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L638"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNonInteractive&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetSource_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetSource*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetSource__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetSource``1(``0)">
+  ResetSource&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L547"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the server URL. NuGet identifies a UNC or local folder source and simply copies the file there instead of pushing it using HTTP.  Also, starting with NuGet 3.4.2, this is a mandatory parameter unless the <em>NuGet.Config</em> file specifies a <em>DefaultPushSource</em> value (see <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior">Configuring NuGet behavior</a>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSource&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetSymbolApiKey_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetSymbolApiKey*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetSymbolApiKey__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetSymbolApiKey``1(``0)">
+  ResetSymbolApiKey&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L563"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Specifies the API key for the URL specified in <code>-SymbolSource</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSymbolApiKey&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetSymbolSource_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetSymbolSource*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetSymbolSource__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetSymbolSource``1(``0)">
+  ResetSymbolSource&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L555"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Specifies the symbol server URL; nuget.smbsrc.net is used when pushing to nuget.org</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSymbolSource&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetTargetPath_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetTargetPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetTargetPath__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetTargetPath``1(``0)">
+  ResetTargetPath&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L531"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path of the package to push.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTargetPath&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetTimeout_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetTimeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetTimeout__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetTimeout``1(``0)">
+  ResetTimeout&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L655"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the timeout, in seconds, for pushing to a server. The default is 300 seconds (5 minutes).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTimeout&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetVerbosity_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetVerbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ResetVerbosity__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ResetVerbosity``1(``0)">
+  ResetVerbosity&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L613"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the amount of details displayed in the output: <em>normal</em>, <em>quiet</em>, <em>detailed</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVerbosity&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetApiKey_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetApiKey*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetApiKey__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetApiKey``1(``0,System.String)">
+  SetApiKey&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L536"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The API key for the target repository. If not present, the one specified in <em>%AppData%\NuGet\NuGet.Config</em> is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetApiKey&lt;T&gt;(this T o, string v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetConfigFile_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetConfigFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetConfigFile__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetConfigFile``1(``0,System.String)">
+  SetConfigFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L602"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The NuGet configuration file to apply. If not specified, <em>%AppData%\NuGet\NuGet.Config</em> is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetConfigFile&lt;T&gt;(this T o, string v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetDisableBuffering_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetDisableBuffering*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetDisableBuffering__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetDisableBuffering``1(``0,System.Nullable{System.Boolean})">
+  SetDisableBuffering&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L585"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disables buffering when pushing to an HTTP(s) server to decrease memory usages. Caution: when this option is used, integrated Windows authentication might not work.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDisableBuffering&lt;T&gt;(this T o, bool? v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetForceEnglishOutput__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetForceEnglishOutput``1(``0,System.Nullable{System.Boolean})">
+  SetForceEnglishOutput&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L618"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetForceEnglishOutput&lt;T&gt;(this T o, bool? v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetNoSymbols_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetNoSymbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetNoSymbols__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetNoSymbols``1(``0,System.Nullable{System.Boolean})">
+  SetNoSymbols&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L568"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> If a symbols package exists, it will not be pushed to a symbol server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoSymbols&lt;T&gt;(this T o, bool? v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetNonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetNonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetNonInteractive__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetNonInteractive``1(``0,System.Nullable{System.Boolean})">
+  SetNonInteractive&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L635"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNonInteractive&lt;T&gt;(this T o, bool? v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetSource_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetSource*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetSource__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetSource``1(``0,System.String)">
+  SetSource&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L544"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the server URL. NuGet identifies a UNC or local folder source and simply copies the file there instead of pushing it using HTTP.  Also, starting with NuGet 3.4.2, this is a mandatory parameter unless the <em>NuGet.Config</em> file specifies a <em>DefaultPushSource</em> value (see <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior">Configuring NuGet behavior</a>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSource&lt;T&gt;(this T o, string v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetSymbolApiKey_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetSymbolApiKey*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetSymbolApiKey__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetSymbolApiKey``1(``0,System.String)">
+  SetSymbolApiKey&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L560"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Specifies the API key for the URL specified in <code>-SymbolSource</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSymbolApiKey&lt;T&gt;(this T o, string v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetSymbolSource_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetSymbolSource*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetSymbolSource__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetSymbolSource``1(``0,System.String)">
+  SetSymbolSource&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L552"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Specifies the symbol server URL; nuget.smbsrc.net is used when pushing to nuget.org</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSymbolSource&lt;T&gt;(this T o, string v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetTargetPath_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetTargetPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetTargetPath__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetTargetPath``1(``0,System.String)">
+  SetTargetPath&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L528"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path of the package to push.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTargetPath&lt;T&gt;(this T o, string v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetTimeout_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetTimeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetTimeout__1___0_System_Nullable_System_Int32__" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetTimeout``1(``0,System.Nullable{System.Int32})">
+  SetTimeout&lt;T&gt;(T, int?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L652"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the timeout, in seconds, for pushing to a server. The default is 300 seconds (5 minutes).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTimeout&lt;T&gt;(this T o, int? v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetVerbosity_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetVerbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_SetVerbosity__1___0_Nuke_Common_Tools_NuGet_NuGetVerbosity_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.SetVerbosity``1(``0,Nuke.Common.Tools.NuGet.NuGetVerbosity)">
+  SetVerbosity&lt;T&gt;(T, NuGetVerbosity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L610"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the amount of details displayed in the output: <em>normal</em>, <em>quiet</em>, <em>detailed</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVerbosity&lt;T&gt;(this T o, NuGetVerbosity v) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetVerbosity.html">NuGetVerbosity</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ToggleDisableBuffering_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ToggleDisableBuffering*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ToggleDisableBuffering__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ToggleDisableBuffering``1(``0)">
+  ToggleDisableBuffering&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L597"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disables buffering when pushing to an HTTP(s) server to decrease memory usages. Caution: when this option is used, integrated Windows authentication might not work.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDisableBuffering&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ToggleForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ToggleForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ToggleForceEnglishOutput__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ToggleForceEnglishOutput``1(``0)">
+  ToggleForceEnglishOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L630"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleForceEnglishOutput&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ToggleNoSymbols_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ToggleNoSymbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ToggleNoSymbols__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ToggleNoSymbols``1(``0)">
+  ToggleNoSymbols&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L580"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> If a symbols package exists, it will not be pushed to a symbol server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoSymbols&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ToggleNonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ToggleNonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetPushSettingsExtensions_ToggleNonInteractive__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetPushSettingsExtensions.ToggleNonInteractive``1(``0)">
+  ToggleNonInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L647"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNonInteractive&lt;T&gt;(this T o) where T : NuGetPushSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L522" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

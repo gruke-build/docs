@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class NukeBuild | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NukeBuild | gruke ">
+      
+      <meta name="description" content="Base class for build definitions. Derived types must declare static int Main which calls  for the exit code.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_NukeBuild.md&amp;value=---%0Auid%3A%20Nuke.Common.NukeBuild%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.NukeBuild">
+
+
+
+  <h1 id="Nuke_Common_NukeBuild" data-uid="Nuke.Common.NukeBuild" class="text-break">
+Class NukeBuild  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Build.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Base class for build definitions. Derived types must declare <code>static int Main</code> which calls
+<a class="xref" href="Nuke.Common.NukeBuild.html#Nuke_Common_NukeBuild_Execute__1_System_Linq_Expressions_Expression_System_Func___0_Nuke_Common_Target_____">Execute&lt;T&gt;(params Expression&lt;Func&lt;T, Target&gt;&gt;[])</a> for the exit code.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+public abstract class NukeBuild : INukeBuild</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">NukeBuild</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.INukeBuild.html">INukeBuild</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+  <h2 id="Nuke_Common_NukeBuild_examples">Examples</h2>
+  <pre><code class="lang-csharp">class DefaultBuild : NukeBuild
+{
+    public static int Main () =&gt; Execute&lt;DefaultBuild&gt;(x =&gt; x.Compile);
+
+    Target Clean =&gt; _ =&gt; _
+        .Executes(() =&gt;
+        {
+            EnsureCleanDirectory(OutputDirectory);
+        });
+
+    Target Compile =&gt; _ =&gt; _
+        .DependsOn(Clean)
+        .Executes(() =&gt;
+        {
+            MSBuild(SolutionFile);
+        });
+}</code></pre>
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Nuke_Common_NukeBuild__ctor_" data-uid="Nuke.Common.NukeBuild.#ctor*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild__ctor" data-uid="Nuke.Common.NukeBuild.#ctor">
+  NukeBuild()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Events.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected NukeBuild()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_NukeBuild_AbortedTargets_" data-uid="Nuke.Common.NukeBuild.AbortedTargets*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_AbortedTargets" data-uid="Nuke.Common.NukeBuild.AbortedTargets">
+  AbortedTargets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the list of targets that were aborted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyCollection&lt;ExecutableTarget&gt; AbortedTargets { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Execution.ExecutableTarget.html">ExecutableTarget</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_BuildAssemblyDirectory_" data-uid="Nuke.Common.NukeBuild.BuildAssemblyDirectory*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_BuildAssemblyDirectory" data-uid="Nuke.Common.NukeBuild.BuildAssemblyDirectory">
+  BuildAssemblyDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the full path to the build assembly directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public static AbsolutePath BuildAssemblyDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_BuildAssemblyFile_" data-uid="Nuke.Common.NukeBuild.BuildAssemblyFile*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_BuildAssemblyFile" data-uid="Nuke.Common.NukeBuild.BuildAssemblyFile">
+  BuildAssemblyFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the full path to the build assembly file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public static AbsolutePath BuildAssemblyFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_BuildProjectDirectory_" data-uid="Nuke.Common.NukeBuild.BuildProjectDirectory*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_BuildProjectDirectory" data-uid="Nuke.Common.NukeBuild.BuildProjectDirectory">
+  BuildProjectDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the full path to the build project directory, or <code>null</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public static AbsolutePath BuildProjectDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_BuildProjectFile_" data-uid="Nuke.Common.NukeBuild.BuildProjectFile*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_BuildProjectFile" data-uid="Nuke.Common.NukeBuild.BuildProjectFile">
+  BuildProjectFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the full path to the build project file, or <code>null</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public static AbsolutePath BuildProjectFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_Continue_" data-uid="Nuke.Common.NukeBuild.Continue*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_Continue" data-uid="Nuke.Common.NukeBuild.Continue">
+  Continue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value whether a previous failed build should be continued.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;Indicates to continue a previously failed build attempt.&quot;)]
+public bool Continue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_EmbeddedPackagesDirectory_" data-uid="Nuke.Common.NukeBuild.EmbeddedPackagesDirectory*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_EmbeddedPackagesDirectory" data-uid="Nuke.Common.NukeBuild.EmbeddedPackagesDirectory">
+  EmbeddedPackagesDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+protected virtual string EmbeddedPackagesDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_ExecutionPlan_" data-uid="Nuke.Common.NukeBuild.ExecutionPlan*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_ExecutionPlan" data-uid="Nuke.Common.NukeBuild.ExecutionPlan">
+  ExecutionPlan
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyCollection&lt;ExecutableTarget&gt; ExecutionPlan { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Execution.ExecutableTarget.html">ExecutableTarget</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_ExitCode_" data-uid="Nuke.Common.NukeBuild.ExitCode*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_ExitCode" data-uid="Nuke.Common.NukeBuild.ExitCode">
+  ExitCode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the build exit code.
+When set to <returns>null</returns> (default), <a class="xref" href="Nuke.Common.NukeBuild.html#Nuke_Common_NukeBuild_Execute__1_System_Linq_Expressions_Expression_System_Func___0_Nuke_Common_Target_____">Execute&lt;T&gt;(params Expression&lt;Func&lt;T, Target&gt;&gt;[])</a> will return a <em>0</em> exit code on build success; or a <em>-1</em> exit code on build failure.
+When set to a non-null value, <a class="xref" href="Nuke.Common.NukeBuild.html#Nuke_Common_NukeBuild_Execute__1_System_Linq_Expressions_Expression_System_Func___0_Nuke_Common_Target_____">Execute&lt;T&gt;(params Expression&lt;Func&lt;T, Target&gt;&gt;[])</a> will return the value of <a class="xref" href="Nuke.Common.NukeBuild.html#Nuke_Common_NukeBuild_ExitCode">ExitCode</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? ExitCode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_FailedTargets_" data-uid="Nuke.Common.NukeBuild.FailedTargets*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_FailedTargets" data-uid="Nuke.Common.NukeBuild.FailedTargets">
+  FailedTargets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the list of targets that have failed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyCollection&lt;ExecutableTarget&gt; FailedTargets { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Execution.ExecutableTarget.html">ExecutableTarget</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_FinishedTargets_" data-uid="Nuke.Common.NukeBuild.FinishedTargets*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_FinishedTargets" data-uid="Nuke.Common.NukeBuild.FinishedTargets">
+  FinishedTargets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the list of targets that have been finished (failed or succeeded).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyCollection&lt;ExecutableTarget&gt; FinishedTargets { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Execution.ExecutableTarget.html">ExecutableTarget</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_Help_" data-uid="Nuke.Common.NukeBuild.Help*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_Help" data-uid="Nuke.Common.NukeBuild.Help">
+  Help
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value whether to show the help text for this build assembly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;Shows the help text for this build assembly.&quot;)]
+public bool Help { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_Host_" data-uid="Nuke.Common.NukeBuild.Host*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_Host" data-uid="Nuke.Common.NukeBuild.Host">
+  Host
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the host for execution. Default is <em>automatic</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;Host for execution. Default is &#39;automatic&#39;.&quot;)]
+public static Host Host { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Host.html">Host</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_InvokedTargets_" data-uid="Nuke.Common.NukeBuild.InvokedTargets*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_InvokedTargets" data-uid="Nuke.Common.NukeBuild.InvokedTargets">
+  InvokedTargets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the list of targets that were invoked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;List of targets to be invoked. Default is &#39;{default_target}&#39;.&quot;, Name = &quot;Target&quot;, Separator = &quot;+&quot;)]
+public IReadOnlyCollection&lt;ExecutableTarget&gt; InvokedTargets { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Execution.ExecutableTarget.html">ExecutableTarget</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_IsFailing_" data-uid="Nuke.Common.NukeBuild.IsFailing*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_IsFailing" data-uid="Nuke.Common.NukeBuild.IsFailing">
+  IsFailing
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFailing { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_IsFinished_" data-uid="Nuke.Common.NukeBuild.IsFinished*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_IsFinished" data-uid="Nuke.Common.NukeBuild.IsFinished">
+  IsFinished
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFinished { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_IsLocalBuild_" data-uid="Nuke.Common.NukeBuild.IsLocalBuild*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_IsLocalBuild" data-uid="Nuke.Common.NukeBuild.IsLocalBuild">
+  IsLocalBuild
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsLocalBuild { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_IsServerBuild_" data-uid="Nuke.Common.NukeBuild.IsServerBuild*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_IsServerBuild" data-uid="Nuke.Common.NukeBuild.IsServerBuild">
+  IsServerBuild
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsServerBuild { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_IsSucceeding_" data-uid="Nuke.Common.NukeBuild.IsSucceeding*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_IsSucceeding" data-uid="Nuke.Common.NukeBuild.IsSucceeding">
+  IsSucceeding
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSucceeding { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_LoadedLocalProfiles_" data-uid="Nuke.Common.NukeBuild.LoadedLocalProfiles*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_LoadedLocalProfiles" data-uid="Nuke.Common.NukeBuild.LoadedLocalProfiles">
+  LoadedLocalProfiles
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;Defines the profiles to load.&quot;, Name = &quot;Profile&quot;)]
+public static string[] LoadedLocalProfiles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_NoLogo_" data-uid="Nuke.Common.NukeBuild.NoLogo*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_NoLogo" data-uid="Nuke.Common.NukeBuild.NoLogo">
+  NoLogo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value whether to display the NUKE logo.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;Disables displaying the NUKE logo.&quot;)]
+public bool NoLogo { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_NpmPackageJsonFile_" data-uid="Nuke.Common.NukeBuild.NpmPackageJsonFile*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_NpmPackageJsonFile" data-uid="Nuke.Common.NukeBuild.NpmPackageJsonFile">
+  NpmPackageJsonFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+protected virtual AbsolutePath NpmPackageJsonFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_NuGetAssetsConfigFile_" data-uid="Nuke.Common.NukeBuild.NuGetAssetsConfigFile*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_NuGetAssetsConfigFile" data-uid="Nuke.Common.NukeBuild.NuGetAssetsConfigFile">
+  NuGetAssetsConfigFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+protected virtual string NuGetAssetsConfigFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_NuGetPackagesConfigFile_" data-uid="Nuke.Common.NukeBuild.NuGetPackagesConfigFile*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_NuGetPackagesConfigFile" data-uid="Nuke.Common.NukeBuild.NuGetPackagesConfigFile">
+  NuGetPackagesConfigFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+protected virtual string NuGetPackagesConfigFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_Partition_" data-uid="Nuke.Common.NukeBuild.Partition*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_Partition" data-uid="Nuke.Common.NukeBuild.Partition">
+  Partition
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;Partition to use on CI.&quot;, List = false)]
+public Partition Partition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.CI.Partition.html">Partition</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_Plan_" data-uid="Nuke.Common.NukeBuild.Plan*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_Plan" data-uid="Nuke.Common.NukeBuild.Plan">
+  Plan
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value whether to show the execution plan (HTML).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;Shows the execution plan (HTML).&quot;)]
+public bool Plan { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_RootDirectory_" data-uid="Nuke.Common.NukeBuild.RootDirectory*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_RootDirectory" data-uid="Nuke.Common.NukeBuild.RootDirectory">
+  RootDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the full path to the root directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;Root directory during build execution.&quot;, Name = &quot;Root&quot;)]
+public static AbsolutePath RootDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_RunningTargets_" data-uid="Nuke.Common.NukeBuild.RunningTargets*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_RunningTargets" data-uid="Nuke.Common.NukeBuild.RunningTargets">
+  RunningTargets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the list of targets that are running.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyCollection&lt;ExecutableTarget&gt; RunningTargets { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Execution.ExecutableTarget.html">ExecutableTarget</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_ScheduledTargets_" data-uid="Nuke.Common.NukeBuild.ScheduledTargets*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_ScheduledTargets" data-uid="Nuke.Common.NukeBuild.ScheduledTargets">
+  ScheduledTargets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the list of targets that are scheduled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyCollection&lt;ExecutableTarget&gt; ScheduledTargets { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Execution.ExecutableTarget.html">ExecutableTarget</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_SkippedTargets_" data-uid="Nuke.Common.NukeBuild.SkippedTargets*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_SkippedTargets" data-uid="Nuke.Common.NukeBuild.SkippedTargets">
+  SkippedTargets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the list of targets that are skipped.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;List of targets to be skipped. Empty list skips all dependencies.&quot;, Name = &quot;Skip&quot;, Separator = &quot;+&quot;)]
+public IReadOnlyCollection&lt;ExecutableTarget&gt; SkippedTargets { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Execution.ExecutableTarget.html">ExecutableTarget</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_SucceededTargets_" data-uid="Nuke.Common.NukeBuild.SucceededTargets*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_SucceededTargets" data-uid="Nuke.Common.NukeBuild.SucceededTargets">
+  SucceededTargets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the list of targets that have succeeded.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyCollection&lt;ExecutableTarget&gt; SucceededTargets { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Execution.ExecutableTarget.html">ExecutableTarget</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_TemporaryDirectory_" data-uid="Nuke.Common.NukeBuild.TemporaryDirectory*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_TemporaryDirectory" data-uid="Nuke.Common.NukeBuild.TemporaryDirectory">
+  TemporaryDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the full path to the temporary directory <code>/.nuke/temp</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AbsolutePath TemporaryDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_Verbosity_" data-uid="Nuke.Common.NukeBuild.Verbosity*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_Verbosity" data-uid="Nuke.Common.NukeBuild.Verbosity">
+  Verbosity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the logging verbosity during build execution. Default is <a class="xref" href="Nuke.Common.Verbosity.html#Nuke_Common_Verbosity_Normal">Normal</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(&quot;Logging verbosity during build execution. Default is &#39;Normal&#39;.&quot;)]
+public static Verbosity Verbosity { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Verbosity.html">Verbosity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_NukeBuild_Execute_" data-uid="Nuke.Common.NukeBuild.Execute*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_Execute__1_System_Linq_Expressions_Expression_System_Func___0_Nuke_Common_Target_____" data-uid="Nuke.Common.NukeBuild.Execute``1(System.Linq.Expressions.Expression{System.Func{``0,Nuke.Common.Target}}[])">
+  Execute&lt;T&gt;(params Expression&lt;Func&lt;T, Target&gt;&gt;[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Executes the build. The provided expression defines the <em>default</em> target that is invoked,
+if no targets have been specified via command-line arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static int Execute&lt;T&gt;(params Expression&lt;Func&lt;T, Target&gt;&gt;[] defaultTargetExpressions) where T : NukeBuild, new()</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>defaultTargetExpressions</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;T, <a class="xref" href="Nuke.Common.Target.html">Target</a>&gt;&gt;[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_OnBuildCreated_" data-uid="Nuke.Common.NukeBuild.OnBuildCreated*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_OnBuildCreated" data-uid="Nuke.Common.NukeBuild.OnBuildCreated">
+  OnBuildCreated()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Events.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Method that is invoked after the instance of the build was created.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnBuildCreated()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_OnBuildFinished_" data-uid="Nuke.Common.NukeBuild.OnBuildFinished*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_OnBuildFinished" data-uid="Nuke.Common.NukeBuild.OnBuildFinished">
+  OnBuildFinished()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Events.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Method that is invoked after the build has finished (succeeded or failed).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnBuildFinished()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_OnBuildInitialized_" data-uid="Nuke.Common.NukeBuild.OnBuildInitialized*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_OnBuildInitialized" data-uid="Nuke.Common.NukeBuild.OnBuildInitialized">
+  OnBuildInitialized()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Events.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Method that is invoked after build instance is initialized. I.e., value injection and requirement validation has finished.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnBuildInitialized()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_OnTargetFailed_" data-uid="Nuke.Common.NukeBuild.OnTargetFailed*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_OnTargetFailed_System_String_" data-uid="Nuke.Common.NukeBuild.OnTargetFailed(System.String)">
+  OnTargetFailed(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Events.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Method that is invoked when a target has failed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnTargetFailed(string target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_OnTargetRunning_" data-uid="Nuke.Common.NukeBuild.OnTargetRunning*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_OnTargetRunning_System_String_" data-uid="Nuke.Common.NukeBuild.OnTargetRunning(System.String)">
+  OnTargetRunning(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Events.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Method that is invoked before a target is about to start.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnTargetRunning(string target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_OnTargetSkipped_" data-uid="Nuke.Common.NukeBuild.OnTargetSkipped*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_OnTargetSkipped_System_String_" data-uid="Nuke.Common.NukeBuild.OnTargetSkipped(System.String)">
+  OnTargetSkipped(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Events.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Method that is invoked when a target is skipped.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnTargetSkipped(string target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_OnTargetSucceeded_" data-uid="Nuke.Common.NukeBuild.OnTargetSucceeded*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_OnTargetSucceeded_System_String_" data-uid="Nuke.Common.NukeBuild.OnTargetSucceeded(System.String)">
+  OnTargetSucceeded(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Events.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Method that is invoked when a target has been executed successfully.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnTargetSucceeded(string target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_NukeBuild_ReportSummary_" data-uid="Nuke.Common.NukeBuild.ReportSummary*"></a>
+
+  <h3 id="Nuke_Common_NukeBuild_ReportSummary_Nuke_Common_Tooling_Configure_System_Collections_Generic_Dictionary_System_String_System_String___" data-uid="Nuke.Common.NukeBuild.ReportSummary(Nuke.Common.Tooling.Configure{System.Collections.Generic.Dictionary{System.String,System.String}})">
+  ReportSummary(Configure&lt;Dictionary&lt;string, string&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ReportSummary(Configure&lt;Dictionary&lt;string, string&gt;&gt; configurator = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Build/NukeBuild.Statics.cs/#L19" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class UnityCreateManualActivationFileSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class UnityCreateManualActivationFileSettings | gruke ">
+      
+      <meta name="description" content="(2018.2+) Exports the currently activated license to the path of the Unity executable or either the default Unity license location, see the logs or Activation FAQ for more information.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings" class="text-break">
+Class UnityCreateManualActivationFileSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Unity/Unity.Generated.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Unity.html">Unity</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>(2018.2+) Exports the currently activated license to the path of the Unity executable or either the default Unity license location, see the logs or <a href="https://docs.unity3d.com/Manual/ActivationFAQ.html">Activation FAQ</a> for more information.</p><p>For more details, visit the <a href="https://unity3d.com/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class UnityCreateManualActivationFileSettings : UnityOptionsBase, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBase.html">UnityOptionsBase</a></div>
+      <div><span class="xref">UnityCreateManualActivationFileSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBase.html#Nuke_Common_Tools_Unity_UnityOptionsBase_LogFile">UnityOptionsBase.LogFile</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBase.html#Nuke_Common_Tools_Unity_UnityOptionsBase_MinimalOutput">UnityOptionsBase.MinimalOutput</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBase.html#Nuke_Common_Tools_Unity_UnityOptionsBase_StableExitCodes">UnityOptionsBase.StableExitCodes</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBase.html#Nuke_Common_Tools_Unity_UnityOptionsBase_HubVersion">UnityOptionsBase.HubVersion</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_DisableBatchMode__1___0_">UnityCreateManualActivationFileSettingsExtensions.DisableBatchMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_DisableNoGraphics__1___0_">UnityCreateManualActivationFileSettingsExtensions.DisableNoGraphics&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_DisableQuit__1___0_">UnityCreateManualActivationFileSettingsExtensions.DisableQuit&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_DisableSilentCrashes__1___0_">UnityCreateManualActivationFileSettingsExtensions.DisableSilentCrashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_EnableBatchMode__1___0_">UnityCreateManualActivationFileSettingsExtensions.EnableBatchMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_EnableNoGraphics__1___0_">UnityCreateManualActivationFileSettingsExtensions.EnableNoGraphics&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_EnableQuit__1___0_">UnityCreateManualActivationFileSettingsExtensions.EnableQuit&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_EnableSilentCrashes__1___0_">UnityCreateManualActivationFileSettingsExtensions.EnableSilentCrashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ResetBatchMode__1___0_">UnityCreateManualActivationFileSettingsExtensions.ResetBatchMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ResetNoGraphics__1___0_">UnityCreateManualActivationFileSettingsExtensions.ResetNoGraphics&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ResetPassword__1___0_">UnityCreateManualActivationFileSettingsExtensions.ResetPassword&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ResetQuit__1___0_">UnityCreateManualActivationFileSettingsExtensions.ResetQuit&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ResetSerial__1___0_">UnityCreateManualActivationFileSettingsExtensions.ResetSerial&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ResetSilentCrashes__1___0_">UnityCreateManualActivationFileSettingsExtensions.ResetSilentCrashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ResetUsername__1___0_">UnityCreateManualActivationFileSettingsExtensions.ResetUsername&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_SetBatchMode__1___0_System_Nullable_System_Boolean__">UnityCreateManualActivationFileSettingsExtensions.SetBatchMode&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_SetNoGraphics__1___0_System_Nullable_System_Boolean__">UnityCreateManualActivationFileSettingsExtensions.SetNoGraphics&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_SetPassword__1___0_System_String_">UnityCreateManualActivationFileSettingsExtensions.SetPassword&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_SetQuit__1___0_System_Nullable_System_Boolean__">UnityCreateManualActivationFileSettingsExtensions.SetQuit&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_SetSerial__1___0_System_String_">UnityCreateManualActivationFileSettingsExtensions.SetSerial&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_SetSilentCrashes__1___0_System_Nullable_System_Boolean__">UnityCreateManualActivationFileSettingsExtensions.SetSilentCrashes&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_SetUsername__1___0_System_String_">UnityCreateManualActivationFileSettingsExtensions.SetUsername&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ToggleBatchMode__1___0_">UnityCreateManualActivationFileSettingsExtensions.ToggleBatchMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ToggleNoGraphics__1___0_">UnityCreateManualActivationFileSettingsExtensions.ToggleNoGraphics&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ToggleQuit__1___0_">UnityCreateManualActivationFileSettingsExtensions.ToggleQuit&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettingsExtensions.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettingsExtensions_ToggleSilentCrashes__1___0_">UnityCreateManualActivationFileSettingsExtensions.ToggleSilentCrashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_AddStableExitCodes__1___0_System_Collections_Generic_IEnumerable_System_Int32__">UnityOptionsBaseExtensions.AddStableExitCodes&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_AddStableExitCodes__1___0_System_Int32___">UnityOptionsBaseExtensions.AddStableExitCodes&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_ClearStableExitCodes__1___0_">UnityOptionsBaseExtensions.ClearStableExitCodes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_DisableMinimalOutput__1___0_">UnityOptionsBaseExtensions.DisableMinimalOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_EnableMinimalOutput__1___0_">UnityOptionsBaseExtensions.EnableMinimalOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_RemoveStableExitCodes__1___0_System_Collections_Generic_IEnumerable_System_Int32__">UnityOptionsBaseExtensions.RemoveStableExitCodes&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_RemoveStableExitCodes__1___0_System_Int32___">UnityOptionsBaseExtensions.RemoveStableExitCodes&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_ResetHubVersion__1___0_">UnityOptionsBaseExtensions.ResetHubVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_ResetLogFile__1___0_">UnityOptionsBaseExtensions.ResetLogFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_ResetMinimalOutput__1___0_">UnityOptionsBaseExtensions.ResetMinimalOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_SetHubVersion__1___0_System_String_">UnityOptionsBaseExtensions.SetHubVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_SetLogFile__1___0_System_String_">UnityOptionsBaseExtensions.SetLogFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_SetMinimalOutput__1___0_System_Nullable_System_Boolean__">UnityOptionsBaseExtensions.SetMinimalOutput&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_SetStableExitCodes__1___0_System_Collections_Generic_IEnumerable_System_Int32__">UnityOptionsBaseExtensions.SetStableExitCodes&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_SetStableExitCodes__1___0_System_Int32___">UnityOptionsBaseExtensions.SetStableExitCodes&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBaseExtensions.html#Nuke_Common_Tools_Unity_UnityOptionsBaseExtensions_ToggleMinimalOutput__1___0_">UnityOptionsBaseExtensions.ToggleMinimalOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>-batchmode</code> via <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_BatchMode">BatchMode</a></li><li><code>-logFile</code> via <a class="xref" href="Nuke.Common.Tools.Unity.UnityOptionsBase.html#Nuke_Common_Tools_Unity_UnityOptionsBase_LogFile">LogFile</a></li><li><code>-nographics</code> via <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_NoGraphics">NoGraphics</a></li><li><code>-password</code> via <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Password">Password</a></li><li><code>-quit</code> via <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Quit">Quit</a></li><li><code>-serial</code> via <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Serial">Serial</a></li><li><code>-silent-crashes</code> via <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_SilentCrashes">SilentCrashes</a></li><li><code>-username</code> via <a class="xref" href="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.html#Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Username">Username</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_BatchMode_" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.BatchMode*"></a>
+
+  <h3 id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_BatchMode" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.BatchMode">
+  BatchMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Unity/Unity.Generated.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Run Unity in batch mode. This should always be used in conjunction with the other command line arguments, because it ensures no pop-up windows appear and eliminates the need for any human intervention. When an exception occurs during execution of the script code, the Asset server updates fail, or other operations that fail, Unity immediately exits with return code <b>1</b>.</p>
+<p></p>
+Note that in batch mode, Unity sends a minimal version of its log output to the console. However, the <a href="https://docs.unity3d.com/Manual/LogFiles.html">Log Files</a> still contain the full log information. Opening a project in batch mode while the Editor has the same project open is not supported; only a single instance of Unity can run at a time.
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? BatchMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_NoGraphics_" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.NoGraphics*"></a>
+
+  <h3 id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_NoGraphics" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.NoGraphics">
+  NoGraphics
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Unity/Unity.Generated.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>When running in batch mode, do not initialize the graphics device at all. This makes it possible to run your automated workflows on machines that don't even have a GPU (automated workflows only work when you have a window in focus, otherwise you can't send simulated input commands). Please note that <code>-nographics</code> does not allow you to bake GI on OSX, since Enlighten requires GPU acceleration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoGraphics { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Password_" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.Password*"></a>
+
+  <h3 id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Password" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.Password">
+  Password
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Unity/Unity.Generated.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enter a password into the log-in form during activation of the Unity Editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Password { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Quit_" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.Quit*"></a>
+
+  <h3 id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Quit" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.Quit">
+  Quit
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Unity/Unity.Generated.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Quit the Unity Editor after other commands have finished executing. Note that this can cause error messages to be hidden (however, they still appear in the Editor.log file).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Quit { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Serial_" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.Serial*"></a>
+
+  <h3 id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Serial" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.Serial">
+  Serial
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Unity/Unity.Generated.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Activate Unity with the specified serial key. It is good practice to pass the <code>-batchmode</code> and <code>-quit</code> arguments as well, in order to quit Unity when done, if using this for automated activation of Unity. Please allow a few seconds before the license file is created, because Unity needs to communicate with the license server. Make sure that license file folder exists, and has appropriate permissions before running Unity with this argument. If activation fails, see the <a href="https://docs.unity3d.com/Manual/LogFiles.html">Editor.log</a> for info.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Serial { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_SilentCrashes_" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.SilentCrashes*"></a>
+
+  <h3 id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_SilentCrashes" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.SilentCrashes">
+  SilentCrashes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Unity/Unity.Generated.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't display a crash dialog.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SilentCrashes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Username_" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.Username*"></a>
+
+  <h3 id="Nuke_Common_Tools_Unity_UnityCreateManualActivationFileSettings_Username" data-uid="Nuke.Common.Tools.Unity.UnityCreateManualActivationFileSettings.Username">
+  Username
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Unity/Unity.Generated.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enter a username into the log-in form during activation of the Unity Editor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Username { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Unity/Unity.Generated.cs/#L70" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class KubernetesConvertSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class KubernetesConvertSettingsExtensions | gruke ">
+      
+      <meta name="description" content="Convert config files between different API versions. Both YAML and JSON formats are accepted. The command takes filename, directory, or URL as input, and convert it into format of version specified by --output-version flag. If target version is not specified or not supported, convert to latest version. The default output will be printed to stdout in YAML format. One can use -o option to change to output destination.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions" class="text-break">
+Class KubernetesConvertSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6041"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Kubernetes.html">Kubernetes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Convert config files between different API versions. Both YAML and JSON formats are accepted. The command takes filename, directory, or URL as input, and convert it into format of version specified by --output-version flag. If target version is not specified or not supported, convert to latest version. The default output will be printed to stdout in YAML format. One can use -o option to change to output destination.</p><p>For more details, visit the <a href="https://kubernetes.io/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class KubernetesConvertSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">KubernetesConvertSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--allow-missing-template-keys</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_AllowMissingTemplateKeys">AllowMissingTemplateKeys</a></li><li><code>--alsologtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Alsologtostderr">Alsologtostderr</a></li><li><code>--as</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_As">As</a></li><li><code>--as-group</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_AsGroup">AsGroup</a></li><li><code>--cache-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CacheDir">CacheDir</a></li><li><code>--certificate-authority</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CertificateAuthority">CertificateAuthority</a></li><li><code>--client-certificate</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientCertificate">ClientCertificate</a></li><li><code>--client-key</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientKey">ClientKey</a></li><li><code>--cluster</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Cluster">Cluster</a></li><li><code>--context</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Context">Context</a></li><li><code>--filename</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Filename">Filename</a></li><li><code>--insecure-skip-tls-verify</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_InsecureSkipTlsVerify">InsecureSkipTlsVerify</a></li><li><code>--kubeconfig</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Kubeconfig">Kubeconfig</a></li><li><code>--local</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Local">Local</a></li><li><code>--log-backtrace-at</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogBacktraceAt">LogBacktraceAt</a></li><li><code>--log-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogDir">LogDir</a></li><li><code>--logtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Logtostderr">Logtostderr</a></li><li><code>--match-server-version</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_MatchServerVersion">MatchServerVersion</a></li><li><code>--namespace</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Namespace">Namespace</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Output">Output</a></li><li><code>--output-version</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_OutputVersion">OutputVersion</a></li><li><code>--recursive</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Recursive">Recursive</a></li><li><code>--request-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_RequestTimeout">RequestTimeout</a></li><li><code>--server</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Server">Server</a></li><li><code>--stderrthreshold</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Stderrthreshold">Stderrthreshold</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Template">Template</a></li><li><code>--token</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Token">Token</a></li><li><code>--user</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_User">User</a></li><li><code>--v</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_V">V</a></li><li><code>--validate</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Validate">Validate</a></li><li><code>--vmodule</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Vmodule">Vmodule</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_AddFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.AddFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_AddFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.AddFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6073"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files to need to get converted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_AddFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.AddFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_AddFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.AddFilename``1(``0,System.String[])">
+  AddFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6070"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files to need to get converted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ClearFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ClearFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ClearFilename__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ClearFilename``1(``0)">
+  ClearFilename&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6082"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files to need to get converted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearFilename&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.DisableAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.DisableAllowMissingTemplateKeys``1(``0)">
+  DisableAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6056"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableLocal_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.DisableLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableLocal__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.DisableLocal``1(``0)">
+  DisableLocal&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6096"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, convert will NOT try to contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableLocal&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.DisableRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.DisableRecursive``1(``0)">
+  DisableRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableRecursive&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableValidate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.DisableValidate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableValidate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.DisableValidate``1(``0)">
+  DisableValidate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableValidate&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.EnableAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.EnableAllowMissingTemplateKeys``1(``0)">
+  EnableAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6053"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableLocal_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.EnableLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableLocal__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.EnableLocal``1(``0)">
+  EnableLocal&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6093"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, convert will NOT try to contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableLocal&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.EnableRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.EnableRecursive``1(``0)">
+  EnableRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableRecursive&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableValidate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.EnableValidate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableValidate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.EnableValidate``1(``0)">
+  EnableValidate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableValidate&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_RemoveFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.RemoveFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_RemoveFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.RemoveFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6079"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files to need to get converted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_RemoveFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.RemoveFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_RemoveFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.RemoveFilename``1(``0,System.String[])">
+  RemoveFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6076"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files to need to get converted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetAllowMissingTemplateKeys``1(``0)">
+  ResetAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6050"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetLocal_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetLocal__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetLocal``1(``0)">
+  ResetLocal&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6090"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, convert will NOT try to contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetLocal&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetOutputVersion_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetOutputVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetOutputVersion__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetOutputVersion``1(``0)">
+  ResetOutputVersion&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output the formatted object with the given group version (for ex: 'extensions/v1beta1').).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutputVersion&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetOutput__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetOutput``1(``0)">
+  ResetOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output format. One of: json|yaml|name|go-template|go-template-file|templatefile|template|jsonpath|jsonpath-file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutput&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetRecursive``1(``0)">
+  ResetRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRecursive&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetTemplate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetTemplate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetTemplate``1(``0)">
+  ResetTemplate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTemplate&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetValidate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetValidate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetValidate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ResetValidate``1(``0)">
+  ResetValidate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6148"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetValidate&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetAllowMissingTemplateKeys__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetAllowMissingTemplateKeys``1(``0,System.Nullable{System.Boolean})">
+  SetAllowMissingTemplateKeys&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6047"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAllowMissingTemplateKeys&lt;T&gt;(this T o, bool? v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6067"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files to need to get converted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetFilename``1(``0,System.String[])">
+  SetFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6064"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files to need to get converted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetLocal_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetLocal__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetLocal``1(``0,System.Nullable{System.Boolean})">
+  SetLocal&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6087"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, convert will NOT try to contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetLocal&lt;T&gt;(this T o, bool? v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetOutputVersion_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetOutputVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetOutputVersion__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetOutputVersion``1(``0,System.String)">
+  SetOutputVersion&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output the formatted object with the given group version (for ex: 'extensions/v1beta1').).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutputVersion&lt;T&gt;(this T o, string v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetOutput__1___0_Nuke_Common_Tools_Kubernetes_KubernetesConvertOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetOutput``1(``0,Nuke.Common.Tools.Kubernetes.KubernetesConvertOutput)">
+  SetOutput&lt;T&gt;(T, KubernetesConvertOutput)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output format. One of: json|yaml|name|go-template|go-template-file|templatefile|template|jsonpath|jsonpath-file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutput&lt;T&gt;(this T o, KubernetesConvertOutput v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertOutput.html">KubernetesConvertOutput</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetRecursive__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetRecursive``1(``0,System.Nullable{System.Boolean})">
+  SetRecursive&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRecursive&lt;T&gt;(this T o, bool? v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetTemplate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetTemplate__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetTemplate``1(``0,System.String)">
+  SetTemplate&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTemplate&lt;T&gt;(this T o, string v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetValidate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetValidate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetValidate__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.SetValidate``1(``0,System.Nullable{System.Boolean})">
+  SetValidate&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetValidate&lt;T&gt;(this T o, bool? v) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ToggleAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ToggleAllowMissingTemplateKeys``1(``0)">
+  ToggleAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6059"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleLocal_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ToggleLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleLocal__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ToggleLocal``1(``0)">
+  ToggleLocal&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6099"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, convert will NOT try to contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleLocal&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ToggleRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ToggleRecursive``1(``0)">
+  ToggleRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleRecursive&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleValidate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ToggleValidate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleValidate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.ToggleValidate``1(``0)">
+  ToggleValidate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleValidate&lt;T&gt;(this T o) where T : KubernetesConvertSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L6041" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

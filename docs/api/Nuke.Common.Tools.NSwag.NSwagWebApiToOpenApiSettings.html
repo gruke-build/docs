@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class NSwagWebApiToOpenApiSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NSwagWebApiToOpenApiSettings | gruke ">
+      
+      <meta name="description" content="Generates a Swagger/OpenAPI specification for a controller or controlles contained in a .NET Web API assembly.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings" class="text-break">
+Class NSwagWebApiToOpenApiSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.NSwag.html">NSwag</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Generates a Swagger/OpenAPI specification for a controller or controlles contained in a .NET Web API assembly.</p><p>For more details, visit the <a href="https://github.com/RSuter/NSwag">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class NSwagWebApiToOpenApiSettings : ToolOptions, IOptions, IToolOptionsWithFramework</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">NSwagWebApiToOpenApiSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.IToolOptionsWithFramework.html">IToolOptionsWithFramework</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddAssembly__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.AddAssembly&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddAssembly__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.AddAssembly&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddDocumentProcessors__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.AddDocumentProcessors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddDocumentProcessors__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.AddDocumentProcessors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddExcludedTypeNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.AddExcludedTypeNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddExcludedTypeNames__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.AddExcludedTypeNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddOperationProcessors__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.AddOperationProcessors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddOperationProcessors__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.AddOperationProcessors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddReferencePaths__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.AddReferencePaths&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddReferencePaths__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.AddReferencePaths&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddServiceSchemes__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.AddServiceSchemes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_AddServiceSchemes__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.AddServiceSchemes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ClearAssembly__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ClearAssembly&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ClearDocumentProcessors__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ClearDocumentProcessors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ClearExcludedTypeNames__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ClearExcludedTypeNames&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ClearOperationProcessors__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ClearOperationProcessors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ClearReferencePaths__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ClearReferencePaths&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ClearServiceSchemes__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ClearServiceSchemes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableAllowNullableBodyParameters__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableAllowNullableBodyParameters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableAllowReferencesWithProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableAllowReferencesWithProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableFlattenInheritanceHierarchy__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableFlattenInheritanceHierarchy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableGenerateAbstractProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableGenerateAbstractProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableGenerateAbstractSchemas__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableGenerateAbstractSchemas&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableGenerateEnumMappingDescription__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableGenerateEnumMappingDescription&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableGenerateKnownTypes__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableGenerateKnownTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableGenerateXmlObjects__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableGenerateXmlObjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableIgnoreObsoleteProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableIgnoreObsoleteProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableUseDocumentProvider__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableUseDocumentProvider&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_DisableUseNuGetCache__1___0_">NSwagWebApiToOpenApiSettingsExtensions.DisableUseNuGetCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableAllowNullableBodyParameters__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableAllowNullableBodyParameters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableAllowReferencesWithProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableAllowReferencesWithProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableFlattenInheritanceHierarchy__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableFlattenInheritanceHierarchy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableGenerateAbstractProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableGenerateAbstractProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableGenerateAbstractSchemas__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableGenerateAbstractSchemas&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableGenerateEnumMappingDescription__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableGenerateEnumMappingDescription&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableGenerateKnownTypes__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableGenerateKnownTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableGenerateXmlObjects__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableGenerateXmlObjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableIgnoreObsoleteProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableIgnoreObsoleteProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableUseDocumentProvider__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableUseDocumentProvider&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_EnableUseNuGetCache__1___0_">NSwagWebApiToOpenApiSettingsExtensions.EnableUseNuGetCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveAssembly__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.RemoveAssembly&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveAssembly__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.RemoveAssembly&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveDocumentProcessors__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.RemoveDocumentProcessors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveDocumentProcessors__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.RemoveDocumentProcessors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveExcludedTypeNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.RemoveExcludedTypeNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveExcludedTypeNames__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.RemoveExcludedTypeNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveOperationProcessors__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.RemoveOperationProcessors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveOperationProcessors__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.RemoveOperationProcessors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveReferencePaths__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.RemoveReferencePaths&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveReferencePaths__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.RemoveReferencePaths&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveServiceSchemes__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.RemoveServiceSchemes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_RemoveServiceSchemes__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.RemoveServiceSchemes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetAllowNullableBodyParameters__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetAllowNullableBodyParameters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetAllowReferencesWithProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetAllowReferencesWithProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetAspNetCoreEnvironment__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetAspNetCoreEnvironment&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetAssemblyConfig__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetAssemblyConfig&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetContractResolver__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetContractResolver&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetCreateWebHostBuilderMethod__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetCreateWebHostBuilderMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetDefaultDictionaryValueReferenceTypeNullHandling__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetDefaultDictionaryValueReferenceTypeNullHandling&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetDefaultEnumHandling__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetDefaultEnumHandling&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetDefaultPropertyNameHandling__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetDefaultPropertyNameHandling&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetDefaultReferenceTypeNullHandling__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetDefaultReferenceTypeNullHandling&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetDefaultResponseReferenceTypeNullHandling__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetDefaultResponseReferenceTypeNullHandling&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetDocumentName__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetDocumentName&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetDocumentTemplate__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetDocumentTemplate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetFlattenInheritanceHierarchy__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetFlattenInheritanceHierarchy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetGenerateAbstractProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetGenerateAbstractProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetGenerateAbstractSchemas__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetGenerateAbstractSchemas&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetGenerateEnumMappingDescription__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetGenerateEnumMappingDescription&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetGenerateKnownTypes__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetGenerateKnownTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetGenerateXmlObjects__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetGenerateXmlObjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetIgnoreObsoleteProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetIgnoreObsoleteProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetInfoDescription__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetInfoDescription&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetInfoTitle__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetInfoTitle&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetInfoVersion__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetInfoVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetOutputType__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetOutputType&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetOutput__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetSchemaNameGenerator__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetSchemaNameGenerator&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetSerializerSettings__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetSerializerSettings&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetServiceBasePath__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetServiceBasePath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetServiceHost__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetServiceHost&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetStartup__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetStartup&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetTypeNameGenerator__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetTypeNameGenerator&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetUseDocumentProvider__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetUseDocumentProvider&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ResetUseNuGetCache__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ResetUseNuGetCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetAllowNullableBodyParameters__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetAllowNullableBodyParameters&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetAllowReferencesWithProperties__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetAllowReferencesWithProperties&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetAspNetCoreEnvironment__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetAspNetCoreEnvironment&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetAssemblyConfig__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetAssemblyConfig&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetAssembly__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.SetAssembly&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetAssembly__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.SetAssembly&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetContractResolver__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetContractResolver&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetCreateWebHostBuilderMethod__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetCreateWebHostBuilderMethod&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetDefaultDictionaryValueReferenceTypeNullHandling__1___0_Nuke_Common_Tools_NSwag_ReferenceTypeNullHandling_">NSwagWebApiToOpenApiSettingsExtensions.SetDefaultDictionaryValueReferenceTypeNullHandling&lt;T&gt;(T, ReferenceTypeNullHandling)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetDefaultEnumHandling__1___0_Nuke_Common_Tools_NSwag_EnumHandling_">NSwagWebApiToOpenApiSettingsExtensions.SetDefaultEnumHandling&lt;T&gt;(T, EnumHandling)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetDefaultPropertyNameHandling__1___0_Nuke_Common_Tools_NSwag_PropertyNameHandling_">NSwagWebApiToOpenApiSettingsExtensions.SetDefaultPropertyNameHandling&lt;T&gt;(T, PropertyNameHandling)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetDefaultReferenceTypeNullHandling__1___0_Nuke_Common_Tools_NSwag_ReferenceTypeNullHandling_">NSwagWebApiToOpenApiSettingsExtensions.SetDefaultReferenceTypeNullHandling&lt;T&gt;(T, ReferenceTypeNullHandling)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetDefaultResponseReferenceTypeNullHandling__1___0_Nuke_Common_Tools_NSwag_ReferenceTypeNullHandling_">NSwagWebApiToOpenApiSettingsExtensions.SetDefaultResponseReferenceTypeNullHandling&lt;T&gt;(T, ReferenceTypeNullHandling)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetDocumentName__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetDocumentName&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetDocumentProcessors__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.SetDocumentProcessors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetDocumentProcessors__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.SetDocumentProcessors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetDocumentTemplate__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetDocumentTemplate&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetExcludedTypeNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.SetExcludedTypeNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetExcludedTypeNames__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.SetExcludedTypeNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetFlattenInheritanceHierarchy__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetFlattenInheritanceHierarchy&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetGenerateAbstractProperties__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetGenerateAbstractProperties&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetGenerateAbstractSchemas__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetGenerateAbstractSchemas&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetGenerateEnumMappingDescription__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetGenerateEnumMappingDescription&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetGenerateKnownTypes__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetGenerateKnownTypes&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetGenerateXmlObjects__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetGenerateXmlObjects&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetIgnoreObsoleteProperties__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetIgnoreObsoleteProperties&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetInfoDescription__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetInfoDescription&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetInfoTitle__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetInfoTitle&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetInfoVersion__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetInfoVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetOperationProcessors__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.SetOperationProcessors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetOperationProcessors__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.SetOperationProcessors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetOutputType__1___0_Nuke_Common_Tools_NSwag_SchemaType_">NSwagWebApiToOpenApiSettingsExtensions.SetOutputType&lt;T&gt;(T, SchemaType)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetOutput__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetOutput&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetReferencePaths__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.SetReferencePaths&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetReferencePaths__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.SetReferencePaths&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetSchemaNameGenerator__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetSchemaNameGenerator&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetSerializerSettings__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetSerializerSettings&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetServiceBasePath__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetServiceBasePath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetServiceHost__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetServiceHost&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetServiceSchemes__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagWebApiToOpenApiSettingsExtensions.SetServiceSchemes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetServiceSchemes__1___0_System_String___">NSwagWebApiToOpenApiSettingsExtensions.SetServiceSchemes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetStartup__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetStartup&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetTypeNameGenerator__1___0_System_String_">NSwagWebApiToOpenApiSettingsExtensions.SetTypeNameGenerator&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetUseDocumentProvider__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetUseDocumentProvider&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_SetUseNuGetCache__1___0_System_Nullable_System_Boolean__">NSwagWebApiToOpenApiSettingsExtensions.SetUseNuGetCache&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleAllowNullableBodyParameters__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleAllowNullableBodyParameters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleAllowReferencesWithProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleAllowReferencesWithProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleFlattenInheritanceHierarchy__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleFlattenInheritanceHierarchy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleGenerateAbstractProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleGenerateAbstractProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleGenerateAbstractSchemas__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleGenerateAbstractSchemas&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleGenerateEnumMappingDescription__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleGenerateEnumMappingDescription&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleGenerateKnownTypes__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleGenerateKnownTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleGenerateXmlObjects__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleGenerateXmlObjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleIgnoreObsoleteProperties__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleIgnoreObsoleteProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleUseDocumentProvider__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleUseDocumentProvider&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettingsExtensions_ToggleUseNuGetCache__1___0_">NSwagWebApiToOpenApiSettingsExtensions.ToggleUseNuGetCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>/AllowNullableBodyParameters</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AllowNullableBodyParameters">AllowNullableBodyParameters</a></li><li><code>/AllowReferencesWithProperties</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AllowReferencesWithProperties">AllowReferencesWithProperties</a></li><li><code>/AspNetCoreEnvironment</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AspNetCoreEnvironment">AspNetCoreEnvironment</a></li><li><code>/Assembly</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_Assembly">Assembly</a></li><li><code>/AssemblyConfig</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AssemblyConfig">AssemblyConfig</a></li><li><code>/ContractResolver</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ContractResolver">ContractResolver</a></li><li><code>/CreateWebHostBuilderMethod</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_CreateWebHostBuilderMethod">CreateWebHostBuilderMethod</a></li><li><code>/DefaultDictionaryValueReferenceTypeNullHandling</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultDictionaryValueReferenceTypeNullHandling">DefaultDictionaryValueReferenceTypeNullHandling</a></li><li><code>/DefaultEnumHandling</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultEnumHandling">DefaultEnumHandling</a></li><li><code>/DefaultPropertyNameHandling</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultPropertyNameHandling">DefaultPropertyNameHandling</a></li><li><code>/DefaultReferenceTypeNullHandling</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultReferenceTypeNullHandling">DefaultReferenceTypeNullHandling</a></li><li><code>/DefaultResponseReferenceTypeNullHandling</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultResponseReferenceTypeNullHandling">DefaultResponseReferenceTypeNullHandling</a></li><li><code>/DocumentName</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DocumentName">DocumentName</a></li><li><code>/DocumentProcessors</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DocumentProcessors">DocumentProcessors</a></li><li><code>/DocumentTemplate</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DocumentTemplate">DocumentTemplate</a></li><li><code>/ExcludedTypeNames</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ExcludedTypeNames">ExcludedTypeNames</a></li><li><code>/FlattenInheritanceHierarchy</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_FlattenInheritanceHierarchy">FlattenInheritanceHierarchy</a></li><li><code>/GenerateAbstractProperties</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateAbstractProperties">GenerateAbstractProperties</a></li><li><code>/GenerateAbstractSchemas</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateAbstractSchemas">GenerateAbstractSchemas</a></li><li><code>/GenerateEnumMappingDescription</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateEnumMappingDescription">GenerateEnumMappingDescription</a></li><li><code>/GenerateKnownTypes</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateKnownTypes">GenerateKnownTypes</a></li><li><code>/GenerateXmlObjects</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateXmlObjects">GenerateXmlObjects</a></li><li><code>/IgnoreObsoleteProperties</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_IgnoreObsoleteProperties">IgnoreObsoleteProperties</a></li><li><code>/InfoDescription</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_InfoDescription">InfoDescription</a></li><li><code>/InfoTitle</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_InfoTitle">InfoTitle</a></li><li><code>/InfoVersion</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_InfoVersion">InfoVersion</a></li><li><code>/OperationProcessors</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_OperationProcessors">OperationProcessors</a></li><li><code>/Output</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_Output">Output</a></li><li><code>/OutputType</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_OutputType">OutputType</a></li><li><code>/ReferencePaths</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ReferencePaths">ReferencePaths</a></li><li><code>/SchemaNameGenerator</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_SchemaNameGenerator">SchemaNameGenerator</a></li><li><code>/SerializerSettings</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_SerializerSettings">SerializerSettings</a></li><li><code>/ServiceBasePath</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ServiceBasePath">ServiceBasePath</a></li><li><code>/ServiceHost</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ServiceHost">ServiceHost</a></li><li><code>/ServiceSchemes</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ServiceSchemes">ServiceSchemes</a></li><li><code>/Startup</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_Startup">Startup</a></li><li><code>/TypeNameGenerator</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_TypeNameGenerator">TypeNameGenerator</a></li><li><code>/UseDocumentProvider</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_UseDocumentProvider">UseDocumentProvider</a></li><li><code>/UseNuGetCache</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.html#Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_UseNuGetCache">UseNuGetCache</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AllowNullableBodyParameters_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.AllowNullableBodyParameters*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AllowNullableBodyParameters" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.AllowNullableBodyParameters">
+  AllowNullableBodyParameters
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L290"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Nullable body parameters are allowed (ignored when MvcOptions.AllowEmptyInputInBodyModelBinding is available (ASP.NET Core 2.0+), default: true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? AllowNullableBodyParameters { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AllowReferencesWithProperties_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.AllowReferencesWithProperties*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AllowReferencesWithProperties" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.AllowReferencesWithProperties">
+  AllowReferencesWithProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L292"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use $ref references even if additional properties are defined on the object (otherwise allOf/oneOf with $ref is used, default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? AllowReferencesWithProperties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AspNetCoreEnvironment_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.AspNetCoreEnvironment*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AspNetCoreEnvironment" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.AspNetCoreEnvironment">
+  AspNetCoreEnvironment
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L294"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the ASPNETCORE_ENVIRONMENT if provided (default: empty).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AspNetCoreEnvironment { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_Assembly_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.Assembly*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_Assembly" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.Assembly">
+  Assembly
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L360"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The path or paths to the .NET assemblies (comma separated).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Assembly { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AssemblyConfig_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.AssemblyConfig*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_AssemblyConfig" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.AssemblyConfig">
+  AssemblyConfig
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L362"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The path to the assembly App.config or Web.config (optional).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AssemblyConfig { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ContractResolver_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ContractResolver*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ContractResolver" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ContractResolver">
+  ContractResolver
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L296"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>DEPRECATED: The custom IContractResolver implementation type in the form 'assemblyName:fullTypeName' or 'fullTypeName').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ContractResolver { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_CreateWebHostBuilderMethod_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.CreateWebHostBuilderMethod*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_CreateWebHostBuilderMethod" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.CreateWebHostBuilderMethod">
+  CreateWebHostBuilderMethod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L298"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The CreateWebHostBuilder method in the form 'assemblyName:fullTypeName.methodName' or 'fullTypeName.methodName'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CreateWebHostBuilderMethod { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultDictionaryValueReferenceTypeNullHandling_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DefaultDictionaryValueReferenceTypeNullHandling*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultDictionaryValueReferenceTypeNullHandling" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DefaultDictionaryValueReferenceTypeNullHandling">
+  DefaultDictionaryValueReferenceTypeNullHandling
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L300"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default reference type null handling of dictionary value types (NotNull (default) or Null).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReferenceTypeNullHandling DefaultDictionaryValueReferenceTypeNullHandling { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.ReferenceTypeNullHandling.html">ReferenceTypeNullHandling</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultEnumHandling_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DefaultEnumHandling*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultEnumHandling" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DefaultEnumHandling">
+  DefaultEnumHandling
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L302"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default enum handling ('String' or 'Integer'), default: Integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EnumHandling DefaultEnumHandling { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.EnumHandling.html">EnumHandling</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultPropertyNameHandling_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DefaultPropertyNameHandling*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultPropertyNameHandling" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DefaultPropertyNameHandling">
+  DefaultPropertyNameHandling
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L304"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default property name handling ('Default' or 'CamelCase').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PropertyNameHandling DefaultPropertyNameHandling { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.PropertyNameHandling.html">PropertyNameHandling</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultReferenceTypeNullHandling_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DefaultReferenceTypeNullHandling*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultReferenceTypeNullHandling" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DefaultReferenceTypeNullHandling">
+  DefaultReferenceTypeNullHandling
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default reference type null handling (Null (default) or NotNull).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReferenceTypeNullHandling DefaultReferenceTypeNullHandling { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.ReferenceTypeNullHandling.html">ReferenceTypeNullHandling</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultResponseReferenceTypeNullHandling_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DefaultResponseReferenceTypeNullHandling*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DefaultResponseReferenceTypeNullHandling" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DefaultResponseReferenceTypeNullHandling">
+  DefaultResponseReferenceTypeNullHandling
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L308"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default response reference type null handling (default: NotNull (default) or Null).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReferenceTypeNullHandling DefaultResponseReferenceTypeNullHandling { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.ReferenceTypeNullHandling.html">ReferenceTypeNullHandling</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DocumentName_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DocumentName*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DocumentName" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DocumentName">
+  DocumentName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L310"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The document name to use in SwaggerDocumentProvider (default: v1).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DocumentName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DocumentProcessors_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DocumentProcessors*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DocumentProcessors" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DocumentProcessors">
+  DocumentProcessors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L312"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The document processor type names in the form 'assemblyName:fullTypeName' or 'fullTypeName').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; DocumentProcessors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DocumentTemplate_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DocumentTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_DocumentTemplate" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.DocumentTemplate">
+  DocumentTemplate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L314"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the Swagger document template (may be a path or JSON, default: none).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DocumentTemplate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ExcludedTypeNames_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ExcludedTypeNames*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ExcludedTypeNames" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ExcludedTypeNames">
+  ExcludedTypeNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The excluded type names (same as JsonSchemaIgnoreAttribute).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ExcludedTypeNames { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_FlattenInheritanceHierarchy_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.FlattenInheritanceHierarchy*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_FlattenInheritanceHierarchy" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.FlattenInheritanceHierarchy">
+  FlattenInheritanceHierarchy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Flatten the inheritance hierarchy instead of using allOf to describe inheritance (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? FlattenInheritanceHierarchy { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateAbstractProperties_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.GenerateAbstractProperties*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateAbstractProperties" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.GenerateAbstractProperties">
+  GenerateAbstractProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L320"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate abstract properties (i.e. interface and abstract properties. Properties may defined multiple times in a inheritance hierarchy, default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateAbstractProperties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateAbstractSchemas_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.GenerateAbstractSchemas*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateAbstractSchemas" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.GenerateAbstractSchemas">
+  GenerateAbstractSchemas
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L322"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate the x-abstract flag on schemas (default: true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateAbstractSchemas { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateEnumMappingDescription_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.GenerateEnumMappingDescription*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateEnumMappingDescription" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.GenerateEnumMappingDescription">
+  GenerateEnumMappingDescription
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate a description with number to enum name mappings (for integer enums only, default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateEnumMappingDescription { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateKnownTypes_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.GenerateKnownTypes*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateKnownTypes" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.GenerateKnownTypes">
+  GenerateKnownTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate schemas for types in KnownTypeAttribute attributes (default: true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateKnownTypes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateXmlObjects_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.GenerateXmlObjects*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_GenerateXmlObjects" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.GenerateXmlObjects">
+  GenerateXmlObjects
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L328"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate xmlObject representation for definitions (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateXmlObjects { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_IgnoreObsoleteProperties_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.IgnoreObsoleteProperties*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_IgnoreObsoleteProperties" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.IgnoreObsoleteProperties">
+  IgnoreObsoleteProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L330"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ignore properties with the ObsoleteAttribute (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnoreObsoleteProperties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_InfoDescription_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.InfoDescription*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_InfoDescription" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.InfoDescription">
+  InfoDescription
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the description of the Swagger specification (ignored when DocumentTemplate is set).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string InfoDescription { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_InfoTitle_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.InfoTitle*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_InfoTitle" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.InfoTitle">
+  InfoTitle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L334"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the title of the Swagger specification (ignored when DocumentTemplate is set).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string InfoTitle { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_InfoVersion_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.InfoVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_InfoVersion" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.InfoVersion">
+  InfoVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L336"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the version of the Swagger specification (default: 1.0.0, ignored when DocumentTemplate is set).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string InfoVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_OperationProcessors_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.OperationProcessors*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_OperationProcessors" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.OperationProcessors">
+  OperationProcessors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L338"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The operation processor type names in the form 'assemblyName:fullTypeName' or 'fullTypeName').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; OperationProcessors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_Output_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.Output*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_Output" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.Output">
+  Output
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L356"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The output file path (optional).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Output { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_OutputType_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.OutputType*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_OutputType" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.OutputType">
+  OutputType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L358"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the output schema type, ignored when UseDocumentProvider is enabled (Swagger2|OpenApi3, default: Swagger2).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SchemaType OutputType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.SchemaType.html">SchemaType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ReferencePaths_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ReferencePaths*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ReferencePaths" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ReferencePaths">
+  ReferencePaths
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L364"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The paths to search for referenced assembly files (comma separated).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ReferencePaths { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_SchemaNameGenerator_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.SchemaNameGenerator*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_SchemaNameGenerator" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.SchemaNameGenerator">
+  SchemaNameGenerator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L340"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The custom ISchemaNameGenerator implementation type in the form 'assemblyName:fullTypeName' or 'fullTypeName').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SchemaNameGenerator { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_SerializerSettings_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.SerializerSettings*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_SerializerSettings" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.SerializerSettings">
+  SerializerSettings
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L342"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The custom JsonSerializerSettings implementation type in the form 'assemblyName:fullTypeName' or 'fullTypeName').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SerializerSettings { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ServiceBasePath_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ServiceBasePath*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ServiceBasePath" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ServiceBasePath">
+  ServiceBasePath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L344"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The basePath of the Swagger specification (optional).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ServiceBasePath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ServiceHost_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ServiceHost*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ServiceHost" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ServiceHost">
+  ServiceHost
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L346"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overrides the service host of the web service (optional, use '.' to remove the hostname).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ServiceHost { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ServiceSchemes_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ServiceSchemes*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_ServiceSchemes" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.ServiceSchemes">
+  ServiceSchemes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L348"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overrides the allowed schemes of the web service (optional, comma separated, 'http', 'https', 'ws', 'wss').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ServiceSchemes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_Startup_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.Startup*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_Startup" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.Startup">
+  Startup
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L350"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The Startup class type in the form 'assemblyName:fullTypeName' or 'fullTypeName'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Startup { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_TypeNameGenerator_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.TypeNameGenerator*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_TypeNameGenerator" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.TypeNameGenerator">
+  TypeNameGenerator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L352"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The custom ITypeNameGenerator implementation type in the form 'assemblyName:fullTypeName' or 'fullTypeName').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TypeNameGenerator { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_UseDocumentProvider_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.UseDocumentProvider*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_UseDocumentProvider" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.UseDocumentProvider">
+  UseDocumentProvider
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L354"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate document using SwaggerDocumentProvider (configuration from AddOpenApiDocument()/AddSwaggerDocument(), most CLI settings will be ignored).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseDocumentProvider { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_UseNuGetCache_" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.UseNuGetCache*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagWebApiToOpenApiSettings_UseNuGetCache" data-uid="Nuke.Common.Tools.NSwag.NSwagWebApiToOpenApiSettings.UseNuGetCache">
+  UseNuGetCache
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L366"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines if local Nuget's cache folder should be put in the ReferencePaths by default</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseNuGetCache { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L284" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

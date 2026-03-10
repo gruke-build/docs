@@ -1,0 +1,3166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PaketPackSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PaketPackSettingsExtensions | gruke ">
+      
+      <meta name="description" content="Paket is a dependency manager for .NET and mono projects, which is designed to work well with NuGet packages and also enables referencing files directly from Git repositories or any HTTP resource. It enables precise and predictable control over what packages the projects within your application reference.If you want to learn how to use Paket then read the Getting started tutorial and take a look at the FAQs.If you are already using NuGet for package management in your solution then you can learn about the upgrade process in the convert from NuGet section.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Paket_PaketPackSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Paket.PaketPackSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions" class="text-break">
+Class PaketPackSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L773"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Paket.html">Paket</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Paket is a dependency manager for .NET and mono projects, which is designed to work well with <a href="https://www.nuget.org/">NuGet</a> packages and also enables referencing files directly from <a href="https://fsprojects.github.io/Paket/git-dependencies.html">Git repositories</a> or any <a href="https://fsprojects.github.io/Paket/http-dependencies.html">HTTP resource</a>. It enables precise and predictable control over what packages the projects within your application reference.</p><p>If you want to learn how to use Paket then read the <a href="https://fsprojects.github.io/Paket/getting-started.html"><em>Getting started</em> tutorial</a> and take a look at the <a href="https://fsprojects.github.io/Paket/faq.html">FAQs</a>.</p><p>If you are already using NuGet for package management in your solution then you can learn about the upgrade process in the <a href="https://fsprojects.github.io/Paket/getting-started.html#Automatic-NuGet-conversion">convert from NuGet</a> section.</p><p>For more details, visit the <a href="https://fsprojects.github.io/paket">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class PaketPackSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">PaketPackSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;outputDirectory&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_OutputDirectory">OutputDirectory</a></li><li><code>--build-config</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_BuildConfiguration">BuildConfiguration</a></li><li><code>--build-platform</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_BuildPlatform">BuildPlatform</a></li><li><code>--exclude</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_Exclude">Exclude</a></li><li><code>--from-bootstrapper</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_FromBootstrapper">FromBootstrapper</a></li><li><code>--include-referenced-projects</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_IncludeReferencedProjects">IncludeReferencedProjects</a></li><li><code>--lock-dependencies</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_LockDependencies">LockDependencies</a></li><li><code>--log-file</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_LogFile">LogFile</a></li><li><code>--minimum-from-lock-file</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_MinimumFromLockFile">MinimumFromLockFile</a></li><li><code>--pin-project-references</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_PinProjectReferences">PinProjectReferences</a></li><li><code>--project-url</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_ProjectUrl">ProjectUrl</a></li><li><code>--release-notes</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_ReleaseNotes">ReleaseNotes</a></li><li><code>--silent</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_Silent">Silent</a></li><li><code>--specific-version</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_SpecificVersions">SpecificVersions</a></li><li><code>--symbols</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_Symbols">Symbols</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_TemplateFile">TemplateFile</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_Verbose">Verbose</a></li><li><code>--version</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_PackageVersion">PackageVersion</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_AddExclude_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.AddExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_AddExclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.AddExclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddExclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L828"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exclude paket.template file by package ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddExclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_AddExclude_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.AddExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_AddExclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.AddExclude``1(``0,System.String[])">
+  AddExclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L825"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exclude paket.template file by package ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddExclude&lt;T&gt;(this T o, params string[] v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_AddSpecificVersion_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.AddSpecificVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_AddSpecificVersion__1___0_System_String_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.AddSpecificVersion``1(``0,System.String,System.String)">
+  AddSpecificVersion&lt;T&gt;(T, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L848"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Package IDs with version numbers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddSpecificVersion&lt;T&gt;(this T o, string k, string v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ClearExclude_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ClearExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ClearExclude__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ClearExclude``1(``0)">
+  ClearExclude&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L837"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exclude paket.template file by package ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearExclude&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ClearSpecificVersions_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ClearSpecificVersions*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ClearSpecificVersions__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ClearSpecificVersions``1(``0)">
+  ClearSpecificVersions&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L854"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Package IDs with version numbers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearSpecificVersions&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableFromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableFromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableFromBootstrapper__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableFromBootstrapper``1(``0)">
+  DisableFromBootstrapper&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L1011"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableFromBootstrapper&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableIncludeReferencedProjects_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableIncludeReferencedProjects*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableIncludeReferencedProjects__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableIncludeReferencedProjects``1(``0)">
+  DisableIncludeReferencedProjects&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L944"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Include symbol/source from referenced projects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableIncludeReferencedProjects&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableLockDependencies_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableLockDependencies*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableLockDependencies__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableLockDependencies``1(``0)">
+  DisableLockDependencies&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L876"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableLockDependencies&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableMinimumFromLockFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableMinimumFromLockFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableMinimumFromLockFile__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableMinimumFromLockFile``1(``0)">
+  DisableMinimumFromLockFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L893"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies, and add them as a minimum version. <code>--lock-dependencies</code> will over-ride this option.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableMinimumFromLockFile&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisablePinProjectReferences_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisablePinProjectReferences*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisablePinProjectReferences__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisablePinProjectReferences``1(``0)">
+  DisablePinProjectReferences&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L910"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pin dependencies generated from project references (=) instead of using minimum (&gt;=) for version specification.  If <code>--lock-dependencies</code> is specified, project references will be pinned even if this option is not specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisablePinProjectReferences&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableSilent_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableSilent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableSilent__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableSilent``1(``0)">
+  DisableSilent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L969"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableSilent&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableSymbols_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableSymbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableSymbols__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableSymbols``1(``0)">
+  DisableSymbols&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L927"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build symbol/source packages in addition to library/content packages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableSymbols&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableVerbose_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableVerbose__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.DisableVerbose``1(``0)">
+  DisableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L986"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableVerbose&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableFromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableFromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableFromBootstrapper__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableFromBootstrapper``1(``0)">
+  EnableFromBootstrapper&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L1008"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableFromBootstrapper&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableIncludeReferencedProjects_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableIncludeReferencedProjects*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableIncludeReferencedProjects__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableIncludeReferencedProjects``1(``0)">
+  EnableIncludeReferencedProjects&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L941"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Include symbol/source from referenced projects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableIncludeReferencedProjects&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableLockDependencies_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableLockDependencies*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableLockDependencies__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableLockDependencies``1(``0)">
+  EnableLockDependencies&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L873"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableLockDependencies&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableMinimumFromLockFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableMinimumFromLockFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableMinimumFromLockFile__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableMinimumFromLockFile``1(``0)">
+  EnableMinimumFromLockFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L890"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies, and add them as a minimum version. <code>--lock-dependencies</code> will over-ride this option.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableMinimumFromLockFile&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnablePinProjectReferences_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnablePinProjectReferences*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnablePinProjectReferences__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnablePinProjectReferences``1(``0)">
+  EnablePinProjectReferences&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L907"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pin dependencies generated from project references (=) instead of using minimum (&gt;=) for version specification.  If <code>--lock-dependencies</code> is specified, project references will be pinned even if this option is not specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnablePinProjectReferences&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableSilent_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableSilent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableSilent__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableSilent``1(``0)">
+  EnableSilent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L966"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableSilent&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableSymbols_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableSymbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableSymbols__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableSymbols``1(``0)">
+  EnableSymbols&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L924"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build symbol/source packages in addition to library/content packages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableSymbols&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableVerbose_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableVerbose__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.EnableVerbose``1(``0)">
+  EnableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L983"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableVerbose&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_RemoveExclude_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.RemoveExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_RemoveExclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.RemoveExclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveExclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L834"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exclude paket.template file by package ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveExclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_RemoveExclude_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.RemoveExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_RemoveExclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.RemoveExclude``1(``0,System.String[])">
+  RemoveExclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L831"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exclude paket.template file by package ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveExclude&lt;T&gt;(this T o, params string[] v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_RemoveSpecificVersion_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.RemoveSpecificVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_RemoveSpecificVersion__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.RemoveSpecificVersion``1(``0,System.String)">
+  RemoveSpecificVersion&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L851"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Package IDs with version numbers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveSpecificVersion&lt;T&gt;(this T o, string k) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetBuildConfiguration_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetBuildConfiguration*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetBuildConfiguration__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetBuildConfiguration``1(``0)">
+  ResetBuildConfiguration&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L790"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build configuration that should be packaged. Default is <em>Release</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetBuildConfiguration&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetBuildPlatform_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetBuildPlatform*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetBuildPlatform__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetBuildPlatform``1(``0)">
+  ResetBuildPlatform&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L798"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build platform that should be packaged. Default is <em>check all known platform targets</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetBuildPlatform&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetFromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetFromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetFromBootstrapper__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetFromBootstrapper``1(``0)">
+  ResetFromBootstrapper&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L1005"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFromBootstrapper&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetIncludeReferencedProjects_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetIncludeReferencedProjects*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetIncludeReferencedProjects__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetIncludeReferencedProjects``1(``0)">
+  ResetIncludeReferencedProjects&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L938"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Include symbol/source from referenced projects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetIncludeReferencedProjects&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetLockDependencies_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetLockDependencies*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetLockDependencies__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetLockDependencies``1(``0)">
+  ResetLockDependencies&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L870"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetLockDependencies&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetLogFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetLogFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetLogFile__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetLogFile``1(``0)">
+  ResetLogFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L997"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print output to a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetLogFile&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetMinimumFromLockFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetMinimumFromLockFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetMinimumFromLockFile__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetMinimumFromLockFile``1(``0)">
+  ResetMinimumFromLockFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L887"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies, and add them as a minimum version. <code>--lock-dependencies</code> will over-ride this option.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetMinimumFromLockFile&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetOutputDirectory_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetOutputDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetOutputDirectory__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetOutputDirectory``1(``0)">
+  ResetOutputDirectory&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L782"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output directory for .nupkg files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutputDirectory&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetPackageVersion_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetPackageVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetPackageVersion__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetPackageVersion``1(``0)">
+  ResetPackageVersion&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L806"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Version of the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPackageVersion&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetPinProjectReferences_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetPinProjectReferences*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetPinProjectReferences__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetPinProjectReferences``1(``0)">
+  ResetPinProjectReferences&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L904"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pin dependencies generated from project references (=) instead of using minimum (&gt;=) for version specification.  If <code>--lock-dependencies</code> is specified, project references will be pinned even if this option is not specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPinProjectReferences&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetProjectUrl_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetProjectUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetProjectUrl__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetProjectUrl``1(``0)">
+  ResetProjectUrl&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L955"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Url to the projects home page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetProjectUrl&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetReleaseNotes_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetReleaseNotes*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetReleaseNotes__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetReleaseNotes``1(``0)">
+  ResetReleaseNotes&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L862"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify release notes for the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetReleaseNotes&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetSilent_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetSilent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetSilent__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetSilent``1(``0)">
+  ResetSilent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L963"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSilent&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetSymbols_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetSymbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetSymbols__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetSymbols``1(``0)">
+  ResetSymbols&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L921"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build symbol/source packages in addition to library/content packages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSymbols&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetTemplateFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetTemplateFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetTemplateFile__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetTemplateFile``1(``0)">
+  ResetTemplateFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L814"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pack a single paket.template file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTemplateFile&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetVerbose_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetVerbose__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ResetVerbose``1(``0)">
+  ResetVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L980"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVerbose&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetBuildConfiguration_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetBuildConfiguration*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetBuildConfiguration__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetBuildConfiguration``1(``0,System.String)">
+  SetBuildConfiguration&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L787"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build configuration that should be packaged. Default is <em>Release</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetBuildConfiguration&lt;T&gt;(this T o, string v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetBuildPlatform_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetBuildPlatform*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetBuildPlatform__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetBuildPlatform``1(``0,System.String)">
+  SetBuildPlatform&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L795"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build platform that should be packaged. Default is <em>check all known platform targets</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetBuildPlatform&lt;T&gt;(this T o, string v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetExclude_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetExclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetExclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetExclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L822"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exclude paket.template file by package ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetExclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetExclude_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetExclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetExclude``1(``0,System.String[])">
+  SetExclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L819"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exclude paket.template file by package ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetExclude&lt;T&gt;(this T o, params string[] v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetFromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetFromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetFromBootstrapper__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetFromBootstrapper``1(``0,System.Nullable{System.Boolean})">
+  SetFromBootstrapper&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L1002"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFromBootstrapper&lt;T&gt;(this T o, bool? v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetIncludeReferencedProjects_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetIncludeReferencedProjects*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetIncludeReferencedProjects__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetIncludeReferencedProjects``1(``0,System.Nullable{System.Boolean})">
+  SetIncludeReferencedProjects&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L935"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Include symbol/source from referenced projects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetIncludeReferencedProjects&lt;T&gt;(this T o, bool? v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetLockDependencies_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetLockDependencies*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetLockDependencies__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetLockDependencies``1(``0,System.Nullable{System.Boolean})">
+  SetLockDependencies&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L867"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetLockDependencies&lt;T&gt;(this T o, bool? v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetLogFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetLogFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetLogFile__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetLogFile``1(``0,System.String)">
+  SetLogFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L994"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print output to a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetLogFile&lt;T&gt;(this T o, string v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetMinimumFromLockFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetMinimumFromLockFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetMinimumFromLockFile__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetMinimumFromLockFile``1(``0,System.Nullable{System.Boolean})">
+  SetMinimumFromLockFile&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L884"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies, and add them as a minimum version. <code>--lock-dependencies</code> will over-ride this option.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetMinimumFromLockFile&lt;T&gt;(this T o, bool? v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetOutputDirectory_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetOutputDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetOutputDirectory__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetOutputDirectory``1(``0,System.String)">
+  SetOutputDirectory&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L779"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output directory for .nupkg files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutputDirectory&lt;T&gt;(this T o, string v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetPackageVersion_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetPackageVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetPackageVersion__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetPackageVersion``1(``0,System.String)">
+  SetPackageVersion&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L803"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Version of the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPackageVersion&lt;T&gt;(this T o, string v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetPinProjectReferences_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetPinProjectReferences*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetPinProjectReferences__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetPinProjectReferences``1(``0,System.Nullable{System.Boolean})">
+  SetPinProjectReferences&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L901"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pin dependencies generated from project references (=) instead of using minimum (&gt;=) for version specification.  If <code>--lock-dependencies</code> is specified, project references will be pinned even if this option is not specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPinProjectReferences&lt;T&gt;(this T o, bool? v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetProjectUrl_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetProjectUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetProjectUrl__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetProjectUrl``1(``0,System.String)">
+  SetProjectUrl&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L952"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Url to the projects home page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProjectUrl&lt;T&gt;(this T o, string v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetReleaseNotes_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetReleaseNotes*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetReleaseNotes__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetReleaseNotes``1(``0,System.String)">
+  SetReleaseNotes&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L859"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify release notes for the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetReleaseNotes&lt;T&gt;(this T o, string v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSilent_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetSilent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSilent__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetSilent``1(``0,System.Nullable{System.Boolean})">
+  SetSilent&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L960"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSilent&lt;T&gt;(this T o, bool? v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSpecificVersion_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetSpecificVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSpecificVersion__1___0_System_String_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetSpecificVersion``1(``0,System.String,System.String)">
+  SetSpecificVersion&lt;T&gt;(T, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L845"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Package IDs with version numbers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSpecificVersion&lt;T&gt;(this T o, string k, string v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSpecificVersions_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetSpecificVersions*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSpecificVersions__1___0_System_Collections_Generic_IDictionary_System_String_System_String__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetSpecificVersions``1(``0,System.Collections.Generic.IDictionary{System.String,System.String})">
+  SetSpecificVersions&lt;T&gt;(T, IDictionary&lt;string, string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L842"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Package IDs with version numbers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSpecificVersions&lt;T&gt;(this T o, IDictionary&lt;string, string&gt; v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSymbols_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetSymbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSymbols__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetSymbols``1(``0,System.Nullable{System.Boolean})">
+  SetSymbols&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L918"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build symbol/source packages in addition to library/content packages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSymbols&lt;T&gt;(this T o, bool? v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetTemplateFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetTemplateFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetTemplateFile__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetTemplateFile``1(``0,System.String)">
+  SetTemplateFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L811"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pack a single paket.template file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTemplateFile&lt;T&gt;(this T o, string v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetVerbose_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.SetVerbose``1(``0,System.Nullable{System.Boolean})">
+  SetVerbose&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L977"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVerbose&lt;T&gt;(this T o, bool? v) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleFromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleFromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleFromBootstrapper__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleFromBootstrapper``1(``0)">
+  ToggleFromBootstrapper&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L1014"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleFromBootstrapper&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleIncludeReferencedProjects_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleIncludeReferencedProjects*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleIncludeReferencedProjects__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleIncludeReferencedProjects``1(``0)">
+  ToggleIncludeReferencedProjects&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L947"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Include symbol/source from referenced projects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleIncludeReferencedProjects&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleLockDependencies_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleLockDependencies*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleLockDependencies__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleLockDependencies``1(``0)">
+  ToggleLockDependencies&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L879"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleLockDependencies&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleMinimumFromLockFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleMinimumFromLockFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleMinimumFromLockFile__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleMinimumFromLockFile``1(``0)">
+  ToggleMinimumFromLockFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L896"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies, and add them as a minimum version. <code>--lock-dependencies</code> will over-ride this option.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleMinimumFromLockFile&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_TogglePinProjectReferences_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.TogglePinProjectReferences*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_TogglePinProjectReferences__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.TogglePinProjectReferences``1(``0)">
+  TogglePinProjectReferences&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L913"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pin dependencies generated from project references (=) instead of using minimum (&gt;=) for version specification.  If <code>--lock-dependencies</code> is specified, project references will be pinned even if this option is not specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T TogglePinProjectReferences&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleSilent_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleSilent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleSilent__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleSilent``1(``0)">
+  ToggleSilent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L972"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleSilent&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleSymbols_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleSymbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleSymbols__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleSymbols``1(``0)">
+  ToggleSymbols&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L930"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build symbol/source packages in addition to library/content packages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleSymbols&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleVerbose_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleVerbose__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.ToggleVerbose``1(``0)">
+  ToggleVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L989"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleVerbose&lt;T&gt;(this T o) where T : PaketPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L773" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

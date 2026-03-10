@@ -1,0 +1,2988 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class KubernetesDeleteSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class KubernetesDeleteSettingsExtensions | gruke ">
+      
+      <meta name="description" content="Delete resources by filenames, stdin, resources and names, or by resources and label selector. JSON and YAML formats are accepted. Only one type of the arguments may be specified: filenames, resources and names, or resources and label selector. Some resources, such as pods, support graceful deletion. These resources define a default period before they are forcibly terminated (the grace period) but you may override that value with the --grace-period flag, or pass --now to set a grace-period of 1. Because these resources often represent entities in the cluster, deletion may not be acknowledged immediately. If the node hosting a pod is down or cannot reach the API server, termination may take significantly longer than the grace period. To force delete a resource, you must pass a grace period of 0 and specify the --force flag. IMPORTANT: Force deleting pods does not wait for confirmation that the pod&#39;s processes have been terminated, which can leave those processes running until the node detects the deletion and completes graceful deletion. If your processes use shared storage or talk to a remote API and depend on the name of the pod to identify themselves, force deleting those pods may result in multiple processes running on different machines using the same identification which may lead to data corruption or inconsistency. Only force delete pods when you are sure the pod is terminated, or if your application can tolerate multiple copies of the same pod running at once. Also, if you force delete pods the scheduler may place new pods on those nodes before the node has released those resources and causing those pods to be evicted immediately. Note that the delete command does NOT do resource version checks, so if someone submits an update to a resource right when you submit a delete, their update will be lost along with the rest of the resource.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions" class="text-break">
+Class KubernetesDeleteSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3539"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Kubernetes.html">Kubernetes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Delete resources by filenames, stdin, resources and names, or by resources and label selector. JSON and YAML formats are accepted. Only one type of the arguments may be specified: filenames, resources and names, or resources and label selector. Some resources, such as pods, support graceful deletion. These resources define a default period before they are forcibly terminated (the grace period) but you may override that value with the --grace-period flag, or pass --now to set a grace-period of 1. Because these resources often represent entities in the cluster, deletion may not be acknowledged immediately. If the node hosting a pod is down or cannot reach the API server, termination may take significantly longer than the grace period. To force delete a resource, you must pass a grace period of 0 and specify the --force flag. IMPORTANT: Force deleting pods does not wait for confirmation that the pod's processes have been terminated, which can leave those processes running until the node detects the deletion and completes graceful deletion. If your processes use shared storage or talk to a remote API and depend on the name of the pod to identify themselves, force deleting those pods may result in multiple processes running on different machines using the same identification which may lead to data corruption or inconsistency. Only force delete pods when you are sure the pod is terminated, or if your application can tolerate multiple copies of the same pod running at once. Also, if you force delete pods the scheduler may place new pods on those nodes before the node has released those resources and causing those pods to be evicted immediately. Note that the delete command does NOT do resource version checks, so if someone submits an update to a resource right when you submit a delete, their update will be lost along with the rest of the resource.</p><p>For more details, visit the <a href="https://kubernetes.io/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class KubernetesDeleteSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">KubernetesDeleteSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;typeName&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_TypeName">TypeName</a></li><li><code>--all</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_All">All</a></li><li><code>--alsologtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Alsologtostderr">Alsologtostderr</a></li><li><code>--as</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_As">As</a></li><li><code>--as-group</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_AsGroup">AsGroup</a></li><li><code>--cache-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CacheDir">CacheDir</a></li><li><code>--cascade</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_Cascade">Cascade</a></li><li><code>--certificate-authority</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CertificateAuthority">CertificateAuthority</a></li><li><code>--client-certificate</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientCertificate">ClientCertificate</a></li><li><code>--client-key</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientKey">ClientKey</a></li><li><code>--cluster</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Cluster">Cluster</a></li><li><code>--context</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Context">Context</a></li><li><code>--field-selector</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_FieldSelector">FieldSelector</a></li><li><code>--filename</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_Filename">Filename</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_Force">Force</a></li><li><code>--grace-period</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_GracePeriod">GracePeriod</a></li><li><code>--ignore-not-found</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_IgnoreNotFound">IgnoreNotFound</a></li><li><code>--include-uninitialized</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_IncludeUninitialized">IncludeUninitialized</a></li><li><code>--insecure-skip-tls-verify</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_InsecureSkipTlsVerify">InsecureSkipTlsVerify</a></li><li><code>--kubeconfig</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Kubeconfig">Kubeconfig</a></li><li><code>--log-backtrace-at</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogBacktraceAt">LogBacktraceAt</a></li><li><code>--log-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogDir">LogDir</a></li><li><code>--logtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Logtostderr">Logtostderr</a></li><li><code>--match-server-version</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_MatchServerVersion">MatchServerVersion</a></li><li><code>--namespace</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Namespace">Namespace</a></li><li><code>--now</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_Now">Now</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_Output">Output</a></li><li><code>--recursive</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_Recursive">Recursive</a></li><li><code>--request-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_RequestTimeout">RequestTimeout</a></li><li><code>--selector</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_Selector">Selector</a></li><li><code>--server</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Server">Server</a></li><li><code>--stderrthreshold</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Stderrthreshold">Stderrthreshold</a></li><li><code>--timeout</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_Timeout">Timeout</a></li><li><code>--token</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Token">Token</a></li><li><code>--user</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_User">User</a></li><li><code>--v</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_V">V</a></li><li><code>--vmodule</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Vmodule">Vmodule</a></li><li><code>--wait</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettings_Wait">Wait</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_AddFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.AddFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_AddFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.AddFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3619"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>containing the resource to delete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_AddFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.AddFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_AddFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.AddFilename``1(``0,System.String[])">
+  AddFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3616"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>containing the resource to delete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_AddTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.AddTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_AddTypeName__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.AddTypeName``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddTypeName&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3554"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type (and name) of the resource. When only specifying a type either a --selector or --all needs to be specified</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTypeName&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_AddTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.AddTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_AddTypeName__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.AddTypeName``1(``0,System.String[])">
+  AddTypeName&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3551"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type (and name) of the resource. When only specifying a type either a --selector or --all needs to be specified</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTypeName&lt;T&gt;(this T o, params string[] v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ClearFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ClearFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ClearFilename__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ClearFilename``1(``0)">
+  ClearFilename&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3628"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>containing the resource to delete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearFilename&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ClearTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ClearTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ClearTypeName__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ClearTypeName``1(``0)">
+  ClearTypeName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3563"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type (and name) of the resource. When only specifying a type either a --selector or --all needs to be specified</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearTypeName&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableAll``1(``0)">
+  DisableAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3577"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delete all resources, including uninitialized ones, in the namespace of the specified resource types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableAll&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableCascade_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableCascade*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableCascade__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableCascade``1(``0)">
+  DisableCascade&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3594"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, cascade the deletion of the resources managed by this resource (e.g. Pods created by a ReplicationController).  Default true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableCascade&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableForce_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableForce__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableForce``1(``0)">
+  DisableForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3642"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only used when grace-period=0. If true, immediately remove resources from API and bypass graceful deletion. Note that immediate deletion of some resources may result in inconsistency or data loss and requires confirmation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableForce&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableIgnoreNotFound_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableIgnoreNotFound*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableIgnoreNotFound__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableIgnoreNotFound``1(``0)">
+  DisableIgnoreNotFound&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3667"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Treat &quot;resource not found&quot; as a successful delete. Defaults to &quot;true&quot; when --all is specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableIgnoreNotFound&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableIncludeUninitialized_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableIncludeUninitialized*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableIncludeUninitialized__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableIncludeUninitialized``1(``0)">
+  DisableIncludeUninitialized&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3684"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the kubectl command applies to uninitialized objects. If explicitly set to false, this flag overrides other flags that make the kubectl commands apply to uninitialized objects, e.g., &quot;--all&quot;. Objects with empty metadata.initializers are regarded as initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableIncludeUninitialized&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableNow_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableNow*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableNow__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableNow``1(``0)">
+  DisableNow&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3701"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, resources are signaled for immediate shutdown (same as --grace-period=1).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNow&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableRecursive``1(``0)">
+  DisableRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3726"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableRecursive&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableWait_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableWait*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_DisableWait__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.DisableWait``1(``0)">
+  DisableWait&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3759"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, wait for resources to be gone before returning. This waits for finalizers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableWait&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableAll``1(``0)">
+  EnableAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3574"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delete all resources, including uninitialized ones, in the namespace of the specified resource types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableAll&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableCascade_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableCascade*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableCascade__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableCascade``1(``0)">
+  EnableCascade&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3591"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, cascade the deletion of the resources managed by this resource (e.g. Pods created by a ReplicationController).  Default true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableCascade&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableForce_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableForce__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableForce``1(``0)">
+  EnableForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3639"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only used when grace-period=0. If true, immediately remove resources from API and bypass graceful deletion. Note that immediate deletion of some resources may result in inconsistency or data loss and requires confirmation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableForce&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableIgnoreNotFound_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableIgnoreNotFound*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableIgnoreNotFound__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableIgnoreNotFound``1(``0)">
+  EnableIgnoreNotFound&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3664"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Treat &quot;resource not found&quot; as a successful delete. Defaults to &quot;true&quot; when --all is specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableIgnoreNotFound&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableIncludeUninitialized_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableIncludeUninitialized*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableIncludeUninitialized__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableIncludeUninitialized``1(``0)">
+  EnableIncludeUninitialized&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3681"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the kubectl command applies to uninitialized objects. If explicitly set to false, this flag overrides other flags that make the kubectl commands apply to uninitialized objects, e.g., &quot;--all&quot;. Objects with empty metadata.initializers are regarded as initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableIncludeUninitialized&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableNow_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableNow*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableNow__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableNow``1(``0)">
+  EnableNow&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3698"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, resources are signaled for immediate shutdown (same as --grace-period=1).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNow&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableRecursive``1(``0)">
+  EnableRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3723"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableRecursive&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableWait_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableWait*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_EnableWait__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.EnableWait``1(``0)">
+  EnableWait&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3756"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, wait for resources to be gone before returning. This waits for finalizers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableWait&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_RemoveFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.RemoveFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_RemoveFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.RemoveFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3625"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>containing the resource to delete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_RemoveFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.RemoveFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_RemoveFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.RemoveFilename``1(``0,System.String[])">
+  RemoveFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3622"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>containing the resource to delete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_RemoveTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.RemoveTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_RemoveTypeName__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.RemoveTypeName``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveTypeName&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3560"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type (and name) of the resource. When only specifying a type either a --selector or --all needs to be specified</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTypeName&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_RemoveTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.RemoveTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_RemoveTypeName__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.RemoveTypeName``1(``0,System.String[])">
+  RemoveTypeName&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3557"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type (and name) of the resource. When only specifying a type either a --selector or --all needs to be specified</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTypeName&lt;T&gt;(this T o, params string[] v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetAll``1(``0)">
+  ResetAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3571"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delete all resources, including uninitialized ones, in the namespace of the specified resource types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAll&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetCascade_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetCascade*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetCascade__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetCascade``1(``0)">
+  ResetCascade&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3588"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, cascade the deletion of the resources managed by this resource (e.g. Pods created by a ReplicationController).  Default true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetCascade&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetFieldSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetFieldSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetFieldSelector__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetFieldSelector``1(``0)">
+  ResetFieldSelector&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3605"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selector (field query) to filter on, supports '=', '==', and '!='.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFieldSelector&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetForce_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetForce__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetForce``1(``0)">
+  ResetForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3636"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only used when grace-period=0. If true, immediately remove resources from API and bypass graceful deletion. Note that immediate deletion of some resources may result in inconsistency or data loss and requires confirmation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetForce&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetGracePeriod_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetGracePeriod*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetGracePeriod__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetGracePeriod``1(``0)">
+  ResetGracePeriod&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3653"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Period of time in seconds given to the resource to terminate gracefully. Ignored if negative. Set to 1 for immediate shutdown. Can only be set to 0 when --force is true (force deletion).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetGracePeriod&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetIgnoreNotFound_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetIgnoreNotFound*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetIgnoreNotFound__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetIgnoreNotFound``1(``0)">
+  ResetIgnoreNotFound&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3661"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Treat &quot;resource not found&quot; as a successful delete. Defaults to &quot;true&quot; when --all is specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetIgnoreNotFound&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetIncludeUninitialized_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetIncludeUninitialized*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetIncludeUninitialized__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetIncludeUninitialized``1(``0)">
+  ResetIncludeUninitialized&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3678"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the kubectl command applies to uninitialized objects. If explicitly set to false, this flag overrides other flags that make the kubectl commands apply to uninitialized objects, e.g., &quot;--all&quot;. Objects with empty metadata.initializers are regarded as initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetIncludeUninitialized&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetNow_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetNow*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetNow__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetNow``1(``0)">
+  ResetNow&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3695"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, resources are signaled for immediate shutdown (same as --grace-period=1).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNow&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetOutput__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetOutput``1(``0)">
+  ResetOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3712"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output mode. Use &quot;-o name&quot; for shorter output (resource/name).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutput&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetRecursive``1(``0)">
+  ResetRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3720"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRecursive&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetSelector__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetSelector``1(``0)">
+  ResetSelector&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3737"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selector (label query) to filter on, not including uninitialized ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSelector&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetTimeout_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetTimeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetTimeout__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetTimeout``1(``0)">
+  ResetTimeout&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3745"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The length of time to wait before giving up on a delete, zero means determine a timeout from the size of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTimeout&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetWait_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetWait*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ResetWait__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ResetWait``1(``0)">
+  ResetWait&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3753"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, wait for resources to be gone before returning. This waits for finalizers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetWait&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetAll__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetAll``1(``0,System.Nullable{System.Boolean})">
+  SetAll&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3568"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delete all resources, including uninitialized ones, in the namespace of the specified resource types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAll&lt;T&gt;(this T o, bool? v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetCascade_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetCascade*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetCascade__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetCascade``1(``0,System.Nullable{System.Boolean})">
+  SetCascade&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3585"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, cascade the deletion of the resources managed by this resource (e.g. Pods created by a ReplicationController).  Default true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetCascade&lt;T&gt;(this T o, bool? v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetFieldSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetFieldSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetFieldSelector__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetFieldSelector``1(``0,System.String)">
+  SetFieldSelector&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3602"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selector (field query) to filter on, supports '=', '==', and '!='.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFieldSelector&lt;T&gt;(this T o, string v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3613"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>containing the resource to delete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetFilename``1(``0,System.String[])">
+  SetFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3610"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>containing the resource to delete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetForce_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetForce``1(``0,System.Nullable{System.Boolean})">
+  SetForce&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3633"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only used when grace-period=0. If true, immediately remove resources from API and bypass graceful deletion. Note that immediate deletion of some resources may result in inconsistency or data loss and requires confirmation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetForce&lt;T&gt;(this T o, bool? v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetGracePeriod_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetGracePeriod*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetGracePeriod__1___0_System_Nullable_System_Int32__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetGracePeriod``1(``0,System.Nullable{System.Int32})">
+  SetGracePeriod&lt;T&gt;(T, int?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3650"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Period of time in seconds given to the resource to terminate gracefully. Ignored if negative. Set to 1 for immediate shutdown. Can only be set to 0 when --force is true (force deletion).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetGracePeriod&lt;T&gt;(this T o, int? v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetIgnoreNotFound_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetIgnoreNotFound*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetIgnoreNotFound__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetIgnoreNotFound``1(``0,System.Nullable{System.Boolean})">
+  SetIgnoreNotFound&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3658"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Treat &quot;resource not found&quot; as a successful delete. Defaults to &quot;true&quot; when --all is specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetIgnoreNotFound&lt;T&gt;(this T o, bool? v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetIncludeUninitialized_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetIncludeUninitialized*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetIncludeUninitialized__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetIncludeUninitialized``1(``0,System.Nullable{System.Boolean})">
+  SetIncludeUninitialized&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3675"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the kubectl command applies to uninitialized objects. If explicitly set to false, this flag overrides other flags that make the kubectl commands apply to uninitialized objects, e.g., &quot;--all&quot;. Objects with empty metadata.initializers are regarded as initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetIncludeUninitialized&lt;T&gt;(this T o, bool? v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetNow_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetNow*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetNow__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetNow``1(``0,System.Nullable{System.Boolean})">
+  SetNow&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3692"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, resources are signaled for immediate shutdown (same as --grace-period=1).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNow&lt;T&gt;(this T o, bool? v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetOutput__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetOutput``1(``0,System.String)">
+  SetOutput&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3709"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output mode. Use &quot;-o name&quot; for shorter output (resource/name).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutput&lt;T&gt;(this T o, string v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetRecursive__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetRecursive``1(``0,System.Nullable{System.Boolean})">
+  SetRecursive&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3717"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRecursive&lt;T&gt;(this T o, bool? v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetSelector__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetSelector``1(``0,System.String)">
+  SetSelector&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3734"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selector (label query) to filter on, not including uninitialized ones.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSelector&lt;T&gt;(this T o, string v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetTimeout_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetTimeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetTimeout__1___0_System_Nullable_System_TimeSpan__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetTimeout``1(``0,System.Nullable{System.TimeSpan})">
+  SetTimeout&lt;T&gt;(T, TimeSpan?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3742"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The length of time to wait before giving up on a delete, zero means determine a timeout from the size of the object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTimeout&lt;T&gt;(this T o, TimeSpan? v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetTypeName__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetTypeName``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetTypeName&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3548"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type (and name) of the resource. When only specifying a type either a --selector or --all needs to be specified</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTypeName&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetTypeName__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetTypeName``1(``0,System.String[])">
+  SetTypeName&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3545"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type (and name) of the resource. When only specifying a type either a --selector or --all needs to be specified</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTypeName&lt;T&gt;(this T o, params string[] v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetWait_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetWait*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_SetWait__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.SetWait``1(``0,System.Nullable{System.Boolean})">
+  SetWait&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3750"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, wait for resources to be gone before returning. This waits for finalizers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetWait&lt;T&gt;(this T o, bool? v) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleAll``1(``0)">
+  ToggleAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3580"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delete all resources, including uninitialized ones, in the namespace of the specified resource types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleAll&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleCascade_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleCascade*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleCascade__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleCascade``1(``0)">
+  ToggleCascade&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3597"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, cascade the deletion of the resources managed by this resource (e.g. Pods created by a ReplicationController).  Default true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleCascade&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleForce_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleForce__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleForce``1(``0)">
+  ToggleForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3645"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only used when grace-period=0. If true, immediately remove resources from API and bypass graceful deletion. Note that immediate deletion of some resources may result in inconsistency or data loss and requires confirmation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleForce&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleIgnoreNotFound_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleIgnoreNotFound*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleIgnoreNotFound__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleIgnoreNotFound``1(``0)">
+  ToggleIgnoreNotFound&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3670"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Treat &quot;resource not found&quot; as a successful delete. Defaults to &quot;true&quot; when --all is specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleIgnoreNotFound&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleIncludeUninitialized_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleIncludeUninitialized*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleIncludeUninitialized__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleIncludeUninitialized``1(``0)">
+  ToggleIncludeUninitialized&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3687"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the kubectl command applies to uninitialized objects. If explicitly set to false, this flag overrides other flags that make the kubectl commands apply to uninitialized objects, e.g., &quot;--all&quot;. Objects with empty metadata.initializers are regarded as initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleIncludeUninitialized&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleNow_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleNow*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleNow__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleNow``1(``0)">
+  ToggleNow&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3704"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, resources are signaled for immediate shutdown (same as --grace-period=1).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNow&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleRecursive``1(``0)">
+  ToggleRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3729"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleRecursive&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleWait_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleWait*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesDeleteSettingsExtensions_ToggleWait__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesDeleteSettingsExtensions.ToggleWait``1(``0)">
+  ToggleWait&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3762"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, wait for resources to be gone before returning. This waits for finalizers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleWait&lt;T&gt;(this T o) where T : KubernetesDeleteSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3539" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

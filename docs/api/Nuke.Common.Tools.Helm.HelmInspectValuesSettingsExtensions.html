@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class HelmInspectValuesSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class HelmInspectValuesSettingsExtensions | gruke ">
+      
+      <meta name="description" content="This command inspects a chart (directory, file, or URL) and displays the contents of the values.yaml file.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions" class="text-break">
+Class HelmInspectValuesSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3166"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Helm.html">Helm</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>This command inspects a chart (directory, file, or URL) and displays the contents of the values.yaml file.</p><p>For more details, visit the <a href="https://helm.sh/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class HelmInspectValuesSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">HelmInspectValuesSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;chart&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_Chart">Chart</a></li><li><code>--ca-file</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_CaFile">CaFile</a></li><li><code>--cert-file</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_CertFile">CertFile</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Debug">Debug</a></li><li><code>--devel</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_Devel">Devel</a></li><li><code>--home</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Home">Home</a></li><li><code>--host</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Host">Host</a></li><li><code>--key-file</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_KeyFile">KeyFile</a></li><li><code>--keyring</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_Keyring">Keyring</a></li><li><code>--kube-context</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_KubeContext">KubeContext</a></li><li><code>--kubeconfig</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Kubeconfig">Kubeconfig</a></li><li><code>--password</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_Password">Password</a></li><li><code>--repo</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_Repo">Repo</a></li><li><code>--tiller-connection-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerConnectionTimeout">TillerConnectionTimeout</a></li><li><code>--tiller-namespace</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerNamespace">TillerNamespace</a></li><li><code>--username</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_Username">Username</a></li><li><code>--verify</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_Verify">Verify</a></li><li><code>--version</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInspectValuesSettings.html#Nuke_Common_Tools_Helm_HelmInspectValuesSettings_Version">Version</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_DisableDevel_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.DisableDevel*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_DisableDevel__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.DisableDevel``1(``0)">
+  DisableDevel&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3197"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use development versions, too. Equivalent to version '&gt;0.0.0-0'. If --version is set, this is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDevel&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_DisableVerify_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.DisableVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_DisableVerify__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.DisableVerify``1(``0)">
+  DisableVerify&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3254"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verify the provenance data for this chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableVerify&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_EnableDevel_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.EnableDevel*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_EnableDevel__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.EnableDevel``1(``0)">
+  EnableDevel&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use development versions, too. Equivalent to version '&gt;0.0.0-0'. If --version is set, this is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDevel&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_EnableVerify_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.EnableVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_EnableVerify__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.EnableVerify``1(``0)">
+  EnableVerify&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verify the provenance data for this chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableVerify&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetCaFile_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetCaFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetCaFile__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetCaFile``1(``0)">
+  ResetCaFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository url where to locate the requested chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetCaFile&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetCertFile_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetCertFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetCertFile__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetCertFile``1(``0)">
+  ResetCertFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verify certificates of HTTPS-enabled servers using this CA bundle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetCertFile&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetChart_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetChart*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetChart__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetChart``1(``0)">
+  ResetChart&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the chart to inspect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetChart&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetDevel_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetDevel*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetDevel__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetDevel``1(``0)">
+  ResetDevel&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use development versions, too. Equivalent to version '&gt;0.0.0-0'. If --version is set, this is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDevel&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetKeyFile_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetKeyFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetKeyFile__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetKeyFile``1(``0)">
+  ResetKeyFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3208"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Identify HTTPS client using this SSL key file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetKeyFile&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetKeyring_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetKeyring*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetKeyring__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetKeyring``1(``0)">
+  ResetKeyring&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3216"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to the keyring containing public verification keys (default &quot;~/.gnupg/pubring.gpg&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetKeyring&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetPassword_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetPassword*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetPassword__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetPassword``1(``0)">
+  ResetPassword&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository password where to locate the requested chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPassword&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetRepo_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetRepo*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetRepo__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetRepo``1(``0)">
+  ResetRepo&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3232"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository url where to locate the requested chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRepo&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetUsername_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetUsername*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetUsername__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetUsername``1(``0)">
+  ResetUsername&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3240"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository username where to locate the requested chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetUsername&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetVerify_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetVerify__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetVerify``1(``0)">
+  ResetVerify&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3248"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verify the provenance data for this chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVerify&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetVersion_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ResetVersion__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ResetVersion``1(``0)">
+  ResetVersion&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Version of the chart. By default, the newest chart is shown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVersion&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetCaFile_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetCaFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetCaFile__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetCaFile``1(``0,System.String)">
+  SetCaFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3172"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository url where to locate the requested chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetCaFile&lt;T&gt;(this T o, string v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetCertFile_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetCertFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetCertFile__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetCertFile``1(``0,System.String)">
+  SetCertFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3180"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verify certificates of HTTPS-enabled servers using this CA bundle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetCertFile&lt;T&gt;(this T o, string v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetChart_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetChart*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetChart__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetChart``1(``0,System.String)">
+  SetChart&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3270"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the chart to inspect.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetChart&lt;T&gt;(this T o, string v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetDevel_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetDevel*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetDevel__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetDevel``1(``0,System.Nullable{System.Boolean})">
+  SetDevel&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use development versions, too. Equivalent to version '&gt;0.0.0-0'. If --version is set, this is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDevel&lt;T&gt;(this T o, bool? v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetKeyFile_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetKeyFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetKeyFile__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetKeyFile``1(``0,System.String)">
+  SetKeyFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Identify HTTPS client using this SSL key file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetKeyFile&lt;T&gt;(this T o, string v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetKeyring_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetKeyring*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetKeyring__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetKeyring``1(``0,System.String)">
+  SetKeyring&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3213"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to the keyring containing public verification keys (default &quot;~/.gnupg/pubring.gpg&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetKeyring&lt;T&gt;(this T o, string v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetPassword_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetPassword*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetPassword__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetPassword``1(``0,System.String)">
+  SetPassword&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3221"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository password where to locate the requested chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPassword&lt;T&gt;(this T o, string v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetRepo_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetRepo*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetRepo__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetRepo``1(``0,System.String)">
+  SetRepo&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository url where to locate the requested chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRepo&lt;T&gt;(this T o, string v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetUsername_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetUsername*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetUsername__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetUsername``1(``0,System.String)">
+  SetUsername&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3237"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository username where to locate the requested chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetUsername&lt;T&gt;(this T o, string v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetVerify_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetVerify__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetVerify``1(``0,System.Nullable{System.Boolean})">
+  SetVerify&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3245"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verify the provenance data for this chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVerify&lt;T&gt;(this T o, bool? v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetVersion_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_SetVersion__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.SetVersion``1(``0,System.String)">
+  SetVersion&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3262"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Version of the chart. By default, the newest chart is shown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVersion&lt;T&gt;(this T o, string v) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ToggleDevel_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ToggleDevel*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ToggleDevel__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ToggleDevel``1(``0)">
+  ToggleDevel&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use development versions, too. Equivalent to version '&gt;0.0.0-0'. If --version is set, this is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDevel&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ToggleVerify_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ToggleVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInspectValuesSettingsExtensions_ToggleVerify__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmInspectValuesSettingsExtensions.ToggleVerify``1(``0)">
+  ToggleVerify&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verify the provenance data for this chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleVerify&lt;T&gt;(this T o) where T : HelmInspectValuesSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3166" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

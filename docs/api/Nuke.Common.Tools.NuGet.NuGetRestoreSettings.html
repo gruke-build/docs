@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class NuGetRestoreSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NuGetRestoreSettings | gruke ">
+      
+      <meta name="description" content="The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_NuGet_NuGetRestoreSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.NuGet.NuGetRestoreSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings" class="text-break">
+Class NuGetRestoreSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L300"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.NuGet.html">NuGet</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class NuGetRestoreSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">NuGetRestoreSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_AddFallbackSource__1___0_System_Collections_Generic_IEnumerable_System_String__">NuGetRestoreSettingsExtensions.AddFallbackSource&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_AddFallbackSource__1___0_System_String___">NuGetRestoreSettingsExtensions.AddFallbackSource&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_AddPackageSaveMode__1___0_Nuke_Common_Tools_NuGet_PackageSaveMode___">NuGetRestoreSettingsExtensions.AddPackageSaveMode&lt;T&gt;(T, params PackageSaveMode[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_AddPackageSaveMode__1___0_System_Collections_Generic_IEnumerable_Nuke_Common_Tools_NuGet_PackageSaveMode__">NuGetRestoreSettingsExtensions.AddPackageSaveMode&lt;T&gt;(T, IEnumerable&lt;PackageSaveMode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_AddSource__1___0_System_Collections_Generic_IEnumerable_System_String__">NuGetRestoreSettingsExtensions.AddSource&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_AddSource__1___0_System_String___">NuGetRestoreSettingsExtensions.AddSource&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ClearFallbackSource__1___0_">NuGetRestoreSettingsExtensions.ClearFallbackSource&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ClearPackageSaveMode__1___0_">NuGetRestoreSettingsExtensions.ClearPackageSaveMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ClearSource__1___0_">NuGetRestoreSettingsExtensions.ClearSource&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_DisableDirectDownload__1___0_">NuGetRestoreSettingsExtensions.DisableDirectDownload&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_DisableDisableParallelProcessing__1___0_">NuGetRestoreSettingsExtensions.DisableDisableParallelProcessing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_DisableForceEnglishOutput__1___0_">NuGetRestoreSettingsExtensions.DisableForceEnglishOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_DisableNoCache__1___0_">NuGetRestoreSettingsExtensions.DisableNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_DisableNonInteractive__1___0_">NuGetRestoreSettingsExtensions.DisableNonInteractive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_DisableRecursive__1___0_">NuGetRestoreSettingsExtensions.DisableRecursive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_DisableRequireConsent__1___0_">NuGetRestoreSettingsExtensions.DisableRequireConsent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_EnableDirectDownload__1___0_">NuGetRestoreSettingsExtensions.EnableDirectDownload&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_EnableDisableParallelProcessing__1___0_">NuGetRestoreSettingsExtensions.EnableDisableParallelProcessing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_EnableForceEnglishOutput__1___0_">NuGetRestoreSettingsExtensions.EnableForceEnglishOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_EnableNoCache__1___0_">NuGetRestoreSettingsExtensions.EnableNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_EnableNonInteractive__1___0_">NuGetRestoreSettingsExtensions.EnableNonInteractive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_EnableRecursive__1___0_">NuGetRestoreSettingsExtensions.EnableRecursive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_EnableRequireConsent__1___0_">NuGetRestoreSettingsExtensions.EnableRequireConsent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_RemoveFallbackSource__1___0_System_Collections_Generic_IEnumerable_System_String__">NuGetRestoreSettingsExtensions.RemoveFallbackSource&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_RemoveFallbackSource__1___0_System_String___">NuGetRestoreSettingsExtensions.RemoveFallbackSource&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_RemovePackageSaveMode__1___0_Nuke_Common_Tools_NuGet_PackageSaveMode___">NuGetRestoreSettingsExtensions.RemovePackageSaveMode&lt;T&gt;(T, params PackageSaveMode[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_RemovePackageSaveMode__1___0_System_Collections_Generic_IEnumerable_Nuke_Common_Tools_NuGet_PackageSaveMode__">NuGetRestoreSettingsExtensions.RemovePackageSaveMode&lt;T&gt;(T, IEnumerable&lt;PackageSaveMode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_RemoveSource__1___0_System_Collections_Generic_IEnumerable_System_String__">NuGetRestoreSettingsExtensions.RemoveSource&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_RemoveSource__1___0_System_String___">NuGetRestoreSettingsExtensions.RemoveSource&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetConfigFile__1___0_">NuGetRestoreSettingsExtensions.ResetConfigFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetDirectDownload__1___0_">NuGetRestoreSettingsExtensions.ResetDirectDownload&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetDisableParallelProcessing__1___0_">NuGetRestoreSettingsExtensions.ResetDisableParallelProcessing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetForceEnglishOutput__1___0_">NuGetRestoreSettingsExtensions.ResetForceEnglishOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetMSBuildPath__1___0_">NuGetRestoreSettingsExtensions.ResetMSBuildPath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetMSBuildVersion__1___0_">NuGetRestoreSettingsExtensions.ResetMSBuildVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetNoCache__1___0_">NuGetRestoreSettingsExtensions.ResetNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetNonInteractive__1___0_">NuGetRestoreSettingsExtensions.ResetNonInteractive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetOutputDirectory__1___0_">NuGetRestoreSettingsExtensions.ResetOutputDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetPackagesDirectory__1___0_">NuGetRestoreSettingsExtensions.ResetPackagesDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetProject2ProjectTimeOut__1___0_">NuGetRestoreSettingsExtensions.ResetProject2ProjectTimeOut&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetRecursive__1___0_">NuGetRestoreSettingsExtensions.ResetRecursive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetRequireConsent__1___0_">NuGetRestoreSettingsExtensions.ResetRequireConsent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetSolutionDirectory__1___0_">NuGetRestoreSettingsExtensions.ResetSolutionDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetTargetPath__1___0_">NuGetRestoreSettingsExtensions.ResetTargetPath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ResetVerbosity__1___0_">NuGetRestoreSettingsExtensions.ResetVerbosity&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetConfigFile__1___0_System_String_">NuGetRestoreSettingsExtensions.SetConfigFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetDirectDownload__1___0_System_Nullable_System_Boolean__">NuGetRestoreSettingsExtensions.SetDirectDownload&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetDisableParallelProcessing__1___0_System_Nullable_System_Boolean__">NuGetRestoreSettingsExtensions.SetDisableParallelProcessing&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetFallbackSource__1___0_System_Collections_Generic_IEnumerable_System_String__">NuGetRestoreSettingsExtensions.SetFallbackSource&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetFallbackSource__1___0_System_String___">NuGetRestoreSettingsExtensions.SetFallbackSource&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetForceEnglishOutput__1___0_System_Nullable_System_Boolean__">NuGetRestoreSettingsExtensions.SetForceEnglishOutput&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetMSBuildPath__1___0_System_String_">NuGetRestoreSettingsExtensions.SetMSBuildPath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetMSBuildVersion__1___0_Nuke_Common_Tools_NuGet_NuGetMSBuildVersion_">NuGetRestoreSettingsExtensions.SetMSBuildVersion&lt;T&gt;(T, NuGetMSBuildVersion)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetNoCache__1___0_System_Nullable_System_Boolean__">NuGetRestoreSettingsExtensions.SetNoCache&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetNonInteractive__1___0_System_Nullable_System_Boolean__">NuGetRestoreSettingsExtensions.SetNonInteractive&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetOutputDirectory__1___0_System_String_">NuGetRestoreSettingsExtensions.SetOutputDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetPackageSaveMode__1___0_Nuke_Common_Tools_NuGet_PackageSaveMode___">NuGetRestoreSettingsExtensions.SetPackageSaveMode&lt;T&gt;(T, params PackageSaveMode[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetPackageSaveMode__1___0_System_Collections_Generic_IEnumerable_Nuke_Common_Tools_NuGet_PackageSaveMode__">NuGetRestoreSettingsExtensions.SetPackageSaveMode&lt;T&gt;(T, IEnumerable&lt;PackageSaveMode&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetPackagesDirectory__1___0_System_String_">NuGetRestoreSettingsExtensions.SetPackagesDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetProject2ProjectTimeOut__1___0_System_Nullable_System_Int32__">NuGetRestoreSettingsExtensions.SetProject2ProjectTimeOut&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetRecursive__1___0_System_Nullable_System_Boolean__">NuGetRestoreSettingsExtensions.SetRecursive&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetRequireConsent__1___0_System_Nullable_System_Boolean__">NuGetRestoreSettingsExtensions.SetRequireConsent&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetSolutionDirectory__1___0_System_String_">NuGetRestoreSettingsExtensions.SetSolutionDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetSource__1___0_System_Collections_Generic_IEnumerable_System_String__">NuGetRestoreSettingsExtensions.SetSource&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetSource__1___0_System_String___">NuGetRestoreSettingsExtensions.SetSource&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetTargetPath__1___0_System_String_">NuGetRestoreSettingsExtensions.SetTargetPath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_SetVerbosity__1___0_Nuke_Common_Tools_NuGet_NuGetVerbosity_">NuGetRestoreSettingsExtensions.SetVerbosity&lt;T&gt;(T, NuGetVerbosity)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ToggleDirectDownload__1___0_">NuGetRestoreSettingsExtensions.ToggleDirectDownload&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ToggleDisableParallelProcessing__1___0_">NuGetRestoreSettingsExtensions.ToggleDisableParallelProcessing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ToggleForceEnglishOutput__1___0_">NuGetRestoreSettingsExtensions.ToggleForceEnglishOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ToggleNoCache__1___0_">NuGetRestoreSettingsExtensions.ToggleNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ToggleNonInteractive__1___0_">NuGetRestoreSettingsExtensions.ToggleNonInteractive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ToggleRecursive__1___0_">NuGetRestoreSettingsExtensions.ToggleRecursive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettingsExtensions.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettingsExtensions_ToggleRequireConsent__1___0_">NuGetRestoreSettingsExtensions.ToggleRequireConsent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;targetPath&gt;</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_TargetPath">TargetPath</a></li><li><code>-ConfigFile</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_ConfigFile">ConfigFile</a></li><li><code>-DirectDownload</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_DirectDownload">DirectDownload</a></li><li><code>-DisableParallelProcessing</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_DisableParallelProcessing">DisableParallelProcessing</a></li><li><code>-FallbackSource</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_FallbackSource">FallbackSource</a></li><li><code>-ForceEnglishOutput</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_ForceEnglishOutput">ForceEnglishOutput</a></li><li><code>-MSBuildPath</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_MSBuildPath">MSBuildPath</a></li><li><code>-MSBuildVersion</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_MSBuildVersion">MSBuildVersion</a></li><li><code>-NoCache</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_NoCache">NoCache</a></li><li><code>-NonInteractive</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_NonInteractive">NonInteractive</a></li><li><code>-OutputDirectory</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_OutputDirectory">OutputDirectory</a></li><li><code>-PackageSaveMode</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_PackageSaveMode">PackageSaveMode</a></li><li><code>-PackagesDirectory</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_PackagesDirectory">PackagesDirectory</a></li><li><code>-Project2ProjectTimeOut</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Project2ProjectTimeOut">Project2ProjectTimeOut</a></li><li><code>-Recursive</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Recursive">Recursive</a></li><li><code>-RequireConsent</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_RequireConsent">RequireConsent</a></li><li><code>-SolutionDirectory</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_SolutionDirectory">SolutionDirectory</a></li><li><code>-Source</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Source">Source</a></li><li><code>-Verbosity</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.html#Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Verbosity">Verbosity</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_ConfigFile_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.ConfigFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_ConfigFile" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.ConfigFile">
+  ConfigFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L308"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The NuGet configuration file to apply. If not specified, <em>%AppData%\NuGet\NuGet.Config</em> is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConfigFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_DirectDownload_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.DirectDownload*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_DirectDownload" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.DirectDownload">
+  DirectDownload
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L310"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(4.0+)</em> Downloads packages directly without populating caches with any binaries or metadata.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DirectDownload { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_DisableParallelProcessing_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.DisableParallelProcessing*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_DisableParallelProcessing" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.DisableParallelProcessing">
+  DisableParallelProcessing
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L312"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disables restoring multiple packages in parallel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DisableParallelProcessing { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_FallbackSource_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.FallbackSource*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_FallbackSource" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.FallbackSource">
+  FallbackSource
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L314"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.2+)</em> A list of package sources to use as fallbacks in case the package isn't found in the primary or default source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; FallbackSource { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_ForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.ForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_ForceEnglishOutput" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.ForceEnglishOutput">
+  ForceEnglishOutput
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ForceEnglishOutput { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_MSBuildPath_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.MSBuildPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_MSBuildPath" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.MSBuildPath">
+  MSBuildPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(4.0+)</em> Specifies the path of MSBuild to use with the command, taking precedence over <code>-MSBuildVersion</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MSBuildPath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_MSBuildVersion_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.MSBuildVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_MSBuildVersion" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.MSBuildVersion">
+  MSBuildVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L320"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.2+)</em> Specifies the version of MSBuild to be used with this command. Supported values are <em>4</em>, <em>12</em>, <em>14</em>, <em>15</em>. By default the MSBuild in your path is picked, otherwise it defaults to the highest installed version of MSBuild.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NuGetMSBuildVersion MSBuildVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NuGet.NuGetMSBuildVersion.html">NuGetMSBuildVersion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_NoCache_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.NoCache*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_NoCache" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.NoCache">
+  NoCache
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L322"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents NuGet from using packages from local machine caches.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoCache { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_NonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.NonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_NonInteractive" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.NonInteractive">
+  NonInteractive
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NonInteractive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_OutputDirectory_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.OutputDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_OutputDirectory" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.OutputDirectory">
+  OutputDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the folder in which packages are installed. If no folder is specified, the current folder is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string OutputDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_PackageSaveMode_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.PackageSaveMode*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_PackageSaveMode" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.PackageSaveMode">
+  PackageSaveMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L328"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the types of files to save after package installation: one of <code>nuspec</code>, <code>nupkg</code>, or <code>nuspec;nupkg</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;PackageSaveMode&gt; PackageSaveMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Nuke.Common.Tools.NuGet.PackageSaveMode.html">PackageSaveMode</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_PackagesDirectory_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.PackagesDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_PackagesDirectory" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.PackagesDirectory">
+  PackagesDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L330"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Same as <code>OutputDirectory</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PackagesDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Project2ProjectTimeOut_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.Project2ProjectTimeOut*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Project2ProjectTimeOut" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.Project2ProjectTimeOut">
+  Project2ProjectTimeOut
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Timeout in seconds for resolving project-to-project references.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Project2ProjectTimeOut { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Recursive_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.Recursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Recursive" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.Recursive">
+  Recursive
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L334"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(4.0+)</em> Restores all references projects for UWP and .NET Core projects. Does not apply to projects using <code>packages.config</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Recursive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_RequireConsent_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.RequireConsent*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_RequireConsent" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.RequireConsent">
+  RequireConsent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L336"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verifies that restoring packages is enabled before downloading and installing the packages. For details, see <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore">Package Restore</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? RequireConsent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_SolutionDirectory_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.SolutionDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_SolutionDirectory" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.SolutionDirectory">
+  SolutionDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L338"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the solution folder. Not valid when restoring packages for a solution.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SolutionDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Source_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.Source*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Source" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.Source">
+  Source
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L340"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the list of package sources (as URLs) to use for the restore. If omitted, the command uses the sources provided in configuration files, see <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior">Configuring NuGet behavior</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Source { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_TargetPath_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.TargetPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_TargetPath" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.TargetPath">
+  TargetPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Defines the project to restore. I.e., the location of a solution file, a <code>packages.config</code>, or a <code>project.json</code> file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TargetPath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Verbosity_" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.Verbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetRestoreSettings_Verbosity" data-uid="Nuke.Common.Tools.NuGet.NuGetRestoreSettings.Verbosity">
+  Verbosity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L342"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the amount of detail displayed in the output: <em>normal</em>, <em>quiet</em>, <em>detailed</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NuGetVerbosity Verbosity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NuGet.NuGetVerbosity.html">NuGetVerbosity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L300" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

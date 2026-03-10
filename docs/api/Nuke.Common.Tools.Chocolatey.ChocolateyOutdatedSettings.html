@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class ChocolateyOutdatedSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ChocolateyOutdatedSettings | gruke ">
+      
+      <meta name="description" content="Retrieves packages that are outdated. Similar to upgrade all --noop.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings" class="text-break">
+Class ChocolateyOutdatedSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L383"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Chocolatey.html">Chocolatey</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Retrieves packages that are outdated. Similar to <code>upgrade all --noop</code>.</p><p>For more details, visit the <a href="https://docs.chocolatey.org/en-us/choco/commands/outdated">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class ChocolateyOutdatedSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">ChocolateyOutdatedSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_AddProxyBypassList__1___0_System_Collections_Generic_IEnumerable_System_String__">ChocolateyOutdatedSettingsExtensions.AddProxyBypassList&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_AddProxyBypassList__1___0_System_String___">ChocolateyOutdatedSettingsExtensions.AddProxyBypassList&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ClearProxyBypassList__1___0_">ChocolateyOutdatedSettingsExtensions.ClearProxyBypassList&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableAcceptLicense__1___0_">ChocolateyOutdatedSettingsExtensions.DisableAcceptLicense&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableAllowUnofficialBuild__1___0_">ChocolateyOutdatedSettingsExtensions.DisableAllowUnofficialBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableConfirm__1___0_">ChocolateyOutdatedSettingsExtensions.DisableConfirm&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableDebug__1___0_">ChocolateyOutdatedSettingsExtensions.DisableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableDisablePackageRepositoryOptimizations__1___0_">ChocolateyOutdatedSettingsExtensions.DisableDisablePackageRepositoryOptimizations&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableDoNotShowProgress__1___0_">ChocolateyOutdatedSettingsExtensions.DisableDoNotShowProgress&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableFailOnStandardError__1___0_">ChocolateyOutdatedSettingsExtensions.DisableFailOnStandardError&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableForce__1___0_">ChocolateyOutdatedSettingsExtensions.DisableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableIgnorePinned__1___0_">ChocolateyOutdatedSettingsExtensions.DisableIgnorePinned&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableIgnoreUnfound__1___0_">ChocolateyOutdatedSettingsExtensions.DisableIgnoreUnfound&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableLimitOutput__1___0_">ChocolateyOutdatedSettingsExtensions.DisableLimitOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableNoColor__1___0_">ChocolateyOutdatedSettingsExtensions.DisableNoColor&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisablePrerelease__1___0_">ChocolateyOutdatedSettingsExtensions.DisablePrerelease&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableProxyBypassOnLocal__1___0_">ChocolateyOutdatedSettingsExtensions.DisableProxyBypassOnLocal&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableTrace__1___0_">ChocolateyOutdatedSettingsExtensions.DisableTrace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableUseSystemPowerShell__1___0_">ChocolateyOutdatedSettingsExtensions.DisableUseSystemPowerShell&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_DisableVerbose__1___0_">ChocolateyOutdatedSettingsExtensions.DisableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableAcceptLicense__1___0_">ChocolateyOutdatedSettingsExtensions.EnableAcceptLicense&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableAllowUnofficialBuild__1___0_">ChocolateyOutdatedSettingsExtensions.EnableAllowUnofficialBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableConfirm__1___0_">ChocolateyOutdatedSettingsExtensions.EnableConfirm&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableDebug__1___0_">ChocolateyOutdatedSettingsExtensions.EnableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableDisablePackageRepositoryOptimizations__1___0_">ChocolateyOutdatedSettingsExtensions.EnableDisablePackageRepositoryOptimizations&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableDoNotShowProgress__1___0_">ChocolateyOutdatedSettingsExtensions.EnableDoNotShowProgress&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableFailOnStandardError__1___0_">ChocolateyOutdatedSettingsExtensions.EnableFailOnStandardError&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableForce__1___0_">ChocolateyOutdatedSettingsExtensions.EnableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableIgnorePinned__1___0_">ChocolateyOutdatedSettingsExtensions.EnableIgnorePinned&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableIgnoreUnfound__1___0_">ChocolateyOutdatedSettingsExtensions.EnableIgnoreUnfound&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableLimitOutput__1___0_">ChocolateyOutdatedSettingsExtensions.EnableLimitOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableNoColor__1___0_">ChocolateyOutdatedSettingsExtensions.EnableNoColor&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnablePrerelease__1___0_">ChocolateyOutdatedSettingsExtensions.EnablePrerelease&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableProxyBypassOnLocal__1___0_">ChocolateyOutdatedSettingsExtensions.EnableProxyBypassOnLocal&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableTrace__1___0_">ChocolateyOutdatedSettingsExtensions.EnableTrace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableUseSystemPowerShell__1___0_">ChocolateyOutdatedSettingsExtensions.EnableUseSystemPowerShell&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_EnableVerbose__1___0_">ChocolateyOutdatedSettingsExtensions.EnableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_RemoveProxyBypassList__1___0_System_Collections_Generic_IEnumerable_System_String__">ChocolateyOutdatedSettingsExtensions.RemoveProxyBypassList&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_RemoveProxyBypassList__1___0_System_String___">ChocolateyOutdatedSettingsExtensions.RemoveProxyBypassList&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetAcceptLicense__1___0_">ChocolateyOutdatedSettingsExtensions.ResetAcceptLicense&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetAllowUnofficialBuild__1___0_">ChocolateyOutdatedSettingsExtensions.ResetAllowUnofficialBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetCacheLocation__1___0_">ChocolateyOutdatedSettingsExtensions.ResetCacheLocation&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetCertificatePassword__1___0_">ChocolateyOutdatedSettingsExtensions.ResetCertificatePassword&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetClientCertificate__1___0_">ChocolateyOutdatedSettingsExtensions.ResetClientCertificate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetCommandExecutionTimeout__1___0_">ChocolateyOutdatedSettingsExtensions.ResetCommandExecutionTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetConfirm__1___0_">ChocolateyOutdatedSettingsExtensions.ResetConfirm&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetDebug__1___0_">ChocolateyOutdatedSettingsExtensions.ResetDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetDisablePackageRepositoryOptimizations__1___0_">ChocolateyOutdatedSettingsExtensions.ResetDisablePackageRepositoryOptimizations&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetDoNotShowProgress__1___0_">ChocolateyOutdatedSettingsExtensions.ResetDoNotShowProgress&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetFailOnStandardError__1___0_">ChocolateyOutdatedSettingsExtensions.ResetFailOnStandardError&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetForce__1___0_">ChocolateyOutdatedSettingsExtensions.ResetForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetIgnorePinned__1___0_">ChocolateyOutdatedSettingsExtensions.ResetIgnorePinned&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetIgnoreUnfound__1___0_">ChocolateyOutdatedSettingsExtensions.ResetIgnoreUnfound&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetLimitOutput__1___0_">ChocolateyOutdatedSettingsExtensions.ResetLimitOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetLogFile__1___0_">ChocolateyOutdatedSettingsExtensions.ResetLogFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetNoColor__1___0_">ChocolateyOutdatedSettingsExtensions.ResetNoColor&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetPassword__1___0_">ChocolateyOutdatedSettingsExtensions.ResetPassword&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetPrerelease__1___0_">ChocolateyOutdatedSettingsExtensions.ResetPrerelease&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetProxyBypassOnLocal__1___0_">ChocolateyOutdatedSettingsExtensions.ResetProxyBypassOnLocal&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetProxyPassword__1___0_">ChocolateyOutdatedSettingsExtensions.ResetProxyPassword&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetProxyUserName__1___0_">ChocolateyOutdatedSettingsExtensions.ResetProxyUserName&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetProxy__1___0_">ChocolateyOutdatedSettingsExtensions.ResetProxy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetSource__1___0_">ChocolateyOutdatedSettingsExtensions.ResetSource&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetTrace__1___0_">ChocolateyOutdatedSettingsExtensions.ResetTrace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetUseSystemPowerShell__1___0_">ChocolateyOutdatedSettingsExtensions.ResetUseSystemPowerShell&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetUser__1___0_">ChocolateyOutdatedSettingsExtensions.ResetUser&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ResetVerbose__1___0_">ChocolateyOutdatedSettingsExtensions.ResetVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetAcceptLicense__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetAcceptLicense&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetAllowUnofficialBuild__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetAllowUnofficialBuild&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetCacheLocation__1___0_System_String_">ChocolateyOutdatedSettingsExtensions.SetCacheLocation&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetCertificatePassword__1___0_System_String_">ChocolateyOutdatedSettingsExtensions.SetCertificatePassword&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetClientCertificate__1___0_System_String_">ChocolateyOutdatedSettingsExtensions.SetClientCertificate&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetCommandExecutionTimeout__1___0_System_Nullable_System_Int32__">ChocolateyOutdatedSettingsExtensions.SetCommandExecutionTimeout&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetConfirm__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetConfirm&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetDebug__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetDebug&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetDisablePackageRepositoryOptimizations__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetDisablePackageRepositoryOptimizations&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetDoNotShowProgress__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetDoNotShowProgress&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetFailOnStandardError__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetFailOnStandardError&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetForce&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetIgnorePinned__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetIgnorePinned&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetIgnoreUnfound__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetIgnoreUnfound&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetLimitOutput__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetLimitOutput&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetLogFile__1___0_System_String_">ChocolateyOutdatedSettingsExtensions.SetLogFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetNoColor__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetNoColor&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetPassword__1___0_System_String_">ChocolateyOutdatedSettingsExtensions.SetPassword&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetPrerelease__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetPrerelease&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetProxyBypassList__1___0_System_Collections_Generic_IEnumerable_System_String__">ChocolateyOutdatedSettingsExtensions.SetProxyBypassList&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetProxyBypassList__1___0_System_String___">ChocolateyOutdatedSettingsExtensions.SetProxyBypassList&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetProxyBypassOnLocal__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetProxyBypassOnLocal&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetProxyPassword__1___0_System_String_">ChocolateyOutdatedSettingsExtensions.SetProxyPassword&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetProxyUserName__1___0_System_String_">ChocolateyOutdatedSettingsExtensions.SetProxyUserName&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetProxy__1___0_System_String_">ChocolateyOutdatedSettingsExtensions.SetProxy&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetSource__1___0_System_String_">ChocolateyOutdatedSettingsExtensions.SetSource&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetTrace__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetTrace&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetUseSystemPowerShell__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetUseSystemPowerShell&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetUser__1___0_System_String_">ChocolateyOutdatedSettingsExtensions.SetUser&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__">ChocolateyOutdatedSettingsExtensions.SetVerbose&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleAcceptLicense__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleAcceptLicense&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleAllowUnofficialBuild__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleAllowUnofficialBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleConfirm__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleConfirm&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleDebug__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleDisablePackageRepositoryOptimizations__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleDisablePackageRepositoryOptimizations&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleDoNotShowProgress__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleDoNotShowProgress&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleFailOnStandardError__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleFailOnStandardError&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleForce__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleIgnorePinned__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleIgnorePinned&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleIgnoreUnfound__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleIgnoreUnfound&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleLimitOutput__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleLimitOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleNoColor__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleNoColor&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_TogglePrerelease__1___0_">ChocolateyOutdatedSettingsExtensions.TogglePrerelease&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleProxyBypassOnLocal__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleProxyBypassOnLocal&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleTrace__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleTrace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleUseSystemPowerShell__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleUseSystemPowerShell&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettingsExtensions.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettingsExtensions_ToggleVerbose__1___0_">ChocolateyOutdatedSettingsExtensions.ToggleVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--accept-license</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_AcceptLicense">AcceptLicense</a></li><li><code>--allow-unofficial-build</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_AllowUnofficialBuild">AllowUnofficialBuild</a></li><li><code>--cache-location</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_CacheLocation">CacheLocation</a></li><li><code>--cert</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ClientCertificate">ClientCertificate</a></li><li><code>--certpassword</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_CertificatePassword">CertificatePassword</a></li><li><code>--confirm</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Confirm">Confirm</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Debug">Debug</a></li><li><code>--disable-package-repository-optimizations</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_DisablePackageRepositoryOptimizations">DisablePackageRepositoryOptimizations</a></li><li><code>--execution-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_CommandExecutionTimeout">CommandExecutionTimeout</a></li><li><code>--fail-on-standard-error</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_FailOnStandardError">FailOnStandardError</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Force">Force</a></li><li><code>--ignore-pinned</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_IgnorePinned">IgnorePinned</a></li><li><code>--ignore-unfound</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_IgnoreUnfound">IgnoreUnfound</a></li><li><code>--limit-output</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_LimitOutput">LimitOutput</a></li><li><code>--log-file</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_LogFile">LogFile</a></li><li><code>--no-color</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_NoColor">NoColor</a></li><li><code>--no-progress</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_DoNotShowProgress">DoNotShowProgress</a></li><li><code>--password</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Password">Password</a></li><li><code>--prerelease</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Prerelease">Prerelease</a></li><li><code>--proxy</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Proxy">Proxy</a></li><li><code>--proxy-bypass-list</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyBypassList">ProxyBypassList</a></li><li><code>--proxy-bypass-on-local</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyBypassOnLocal">ProxyBypassOnLocal</a></li><li><code>--proxy-password</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyPassword">ProxyPassword</a></li><li><code>--proxy-user</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyUserName">ProxyUserName</a></li><li><code>--source</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Source">Source</a></li><li><code>--trace</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Trace">Trace</a></li><li><code>--use-system-powershell</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_UseSystemPowerShell">UseSystemPowerShell</a></li><li><code>--user</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_User">User</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.html#Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Verbose">Verbose</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_AcceptLicense_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.AcceptLicense*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_AcceptLicense" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.AcceptLicense">
+  AcceptLicense
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L415"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Accept license dialogs automatically. Reserved for future use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? AcceptLicense { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_AllowUnofficialBuild_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.AllowUnofficialBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_AllowUnofficialBuild" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.AllowUnofficialBuild">
+  AllowUnofficialBuild
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L427"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>When not using the official build you must set this flag for choco to continue.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? AllowUnofficialBuild { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_CacheLocation_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.CacheLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_CacheLocation" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.CacheLocation">
+  CacheLocation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L425"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Location for download cache, defaults to %TEMP% or value in chocolatey.config file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CacheLocation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_CertificatePassword_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.CertificatePassword*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_CertificatePassword" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.CertificatePassword">
+  CertificatePassword
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L405"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The client certificate's password to the source. Defaults to empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CertificatePassword { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ClientCertificate_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.ClientCertificate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ClientCertificate" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.ClientCertificate">
+  ClientCertificate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L403"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>PFX pathname for an x509 authenticated feeds. Defaults to empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ClientCertificate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_CommandExecutionTimeout_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.CommandExecutionTimeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_CommandExecutionTimeout" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.CommandExecutionTimeout">
+  CommandExecutionTimeout
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L423"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The time to allow a command to finish before timing out. Overrides the default execution timeout in the configuration of 2700 seconds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? CommandExecutionTimeout { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Confirm_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Confirm*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Confirm" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Confirm">
+  Confirm
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L417"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chooses affirmative answer instead of prompting. Implies --accept-license</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Confirm { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Debug_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Debug*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Debug" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Debug">
+  Debug
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L407"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show debug messaging.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Debug { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_DisablePackageRepositoryOptimizations_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.DisablePackageRepositoryOptimizations*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_DisablePackageRepositoryOptimizations" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.DisablePackageRepositoryOptimizations">
+  DisablePackageRepositoryOptimizations
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L397"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not use optimizations for reducing bandwidth with repository queries during package install/upgrade/outdated operations. Should not generally be used, unless a repository needs to support older methods of query. When disabled, this makes queries similar to the way they were done in Chocolatey v0.10.11 and before. Overrides the default feature 'usePackageRepositoryOptimizations' set to 'True'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DisablePackageRepositoryOptimizations { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_DoNotShowProgress_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.DoNotShowProgress*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_DoNotShowProgress" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.DoNotShowProgress">
+  DoNotShowProgress
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L433"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not show download progress percentages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DoNotShowProgress { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_FailOnStandardError_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.FailOnStandardError*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_FailOnStandardError" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.FailOnStandardError">
+  FailOnStandardError
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L429"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fail on standard error output (stderr), typically received when running external commands during install providers. This overrides the feature failOnStandardError.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? FailOnStandardError { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Force_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Force*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Force" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Force">
+  Force
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L419"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Force the behavior. Do not use force during normal operation - it subverts some of the smart behavior for commands.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Force { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_IgnorePinned_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.IgnorePinned*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_IgnorePinned" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.IgnorePinned">
+  IgnorePinned
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L393"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ignore pinned packages. Defaults to false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnorePinned { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_IgnoreUnfound_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.IgnoreUnfound*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_IgnoreUnfound" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.IgnoreUnfound">
+  IgnoreUnfound
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L395"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ignore packages that are not found on the sources used (or the defaults). Overrides the default feature 'ignoreUnfoundPackagesOnUpgradeOutdated' set to 'False'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnoreUnfound { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_LimitOutput_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.LimitOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_LimitOutput" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.LimitOutput">
+  LimitOutput
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L421"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Limit the output to essential information</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? LimitOutput { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_LogFile_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.LogFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_LogFile" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.LogFile">
+  LogFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L445"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Log File to output to in addition to regular loggers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LogFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_NoColor_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.NoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_NoColor" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.NoColor">
+  NoColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L413"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not show colorization in logging output. This overrides the feature 'logWithoutColor', set to 'False'. Available in 0.10.9+.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoColor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Password_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Password*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Password" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Password">
+  Password
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L401"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The user's password to the source. Defaults to empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Password { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Prerelease_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Prerelease*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Prerelease" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Prerelease">
+  Prerelease
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L391"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Include Prereleases? Defaults to false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Prerelease { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Proxy_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Proxy*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Proxy" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Proxy">
+  Proxy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L435"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Explicit proxy location. Overrides the default proxy location of ''.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Proxy { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyBypassList_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.ProxyBypassList*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyBypassList" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.ProxyBypassList">
+  ProxyBypassList
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L441"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Comma separated list of regex locations to bypass on proxy. Requires explicit proxy (<code>--proxy</code> or config setting).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ProxyBypassList { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyBypassOnLocal_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.ProxyBypassOnLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyBypassOnLocal" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.ProxyBypassOnLocal">
+  ProxyBypassOnLocal
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L443"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Bypass proxy for local connections. Requires explicit proxy (<code>--proxy</code> or config setting).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ProxyBypassOnLocal { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyPassword_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.ProxyPassword*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyPassword" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.ProxyPassword">
+  ProxyPassword
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L439"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Explicit proxy password (optional) to be used with username. Requires explicit proxy (<code>--proxy</code> or config setting) and user name. Overrides the default proxy password (encrypted in settings sif set).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProxyPassword { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyUserName_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.ProxyUserName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_ProxyUserName" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.ProxyUserName">
+  ProxyUserName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L437"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Explicit proxy user (optional). Requires explicit proxy (<code>--proxy</code> or config setting). Overrides the default proxy user of ''.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProxyUserName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Source_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Source*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Source" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Source">
+  Source
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L389"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The source to find the package(s) to install. Special sources include: ruby, webpi, cygwin, windowsfeatures, and python. To specify more than one source, pass it with a semi-colon separating the values (-e.g. &quot;'source1;source2'&quot;). Defaults to default feeds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Source { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Trace_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Trace*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Trace" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Trace">
+  Trace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L411"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show trace messaging. Very, very verbose trace messaging. Avoid except when needing super low-level .NET Framework debugging. Available in 0.10.4+.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Trace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_UseSystemPowerShell_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.UseSystemPowerShell*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_UseSystemPowerShell" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.UseSystemPowerShell">
+  UseSystemPowerShell
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L431"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Execute PowerShell using an external process instead of the built-in PowerShell host. Should only be used when internal host is failing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseSystemPowerShell { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_User_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.User*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_User" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.User">
+  User
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L399"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Used with authenticated feeds. Defaults to empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string User { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Verbose_" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Verbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Chocolatey_ChocolateyOutdatedSettings_Verbose" data-uid="Nuke.Common.Tools.Chocolatey.ChocolateyOutdatedSettings.Verbose">
+  Verbose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L409"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose messaging. Very verbose messaging, avoid using under normal circumstances.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Verbose { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Chocolatey/Chocolatey.Generated.cs/#L383" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

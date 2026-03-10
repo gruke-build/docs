@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AbsolutePath | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AbsolutePath | gruke ">
+      
+      <meta name="description" content="Represents an absolute path without distinction between files and directories.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_IO_AbsolutePath.md&amp;value=---%0Auid%3A%20Nuke.Common.IO.AbsolutePath%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.IO.AbsolutePath">
+
+
+
+  <h1 id="Nuke_Common_IO_AbsolutePath" data-uid="Nuke.Common.IO.AbsolutePath" class="text-break">
+Class AbsolutePath  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.IO.html">IO</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Utilities.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an absolute path without distinction between files and directories.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[Serializable]
+[TypeConverter(typeof(AbsolutePath.TypeConverter))]
+public class AbsolutePath : IAbsolutePathHolder, IFormattable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">AbsolutePath</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.IO.IAbsolutePathHolder.html">IAbsolutePathHolder</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformattable">IFormattable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.EnvironmentInfo.html#Nuke_Common_EnvironmentInfo_SwitchWorkingDirectory_Nuke_Common_IO_AbsolutePath_">EnvironmentInfo.SwitchWorkingDirectory(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_AppendAllLines_Nuke_Common_IO_AbsolutePath_System_Collections_Generic_IEnumerable_System_String__System_Text_Encoding_">AbsolutePathExtensions.AppendAllLines(AbsolutePath, IEnumerable&lt;string&gt;, Encoding)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_AppendAllLines_Nuke_Common_IO_AbsolutePath_System_String___System_Text_Encoding_">AbsolutePathExtensions.AppendAllLines(AbsolutePath, string[], Encoding)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_AppendAllText_Nuke_Common_IO_AbsolutePath_System_String_System_Text_Encoding_">AbsolutePathExtensions.AppendAllText(AbsolutePath, string, Encoding)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_ContainsDirectory_Nuke_Common_IO_AbsolutePath_System_String_System_IO_SearchOption_">AbsolutePathExtensions.ContainsDirectory(AbsolutePath, string, SearchOption)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_ContainsFile_Nuke_Common_IO_AbsolutePath_System_String_System_IO_SearchOption_">AbsolutePathExtensions.ContainsFile(AbsolutePath, string, SearchOption)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_Copy_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_ExistsPolicy_System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__System_Boolean_">AbsolutePathExtensions.Copy(AbsolutePath, AbsolutePath, ExistsPolicy, Func&lt;AbsolutePath, bool&gt;, Func&lt;AbsolutePath, bool&gt;, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_CopyToDirectory_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_ExistsPolicy_System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__System_Boolean_">AbsolutePathExtensions.CopyToDirectory(AbsolutePath, AbsolutePath, ExistsPolicy, Func&lt;AbsolutePath, bool&gt;, Func&lt;AbsolutePath, bool&gt;, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_CreateDirectory_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.CreateDirectory(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_CreateOrCleanDirectory_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.CreateOrCleanDirectory(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_DeleteDirectory_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.DeleteDirectory(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_DeleteFile_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.DeleteFile(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_DirectoryExists_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.DirectoryExists(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_Existing_Nuke_Common_IO_AbsolutePath_System_String_">AbsolutePathExtensions.Existing(AbsolutePath, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_ExistingDirectory_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.ExistingDirectory(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_ExistingFile_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.ExistingFile(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_Exists_Nuke_Common_IO_AbsolutePath_System_String_">AbsolutePathExtensions.Exists(AbsolutePath, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_FileExists_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.FileExists(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_FindParent_Nuke_Common_IO_AbsolutePath_System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__">AbsolutePathExtensions.FindParent(AbsolutePath, Func&lt;AbsolutePath, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_FindParentOrSelf_Nuke_Common_IO_AbsolutePath_System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__">AbsolutePathExtensions.FindParentOrSelf(AbsolutePath, Func&lt;AbsolutePath, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_GetDirectories_Nuke_Common_IO_AbsolutePath_System_String_System_Int32_System_IO_FileAttributes_">AbsolutePathExtensions.GetDirectories(AbsolutePath, string, int, FileAttributes)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_GetDirectoryHash_Nuke_Common_IO_AbsolutePath_System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__">AbsolutePathExtensions.GetDirectoryHash(AbsolutePath, Func&lt;AbsolutePath, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_GetFileHash_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.GetFileHash(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_GetFiles_Nuke_Common_IO_AbsolutePath_System_String_System_Int32_System_IO_FileAttributes_">AbsolutePathExtensions.GetFiles(AbsolutePath, string, int, FileAttributes)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_GetLastWriteTimeUtc_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.GetLastWriteTimeUtc(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_HasExtension_Nuke_Common_IO_AbsolutePath_System_String_System_String___">AbsolutePathExtensions.HasExtension(AbsolutePath, string, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_IsDotDirectory_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.IsDotDirectory(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_Move_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_ExistsPolicy_System_Boolean_System_Boolean_">AbsolutePathExtensions.Move(AbsolutePath, AbsolutePath, ExistsPolicy, bool, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_Move_Nuke_Common_IO_AbsolutePath_System_Func_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath__Nuke_Common_IO_ExistsPolicy_System_Boolean_">AbsolutePathExtensions.Move(AbsolutePath, Func&lt;AbsolutePath, AbsolutePath&gt;, ExistsPolicy, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_MoveToDirectory_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_ExistsPolicy_System_Boolean_">AbsolutePathExtensions.MoveToDirectory(AbsolutePath, AbsolutePath, ExistsPolicy, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_ReadAllBytes_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.ReadAllBytes(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_ReadAllLines_Nuke_Common_IO_AbsolutePath_System_Text_Encoding_">AbsolutePathExtensions.ReadAllLines(AbsolutePath, Encoding)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_ReadAllText_Nuke_Common_IO_AbsolutePath_System_Text_Encoding_">AbsolutePathExtensions.ReadAllText(AbsolutePath, Encoding)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_Rename_Nuke_Common_IO_AbsolutePath_System_Func_Nuke_Common_IO_AbsolutePath_System_String__Nuke_Common_IO_ExistsPolicy_">AbsolutePathExtensions.Rename(AbsolutePath, Func&lt;AbsolutePath, string&gt;, ExistsPolicy)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_Rename_Nuke_Common_IO_AbsolutePath_System_String_Nuke_Common_IO_ExistsPolicy_">AbsolutePathExtensions.Rename(AbsolutePath, string, ExistsPolicy)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_RenameWithoutExtension_Nuke_Common_IO_AbsolutePath_System_Func_Nuke_Common_IO_AbsolutePath_System_String__Nuke_Common_IO_ExistsPolicy_">AbsolutePathExtensions.RenameWithoutExtension(AbsolutePath, Func&lt;AbsolutePath, string&gt;, ExistsPolicy)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_RenameWithoutExtension_Nuke_Common_IO_AbsolutePath_System_String_Nuke_Common_IO_ExistsPolicy_">AbsolutePathExtensions.RenameWithoutExtension(AbsolutePath, string, ExistsPolicy)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_ToDirectoryInfo_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.ToDirectoryInfo(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_ToFileInfo_Nuke_Common_IO_AbsolutePath_">AbsolutePathExtensions.ToFileInfo(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_TouchFile_Nuke_Common_IO_AbsolutePath_System_Nullable_System_DateTime__System_Boolean_">AbsolutePathExtensions.TouchFile(AbsolutePath, DateTime?, bool)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_UpdateText_Nuke_Common_IO_AbsolutePath_System_Func_System_String_System_String__System_Text_Encoding_">AbsolutePathExtensions.UpdateText(AbsolutePath, Func&lt;string, string&gt;, Encoding)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_WithExtension_Nuke_Common_IO_AbsolutePath_System_String_">AbsolutePathExtensions.WithExtension(AbsolutePath, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_WriteAllBytes_Nuke_Common_IO_AbsolutePath_System_Byte___">AbsolutePathExtensions.WriteAllBytes(AbsolutePath, byte[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_WriteAllLines_Nuke_Common_IO_AbsolutePath_System_Collections_Generic_IEnumerable_System_String__System_Text_Encoding_System_Nullable_Nuke_Common_PlatformFamily__System_Nullable_System_Boolean__">AbsolutePathExtensions.WriteAllLines(AbsolutePath, IEnumerable&lt;string&gt;, Encoding, PlatformFamily?, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_WriteAllLines_Nuke_Common_IO_AbsolutePath_System_String___System_Text_Encoding_System_Nullable_Nuke_Common_PlatformFamily__System_Nullable_System_Boolean__">AbsolutePathExtensions.WriteAllLines(AbsolutePath, string[], Encoding, PlatformFamily?, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.AbsolutePathExtensions.html#Nuke_Common_IO_AbsolutePathExtensions_WriteAllText_Nuke_Common_IO_AbsolutePath_System_String_System_Text_Encoding_System_Nullable_System_Boolean__">AbsolutePathExtensions.WriteAllText(AbsolutePath, string, Encoding, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.CompressionExtensions.html#Nuke_Common_IO_CompressionExtensions_CompressTo_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__">CompressionExtensions.CompressTo(AbsolutePath, AbsolutePath, Func&lt;AbsolutePath, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.CompressionExtensions.html#Nuke_Common_IO_CompressionExtensions_TarBZip2To_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_System_Collections_Generic_IEnumerable_Nuke_Common_IO_AbsolutePath__System_IO_FileMode_">CompressionExtensions.TarBZip2To(AbsolutePath, AbsolutePath, IEnumerable&lt;AbsolutePath&gt;, FileMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.CompressionExtensions.html#Nuke_Common_IO_CompressionExtensions_TarBZip2To_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__System_IO_FileMode_">CompressionExtensions.TarBZip2To(AbsolutePath, AbsolutePath, Func&lt;AbsolutePath, bool&gt;, FileMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.CompressionExtensions.html#Nuke_Common_IO_CompressionExtensions_TarGZipTo_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_System_Collections_Generic_IEnumerable_Nuke_Common_IO_AbsolutePath__System_IO_FileMode_">CompressionExtensions.TarGZipTo(AbsolutePath, AbsolutePath, IEnumerable&lt;AbsolutePath&gt;, FileMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.CompressionExtensions.html#Nuke_Common_IO_CompressionExtensions_TarGZipTo_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__System_IO_FileMode_">CompressionExtensions.TarGZipTo(AbsolutePath, AbsolutePath, Func&lt;AbsolutePath, bool&gt;, FileMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.CompressionExtensions.html#Nuke_Common_IO_CompressionExtensions_UnTarBZip2To_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_">CompressionExtensions.UnTarBZip2To(AbsolutePath, AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.CompressionExtensions.html#Nuke_Common_IO_CompressionExtensions_UnTarGZipTo_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_">CompressionExtensions.UnTarGZipTo(AbsolutePath, AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.CompressionExtensions.html#Nuke_Common_IO_CompressionExtensions_UnZipTo_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_">CompressionExtensions.UnZipTo(AbsolutePath, AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.CompressionExtensions.html#Nuke_Common_IO_CompressionExtensions_UncompressTo_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_">CompressionExtensions.UncompressTo(AbsolutePath, AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.CompressionExtensions.html#Nuke_Common_IO_CompressionExtensions_ZipTo_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_System_Func_Nuke_Common_IO_AbsolutePath_System_Boolean__System_IO_Compression_CompressionLevel_System_IO_FileMode_">CompressionExtensions.ZipTo(AbsolutePath, AbsolutePath, Func&lt;AbsolutePath, bool&gt;, CompressionLevel, FileMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.Globbing.html#Nuke_Common_IO_Globbing_GlobDirectories_Nuke_Common_IO_AbsolutePath_System_String___">Globbing.GlobDirectories(AbsolutePath, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.Globbing.html#Nuke_Common_IO_Globbing_GlobFiles_Nuke_Common_IO_AbsolutePath_System_String___">Globbing.GlobFiles(AbsolutePath, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.PathConstruction.html#Nuke_Common_IO_PathConstruction_Contains_Nuke_Common_IO_AbsolutePath_System_String_">PathConstruction.Contains(AbsolutePath, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.PathConstruction.html#Nuke_Common_IO_PathConstruction_GetRelativePathTo_Nuke_Common_IO_AbsolutePath_System_String_">PathConstruction.GetRelativePathTo(AbsolutePath, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.PathConstruction.html#Nuke_Common_IO_PathConstruction_GetUnixRelativePathTo_Nuke_Common_IO_AbsolutePath_System_String_">PathConstruction.GetUnixRelativePathTo(AbsolutePath, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.IO.PathConstruction.html#Nuke_Common_IO_PathConstruction_GetWinRelativePathTo_Nuke_Common_IO_AbsolutePath_System_String_">PathConstruction.GetWinRelativePathTo(AbsolutePath, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.ProjectModel.SolutionModelExtensions.html#Nuke_Common_ProjectModel_SolutionModelExtensions_ReadSolution_Nuke_Common_IO_AbsolutePath_">SolutionModelExtensions.ReadSolution(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.ProjectModel.SolutionModelExtensions.html#Nuke_Common_ProjectModel_SolutionModelExtensions_ReadSolution__1_Nuke_Common_IO_AbsolutePath_">SolutionModelExtensions.ReadSolution&lt;T&gt;(AbsolutePath)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ReadJson_Nuke_Common_IO_AbsolutePath_Newtonsoft_Json_JsonSerializerSettings_">JsonExtensions.ReadJson(AbsolutePath, JsonSerializerSettings)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ReadJson__1_Nuke_Common_IO_AbsolutePath_Newtonsoft_Json_JsonSerializerSettings_">JsonExtensions.ReadJson&lt;T&gt;(AbsolutePath, JsonSerializerSettings)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_UpdateJson_Nuke_Common_IO_AbsolutePath_System_Action_Newtonsoft_Json_Linq_JObject__Newtonsoft_Json_JsonSerializerSettings_">JsonExtensions.UpdateJson(AbsolutePath, Action&lt;JObject&gt;, JsonSerializerSettings)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_UpdateJson__1_Nuke_Common_IO_AbsolutePath_System_Action___0__Newtonsoft_Json_JsonSerializerSettings_">JsonExtensions.UpdateJson&lt;T&gt;(AbsolutePath, Action&lt;T&gt;, JsonSerializerSettings)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_WriteJson__1_Nuke_Common_IO_AbsolutePath___0_Newtonsoft_Json_JsonSerializerSettings_">JsonExtensions.WriteJson&lt;T&gt;(AbsolutePath, T, JsonSerializerSettings)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ReadXml_Nuke_Common_IO_AbsolutePath_System_Xml_Linq_LoadOptions_">XmlExtensions.ReadXml(AbsolutePath, LoadOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ReadXml__1_Nuke_Common_IO_AbsolutePath_System_Xml_Linq_LoadOptions_">XmlExtensions.ReadXml&lt;T&gt;(AbsolutePath, LoadOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_UpdateXml_Nuke_Common_IO_AbsolutePath_System_Action_System_Xml_Linq_XDocument__System_Xml_Linq_LoadOptions_System_Xml_Linq_SaveOptions_">XmlExtensions.UpdateXml(AbsolutePath, Action&lt;XDocument&gt;, LoadOptions, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_UpdateXml__1_Nuke_Common_IO_AbsolutePath_System_Action___0__System_Xml_Linq_LoadOptions_System_Xml_Linq_SaveOptions_">XmlExtensions.UpdateXml&lt;T&gt;(AbsolutePath, Action&lt;T&gt;, LoadOptions, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_WriteXml_Nuke_Common_IO_AbsolutePath_System_Xml_Linq_XDocument_System_Xml_Linq_SaveOptions_">XmlExtensions.WriteXml(AbsolutePath, XDocument, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_WriteXml__1_Nuke_Common_IO_AbsolutePath___0_System_Xml_Linq_SaveOptions_">XmlExtensions.WriteXml&lt;T&gt;(AbsolutePath, T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ReadYaml__1_Nuke_Common_IO_AbsolutePath_YamlDotNet_Serialization_DeserializerBuilder_">YamlExtensions.ReadYaml&lt;T&gt;(AbsolutePath, DeserializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_UpdateYaml__1_Nuke_Common_IO_AbsolutePath_System_Action___0__YamlDotNet_Serialization_DeserializerBuilder_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.UpdateYaml&lt;T&gt;(AbsolutePath, Action&lt;T&gt;, DeserializerBuilder, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_WriteYaml__1_Nuke_Common_IO_AbsolutePath___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.WriteYaml&lt;T&gt;(AbsolutePath, T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_DoubleQuote" data-uid="Nuke.Common.IO.AbsolutePath.DoubleQuote">
+  DoubleQuote
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DoubleQuote = &quot;d&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_DoubleQuoteIfNeeded" data-uid="Nuke.Common.IO.AbsolutePath.DoubleQuoteIfNeeded">
+  DoubleQuoteIfNeeded
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DoubleQuoteIfNeeded = &quot;dn&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_NoQuotes" data-uid="Nuke.Common.IO.AbsolutePath.NoQuotes">
+  NoQuotes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string NoQuotes = &quot;nq&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_SingleQuote" data-uid="Nuke.Common.IO.AbsolutePath.SingleQuote">
+  SingleQuote
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string SingleQuote = &quot;s&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_SingleQuoteIfNeeded" data-uid="Nuke.Common.IO.AbsolutePath.SingleQuoteIfNeeded">
+  SingleQuoteIfNeeded
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string SingleQuoteIfNeeded = &quot;sn&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_Extension_" data-uid="Nuke.Common.IO.AbsolutePath.Extension*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_Extension" data-uid="Nuke.Common.IO.AbsolutePath.Extension">
+  Extension
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the extension of the file with dot.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Extension { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_Name_" data-uid="Nuke.Common.IO.AbsolutePath.Name*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_Name" data-uid="Nuke.Common.IO.AbsolutePath.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the name of the file or directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_NameWithoutExtension_" data-uid="Nuke.Common.IO.AbsolutePath.NameWithoutExtension*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_NameWithoutExtension" data-uid="Nuke.Common.IO.AbsolutePath.NameWithoutExtension">
+  NameWithoutExtension
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the name of the file without extension.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string NameWithoutExtension { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_Parent_" data-uid="Nuke.Common.IO.AbsolutePath.Parent*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_Parent" data-uid="Nuke.Common.IO.AbsolutePath.Parent">
+  Parent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the parent path (directory).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public AbsolutePath Parent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_Create_" data-uid="Nuke.Common.IO.AbsolutePath.Create*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_Create_System_String_" data-uid="Nuke.Common.IO.AbsolutePath.Create(System.String)">
+  Create(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AbsolutePath Create(string path)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_Equals_" data-uid="Nuke.Common.IO.AbsolutePath.Equals*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_Equals_Nuke_Common_IO_AbsolutePath_" data-uid="Nuke.Common.IO.AbsolutePath.Equals(Nuke.Common.IO.AbsolutePath)">
+  Equals(AbsolutePath)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool Equals(AbsolutePath other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_Equals_" data-uid="Nuke.Common.IO.AbsolutePath.Equals*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_Equals_System_Object_" data-uid="Nuke.Common.IO.AbsolutePath.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_GetHashCode_" data-uid="Nuke.Common.IO.AbsolutePath.GetHashCode*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_GetHashCode" data-uid="Nuke.Common.IO.AbsolutePath.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_ToString_" data-uid="Nuke.Common.IO.AbsolutePath.ToString*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_ToString" data-uid="Nuke.Common.IO.AbsolutePath.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_ToString_" data-uid="Nuke.Common.IO.AbsolutePath.ToString*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_ToString_System_String_" data-uid="Nuke.Common.IO.AbsolutePath.ToString(System.String)">
+  ToString(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>
+Returns a string representation of the path.
+</p>
+<p>
+Available formats are:
+<ul>
+<li><code>d</code> – <a class="xref" href="Nuke.Common.Utilities.StringExtensions.html#Nuke_Common_Utilities_StringExtensions_DoubleQuote_System_String_">DoubleQuote(string)</a></li>
+<li><code>dn</code> – <a class="xref" href="Nuke.Common.Utilities.StringExtensions.html#Nuke_Common_Utilities_StringExtensions_DoubleQuoteIfNeeded_System_String_">DoubleQuoteIfNeeded(string)</a></li>
+<li><code>s</code> – <a class="xref" href="Nuke.Common.Utilities.StringExtensions.html#Nuke_Common_Utilities_StringExtensions_SingleQuote_System_String_">SingleQuote(string)</a></li>
+<li><code>sn</code> – <a class="xref" href="Nuke.Common.Utilities.StringExtensions.html#Nuke_Common_Utilities_StringExtensions_SingleQuoteIfNeeded_System_String_">SingleQuoteIfNeeded(string)</a></li>
+<li><code>nq</code> – no quoting</li>
+</ul>
+
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(string format)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_op_Addition_" data-uid="Nuke.Common.IO.AbsolutePath.op_Addition*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_op_Addition_Nuke_Common_IO_AbsolutePath_System_String_" data-uid="Nuke.Common.IO.AbsolutePath.op_Addition(Nuke.Common.IO.AbsolutePath,System.String)">
+  operator +(AbsolutePath, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AbsolutePath operator +(AbsolutePath left, string right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_op_Division_" data-uid="Nuke.Common.IO.AbsolutePath.op_Division*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_op_Division_Nuke_Common_IO_AbsolutePath_System_String_" data-uid="Nuke.Common.IO.AbsolutePath.op_Division(Nuke.Common.IO.AbsolutePath,System.String)">
+  operator /(AbsolutePath, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AbsolutePath operator /(AbsolutePath left, string right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_op_Equality_" data-uid="Nuke.Common.IO.AbsolutePath.op_Equality*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_op_Equality_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_" data-uid="Nuke.Common.IO.AbsolutePath.op_Equality(Nuke.Common.IO.AbsolutePath,Nuke.Common.IO.AbsolutePath)">
+  operator ==(AbsolutePath, AbsolutePath)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(AbsolutePath a, AbsolutePath b)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+    <dt><code>b</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_op_Implicit_" data-uid="Nuke.Common.IO.AbsolutePath.op_Implicit*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_op_Implicit_Nuke_Common_IO_AbsolutePath__System_String" data-uid="Nuke.Common.IO.AbsolutePath.op_Implicit(Nuke.Common.IO.AbsolutePath)~System.String">
+  implicit operator string(AbsolutePath)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator string(AbsolutePath path)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_op_Implicit_" data-uid="Nuke.Common.IO.AbsolutePath.op_Implicit*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_op_Implicit_System_String__Nuke_Common_IO_AbsolutePath" data-uid="Nuke.Common.IO.AbsolutePath.op_Implicit(System.String)~Nuke.Common.IO.AbsolutePath">
+  implicit operator AbsolutePath(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ContractAnnotation(&quot;null =&gt; null&quot;)]
+public static implicit operator AbsolutePath(string path)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_AbsolutePath_op_Inequality_" data-uid="Nuke.Common.IO.AbsolutePath.op_Inequality*"></a>
+
+  <h3 id="Nuke_Common_IO_AbsolutePath_op_Inequality_Nuke_Common_IO_AbsolutePath_Nuke_Common_IO_AbsolutePath_" data-uid="Nuke.Common.IO.AbsolutePath.op_Inequality(Nuke.Common.IO.AbsolutePath,Nuke.Common.IO.AbsolutePath)">
+  operator !=(AbsolutePath, AbsolutePath)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(AbsolutePath a, AbsolutePath b)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>a</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+    <dt><code>b</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/AbsolutePath.cs/#L21" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

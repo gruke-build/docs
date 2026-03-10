@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SignToolSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SignToolSettings | gruke ">
+      
+      <meta name="description" content="Use the sign command to sign files using embedded signatures. Signing protects a file from tampering, and allows users to verify the signer (you) based on a signing certificate. The options below allow you to specify signing parameters and to select the signing certificate you wish to use.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_SignTool_SignToolSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.SignTool.SignToolSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.SignTool.SignToolSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_SignTool_SignToolSettings" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings" class="text-break">
+Class SignToolSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.SignTool.html">SignTool</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Use the <code>sign</code> command to sign files using embedded signatures. Signing protects a file from tampering, and allows users to verify the signer (you) based on a signing certificate. The options below allow you to specify signing parameters and to select the signing certificate you wish to use.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/dotnet/framework/tools/signtool-exe">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class SignToolSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">SignToolSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_AddAuthenticatedAttribute__1___0_System_String_System_String_">SignToolSettingsExtensions.AddAuthenticatedAttribute&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_AddFiles__1___0_System_Collections_Generic_IEnumerable_System_String__">SignToolSettingsExtensions.AddFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_AddFiles__1___0_System_String___">SignToolSettingsExtensions.AddFiles&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ClearAuthenticatedAttributes__1___0_">SignToolSettingsExtensions.ClearAuthenticatedAttributes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ClearFiles__1___0_">SignToolSettingsExtensions.ClearFiles&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableAppendSignature__1___0_">SignToolSettingsExtensions.DisableAppendSignature&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableAutomaticSelection__1___0_">SignToolSettingsExtensions.DisableAutomaticSelection&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableDebug__1___0_">SignToolSettingsExtensions.DisableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableForce__1___0_">SignToolSettingsExtensions.DisableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableIntentToSealAttribute__1___0_">SignToolSettingsExtensions.DisableIntentToSealAttribute&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableMachineStore__1___0_">SignToolSettingsExtensions.DisableMachineStore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableNoSealWarn__1___0_">SignToolSettingsExtensions.DisableNoSealWarn&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisablePageHashes__1___0_">SignToolSettingsExtensions.DisablePageHashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableQuiet__1___0_">SignToolSettingsExtensions.DisableQuiet&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableRelaxedMarkerCheck__1___0_">SignToolSettingsExtensions.DisableRelaxedMarkerCheck&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableSealingSignature__1___0_">SignToolSettingsExtensions.DisableSealingSignature&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableSignDigestOnly__1___0_">SignToolSettingsExtensions.DisableSignDigestOnly&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableSuppressPageHashes__1___0_">SignToolSettingsExtensions.DisableSuppressPageHashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableVerbose__1___0_">SignToolSettingsExtensions.DisableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableWindowsSystemComponentVerification__1___0_">SignToolSettingsExtensions.DisableWindowsSystemComponentVerification&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_DisableXmlFile__1___0_">SignToolSettingsExtensions.DisableXmlFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableAppendSignature__1___0_">SignToolSettingsExtensions.EnableAppendSignature&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableAutomaticSelection__1___0_">SignToolSettingsExtensions.EnableAutomaticSelection&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableDebug__1___0_">SignToolSettingsExtensions.EnableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableForce__1___0_">SignToolSettingsExtensions.EnableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableIntentToSealAttribute__1___0_">SignToolSettingsExtensions.EnableIntentToSealAttribute&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableMachineStore__1___0_">SignToolSettingsExtensions.EnableMachineStore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableNoSealWarn__1___0_">SignToolSettingsExtensions.EnableNoSealWarn&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnablePageHashes__1___0_">SignToolSettingsExtensions.EnablePageHashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableQuiet__1___0_">SignToolSettingsExtensions.EnableQuiet&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableRelaxedMarkerCheck__1___0_">SignToolSettingsExtensions.EnableRelaxedMarkerCheck&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableSealingSignature__1___0_">SignToolSettingsExtensions.EnableSealingSignature&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableSignDigestOnly__1___0_">SignToolSettingsExtensions.EnableSignDigestOnly&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableSuppressPageHashes__1___0_">SignToolSettingsExtensions.EnableSuppressPageHashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableVerbose__1___0_">SignToolSettingsExtensions.EnableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableWindowsSystemComponentVerification__1___0_">SignToolSettingsExtensions.EnableWindowsSystemComponentVerification&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_EnableXmlFile__1___0_">SignToolSettingsExtensions.EnableXmlFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_RemoveAuthenticatedAttribute__1___0_System_String_">SignToolSettingsExtensions.RemoveAuthenticatedAttribute&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_RemoveFiles__1___0_System_Collections_Generic_IEnumerable_System_String__">SignToolSettingsExtensions.RemoveFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_RemoveFiles__1___0_System_String___">SignToolSettingsExtensions.RemoveFiles&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetAdditionalCertificate__1___0_">SignToolSettingsExtensions.ResetAdditionalCertificate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetAppendSignature__1___0_">SignToolSettingsExtensions.ResetAppendSignature&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetAuthenticodeDigestSignLibDll__1___0_">SignToolSettingsExtensions.ResetAuthenticodeDigestSignLibDll&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetAuthenticodeDigestSignPassUnmodified__1___0_">SignToolSettingsExtensions.ResetAuthenticodeDigestSignPassUnmodified&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetAutomaticSelection__1___0_">SignToolSettingsExtensions.ResetAutomaticSelection&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetCertificateTemplateName__1___0_">SignToolSettingsExtensions.ResetCertificateTemplateName&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetContentFileToPkcs7__1___0_">SignToolSettingsExtensions.ResetContentFileToPkcs7&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetCsp__1___0_">SignToolSettingsExtensions.ResetCsp&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetDebug__1___0_">SignToolSettingsExtensions.ResetDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetDescription__1___0_">SignToolSettingsExtensions.ResetDescription&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetEnhancedKeyUsage__1___0_">SignToolSettingsExtensions.ResetEnhancedKeyUsage&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetFileDigestAlgorithm__1___0_">SignToolSettingsExtensions.ResetFileDigestAlgorithm&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetFile__1___0_">SignToolSettingsExtensions.ResetFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetForce__1___0_">SignToolSettingsExtensions.ResetForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetGenerateSignature__1___0_">SignToolSettingsExtensions.ResetGenerateSignature&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetIntentToSealAttribute__1___0_">SignToolSettingsExtensions.ResetIntentToSealAttribute&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetIssuer__1___0_">SignToolSettingsExtensions.ResetIssuer&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetKeyContainer__1___0_">SignToolSettingsExtensions.ResetKeyContainer&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetMachineStore__1___0_">SignToolSettingsExtensions.ResetMachineStore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetNoSealWarn__1___0_">SignToolSettingsExtensions.ResetNoSealWarn&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetPageHashes__1___0_">SignToolSettingsExtensions.ResetPageHashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetPassword__1___0_">SignToolSettingsExtensions.ResetPassword&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetQuiet__1___0_">SignToolSettingsExtensions.ResetQuiet&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetRelaxedMarkerCheck__1___0_">SignToolSettingsExtensions.ResetRelaxedMarkerCheck&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetRfc3161TimestampServerUrlSealed__1___0_">SignToolSettingsExtensions.ResetRfc3161TimestampServerUrlSealed&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetRfc3161TimestampServerUrl__1___0_">SignToolSettingsExtensions.ResetRfc3161TimestampServerUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetRootSubjectName__1___0_">SignToolSettingsExtensions.ResetRootSubjectName&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetSealingSignature__1___0_">SignToolSettingsExtensions.ResetSealingSignature&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetSha1Thumbprint__1___0_">SignToolSettingsExtensions.ResetSha1Thumbprint&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetSignDigestOnly__1___0_">SignToolSettingsExtensions.ResetSignDigestOnly&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetSignedContentIdentifier__1___0_">SignToolSettingsExtensions.ResetSignedContentIdentifier&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetSignedContentMethod__1___0_">SignToolSettingsExtensions.ResetSignedContentMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetSignedDigestAndUnsignedPkcs7Path__1___0_">SignToolSettingsExtensions.ResetSignedDigestAndUnsignedPkcs7Path&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetSigningSubjectName__1___0_">SignToolSettingsExtensions.ResetSigningSubjectName&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetStore__1___0_">SignToolSettingsExtensions.ResetStore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetSuppressPageHashes__1___0_">SignToolSettingsExtensions.ResetSuppressPageHashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetTimestampServerDigestAlgorithm__1___0_">SignToolSettingsExtensions.ResetTimestampServerDigestAlgorithm&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetTimestampServerUrl__1___0_">SignToolSettingsExtensions.ResetTimestampServerUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetUrl__1___0_">SignToolSettingsExtensions.ResetUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetVerbose__1___0_">SignToolSettingsExtensions.ResetVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetWindowsSystemComponentVerification__1___0_">SignToolSettingsExtensions.ResetWindowsSystemComponentVerification&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ResetXmlFile__1___0_">SignToolSettingsExtensions.ResetXmlFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetAdditionalCertificate__1___0_System_String_">SignToolSettingsExtensions.SetAdditionalCertificate&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetAppendSignature__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetAppendSignature&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetAuthenticatedAttribute__1___0_System_String_System_String_">SignToolSettingsExtensions.SetAuthenticatedAttribute&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetAuthenticatedAttributes__1___0_System_Collections_Generic_IDictionary_System_String_System_String__">SignToolSettingsExtensions.SetAuthenticatedAttributes&lt;T&gt;(T, IDictionary&lt;string, string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetAuthenticodeDigestSignLibDll__1___0_System_String_">SignToolSettingsExtensions.SetAuthenticodeDigestSignLibDll&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetAuthenticodeDigestSignPassUnmodified__1___0_System_String_">SignToolSettingsExtensions.SetAuthenticodeDigestSignPassUnmodified&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetAutomaticSelection__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetAutomaticSelection&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetCertificateTemplateName__1___0_System_String_">SignToolSettingsExtensions.SetCertificateTemplateName&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetContentFileToPkcs7__1___0_System_String_">SignToolSettingsExtensions.SetContentFileToPkcs7&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetCsp__1___0_System_String_">SignToolSettingsExtensions.SetCsp&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetDebug__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetDebug&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetDescription__1___0_System_String_">SignToolSettingsExtensions.SetDescription&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetEnhancedKeyUsage__1___0_System_String_">SignToolSettingsExtensions.SetEnhancedKeyUsage&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetFileDigestAlgorithm__1___0_Nuke_Common_Tools_SignTool_SignToolDigestAlgorithm_">SignToolSettingsExtensions.SetFileDigestAlgorithm&lt;T&gt;(T, SignToolDigestAlgorithm)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetFile__1___0_System_String_">SignToolSettingsExtensions.SetFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetFiles__1___0_System_Collections_Generic_IEnumerable_System_String__">SignToolSettingsExtensions.SetFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetFiles__1___0_System_String___">SignToolSettingsExtensions.SetFiles&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetForce&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetGenerateSignature__1___0_System_String_">SignToolSettingsExtensions.SetGenerateSignature&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetIntentToSealAttribute__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetIntentToSealAttribute&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetIssuer__1___0_System_String_">SignToolSettingsExtensions.SetIssuer&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetKeyContainer__1___0_System_String_">SignToolSettingsExtensions.SetKeyContainer&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetMachineStore__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetMachineStore&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetNoSealWarn__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetNoSealWarn&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetPageHashes__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetPageHashes&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetPassword__1___0_System_String_">SignToolSettingsExtensions.SetPassword&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetQuiet__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetQuiet&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetRelaxedMarkerCheck__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetRelaxedMarkerCheck&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetRfc3161TimestampServerUrlSealed__1___0_System_String_">SignToolSettingsExtensions.SetRfc3161TimestampServerUrlSealed&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetRfc3161TimestampServerUrl__1___0_System_String_">SignToolSettingsExtensions.SetRfc3161TimestampServerUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetRootSubjectName__1___0_System_String_">SignToolSettingsExtensions.SetRootSubjectName&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetSealingSignature__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetSealingSignature&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetSha1Thumbprint__1___0_System_String_">SignToolSettingsExtensions.SetSha1Thumbprint&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetSignDigestOnly__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetSignDigestOnly&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetSignedContentIdentifier__1___0_System_String_">SignToolSettingsExtensions.SetSignedContentIdentifier&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetSignedContentMethod__1___0_Nuke_Common_Tools_SignTool_SignToolContentMethod_">SignToolSettingsExtensions.SetSignedContentMethod&lt;T&gt;(T, SignToolContentMethod)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetSignedDigestAndUnsignedPkcs7Path__1___0_System_String_">SignToolSettingsExtensions.SetSignedDigestAndUnsignedPkcs7Path&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetSigningSubjectName__1___0_System_String_">SignToolSettingsExtensions.SetSigningSubjectName&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetStore__1___0_System_String_">SignToolSettingsExtensions.SetStore&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetSuppressPageHashes__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetSuppressPageHashes&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetTimestampServerDigestAlgorithm__1___0_Nuke_Common_Tools_SignTool_SignToolDigestAlgorithm_">SignToolSettingsExtensions.SetTimestampServerDigestAlgorithm&lt;T&gt;(T, SignToolDigestAlgorithm)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetTimestampServerUrl__1___0_System_String_">SignToolSettingsExtensions.SetTimestampServerUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetUrl__1___0_System_String_">SignToolSettingsExtensions.SetUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetVerbose&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetWindowsSystemComponentVerification__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetWindowsSystemComponentVerification&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_SetXmlFile__1___0_System_Nullable_System_Boolean__">SignToolSettingsExtensions.SetXmlFile&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleAppendSignature__1___0_">SignToolSettingsExtensions.ToggleAppendSignature&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleAutomaticSelection__1___0_">SignToolSettingsExtensions.ToggleAutomaticSelection&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleDebug__1___0_">SignToolSettingsExtensions.ToggleDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleForce__1___0_">SignToolSettingsExtensions.ToggleForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleIntentToSealAttribute__1___0_">SignToolSettingsExtensions.ToggleIntentToSealAttribute&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleMachineStore__1___0_">SignToolSettingsExtensions.ToggleMachineStore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleNoSealWarn__1___0_">SignToolSettingsExtensions.ToggleNoSealWarn&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_TogglePageHashes__1___0_">SignToolSettingsExtensions.TogglePageHashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleQuiet__1___0_">SignToolSettingsExtensions.ToggleQuiet&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleRelaxedMarkerCheck__1___0_">SignToolSettingsExtensions.ToggleRelaxedMarkerCheck&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleSealingSignature__1___0_">SignToolSettingsExtensions.ToggleSealingSignature&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleSignDigestOnly__1___0_">SignToolSettingsExtensions.ToggleSignDigestOnly&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleSuppressPageHashes__1___0_">SignToolSettingsExtensions.ToggleSuppressPageHashes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleVerbose__1___0_">SignToolSettingsExtensions.ToggleVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleWindowsSystemComponentVerification__1___0_">SignToolSettingsExtensions.ToggleWindowsSystemComponentVerification&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettingsExtensions.html#Nuke_Common_Tools_SignTool_SignToolSettingsExtensions_ToggleXmlFile__1___0_">SignToolSettingsExtensions.ToggleXmlFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_SignTool_SignToolSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;files&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Files">Files</a></li><li><code>/a</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_AutomaticSelection">AutomaticSelection</a></li><li><code>/ac</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_AdditionalCertificate">AdditionalCertificate</a></li><li><code>/as</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_AppendSignature">AppendSignature</a></li><li><code>/c</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_CertificateTemplateName">CertificateTemplateName</a></li><li><code>/csp</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Csp">Csp</a></li><li><code>/d</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Description">Description</a></li><li><code>/debug</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Debug">Debug</a></li><li><code>/dg</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_SignedDigestAndUnsignedPkcs7Path">SignedDigestAndUnsignedPkcs7Path</a></li><li><code>/di</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_GenerateSignature">GenerateSignature</a></li><li><code>/dlib</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_AuthenticodeDigestSignLibDll">AuthenticodeDigestSignLibDll</a></li><li><code>/dmdf</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_AuthenticodeDigestSignPassUnmodified">AuthenticodeDigestSignPassUnmodified</a></li><li><code>/ds</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_SignDigestOnly">SignDigestOnly</a></li><li><code>/du</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Url">Url</a></li><li><code>/dxml</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_XmlFile">XmlFile</a></li><li><code>/f</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_File">File</a></li><li><code>/fd</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_FileDigestAlgorithm">FileDigestAlgorithm</a></li><li><code>/force</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Force">Force</a></li><li><code>/i</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Issuer">Issuer</a></li><li><code>/itos</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_IntentToSealAttribute">IntentToSealAttribute</a></li><li><code>/kc</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_KeyContainer">KeyContainer</a></li><li><code>/n</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_SigningSubjectName">SigningSubjectName</a></li><li><code>/nosealwarn</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_NoSealWarn">NoSealWarn</a></li><li><code>/nph</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_SuppressPageHashes">SuppressPageHashes</a></li><li><code>/p</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Password">Password</a></li><li><code>/p7</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_ContentFileToPkcs7">ContentFileToPkcs7</a></li><li><code>/p7ce</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_SignedContentMethod">SignedContentMethod</a></li><li><code>/p7co</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_SignedContentIdentifier">SignedContentIdentifier</a></li><li><code>/ph</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_PageHashes">PageHashes</a></li><li><code>/q</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Quiet">Quiet</a></li><li><code>/r</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_RootSubjectName">RootSubjectName</a></li><li><code>/rmc</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_RelaxedMarkerCheck">RelaxedMarkerCheck</a></li><li><code>/s</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Store">Store</a></li><li><code>/sa</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_AuthenticatedAttributes">AuthenticatedAttributes</a></li><li><code>/seal</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_SealingSignature">SealingSignature</a></li><li><code>/sha1</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Sha1Thumbprint">Sha1Thumbprint</a></li><li><code>/sm</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_MachineStore">MachineStore</a></li><li><code>/t</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_TimestampServerUrl">TimestampServerUrl</a></li><li><code>/td</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_TimestampServerDigestAlgorithm">TimestampServerDigestAlgorithm</a></li><li><code>/tr</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Rfc3161TimestampServerUrl">Rfc3161TimestampServerUrl</a></li><li><code>/tseal</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Rfc3161TimestampServerUrlSealed">Rfc3161TimestampServerUrlSealed</a></li><li><code>/u</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_EnhancedKeyUsage">EnhancedKeyUsage</a></li><li><code>/uw</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_WindowsSystemComponentVerification">WindowsSystemComponentVerification</a></li><li><code>/v</code> via <a class="xref" href="Nuke.Common.Tools.SignTool.SignToolSettings.html#Nuke_Common_Tools_SignTool_SignToolSettings_Verbose">Verbose</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_AdditionalCertificate_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AdditionalCertificate*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_AdditionalCertificate" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AdditionalCertificate">
+  AdditionalCertificate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add an additional certificate to the signature block.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AdditionalCertificate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_AppendSignature_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AppendSignature*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_AppendSignature" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AppendSignature">
+  AppendSignature
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Append this signature. If no primary signature is present, this signature will be made the primary signature instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? AppendSignature { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_AuthenticatedAttributes_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AuthenticatedAttributes*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_AuthenticatedAttributes" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AuthenticatedAttributes">
+  AuthenticatedAttributes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify an OID and value to be included as an authenticated attribute in the signature. The value will be encoded as an ASN1 UTF8 string. This option may be given multiple times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;string, string&gt; AuthenticatedAttributes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_AuthenticodeDigestSignLibDll_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AuthenticodeDigestSignLibDll*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_AuthenticodeDigestSignLibDll" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AuthenticodeDigestSignLibDll">
+  AuthenticodeDigestSignLibDll
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the DLL implementing the AuthenticodeDigestSign function to sign the digest with. This option is equivalent to using SignTool separately with the <code>/dg</code>, <code>/ds</code>, and <code>/di</code> switches, except this option invokes all three as one atomic operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AuthenticodeDigestSignLibDll { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_AuthenticodeDigestSignPassUnmodified_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AuthenticodeDigestSignPassUnmodified*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_AuthenticodeDigestSignPassUnmodified" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AuthenticodeDigestSignPassUnmodified">
+  AuthenticodeDigestSignPassUnmodified
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>When used with the <code>/dlib</code> option, passes the file's contents to the AuthenticodeDigestSign function without modification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AuthenticodeDigestSignPassUnmodified { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_AutomaticSelection_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AutomaticSelection*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_AutomaticSelection" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.AutomaticSelection">
+  AutomaticSelection
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select the best signing cert automatically. SignTool will find all valid certs that satisfy all specified conditions and select the one that is valid for the longest. If this option is not present, SignTool will expect to find only one valid signing cert.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? AutomaticSelection { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_CertificateTemplateName_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.CertificateTemplateName*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_CertificateTemplateName" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.CertificateTemplateName">
+  CertificateTemplateName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the Certificate Template Name (Microsoft extension) of the signing cert.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CertificateTemplateName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_ContentFileToPkcs7_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.ContentFileToPkcs7*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_ContentFileToPkcs7" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.ContentFileToPkcs7">
+  ContentFileToPkcs7
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies that for each specified content file a PKCS7 file is produced. The PKCS7 file will be named: <code>&lt;path&gt;&amp;lt;file&gt;.p7</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ContentFileToPkcs7 { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Csp_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Csp*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Csp" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Csp">
+  Csp
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the CSP containing the Private Key Container.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Csp { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Debug_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Debug*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Debug" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Debug">
+  Debug
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Display additional debug information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Debug { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Description_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Description*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Description" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Description">
+  Description
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Provide a description of the signed content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Description { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_EnhancedKeyUsage_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.EnhancedKeyUsage*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_EnhancedKeyUsage" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.EnhancedKeyUsage">
+  EnhancedKeyUsage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the Enhanced Key Usage that must be present in the cert.</p>
+<p></p>
+The parameter may be specified by OID or by string. The default usage is <em>Code Signing</em> (1.3.6.1.5.5.7.3.3).
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string EnhancedKeyUsage { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_File_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.File*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_File" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.File">
+  File
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the signing cert in a file. If this file is a PFX with a password, the password may be supplied with the <code>/p</code> option. If the file does not contain private keys, use the <code>/csp</code> and <code>/kc</code> options to specify the CSP and container name of the private key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string File { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_FileDigestAlgorithm_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.FileDigestAlgorithm*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_FileDigestAlgorithm" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.FileDigestAlgorithm">
+  FileDigestAlgorithm
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the file digest algorithm to use for creating file signatures. (Default is <code>SHA1</code>)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SignToolDigestAlgorithm FileDigestAlgorithm { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.SignTool.SignToolDigestAlgorithm.html">SignToolDigestAlgorithm</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Files_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Files*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Files" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Files">
+  Files
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Files to sign.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Files { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Force_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Force*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Force" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Force">
+  Force
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Continue to seal or sign in situations where the existing signature or sealing signature needs to be removed to support sealing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Force { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_GenerateSignature_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.GenerateSignature*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_GenerateSignature" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.GenerateSignature">
+  GenerateSignature
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates the signature by ingesting the signed digest to the unsigned PKCS7 file. The input signed digest and unsigned PKCS7 files should be: <code>&lt;path&gt;&amp;lt;file&gt;.dig.signed</code> and <code>&lt;path&gt;&amp;lt;file&gt;.p7u</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GenerateSignature { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_IntentToSealAttribute_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.IntentToSealAttribute*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_IntentToSealAttribute" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.IntentToSealAttribute">
+  IntentToSealAttribute
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a primary signature with the intent-to-seal attribute.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IntentToSealAttribute { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Issuer_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Issuer*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Issuer" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Issuer">
+  Issuer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the Issuer of the signing cert, or a substring.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Issuer { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_KeyContainer_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.KeyContainer*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_KeyContainer" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.KeyContainer">
+  KeyContainer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the Key Container Name of the Private Key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string KeyContainer { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_MachineStore_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.MachineStore*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_MachineStore" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.MachineStore">
+  MachineStore
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Open a Machine store instead of a User store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? MachineStore { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_NoSealWarn_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.NoSealWarn*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_NoSealWarn" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.NoSealWarn">
+  NoSealWarn
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sealing-related warnings do not affect SignTool's return code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoSealWarn { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_PageHashes_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.PageHashes*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_PageHashes" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.PageHashes">
+  PageHashes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate page hashes for executable files if supported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? PageHashes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Password_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Password*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Password" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Password">
+  Password
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify a password to use when opening the PFX file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Password { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Quiet_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Quiet*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Quiet" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Quiet">
+  Quiet
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>No output on success and minimal output on failure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Quiet { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_RelaxedMarkerCheck_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.RelaxedMarkerCheck*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_RelaxedMarkerCheck" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.RelaxedMarkerCheck">
+  RelaxedMarkerCheck
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies signing a PE file with the relaxed marker check semantic. The flag is ignored for non-PE files. During verification, certain authenticated sections of the signature will bypass invalid PE markers check. This option should only be used after careful consideration and reviewing the details of MSRC case MS12-024 to ensure that no vulnerabilities are introduced.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? RelaxedMarkerCheck { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Rfc3161TimestampServerUrl_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Rfc3161TimestampServerUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Rfc3161TimestampServerUrl" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Rfc3161TimestampServerUrl">
+  Rfc3161TimestampServerUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the RFC 3161 timestamp server's URL. If this option (or <code>/t</code>) is not specified, the signed file will not be timestamped. A warning is generated if timestamping fails. This switch cannot be used with the <code>/t</code> switch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Rfc3161TimestampServerUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Rfc3161TimestampServerUrlSealed_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Rfc3161TimestampServerUrlSealed*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Rfc3161TimestampServerUrlSealed" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Rfc3161TimestampServerUrlSealed">
+  Rfc3161TimestampServerUrlSealed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the RFC 3161 timestamp server's URL for timestamping a sealed file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Rfc3161TimestampServerUrlSealed { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_RootSubjectName_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.RootSubjectName*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_RootSubjectName" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.RootSubjectName">
+  RootSubjectName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the Subject Name of a Root cert that the signing cert must chain to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RootSubjectName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_SealingSignature_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SealingSignature*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_SealingSignature" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SealingSignature">
+  SealingSignature
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a sealing signature if the file format supports it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SealingSignature { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Sha1Thumbprint_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Sha1Thumbprint*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Sha1Thumbprint" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Sha1Thumbprint">
+  Sha1Thumbprint
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the SHA1 thumbprint of the signing cert.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Sha1Thumbprint { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_SignDigestOnly_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SignDigestOnly*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_SignDigestOnly" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SignDigestOnly">
+  SignDigestOnly
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Signs the digest only. The input file should be the digest generated by the <code>/dg</code> option. The output file will be: <code>&lt;file&gt;.signed</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SignDigestOnly { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_SignedContentIdentifier_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SignedContentIdentifier*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_SignedContentIdentifier" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SignedContentIdentifier">
+  SignedContentIdentifier
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the <code>&lt;OID&gt;</code> that identifies the signed content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SignedContentIdentifier { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_SignedContentMethod_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SignedContentMethod*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_SignedContentMethod" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SignedContentMethod">
+  SignedContentMethod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>efined values:</p>
+<ul><li><b>Embedded:</b> Embeds the signed content in the PKCS7.</li><li><b>DetachedSignedData:</b> Produces the signed data part of a detached PKCS7.</li></ul>
+The default is <code>Embedded</code>.
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SignToolContentMethod SignedContentMethod { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.SignTool.SignToolContentMethod.html">SignToolContentMethod</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_SignedDigestAndUnsignedPkcs7Path_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SignedDigestAndUnsignedPkcs7Path*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_SignedDigestAndUnsignedPkcs7Path" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SignedDigestAndUnsignedPkcs7Path">
+  SignedDigestAndUnsignedPkcs7Path
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates the to be signed digest and the unsigned PKCS7 files. The output digest and PKCS7 files will be: <code>&lt;path&gt;&amp;lt;file&gt;.dig</code> and <code>&lt;path&gt;&amp;lt;file&gt;.p7u</code>. To output an additional XML file, see <code>/dxml</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SignedDigestAndUnsignedPkcs7Path { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_SigningSubjectName_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SigningSubjectName*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_SigningSubjectName" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SigningSubjectName">
+  SigningSubjectName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the Subject Name of the signing cert, or a substring.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SigningSubjectName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Store_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Store*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Store" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Store">
+  Store
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the Store to open when searching for the cert. The default is the <code>MY</code> Store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Store { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_SuppressPageHashes_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SuppressPageHashes*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_SuppressPageHashes" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.SuppressPageHashes">
+  SuppressPageHashes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress page hashes for executable files if supported. The default is determined by the <code>SIGNTOOL_PAGE_HASHES</code> environment variable and by the <em>wintrust.dll</em> version.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SuppressPageHashes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_TimestampServerDigestAlgorithm_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.TimestampServerDigestAlgorithm*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_TimestampServerDigestAlgorithm" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.TimestampServerDigestAlgorithm">
+  TimestampServerDigestAlgorithm
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Used with the <code>/tr</code> or <code>/tseal</code> switch to request a digest algorithm used by the RFC 3161 timestamp server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SignToolDigestAlgorithm TimestampServerDigestAlgorithm { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.SignTool.SignToolDigestAlgorithm.html">SignToolDigestAlgorithm</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_TimestampServerUrl_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.TimestampServerUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_TimestampServerUrl" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.TimestampServerUrl">
+  TimestampServerUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the timestamp server's URL. If this option is not present, the signed file will not be timestamped. A warning is generated if timestamping fails.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TimestampServerUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Url_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Url*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Url" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Url">
+  Url
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Provide a URL with more information about the signed content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Url { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_Verbose_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Verbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_Verbose" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.Verbose">
+  Verbose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print verbose success and status messages. This may also provide slightly more information on error.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Verbose { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_WindowsSystemComponentVerification_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.WindowsSystemComponentVerification*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_WindowsSystemComponentVerification" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.WindowsSystemComponentVerification">
+  WindowsSystemComponentVerification
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify usage of <em>Windows System Component Verification</em> (1.3.6.1.4.1.311.10.3.6).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? WindowsSystemComponentVerification { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SignTool_SignToolSettings_XmlFile_" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.XmlFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_SignTool_SignToolSettings_XmlFile" data-uid="Nuke.Common.Tools.SignTool.SignToolSettings.XmlFile">
+  XmlFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>When used with the <code>/dg</code> option, produces an XML file. The output file will be: <code>&lt;path&gt;&amp;lt;file&gt;.dig.xml</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? XmlFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SignTool/SignTool.Generated.cs/#L42" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

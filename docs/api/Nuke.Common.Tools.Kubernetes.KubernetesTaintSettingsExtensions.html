@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class KubernetesTaintSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class KubernetesTaintSettingsExtensions | gruke ">
+      
+      <meta name="description" content="Update the taints on one or more nodes.   * A taint consists of a key, value, and effect. As an argument here, it is expressed as key=value:effect.    * The key must begin with a letter or number, and may contain letters, numbers, hyphens, dots, and underscores, up to  253 characters.    * Optionally, the key can begin with a DNS subdomain prefix and a single &#39;/&#39;, like example.com/my-app    * The value must begin with a letter or number, and may contain letters, numbers, hyphens, dots, and underscores, up to  63 characters.    * The effect must be NoSchedule, PreferNoSchedule or NoExecute.    * Currently taint can only apply to node.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions" class="text-break">
+Class KubernetesTaintSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4584"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Kubernetes.html">Kubernetes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Update the taints on one or more nodes.   * A taint consists of a key, value, and effect. As an argument here, it is expressed as key=value:effect.    * The key must begin with a letter or number, and may contain letters, numbers, hyphens, dots, and underscores, up to  253 characters.    * Optionally, the key can begin with a DNS subdomain prefix and a single '/', like example.com/my-app    * The value must begin with a letter or number, and may contain letters, numbers, hyphens, dots, and underscores, up to  63 characters.    * The effect must be NoSchedule, PreferNoSchedule or NoExecute.    * Currently taint can only apply to node.</p><p>For more details, visit the <a href="https://kubernetes.io/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class KubernetesTaintSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">KubernetesTaintSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;taintEffects&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesTaintSettings_TaintEffects">TaintEffects</a></li><li><code>&lt;typeName&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesTaintSettings_TypeName">TypeName</a></li><li><code>--all</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesTaintSettings_All">All</a></li><li><code>--allow-missing-template-keys</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesTaintSettings_AllowMissingTemplateKeys">AllowMissingTemplateKeys</a></li><li><code>--alsologtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Alsologtostderr">Alsologtostderr</a></li><li><code>--as</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_As">As</a></li><li><code>--as-group</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_AsGroup">AsGroup</a></li><li><code>--cache-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CacheDir">CacheDir</a></li><li><code>--certificate-authority</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CertificateAuthority">CertificateAuthority</a></li><li><code>--client-certificate</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientCertificate">ClientCertificate</a></li><li><code>--client-key</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientKey">ClientKey</a></li><li><code>--cluster</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Cluster">Cluster</a></li><li><code>--context</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Context">Context</a></li><li><code>--insecure-skip-tls-verify</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_InsecureSkipTlsVerify">InsecureSkipTlsVerify</a></li><li><code>--kubeconfig</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Kubeconfig">Kubeconfig</a></li><li><code>--log-backtrace-at</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogBacktraceAt">LogBacktraceAt</a></li><li><code>--log-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogDir">LogDir</a></li><li><code>--logtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Logtostderr">Logtostderr</a></li><li><code>--match-server-version</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_MatchServerVersion">MatchServerVersion</a></li><li><code>--namespace</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Namespace">Namespace</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesTaintSettings_Output">Output</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesTaintSettings_Overwrite">Overwrite</a></li><li><code>--request-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_RequestTimeout">RequestTimeout</a></li><li><code>--selector</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesTaintSettings_Selector">Selector</a></li><li><code>--server</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Server">Server</a></li><li><code>--stderrthreshold</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Stderrthreshold">Stderrthreshold</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesTaintSettings_Template">Template</a></li><li><code>--token</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Token">Token</a></li><li><code>--user</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_User">User</a></li><li><code>--v</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_V">V</a></li><li><code>--validate</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesTaintSettings_Validate">Validate</a></li><li><code>--vmodule</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Vmodule">Vmodule</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_AddTaintEffect_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.AddTaintEffect*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_AddTaintEffect__1___0_System_String_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.AddTaintEffect``1(``0,System.String,System.String)">
+  AddTaintEffect&lt;T&gt;(T, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4619"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The taint effects to set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTaintEffect&lt;T&gt;(this T o, string k, string v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_AddTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.AddTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_AddTypeName__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.AddTypeName``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddTypeName&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4599"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTypeName&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_AddTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.AddTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_AddTypeName__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.AddTypeName``1(``0,System.String[])">
+  AddTypeName&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4596"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTypeName&lt;T&gt;(this T o, params string[] v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ClearTaintEffects_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ClearTaintEffects*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ClearTaintEffects__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ClearTaintEffects``1(``0)">
+  ClearTaintEffects&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4625"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The taint effects to set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearTaintEffects&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ClearTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ClearTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ClearTypeName__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ClearTypeName``1(``0)">
+  ClearTypeName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4608"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearTypeName&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_DisableAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.DisableAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_DisableAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.DisableAll``1(``0)">
+  DisableAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4639"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select all nodes in the cluster.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableAll&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_DisableAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.DisableAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_DisableAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.DisableAllowMissingTemplateKeys``1(``0)">
+  DisableAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4656"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_DisableOverwrite_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.DisableOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_DisableOverwrite__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.DisableOverwrite``1(``0)">
+  DisableOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4681"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, allow taints to be overwritten, otherwise reject taint updates that overwrite existing taints.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableOverwrite&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_DisableValidate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.DisableValidate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_DisableValidate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.DisableValidate``1(``0)">
+  DisableValidate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4714"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableValidate&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_EnableAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.EnableAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_EnableAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.EnableAll``1(``0)">
+  EnableAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4636"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select all nodes in the cluster.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableAll&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_EnableAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.EnableAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_EnableAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.EnableAllowMissingTemplateKeys``1(``0)">
+  EnableAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4653"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_EnableOverwrite_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.EnableOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_EnableOverwrite__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.EnableOverwrite``1(``0)">
+  EnableOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4678"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, allow taints to be overwritten, otherwise reject taint updates that overwrite existing taints.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableOverwrite&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_EnableValidate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.EnableValidate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_EnableValidate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.EnableValidate``1(``0)">
+  EnableValidate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4711"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableValidate&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_RemoveTaintEffect_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.RemoveTaintEffect*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_RemoveTaintEffect__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.RemoveTaintEffect``1(``0,System.String)">
+  RemoveTaintEffect&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4622"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The taint effects to set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTaintEffect&lt;T&gt;(this T o, string k) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_RemoveTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.RemoveTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_RemoveTypeName__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.RemoveTypeName``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveTypeName&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4605"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTypeName&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_RemoveTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.RemoveTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_RemoveTypeName__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.RemoveTypeName``1(``0,System.String[])">
+  RemoveTypeName&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4602"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTypeName&lt;T&gt;(this T o, params string[] v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetAll``1(``0)">
+  ResetAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4633"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select all nodes in the cluster.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAll&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetAllowMissingTemplateKeys``1(``0)">
+  ResetAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4650"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetOutput__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetOutput``1(``0)">
+  ResetOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4667"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output format. One of: json|yaml|name|template|go-template|go-template-file|templatefile|jsonpath|jsonpath-file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutput&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetOverwrite_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetOverwrite__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetOverwrite``1(``0)">
+  ResetOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4675"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, allow taints to be overwritten, otherwise reject taint updates that overwrite existing taints.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOverwrite&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetSelector__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetSelector``1(``0)">
+  ResetSelector&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4692"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSelector&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetTemplate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetTemplate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetTemplate``1(``0)">
+  ResetTemplate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4700"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTemplate&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetValidate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetValidate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ResetValidate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ResetValidate``1(``0)">
+  ResetValidate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4708"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetValidate&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetAll__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetAll``1(``0,System.Nullable{System.Boolean})">
+  SetAll&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4630"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select all nodes in the cluster.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAll&lt;T&gt;(this T o, bool? v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetAllowMissingTemplateKeys__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetAllowMissingTemplateKeys``1(``0,System.Nullable{System.Boolean})">
+  SetAllowMissingTemplateKeys&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4647"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAllowMissingTemplateKeys&lt;T&gt;(this T o, bool? v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetOutput__1___0_Nuke_Common_Tools_Kubernetes_KubernetesTaintOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetOutput``1(``0,Nuke.Common.Tools.Kubernetes.KubernetesTaintOutput)">
+  SetOutput&lt;T&gt;(T, KubernetesTaintOutput)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4664"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output format. One of: json|yaml|name|template|go-template|go-template-file|templatefile|jsonpath|jsonpath-file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutput&lt;T&gt;(this T o, KubernetesTaintOutput v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesTaintOutput.html">KubernetesTaintOutput</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetOverwrite_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetOverwrite__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetOverwrite``1(``0,System.Nullable{System.Boolean})">
+  SetOverwrite&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4672"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, allow taints to be overwritten, otherwise reject taint updates that overwrite existing taints.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOverwrite&lt;T&gt;(this T o, bool? v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetSelector__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetSelector``1(``0,System.String)">
+  SetSelector&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4689"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selector (label query) to filter on, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSelector&lt;T&gt;(this T o, string v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetTaintEffect_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetTaintEffect*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetTaintEffect__1___0_System_String_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetTaintEffect``1(``0,System.String,System.String)">
+  SetTaintEffect&lt;T&gt;(T, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4616"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The taint effects to set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTaintEffect&lt;T&gt;(this T o, string k, string v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetTaintEffects_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetTaintEffects*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetTaintEffects__1___0_System_Collections_Generic_IDictionary_System_String_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetTaintEffects``1(``0,System.Collections.Generic.IDictionary{System.String,System.String})">
+  SetTaintEffects&lt;T&gt;(T, IDictionary&lt;string, string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4613"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The taint effects to set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTaintEffects&lt;T&gt;(this T o, IDictionary&lt;string, string&gt; v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetTemplate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetTemplate__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetTemplate``1(``0,System.String)">
+  SetTemplate&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4697"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTemplate&lt;T&gt;(this T o, string v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetTypeName__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetTypeName``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetTypeName&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4593"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTypeName&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetTypeName__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetTypeName``1(``0,System.String[])">
+  SetTypeName&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4590"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTypeName&lt;T&gt;(this T o, params string[] v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetValidate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetValidate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_SetValidate__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.SetValidate``1(``0,System.Nullable{System.Boolean})">
+  SetValidate&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4705"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetValidate&lt;T&gt;(this T o, bool? v) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ToggleAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ToggleAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ToggleAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ToggleAll``1(``0)">
+  ToggleAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4642"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select all nodes in the cluster.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleAll&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ToggleAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ToggleAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ToggleAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ToggleAllowMissingTemplateKeys``1(``0)">
+  ToggleAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4659"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ToggleOverwrite_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ToggleOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ToggleOverwrite__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ToggleOverwrite``1(``0)">
+  ToggleOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4684"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, allow taints to be overwritten, otherwise reject taint updates that overwrite existing taints.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleOverwrite&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ToggleValidate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ToggleValidate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesTaintSettingsExtensions_ToggleValidate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesTaintSettingsExtensions.ToggleValidate``1(``0)">
+  ToggleValidate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4717"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleValidate&lt;T&gt;(this T o) where T : KubernetesTaintSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4584" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

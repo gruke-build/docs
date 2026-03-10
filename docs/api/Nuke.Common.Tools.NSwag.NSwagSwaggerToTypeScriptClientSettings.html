@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class NSwagSwaggerToTypeScriptClientSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NSwagSwaggerToTypeScriptClientSettings | gruke ">
+      
+      <meta name="description" content="Generates TypeScript client code from a Swagger/OpenAPI specification (obsolete: use openapi2tsclient instead).For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings" class="text-break">
+Class NSwagSwaggerToTypeScriptClientSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1291"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.NSwag.html">NSwag</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Generates TypeScript client code from a Swagger/OpenAPI specification (obsolete: use openapi2tsclient instead).</p><p>For more details, visit the <a href="https://github.com/RSuter/NSwag">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class NSwagSwaggerToTypeScriptClientSettings : ToolOptions, IOptions, IToolOptionsWithFramework</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">NSwagSwaggerToTypeScriptClientSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.IToolOptionsWithFramework.html">IToolOptionsWithFramework</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddClassTypes__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddClassTypes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddClassTypes__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddClassTypes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddExcludedParameterNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddExcludedParameterNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddExcludedParameterNames__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddExcludedParameterNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddExcludedTypeNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddExcludedTypeNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddExcludedTypeNames__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddExcludedTypeNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddExtendedClasses__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddExtendedClasses&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddExtendedClasses__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddExtendedClasses&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddProtectedMethods__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddProtectedMethods&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddProtectedMethods__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddProtectedMethods&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddServiceSchemes__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddServiceSchemes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddServiceSchemes__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddServiceSchemes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddWrapResponseMethods__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddWrapResponseMethods&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_AddWrapResponseMethods__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.AddWrapResponseMethods&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ClearClassTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ClearClassTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ClearExcludedParameterNames__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ClearExcludedParameterNames&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ClearExcludedTypeNames__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ClearExcludedTypeNames&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ClearExtendedClasses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ClearExtendedClasses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ClearProtectedMethods__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ClearProtectedMethods&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ClearServiceSchemes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ClearServiceSchemes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ClearWrapResponseMethods__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ClearWrapResponseMethods&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableConvertConstructorInterfaceData__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableConvertConstructorInterfaceData&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableExportTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableExportTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableGenerateClientClasses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableGenerateClientClasses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableGenerateClientInterfaces__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableGenerateClientInterfaces&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableGenerateCloneMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableGenerateCloneMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableGenerateConstructorInterface__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableGenerateConstructorInterface&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableGenerateDefaultValues__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableGenerateDefaultValues&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableGenerateDtoTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableGenerateDtoTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableGenerateOptionalParameters__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableGenerateOptionalParameters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableGenerateResponseClasses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableGenerateResponseClasses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableHandleReferences__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableHandleReferences&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableImportRequiredTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableImportRequiredTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableInlineNamedAny__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableInlineNamedAny&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableInlineNamedDictionaries__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableInlineNamedDictionaries&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableMarkOptionalProperties__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableMarkOptionalProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableUseGetBaseUrlMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableUseGetBaseUrlMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableUseSingletonProvider__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableUseSingletonProvider&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableUseTransformOptionsMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableUseTransformOptionsMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableUseTransformResultMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableUseTransformResultMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableWrapDtoExceptions__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableWrapDtoExceptions&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_DisableWrapResponses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.DisableWrapResponses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableConvertConstructorInterfaceData__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableConvertConstructorInterfaceData&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableExportTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableExportTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableGenerateClientClasses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableGenerateClientClasses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableGenerateClientInterfaces__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableGenerateClientInterfaces&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableGenerateCloneMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableGenerateCloneMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableGenerateConstructorInterface__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableGenerateConstructorInterface&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableGenerateDefaultValues__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableGenerateDefaultValues&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableGenerateDtoTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableGenerateDtoTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableGenerateOptionalParameters__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableGenerateOptionalParameters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableGenerateResponseClasses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableGenerateResponseClasses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableHandleReferences__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableHandleReferences&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableImportRequiredTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableImportRequiredTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableInlineNamedAny__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableInlineNamedAny&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableInlineNamedDictionaries__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableInlineNamedDictionaries&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableMarkOptionalProperties__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableMarkOptionalProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableUseGetBaseUrlMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableUseGetBaseUrlMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableUseSingletonProvider__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableUseSingletonProvider&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableUseTransformOptionsMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableUseTransformOptionsMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableUseTransformResultMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableUseTransformResultMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableWrapDtoExceptions__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableWrapDtoExceptions&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_EnableWrapResponses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.EnableWrapResponses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveClassTypes__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveClassTypes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveClassTypes__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveClassTypes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveExcludedParameterNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveExcludedParameterNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveExcludedParameterNames__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveExcludedParameterNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveExcludedTypeNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveExcludedTypeNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveExcludedTypeNames__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveExcludedTypeNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveExtendedClasses__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveExtendedClasses&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveExtendedClasses__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveExtendedClasses&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveProtectedMethods__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveProtectedMethods&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveProtectedMethods__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveProtectedMethods&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveServiceSchemes__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveServiceSchemes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveServiceSchemes__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveServiceSchemes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveWrapResponseMethods__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveWrapResponseMethods&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_RemoveWrapResponseMethods__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.RemoveWrapResponseMethods&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetBaseUrlTokenName__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetBaseUrlTokenName&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetClassName__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetClassName&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetClientBaseClass__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetClientBaseClass&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetConfigurationClass__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetConfigurationClass&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetConvertConstructorInterfaceData__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetConvertConstructorInterfaceData&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetDateTimeType__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetDateTimeType&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetEnumNameGeneratorType__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetEnumNameGeneratorType&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetExceptionClass__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetExceptionClass&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetExportTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetExportTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetExtensionCode__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetExtensionCode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetGenerateClientClasses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetGenerateClientClasses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetGenerateClientInterfaces__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetGenerateClientInterfaces&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetGenerateCloneMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetGenerateCloneMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetGenerateConstructorInterface__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetGenerateConstructorInterface&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetGenerateDefaultValues__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetGenerateDefaultValues&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetGenerateDtoTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetGenerateDtoTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetGenerateOptionalParameters__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetGenerateOptionalParameters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetGenerateResponseClasses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetGenerateResponseClasses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetHandleReferences__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetHandleReferences&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetHttpClass__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetHttpClass&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetImportRequiredTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetImportRequiredTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetInjectionTokenType__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetInjectionTokenType&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetInlineNamedAny__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetInlineNamedAny&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetInlineNamedDictionaries__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetInlineNamedDictionaries&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetInput__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetInput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetMarkOptionalProperties__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetMarkOptionalProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetModuleName__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetModuleName&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetNamespace__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetNamespace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetNullValue__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetNullValue&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetOperationGenerationMode__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetOperationGenerationMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetOutput__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetPromiseType__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetPromiseType&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetPropertyNameGeneratorType__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetPropertyNameGeneratorType&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetQueryNullValue__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetQueryNullValue&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetResponseClass__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetResponseClass&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetRxJsVersion__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetRxJsVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetServiceHost__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetServiceHost&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetTemplateDirectory__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetTemplateDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetTemplate__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetTemplate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetTypeNameGenerator__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetTypeNameGenerator&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetTypeScriptVersion__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetTypeScriptVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetTypeStyle__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetTypeStyle&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetUseGetBaseUrlMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetUseGetBaseUrlMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetUseSingletonProvider__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetUseSingletonProvider&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetUseTransformOptionsMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetUseTransformOptionsMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetUseTransformResultMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetUseTransformResultMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetWrapDtoExceptions__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetWrapDtoExceptions&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ResetWrapResponses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ResetWrapResponses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetBaseUrlTokenName__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetBaseUrlTokenName&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetClassName__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetClassName&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetClassTypes__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetClassTypes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetClassTypes__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetClassTypes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetClientBaseClass__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetClientBaseClass&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetConfigurationClass__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetConfigurationClass&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetConvertConstructorInterfaceData__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetConvertConstructorInterfaceData&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetDateTimeType__1___0_Nuke_Common_Tools_NSwag_TypeScriptDateTimeType_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetDateTimeType&lt;T&gt;(T, TypeScriptDateTimeType)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetEnumNameGeneratorType__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetEnumNameGeneratorType&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetExceptionClass__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetExceptionClass&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetExcludedParameterNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetExcludedParameterNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetExcludedParameterNames__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetExcludedParameterNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetExcludedTypeNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetExcludedTypeNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetExcludedTypeNames__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetExcludedTypeNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetExportTypes__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetExportTypes&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetExtendedClasses__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetExtendedClasses&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetExtendedClasses__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetExtendedClasses&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetExtensionCode__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetExtensionCode&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetGenerateClientClasses__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetGenerateClientClasses&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetGenerateClientInterfaces__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetGenerateClientInterfaces&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetGenerateCloneMethod__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetGenerateCloneMethod&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetGenerateConstructorInterface__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetGenerateConstructorInterface&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetGenerateDefaultValues__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetGenerateDefaultValues&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetGenerateDtoTypes__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetGenerateDtoTypes&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetGenerateOptionalParameters__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetGenerateOptionalParameters&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetGenerateResponseClasses__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetGenerateResponseClasses&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetHandleReferences__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetHandleReferences&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetHttpClass__1___0_Nuke_Common_Tools_NSwag_HttpClass_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetHttpClass&lt;T&gt;(T, HttpClass)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetImportRequiredTypes__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetImportRequiredTypes&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetInjectionTokenType__1___0_Nuke_Common_Tools_NSwag_InjectionTokenType_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetInjectionTokenType&lt;T&gt;(T, InjectionTokenType)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetInlineNamedAny__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetInlineNamedAny&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetInlineNamedDictionaries__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetInlineNamedDictionaries&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetInput__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetInput&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetMarkOptionalProperties__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetMarkOptionalProperties&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetModuleName__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetModuleName&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetNamespace__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetNamespace&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetNullValue__1___0_Nuke_Common_Tools_NSwag_TypeScriptNullValue_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetNullValue&lt;T&gt;(T, TypeScriptNullValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetOperationGenerationMode__1___0_Nuke_Common_Tools_NSwag_OperationGenerationMode_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetOperationGenerationMode&lt;T&gt;(T, OperationGenerationMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetOutput__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetOutput&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetPromiseType__1___0_Nuke_Common_Tools_NSwag_PromiseType_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetPromiseType&lt;T&gt;(T, PromiseType)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetPropertyNameGeneratorType__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetPropertyNameGeneratorType&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetProtectedMethods__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetProtectedMethods&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetProtectedMethods__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetProtectedMethods&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetQueryNullValue__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetQueryNullValue&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetResponseClass__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetResponseClass&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetRxJsVersion__1___0_System_Nullable_System_Decimal__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetRxJsVersion&lt;T&gt;(T, decimal?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetServiceHost__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetServiceHost&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetServiceSchemes__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetServiceSchemes&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetServiceSchemes__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetServiceSchemes&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetTemplateDirectory__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetTemplateDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetTemplate__1___0_Nuke_Common_Tools_NSwag_TypeScriptTemplate_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetTemplate&lt;T&gt;(T, TypeScriptTemplate)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetTypeNameGenerator__1___0_System_String_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetTypeNameGenerator&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetTypeScriptVersion__1___0_System_Nullable_System_Decimal__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetTypeScriptVersion&lt;T&gt;(T, decimal?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetTypeStyle__1___0_Nuke_Common_Tools_NSwag_TypeScriptTypeStyle_">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetTypeStyle&lt;T&gt;(T, TypeScriptTypeStyle)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetUseGetBaseUrlMethod__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetUseGetBaseUrlMethod&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetUseSingletonProvider__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetUseSingletonProvider&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetUseTransformOptionsMethod__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetUseTransformOptionsMethod&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetUseTransformResultMethod__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetUseTransformResultMethod&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetWrapDtoExceptions__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetWrapDtoExceptions&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetWrapResponseMethods__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetWrapResponseMethods&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetWrapResponseMethods__1___0_System_String___">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetWrapResponseMethods&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_SetWrapResponses__1___0_System_Nullable_System_Boolean__">NSwagSwaggerToTypeScriptClientSettingsExtensions.SetWrapResponses&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleConvertConstructorInterfaceData__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleConvertConstructorInterfaceData&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleExportTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleExportTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleGenerateClientClasses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleGenerateClientClasses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleGenerateClientInterfaces__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleGenerateClientInterfaces&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleGenerateCloneMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleGenerateCloneMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleGenerateConstructorInterface__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleGenerateConstructorInterface&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleGenerateDefaultValues__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleGenerateDefaultValues&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleGenerateDtoTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleGenerateDtoTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleGenerateOptionalParameters__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleGenerateOptionalParameters&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleGenerateResponseClasses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleGenerateResponseClasses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleHandleReferences__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleHandleReferences&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleImportRequiredTypes__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleImportRequiredTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleInlineNamedAny__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleInlineNamedAny&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleInlineNamedDictionaries__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleInlineNamedDictionaries&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleMarkOptionalProperties__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleMarkOptionalProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleUseGetBaseUrlMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleUseGetBaseUrlMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleUseSingletonProvider__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleUseSingletonProvider&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleUseTransformOptionsMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleUseTransformOptionsMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleUseTransformResultMethod__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleUseTransformResultMethod&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleWrapDtoExceptions__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleWrapDtoExceptions&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettingsExtensions_ToggleWrapResponses__1___0_">NSwagSwaggerToTypeScriptClientSettingsExtensions.ToggleWrapResponses&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>/BaseUrlTokenName</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_BaseUrlTokenName">BaseUrlTokenName</a></li><li><code>/ClassName</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ClassName">ClassName</a></li><li><code>/ClassTypes</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ClassTypes">ClassTypes</a></li><li><code>/ClientBaseClass</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ClientBaseClass">ClientBaseClass</a></li><li><code>/ConfigurationClass</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ConfigurationClass">ConfigurationClass</a></li><li><code>/ConvertConstructorInterfaceData</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ConvertConstructorInterfaceData">ConvertConstructorInterfaceData</a></li><li><code>/DateTimeType</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_DateTimeType">DateTimeType</a></li><li><code>/EnumNameGeneratorType</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_EnumNameGeneratorType">EnumNameGeneratorType</a></li><li><code>/ExceptionClass</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExceptionClass">ExceptionClass</a></li><li><code>/ExcludedParameterNames</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExcludedParameterNames">ExcludedParameterNames</a></li><li><code>/ExcludedTypeNames</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExcludedTypeNames">ExcludedTypeNames</a></li><li><code>/ExportTypes</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExportTypes">ExportTypes</a></li><li><code>/ExtendedClasses</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExtendedClasses">ExtendedClasses</a></li><li><code>/ExtensionCode</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExtensionCode">ExtensionCode</a></li><li><code>/GenerateClientClasses</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateClientClasses">GenerateClientClasses</a></li><li><code>/GenerateClientInterfaces</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateClientInterfaces">GenerateClientInterfaces</a></li><li><code>/GenerateCloneMethod</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateCloneMethod">GenerateCloneMethod</a></li><li><code>/GenerateConstructorInterface</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateConstructorInterface">GenerateConstructorInterface</a></li><li><code>/GenerateDefaultValues</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateDefaultValues">GenerateDefaultValues</a></li><li><code>/GenerateDtoTypes</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateDtoTypes">GenerateDtoTypes</a></li><li><code>/GenerateOptionalParameters</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateOptionalParameters">GenerateOptionalParameters</a></li><li><code>/GenerateResponseClasses</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateResponseClasses">GenerateResponseClasses</a></li><li><code>/HandleReferences</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_HandleReferences">HandleReferences</a></li><li><code>/HttpClass</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_HttpClass">HttpClass</a></li><li><code>/ImportRequiredTypes</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ImportRequiredTypes">ImportRequiredTypes</a></li><li><code>/InjectionTokenType</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_InjectionTokenType">InjectionTokenType</a></li><li><code>/InlineNamedAny</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_InlineNamedAny">InlineNamedAny</a></li><li><code>/InlineNamedDictionaries</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_InlineNamedDictionaries">InlineNamedDictionaries</a></li><li><code>/Input</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Input">Input</a></li><li><code>/MarkOptionalProperties</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_MarkOptionalProperties">MarkOptionalProperties</a></li><li><code>/ModuleName</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ModuleName">ModuleName</a></li><li><code>/Namespace</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Namespace">Namespace</a></li><li><code>/NullValue</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_NullValue">NullValue</a></li><li><code>/OperationGenerationMode</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_OperationGenerationMode">OperationGenerationMode</a></li><li><code>/Output</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Output">Output</a></li><li><code>/PromiseType</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_PromiseType">PromiseType</a></li><li><code>/PropertyNameGeneratorType</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_PropertyNameGeneratorType">PropertyNameGeneratorType</a></li><li><code>/ProtectedMethods</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ProtectedMethods">ProtectedMethods</a></li><li><code>/QueryNullValue</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_QueryNullValue">QueryNullValue</a></li><li><code>/ResponseClass</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ResponseClass">ResponseClass</a></li><li><code>/RxJsVersion</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_RxJsVersion">RxJsVersion</a></li><li><code>/ServiceHost</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ServiceHost">ServiceHost</a></li><li><code>/ServiceSchemes</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ServiceSchemes">ServiceSchemes</a></li><li><code>/Template</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Template">Template</a></li><li><code>/TemplateDirectory</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TemplateDirectory">TemplateDirectory</a></li><li><code>/TypeNameGenerator</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TypeNameGenerator">TypeNameGenerator</a></li><li><code>/TypeScriptVersion</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TypeScriptVersion">TypeScriptVersion</a></li><li><code>/TypeStyle</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TypeStyle">TypeStyle</a></li><li><code>/UseGetBaseUrlMethod</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseGetBaseUrlMethod">UseGetBaseUrlMethod</a></li><li><code>/UseSingletonProvider</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseSingletonProvider">UseSingletonProvider</a></li><li><code>/UseTransformOptionsMethod</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseTransformOptionsMethod">UseTransformOptionsMethod</a></li><li><code>/UseTransformResultMethod</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseTransformResultMethod">UseTransformResultMethod</a></li><li><code>/WrapDtoExceptions</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_WrapDtoExceptions">WrapDtoExceptions</a></li><li><code>/WrapResponseMethods</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_WrapResponseMethods">WrapResponseMethods</a></li><li><code>/WrapResponses</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.html#Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_WrapResponses">WrapResponses</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_BaseUrlTokenName_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.BaseUrlTokenName*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_BaseUrlTokenName" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.BaseUrlTokenName">
+  BaseUrlTokenName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1297"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The token name for injecting the API base URL string (used in the Angular template, default: 'API_BASE_URL').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BaseUrlTokenName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ClassName_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ClassName*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ClassName" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ClassName">
+  ClassName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1299"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The class name of the generated client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ClassName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ClassTypes_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ClassTypes*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ClassTypes" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ClassTypes">
+  ClassTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1301"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type names which always generate plain TypeScript classes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ClassTypes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ClientBaseClass_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ClientBaseClass*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ClientBaseClass" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ClientBaseClass">
+  ClientBaseClass
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1303"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The base class of the generated client classes (optional, must be imported or implemented in the extension code).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ClientBaseClass { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ConfigurationClass_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ConfigurationClass*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ConfigurationClass" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ConfigurationClass">
+  ConfigurationClass
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1305"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The configuration class. The setting ClientBaseClass must be set. (empty for no configuration class).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConfigurationClass { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ConvertConstructorInterfaceData_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ConvertConstructorInterfaceData*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ConvertConstructorInterfaceData" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ConvertConstructorInterfaceData">
+  ConvertConstructorInterfaceData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1307"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert POJO objects in the constructor data to DTO instances (GenerateConstructorInterface must be enabled, default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ConvertConstructorInterfaceData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_DateTimeType_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.DateTimeType*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_DateTimeType" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.DateTimeType">
+  DateTimeType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1309"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The date time type ('Date', 'MomentJS', 'OffsetMomentJS', 'string').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TypeScriptDateTimeType DateTimeType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.TypeScriptDateTimeType.html">TypeScriptDateTimeType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_EnumNameGeneratorType_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.EnumNameGeneratorType*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_EnumNameGeneratorType" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.EnumNameGeneratorType">
+  EnumNameGeneratorType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1391"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The custom IEnumNameGenerator implementation type in the form 'assemblyName:fullTypeName' or 'fullTypeName').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string EnumNameGeneratorType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExceptionClass_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExceptionClass*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExceptionClass" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExceptionClass">
+  ExceptionClass
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1311"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The exception class (default 'ApiException').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ExceptionClass { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExcludedParameterNames_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExcludedParameterNames*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExcludedParameterNames" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExcludedParameterNames">
+  ExcludedParameterNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1313"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The globally excluded parameter names.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ExcludedParameterNames { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExcludedTypeNames_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExcludedTypeNames*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExcludedTypeNames" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExcludedTypeNames">
+  ExcludedTypeNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1315"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The excluded DTO type names (must be defined in an import or other namespace).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ExcludedTypeNames { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExportTypes_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExportTypes*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExportTypes" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExportTypes">
+  ExportTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1317"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether the export keyword should be added to all classes, interfaces and enums (default: true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ExportTypes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExtendedClasses_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExtendedClasses*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExtendedClasses" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExtendedClasses">
+  ExtendedClasses
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1319"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The list of extended classes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ExtendedClasses { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExtensionCode_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExtensionCode*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ExtensionCode" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ExtensionCode">
+  ExtensionCode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1321"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The extension code (string or file path).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ExtensionCode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateClientClasses_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateClientClasses*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateClientClasses" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateClientClasses">
+  GenerateClientClasses
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1323"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether generate client classes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateClientClasses { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateClientInterfaces_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateClientInterfaces*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateClientInterfaces" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateClientInterfaces">
+  GenerateClientInterfaces
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1325"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether generate interfaces for the client classes (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateClientInterfaces { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateCloneMethod_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateCloneMethod*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateCloneMethod" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateCloneMethod">
+  GenerateCloneMethod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1327"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether a clone() method should be generated in the DTO classes (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateCloneMethod { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateConstructorInterface_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateConstructorInterface*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateConstructorInterface" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateConstructorInterface">
+  GenerateConstructorInterface
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1329"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate an class interface which is used in the constructor to initialize the class (only available when TypeStyle is Class, default: true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateConstructorInterface { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateDefaultValues_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateDefaultValues*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateDefaultValues" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateDefaultValues">
+  GenerateDefaultValues
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1331"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to generate default values for properties (default: true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateDefaultValues { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateDtoTypes_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateDtoTypes*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateDtoTypes" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateDtoTypes">
+  GenerateDtoTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1333"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to generate DTO classes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateDtoTypes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateOptionalParameters_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateOptionalParameters*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateOptionalParameters" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateOptionalParameters">
+  GenerateOptionalParameters
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1335"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to reorder parameters (required first, optional at the end) and generate optional parameters (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateOptionalParameters { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateResponseClasses_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateResponseClasses*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_GenerateResponseClasses" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.GenerateResponseClasses">
+  GenerateResponseClasses
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1337"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to generate response classes (default: true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateResponseClasses { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_HandleReferences_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.HandleReferences*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_HandleReferences" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.HandleReferences">
+  HandleReferences
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1339"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Handle JSON references (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? HandleReferences { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_HttpClass_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.HttpClass*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_HttpClass" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.HttpClass">
+  HttpClass
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1341"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The Angular HTTP service class (default 'Http', 'HttpClient').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HttpClass HttpClass { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.HttpClass.html">HttpClass</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ImportRequiredTypes_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ImportRequiredTypes*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ImportRequiredTypes" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ImportRequiredTypes">
+  ImportRequiredTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1343"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether required types should be imported (default: true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ImportRequiredTypes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_InjectionTokenType_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.InjectionTokenType*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_InjectionTokenType" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.InjectionTokenType">
+  InjectionTokenType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1345"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The Angular injection token type (default 'InjectionToken', 'OpaqueToken').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InjectionTokenType InjectionTokenType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.InjectionTokenType.html">InjectionTokenType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_InlineNamedAny_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.InlineNamedAny*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_InlineNamedAny" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.InlineNamedAny">
+  InlineNamedAny
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1347"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inline named any types (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? InlineNamedAny { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_InlineNamedDictionaries_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.InlineNamedDictionaries*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_InlineNamedDictionaries" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.InlineNamedDictionaries">
+  InlineNamedDictionaries
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1349"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inline named dictionaries (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? InlineNamedDictionaries { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Input_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.Input*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Input" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.Input">
+  Input
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1399"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A file path or URL to the data or the JSON data itself.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Input { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_MarkOptionalProperties_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.MarkOptionalProperties*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_MarkOptionalProperties" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.MarkOptionalProperties">
+  MarkOptionalProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1351"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to mark optional properties with ? (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? MarkOptionalProperties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ModuleName_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ModuleName*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ModuleName" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ModuleName">
+  ModuleName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1353"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The TypeScript module name (default: '', no module).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ModuleName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Namespace_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.Namespace*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Namespace" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.Namespace">
+  Namespace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1355"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The TypeScript namespace (default: '', no namespace).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Namespace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_NullValue_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.NullValue*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_NullValue" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.NullValue">
+  NullValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1357"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The null value used in object initializers (default 'Undefined', 'Null').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TypeScriptNullValue NullValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.TypeScriptNullValue.html">TypeScriptNullValue</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_OperationGenerationMode_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.OperationGenerationMode*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_OperationGenerationMode" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.OperationGenerationMode">
+  OperationGenerationMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1359"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The operation generation mode ('SingleClientFromOperationId' or 'MultipleClientsFromPathSegments').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OperationGenerationMode OperationGenerationMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.OperationGenerationMode.html">OperationGenerationMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Output_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.Output*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Output" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.Output">
+  Output
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1405"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The output file path (optional).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Output { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_PromiseType_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.PromiseType*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_PromiseType" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.PromiseType">
+  PromiseType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1361"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The promise type ('Promise' or 'QPromise').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PromiseType PromiseType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.PromiseType.html">PromiseType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_PropertyNameGeneratorType_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.PropertyNameGeneratorType*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_PropertyNameGeneratorType" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.PropertyNameGeneratorType">
+  PropertyNameGeneratorType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1393"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The custom IPropertyNameGenerator implementation type in the form 'assemblyName:fullTypeName' or 'fullTypeName').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PropertyNameGeneratorType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ProtectedMethods_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ProtectedMethods*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ProtectedMethods" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ProtectedMethods">
+  ProtectedMethods
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1363"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List of methods with a protected access modifier ('classname.methodname').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ProtectedMethods { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_QueryNullValue_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.QueryNullValue*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_QueryNullValue" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.QueryNullValue">
+  QueryNullValue
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1365"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The null value used for query parameters which are null (default: '').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string QueryNullValue { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ResponseClass_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ResponseClass*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ResponseClass" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ResponseClass">
+  ResponseClass
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1367"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The response class (default 'SwaggerResponse', may use '{controller}' placeholder).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ResponseClass { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_RxJsVersion_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.RxJsVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_RxJsVersion" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.RxJsVersion">
+  RxJsVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1369"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The target RxJs version (default: 6.0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public decimal? RxJsVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ServiceHost_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ServiceHost*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ServiceHost" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ServiceHost">
+  ServiceHost
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1401"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overrides the service host of the web document (optional, use '.' to remove the hostname).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ServiceHost { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ServiceSchemes_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ServiceSchemes*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_ServiceSchemes" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.ServiceSchemes">
+  ServiceSchemes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1403"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overrides the allowed schemes of the web service (optional, comma separated, 'http', 'https', 'ws', 'wss').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ServiceSchemes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Template_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.Template*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_Template" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.Template">
+  Template
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1371"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type of the asynchronism handling ('JQueryCallbacks', 'JQueryPromises', 'AngularJS', 'Angular', 'Fetch', 'Aurelia').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TypeScriptTemplate Template { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.TypeScriptTemplate.html">TypeScriptTemplate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TemplateDirectory_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.TemplateDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TemplateDirectory" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.TemplateDirectory">
+  TemplateDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1395"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The Liquid template directory (experimental).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TemplateDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TypeNameGenerator_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.TypeNameGenerator*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TypeNameGenerator" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.TypeNameGenerator">
+  TypeNameGenerator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1397"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The custom ITypeNameGenerator implementation type in the form 'assemblyName:fullTypeName' or 'fullTypeName').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TypeNameGenerator { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TypeScriptVersion_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.TypeScriptVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TypeScriptVersion" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.TypeScriptVersion">
+  TypeScriptVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1373"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The target TypeScript version (default: 2.7).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public decimal? TypeScriptVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TypeStyle_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.TypeStyle*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_TypeStyle" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.TypeStyle">
+  TypeStyle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1375"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type style (default: Class).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TypeScriptTypeStyle TypeStyle { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.TypeScriptTypeStyle.html">TypeScriptTypeStyle</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseGetBaseUrlMethod_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.UseGetBaseUrlMethod*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseGetBaseUrlMethod" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.UseGetBaseUrlMethod">
+  UseGetBaseUrlMethod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1377"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to use the 'getBaseUrl(defaultUrl: string)' method from the base class (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseGetBaseUrlMethod { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseSingletonProvider_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.UseSingletonProvider*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseSingletonProvider" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.UseSingletonProvider">
+  UseSingletonProvider
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1379"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to use the Angular 6 Singleton Provider (Angular template only, default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseSingletonProvider { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseTransformOptionsMethod_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.UseTransformOptionsMethod*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseTransformOptionsMethod" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.UseTransformOptionsMethod">
+  UseTransformOptionsMethod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1381"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call 'transformOptions' on the base class or extension class (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseTransformOptionsMethod { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseTransformResultMethod_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.UseTransformResultMethod*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_UseTransformResultMethod" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.UseTransformResultMethod">
+  UseTransformResultMethod
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1383"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call 'transformResult' on the base class or extension class (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseTransformResultMethod { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_WrapDtoExceptions_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.WrapDtoExceptions*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_WrapDtoExceptions" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.WrapDtoExceptions">
+  WrapDtoExceptions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1385"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether DTO exceptions are wrapped in a SwaggerException instance (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? WrapDtoExceptions { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_WrapResponseMethods_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.WrapResponseMethods*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_WrapResponseMethods" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.WrapResponseMethods">
+  WrapResponseMethods
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1387"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List of methods where responses are wrapped ('ControllerName.MethodName', WrapResponses must be true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; WrapResponseMethods { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_WrapResponses_" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.WrapResponses*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagSwaggerToTypeScriptClientSettings_WrapResponses" data-uid="Nuke.Common.Tools.NSwag.NSwagSwaggerToTypeScriptClientSettings.WrapResponses">
+  WrapResponses
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1389"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies whether to wrap success responses to allow full response access (experimental).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? WrapResponses { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L1291" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

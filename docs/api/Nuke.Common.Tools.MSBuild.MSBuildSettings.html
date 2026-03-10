@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class MSBuildSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MSBuildSettings | gruke ">
+      
+      <meta name="description" content="The Microsoft Build Engine is a platform for building applications. This engine, which is also known as MSBuild, provides an XML schema for a project file that controls how the build platform processes and builds software. Visual Studio uses MSBuild, but it doesn&#39;t depend on Visual Studio. By invoking msbuild.exe on your project or solution file, you can orchestrate and build products in environments where Visual Studio isn&#39;t installed. Visual Studio uses MSBuild to load and build managed projects. The project files in Visual Studio (.csproj,.vbproj, vcxproj, and others) contain MSBuild XML code that executes when you build a project by using the IDE. Visual Studio projects import all the necessary settings and build processes to do typical development work, but you can extend or modify them from within Visual Studio or by using an XML editor.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_MSBuild_MSBuildSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.MSBuild.MSBuildSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_MSBuild_MSBuildSettings" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings" class="text-break">
+Class MSBuildSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuildTasks.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.MSBuild.html">MSBuild</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The Microsoft Build Engine is a platform for building applications. This engine, which is also known as MSBuild, provides an XML schema for a project file that controls how the build platform processes and builds software. Visual Studio uses MSBuild, but it doesn't depend on Visual Studio. By invoking msbuild.exe on your project or solution file, you can orchestrate and build products in environments where Visual Studio isn't installed. Visual Studio uses MSBuild to load and build managed projects. The project files in Visual Studio (.csproj,.vbproj, vcxproj, and others) contain MSBuild XML code that executes when you build a project by using the IDE. Visual Studio projects import all the necessary settings and build processes to do typical development work, but you can extend or modify them from within Visual Studio or by using an XML editor.</p><p>For more details, visit the <a href="https://msdn.microsoft.com/en-us/library/ms164311.aspx">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class MSBuildSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">MSBuildSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.CI.TeamCity.MSBuildSettingsExtensions.html#Nuke_Common_CI_TeamCity_MSBuildSettingsExtensions_AddTeamCityLogger_Nuke_Common_Tools_MSBuild_MSBuildSettings_">MSBuildSettingsExtensions.AddTeamCityLogger(MSBuildSettings)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.AddAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddAuthors__1___0_System_String___">MSBuildSettingsExtensions.AddAuthors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddLoggers__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.AddLoggers&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddLoggers__1___0_System_String___">MSBuildSettingsExtensions.AddLoggers&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddNoWarns__1___0_System_Collections_Generic_IEnumerable_System_Int32__">MSBuildSettingsExtensions.AddNoWarns&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddNoWarns__1___0_System_Int32___">MSBuildSettingsExtensions.AddNoWarns&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddPackageTags__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.AddPackageTags&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddPackageTags__1___0_System_String___">MSBuildSettingsExtensions.AddPackageTags&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddProperty__1___0_System_String_System_Object_">MSBuildSettingsExtensions.AddProperty&lt;T&gt;(T, string, object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddRestoreGraphProjectInputs__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.AddRestoreGraphProjectInputs&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddRestoreGraphProjectInputs__1___0_System_String___">MSBuildSettingsExtensions.AddRestoreGraphProjectInputs&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddRestoreSources__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.AddRestoreSources&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddRestoreSources__1___0_System_String___">MSBuildSettingsExtensions.AddRestoreSources&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddTargets__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.AddTargets&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddTargets__1___0_System_String___">MSBuildSettingsExtensions.AddTargets&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddWarningsAsErrors__1___0_System_Collections_Generic_IEnumerable_System_Int32__">MSBuildSettingsExtensions.AddWarningsAsErrors&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_AddWarningsAsErrors__1___0_System_Int32___">MSBuildSettingsExtensions.AddWarningsAsErrors&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ClearLoggers__1___0_">MSBuildSettingsExtensions.ClearLoggers&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ClearProperties__1___0_">MSBuildSettingsExtensions.ClearProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ClearTargets__1___0_">MSBuildSettingsExtensions.ClearTargets&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableDetailedSummary__1___0_">MSBuildSettingsExtensions.DisableDetailedSummary&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableIncludeSymbols__1___0_">MSBuildSettingsExtensions.DisableIncludeSymbols&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableNoConsoleLogger__1___0_">MSBuildSettingsExtensions.DisableNoConsoleLogger&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableNoLogo__1___0_">MSBuildSettingsExtensions.DisableNoLogo&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableNodeReuse__1___0_">MSBuildSettingsExtensions.DisableNodeReuse&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisablePackageRequireLicenseAcceptance__1___0_">MSBuildSettingsExtensions.DisablePackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableRestoreDisableParallel__1___0_">MSBuildSettingsExtensions.DisableRestoreDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableRestoreIgnoreFailedSources__1___0_">MSBuildSettingsExtensions.DisableRestoreIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableRestoreNoCache__1___0_">MSBuildSettingsExtensions.DisableRestoreNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableRestore__1___0_">MSBuildSettingsExtensions.DisableRestore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableRunCodeAnalysis__1___0_">MSBuildSettingsExtensions.DisableRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_DisableTreatWarningsAsErrors__1___0_">MSBuildSettingsExtensions.DisableTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableDetailedSummary__1___0_">MSBuildSettingsExtensions.EnableDetailedSummary&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableIncludeSymbols__1___0_">MSBuildSettingsExtensions.EnableIncludeSymbols&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableNoConsoleLogger__1___0_">MSBuildSettingsExtensions.EnableNoConsoleLogger&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableNoLogo__1___0_">MSBuildSettingsExtensions.EnableNoLogo&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableNodeReuse__1___0_">MSBuildSettingsExtensions.EnableNodeReuse&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnablePackageRequireLicenseAcceptance__1___0_">MSBuildSettingsExtensions.EnablePackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableRestoreDisableParallel__1___0_">MSBuildSettingsExtensions.EnableRestoreDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableRestoreIgnoreFailedSources__1___0_">MSBuildSettingsExtensions.EnableRestoreIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableRestoreNoCache__1___0_">MSBuildSettingsExtensions.EnableRestoreNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableRestore__1___0_">MSBuildSettingsExtensions.EnableRestore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableRunCodeAnalysis__1___0_">MSBuildSettingsExtensions.EnableRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_EnableTreatWarningsAsErrors__1___0_">MSBuildSettingsExtensions.EnableTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.RemoveAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveAuthors__1___0_System_String___">MSBuildSettingsExtensions.RemoveAuthors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveLoggers__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.RemoveLoggers&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveLoggers__1___0_System_String___">MSBuildSettingsExtensions.RemoveLoggers&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveNoWarns__1___0_System_Collections_Generic_IEnumerable_System_Int32__">MSBuildSettingsExtensions.RemoveNoWarns&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveNoWarns__1___0_System_Int32___">MSBuildSettingsExtensions.RemoveNoWarns&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemovePackageTags__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.RemovePackageTags&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemovePackageTags__1___0_System_String___">MSBuildSettingsExtensions.RemovePackageTags&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveProperty__1___0_System_String_">MSBuildSettingsExtensions.RemoveProperty&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveRestoreGraphProjectInputs__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.RemoveRestoreGraphProjectInputs&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveRestoreGraphProjectInputs__1___0_System_String___">MSBuildSettingsExtensions.RemoveRestoreGraphProjectInputs&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveRestoreSources__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.RemoveRestoreSources&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveRestoreSources__1___0_System_String___">MSBuildSettingsExtensions.RemoveRestoreSources&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveTargets__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.RemoveTargets&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveTargets__1___0_System_String___">MSBuildSettingsExtensions.RemoveTargets&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveWarningsAsErrors__1___0_System_Collections_Generic_IEnumerable_System_Int32__">MSBuildSettingsExtensions.RemoveWarningsAsErrors&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_RemoveWarningsAsErrors__1___0_System_Int32___">MSBuildSettingsExtensions.RemoveWarningsAsErrors&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetAssemblyVersion__1___0_">MSBuildSettingsExtensions.ResetAssemblyVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetAuthors__1___0_">MSBuildSettingsExtensions.ResetAuthors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetConfiguration__1___0_">MSBuildSettingsExtensions.ResetConfiguration&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetCopyright__1___0_">MSBuildSettingsExtensions.ResetCopyright&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetDescription__1___0_">MSBuildSettingsExtensions.ResetDescription&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetDetailedSummary__1___0_">MSBuildSettingsExtensions.ResetDetailedSummary&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetFileVersion__1___0_">MSBuildSettingsExtensions.ResetFileVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetIncludeSymbols__1___0_">MSBuildSettingsExtensions.ResetIncludeSymbols&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetInformationalVersion__1___0_">MSBuildSettingsExtensions.ResetInformationalVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetMSBuildPlatform__1___0_">MSBuildSettingsExtensions.ResetMSBuildPlatform&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetMSBuildVersion__1___0_">MSBuildSettingsExtensions.ResetMSBuildVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetMaxCpuCount__1___0_">MSBuildSettingsExtensions.ResetMaxCpuCount&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetNoConsoleLogger__1___0_">MSBuildSettingsExtensions.ResetNoConsoleLogger&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetNoLogo__1___0_">MSBuildSettingsExtensions.ResetNoLogo&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetNoWarn__1___0_">MSBuildSettingsExtensions.ResetNoWarn&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetNodeReuse__1___0_">MSBuildSettingsExtensions.ResetNodeReuse&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetOutDir__1___0_">MSBuildSettingsExtensions.ResetOutDir&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageIconUrl__1___0_">MSBuildSettingsExtensions.ResetPackageIconUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageId__1___0_">MSBuildSettingsExtensions.ResetPackageId&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageLicenseUrl__1___0_">MSBuildSettingsExtensions.ResetPackageLicenseUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageOutputPath__1___0_">MSBuildSettingsExtensions.ResetPackageOutputPath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageProjectUrl__1___0_">MSBuildSettingsExtensions.ResetPackageProjectUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageReleaseNotes__1___0_">MSBuildSettingsExtensions.ResetPackageReleaseNotes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageRequireLicenseAcceptance__1___0_">MSBuildSettingsExtensions.ResetPackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageTags__1___0_">MSBuildSettingsExtensions.ResetPackageTags&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageVersionPrefix__1___0_">MSBuildSettingsExtensions.ResetPackageVersionPrefix&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageVersionSuffix__1___0_">MSBuildSettingsExtensions.ResetPackageVersionSuffix&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetPackageVersion__1___0_">MSBuildSettingsExtensions.ResetPackageVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRepositoryType__1___0_">MSBuildSettingsExtensions.ResetRepositoryType&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRepositoryUrl__1___0_">MSBuildSettingsExtensions.ResetRepositoryUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRestoreConfigFile__1___0_">MSBuildSettingsExtensions.ResetRestoreConfigFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRestoreDisableParallel__1___0_">MSBuildSettingsExtensions.ResetRestoreDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRestoreGraphProjectInput__1___0_">MSBuildSettingsExtensions.ResetRestoreGraphProjectInput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRestoreIgnoreFailedSources__1___0_">MSBuildSettingsExtensions.ResetRestoreIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRestoreNoCache__1___0_">MSBuildSettingsExtensions.ResetRestoreNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRestoreOutputPath__1___0_">MSBuildSettingsExtensions.ResetRestoreOutputPath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRestorePackagesPath__1___0_">MSBuildSettingsExtensions.ResetRestorePackagesPath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRestoreSources__1___0_">MSBuildSettingsExtensions.ResetRestoreSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRestoreTaskAssemblyFile__1___0_">MSBuildSettingsExtensions.ResetRestoreTaskAssemblyFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRestore__1___0_">MSBuildSettingsExtensions.ResetRestore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetRunCodeAnalysis__1___0_">MSBuildSettingsExtensions.ResetRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetSymbolPackageFormat__1___0_">MSBuildSettingsExtensions.ResetSymbolPackageFormat&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetTargetPath__1___0_">MSBuildSettingsExtensions.ResetTargetPath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetTargetPlatform__1___0_">MSBuildSettingsExtensions.ResetTargetPlatform&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetTitle__1___0_">MSBuildSettingsExtensions.ResetTitle&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetToolsVersion__1___0_">MSBuildSettingsExtensions.ResetToolsVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetTreatWarningsAsErrors__1___0_">MSBuildSettingsExtensions.ResetTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetVerbosity__1___0_">MSBuildSettingsExtensions.ResetVerbosity&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetWarningLevel__1___0_">MSBuildSettingsExtensions.ResetWarningLevel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ResetWarningsAsErrors__1___0_">MSBuildSettingsExtensions.ResetWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetAssemblyVersion__1___0_System_String_">MSBuildSettingsExtensions.SetAssemblyVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.SetAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetAuthors__1___0_System_String___">MSBuildSettingsExtensions.SetAuthors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetConfiguration__1___0_System_String_">MSBuildSettingsExtensions.SetConfiguration&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetCopyright__1___0_System_String_">MSBuildSettingsExtensions.SetCopyright&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetDescription__1___0_System_String_">MSBuildSettingsExtensions.SetDescription&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetDetailedSummary__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetDetailedSummary&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetFileVersion__1___0_System_String_">MSBuildSettingsExtensions.SetFileVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetIncludeSymbols__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetIncludeSymbols&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetInformationalVersion__1___0_System_String_">MSBuildSettingsExtensions.SetInformationalVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetLoggers__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.SetLoggers&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetLoggers__1___0_System_String___">MSBuildSettingsExtensions.SetLoggers&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetMSBuildPlatform__1___0_System_Nullable_Nuke_Common_Tools_MSBuild_MSBuildPlatform__">MSBuildSettingsExtensions.SetMSBuildPlatform&lt;T&gt;(T, MSBuildPlatform?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetMSBuildVersion__1___0_System_Nullable_Nuke_Common_Tools_MSBuild_MSBuildVersion__">MSBuildSettingsExtensions.SetMSBuildVersion&lt;T&gt;(T, MSBuildVersion?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetMaxCpuCount__1___0_System_Nullable_System_Int32__">MSBuildSettingsExtensions.SetMaxCpuCount&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetNoConsoleLogger__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetNoConsoleLogger&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetNoLogo__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetNoLogo&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetNoWarns__1___0_System_Collections_Generic_IEnumerable_System_Int32__">MSBuildSettingsExtensions.SetNoWarns&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetNoWarns__1___0_System_Int32___">MSBuildSettingsExtensions.SetNoWarns&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetNodeReuse__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetNodeReuse&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetOutDir__1___0_System_String_">MSBuildSettingsExtensions.SetOutDir&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageIconUrl__1___0_System_String_">MSBuildSettingsExtensions.SetPackageIconUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageId__1___0_System_String_">MSBuildSettingsExtensions.SetPackageId&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageLicenseUrl__1___0_System_String_">MSBuildSettingsExtensions.SetPackageLicenseUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageOutputPath__1___0_System_String_">MSBuildSettingsExtensions.SetPackageOutputPath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageProjectUrl__1___0_System_String_">MSBuildSettingsExtensions.SetPackageProjectUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageReleaseNotes__1___0_System_String_">MSBuildSettingsExtensions.SetPackageReleaseNotes&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageRequireLicenseAcceptance__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetPackageRequireLicenseAcceptance&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageTags__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.SetPackageTags&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageTags__1___0_System_String___">MSBuildSettingsExtensions.SetPackageTags&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageVersionPrefix__1___0_System_String_">MSBuildSettingsExtensions.SetPackageVersionPrefix&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageVersionSuffix__1___0_System_String_">MSBuildSettingsExtensions.SetPackageVersionSuffix&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetPackageVersion__1___0_System_String_">MSBuildSettingsExtensions.SetPackageVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetProjectFile_Nuke_Common_Tools_MSBuild_MSBuildSettings_System_String_">MSBuildSettingsExtensions.SetProjectFile(MSBuildSettings, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetProperties__1___0_System_Collections_Generic_IDictionary_System_String_System_Object__">MSBuildSettingsExtensions.SetProperties&lt;T&gt;(T, IDictionary&lt;string, object&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetProperty__1___0_System_String_System_Object_">MSBuildSettingsExtensions.SetProperty&lt;T&gt;(T, string, object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRepositoryType__1___0_System_String_">MSBuildSettingsExtensions.SetRepositoryType&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRepositoryUrl__1___0_System_String_">MSBuildSettingsExtensions.SetRepositoryUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestoreConfigFile__1___0_System_String_">MSBuildSettingsExtensions.SetRestoreConfigFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestoreDisableParallel__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetRestoreDisableParallel&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestoreGraphProjectInputs__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.SetRestoreGraphProjectInputs&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestoreGraphProjectInputs__1___0_System_String___">MSBuildSettingsExtensions.SetRestoreGraphProjectInputs&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestoreIgnoreFailedSources__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetRestoreIgnoreFailedSources&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestoreNoCache__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetRestoreNoCache&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestoreOutputPath__1___0_System_String_">MSBuildSettingsExtensions.SetRestoreOutputPath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestorePackagesPath__1___0_System_String_">MSBuildSettingsExtensions.SetRestorePackagesPath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestoreSources__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.SetRestoreSources&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestoreSources__1___0_System_String___">MSBuildSettingsExtensions.SetRestoreSources&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestoreTaskAssemblyFile__1___0_System_String_">MSBuildSettingsExtensions.SetRestoreTaskAssemblyFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRestore__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetRestore&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetRunCodeAnalysis__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetRunCodeAnalysis&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetSolutionFile_Nuke_Common_Tools_MSBuild_MSBuildSettings_System_String_">MSBuildSettingsExtensions.SetSolutionFile(MSBuildSettings, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetSymbolPackageFormat__1___0_Nuke_Common_Tools_MSBuild_MSBuildSymbolPackageFormat_">MSBuildSettingsExtensions.SetSymbolPackageFormat&lt;T&gt;(T, MSBuildSymbolPackageFormat)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetTargetPath__1___0_System_String_">MSBuildSettingsExtensions.SetTargetPath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetTargetPlatform__1___0_Nuke_Common_Tools_MSBuild_MSBuildTargetPlatform_">MSBuildSettingsExtensions.SetTargetPlatform&lt;T&gt;(T, MSBuildTargetPlatform)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetTargets__1___0_System_Collections_Generic_IEnumerable_System_String__">MSBuildSettingsExtensions.SetTargets&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetTargets__1___0_System_String___">MSBuildSettingsExtensions.SetTargets&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetTitle__1___0_System_String_">MSBuildSettingsExtensions.SetTitle&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetToolsVersion__1___0_Nuke_Common_Tools_MSBuild_MSBuildToolsVersion_">MSBuildSettingsExtensions.SetToolsVersion&lt;T&gt;(T, MSBuildToolsVersion)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetTreatWarningsAsErrors__1___0_System_Nullable_System_Boolean__">MSBuildSettingsExtensions.SetTreatWarningsAsErrors&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetVerbosity__1___0_Nuke_Common_Tools_MSBuild_MSBuildVerbosity_">MSBuildSettingsExtensions.SetVerbosity&lt;T&gt;(T, MSBuildVerbosity)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetWarningLevel__1___0_System_Nullable_System_Int32__">MSBuildSettingsExtensions.SetWarningLevel&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetWarningsAsErrors__1___0_System_Collections_Generic_IEnumerable_System_Int32__">MSBuildSettingsExtensions.SetWarningsAsErrors&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_SetWarningsAsErrors__1___0_System_Int32___">MSBuildSettingsExtensions.SetWarningsAsErrors&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleDetailedSummary__1___0_">MSBuildSettingsExtensions.ToggleDetailedSummary&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleIncludeSymbols__1___0_">MSBuildSettingsExtensions.ToggleIncludeSymbols&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleNoConsoleLogger__1___0_">MSBuildSettingsExtensions.ToggleNoConsoleLogger&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleNoLogo__1___0_">MSBuildSettingsExtensions.ToggleNoLogo&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleNodeReuse__1___0_">MSBuildSettingsExtensions.ToggleNodeReuse&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_TogglePackageRequireLicenseAcceptance__1___0_">MSBuildSettingsExtensions.TogglePackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleRestoreDisableParallel__1___0_">MSBuildSettingsExtensions.ToggleRestoreDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleRestoreIgnoreFailedSources__1___0_">MSBuildSettingsExtensions.ToggleRestoreIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleRestoreNoCache__1___0_">MSBuildSettingsExtensions.ToggleRestoreNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleRestore__1___0_">MSBuildSettingsExtensions.ToggleRestore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleRunCodeAnalysis__1___0_">MSBuildSettingsExtensions.ToggleRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettingsExtensions.html#Nuke_Common_Tools_MSBuild_MSBuildSettingsExtensions_ToggleTreatWarningsAsErrors__1___0_">MSBuildSettingsExtensions.ToggleTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;targetPath&gt;</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_TargetPath">TargetPath</a></li><li><code>/detailedsummary</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_DetailedSummary">DetailedSummary</a></li><li><code>/logger</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_Loggers">Loggers</a></li><li><code>/maxcpucount</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_MaxCpuCount">MaxCpuCount</a></li><li><code>/noconsolelogger</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_NoConsoleLogger">NoConsoleLogger</a></li><li><code>/nodeReuse</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_NodeReuse">NodeReuse</a></li><li><code>/nologo</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_NoLogo">NoLogo</a></li><li><code>/p</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_Properties">Properties</a></li><li><code>/p:Platform</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_TargetPlatform">TargetPlatform</a></li><li><code>/restore</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_Restore">Restore</a></li><li><code>/target</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_Targets">Targets</a></li><li><code>/toolsversion</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_ToolsVersion">ToolsVersion</a></li><li><code>/verbosity</code> via <a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildSettings.html#Nuke_Common_Tools_MSBuild_MSBuildSettings_Verbosity">Verbosity</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_DetailedSummary_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.DetailedSummary*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_DetailedSummary" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.DetailedSummary">
+  DetailedSummary
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show detailed information at the end of the build log about the configurations that were built and how they were scheduled to nodes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DetailedSummary { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_Loggers_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.Loggers*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_Loggers" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.Loggers">
+  Loggers
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the loggers to use to log events from MSBuild.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Loggers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_MSBuildPlatform_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.MSBuildPlatform*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_MSBuildPlatform" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.MSBuildPlatform">
+  MSBuildPlatform
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the platform to use when building.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MSBuildPlatform? MSBuildPlatform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildPlatform.html">MSBuildPlatform</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_MSBuildVersion_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.MSBuildVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_MSBuildVersion" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.MSBuildVersion">
+  MSBuildVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the version of MSBuild for building.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MSBuildVersion? MSBuildVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildVersion.html">MSBuildVersion</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_MaxCpuCount_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.MaxCpuCount*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_MaxCpuCount" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.MaxCpuCount">
+  MaxCpuCount
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the maximum number of concurrent processes to use when building. If you don't include this switch, the default value is 1. If you include this switch without specifying a value, MSBuild will use up to the number of processors in the computer. For more information, see <a href="https://msdn.microsoft.com/en-us/library/bb651793.aspx">Building Multiple Projects in Parallel</a>.</p><p>The following example instructs MSBuild to build using three MSBuild processes, which allows three projects to build at the same time:</p><p><code>msbuild myproject.proj /maxcpucount:3</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? MaxCpuCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_NoConsoleLogger_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.NoConsoleLogger*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_NoConsoleLogger" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.NoConsoleLogger">
+  NoConsoleLogger
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disable the default console logger, and don't log events to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoConsoleLogger { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_NoLogo_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.NoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_NoLogo" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.NoLogo">
+  NoLogo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't display the startup banner or the copyright message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoLogo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_NodeReuse_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.NodeReuse*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_NodeReuse" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.NodeReuse">
+  NodeReuse
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable or disable the re-use of MSBuild nodes. You can specify the following values: 
+<ul><li><code>true</code>: Nodes remain after the build finishes so that subsequent builds can use them (default).</li><li><code>false</code>. Nodes don't remain after the build completes.</li></ul><p>A node corresponds to a project that's executing. If you include the <code>/maxcpucount</code> switch, multiple nodes can execute concurrently.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NodeReuse { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_Properties_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.Properties*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_Properties" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.Properties">
+  Properties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set or override the specified project-level properties, where name is the property name and value is the property value. Specify each property separately, or use a semicolon or comma to separate multiple properties, as the following example shows:</p><p><code>/property:WarningLevel=2;OutDir=bin\Debug</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;string, object&gt; Properties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_Restore_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.Restore*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_Restore" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.Restore">
+  Restore
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Runs the <code>Restore</code> target prior to building the actual targets.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Restore { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_TargetPath_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.TargetPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_TargetPath" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.TargetPath">
+  TargetPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The solution or project file on which MSBuild is executed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TargetPath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_TargetPlatform_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.TargetPlatform*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_TargetPlatform" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.TargetPlatform">
+  TargetPlatform
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The target platform for which the project is built to run on.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MSBuildTargetPlatform TargetPlatform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildTargetPlatform.html">MSBuildTargetPlatform</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_Targets_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.Targets*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_Targets" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.Targets">
+  Targets
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build the specified targets in the project. Specify each target separately, or use a semicolon or comma to separate multiple targets, as the following example shows:<br><code>/target:Resources;Compile</code></p><p>If you specify any targets by using this switch, they are run instead of any targets in the DefaultTargets attribute in the project file. For more information, see <a href="https://msdn.microsoft.com/en-us/library/ee216359.aspx">Target Build Order</a> and <a href="https://msdn.microsoft.com/en-us/library/ms171463.aspx">How to: Specify Which Target to Build First</a>.</p><p>A target is a group of tasks. For more information, see <a href="https://msdn.microsoft.com/en-us/library/ms171462.aspx">Targets</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Targets { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_ToolsVersion_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.ToolsVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_ToolsVersion" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.ToolsVersion">
+  ToolsVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the version of the Toolset to use to build the project, as the following example shows: <code>/toolsversion:3.5</code></p><p>By using this switch, you can build a project and specify a version that differs from the version that's specified in the <a href="https://msdn.microsoft.com/en-us/library/bcxfsh87.aspx">Project Element (MSBuild)</a>. For more information, see <a href="https://msdn.microsoft.com/en-us/library/bb383985.aspx">Overriding ToolsVersion Settings</a>.</p><p>For MSBuild 4.5, you can specify the following values for version: 2.0, 3.5, and 4.0. If you specify 4.0, the VisualStudioVersion build property specifies which sub-toolset to use. For more information, see the Sub-toolsets section of <a href="https://msdn.microsoft.com/en-us/library/bb383796.aspx">Toolset (ToolsVersion)</a>.</p><p>A Toolset consists of tasks, targets, and tools that are used to build an application. The tools include compilers such as csc.exe and vbc.exe. For more information about Toolsets, see <a href="https://msdn.microsoft.com/en-us/library/bb383796.aspx">Toolset (ToolsVersion)</a>, <a href="https://msdn.microsoft.com/en-us/library/bb397428.aspx">Standard and Custom Toolset Configurations</a>, and <a href="https://msdn.microsoft.com/en-us/library/hh264223.aspx">Multitargeting</a>. Note: The toolset version isn't the same as the target framework, which is the version of the .NET Framework on which a project is built to run. For more information, see <a href="https://msdn.microsoft.com/en-us/library/hh264221.aspx">Target Framework and Target Platform</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MSBuildToolsVersion ToolsVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildToolsVersion.html">MSBuildToolsVersion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_MSBuild_MSBuildSettings_Verbosity_" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.Verbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_MSBuild_MSBuildSettings_Verbosity" data-uid="Nuke.Common.Tools.MSBuild.MSBuildSettings.Verbosity">
+  Verbosity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuild.Generated.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the amount of information to display in the build log. Each logger displays events based on the verbosity level that you set for that logger.</p><p>You can specify the following verbosity levels: <code>q[uiet]</code>, <code>m[inimal]</code>, <code>n[ormal]</code>, <code>d[etailed]</code>, and <code>diag[nostic]</code>.</p><p>The following setting is an example: <code>/verbosity:quiet</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MSBuildVerbosity Verbosity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.MSBuild.MSBuildVerbosity.html">MSBuildVerbosity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/MSBuild/MSBuildTasks.cs/#L49" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

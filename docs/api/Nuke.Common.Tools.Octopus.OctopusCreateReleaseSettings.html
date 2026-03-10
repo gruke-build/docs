@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class OctopusCreateReleaseSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OctopusCreateReleaseSettings | gruke ">
+      
+      <meta name="description" content="The Octo.exe create-release can be used to automate the creation of releases. This allows you to easily integrate Octopus with other continuous integration servers.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings" class="text-break">
+Class OctopusCreateReleaseSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Octopus.html">Octopus</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The <code>Octo.exe create-release</code> can be used to automate the creation of releases. This allows you to easily integrate Octopus with other continuous integration servers.</p><p>For more details, visit the <a href="https://octopus.com/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class OctopusCreateReleaseSettings : ToolOptions, IOptions, IToolOptionsWithFramework</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">OctopusCreateReleaseSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.IToolOptionsWithFramework.html">IToolOptionsWithFramework</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_AddPackageVersion__1___0_System_String_System_String_">OctopusCreateReleaseSettingsExtensions.AddPackageVersion&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_AddSkip__1___0_System_Collections_Generic_IEnumerable_System_String__">OctopusCreateReleaseSettingsExtensions.AddSkip&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_AddSkip__1___0_System_String___">OctopusCreateReleaseSettingsExtensions.AddSkip&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_AddSpecificMachines__1___0_System_Collections_Generic_IEnumerable_System_String__">OctopusCreateReleaseSettingsExtensions.AddSpecificMachines&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_AddSpecificMachines__1___0_System_String___">OctopusCreateReleaseSettingsExtensions.AddSpecificMachines&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_AddVariable__1___0_System_String_System_String_">OctopusCreateReleaseSettingsExtensions.AddVariable&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ClearPackageVersions__1___0_">OctopusCreateReleaseSettingsExtensions.ClearPackageVersions&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ClearSkip__1___0_">OctopusCreateReleaseSettingsExtensions.ClearSkip&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ClearSpecificMachines__1___0_">OctopusCreateReleaseSettingsExtensions.ClearSpecificMachines&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ClearVariables__1___0_">OctopusCreateReleaseSettingsExtensions.ClearVariables&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableCancelOnTimeout__1___0_">OctopusCreateReleaseSettingsExtensions.DisableCancelOnTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableDebug__1___0_">OctopusCreateReleaseSettingsExtensions.DisableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableEnableServiceMessages__1___0_">OctopusCreateReleaseSettingsExtensions.DisableEnableServiceMessages&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableForcePackageDownload__1___0_">OctopusCreateReleaseSettingsExtensions.DisableForcePackageDownload&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableForce__1___0_">OctopusCreateReleaseSettingsExtensions.DisableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableGuidedFailure__1___0_">OctopusCreateReleaseSettingsExtensions.DisableGuidedFailure&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableIgnoreChannelRules__1___0_">OctopusCreateReleaseSettingsExtensions.DisableIgnoreChannelRules&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableIgnoreExisting__1___0_">OctopusCreateReleaseSettingsExtensions.DisableIgnoreExisting&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableIgnoreSslErrors__1___0_">OctopusCreateReleaseSettingsExtensions.DisableIgnoreSslErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableNoRawLog__1___0_">OctopusCreateReleaseSettingsExtensions.DisableNoRawLog&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableProgress__1___0_">OctopusCreateReleaseSettingsExtensions.DisableProgress&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableWaitForDeployment__1___0_">OctopusCreateReleaseSettingsExtensions.DisableWaitForDeployment&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_DisableWhatIf__1___0_">OctopusCreateReleaseSettingsExtensions.DisableWhatIf&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableCancelOnTimeout__1___0_">OctopusCreateReleaseSettingsExtensions.EnableCancelOnTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableDebug__1___0_">OctopusCreateReleaseSettingsExtensions.EnableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableEnableServiceMessages__1___0_">OctopusCreateReleaseSettingsExtensions.EnableEnableServiceMessages&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableForcePackageDownload__1___0_">OctopusCreateReleaseSettingsExtensions.EnableForcePackageDownload&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableForce__1___0_">OctopusCreateReleaseSettingsExtensions.EnableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableGuidedFailure__1___0_">OctopusCreateReleaseSettingsExtensions.EnableGuidedFailure&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableIgnoreChannelRules__1___0_">OctopusCreateReleaseSettingsExtensions.EnableIgnoreChannelRules&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableIgnoreExisting__1___0_">OctopusCreateReleaseSettingsExtensions.EnableIgnoreExisting&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableIgnoreSslErrors__1___0_">OctopusCreateReleaseSettingsExtensions.EnableIgnoreSslErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableNoRawLog__1___0_">OctopusCreateReleaseSettingsExtensions.EnableNoRawLog&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableProgress__1___0_">OctopusCreateReleaseSettingsExtensions.EnableProgress&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableWaitForDeployment__1___0_">OctopusCreateReleaseSettingsExtensions.EnableWaitForDeployment&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_EnableWhatIf__1___0_">OctopusCreateReleaseSettingsExtensions.EnableWhatIf&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_RemovePackageVersion__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.RemovePackageVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_RemoveSkip__1___0_System_Collections_Generic_IEnumerable_System_String__">OctopusCreateReleaseSettingsExtensions.RemoveSkip&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_RemoveSkip__1___0_System_String___">OctopusCreateReleaseSettingsExtensions.RemoveSkip&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_RemoveSpecificMachines__1___0_System_Collections_Generic_IEnumerable_System_String__">OctopusCreateReleaseSettingsExtensions.RemoveSpecificMachines&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_RemoveSpecificMachines__1___0_System_String___">OctopusCreateReleaseSettingsExtensions.RemoveSpecificMachines&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_RemoveVariable__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.RemoveVariable&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetApiKey__1___0_">OctopusCreateReleaseSettingsExtensions.ResetApiKey&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetCancelOnTimeout__1___0_">OctopusCreateReleaseSettingsExtensions.ResetCancelOnTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetChannel__1___0_">OctopusCreateReleaseSettingsExtensions.ResetChannel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetConfigFile__1___0_">OctopusCreateReleaseSettingsExtensions.ResetConfigFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetDebug__1___0_">OctopusCreateReleaseSettingsExtensions.ResetDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetDefaultPackageVersion__1___0_">OctopusCreateReleaseSettingsExtensions.ResetDefaultPackageVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetDeployAt__1___0_">OctopusCreateReleaseSettingsExtensions.ResetDeployAt&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetDeployTo__1___0_">OctopusCreateReleaseSettingsExtensions.ResetDeployTo&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetDeploymentCheckSleepCycle__1___0_">OctopusCreateReleaseSettingsExtensions.ResetDeploymentCheckSleepCycle&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetDeploymentTimeout__1___0_">OctopusCreateReleaseSettingsExtensions.ResetDeploymentTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetEnableServiceMessages__1___0_">OctopusCreateReleaseSettingsExtensions.ResetEnableServiceMessages&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetForcePackageDownload__1___0_">OctopusCreateReleaseSettingsExtensions.ResetForcePackageDownload&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetForce__1___0_">OctopusCreateReleaseSettingsExtensions.ResetForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetGitCommit__1___0_">OctopusCreateReleaseSettingsExtensions.ResetGitCommit&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetGitRef__1___0_">OctopusCreateReleaseSettingsExtensions.ResetGitRef&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetGuidedFailure__1___0_">OctopusCreateReleaseSettingsExtensions.ResetGuidedFailure&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetIgnoreChannelRules__1___0_">OctopusCreateReleaseSettingsExtensions.ResetIgnoreChannelRules&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetIgnoreExisting__1___0_">OctopusCreateReleaseSettingsExtensions.ResetIgnoreExisting&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetIgnoreSslErrors__1___0_">OctopusCreateReleaseSettingsExtensions.ResetIgnoreSslErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetLogLevel__1___0_">OctopusCreateReleaseSettingsExtensions.ResetLogLevel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetNoRawLog__1___0_">OctopusCreateReleaseSettingsExtensions.ResetNoRawLog&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetPackagePrerelease__1___0_">OctopusCreateReleaseSettingsExtensions.ResetPackagePrerelease&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetPackagesFolder__1___0_">OctopusCreateReleaseSettingsExtensions.ResetPackagesFolder&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetPassword__1___0_">OctopusCreateReleaseSettingsExtensions.ResetPassword&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetProgress__1___0_">OctopusCreateReleaseSettingsExtensions.ResetProgress&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetProject__1___0_">OctopusCreateReleaseSettingsExtensions.ResetProject&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetProxyPassword__1___0_">OctopusCreateReleaseSettingsExtensions.ResetProxyPassword&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetProxyUsername__1___0_">OctopusCreateReleaseSettingsExtensions.ResetProxyUsername&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetProxy__1___0_">OctopusCreateReleaseSettingsExtensions.ResetProxy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetRawLogFile__1___0_">OctopusCreateReleaseSettingsExtensions.ResetRawLogFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetReleaseNotesFile__1___0_">OctopusCreateReleaseSettingsExtensions.ResetReleaseNotesFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetReleaseNotes__1___0_">OctopusCreateReleaseSettingsExtensions.ResetReleaseNotes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetServer__1___0_">OctopusCreateReleaseSettingsExtensions.ResetServer&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetSpace__1___0_">OctopusCreateReleaseSettingsExtensions.ResetSpace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetTenantTag__1___0_">OctopusCreateReleaseSettingsExtensions.ResetTenantTag&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetTenant__1___0_">OctopusCreateReleaseSettingsExtensions.ResetTenant&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetTimeout__1___0_">OctopusCreateReleaseSettingsExtensions.ResetTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetUsername__1___0_">OctopusCreateReleaseSettingsExtensions.ResetUsername&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetVersion__1___0_">OctopusCreateReleaseSettingsExtensions.ResetVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetWaitForDeployment__1___0_">OctopusCreateReleaseSettingsExtensions.ResetWaitForDeployment&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ResetWhatIf__1___0_">OctopusCreateReleaseSettingsExtensions.ResetWhatIf&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetApiKey__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetApiKey&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetCancelOnTimeout__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetCancelOnTimeout&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetChannel__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetChannel&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetConfigFile__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetConfigFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetDebug__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetDebug&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetDefaultPackageVersion__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetDefaultPackageVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetDeployAt__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetDeployAt&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetDeployTo__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetDeployTo&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetDeploymentCheckSleepCycle__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetDeploymentCheckSleepCycle&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetDeploymentTimeout__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetDeploymentTimeout&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetEnableServiceMessages__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetEnableServiceMessages&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetForcePackageDownload__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetForcePackageDownload&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetForce&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetGitCommit__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetGitCommit&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetGitRef__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetGitRef&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetGuidedFailure__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetGuidedFailure&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetIgnoreChannelRules__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetIgnoreChannelRules&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetIgnoreExisting__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetIgnoreExisting&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetIgnoreSslErrors__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetIgnoreSslErrors&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetLogLevel__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetLogLevel&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetNoRawLog__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetNoRawLog&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetPackagePrerelease__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetPackagePrerelease&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetPackageVersion__1___0_System_String_System_String_">OctopusCreateReleaseSettingsExtensions.SetPackageVersion&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetPackageVersions__1___0_System_Collections_Generic_IDictionary_System_String_System_String__">OctopusCreateReleaseSettingsExtensions.SetPackageVersions&lt;T&gt;(T, IDictionary&lt;string, string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetPackagesFolder__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetPackagesFolder&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetPassword__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetPassword&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetProgress__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetProgress&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetProject__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetProject&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetProxyPassword__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetProxyPassword&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetProxyUsername__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetProxyUsername&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetProxy__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetProxy&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetRawLogFile__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetRawLogFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetReleaseNotesFile__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetReleaseNotesFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetReleaseNotes__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetReleaseNotes&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetServer__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetServer&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetSkip__1___0_System_Collections_Generic_IEnumerable_System_String__">OctopusCreateReleaseSettingsExtensions.SetSkip&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetSkip__1___0_System_String___">OctopusCreateReleaseSettingsExtensions.SetSkip&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetSpace__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetSpace&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetSpecificMachines__1___0_System_Collections_Generic_IEnumerable_System_String__">OctopusCreateReleaseSettingsExtensions.SetSpecificMachines&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetSpecificMachines__1___0_System_String___">OctopusCreateReleaseSettingsExtensions.SetSpecificMachines&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetTenantTag__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetTenantTag&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetTenant__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetTenant&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetTimeout__1___0_System_Nullable_System_Int32__">OctopusCreateReleaseSettingsExtensions.SetTimeout&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetUsername__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetUsername&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetVariable__1___0_System_String_System_String_">OctopusCreateReleaseSettingsExtensions.SetVariable&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetVariables__1___0_System_Collections_Generic_IDictionary_System_String_System_String__">OctopusCreateReleaseSettingsExtensions.SetVariables&lt;T&gt;(T, IDictionary&lt;string, string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetVersion__1___0_System_String_">OctopusCreateReleaseSettingsExtensions.SetVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetWaitForDeployment__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetWaitForDeployment&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_SetWhatIf__1___0_System_Nullable_System_Boolean__">OctopusCreateReleaseSettingsExtensions.SetWhatIf&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleCancelOnTimeout__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleCancelOnTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleDebug__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleEnableServiceMessages__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleEnableServiceMessages&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleForcePackageDownload__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleForcePackageDownload&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleForce__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleGuidedFailure__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleGuidedFailure&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleIgnoreChannelRules__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleIgnoreChannelRules&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleIgnoreExisting__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleIgnoreExisting&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleIgnoreSslErrors__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleIgnoreSslErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleNoRawLog__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleNoRawLog&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleProgress__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleProgress&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleWaitForDeployment__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleWaitForDeployment&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettingsExtensions_ToggleWhatIf__1___0_">OctopusCreateReleaseSettingsExtensions.ToggleWhatIf&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--apiKey</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ApiKey">ApiKey</a></li><li><code>--cancelontimeout</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_CancelOnTimeout">CancelOnTimeout</a></li><li><code>--channel</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Channel">Channel</a></li><li><code>--configFile</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ConfigFile">ConfigFile</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Debug">Debug</a></li><li><code>--deployat</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeployAt">DeployAt</a></li><li><code>--deploymentchecksleepcycle</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeploymentCheckSleepCycle">DeploymentCheckSleepCycle</a></li><li><code>--deploymenttimeout</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeploymentTimeout">DeploymentTimeout</a></li><li><code>--deployto</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeployTo">DeployTo</a></li><li><code>--enableServiceMessages</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_EnableServiceMessages">EnableServiceMessages</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Force">Force</a></li><li><code>--forcepackagedownload</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ForcePackageDownload">ForcePackageDownload</a></li><li><code>--gitCommit</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_GitCommit">GitCommit</a></li><li><code>--gitRef</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_GitRef">GitRef</a></li><li><code>--guidedfailure</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_GuidedFailure">GuidedFailure</a></li><li><code>--ignorechannelrules</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_IgnoreChannelRules">IgnoreChannelRules</a></li><li><code>--ignoreexisting</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_IgnoreExisting">IgnoreExisting</a></li><li><code>--ignoreSslErrors</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_IgnoreSslErrors">IgnoreSslErrors</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_LogLevel">LogLevel</a></li><li><code>--norawlog</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_NoRawLog">NoRawLog</a></li><li><code>--package</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_PackageVersions">PackageVersions</a></li><li><code>--packageprerelease</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_PackagePrerelease">PackagePrerelease</a></li><li><code>--packagesFolder</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_PackagesFolder">PackagesFolder</a></li><li><code>--packageversion</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DefaultPackageVersion">DefaultPackageVersion</a></li><li><code>--pass</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Password">Password</a></li><li><code>--progress</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Progress">Progress</a></li><li><code>--project</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Project">Project</a></li><li><code>--proxy</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Proxy">Proxy</a></li><li><code>--proxyPass</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ProxyPassword">ProxyPassword</a></li><li><code>--proxyUser</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ProxyUsername">ProxyUsername</a></li><li><code>--rawlogfile</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_RawLogFile">RawLogFile</a></li><li><code>--releasenotes</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ReleaseNotes">ReleaseNotes</a></li><li><code>--releasenotesfile</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ReleaseNotesFile">ReleaseNotesFile</a></li><li><code>--server</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Server">Server</a></li><li><code>--skip</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Skip">Skip</a></li><li><code>--space</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Space">Space</a></li><li><code>--specificmachines</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_SpecificMachines">SpecificMachines</a></li><li><code>--tenant</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Tenant">Tenant</a></li><li><code>--tenanttag</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_TenantTag">TenantTag</a></li><li><code>--timeout</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Timeout">Timeout</a></li><li><code>--user</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Username">Username</a></li><li><code>--variable</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Variables">Variables</a></li><li><code>--version</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Version">Version</a></li><li><code>--waitfordeployment</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_WaitForDeployment">WaitForDeployment</a></li><li><code>--whatif</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.html#Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_WhatIf">WhatIf</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ApiKey_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ApiKey*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ApiKey" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ApiKey">
+  ApiKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Your API key. Get this from the user profile page. Your must provide an apiKey or username and password. If the guest account is enabled, a key of API-GUEST can be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ApiKey { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_CancelOnTimeout_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.CancelOnTimeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_CancelOnTimeout" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.CancelOnTimeout">
+  CancelOnTimeout
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L193"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether to cancel the deployment if the deployment timeout is reached (flag, default false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? CancelOnTimeout { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Channel_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Channel*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Channel" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Channel">
+  Channel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Channel to use for the new release. Omit this argument to automatically select the best channel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Channel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ConfigFile_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ConfigFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ConfigFile" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ConfigFile">
+  ConfigFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L227"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Text file of default values, with one 'key = value' per line.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConfigFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Debug_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Debug*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Debug" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Debug">
+  Debug
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable debug logging.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Debug { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DefaultPackageVersion_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.DefaultPackageVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DefaultPackageVersion" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.DefaultPackageVersion">
+  DefaultPackageVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L159"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Default version number of all packages to use for this release.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DefaultPackageVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeployAt_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.DeployAt*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeployAt" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.DeployAt">
+  DeployAt
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L211"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Time at which deployment should start (scheduled deployment), specified as any valid DateTimeOffset format, and assuming the time zone is the current local time zone.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DeployAt { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeployTo_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.DeployTo*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeployTo" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.DeployTo">
+  DeployTo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L213"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Environment to automatically deploy to, e.g., <code>Production</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DeployTo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeploymentCheckSleepCycle_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.DeploymentCheckSleepCycle*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeploymentCheckSleepCycle" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.DeploymentCheckSleepCycle">
+  DeploymentCheckSleepCycle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies how much time (timespan format) should elapse between deployment status checks (default 00:00:10).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DeploymentCheckSleepCycle { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeploymentTimeout_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.DeploymentTimeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_DeploymentTimeout" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.DeploymentTimeout">
+  DeploymentTimeout
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies maximum time (timespan format) that the console session will wait for the deployment to finish(default 00:10:00). This will not stop the deployment. Requires <code>--waitfordeployment</code> parameter set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DeploymentTimeout { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_EnableServiceMessages_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.EnableServiceMessages*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_EnableServiceMessages" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.EnableServiceMessages">
+  EnableServiceMessages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L233"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TeamCity or Team Foundation Build service messages when logging.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? EnableServiceMessages { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Force_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Force*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Force" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Force">
+  Force
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If a project is configured to skip packages with already-installed versions, override this setting to force re-deployment (flag, default false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Force { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ForcePackageDownload_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ForcePackageDownload*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ForcePackageDownload" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ForcePackageDownload">
+  ForcePackageDownload
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether to force downloading of already installed packages (flag, default false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ForcePackageDownload { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_GitCommit_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.GitCommit*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_GitCommit" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.GitCommit">
+  GitCommit
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Git commit to use when creating the release. Use in conjunction with the --gitRef parameter to select any previous commit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GitCommit { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_GitRef_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.GitRef*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_GitRef" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.GitRef">
+  GitRef
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Git reference to use when creating the release.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GitRef { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_GuidedFailure_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.GuidedFailure*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_GuidedFailure" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.GuidedFailure">
+  GuidedFailure
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether to use Guided Failure mode. (True or False. If not specified, will use default setting from environment).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GuidedFailure { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_IgnoreChannelRules_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.IgnoreChannelRules*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_IgnoreChannelRules" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.IgnoreChannelRules">
+  IgnoreChannelRules
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create the release ignoring any version rules specified by the channel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnoreChannelRules { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_IgnoreExisting_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.IgnoreExisting*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_IgnoreExisting" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.IgnoreExisting">
+  IgnoreExisting
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't create this release if there is already one with the same version number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnoreExisting { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_IgnoreSslErrors_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.IgnoreSslErrors*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_IgnoreSslErrors" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.IgnoreSslErrors">
+  IgnoreSslErrors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L231"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set this flag if your Octopus server uses HTTPS but the certificate is not trusted on this machine. Any certificate errors will be ignored. WARNING: this option may create a security vulnerability.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnoreSslErrors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_LogLevel_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.LogLevel*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_LogLevel" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.LogLevel">
+  LogLevel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L245"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The log level. Valid options are verbose, debug, information, warning, error and fatal. Defaults to 'debug'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LogLevel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_NoRawLog_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.NoRawLog*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_NoRawLog" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.NoRawLog">
+  NoRawLog
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't print the raw log of failed tasks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoRawLog { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_PackagePrerelease_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.PackagePrerelease*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_PackagePrerelease" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.PackagePrerelease">
+  PackagePrerelease
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pre-release for latest version of all packages to use for this release.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PackagePrerelease { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_PackageVersions_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.PackageVersions*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_PackageVersions" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.PackageVersions">
+  PackageVersions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Version number to use for a step or package in the release. Format: <code>--package=StepNameOrPackageId:Version</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;string, string&gt; PackageVersions { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_PackagesFolder_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.PackagesFolder*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_PackagesFolder" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.PackagesFolder">
+  PackagesFolder
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A folder containing NuGet packages from which we should get versions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PackagesFolder { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Password_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Password*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Password" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Password">
+  Password
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Password to use when authenticating with the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Password { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Progress_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Progress*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Progress" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Progress">
+  Progress
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show progress of the deployment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Progress { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Project_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Project*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Project" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Project">
+  Project
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Name of the project.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Project { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Proxy_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Proxy*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Proxy" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Proxy">
+  Proxy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The URI of the proxy to use, e.g., <a href="http://example.com:8080">http://example.com:8080</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Proxy { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ProxyPassword_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ProxyPassword*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ProxyPassword" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ProxyPassword">
+  ProxyPassword
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The password for the proxy. If both the username and password are omitted and proxyAddress is specified, the default credentials are used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProxyPassword { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ProxyUsername_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ProxyUsername*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ProxyUsername" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ProxyUsername">
+  ProxyUsername
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L239"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The username for the proxy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProxyUsername { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_RawLogFile_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.RawLogFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_RawLogFile" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.RawLogFile">
+  RawLogFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Redirect the raw log of failed tasks to a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RawLogFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ReleaseNotes_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ReleaseNotes*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ReleaseNotes" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ReleaseNotes">
+  ReleaseNotes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Release Notes for the new release. Styling with Markdown is supported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReleaseNotes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ReleaseNotesFile_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ReleaseNotesFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_ReleaseNotesFile" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.ReleaseNotesFile">
+  ReleaseNotesFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to a file that contains Release Notes for the new release. Supports Markdown files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReleaseNotesFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Server_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Server*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Server" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Server">
+  Server
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L219"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The base URL for your Octopus server - e.g., http://your-octopus/</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Server { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Skip_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Skip*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Skip" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Skip">
+  Skip
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Skip a step by name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Skip { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Space_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Space*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Space" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Space">
+  Space
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L243"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of a space within which this command will be executed. The default space will be used if it is omitted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Space { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_SpecificMachines_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.SpecificMachines*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_SpecificMachines" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.SpecificMachines">
+  SpecificMachines
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L199"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A comma-separated list of machines names to target in the deployed environment. If not specified all machines in the environment will be considered.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; SpecificMachines { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Tenant_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Tenant*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Tenant" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Tenant">
+  Tenant
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A tenant the deployment will be performed for; specify this argument multiple times to add multiple tenants or use <code>*</code> wildcard to deploy to tenants able to deploy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Tenant { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_TenantTag_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.TenantTag*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_TenantTag" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.TenantTag">
+  TenantTag
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L217"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A tenant tag used to match tenants that the deployment will be performed for; specify this argument multiple times to add multiple tenant tags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TenantTag { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Timeout_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Timeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Timeout" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Timeout">
+  Timeout
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Timeout in seconds for network operations. Default is 600.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Timeout { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Username_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Username*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Username" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Username">
+  Username
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L223"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Username to use when authenticating with the server. Your must provide an apiKey or username and password.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Username { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Variables_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Variables*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Variables" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Variables">
+  Variables
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Values for any prompted variables in the format Label:Value. For JSON values, embedded quotation marks should be escaped with a backslash.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;string, string&gt; Variables { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Version_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Version*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_Version" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.Version">
+  Version
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Release number to use for the new release.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Version { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_WaitForDeployment_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.WaitForDeployment*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_WaitForDeployment" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.WaitForDeployment">
+  WaitForDeployment
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether to wait synchronously for deployment to finish.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? WaitForDeployment { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_WhatIf_" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.WhatIf*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusCreateReleaseSettings_WhatIf" data-uid="Nuke.Common.Tools.Octopus.OctopusCreateReleaseSettings.WhatIf">
+  WhatIf
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Perform a dry run but don't actually create/deploy release.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? WhatIf { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L151" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

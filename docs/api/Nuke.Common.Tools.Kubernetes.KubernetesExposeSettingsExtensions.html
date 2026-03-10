@@ -1,0 +1,2992 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class KubernetesExposeSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class KubernetesExposeSettingsExtensions | gruke ">
+      
+      <meta name="description" content="Expose a resource as a new Kubernetes service. Looks up a deployment, service, replica set, replication controller or pod by name and uses the selector for that resource as the selector for a new service on the specified port. A deployment or replica set will be exposed as a service only if its selector is convertible to a selector that service supports, i.e. when the selector contains only the matchLabels component. Note that if no port is specified via --port and the exposed resource has multiple ports, all will be re-used by the new service. Also if no labels are specified, the new service will re-use the labels from the resource it exposes. Possible resources include (case insensitive): pod (po), service (svc), replicationcontroller (rc), deployment (deploy), replicaset (rs).For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions" class="text-break">
+Class KubernetesExposeSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3769"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Kubernetes.html">Kubernetes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Expose a resource as a new Kubernetes service. Looks up a deployment, service, replica set, replication controller or pod by name and uses the selector for that resource as the selector for a new service on the specified port. A deployment or replica set will be exposed as a service only if its selector is convertible to a selector that service supports, i.e. when the selector contains only the matchLabels component. Note that if no port is specified via --port and the exposed resource has multiple ports, all will be re-used by the new service. Also if no labels are specified, the new service will re-use the labels from the resource it exposes. Possible resources include (case insensitive): pod (po), service (svc), replicationcontroller (rc), deployment (deploy), replicaset (rs).</p><p>For more details, visit the <a href="https://kubernetes.io/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class KubernetesExposeSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">KubernetesExposeSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--allow-missing-template-keys</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_AllowMissingTemplateKeys">AllowMissingTemplateKeys</a></li><li><code>--alsologtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Alsologtostderr">Alsologtostderr</a></li><li><code>--as</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_As">As</a></li><li><code>--as-group</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_AsGroup">AsGroup</a></li><li><code>--cache-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CacheDir">CacheDir</a></li><li><code>--certificate-authority</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CertificateAuthority">CertificateAuthority</a></li><li><code>--client-certificate</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientCertificate">ClientCertificate</a></li><li><code>--client-key</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientKey">ClientKey</a></li><li><code>--cluster</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Cluster">Cluster</a></li><li><code>--cluster-ip</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_ClusterIp">ClusterIp</a></li><li><code>--container-port</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_ContainerPort">ContainerPort</a></li><li><code>--context</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Context">Context</a></li><li><code>--dry-run</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_DryRun">DryRun</a></li><li><code>--external-ip</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_ExternalIp">ExternalIp</a></li><li><code>--filename</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Filename">Filename</a></li><li><code>--generator</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Generator">Generator</a></li><li><code>--insecure-skip-tls-verify</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_InsecureSkipTlsVerify">InsecureSkipTlsVerify</a></li><li><code>--kubeconfig</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Kubeconfig">Kubeconfig</a></li><li><code>--labels</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Labels">Labels</a></li><li><code>--load-balancer-ip</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_LoadBalancerIp">LoadBalancerIp</a></li><li><code>--log-backtrace-at</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogBacktraceAt">LogBacktraceAt</a></li><li><code>--log-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogDir">LogDir</a></li><li><code>--logtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Logtostderr">Logtostderr</a></li><li><code>--match-server-version</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_MatchServerVersion">MatchServerVersion</a></li><li><code>--name</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Name">Name</a></li><li><code>--namespace</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Namespace">Namespace</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Output">Output</a></li><li><code>--overrides</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Overrides">Overrides</a></li><li><code>--port</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Port">Port</a></li><li><code>--protocol</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Protocol">Protocol</a></li><li><code>--record</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Record">Record</a></li><li><code>--recursive</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Recursive">Recursive</a></li><li><code>--request-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_RequestTimeout">RequestTimeout</a></li><li><code>--save-config</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_SaveConfig">SaveConfig</a></li><li><code>--selector</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Selector">Selector</a></li><li><code>--server</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Server">Server</a></li><li><code>--session-affinity</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_SessionAffinity">SessionAffinity</a></li><li><code>--stderrthreshold</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Stderrthreshold">Stderrthreshold</a></li><li><code>--target-port</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_TargetPort">TargetPort</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Template">Template</a></li><li><code>--token</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Token">Token</a></li><li><code>--type</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesExposeSettings_Type">Type</a></li><li><code>--user</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_User">User</a></li><li><code>--v</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_V">V</a></li><li><code>--vmodule</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Vmodule">Vmodule</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_AddFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.AddFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_AddFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.AddFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3842"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to expose a service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_AddFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.AddFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_AddFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.AddFilename``1(``0,System.String[])">
+  AddFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3839"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to expose a service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ClearFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ClearFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ClearFilename__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ClearFilename``1(``0)">
+  ClearFilename&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3851"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to expose a service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearFilename&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_DisableAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.DisableAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_DisableAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.DisableAllowMissingTemplateKeys``1(``0)">
+  DisableAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3784"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_DisableDryRun_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.DisableDryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_DisableDryRun__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.DisableDryRun``1(``0)">
+  DisableDryRun&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3817"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, only print the object that would be sent, without sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDryRun&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_DisableRecord_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.DisableRecord*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_DisableRecord__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.DisableRecord``1(``0)">
+  DisableRecord&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3929"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableRecord&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_DisableRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.DisableRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_DisableRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.DisableRecursive``1(``0)">
+  DisableRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3946"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableRecursive&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_DisableSaveConfig_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.DisableSaveConfig*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_DisableSaveConfig__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.DisableSaveConfig``1(``0)">
+  DisableSaveConfig&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3963"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the configuration of current object will be saved in its annotation. Otherwise, the annotation will be unchanged. This flag is useful when you want to perform kubectl apply on this object in the future.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableSaveConfig&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_EnableAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.EnableAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_EnableAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.EnableAllowMissingTemplateKeys``1(``0)">
+  EnableAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3781"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_EnableDryRun_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.EnableDryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_EnableDryRun__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.EnableDryRun``1(``0)">
+  EnableDryRun&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3814"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, only print the object that would be sent, without sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDryRun&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_EnableRecord_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.EnableRecord*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_EnableRecord__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.EnableRecord``1(``0)">
+  EnableRecord&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3926"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableRecord&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_EnableRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.EnableRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_EnableRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.EnableRecursive``1(``0)">
+  EnableRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3943"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableRecursive&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_EnableSaveConfig_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.EnableSaveConfig*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_EnableSaveConfig__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.EnableSaveConfig``1(``0)">
+  EnableSaveConfig&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3960"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the configuration of current object will be saved in its annotation. Otherwise, the annotation will be unchanged. This flag is useful when you want to perform kubectl apply on this object in the future.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableSaveConfig&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_RemoveFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.RemoveFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_RemoveFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.RemoveFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3848"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to expose a service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_RemoveFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.RemoveFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_RemoveFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.RemoveFilename``1(``0,System.String[])">
+  RemoveFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3845"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to expose a service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetAllowMissingTemplateKeys``1(``0)">
+  ResetAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3778"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetClusterIp_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetClusterIp*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetClusterIp__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetClusterIp``1(``0)">
+  ResetClusterIp&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3795"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>ClusterIP to be assigned to the service. Leave empty to auto-allocate, or set to 'None' to create a headless service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetClusterIp&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetContainerPort_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetContainerPort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetContainerPort__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetContainerPort``1(``0)">
+  ResetContainerPort&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3803"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Synonym for --target-port.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetContainerPort&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetDryRun_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetDryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetDryRun__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetDryRun``1(``0)">
+  ResetDryRun&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3811"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, only print the object that would be sent, without sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDryRun&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetExternalIp_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetExternalIp*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetExternalIp__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetExternalIp``1(``0)">
+  ResetExternalIp&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3828"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Additional external IP address (not managed by Kubernetes) to accept for the service. If this IP is routed to a node, the service can be accessed by this IP in addition to its generated service IP.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetExternalIp&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetGenerator_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetGenerator*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetGenerator__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetGenerator``1(``0)">
+  ResetGenerator&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3859"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the API generator to use. There are 2 generators: 'service/v1' and 'service/v2'. The only difference between them is that service port in v1 is named 'default', while it is left unnamed in v2. Default is 'service/v2'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetGenerator&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetLabels_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetLabels*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetLabels__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetLabels``1(``0)">
+  ResetLabels&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3867"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Labels to apply to the service created by this call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetLabels&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetLoadBalancerIp_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetLoadBalancerIp*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetLoadBalancerIp__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetLoadBalancerIp``1(``0)">
+  ResetLoadBalancerIp&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3875"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>IP to assign to the LoadBalancer. If empty, an ephemeral IP will be created and used (cloud-provider specific).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetLoadBalancerIp&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetName__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetName``1(``0)">
+  ResetName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3883"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name for the newly created object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetName&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetOutput__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetOutput``1(``0)">
+  ResetOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3891"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output format. One of: json|yaml|name|template|go-template|go-template-file|templatefile|jsonpath|jsonpath-file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutput&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetOverrides_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetOverrides*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetOverrides__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetOverrides``1(``0)">
+  ResetOverrides&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3899"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>An inline JSON override for the generated object. If this is non-empty, it is used to override the generated object. Requires that the object supply a valid apiVersion field.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOverrides&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetPort_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetPort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetPort__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetPort``1(``0)">
+  ResetPort&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3907"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The port that the service should serve on. Copied from the resource being exposed, if unspecified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPort&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetProtocol_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetProtocol*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetProtocol__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetProtocol``1(``0)">
+  ResetProtocol&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3915"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The network protocol for the service to be created. Default is 'TCP'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetProtocol&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetRecord_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetRecord*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetRecord__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetRecord``1(``0)">
+  ResetRecord&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3923"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRecord&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetRecursive``1(``0)">
+  ResetRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3940"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRecursive&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetSaveConfig_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetSaveConfig*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetSaveConfig__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetSaveConfig``1(``0)">
+  ResetSaveConfig&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3957"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the configuration of current object will be saved in its annotation. Otherwise, the annotation will be unchanged. This flag is useful when you want to perform kubectl apply on this object in the future.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSaveConfig&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetSelector__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetSelector``1(``0)">
+  ResetSelector&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3974"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A label selector to use for this service. Only equality-based selector requirements are supported. If empty (the default) infer the selector from the replication controller or replica set.).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSelector&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetSessionAffinity_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetSessionAffinity*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetSessionAffinity__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetSessionAffinity``1(``0)">
+  ResetSessionAffinity&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3982"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If non-empty, set the session affinity for the service to this; legal values: 'None', 'ClientIP'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSessionAffinity&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetTargetPort_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetTargetPort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetTargetPort__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetTargetPort``1(``0)">
+  ResetTargetPort&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3990"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Name or number for the port on the container that the service should direct traffic to. Optional.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTargetPort&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetTemplate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetTemplate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetTemplate``1(``0)">
+  ResetTemplate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3998"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTemplate&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetType_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetType*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ResetType__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ResetType``1(``0)">
+  ResetType&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4006"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Type for this service: ClusterIP, NodePort, LoadBalancer, or ExternalName. Default is 'ClusterIP'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetType&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetAllowMissingTemplateKeys__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetAllowMissingTemplateKeys``1(``0,System.Nullable{System.Boolean})">
+  SetAllowMissingTemplateKeys&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3775"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAllowMissingTemplateKeys&lt;T&gt;(this T o, bool? v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetClusterIp_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetClusterIp*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetClusterIp__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetClusterIp``1(``0,System.String)">
+  SetClusterIp&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3792"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>ClusterIP to be assigned to the service. Leave empty to auto-allocate, or set to 'None' to create a headless service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetClusterIp&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetContainerPort_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetContainerPort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetContainerPort__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetContainerPort``1(``0,System.String)">
+  SetContainerPort&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3800"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Synonym for --target-port.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetContainerPort&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetDryRun_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetDryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetDryRun__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetDryRun``1(``0,System.Nullable{System.Boolean})">
+  SetDryRun&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3808"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, only print the object that would be sent, without sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDryRun&lt;T&gt;(this T o, bool? v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetExternalIp_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetExternalIp*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetExternalIp__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetExternalIp``1(``0,System.String)">
+  SetExternalIp&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3825"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Additional external IP address (not managed by Kubernetes) to accept for the service. If this IP is routed to a node, the service can be accessed by this IP in addition to its generated service IP.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetExternalIp&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3836"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to expose a service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetFilename``1(``0,System.String[])">
+  SetFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3833"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to expose a service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetGenerator_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetGenerator*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetGenerator__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetGenerator``1(``0,System.String)">
+  SetGenerator&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3856"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the API generator to use. There are 2 generators: 'service/v1' and 'service/v2'. The only difference between them is that service port in v1 is named 'default', while it is left unnamed in v2. Default is 'service/v2'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetGenerator&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetLabels_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetLabels*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetLabels__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetLabels``1(``0,System.String)">
+  SetLabels&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3864"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Labels to apply to the service created by this call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetLabels&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetLoadBalancerIp_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetLoadBalancerIp*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetLoadBalancerIp__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetLoadBalancerIp``1(``0,System.String)">
+  SetLoadBalancerIp&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3872"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>IP to assign to the LoadBalancer. If empty, an ephemeral IP will be created and used (cloud-provider specific).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetLoadBalancerIp&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetName__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetName``1(``0,System.String)">
+  SetName&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3880"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name for the newly created object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetName&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetOutput__1___0_Nuke_Common_Tools_Kubernetes_KubernetesExposeOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetOutput``1(``0,Nuke.Common.Tools.Kubernetes.KubernetesExposeOutput)">
+  SetOutput&lt;T&gt;(T, KubernetesExposeOutput)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3888"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output format. One of: json|yaml|name|template|go-template|go-template-file|templatefile|jsonpath|jsonpath-file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutput&lt;T&gt;(this T o, KubernetesExposeOutput v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesExposeOutput.html">KubernetesExposeOutput</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetOverrides_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetOverrides*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetOverrides__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetOverrides``1(``0,System.String)">
+  SetOverrides&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3896"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>An inline JSON override for the generated object. If this is non-empty, it is used to override the generated object. Requires that the object supply a valid apiVersion field.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOverrides&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetPort_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetPort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetPort__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetPort``1(``0,System.String)">
+  SetPort&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3904"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The port that the service should serve on. Copied from the resource being exposed, if unspecified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPort&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetProtocol_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetProtocol*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetProtocol__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetProtocol``1(``0,System.String)">
+  SetProtocol&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3912"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The network protocol for the service to be created. Default is 'TCP'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProtocol&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetRecord_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetRecord*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetRecord__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetRecord``1(``0,System.Nullable{System.Boolean})">
+  SetRecord&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3920"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRecord&lt;T&gt;(this T o, bool? v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetRecursive__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetRecursive``1(``0,System.Nullable{System.Boolean})">
+  SetRecursive&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3937"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRecursive&lt;T&gt;(this T o, bool? v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetSaveConfig_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetSaveConfig*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetSaveConfig__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetSaveConfig``1(``0,System.Nullable{System.Boolean})">
+  SetSaveConfig&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3954"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the configuration of current object will be saved in its annotation. Otherwise, the annotation will be unchanged. This flag is useful when you want to perform kubectl apply on this object in the future.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSaveConfig&lt;T&gt;(this T o, bool? v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetSelector__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetSelector``1(``0,System.String)">
+  SetSelector&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3971"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A label selector to use for this service. Only equality-based selector requirements are supported. If empty (the default) infer the selector from the replication controller or replica set.).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSelector&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetSessionAffinity_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetSessionAffinity*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetSessionAffinity__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetSessionAffinity``1(``0,System.String)">
+  SetSessionAffinity&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3979"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If non-empty, set the session affinity for the service to this; legal values: 'None', 'ClientIP'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSessionAffinity&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetTargetPort_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetTargetPort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetTargetPort__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetTargetPort``1(``0,System.String)">
+  SetTargetPort&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3987"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Name or number for the port on the container that the service should direct traffic to. Optional.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTargetPort&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetTemplate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetTemplate__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetTemplate``1(``0,System.String)">
+  SetTemplate&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3995"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTemplate&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetType_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetType*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_SetType__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.SetType``1(``0,System.String)">
+  SetType&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L4003"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Type for this service: ClusterIP, NodePort, LoadBalancer, or ExternalName. Default is 'ClusterIP'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetType&lt;T&gt;(this T o, string v) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ToggleAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ToggleAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ToggleAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ToggleAllowMissingTemplateKeys``1(``0)">
+  ToggleAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3787"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ToggleDryRun_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ToggleDryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ToggleDryRun__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ToggleDryRun``1(``0)">
+  ToggleDryRun&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3820"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, only print the object that would be sent, without sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDryRun&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ToggleRecord_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ToggleRecord*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ToggleRecord__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ToggleRecord``1(``0)">
+  ToggleRecord&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3932"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleRecord&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ToggleRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ToggleRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ToggleRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ToggleRecursive``1(``0)">
+  ToggleRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3949"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleRecursive&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ToggleSaveConfig_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ToggleSaveConfig*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesExposeSettingsExtensions_ToggleSaveConfig__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesExposeSettingsExtensions.ToggleSaveConfig``1(``0)">
+  ToggleSaveConfig&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3966"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the configuration of current object will be saved in its annotation. Otherwise, the annotation will be unchanged. This flag is useful when you want to perform kubectl apply on this object in the future.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleSaveConfig&lt;T&gt;(this T o) where T : KubernetesExposeSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3769" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

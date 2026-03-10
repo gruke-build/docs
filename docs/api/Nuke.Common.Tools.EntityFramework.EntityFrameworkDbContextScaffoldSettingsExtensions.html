@@ -1,0 +1,4038 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class EntityFrameworkDbContextScaffoldSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class EntityFrameworkDbContextScaffoldSettingsExtensions | gruke ">
+      
+      <meta name="description" content="The dotnet-ef dbcontext scaffold command is used to generate code for a DbContext and entity types for a database. In order for this command to generate an entity type, the database table must have a primary key.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions" class="text-break">
+Class EntityFrameworkDbContextScaffoldSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1136"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.EntityFramework.html">EntityFramework</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The <code>dotnet-ef dbcontext scaffold</code> command is used to generate code for a <code>DbContext</code> and entity types for a database. In order for this command to generate an entity type, the database table must have a primary key.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class EntityFrameworkDbContextScaffoldSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">EntityFrameworkDbContextScaffoldSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;connection&gt;</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Connection">Connection</a></li><li><code>&lt;provider&gt;</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Provider">Provider</a></li><li><code>--configuration</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Configuration">Configuration</a></li><li><code>--context</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Context">Context</a></li><li><code>--context-dir</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_ContextDirectory">ContextDirectory</a></li><li><code>--context-namespace</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_ContextNamespace">ContextNamespace</a></li><li><code>--data-annotations</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_DataAnnotations">DataAnnotations</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Force">Force</a></li><li><code>--framework</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Framework">Framework</a></li><li><code>--json</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Json">Json</a></li><li><code>--namespace</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Namespace">Namespace</a></li><li><code>--no-build</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoBuild">NoBuild</a></li><li><code>--no-color</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoColor">NoColor</a></li><li><code>--no-onconfiguring</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoOnConfiguring">NoOnConfiguring</a></li><li><code>--no-pluralize</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoPluralize">NoPluralize</a></li><li><code>--output-dir</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_OutputDirectory">OutputDirectory</a></li><li><code>--prefix-output</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_PrefixOutput">PrefixOutput</a></li><li><code>--project</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Project">Project</a></li><li><code>--runtime</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Runtime">Runtime</a></li><li><code>--schema</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Schemas">Schemas</a></li><li><code>--startup-project</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_StartupProject">StartupProject</a></li><li><code>--table</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Tables">Tables</a></li><li><code>--use-database-names</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_UseDatabaseNames">UseDatabaseNames</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Verbose">Verbose</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddSchemas_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.AddSchemas*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddSchemas__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.AddSchemas``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddSchemas&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1241"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The schemas of tables to generate entity types for. To specify multiple schemas, repeat <code>--schema</code> for each one. If this option is omitted, all schemas are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddSchemas&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddSchemas_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.AddSchemas*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddSchemas__1___0_System_String___" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.AddSchemas``1(``0,System.String[])">
+  AddSchemas&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1238"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The schemas of tables to generate entity types for. To specify multiple schemas, repeat <code>--schema</code> for each one. If this option is omitted, all schemas are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddSchemas&lt;T&gt;(this T o, params string[] v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddTables_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.AddTables*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddTables__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.AddTables``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddTables&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1264"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tables to generate entity types for. To specify multiple tables, repeat <code>-t</code> or <code>--table</code> for each one. If this option is omitted, all tables are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTables&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddTables_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.AddTables*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddTables__1___0_System_String___" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.AddTables``1(``0,System.String[])">
+  AddTables&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1261"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tables to generate entity types for. To specify multiple tables, repeat <code>-t</code> or <code>--table</code> for each one. If this option is omitted, all tables are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTables&lt;T&gt;(this T o, params string[] v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ClearSchemas_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ClearSchemas*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ClearSchemas__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ClearSchemas``1(``0)">
+  ClearSchemas&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1250"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The schemas of tables to generate entity types for. To specify multiple schemas, repeat <code>--schema</code> for each one. If this option is omitted, all schemas are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearSchemas&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ClearTables_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ClearTables*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ClearTables__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ClearTables``1(``0)">
+  ClearTables&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tables to generate entity types for. To specify multiple tables, repeat <code>-t</code> or <code>--table</code> for each one. If this option is omitted, all tables are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearTables&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableDataAnnotations_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableDataAnnotations*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableDataAnnotations__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableDataAnnotations``1(``0)">
+  DisableDataAnnotations&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1167"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use attributes to configure the model (where possible). If this option is omitted, only the fluent API is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDataAnnotations&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableForce_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableForce__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableForce``1(``0)">
+  DisableForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1208"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overwrite existing files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableForce&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableJson_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableJson__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableJson``1(``0)">
+  DisableJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1338"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableJson&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoBuild__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoBuild``1(``0)">
+  DisableNoBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1395"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoBuild&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoColor__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoColor``1(``0)">
+  DisableNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1412"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoColor&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoOnConfiguring_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoOnConfiguring*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoOnConfiguring__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoOnConfiguring``1(``0)">
+  DisableNoOnConfiguring&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1304"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses generation of the <code>OnConfiguring</code> method in the generated <code>DbContext</code> class. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoOnConfiguring&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoPluralize_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoPluralize*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoPluralize__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoPluralize``1(``0)">
+  DisableNoPluralize&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1321"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't use the pluralizer. Added in EF Core 5.0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoPluralize&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisablePrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisablePrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisablePrefixOutput__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisablePrefixOutput``1(``0)">
+  DisablePrefixOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1429"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisablePrefixOutput&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableUseDatabaseNames_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableUseDatabaseNames*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableUseDatabaseNames__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableUseDatabaseNames``1(``0)">
+  DisableUseDatabaseNames&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1287"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use table and column names exactly as they appear in the database. If this option is omitted, database names are changed to more closely conform to C# name style conventions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableUseDatabaseNames&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableVerbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableVerbose__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.DisableVerbose``1(``0)">
+  DisableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1446"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableVerbose&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableDataAnnotations_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableDataAnnotations*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableDataAnnotations__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableDataAnnotations``1(``0)">
+  EnableDataAnnotations&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use attributes to configure the model (where possible). If this option is omitted, only the fluent API is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDataAnnotations&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableForce_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableForce__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableForce``1(``0)">
+  EnableForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overwrite existing files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableForce&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableJson_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableJson__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableJson``1(``0)">
+  EnableJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1335"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableJson&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoBuild__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoBuild``1(``0)">
+  EnableNoBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1392"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoBuild&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoColor__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoColor``1(``0)">
+  EnableNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1409"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoColor&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoOnConfiguring_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoOnConfiguring*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoOnConfiguring__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoOnConfiguring``1(``0)">
+  EnableNoOnConfiguring&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1301"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses generation of the <code>OnConfiguring</code> method in the generated <code>DbContext</code> class. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoOnConfiguring&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoPluralize_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoPluralize*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoPluralize__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoPluralize``1(``0)">
+  EnableNoPluralize&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't use the pluralizer. Added in EF Core 5.0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoPluralize&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnablePrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnablePrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnablePrefixOutput__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnablePrefixOutput``1(``0)">
+  EnablePrefixOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1426"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnablePrefixOutput&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableUseDatabaseNames_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableUseDatabaseNames*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableUseDatabaseNames__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableUseDatabaseNames``1(``0)">
+  EnableUseDatabaseNames&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1284"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use table and column names exactly as they appear in the database. If this option is omitted, database names are changed to more closely conform to C# name style conventions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableUseDatabaseNames&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableVerbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableVerbose__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.EnableVerbose``1(``0)">
+  EnableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1443"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableVerbose&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveSchemas_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveSchemas*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveSchemas__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveSchemas``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveSchemas&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1247"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The schemas of tables to generate entity types for. To specify multiple schemas, repeat <code>--schema</code> for each one. If this option is omitted, all schemas are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveSchemas&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveSchemas_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveSchemas*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveSchemas__1___0_System_String___" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveSchemas``1(``0,System.String[])">
+  RemoveSchemas&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1244"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The schemas of tables to generate entity types for. To specify multiple schemas, repeat <code>--schema</code> for each one. If this option is omitted, all schemas are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveSchemas&lt;T&gt;(this T o, params string[] v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveTables_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveTables*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveTables__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveTables``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveTables&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1270"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tables to generate entity types for. To specify multiple tables, repeat <code>-t</code> or <code>--table</code> for each one. If this option is omitted, all tables are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTables&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveTables_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveTables*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveTables__1___0_System_String___" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveTables``1(``0,System.String[])">
+  RemoveTables&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tables to generate entity types for. To specify multiple tables, repeat <code>-t</code> or <code>--table</code> for each one. If this option is omitted, all tables are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTables&lt;T&gt;(this T o, params string[] v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetConfiguration_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetConfiguration*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetConfiguration__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetConfiguration``1(``0)">
+  ResetConfiguration&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1373"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The build configuration, for example: <code>Debug</code> or <code>Release.</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetConfiguration&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetConnection_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetConnection*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetConnection__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetConnection``1(``0)">
+  ResetConnection&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The connection string to the database. For ASP.NET Core 2.x projects, the value can be <em>name=&lt;name of connection string&gt;</em>. In that case the name comes from the configuration sources that are set up for the project.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetConnection&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetContextDirectory_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetContextDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetContextDirectory__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetContextDirectory``1(``0)">
+  ResetContextDirectory&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1186"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The directory to put the <code>DbContext</code> class file in. Paths are relative to the project directory. Namespaces are derived from the folder names.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetContextDirectory&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetContextNamespace_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetContextNamespace*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetContextNamespace__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetContextNamespace``1(``0)">
+  ResetContextNamespace&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The namespace to use for the generated <code>DbContext</code> class. Note: overrides <code>--namespace</code>. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetContextNamespace&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetContext_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetContext*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetContext__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetContext``1(``0)">
+  ResetContext&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1178"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the <code>DbContext</code> class to generate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetContext&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetDataAnnotations_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetDataAnnotations*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetDataAnnotations__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetDataAnnotations``1(``0)">
+  ResetDataAnnotations&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use attributes to configure the model (where possible). If this option is omitted, only the fluent API is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDataAnnotations&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetForce_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetForce__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetForce``1(``0)">
+  ResetForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1202"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overwrite existing files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetForce&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetFramework_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetFramework__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetFramework``1(``0)">
+  ResetFramework&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1365"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks#supported-target-framework-versions">Target Framework Moniker</a> for the <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks">target framework</a>. Use when the project file specifies multiple target frameworks, and you want to select one of them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFramework&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetJson_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetJson__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetJson``1(``0)">
+  ResetJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetJson&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNamespace_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNamespace*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNamespace__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNamespace``1(``0)">
+  ResetNamespace&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1227"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The namespace to use for all generated classes. Defaults to generated from the root namespace and the output directory. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNamespace&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoBuild__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoBuild``1(``0)">
+  ResetNoBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1389"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoBuild&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoColor__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoColor``1(``0)">
+  ResetNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1406"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoColor&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoOnConfiguring_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoOnConfiguring*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoOnConfiguring__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoOnConfiguring``1(``0)">
+  ResetNoOnConfiguring&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1298"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses generation of the <code>OnConfiguring</code> method in the generated <code>DbContext</code> class. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoOnConfiguring&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoPluralize_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoPluralize*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoPluralize__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoPluralize``1(``0)">
+  ResetNoPluralize&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1315"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't use the pluralizer. Added in EF Core 5.0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoPluralize&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetOutputDirectory_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetOutputDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetOutputDirectory__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetOutputDirectory``1(``0)">
+  ResetOutputDirectory&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1219"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The directory to put entity class files in. Paths are relative to the project directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutputDirectory&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetPrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetPrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetPrefixOutput__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetPrefixOutput``1(``0)">
+  ResetPrefixOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1423"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPrefixOutput&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetProject_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetProject*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetProject__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetProject``1(``0)">
+  ResetProject&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1349"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Relative path to the project folder of the target project. Default value is the current folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetProject&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetProvider_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetProvider*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetProvider__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetProvider``1(``0)">
+  ResetProvider&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1153"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The provider to use. Typically this is the name of the NuGet package, for example: <code>Microsoft.EntityFrameworkCore.SqlServer.</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetProvider&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetRuntime_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetRuntime*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetRuntime__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetRuntime``1(``0)">
+  ResetRuntime&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1381"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The identifier of the target runtime to restore packages for. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog">RID catalog</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRuntime&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetStartupProject_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetStartupProject*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetStartupProject__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetStartupProject``1(``0)">
+  ResetStartupProject&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1357"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Relative path to the project folder of the startup project. Default value is the current folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetStartupProject&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetUseDatabaseNames_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetUseDatabaseNames*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetUseDatabaseNames__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetUseDatabaseNames``1(``0)">
+  ResetUseDatabaseNames&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1281"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use table and column names exactly as they appear in the database. If this option is omitted, database names are changed to more closely conform to C# name style conventions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetUseDatabaseNames&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetVerbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetVerbose__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ResetVerbose``1(``0)">
+  ResetVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1440"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVerbose&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetConfiguration_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetConfiguration*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetConfiguration__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetConfiguration``1(``0,System.String)">
+  SetConfiguration&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1370"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The build configuration, for example: <code>Debug</code> or <code>Release.</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetConfiguration&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetConnection_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetConnection*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetConnection__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetConnection``1(``0,System.String)">
+  SetConnection&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The connection string to the database. For ASP.NET Core 2.x projects, the value can be <em>name=&lt;name of connection string&gt;</em>. In that case the name comes from the configuration sources that are set up for the project.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetConnection&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetContextDirectory_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetContextDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetContextDirectory__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetContextDirectory``1(``0,System.String)">
+  SetContextDirectory&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The directory to put the <code>DbContext</code> class file in. Paths are relative to the project directory. Namespaces are derived from the folder names.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetContextDirectory&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetContextNamespace_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetContextNamespace*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetContextNamespace__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetContextNamespace``1(``0,System.String)">
+  SetContextNamespace&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The namespace to use for the generated <code>DbContext</code> class. Note: overrides <code>--namespace</code>. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetContextNamespace&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetContext_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetContext*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetContext__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetContext``1(``0,System.String)">
+  SetContext&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the <code>DbContext</code> class to generate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetContext&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetDataAnnotations_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetDataAnnotations*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetDataAnnotations__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetDataAnnotations``1(``0,System.Nullable{System.Boolean})">
+  SetDataAnnotations&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use attributes to configure the model (where possible). If this option is omitted, only the fluent API is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDataAnnotations&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetForce_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetForce``1(``0,System.Nullable{System.Boolean})">
+  SetForce&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1199"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overwrite existing files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetForce&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetFramework_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetFramework__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetFramework``1(``0,System.String)">
+  SetFramework&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1362"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks#supported-target-framework-versions">Target Framework Moniker</a> for the <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks">target framework</a>. Use when the project file specifies multiple target frameworks, and you want to select one of them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFramework&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetJson_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetJson__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetJson``1(``0,System.Nullable{System.Boolean})">
+  SetJson&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1329"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetJson&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNamespace_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetNamespace*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNamespace__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetNamespace``1(``0,System.String)">
+  SetNamespace&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The namespace to use for all generated classes. Defaults to generated from the root namespace and the output directory. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNamespace&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoBuild__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoBuild``1(``0,System.Nullable{System.Boolean})">
+  SetNoBuild&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1386"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoBuild&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoColor__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoColor``1(``0,System.Nullable{System.Boolean})">
+  SetNoColor&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1403"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoColor&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoOnConfiguring_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoOnConfiguring*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoOnConfiguring__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoOnConfiguring``1(``0,System.Nullable{System.Boolean})">
+  SetNoOnConfiguring&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1295"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses generation of the <code>OnConfiguring</code> method in the generated <code>DbContext</code> class. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoOnConfiguring&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoPluralize_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoPluralize*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoPluralize__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoPluralize``1(``0,System.Nullable{System.Boolean})">
+  SetNoPluralize&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1312"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't use the pluralizer. Added in EF Core 5.0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoPluralize&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetOutputDirectory_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetOutputDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetOutputDirectory__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetOutputDirectory``1(``0,System.String)">
+  SetOutputDirectory&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1216"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The directory to put entity class files in. Paths are relative to the project directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutputDirectory&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetPrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetPrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetPrefixOutput__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetPrefixOutput``1(``0,System.Nullable{System.Boolean})">
+  SetPrefixOutput&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1420"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPrefixOutput&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetProject_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetProject*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetProject__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetProject``1(``0,System.String)">
+  SetProject&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1346"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Relative path to the project folder of the target project. Default value is the current folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProject&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetProvider_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetProvider*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetProvider__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetProvider``1(``0,System.String)">
+  SetProvider&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1150"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The provider to use. Typically this is the name of the NuGet package, for example: <code>Microsoft.EntityFrameworkCore.SqlServer.</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProvider&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetRuntime_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetRuntime*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetRuntime__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetRuntime``1(``0,System.String)">
+  SetRuntime&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1378"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The identifier of the target runtime to restore packages for. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog">RID catalog</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRuntime&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetSchemas_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetSchemas*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetSchemas__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetSchemas``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetSchemas&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The schemas of tables to generate entity types for. To specify multiple schemas, repeat <code>--schema</code> for each one. If this option is omitted, all schemas are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSchemas&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetSchemas_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetSchemas*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetSchemas__1___0_System_String___" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetSchemas``1(``0,System.String[])">
+  SetSchemas&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1232"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The schemas of tables to generate entity types for. To specify multiple schemas, repeat <code>--schema</code> for each one. If this option is omitted, all schemas are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSchemas&lt;T&gt;(this T o, params string[] v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetStartupProject_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetStartupProject*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetStartupProject__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetStartupProject``1(``0,System.String)">
+  SetStartupProject&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1354"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Relative path to the project folder of the startup project. Default value is the current folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetStartupProject&lt;T&gt;(this T o, string v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetTables_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetTables*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetTables__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetTables``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetTables&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1258"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tables to generate entity types for. To specify multiple tables, repeat <code>-t</code> or <code>--table</code> for each one. If this option is omitted, all tables are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTables&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetTables_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetTables*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetTables__1___0_System_String___" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetTables``1(``0,System.String[])">
+  SetTables&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tables to generate entity types for. To specify multiple tables, repeat <code>-t</code> or <code>--table</code> for each one. If this option is omitted, all tables are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTables&lt;T&gt;(this T o, params string[] v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetUseDatabaseNames_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetUseDatabaseNames*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetUseDatabaseNames__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetUseDatabaseNames``1(``0,System.Nullable{System.Boolean})">
+  SetUseDatabaseNames&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1278"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use table and column names exactly as they appear in the database. If this option is omitted, database names are changed to more closely conform to C# name style conventions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetUseDatabaseNames&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetVerbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.SetVerbose``1(``0,System.Nullable{System.Boolean})">
+  SetVerbose&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1437"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVerbose&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleDataAnnotations_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleDataAnnotations*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleDataAnnotations__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleDataAnnotations``1(``0)">
+  ToggleDataAnnotations&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use attributes to configure the model (where possible). If this option is omitted, only the fluent API is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDataAnnotations&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleForce_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleForce__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleForce``1(``0)">
+  ToggleForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1211"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overwrite existing files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleForce&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleJson_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleJson__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleJson``1(``0)">
+  ToggleJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1341"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleJson&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoBuild__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoBuild``1(``0)">
+  ToggleNoBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1398"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoBuild&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoColor__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoColor``1(``0)">
+  ToggleNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1415"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoColor&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoOnConfiguring_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoOnConfiguring*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoOnConfiguring__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoOnConfiguring``1(``0)">
+  ToggleNoOnConfiguring&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1307"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses generation of the <code>OnConfiguring</code> method in the generated <code>DbContext</code> class. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoOnConfiguring&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoPluralize_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoPluralize*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoPluralize__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoPluralize``1(``0)">
+  ToggleNoPluralize&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't use the pluralizer. Added in EF Core 5.0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoPluralize&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_TogglePrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.TogglePrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_TogglePrefixOutput__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.TogglePrefixOutput``1(``0)">
+  TogglePrefixOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1432"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T TogglePrefixOutput&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleUseDatabaseNames_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleUseDatabaseNames*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleUseDatabaseNames__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleUseDatabaseNames``1(``0)">
+  ToggleUseDatabaseNames&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1290"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use table and column names exactly as they appear in the database. If this option is omitted, database names are changed to more closely conform to C# name style conventions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleUseDatabaseNames&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleVerbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleVerbose__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleVerbose``1(``0)">
+  ToggleVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1449"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleVerbose&lt;T&gt;(this T o) where T : EntityFrameworkDbContextScaffoldSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L1136" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AzureSignToolSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AzureSignToolSettings | gruke ">
+      
+      <meta name="description" content="Azure Sign Tool is similar to signtool in the Windows SDK, with the major difference being that it uses Azure Key Vault for performing the signing process. The usage is like signtool, except with a limited set of options for signing and options for authenticating to Azure Key Vault.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings" class="text-break">
+Class AzureSignToolSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.AzureSignTool.html">AzureSignTool</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Azure Sign Tool is similar to <code>signtool</code> in the Windows SDK, with the major difference being that it uses Azure Key Vault for performing the signing process. The usage is like <code>signtool</code>, except with a limited set of options for signing and options for authenticating to Azure Key Vault.</p><p>For more details, visit the <a href="https://github.com/vcsjones/AzureSignTool">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class AzureSignToolSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">AzureSignToolSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_AddAdditionalCertificates__1___0_System_Collections_Generic_IEnumerable_System_String__">AzureSignToolSettingsExtensions.AddAdditionalCertificates&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_AddAdditionalCertificates__1___0_System_String___">AzureSignToolSettingsExtensions.AddAdditionalCertificates&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_AddFiles__1___0_System_Collections_Generic_IEnumerable_System_String__">AzureSignToolSettingsExtensions.AddFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_AddFiles__1___0_System_String___">AzureSignToolSettingsExtensions.AddFiles&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ClearAdditionalCertificates__1___0_">AzureSignToolSettingsExtensions.ClearAdditionalCertificates&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ClearFiles__1___0_">AzureSignToolSettingsExtensions.ClearFiles&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_DisableContinueOnError__1___0_">AzureSignToolSettingsExtensions.DisableContinueOnError&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_DisableKeyVaultManagedIdentity__1___0_">AzureSignToolSettingsExtensions.DisableKeyVaultManagedIdentity&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_DisableNoPageHashing__1___0_">AzureSignToolSettingsExtensions.DisableNoPageHashing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_DisablePageHashing__1___0_">AzureSignToolSettingsExtensions.DisablePageHashing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_DisableQuiet__1___0_">AzureSignToolSettingsExtensions.DisableQuiet&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_DisableSkipSigned__1___0_">AzureSignToolSettingsExtensions.DisableSkipSigned&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_DisableVerbose__1___0_">AzureSignToolSettingsExtensions.DisableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_EnableContinueOnError__1___0_">AzureSignToolSettingsExtensions.EnableContinueOnError&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_EnableKeyVaultManagedIdentity__1___0_">AzureSignToolSettingsExtensions.EnableKeyVaultManagedIdentity&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_EnableNoPageHashing__1___0_">AzureSignToolSettingsExtensions.EnableNoPageHashing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_EnablePageHashing__1___0_">AzureSignToolSettingsExtensions.EnablePageHashing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_EnableQuiet__1___0_">AzureSignToolSettingsExtensions.EnableQuiet&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_EnableSkipSigned__1___0_">AzureSignToolSettingsExtensions.EnableSkipSigned&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_EnableVerbose__1___0_">AzureSignToolSettingsExtensions.EnableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_RemoveAdditionalCertificates__1___0_System_Collections_Generic_IEnumerable_System_String__">AzureSignToolSettingsExtensions.RemoveAdditionalCertificates&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_RemoveAdditionalCertificates__1___0_System_String___">AzureSignToolSettingsExtensions.RemoveAdditionalCertificates&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_RemoveFiles__1___0_System_Collections_Generic_IEnumerable_System_String__">AzureSignToolSettingsExtensions.RemoveFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_RemoveFiles__1___0_System_String___">AzureSignToolSettingsExtensions.RemoveFiles&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetContinueOnError__1___0_">AzureSignToolSettingsExtensions.ResetContinueOnError&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetDescriptionUrl__1___0_">AzureSignToolSettingsExtensions.ResetDescriptionUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetDescription__1___0_">AzureSignToolSettingsExtensions.ResetDescription&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetFileDigest__1___0_">AzureSignToolSettingsExtensions.ResetFileDigest&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetInputFileList__1___0_">AzureSignToolSettingsExtensions.ResetInputFileList&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetKeyVaultAccessToken__1___0_">AzureSignToolSettingsExtensions.ResetKeyVaultAccessToken&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetKeyVaultCertificateName__1___0_">AzureSignToolSettingsExtensions.ResetKeyVaultCertificateName&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetKeyVaultClientId__1___0_">AzureSignToolSettingsExtensions.ResetKeyVaultClientId&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetKeyVaultClientSecret__1___0_">AzureSignToolSettingsExtensions.ResetKeyVaultClientSecret&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetKeyVaultManagedIdentity__1___0_">AzureSignToolSettingsExtensions.ResetKeyVaultManagedIdentity&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetKeyVaultTenantId__1___0_">AzureSignToolSettingsExtensions.ResetKeyVaultTenantId&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetKeyVaultUrl__1___0_">AzureSignToolSettingsExtensions.ResetKeyVaultUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetMaxDegreeOfParallelism__1___0_">AzureSignToolSettingsExtensions.ResetMaxDegreeOfParallelism&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetNoPageHashing__1___0_">AzureSignToolSettingsExtensions.ResetNoPageHashing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetPageHashing__1___0_">AzureSignToolSettingsExtensions.ResetPageHashing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetQuiet__1___0_">AzureSignToolSettingsExtensions.ResetQuiet&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetSkipSigned__1___0_">AzureSignToolSettingsExtensions.ResetSkipSigned&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetTimestampAuthenticodeUrl__1___0_">AzureSignToolSettingsExtensions.ResetTimestampAuthenticodeUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetTimestampDigest__1___0_">AzureSignToolSettingsExtensions.ResetTimestampDigest&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetTimestampRfc3161Url__1___0_">AzureSignToolSettingsExtensions.ResetTimestampRfc3161Url&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ResetVerbose__1___0_">AzureSignToolSettingsExtensions.ResetVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetAdditionalCertificates__1___0_System_Collections_Generic_IEnumerable_System_String__">AzureSignToolSettingsExtensions.SetAdditionalCertificates&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetAdditionalCertificates__1___0_System_String___">AzureSignToolSettingsExtensions.SetAdditionalCertificates&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetContinueOnError__1___0_System_Nullable_System_Boolean__">AzureSignToolSettingsExtensions.SetContinueOnError&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetDescriptionUrl__1___0_System_String_">AzureSignToolSettingsExtensions.SetDescriptionUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetDescription__1___0_System_String_">AzureSignToolSettingsExtensions.SetDescription&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetFileDigest__1___0_Nuke_Common_Tools_AzureSignTool_AzureSignToolDigestAlgorithm_">AzureSignToolSettingsExtensions.SetFileDigest&lt;T&gt;(T, AzureSignToolDigestAlgorithm)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetFiles__1___0_System_Collections_Generic_IEnumerable_System_String__">AzureSignToolSettingsExtensions.SetFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetFiles__1___0_System_String___">AzureSignToolSettingsExtensions.SetFiles&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetInputFileList__1___0_System_String_">AzureSignToolSettingsExtensions.SetInputFileList&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetKeyVaultAccessToken__1___0_System_String_">AzureSignToolSettingsExtensions.SetKeyVaultAccessToken&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetKeyVaultCertificateName__1___0_System_String_">AzureSignToolSettingsExtensions.SetKeyVaultCertificateName&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetKeyVaultClientId__1___0_System_String_">AzureSignToolSettingsExtensions.SetKeyVaultClientId&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetKeyVaultClientSecret__1___0_System_String_">AzureSignToolSettingsExtensions.SetKeyVaultClientSecret&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetKeyVaultManagedIdentity__1___0_System_Nullable_System_Boolean__">AzureSignToolSettingsExtensions.SetKeyVaultManagedIdentity&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetKeyVaultTenantId__1___0_System_String_">AzureSignToolSettingsExtensions.SetKeyVaultTenantId&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetKeyVaultUrl__1___0_System_String_">AzureSignToolSettingsExtensions.SetKeyVaultUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetMaxDegreeOfParallelism__1___0_System_Nullable_System_Int32__">AzureSignToolSettingsExtensions.SetMaxDegreeOfParallelism&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetNoPageHashing__1___0_System_Nullable_System_Boolean__">AzureSignToolSettingsExtensions.SetNoPageHashing&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetPageHashing__1___0_System_Nullable_System_Boolean__">AzureSignToolSettingsExtensions.SetPageHashing&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetQuiet__1___0_System_Nullable_System_Boolean__">AzureSignToolSettingsExtensions.SetQuiet&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetSkipSigned__1___0_System_Nullable_System_Boolean__">AzureSignToolSettingsExtensions.SetSkipSigned&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetTimestampAuthenticodeUrl__1___0_System_String_">AzureSignToolSettingsExtensions.SetTimestampAuthenticodeUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetTimestampDigest__1___0_Nuke_Common_Tools_AzureSignTool_AzureSignToolDigestAlgorithm_">AzureSignToolSettingsExtensions.SetTimestampDigest&lt;T&gt;(T, AzureSignToolDigestAlgorithm)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetTimestampRfc3161Url__1___0_System_String_">AzureSignToolSettingsExtensions.SetTimestampRfc3161Url&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__">AzureSignToolSettingsExtensions.SetVerbose&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ToggleContinueOnError__1___0_">AzureSignToolSettingsExtensions.ToggleContinueOnError&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ToggleKeyVaultManagedIdentity__1___0_">AzureSignToolSettingsExtensions.ToggleKeyVaultManagedIdentity&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ToggleNoPageHashing__1___0_">AzureSignToolSettingsExtensions.ToggleNoPageHashing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_TogglePageHashing__1___0_">AzureSignToolSettingsExtensions.TogglePageHashing&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ToggleQuiet__1___0_">AzureSignToolSettingsExtensions.ToggleQuiet&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ToggleSkipSigned__1___0_">AzureSignToolSettingsExtensions.ToggleSkipSigned&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettingsExtensions.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettingsExtensions_ToggleVerbose__1___0_">AzureSignToolSettingsExtensions.ToggleVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;files&gt;</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Files">Files</a></li><li><code>--additional-certificates</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_AdditionalCertificates">AdditionalCertificates</a></li><li><code>--azure-key-vault-accesstoken</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultAccessToken">KeyVaultAccessToken</a></li><li><code>--azure-key-vault-certificate</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultCertificateName">KeyVaultCertificateName</a></li><li><code>--azure-key-vault-client-id</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultClientId">KeyVaultClientId</a></li><li><code>--azure-key-vault-client-secret</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultClientSecret">KeyVaultClientSecret</a></li><li><code>--azure-key-vault-managed-identity</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultManagedIdentity">KeyVaultManagedIdentity</a></li><li><code>--azure-key-vault-tenant-id</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultTenantId">KeyVaultTenantId</a></li><li><code>--azure-key-vault-url</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultUrl">KeyVaultUrl</a></li><li><code>--continue-on-error</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_ContinueOnError">ContinueOnError</a></li><li><code>--description</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Description">Description</a></li><li><code>--description-url</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_DescriptionUrl">DescriptionUrl</a></li><li><code>--file-digest</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_FileDigest">FileDigest</a></li><li><code>--input-file-list</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_InputFileList">InputFileList</a></li><li><code>--max-degree-of-parallelism</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_MaxDegreeOfParallelism">MaxDegreeOfParallelism</a></li><li><code>--no-page-hashing</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_NoPageHashing">NoPageHashing</a></li><li><code>--page-hashing</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_PageHashing">PageHashing</a></li><li><code>--quiet</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Quiet">Quiet</a></li><li><code>--skip-signed</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_SkipSigned">SkipSigned</a></li><li><code>--timestamp-authenticode</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_TimestampAuthenticodeUrl">TimestampAuthenticodeUrl</a></li><li><code>--timestamp-digest</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_TimestampDigest">TimestampDigest</a></li><li><code>--timestamp-rfc3161</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_TimestampRfc3161Url">TimestampRfc3161Url</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.html#Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Verbose">Verbose</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_AdditionalCertificates_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.AdditionalCertificates*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_AdditionalCertificates" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.AdditionalCertificates">
+  AdditionalCertificates
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A list of paths to additional certificates to aide in building a full chain for the signing certificate. Azure SignTool will build a chain, either as deep as it can or to a trusted root. This will also use the Windows certificate store, in addition to any certificates specified with this option. Specifying this option does not guarantee the inclusion of the certificate, only if it is part of the chain. The files specified must be public certificates only. They cannot be PFX, PKCS12 or PFX files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; AdditionalCertificates { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_ContinueOnError_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.ContinueOnError*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_ContinueOnError" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.ContinueOnError">
+  ContinueOnError
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If multiple files to sign are specified, this flag will cause the signing process to move on to the next file when signing fails. This flag modifies the exit code of the program. See the <a href="https://github.com/vcsjones/AzureSignTool#exit-codes">Exit Codes section</a> for more information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ContinueOnError { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Description_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.Description*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Description" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.Description">
+  Description
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A description of the signed content. This parameter serves the same purpose as the <code>/d</code> option in the Windows SDK <code>signtool</code>. If this parameter is not supplied, the signature will not contain a description.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Description { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_DescriptionUrl_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.DescriptionUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_DescriptionUrl" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.DescriptionUrl">
+  DescriptionUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A URL with more information of the signed content. This parameter serves the same purpose as the <code>/du</code> option in the Windows SDK <code>signtool</code>. If this parameter is not supplied, the signature will not contain a URL description.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DescriptionUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_FileDigest_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.FileDigest*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_FileDigest" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.FileDigest">
+  FileDigest
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the digest algorithm used for hashing the file being signed. The default value is <code>sha256</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AzureSignToolDigestAlgorithm FileDigest { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolDigestAlgorithm.html">AzureSignToolDigestAlgorithm</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Files_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.Files*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Files" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.Files">
+  Files
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Files to sign.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Files { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_InputFileList_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.InputFileList*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_InputFileList" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.InputFileList">
+  InputFileList
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies a path to a text file which contains a list of files to sign, with one file per-line in the text file. If this parameter is specified, it is combined with files directly specified on the command line. The distinct result of the two options is signed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string InputFileList { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultAccessToken_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultAccessToken*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultAccessToken" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultAccessToken">
+  KeyVaultAccessToken
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>An access token used to authenticate to Azure. This can be used instead of the <code>--azure-key-vault-managed-identity</code>, <code>--azure-key-vault-client-id</code> and <code>--azure-key-vault-client-secret</code> options. This is useful if AzureSignTool is being used as part of another program that is already authenticated and has an access token to Azure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string KeyVaultAccessToken { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultCertificateName_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultCertificateName*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultCertificateName" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultCertificateName">
+  KeyVaultCertificateName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the certificate used to perform the signing operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string KeyVaultCertificateName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultClientId_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultClientId*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultClientId" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultClientId">
+  KeyVaultClientId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This is the client ID used to authenticate to Azure, which will be used to generate an access token. This parameter is not required if an access token is supplied directly with the <code>--azure-key-vault-accesstoken</code> option. If this parameter is supplied, <code>--azure-key-vault-client-secret</code> and <code>--azure-key-vault-tenant-id</code> must be supplied as well.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string KeyVaultClientId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultClientSecret_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultClientSecret*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultClientSecret" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultClientSecret">
+  KeyVaultClientSecret
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This is the client secret used to authenticate to Azure, which will be used to generate an access token. This parameter is not required if an access token is supplied directly with the <code>--azure-key-vault-accesstoken</code> option or when using managed identities with <code>--azure-key-vault-managed-identity</code>. If this parameter is supplied, <code>--azure-key-vault-client-id</code> and <code>--azure-key-vault-tenant-id</code> must be supplied as well.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string KeyVaultClientSecret { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultManagedIdentity_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultManagedIdentity*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultManagedIdentity" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultManagedIdentity">
+  KeyVaultManagedIdentity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use the ambient Managed Identity to authenticate to Azure. This can be used instead of the <code>--azure-key-vault-accesstoken</code>, <code>--azure-key-vault-client-id</code> and <code>--azure-key-vault-client-secret</code> options. This is useful if AzureSignTool is being used on a VM/service/CLI that is configured for managed identities to Azure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? KeyVaultManagedIdentity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultTenantId_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultTenantId*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultTenantId" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultTenantId">
+  KeyVaultTenantId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This is the tenant id used to authenticate to Azure, which will be used to generate an access token. This parameter is not required if an access token is supplied directly with the <code>--azure-key-vault-accesstoken</code> option or when using managed identities with <code>--azure-key-vault-managed-identity</code>. If this parameter is supplied, <code>--azure-key-vault-client-id</code> and <code>--azure-key-vault-client-secret</code> must be supplied as well.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string KeyVaultTenantId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultUrl_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_KeyVaultUrl" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.KeyVaultUrl">
+  KeyVaultUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A fully qualified URL of the key vault with the certificate that will be used for signing. An example value might be <code>https://my-vault.vault.azure.net</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string KeyVaultUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_MaxDegreeOfParallelism_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.MaxDegreeOfParallelism*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_MaxDegreeOfParallelism" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.MaxDegreeOfParallelism">
+  MaxDegreeOfParallelism
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>When signing multiple files, specifies the maximum number of concurrent operations. Setting this value does not guarentee that number of concurrent operations will be performed. If this value is unspecified, the system will use the default based on the number of available processor threads. Setting this value to <code>1</code> disable concurrent signing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? MaxDegreeOfParallelism { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_NoPageHashing_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.NoPageHashing*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_NoPageHashing" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.NoPageHashing">
+  NoPageHashing
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Causes the Authenticode signing process to exclude hashes of pages for verifying when the application is paged in to memory. If this flag is omitted, the default configuration for the operating system will be used. This flag will not affect non-PE file formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoPageHashing { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_PageHashing_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.PageHashing*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_PageHashing" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.PageHashing">
+  PageHashing
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Causes the Authenticode signing process to generate hashes of pages for verifying when the application is paged in to memory. If this flag is omitted, the default configuration for the operating system will be used. This flag will not affect non-PE file formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? PageHashing { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Quiet_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.Quiet*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Quiet" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.Quiet">
+  Quiet
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not print output to the log. This parameter does not accept a value and cannot be combine with the <code>--verbose</code> option. The exit code of the process can be used to determine success or failure of the sign operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Quiet { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_SkipSigned_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.SkipSigned*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_SkipSigned" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.SkipSigned">
+  SkipSigned
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If a file is already signed it will be skipped, rather than replacing the existing signature.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SkipSigned { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_TimestampAuthenticodeUrl_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.TimestampAuthenticodeUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_TimestampAuthenticodeUrl" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.TimestampAuthenticodeUrl">
+  TimestampAuthenticodeUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A URL to a legacy Authenticode timestamping service. This parameter serves the same purpose as the <code>/t</code> option in the Windows SDK <code>signtool</code>. Using a Authenicode timestamping service is deprecated. Instead, use the <code>--timestamp-rfc3161</code> option.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TimestampAuthenticodeUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_TimestampDigest_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.TimestampDigest*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_TimestampDigest" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.TimestampDigest">
+  TimestampDigest
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the digest algorithm used for timestamping. This parameter is ignored unless the <code>--timestamp-rfc3161</code> parameter is also supplied. The default value is <code>sha256</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AzureSignToolDigestAlgorithm TimestampDigest { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.AzureSignTool.AzureSignToolDigestAlgorithm.html">AzureSignToolDigestAlgorithm</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_TimestampRfc3161Url_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.TimestampRfc3161Url*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_TimestampRfc3161Url" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.TimestampRfc3161Url">
+  TimestampRfc3161Url
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A URL to an RFC3161 compliant timestamping service. This parameter serves the same purpose as the <code>/tr</code> option in the Windows SDK <code>signtool</code>. This parameter should be used in favor of the <code>--timestamp</code> option. Using this parameter will allow using modern, RFC3161 timestamps which also support timestamp digest algorithms other than SHA1.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TimestampRfc3161Url { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Verbose_" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.Verbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_AzureSignTool_AzureSignToolSettings_Verbose" data-uid="Nuke.Common.Tools.AzureSignTool.AzureSignToolSettings.Verbose">
+  Verbose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Include additional output in the log. This parameter does not accept a value and cannot be combine with the <code>--quiet</code> option.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Verbose { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/AzureSignTool/AzureSignTool.Generated.cs/#L45" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

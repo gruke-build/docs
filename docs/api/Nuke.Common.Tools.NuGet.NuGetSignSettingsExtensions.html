@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class NuGetSignSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NuGetSignSettingsExtensions | gruke ">
+      
+      <meta name="description" content="The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions" class="text-break">
+Class NuGetSignSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L769"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.NuGet.html">NuGet</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The NuGet Command Line Interface (CLI) provides the full extent of NuGet functionality to install, create, publish, and manage packages.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/nuget/tools/nuget-exe-cli-reference">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class NuGetSignSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">NuGetSignSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;targetPath&gt;</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_TargetPath">TargetPath</a></li><li><code>-CertificateFingerprint</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_CertificateFingerprint">CertificateFingerprint</a></li><li><code>-CertificatePassword</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_CertificatePassword">CertificatePassword</a></li><li><code>-CertificatePath</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_CertificatePath">CertificatePath</a></li><li><code>-CertificateStoreLocation</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_CertificateStoreLocation">CertificateStoreLocation</a></li><li><code>-CertificateStoreName</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_CertificateStoreName">CertificateStoreName</a></li><li><code>-CertificateSubjectName</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_CertificateSubjectName">CertificateSubjectName</a></li><li><code>-ConfigFile</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_ConfigFile">ConfigFile</a></li><li><code>-ForceEnglishOutput</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_ForceEnglishOutput">ForceEnglishOutput</a></li><li><code>-HashAlgorithm</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_HashAlgorithm">HashAlgorithm</a></li><li><code>-NonInteractive</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_NonInteractive">NonInteractive</a></li><li><code>-OutputDirectory</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_OutputDirectory">OutputDirectory</a></li><li><code>-Overwrite</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_Overwrite">Overwrite</a></li><li><code>-Timestamper</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_Timestamper">Timestamper</a></li><li><code>-TimestampHashAlgorithm</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_TimestampHashAlgorithm">TimestampHashAlgorithm</a></li><li><code>-Verbosity</code> via <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignSettings.html#Nuke_Common_Tools_NuGet_NuGetSignSettings_Verbosity">Verbosity</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_DisableForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.DisableForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_DisableForceEnglishOutput__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.DisableForceEnglishOutput``1(``0)">
+  DisableForceEnglishOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L897"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableForceEnglishOutput&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_DisableNonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.DisableNonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_DisableNonInteractive__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.DisableNonInteractive``1(``0)">
+  DisableNonInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L914"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNonInteractive&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_DisableOverwrite_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.DisableOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_DisableOverwrite__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.DisableOverwrite``1(``0)">
+  DisableOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L856"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Switch to indicate if the current signature should be overwritten. By default the command will fail if the package already has a signature.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableOverwrite&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_EnableForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.EnableForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_EnableForceEnglishOutput__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.EnableForceEnglishOutput``1(``0)">
+  EnableForceEnglishOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L894"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableForceEnglishOutput&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_EnableNonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.EnableNonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_EnableNonInteractive__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.EnableNonInteractive``1(``0)">
+  EnableNonInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L911"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNonInteractive&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_EnableOverwrite_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.EnableOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_EnableOverwrite__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.EnableOverwrite``1(``0)">
+  EnableOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L853"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Switch to indicate if the current signature should be overwritten. By default the command will fail if the package already has a signature.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableOverwrite&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificateFingerprint_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificateFingerprint*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificateFingerprint__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificateFingerprint``1(``0)">
+  ResetCertificateFingerprint&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L786"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the fingerprint to be used to search for the certificate in a local certificate store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetCertificateFingerprint&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificatePassword_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificatePassword*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificatePassword__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificatePassword``1(``0)">
+  ResetCertificatePassword&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L794"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the certificate password, if needed. If a certificate is password protected but no password is provided, the command will prompt for a password at run time, unless the -NonInteractive option is passed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetCertificatePassword&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificatePath_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificatePath*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificatePath__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificatePath``1(``0)">
+  ResetCertificatePath&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L802"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the file path to the certificate to be used in signing the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetCertificatePath&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificateStoreLocation_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificateStoreLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificateStoreLocation__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificateStoreLocation``1(``0)">
+  ResetCertificateStoreLocation&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L810"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the name of the X.509 certificate store use to search for the certificate. Defaults to 'CurrentUser', the X.509 certificate store used by the current user. This option should be used when specifying the certificate via -CertificateSubjectName or -CertificateFingerprint options.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetCertificateStoreLocation&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificateStoreName_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificateStoreName*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificateStoreName__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificateStoreName``1(``0)">
+  ResetCertificateStoreName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L818"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the name of the X.509 certificate store to use to search for the certificate. Defaults to 'My', the X.509 certificate store for personal certificates. This option should be used when specifying the certificate via -CertificateSubjectName or -CertificateFingerprint options.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetCertificateStoreName&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificateSubjectName_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificateSubjectName*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetCertificateSubjectName__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetCertificateSubjectName``1(``0)">
+  ResetCertificateSubjectName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L826"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the subject name of the certificate used to search a local certificate store for the certificate. The search is a case-insensitive string comparison using the supplied value, which will find all certificates with the subject name containing that string, regardless of other subject values. The certificate store can be specified by -CertificateStoreName and -CertificateStoreLocation options.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetCertificateSubjectName&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetConfigFile_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetConfigFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetConfigFile__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetConfigFile``1(``0)">
+  ResetConfigFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L883"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The NuGet configuration file to apply. If not specified, <code>%AppData%\NuGet\NuGet.Config</code> (Windows) or <code>~/.nuget/NuGet/NuGet.Config</code> (Mac/Linux) is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetConfigFile&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetForceEnglishOutput__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetForceEnglishOutput``1(``0)">
+  ResetForceEnglishOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L891"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetForceEnglishOutput&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetHashAlgorithm_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetHashAlgorithm*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetHashAlgorithm__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetHashAlgorithm``1(``0)">
+  ResetHashAlgorithm&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L834"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hash algorithm to be used to sign the package. Defaults to SHA256. Possible values are SHA256, SHA384, and SHA512.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetHashAlgorithm&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetNonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetNonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetNonInteractive__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetNonInteractive``1(``0)">
+  ResetNonInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L908"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNonInteractive&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetOutputDirectory_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetOutputDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetOutputDirectory__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetOutputDirectory``1(``0)">
+  ResetOutputDirectory&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L842"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the directory where the signed package should be saved. By default the original package is overwritten by the signed package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutputDirectory&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetOverwrite_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetOverwrite__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetOverwrite``1(``0)">
+  ResetOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L850"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Switch to indicate if the current signature should be overwritten. By default the command will fail if the package already has a signature.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOverwrite&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetTargetPath_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetTargetPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetTargetPath__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetTargetPath``1(``0)">
+  ResetTargetPath&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L778"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path of the package to sign.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTargetPath&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetTimestampHashAlgorithm_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetTimestampHashAlgorithm*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetTimestampHashAlgorithm__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetTimestampHashAlgorithm``1(``0)">
+  ResetTimestampHashAlgorithm&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L875"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hash algorithm to be used by the RFC 3161 timestamp server. Defaults to SHA256.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTimestampHashAlgorithm&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetTimestamper_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetTimestamper*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetTimestamper__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetTimestamper``1(``0)">
+  ResetTimestamper&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L867"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>URL to an RFC 3161 timestamping server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTimestamper&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetVerbosity_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetVerbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ResetVerbosity__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ResetVerbosity``1(``0)">
+  ResetVerbosity&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L925"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the amount of detail displayed in the output: <em>normal</em>, <em>quiet</em>, <em>detailed</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVerbosity&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificateFingerprint_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificateFingerprint*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificateFingerprint__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificateFingerprint``1(``0,System.String)">
+  SetCertificateFingerprint&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L783"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the fingerprint to be used to search for the certificate in a local certificate store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetCertificateFingerprint&lt;T&gt;(this T o, string v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificatePassword_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificatePassword*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificatePassword__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificatePassword``1(``0,System.String)">
+  SetCertificatePassword&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L791"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the certificate password, if needed. If a certificate is password protected but no password is provided, the command will prompt for a password at run time, unless the -NonInteractive option is passed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetCertificatePassword&lt;T&gt;(this T o, string v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificatePath_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificatePath*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificatePath__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificatePath``1(``0,System.String)">
+  SetCertificatePath&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L799"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the file path to the certificate to be used in signing the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetCertificatePath&lt;T&gt;(this T o, string v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificateStoreLocation_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificateStoreLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificateStoreLocation__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificateStoreLocation``1(``0,System.String)">
+  SetCertificateStoreLocation&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L807"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the name of the X.509 certificate store use to search for the certificate. Defaults to 'CurrentUser', the X.509 certificate store used by the current user. This option should be used when specifying the certificate via -CertificateSubjectName or -CertificateFingerprint options.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetCertificateStoreLocation&lt;T&gt;(this T o, string v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificateStoreName_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificateStoreName*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificateStoreName__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificateStoreName``1(``0,System.String)">
+  SetCertificateStoreName&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L815"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the name of the X.509 certificate store to use to search for the certificate. Defaults to 'My', the X.509 certificate store for personal certificates. This option should be used when specifying the certificate via -CertificateSubjectName or -CertificateFingerprint options.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetCertificateStoreName&lt;T&gt;(this T o, string v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificateSubjectName_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificateSubjectName*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetCertificateSubjectName__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetCertificateSubjectName``1(``0,System.String)">
+  SetCertificateSubjectName&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L823"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the subject name of the certificate used to search a local certificate store for the certificate. The search is a case-insensitive string comparison using the supplied value, which will find all certificates with the subject name containing that string, regardless of other subject values. The certificate store can be specified by -CertificateStoreName and -CertificateStoreLocation options.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetCertificateSubjectName&lt;T&gt;(this T o, string v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetConfigFile_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetConfigFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetConfigFile__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetConfigFile``1(``0,System.String)">
+  SetConfigFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L880"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The NuGet configuration file to apply. If not specified, <code>%AppData%\NuGet\NuGet.Config</code> (Windows) or <code>~/.nuget/NuGet/NuGet.Config</code> (Mac/Linux) is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetConfigFile&lt;T&gt;(this T o, string v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetForceEnglishOutput__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetForceEnglishOutput``1(``0,System.Nullable{System.Boolean})">
+  SetForceEnglishOutput&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L888"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetForceEnglishOutput&lt;T&gt;(this T o, bool? v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetHashAlgorithm_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetHashAlgorithm*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetHashAlgorithm__1___0_Nuke_Common_Tools_NuGet_NuGetSignHashAlgorithm_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetHashAlgorithm``1(``0,Nuke.Common.Tools.NuGet.NuGetSignHashAlgorithm)">
+  SetHashAlgorithm&lt;T&gt;(T, NuGetSignHashAlgorithm)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L831"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hash algorithm to be used to sign the package. Defaults to SHA256. Possible values are SHA256, SHA384, and SHA512.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetHashAlgorithm&lt;T&gt;(this T o, NuGetSignHashAlgorithm v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignHashAlgorithm.html">NuGetSignHashAlgorithm</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetNonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetNonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetNonInteractive__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetNonInteractive``1(``0,System.Nullable{System.Boolean})">
+  SetNonInteractive&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L905"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNonInteractive&lt;T&gt;(this T o, bool? v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetOutputDirectory_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetOutputDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetOutputDirectory__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetOutputDirectory``1(``0,System.String)">
+  SetOutputDirectory&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L839"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the directory where the signed package should be saved. By default the original package is overwritten by the signed package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutputDirectory&lt;T&gt;(this T o, string v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetOverwrite_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetOverwrite__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetOverwrite``1(``0,System.Nullable{System.Boolean})">
+  SetOverwrite&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L847"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Switch to indicate if the current signature should be overwritten. By default the command will fail if the package already has a signature.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOverwrite&lt;T&gt;(this T o, bool? v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetTargetPath_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetTargetPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetTargetPath__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetTargetPath``1(``0,System.String)">
+  SetTargetPath&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L775"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path of the package to sign.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTargetPath&lt;T&gt;(this T o, string v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetTimestampHashAlgorithm_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetTimestampHashAlgorithm*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetTimestampHashAlgorithm__1___0_Nuke_Common_Tools_NuGet_NuGetSignHashAlgorithm_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetTimestampHashAlgorithm``1(``0,Nuke.Common.Tools.NuGet.NuGetSignHashAlgorithm)">
+  SetTimestampHashAlgorithm&lt;T&gt;(T, NuGetSignHashAlgorithm)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L872"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Hash algorithm to be used by the RFC 3161 timestamp server. Defaults to SHA256.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTimestampHashAlgorithm&lt;T&gt;(this T o, NuGetSignHashAlgorithm v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetSignHashAlgorithm.html">NuGetSignHashAlgorithm</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetTimestamper_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetTimestamper*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetTimestamper__1___0_System_String_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetTimestamper``1(``0,System.String)">
+  SetTimestamper&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L864"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>URL to an RFC 3161 timestamping server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTimestamper&lt;T&gt;(this T o, string v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetVerbosity_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetVerbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_SetVerbosity__1___0_Nuke_Common_Tools_NuGet_NuGetVerbosity_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.SetVerbosity``1(``0,Nuke.Common.Tools.NuGet.NuGetVerbosity)">
+  SetVerbosity&lt;T&gt;(T, NuGetVerbosity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L922"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the amount of detail displayed in the output: <em>normal</em>, <em>quiet</em>, <em>detailed</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVerbosity&lt;T&gt;(this T o, NuGetVerbosity v) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.NuGet.NuGetVerbosity.html">NuGetVerbosity</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ToggleForceEnglishOutput_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ToggleForceEnglishOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ToggleForceEnglishOutput__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ToggleForceEnglishOutput``1(``0)">
+  ToggleForceEnglishOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L900"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>(3.5+)</em> Forces nuget.exe to run using an invariant, English-based culture.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleForceEnglishOutput&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ToggleNonInteractive_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ToggleNonInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ToggleNonInteractive__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ToggleNonInteractive``1(``0)">
+  ToggleNonInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L917"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses prompts for user input or confirmations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNonInteractive&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ToggleOverwrite_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ToggleOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_NuGet_NuGetSignSettingsExtensions_ToggleOverwrite__1___0_" data-uid="Nuke.Common.Tools.NuGet.NuGetSignSettingsExtensions.ToggleOverwrite``1(``0)">
+  ToggleOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L859"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Switch to indicate if the current signature should be overwritten. By default the command will fail if the package already has a signature.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleOverwrite&lt;T&gt;(this T o) where T : NuGetSignSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NuGet/NuGet.Generated.cs/#L769" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

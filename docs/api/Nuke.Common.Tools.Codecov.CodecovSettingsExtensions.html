@@ -1,0 +1,3270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CodecovSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CodecovSettingsExtensions | gruke ">
+      
+      <meta name="description" content="Code coverage is a measurement used to express which lines of code were executed by a test suite. We use three primary terms to describe each line executed. hit - indicates that the source code was executed by the test suite.partial - indicates that the source code was not fully executed by the test suite; there are remaining branches that were not executed.miss - indicates that the source code was not executed by the test suite. Coverage is the ratio of hits / (sum of hit + partial + miss). A code base that has 5 lines executed by tests out of 12 total lines will receive a coverage ratio of 41% (rounding down).  Phrased simply, code coverage provides a visual measurement of what source code is being executed by a test suite. This information indicates to the software developer where they should write new tests in an effort to achieve higher coverage.  Testing source code helps to prevent bugs and syntax errors by executing each line with a known variable and cross-checking it with an expected output.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Codecov_CodecovSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Codecov.CodecovSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions" class="text-break">
+Class CodecovSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Codecov.html">Codecov</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Code coverage is a measurement used to express which lines of code were executed by a test suite. We use three primary terms to describe each line executed.
+<p></p><ul><li>hit - indicates that the source code was executed by the test suite.</li><li>partial - indicates that the source code was not fully executed by the test suite; there are remaining branches that were not executed.</li><li>miss - indicates that the source code was not executed by the test suite.</li></ul><p></p>
+Coverage is the ratio of <code>hits / (sum of hit + partial + miss)</code>. A code base that has 5 lines executed by tests out of 12 total lines will receive a coverage ratio of 41% (rounding down).
+<p></p>
+Phrased simply, code coverage provides a visual measurement of what source code is being executed by a test suite. This information indicates to the software developer where they should write new tests in an effort to achieve higher coverage.
+<p></p>
+Testing source code helps to prevent bugs and syntax errors by executing each line with a known variable and cross-checking it with an expected output.<p>For more details, visit the <a href="https://about.codecov.io/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class CodecovSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CodecovSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--branch</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Branch">Branch</a></li><li><code>--build</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Build">Build</a></li><li><code>--disable-network</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_DisableNetwork">DisableNetwork</a></li><li><code>--dump</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Dump">Dump</a></li><li><code>--env</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_EnvironmentVariables">EnvironmentVariables</a></li><li><code>--feature</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Features">Features</a></li><li><code>--file</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Files">Files</a></li><li><code>--flag</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Flags">Flags</a></li><li><code>--name</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Name">Name</a></li><li><code>--no-color</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_NoColor">NoColor</a></li><li><code>--pr</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_PullRequest">PullRequest</a></li><li><code>--required</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Required">Required</a></li><li><code>--root</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_RepositoryRoot">RepositoryRoot</a></li><li><code>--sha</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Sha">Sha</a></li><li><code>--slug</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Slug">Slug</a></li><li><code>--tag</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Tag">Tag</a></li><li><code>--token</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Token">Token</a></li><li><code>--url</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Url">Url</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.Codecov.CodecovSettings.html#Nuke_Common_Tools_Codecov_CodecovSettings_Verbose">Verbose</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddEnvironmentVariables_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddEnvironmentVariables*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddEnvironmentVariables__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddEnvironmentVariables``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddEnvironmentVariables&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify environment variables to be included with this build.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddEnvironmentVariables&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddEnvironmentVariables_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddEnvironmentVariables*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddEnvironmentVariables__1___0_System_String___" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddEnvironmentVariables``1(``0,System.String[])">
+  AddEnvironmentVariables&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify environment variables to be included with this build.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddEnvironmentVariables&lt;T&gt;(this T o, params string[] v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddFeatures_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddFeatures*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddFeatures__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddFeatures``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddFeatures&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify features to disable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFeatures&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddFeatures_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddFeatures*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddFeatures__1___0_System_String___" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddFeatures``1(``0,System.String[])">
+  AddFeatures&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify features to disable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFeatures&lt;T&gt;(this T o, params string[] v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddFiles_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddFiles__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddFiles``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Target file(s) to upload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFiles&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddFiles_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_AddFiles__1___0_System_String___" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.AddFiles``1(``0,System.String[])">
+  AddFiles&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Target file(s) to upload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFiles&lt;T&gt;(this T o, params string[] v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ClearEnvironmentVariables_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ClearEnvironmentVariables*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ClearEnvironmentVariables__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ClearEnvironmentVariables``1(``0)">
+  ClearEnvironmentVariables&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify environment variables to be included with this build.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearEnvironmentVariables&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ClearFeatures_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ClearFeatures*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ClearFeatures__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ClearFeatures``1(``0)">
+  ClearFeatures&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify features to disable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearFeatures&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ClearFiles_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ClearFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ClearFiles__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ClearFiles``1(``0)">
+  ClearFiles&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Target file(s) to upload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearFiles&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_DisableDisableNetwork_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.DisableDisableNetwork*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_DisableDisableNetwork__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.DisableDisableNetwork``1(``0)">
+  DisableDisableNetwork&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disable uploading the file network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDisableNetwork&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_DisableDump_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.DisableDump*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_DisableDump__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.DisableDump``1(``0)">
+  DisableDump&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't upload and dump to stdin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDump&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_DisableNoColor_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.DisableNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_DisableNoColor__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.DisableNoColor``1(``0)">
+  DisableNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove color from the output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoColor&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_DisableRequired_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.DisableRequired*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_DisableRequired__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.DisableRequired``1(``0)">
+  DisableRequired&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exit with <code>1</code> if not successful. Default will Exit with <code>0</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableRequired&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_DisableVerbose_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.DisableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_DisableVerbose__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.DisableVerbose``1(``0)">
+  DisableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L333"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verbose mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableVerbose&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_EnableDisableNetwork_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.EnableDisableNetwork*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_EnableDisableNetwork__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.EnableDisableNetwork``1(``0)">
+  EnableDisableNetwork&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disable uploading the file network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDisableNetwork&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_EnableDump_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.EnableDump*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_EnableDump__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.EnableDump``1(``0)">
+  EnableDump&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't upload and dump to stdin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDump&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_EnableNoColor_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.EnableNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_EnableNoColor__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.EnableNoColor``1(``0)">
+  EnableNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L248"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove color from the output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoColor&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_EnableRequired_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.EnableRequired*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_EnableRequired__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.EnableRequired``1(``0)">
+  EnableRequired&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L281"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exit with <code>1</code> if not successful. Default will Exit with <code>0</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableRequired&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_EnableVerbose_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.EnableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_EnableVerbose__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.EnableVerbose``1(``0)">
+  EnableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L330"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verbose mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableVerbose&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveEnvironmentVariables_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveEnvironmentVariables*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveEnvironmentVariables__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveEnvironmentVariables``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveEnvironmentVariables&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify environment variables to be included with this build.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveEnvironmentVariables&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveEnvironmentVariables_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveEnvironmentVariables*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveEnvironmentVariables__1___0_System_String___" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveEnvironmentVariables``1(``0,System.String[])">
+  RemoveEnvironmentVariables&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify environment variables to be included with this build.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveEnvironmentVariables&lt;T&gt;(this T o, params string[] v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveFeatures_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveFeatures*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveFeatures__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveFeatures``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveFeatures&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify features to disable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFeatures&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveFeatures_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveFeatures*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveFeatures__1___0_System_String___" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveFeatures``1(``0,System.String[])">
+  RemoveFeatures&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify features to disable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFeatures&lt;T&gt;(this T o, params string[] v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveFiles_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveFiles__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveFiles``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Target file(s) to upload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFiles&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveFiles_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_RemoveFiles__1___0_System_String___" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.RemoveFiles``1(``0,System.String[])">
+  RemoveFiles&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Target file(s) to upload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFiles&lt;T&gt;(this T o, params string[] v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetBranch_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetBranch*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetBranch__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetBranch``1(``0)">
+  ResetBranch&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the branch name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetBranch&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetBuild_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetBuild__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetBuild``1(``0)">
+  ResetBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the build number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetBuild&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetDisableNetwork_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetDisableNetwork*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetDisableNetwork__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetDisableNetwork``1(``0)">
+  ResetDisableNetwork&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disable uploading the file network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDisableNetwork&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetDump_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetDump*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetDump__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetDump``1(``0)">
+  ResetDump&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't upload and dump to stdin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDump&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetFlags_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetFlags*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetFlags__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetFlags``1(``0)">
+  ResetFlags&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Flag the upload to group coverage metrics.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFlags&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetFramework_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetFramework__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetFramework``1(``0)">
+  ResetFramework&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L344"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFramework&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetName_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetName__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetName``1(``0)">
+  ResetName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Custom defined name of the upload. Visible in Codecov UI.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetName&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetNoColor_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetNoColor__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetNoColor``1(``0)">
+  ResetNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L245"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove color from the output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoColor&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetPullRequest_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetPullRequest*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetPullRequest__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetPullRequest``1(``0)">
+  ResetPullRequest&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L262"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the pull request number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPullRequest&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetRepositoryRoot_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetRepositoryRoot*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetRepositoryRoot__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetRepositoryRoot``1(``0)">
+  ResetRepositoryRoot&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L270"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Used when not in git/hg project to identify project root directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRepositoryRoot&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetRequired_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetRequired*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetRequired__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetRequired``1(``0)">
+  ResetRequired&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L278"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exit with <code>1</code> if not successful. Default will Exit with <code>0</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRequired&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetSha_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetSha*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetSha__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetSha``1(``0)">
+  ResetSha&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the commit sha.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSha&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetSlug_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetSlug*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetSlug__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetSlug``1(``0)">
+  ResetSlug&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L295"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Owner/repo slug used instead of the private repo token in Enterprise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSlug&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetTag_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetTag*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetTag__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetTag``1(``0)">
+  ResetTag&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L303"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the git tag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTag&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetToken_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetToken*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetToken__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetToken``1(``0)">
+  ResetToken&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L311"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set the private repository token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetToken&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetUrl_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetUrl__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetUrl``1(``0)">
+  ResetUrl&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L319"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set the target url for Enterprise customers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetUrl&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetVerbose_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ResetVerbose__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ResetVerbose``1(``0)">
+  ResetVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L327"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verbose mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVerbose&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetBranch_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetBranch*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetBranch__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetBranch``1(``0,System.String)">
+  SetBranch&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the branch name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetBranch&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetBuild_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetBuild__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetBuild``1(``0,System.String)">
+  SetBuild&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the build number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetBuild&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetDisableNetwork_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetDisableNetwork*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetDisableNetwork__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetDisableNetwork``1(``0,System.Nullable{System.Boolean})">
+  SetDisableNetwork&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disable uploading the file network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDisableNetwork&lt;T&gt;(this T o, bool? v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetDump_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetDump*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetDump__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetDump``1(``0,System.Nullable{System.Boolean})">
+  SetDump&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't upload and dump to stdin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDump&lt;T&gt;(this T o, bool? v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetEnvironmentVariables_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetEnvironmentVariables*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetEnvironmentVariables__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetEnvironmentVariables``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetEnvironmentVariables&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L160"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify environment variables to be included with this build.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetEnvironmentVariables&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetEnvironmentVariables_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetEnvironmentVariables*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetEnvironmentVariables__1___0_System_String___" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetEnvironmentVariables``1(``0,System.String[])">
+  SetEnvironmentVariables&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify environment variables to be included with this build.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetEnvironmentVariables&lt;T&gt;(this T o, params string[] v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFeatures_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFeatures*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFeatures__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFeatures``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetFeatures&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify features to disable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFeatures&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFeatures_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFeatures*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFeatures__1___0_System_String___" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFeatures``1(``0,System.String[])">
+  SetFeatures&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify features to disable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFeatures&lt;T&gt;(this T o, params string[] v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFiles_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFiles__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFiles``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Target file(s) to upload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFiles&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFiles_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFiles__1___0_System_String___" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFiles``1(``0,System.String[])">
+  SetFiles&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Target file(s) to upload.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFiles&lt;T&gt;(this T o, params string[] v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFlags_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFlags*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFlags__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFlags``1(``0,System.String)">
+  SetFlags&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L226"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Flag the upload to group coverage metrics.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFlags&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFramework_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetFramework__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetFramework``1(``0,System.String)">
+  SetFramework&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L341"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFramework&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetName_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetName__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetName``1(``0,System.String)">
+  SetName&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L234"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Custom defined name of the upload. Visible in Codecov UI.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetName&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetNoColor_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetNoColor__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetNoColor``1(``0,System.Nullable{System.Boolean})">
+  SetNoColor&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L242"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove color from the output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoColor&lt;T&gt;(this T o, bool? v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetPullRequest_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetPullRequest*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetPullRequest__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetPullRequest``1(``0,System.String)">
+  SetPullRequest&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the pull request number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPullRequest&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetRepositoryRoot_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetRepositoryRoot*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetRepositoryRoot__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetRepositoryRoot``1(``0,System.String)">
+  SetRepositoryRoot&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Used when not in git/hg project to identify project root directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRepositoryRoot&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetRequired_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetRequired*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetRequired__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetRequired``1(``0,System.Nullable{System.Boolean})">
+  SetRequired&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L275"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exit with <code>1</code> if not successful. Default will Exit with <code>0</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRequired&lt;T&gt;(this T o, bool? v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetSha_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetSha*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetSha__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetSha``1(``0,System.String)">
+  SetSha&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the commit sha.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSha&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetSlug_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetSlug*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetSlug__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetSlug``1(``0,System.String)">
+  SetSlug&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L292"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Owner/repo slug used instead of the private repo token in Enterprise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSlug&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetTag_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetTag*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetTag__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetTag``1(``0,System.String)">
+  SetTag&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L300"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the git tag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTag&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetToken_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetToken*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetToken__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetToken``1(``0,System.String)">
+  SetToken&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L308"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set the private repository token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetToken&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetUrl_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetUrl__1___0_System_String_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetUrl``1(``0,System.String)">
+  SetUrl&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set the target url for Enterprise customers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetUrl&lt;T&gt;(this T o, string v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetVerbose_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.SetVerbose``1(``0,System.Nullable{System.Boolean})">
+  SetVerbose&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verbose mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVerbose&lt;T&gt;(this T o, bool? v) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ToggleDisableNetwork_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ToggleDisableNetwork*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ToggleDisableNetwork__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ToggleDisableNetwork``1(``0)">
+  ToggleDisableNetwork&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disable uploading the file network.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDisableNetwork&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ToggleDump_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ToggleDump*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ToggleDump__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ToggleDump``1(``0)">
+  ToggleDump&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't upload and dump to stdin.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDump&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ToggleNoColor_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ToggleNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ToggleNoColor__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ToggleNoColor``1(``0)">
+  ToggleNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L254"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove color from the output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoColor&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ToggleRequired_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ToggleRequired*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ToggleRequired__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ToggleRequired``1(``0)">
+  ToggleRequired&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L287"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exit with <code>1</code> if not successful. Default will Exit with <code>0</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleRequired&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ToggleVerbose_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ToggleVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Codecov_CodecovSettingsExtensions_ToggleVerbose__1___0_" data-uid="Nuke.Common.Tools.Codecov.CodecovSettingsExtensions.ToggleVerbose``1(``0)">
+  ToggleVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L336"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verbose mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleVerbose&lt;T&gt;(this T o) where T : CodecovSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Codecov/Codecov.Generated.cs/#L93" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

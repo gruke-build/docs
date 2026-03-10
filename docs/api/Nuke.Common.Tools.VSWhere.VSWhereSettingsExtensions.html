@@ -1,0 +1,2597 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class VSWhereSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class VSWhereSettingsExtensions | gruke ">
+      
+      <meta name="description" content="VSWhere is designed to be a redistributable, single-file executable that can be used in build or deployment scripts to find where Visual Studio - or other products in the Visual Studio family - is located.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions" class="text-break">
+Class VSWhereSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.VSWhere.html">VSWhere</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>VSWhere is designed to be a redistributable, single-file executable that can be used in build or deployment scripts to find where Visual Studio - or other products in the Visual Studio family - is located.</p><p>For more details, visit the <a href="https://github.com/Microsoft/vswhere">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class VSWhereSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">VSWhereSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>-all</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_All">All</a></li><li><code>-format</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_Format">Format</a></li><li><code>-latest</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_Latest">Latest</a></li><li><code>-legacy</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_Legacy">Legacy</a></li><li><code>-nologo</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_NoLogo">NoLogo</a></li><li><code>-prerelease</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_Prerelease">Prerelease</a></li><li><code>-products</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_Products">Products</a></li><li><code>-property</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_Property">Property</a></li><li><code>-requires</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_Requires">Requires</a></li><li><code>-requiresAny</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_RequiresAny">RequiresAny</a></li><li><code>-utf8</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_UTF8">UTF8</a></li><li><code>-version</code> via <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereSettings.html#Nuke_Common_Tools_VSWhere_VSWhereSettings_Version">Version</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_AddProducts_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.AddProducts*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_AddProducts__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.AddProducts``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddProducts&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L289"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more product IDs to find. Defaults to Community, Professional, and Enterprise. Specify <em>*</em> by itself to search all product instances installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddProducts&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_AddProducts_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.AddProducts*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_AddProducts__1___0_System_String___" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.AddProducts``1(``0,System.String[])">
+  AddProducts&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L286"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more product IDs to find. Defaults to Community, Professional, and Enterprise. Specify <em>*</em> by itself to search all product instances installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddProducts&lt;T&gt;(this T o, params string[] v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_AddRequires_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.AddRequires*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_AddRequires__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.AddRequires``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddRequires&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L312"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more workload or component IDs required when finding instances. All specified IDs must be installed unless -requiresAny is specified. See <a href="https://aka.ms/vs/workloads"></a> for a list of workload and component IDs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddRequires&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_AddRequires_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.AddRequires*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_AddRequires__1___0_System_String___" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.AddRequires``1(``0,System.String[])">
+  AddRequires&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L309"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more workload or component IDs required when finding instances. All specified IDs must be installed unless -requiresAny is specified. See <a href="https://aka.ms/vs/workloads"></a> for a list of workload and component IDs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddRequires&lt;T&gt;(this T o, params string[] v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ClearProducts_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ClearProducts*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ClearProducts__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ClearProducts``1(``0)">
+  ClearProducts&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L298"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more product IDs to find. Defaults to Community, Professional, and Enterprise. Specify <em>*</em> by itself to search all product instances installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearProducts&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ClearRequires_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ClearRequires*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ClearRequires__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ClearRequires``1(``0)">
+  ClearRequires&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L321"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more workload or component IDs required when finding instances. All specified IDs must be installed unless -requiresAny is specified. See <a href="https://aka.ms/vs/workloads"></a> for a list of workload and component IDs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearRequires&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableAll_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableAll__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableAll``1(``0)">
+  DisableAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all instances even if they are incomplete and may not launch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableAll&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableLatest_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableLatest*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableLatest__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableLatest``1(``0)">
+  DisableLatest&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return only the newest version and last installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableLatest&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableLegacy_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableLegacy*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableLegacy__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableLegacy``1(``0)">
+  DisableLegacy&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L238"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Also searches Visual Studio 2015 and older products. Information is limited. This option cannot be used with either <code>-products</code> or <code>-requires</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableLegacy&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableNoLogo_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableNoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableNoLogo__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableNoLogo``1(``0)">
+  DisableNoLogo&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not show logo information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoLogo&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisablePrerelease_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisablePrerelease*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisablePrerelease__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisablePrerelease``1(``0)">
+  DisablePrerelease&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L272"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Also searches prereleases. By default, only releases are searched.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisablePrerelease&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableRequiresAny_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableRequiresAny*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableRequiresAny__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableRequiresAny``1(``0)">
+  DisableRequiresAny&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L335"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Find instances with any one or more workload or components IDs passed to <code>-requires</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableRequiresAny&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableUTF8_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableUTF8*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_DisableUTF8__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.DisableUTF8``1(``0)">
+  DisableUTF8&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use UTF-8 encoding (recommended for JSON).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableUTF8&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableAll_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableAll__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableAll``1(``0)">
+  EnableAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L252"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all instances even if they are incomplete and may not launch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableAll&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableLatest_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableLatest*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableLatest__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableLatest``1(``0)">
+  EnableLatest&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return only the newest version and last installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableLatest&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableLegacy_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableLegacy*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableLegacy__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableLegacy``1(``0)">
+  EnableLegacy&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Also searches Visual Studio 2015 and older products. Information is limited. This option cannot be used with either <code>-products</code> or <code>-requires</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableLegacy&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableNoLogo_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableNoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableNoLogo__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableNoLogo``1(``0)">
+  EnableNoLogo&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not show logo information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoLogo&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnablePrerelease_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnablePrerelease*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnablePrerelease__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnablePrerelease``1(``0)">
+  EnablePrerelease&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L269"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Also searches prereleases. By default, only releases are searched.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnablePrerelease&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableRequiresAny_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableRequiresAny*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableRequiresAny__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableRequiresAny``1(``0)">
+  EnableRequiresAny&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Find instances with any one or more workload or components IDs passed to <code>-requires</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableRequiresAny&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableUTF8_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableUTF8*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_EnableUTF8__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.EnableUTF8``1(``0)">
+  EnableUTF8&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use UTF-8 encoding (recommended for JSON).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableUTF8&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_RemoveProducts_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.RemoveProducts*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_RemoveProducts__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.RemoveProducts``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveProducts&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L295"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more product IDs to find. Defaults to Community, Professional, and Enterprise. Specify <em>*</em> by itself to search all product instances installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveProducts&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_RemoveProducts_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.RemoveProducts*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_RemoveProducts__1___0_System_String___" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.RemoveProducts``1(``0,System.String[])">
+  RemoveProducts&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L292"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more product IDs to find. Defaults to Community, Professional, and Enterprise. Specify <em>*</em> by itself to search all product instances installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveProducts&lt;T&gt;(this T o, params string[] v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_RemoveRequires_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.RemoveRequires*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_RemoveRequires__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.RemoveRequires``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveRequires&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more workload or component IDs required when finding instances. All specified IDs must be installed unless -requiresAny is specified. See <a href="https://aka.ms/vs/workloads"></a> for a list of workload and component IDs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveRequires&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_RemoveRequires_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.RemoveRequires*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_RemoveRequires__1___0_System_String___" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.RemoveRequires``1(``0,System.String[])">
+  RemoveRequires&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L315"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more workload or component IDs required when finding instances. All specified IDs must be installed unless -requiresAny is specified. See <a href="https://aka.ms/vs/workloads"></a> for a list of workload and component IDs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveRequires&lt;T&gt;(this T o, params string[] v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetAll_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetAll__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetAll``1(``0)">
+  ResetAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all instances even if they are incomplete and may not launch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAll&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetFormat_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetFormat__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetFormat``1(``0)">
+  ResetFormat&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L190"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return information about instances found in a format described below:</p>
+<ul><li><code>text</code>: Colon-delimited properties in separate blocks for each instance (default).</li><li><code>json</code>: An array of JSON objects for each instance (no logo).</li><li><code>value</code>: A single property specified by the -property parameter (no logo).</li><li><code>xml</code>: An XML data set containing instances (no logo).</li></ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFormat&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetLatest_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetLatest*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetLatest__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetLatest``1(``0)">
+  ResetLatest&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return only the newest version and last installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetLatest&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetLegacy_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetLegacy*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetLegacy__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetLegacy``1(``0)">
+  ResetLegacy&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Also searches Visual Studio 2015 and older products. Information is limited. This option cannot be used with either <code>-products</code> or <code>-requires</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetLegacy&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetNoLogo_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetNoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetNoLogo__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetNoLogo``1(``0)">
+  ResetNoLogo&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not show logo information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoLogo&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetPrerelease_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetPrerelease*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetPrerelease__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetPrerelease``1(``0)">
+  ResetPrerelease&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L266"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Also searches prereleases. By default, only releases are searched.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPrerelease&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetProperty_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetProperty*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetProperty__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetProperty``1(``0)">
+  ResetProperty&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L354"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of a property to return. Use delimiters <code>'.'</code>, <code>'/'</code>, or <code>'_'</code> to separate object and property names. Example: <code>properties.nickname</code> will return the <em>nickname</em> property under <em>properties</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetProperty&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetRequiresAny_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetRequiresAny*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetRequiresAny__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetRequiresAny``1(``0)">
+  ResetRequiresAny&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Find instances with any one or more workload or components IDs passed to <code>-requires</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRequiresAny&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetUTF8_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetUTF8*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetUTF8__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetUTF8``1(``0)">
+  ResetUTF8&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use UTF-8 encoding (recommended for JSON).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetUTF8&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetVersion_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ResetVersion__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ResetVersion``1(``0)">
+  ResetVersion&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L346"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A version range for instances to find. Example: <code>[15.0,16.0)</code> will find versions <em>15.*</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVersion&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetAll_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetAll__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetAll``1(``0,System.Nullable{System.Boolean})">
+  SetAll&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L246"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all instances even if they are incomplete and may not launch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAll&lt;T&gt;(this T o, bool? v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetFormat_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetFormat__1___0_Nuke_Common_Tools_VSWhere_VSWhereFormat_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetFormat``1(``0,Nuke.Common.Tools.VSWhere.VSWhereFormat)">
+  SetFormat&lt;T&gt;(T, VSWhereFormat)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return information about instances found in a format described below:</p>
+<ul><li><code>text</code>: Colon-delimited properties in separate blocks for each instance (default).</li><li><code>json</code>: An array of JSON objects for each instance (no logo).</li><li><code>value</code>: A single property specified by the -property parameter (no logo).</li><li><code>xml</code>: An XML data set containing instances (no logo).</li></ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFormat&lt;T&gt;(this T o, VSWhereFormat v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.VSWhere.VSWhereFormat.html">VSWhereFormat</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetLatest_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetLatest*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetLatest__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetLatest``1(``0,System.Nullable{System.Boolean})">
+  SetLatest&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return only the newest version and last installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetLatest&lt;T&gt;(this T o, bool? v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetLegacy_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetLegacy*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetLegacy__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetLegacy``1(``0,System.Nullable{System.Boolean})">
+  SetLegacy&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Also searches Visual Studio 2015 and older products. Information is limited. This option cannot be used with either <code>-products</code> or <code>-requires</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetLegacy&lt;T&gt;(this T o, bool? v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetNoLogo_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetNoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetNoLogo__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetNoLogo``1(``0,System.Nullable{System.Boolean})">
+  SetNoLogo&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not show logo information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoLogo&lt;T&gt;(this T o, bool? v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetPrerelease_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetPrerelease*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetPrerelease__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetPrerelease``1(``0,System.Nullable{System.Boolean})">
+  SetPrerelease&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L263"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Also searches prereleases. By default, only releases are searched.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPrerelease&lt;T&gt;(this T o, bool? v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetProducts_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetProducts*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetProducts__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetProducts``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetProducts&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L283"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more product IDs to find. Defaults to Community, Professional, and Enterprise. Specify <em>*</em> by itself to search all product instances installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProducts&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetProducts_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetProducts*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetProducts__1___0_System_String___" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetProducts``1(``0,System.String[])">
+  SetProducts&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L280"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more product IDs to find. Defaults to Community, Professional, and Enterprise. Specify <em>*</em> by itself to search all product instances installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProducts&lt;T&gt;(this T o, params string[] v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetProperty_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetProperty*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetProperty__1___0_System_String_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetProperty``1(``0,System.String)">
+  SetProperty&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L351"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of a property to return. Use delimiters <code>'.'</code>, <code>'/'</code>, or <code>'_'</code> to separate object and property names. Example: <code>properties.nickname</code> will return the <em>nickname</em> property under <em>properties</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProperty&lt;T&gt;(this T o, string v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetRequiresAny_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetRequiresAny*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetRequiresAny__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetRequiresAny``1(``0,System.Nullable{System.Boolean})">
+  SetRequiresAny&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Find instances with any one or more workload or components IDs passed to <code>-requires</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRequiresAny&lt;T&gt;(this T o, bool? v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetRequires_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetRequires*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetRequires__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetRequires``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetRequires&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more workload or component IDs required when finding instances. All specified IDs must be installed unless -requiresAny is specified. See <a href="https://aka.ms/vs/workloads"></a> for a list of workload and component IDs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRequires&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetRequires_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetRequires*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetRequires__1___0_System_String___" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetRequires``1(``0,System.String[])">
+  SetRequires&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L303"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>One or more workload or component IDs required when finding instances. All specified IDs must be installed unless -requiresAny is specified. See <a href="https://aka.ms/vs/workloads"></a> for a list of workload and component IDs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRequires&lt;T&gt;(this T o, params string[] v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetUTF8_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetUTF8*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetUTF8__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetUTF8``1(``0,System.Nullable{System.Boolean})">
+  SetUTF8&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use UTF-8 encoding (recommended for JSON).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetUTF8&lt;T&gt;(this T o, bool? v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetVersion_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_SetVersion__1___0_System_String_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.SetVersion``1(``0,System.String)">
+  SetVersion&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L343"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A version range for instances to find. Example: <code>[15.0,16.0)</code> will find versions <em>15.*</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVersion&lt;T&gt;(this T o, string v) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleAll_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleAll__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleAll``1(``0)">
+  ToggleAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L258"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds all instances even if they are incomplete and may not launch.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleAll&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleLatest_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleLatest*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleLatest__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleLatest``1(``0)">
+  ToggleLatest&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return only the newest version and last installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleLatest&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleLegacy_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleLegacy*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleLegacy__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleLegacy``1(``0)">
+  ToggleLegacy&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Also searches Visual Studio 2015 and older products. Information is limited. This option cannot be used with either <code>-products</code> or <code>-requires</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleLegacy&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleNoLogo_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleNoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleNoLogo__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleNoLogo``1(``0)">
+  ToggleNoLogo&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not show logo information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoLogo&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_TogglePrerelease_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.TogglePrerelease*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_TogglePrerelease__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.TogglePrerelease``1(``0)">
+  TogglePrerelease&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L275"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Also searches prereleases. By default, only releases are searched.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T TogglePrerelease&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleRequiresAny_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleRequiresAny*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleRequiresAny__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleRequiresAny``1(``0)">
+  ToggleRequiresAny&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L338"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Find instances with any one or more workload or components IDs passed to <code>-requires</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleRequiresAny&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleUTF8_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleUTF8*"></a>
+
+  <h3 id="Nuke_Common_Tools_VSWhere_VSWhereSettingsExtensions_ToggleUTF8__1___0_" data-uid="Nuke.Common.Tools.VSWhere.VSWhereSettingsExtensions.ToggleUTF8``1(``0)">
+  ToggleUTF8&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use UTF-8 encoding (recommended for JSON).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleUTF8&lt;T&gt;(this T o) where T : VSWhereSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/VSWhere/VSWhere.Generated.cs/#L164" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

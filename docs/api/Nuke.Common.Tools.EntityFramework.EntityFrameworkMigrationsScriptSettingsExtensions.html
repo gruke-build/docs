@@ -1,0 +1,2497 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class EntityFrameworkMigrationsScriptSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class EntityFrameworkMigrationsScriptSettingsExtensions | gruke ">
+      
+      <meta name="description" content="The dotnet-ef migrations script command is used to generate a SQL script from migrations.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions" class="text-break">
+Class EntityFrameworkMigrationsScriptSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2285"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.EntityFramework.html">EntityFramework</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The <code>dotnet-ef migrations script</code> command is used to generate a SQL script from migrations.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class EntityFrameworkMigrationsScriptSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">EntityFrameworkMigrationsScriptSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;from&gt;</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_From">From</a></li><li><code>&lt;to&gt;</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_To">To</a></li><li><code>--configuration</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_Configuration">Configuration</a></li><li><code>--context</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_Context">Context</a></li><li><code>--framework</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_Framework">Framework</a></li><li><code>--idempotent</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_Idempotent">Idempotent</a></li><li><code>--json</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_Json">Json</a></li><li><code>--no-build</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_NoBuild">NoBuild</a></li><li><code>--no-color</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_NoColor">NoColor</a></li><li><code>--no-transactions</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_NoTransactions">NoTransactions</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_Output">Output</a></li><li><code>--prefix-output</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_PrefixOutput">PrefixOutput</a></li><li><code>--project</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_Project">Project</a></li><li><code>--runtime</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_Runtime">Runtime</a></li><li><code>--startup-project</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_StartupProject">StartupProject</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettings_Verbose">Verbose</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableIdempotent_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableIdempotent*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableIdempotent__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableIdempotent``1(``0)">
+  DisableIdempotent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate a script that can be used on a database at any migration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableIdempotent&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableJson_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableJson__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableJson``1(``0)">
+  DisableJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2358"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableJson&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableNoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableNoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableNoBuild__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableNoBuild``1(``0)">
+  DisableNoBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2423"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoBuild&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableNoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableNoColor__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableNoColor``1(``0)">
+  DisableNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2440"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoColor&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableNoTransactions_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableNoTransactions*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableNoTransactions__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableNoTransactions``1(``0)">
+  DisableNoTransactions&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2341"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't generate SQL transaction statements. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoTransactions&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisablePrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisablePrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisablePrefixOutput__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisablePrefixOutput``1(``0)">
+  DisablePrefixOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2457"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisablePrefixOutput&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableVerbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_DisableVerbose__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.DisableVerbose``1(``0)">
+  DisableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2474"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableVerbose&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableIdempotent_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableIdempotent*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableIdempotent__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableIdempotent``1(``0)">
+  EnableIdempotent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2321"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate a script that can be used on a database at any migration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableIdempotent&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableJson_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableJson__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableJson``1(``0)">
+  EnableJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2355"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableJson&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableNoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableNoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableNoBuild__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableNoBuild``1(``0)">
+  EnableNoBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2420"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoBuild&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableNoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableNoColor__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableNoColor``1(``0)">
+  EnableNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2437"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoColor&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableNoTransactions_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableNoTransactions*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableNoTransactions__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableNoTransactions``1(``0)">
+  EnableNoTransactions&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2338"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't generate SQL transaction statements. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoTransactions&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnablePrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnablePrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnablePrefixOutput__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnablePrefixOutput``1(``0)">
+  EnablePrefixOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2454"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnablePrefixOutput&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableVerbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_EnableVerbose__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.EnableVerbose``1(``0)">
+  EnableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2471"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableVerbose&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetConfiguration_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetConfiguration*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetConfiguration__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetConfiguration``1(``0)">
+  ResetConfiguration&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2401"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The build configuration, for example: <code>Debug</code> or <code>Release.</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetConfiguration&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetContext_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetContext*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetContext__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetContext``1(``0)">
+  ResetContext&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2369"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The <code>DbContext</code> class to use. Class name only or fully qualified with namespaces. If this option is omitted, EF Core will find the context class. If there are multiple context classes, this option is required.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetContext&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetFramework_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetFramework__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetFramework``1(``0)">
+  ResetFramework&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2393"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks#supported-target-framework-versions">Target Framework Moniker</a> for the <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks">target framework</a>. Use when the project file specifies multiple target frameworks, and you want to select one of them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFramework&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetFrom_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetFrom*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetFrom__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetFrom``1(``0)">
+  ResetFrom&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2294"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The starting migration. Migrations may be identified by name or by ID. The number 0 is a special case that means <em>before the first migration</em>. Defaults to 0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFrom&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetIdempotent_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetIdempotent*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetIdempotent__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetIdempotent``1(``0)">
+  ResetIdempotent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate a script that can be used on a database at any migration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetIdempotent&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetJson_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetJson__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetJson``1(``0)">
+  ResetJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2352"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetJson&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetNoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetNoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetNoBuild__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetNoBuild``1(``0)">
+  ResetNoBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2417"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoBuild&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetNoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetNoColor__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetNoColor``1(``0)">
+  ResetNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2434"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoColor&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetNoTransactions_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetNoTransactions*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetNoTransactions__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetNoTransactions``1(``0)">
+  ResetNoTransactions&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2335"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't generate SQL transaction statements. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoTransactions&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetOutput__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetOutput``1(``0)">
+  ResetOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2310"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The file to write the script to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutput&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetPrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetPrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetPrefixOutput__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetPrefixOutput``1(``0)">
+  ResetPrefixOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2451"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPrefixOutput&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetProject_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetProject*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetProject__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetProject``1(``0)">
+  ResetProject&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2377"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Relative path to the project folder of the target project. Default value is the current folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetProject&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetRuntime_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetRuntime*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetRuntime__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetRuntime``1(``0)">
+  ResetRuntime&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2409"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The identifier of the target runtime to restore packages for. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog">RID catalog</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRuntime&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetStartupProject_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetStartupProject*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetStartupProject__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetStartupProject``1(``0)">
+  ResetStartupProject&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2385"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Relative path to the project folder of the startup project. Default value is the current folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetStartupProject&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetTo_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetTo*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetTo__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetTo``1(``0)">
+  ResetTo&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2302"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The ending migration. Defaults to the last migration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTo&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetVerbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ResetVerbose__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ResetVerbose``1(``0)">
+  ResetVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2468"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVerbose&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetConfiguration_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetConfiguration*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetConfiguration__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetConfiguration``1(``0,System.String)">
+  SetConfiguration&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2398"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The build configuration, for example: <code>Debug</code> or <code>Release.</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetConfiguration&lt;T&gt;(this T o, string v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetContext_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetContext*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetContext__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetContext``1(``0,System.String)">
+  SetContext&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2366"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The <code>DbContext</code> class to use. Class name only or fully qualified with namespaces. If this option is omitted, EF Core will find the context class. If there are multiple context classes, this option is required.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetContext&lt;T&gt;(this T o, string v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetFramework_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetFramework__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetFramework``1(``0,System.String)">
+  SetFramework&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2390"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks#supported-target-framework-versions">Target Framework Moniker</a> for the <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks">target framework</a>. Use when the project file specifies multiple target frameworks, and you want to select one of them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFramework&lt;T&gt;(this T o, string v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetFrom_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetFrom*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetFrom__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetFrom``1(``0,System.String)">
+  SetFrom&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2291"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The starting migration. Migrations may be identified by name or by ID. The number 0 is a special case that means <em>before the first migration</em>. Defaults to 0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFrom&lt;T&gt;(this T o, string v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetIdempotent_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetIdempotent*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetIdempotent__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetIdempotent``1(``0,System.Nullable{System.Boolean})">
+  SetIdempotent&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2315"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate a script that can be used on a database at any migration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetIdempotent&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetJson_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetJson__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetJson``1(``0,System.Nullable{System.Boolean})">
+  SetJson&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2349"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetJson&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetNoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetNoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetNoBuild__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetNoBuild``1(``0,System.Nullable{System.Boolean})">
+  SetNoBuild&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2414"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoBuild&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetNoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetNoColor__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetNoColor``1(``0,System.Nullable{System.Boolean})">
+  SetNoColor&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2431"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoColor&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetNoTransactions_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetNoTransactions*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetNoTransactions__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetNoTransactions``1(``0,System.Nullable{System.Boolean})">
+  SetNoTransactions&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't generate SQL transaction statements. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoTransactions&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetOutput__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetOutput``1(``0,System.String)">
+  SetOutput&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2307"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The file to write the script to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutput&lt;T&gt;(this T o, string v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetPrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetPrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetPrefixOutput__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetPrefixOutput``1(``0,System.Nullable{System.Boolean})">
+  SetPrefixOutput&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2448"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPrefixOutput&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetProject_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetProject*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetProject__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetProject``1(``0,System.String)">
+  SetProject&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2374"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Relative path to the project folder of the target project. Default value is the current folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProject&lt;T&gt;(this T o, string v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetRuntime_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetRuntime*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetRuntime__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetRuntime``1(``0,System.String)">
+  SetRuntime&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2406"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The identifier of the target runtime to restore packages for. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog">RID catalog</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRuntime&lt;T&gt;(this T o, string v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetStartupProject_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetStartupProject*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetStartupProject__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetStartupProject``1(``0,System.String)">
+  SetStartupProject&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2382"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Relative path to the project folder of the startup project. Default value is the current folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetStartupProject&lt;T&gt;(this T o, string v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetTo_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetTo*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetTo__1___0_System_String_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetTo``1(``0,System.String)">
+  SetTo&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2299"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The ending migration. Defaults to the last migration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTo&lt;T&gt;(this T o, string v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetVerbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.SetVerbose``1(``0,System.Nullable{System.Boolean})">
+  SetVerbose&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2465"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVerbose&lt;T&gt;(this T o, bool? v) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleIdempotent_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleIdempotent*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleIdempotent__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleIdempotent``1(``0)">
+  ToggleIdempotent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2327"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate a script that can be used on a database at any migration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleIdempotent&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleJson_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleJson__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleJson``1(``0)">
+  ToggleJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2361"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleJson&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleNoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleNoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleNoBuild__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleNoBuild``1(``0)">
+  ToggleNoBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2426"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoBuild&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleNoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleNoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleNoColor__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleNoColor``1(``0)">
+  ToggleNoColor&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2443"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoColor&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleNoTransactions_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleNoTransactions*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleNoTransactions__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleNoTransactions``1(``0)">
+  ToggleNoTransactions&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2344"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't generate SQL transaction statements. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoTransactions&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_TogglePrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.TogglePrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_TogglePrefixOutput__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.TogglePrefixOutput``1(``0)">
+  TogglePrefixOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2460"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T TogglePrefixOutput&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleVerbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkMigrationsScriptSettingsExtensions_ToggleVerbose__1___0_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkMigrationsScriptSettingsExtensions.ToggleVerbose``1(``0)">
+  ToggleVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2477"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleVerbose&lt;T&gt;(this T o) where T : EntityFrameworkMigrationsScriptSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L2285" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

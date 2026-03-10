@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface ISignPackages | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface ISignPackages | gruke ">
+      
+      <meta name="description" content="This component allows to easily sign NuGet packages with SignPath and AppVeyor.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Components_ISignPackages.md&amp;value=---%0Auid%3A%20Nuke.Components.ISignPackages%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Components.ISignPackages">
+
+
+
+  <h1 id="Nuke_Components_ISignPackages" data-uid="Nuke.Components.ISignPackages" class="text-break">
+Interface ISignPackages  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Components.html">Components</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Components.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>This component allows to easily sign NuGet packages with
+<a href="https://signpath.io">SignPath</a> and
+<a href="https://ci.appveyor.com">AppVeyor</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ParameterPrefix(&quot;SignPath&quot;)]
+public interface ISignPackages : INukeBuild</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_ReportSummary_Nuke_Common_Tooling_Configure_System_Collections_Generic_Dictionary_System_String_System_String___">INukeBuild.ReportSummary(Configure&lt;Dictionary&lt;string, string&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_ExecutionPlan">INukeBuild.ExecutionPlan</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_InvokedTargets">INukeBuild.InvokedTargets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_SkippedTargets">INukeBuild.SkippedTargets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_ScheduledTargets">INukeBuild.ScheduledTargets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_RunningTargets">INukeBuild.RunningTargets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_AbortedTargets">INukeBuild.AbortedTargets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_FailedTargets">INukeBuild.FailedTargets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_SucceededTargets">INukeBuild.SucceededTargets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_FinishedTargets">INukeBuild.FinishedTargets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_IsSucceeding">INukeBuild.IsSucceeding</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_IsFailing">INukeBuild.IsFailing</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_IsFinished">INukeBuild.IsFinished</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_ExitCode">INukeBuild.ExitCode</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_RootDirectory">INukeBuild.RootDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_TemporaryDirectory">INukeBuild.TemporaryDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_BuildAssemblyFile">INukeBuild.BuildAssemblyFile</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_BuildAssemblyDirectory">INukeBuild.BuildAssemblyDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_BuildProjectDirectory">INukeBuild.BuildProjectDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_BuildProjectFile">INukeBuild.BuildProjectFile</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_Verbosity">INukeBuild.Verbosity</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_Host">INukeBuild.Host</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_Plan">INukeBuild.Plan</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_Help">INukeBuild.Help</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_NoLogo">INukeBuild.NoLogo</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_IsLocalBuild">INukeBuild.IsLocalBuild</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_IsServerBuild">INukeBuild.IsServerBuild</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_Continue">INukeBuild.Continue</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_Partition">INukeBuild.Partition</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_TryGetValue__1_System_Linq_Expressions_Expression_System_Func___0___">INukeBuild.TryGetValue&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.INukeBuild.html#Nuke_Common_INukeBuild_TryGetValue__1_System_Linq_Expressions_Expression_System_Func_System_Object___">INukeBuild.TryGetValue&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Components_ISignPackages_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>
+To implement this interface, proceed as follows:
+<ul>
+  <li>Register for an open-source account at <a href="https://sig.fo">sig.fo</a></li>
+  <li>Generate or copy the Bearer token at <a href="https://ci.appveyor.com/api-keys">ci.appveyor.com/api-keys</a></li>
+  <li>Add AppVeyor as a <a href="https://about.signpath.io/documentation/projects#trusted-build-systems">trusted build system</a></li>
+  <li>Provide the Bearer token and set <code>signing-request.zip</code> as the artifact path</li>
+  <li>Create a <a href="https://about.signpath.io/documentation/users">CI user</a> and assign it as <a href="https://about.signpath.io/documentation/projects#signing-policies">submitter for the signing policy</a></li>
+  <li>Encrypt the generated API token at <a href="https://ci.appveyor.com/tools/encrypt">ci.appveyor.com/tools/encrypt</a></li>
+  <li>Provide an <a href="https://about.signpath.io/documentation/artifact-configuration">artifact configuration</a></li>
+  <li>
+    Extend the <code>appveyor.yml</code> with all necessary data
+<pre><code>&lt;pre&gt;&lt;code class=&quot;lang-csharp&quot;&gt;environment:
+</code></pre>
+<p>SignPathApiToken:
+secure: &lt;encrypted-api-token&gt;
+SignPathOrganizationId: &lt;organization-id&gt;
+SignPathProjectSlug: &lt;project-Slug&gt;
+SignPathPolicySlug: &lt;policy-Slug&gt;</p>
+  </li>
+</ul>
+
+</div>
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Nuke_Components_ISignPackages_SignPath" data-uid="Nuke.Components.ISignPackages.SignPath">
+  SignPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string SignPath = &quot;SignPath&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Components_ISignPackages_ApiToken_" data-uid="Nuke.Components.ISignPackages.ApiToken*"></a>
+
+  <h3 id="Nuke_Components_ISignPackages_ApiToken" data-uid="Nuke.Components.ISignPackages.ApiToken">
+  ApiToken
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(null)]
+string ApiToken { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Components_ISignPackages_Settings_" data-uid="Nuke.Components.ISignPackages.Settings*"></a>
+
+  <h3 id="Nuke_Components_ISignPackages_Settings" data-uid="Nuke.Components.ISignPackages.Settings">
+  Settings
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(null)]
+ISignPackages.SignPathSettings Settings { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Components.ISignPackages.html">ISignPackages</a>.<a class="xref" href="Nuke.Components.ISignPackages.SignPathSettings.html">SignPathSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Components_ISignPackages_SignPackages_" data-uid="Nuke.Components.ISignPackages.SignPackages*"></a>
+
+  <h3 id="Nuke_Components_ISignPackages_SignPackages" data-uid="Nuke.Components.ISignPackages.SignPackages">
+  SignPackages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Target SignPackages { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Target.html">Target</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Components_ISignPackages_SignPathPackages_" data-uid="Nuke.Components.ISignPackages.SignPathPackages*"></a>
+
+  <h3 id="Nuke_Components_ISignPackages_SignPathPackages" data-uid="Nuke.Components.ISignPackages.SignPathPackages">
+  SignPathPackages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;AbsolutePath&gt; SignPathPackages { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Components_ISignPackages_SignPathReplacePackages_" data-uid="Nuke.Components.ISignPackages.SignPathReplacePackages*"></a>
+
+  <h3 id="Nuke_Components_ISignPackages_SignPathReplacePackages" data-uid="Nuke.Components.ISignPackages.SignPathReplacePackages">
+  SignPathReplacePackages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool SignPathReplacePackages { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Components_ISignPackages_SignPathRequestArchive_" data-uid="Nuke.Components.ISignPackages.SignPathRequestArchive*"></a>
+
+  <h3 id="Nuke_Components_ISignPackages_SignPathRequestArchive" data-uid="Nuke.Components.ISignPackages.SignPathRequestArchive">
+  SignPathRequestArchive
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AbsolutePath SignPathRequestArchive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Components_ISignPackages_SignPathRequestDirectory_" data-uid="Nuke.Components.ISignPackages.SignPathRequestDirectory*"></a>
+
+  <h3 id="Nuke_Components_ISignPackages_SignPathRequestDirectory" data-uid="Nuke.Components.ISignPackages.SignPathRequestDirectory">
+  SignPathRequestDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AbsolutePath SignPathRequestDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Components_ISignPackages_SignPathResponseArchive_" data-uid="Nuke.Components.ISignPackages.SignPathResponseArchive*"></a>
+
+  <h3 id="Nuke_Components_ISignPackages_SignPathResponseArchive" data-uid="Nuke.Components.ISignPackages.SignPathResponseArchive">
+  SignPathResponseArchive
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AbsolutePath SignPathResponseArchive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Components_ISignPackages_SignPathResponseDirectory_" data-uid="Nuke.Components.ISignPackages.SignPathResponseDirectory*"></a>
+
+  <h3 id="Nuke_Components_ISignPackages_SignPathResponseDirectory" data-uid="Nuke.Components.ISignPackages.SignPathResponseDirectory">
+  SignPathResponseDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AbsolutePath SignPathResponseDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Components_ISignPackages_SignPathTemporaryDirectory_" data-uid="Nuke.Components.ISignPackages.SignPathTemporaryDirectory*"></a>
+
+  <h3 id="Nuke_Components_ISignPackages_SignPathTemporaryDirectory" data-uid="Nuke.Components.ISignPackages.SignPathTemporaryDirectory">
+  SignPathTemporaryDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">AbsolutePath SignPathTemporaryDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Components/ISignPackages.cs/#L48" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

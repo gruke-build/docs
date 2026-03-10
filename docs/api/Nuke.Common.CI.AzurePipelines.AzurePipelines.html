@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AzurePipelines | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AzurePipelines | gruke ">
+      
+      <meta name="description" content="Interface according to the official website. Azure Pipeline Tasks Documentation">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_CI_AzurePipelines_AzurePipelines.md&amp;value=---%0Auid%3A%20Nuke.Common.CI.AzurePipelines.AzurePipelines%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines">
+
+
+
+  <h1 id="Nuke_Common_CI_AzurePipelines_AzurePipelines" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines" class="text-break">
+Class AzurePipelines  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.Theming.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.CI.html">CI</a>.<a class="xref" href="Nuke.Common.CI.AzurePipelines.html">AzurePipelines</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Interface according to the <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&amp;tabs=yaml">official website</a>.
+<a href="https://github.com/Microsoft/azure-pipelines-tasks/blob/master/docs/authoring/commands.md">Azure Pipeline Tasks Documentation</a></p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class AzurePipelines : Host, IBuildServer</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Host.html">Host</a></div>
+      <div><span class="xref">AzurePipelines</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.CI.IBuildServer.html">IBuildServer</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Host.html#Nuke_Common_Host_WriteLogo">Host.WriteLogo()</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Host.html#Nuke_Common_Host_WriteErrorsAndWarnings">Host.WriteErrorsAndWarnings()</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Host.html#Nuke_Common_Host_WriteTargetOutcome_Nuke_Common_INukeBuild_">Host.WriteTargetOutcome(INukeBuild)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Host.html#Nuke_Common_Host_WriteBuildOutcome_Nuke_Common_INukeBuild_">Host.WriteBuildOutcome(INukeBuild)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AccessToken_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AccessToken*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AccessToken" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AccessToken">
+  AccessToken
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public string AccessToken { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentBuildDirectory_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentBuildDirectory*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentBuildDirectory" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentBuildDirectory">
+  AgentBuildDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AgentBuildDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentHomeDirectory_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentHomeDirectory*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentHomeDirectory" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentHomeDirectory">
+  AgentHomeDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AgentHomeDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentId_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentId*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentId" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentId">
+  AgentId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long AgentId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentJobStatus_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentJobStatus*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentJobStatus" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentJobStatus">
+  AgentJobStatus
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AzurePipelinesJobStatus AgentJobStatus { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.CI.AzurePipelines.AzurePipelinesJobStatus.html">AzurePipelinesJobStatus</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentMachineName_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentMachineName*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentMachineName" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentMachineName">
+  AgentMachineName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AgentMachineName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentName_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentName*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentName" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentName">
+  AgentName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AgentName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentWorkFolder_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentWorkFolder*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AgentWorkFolder" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AgentWorkFolder">
+  AgentWorkFolder
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AgentWorkFolder { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_ArtifactStagingDirectory_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.ArtifactStagingDirectory*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_ArtifactStagingDirectory" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.ArtifactStagingDirectory">
+  ArtifactStagingDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ArtifactStagingDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_BinariesDirectory_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.BinariesDirectory*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_BinariesDirectory" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.BinariesDirectory">
+  BinariesDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BinariesDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_BuildId_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.BuildId*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_BuildId" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.BuildId">
+  BuildId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long BuildId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_BuildNumber_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.BuildNumber*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_BuildNumber" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.BuildNumber">
+  BuildNumber
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BuildNumber { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_BuildReason_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.BuildReason*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_BuildReason" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.BuildReason">
+  BuildReason
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AzurePipelinesBuildReason BuildReason { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.CI.AzurePipelines.AzurePipelinesBuildReason.html">AzurePipelinesBuildReason</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_BuildUri_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.BuildUri*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_BuildUri" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.BuildUri">
+  BuildUri
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BuildUri { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_CollectionId_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.CollectionId*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_CollectionId" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.CollectionId">
+  CollectionId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid CollectionId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_DefaultWorkingDirectory_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.DefaultWorkingDirectory*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_DefaultWorkingDirectory" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.DefaultWorkingDirectory">
+  DefaultWorkingDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DefaultWorkingDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_DefinitionId_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.DefinitionId*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_DefinitionId" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.DefinitionId">
+  DefinitionId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long DefinitionId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_DefinitionName_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.DefinitionName*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_DefinitionName" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.DefinitionName">
+  DefinitionName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DefinitionName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_DefinitionVersion_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.DefinitionVersion*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_DefinitionVersion" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.DefinitionVersion">
+  DefinitionVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long DefinitionVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_Instance_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.Instance*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_Instance" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.Instance">
+  Instance
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AzurePipelines Instance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.CI.AzurePipelines.AzurePipelines.html">AzurePipelines</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_JobDisplayName_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.JobDisplayName*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_JobDisplayName" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.JobDisplayName">
+  JobDisplayName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string JobDisplayName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_JobId_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.JobId*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_JobId" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.JobId">
+  JobId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid JobId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PhaseName_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PhaseName*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PhaseName" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PhaseName">
+  PhaseName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PhaseName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PullRequestId_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PullRequestId*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PullRequestId" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PullRequestId">
+  PullRequestId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public long? PullRequestId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PullRequestSourceBranch_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PullRequestSourceBranch*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PullRequestSourceBranch" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PullRequestSourceBranch">
+  PullRequestSourceBranch
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public string PullRequestSourceBranch { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PullRequestTargetBranch_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PullRequestTargetBranch*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PullRequestTargetBranch" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PullRequestTargetBranch">
+  PullRequestTargetBranch
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public string PullRequestTargetBranch { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_QueuedBy_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.QueuedBy*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_QueuedBy" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.QueuedBy">
+  QueuedBy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string QueuedBy { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_QueuedById_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.QueuedById*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_QueuedById" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.QueuedById">
+  QueuedById
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid QueuedById { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryClean_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryClean*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryClean" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryClean">
+  RepositoryClean
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RepositoryClean { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryGitSubmoduleCheckout_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryGitSubmoduleCheckout*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryGitSubmoduleCheckout" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryGitSubmoduleCheckout">
+  RepositoryGitSubmoduleCheckout
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RepositoryGitSubmoduleCheckout { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryLocalPath_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryLocalPath*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryLocalPath" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryLocalPath">
+  RepositoryLocalPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RepositoryLocalPath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryName_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryName*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryName" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryName">
+  RepositoryName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RepositoryName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryProvider_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryProvider*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryProvider" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryProvider">
+  RepositoryProvider
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AzurePipelinesRepositoryType RepositoryProvider { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.CI.AzurePipelines.AzurePipelinesRepositoryType.html">AzurePipelinesRepositoryType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryTfvcWorkspace_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryTfvcWorkspace*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryTfvcWorkspace" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryTfvcWorkspace">
+  RepositoryTfvcWorkspace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public string RepositoryTfvcWorkspace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryUri_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryUri*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RepositoryUri" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RepositoryUri">
+  RepositoryUri
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RepositoryUri { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RequestedFor_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RequestedFor*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RequestedFor" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RequestedFor">
+  RequestedFor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RequestedFor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RequestedForEmail_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RequestedForEmail*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RequestedForEmail" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RequestedForEmail">
+  RequestedForEmail
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RequestedForEmail { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RequestedForId_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RequestedForId*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_RequestedForId" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.RequestedForId">
+  RequestedForId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid RequestedForId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SourceBranch_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SourceBranch*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SourceBranch" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SourceBranch">
+  SourceBranch
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SourceBranch { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SourceBranchName_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SourceBranchName*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SourceBranchName" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SourceBranchName">
+  SourceBranchName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SourceBranchName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SourceDirectory_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SourceDirectory*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SourceDirectory" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SourceDirectory">
+  SourceDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SourceDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SourceTfvcShelveset_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SourceTfvcShelveset*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SourceTfvcShelveset" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SourceTfvcShelveset">
+  SourceTfvcShelveset
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public string SourceTfvcShelveset { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SourceVersion_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SourceVersion*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SourceVersion" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SourceVersion">
+  SourceVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SourceVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_StageDisplayName_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.StageDisplayName*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_StageDisplayName" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.StageDisplayName">
+  StageDisplayName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StageDisplayName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_StageName_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.StageName*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_StageName" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.StageName">
+  StageName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StageName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_StagingDirectory_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.StagingDirectory*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_StagingDirectory" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.StagingDirectory">
+  StagingDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StagingDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_TaskInstanceId_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.TaskInstanceId*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_TaskInstanceId" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.TaskInstanceId">
+  TaskInstanceId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid TaskInstanceId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_TeamFoundationCollectionUri_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.TeamFoundationCollectionUri*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_TeamFoundationCollectionUri" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.TeamFoundationCollectionUri">
+  TeamFoundationCollectionUri
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TeamFoundationCollectionUri { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_TeamProject_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.TeamProject*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_TeamProject" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.TeamProject">
+  TeamProject
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TeamProject { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_TeamProjectId_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.TeamProjectId*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_TeamProjectId" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.TeamProjectId">
+  TeamProjectId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Guid TeamProjectId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_TestResultsDirectory_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.TestResultsDirectory*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_TestResultsDirectory" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.TestResultsDirectory">
+  TestResultsDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TestResultsDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AddBuildTag_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AddBuildTag*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_AddBuildTag_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.AddBuildTag(System.String)">
+  AddBuildTag(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddBuildTag(string buildTag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buildTag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_EndGroup_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.EndGroup*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_EndGroup_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.EndGroup(System.String)">
+  EndGroup(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void EndGroup(string group)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>group</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_FilterMessage_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.FilterMessage*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_FilterMessage_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.FilterMessage(System.String)">
+  FilterMessage(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.Theming.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool FilterMessage(string message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_Group_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.Group*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_Group_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.Group(System.String)">
+  Group(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Group(string group)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>group</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_LogError_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.LogError*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_LogError_System_String_System_String_System_String_System_String_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.LogError(System.String,System.String,System.String,System.String,System.String)">
+  LogError(string, string, string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LogError(string message, string sourcePath = null, string lineNumber = null, string columnNumber = null, string code = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>sourcePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lineNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>columnNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_LogIssue_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.LogIssue*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_LogIssue_Nuke_Common_CI_AzurePipelines_AzurePipelinesIssueType_System_String_System_String_System_String_System_String_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.LogIssue(Nuke.Common.CI.AzurePipelines.AzurePipelinesIssueType,System.String,System.String,System.String,System.String,System.String)">
+  LogIssue(AzurePipelinesIssueType, string, string, string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LogIssue(AzurePipelinesIssueType type, string message, string sourcePath = null, string lineNumber = null, string columnNumber = null, string code = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="Nuke.Common.CI.AzurePipelines.AzurePipelinesIssueType.html">AzurePipelinesIssueType</a></dt>
+    <dd></dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>sourcePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lineNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>columnNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_LogWarning_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.LogWarning*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_LogWarning_System_String_System_String_System_String_System_String_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.LogWarning(System.String,System.String,System.String,System.String,System.String)">
+  LogWarning(string, string, string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void LogWarning(string message, string sourcePath = null, string lineNumber = null, string columnNumber = null, string code = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>sourcePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>lineNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>columnNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PublishCodeCoverage_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PublishCodeCoverage*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PublishCodeCoverage_Nuke_Common_CI_AzurePipelines_AzurePipelinesCodeCoverageToolType_System_String_System_String_System_String___" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PublishCodeCoverage(Nuke.Common.CI.AzurePipelines.AzurePipelinesCodeCoverageToolType,System.String,System.String,System.String[])">
+  PublishCodeCoverage(AzurePipelinesCodeCoverageToolType, string, string, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PublishCodeCoverage(AzurePipelinesCodeCoverageToolType coverageTool, string summaryFile, string reportDirectory, params string[] additionalCodeCoverageFiles)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>coverageTool</code> <a class="xref" href="Nuke.Common.CI.AzurePipelines.AzurePipelinesCodeCoverageToolType.html">AzurePipelinesCodeCoverageToolType</a></dt>
+    <dd></dd>
+    <dt><code>summaryFile</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>reportDirectory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>additionalCodeCoverageFiles</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PublishTestResults_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PublishTestResults*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_PublishTestResults_System_String_Nuke_Common_CI_AzurePipelines_AzurePipelinesTestResultsType_System_Collections_Generic_IEnumerable_System_String__System_Nullable_System_Boolean__System_String_System_String_System_Nullable_System_Boolean__" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.PublishTestResults(System.String,Nuke.Common.CI.AzurePipelines.AzurePipelinesTestResultsType,System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Boolean},System.String,System.String,System.Nullable{System.Boolean})">
+  PublishTestResults(string, AzurePipelinesTestResultsType, IEnumerable&lt;string&gt;, bool?, string, string, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void PublishTestResults(string title, AzurePipelinesTestResultsType type, IEnumerable&lt;string&gt; files, bool? mergeResults = null, string platform = null, string configuration = null, bool? publishRunAttachments = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>title</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>type</code> <a class="xref" href="Nuke.Common.CI.AzurePipelines.AzurePipelinesTestResultsType.html">AzurePipelinesTestResultsType</a></dt>
+    <dd></dd>
+    <dt><code>files</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>mergeResults</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>platform</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>configuration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>publishRunAttachments</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_ReportError_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.ReportError*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_ReportError_System_String_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.ReportError(System.String,System.String)">
+  ReportError(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.Theming.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ReportError(string text, string details = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>details</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_ReportWarning_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.ReportWarning*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_ReportWarning_System_String_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.ReportWarning(System.String,System.String)">
+  ReportWarning(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.Theming.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void ReportWarning(string text, string details = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>details</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SetVariable_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SetVariable*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_SetVariable_System_String_System_String_System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Nullable_System_Boolean__" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.SetVariable(System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+  SetVariable(string, string, bool?, bool?, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetVariable(string name, string value, bool? isSecret = null, bool? isOutput = null, bool? isReadOnly = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>isSecret</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>isOutput</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>isReadOnly</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_UpdateBuildNumber_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.UpdateBuildNumber*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_UpdateBuildNumber_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.UpdateBuildNumber(System.String)">
+  UpdateBuildNumber(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateBuildNumber(string buildNumber)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buildNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_UploadArtifacts_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.UploadArtifacts*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_UploadArtifacts_System_String_System_String_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.UploadArtifacts(System.String,System.String,System.String)">
+  UploadArtifacts(string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UploadArtifacts(string containerDirectory, string artifactName, string packageDirectory)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerDirectory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>artifactName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>packageDirectory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_UploadLog_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.UploadLog*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_UploadLog_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.UploadLog(System.String)">
+  UploadLog(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UploadLog(string path)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_WriteBlock_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.WriteBlock*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_WriteBlock_System_String_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.WriteBlock(System.String)">
+  WriteBlock(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.Theming.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override IDisposable WriteBlock(string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_AzurePipelines_AzurePipelines_WriteCommand_" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.WriteCommand*"></a>
+
+  <h3 id="Nuke_Common_CI_AzurePipelines_AzurePipelines_WriteCommand_System_String_System_String_System_Func_System_Collections_Generic_Dictionary_System_String_System_Object__System_Collections_Generic_Dictionary_System_String_System_Object___" data-uid="Nuke.Common.CI.AzurePipelines.AzurePipelines.WriteCommand(System.String,System.String,System.Func{System.Collections.Generic.Dictionary{System.String,System.Object},System.Collections.Generic.Dictionary{System.String,System.Object}})">
+  WriteCommand(string, string, Func&lt;Dictionary&lt;string, object&gt;, Dictionary&lt;string, object&gt;&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.cs/#L231"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteCommand(string command, string message = null, Func&lt;Dictionary&lt;string, object&gt;, Dictionary&lt;string, object&gt;&gt; dictionaryConfigurator = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>command</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>dictionaryConfigurator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/AzurePipelines/AzurePipelines.Theming.cs/#L13" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

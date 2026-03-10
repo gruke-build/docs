@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DotNetRunSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DotNetRunSettings | gruke ">
+      
+      <meta name="description" content="The dotnet run command provides a convenient option to run your application from the source code with one command. It&#39;s useful for fast iterative development from the command line. The command depends on the dotnet build command to build the code. Any requirements for the build, such as that the project must be restored first, apply to dotnet run as well.Output files are written into the default location, which is bin/&amp;lt;configuration&amp;gt;/&amp;lt;target&amp;gt;. For example if you have a netcoreapp1.0 application and you run dotnet run, the output is placed in bin/Debug/netcoreapp1.0. Files are overwritten as needed. Temporary files are placed in the obj directory.If the project specifies multiple frameworks, executing dotnet run results in an error unless the -f|--framework &amp;lt;FRAMEWORK&amp;gt; option is used to specify the framework.The dotnet run command is used in the context of projects, not built assemblies. If you&#39;re trying to run a framework-dependent application DLL instead, you must use dotnet without a command. For example, to run myapp.dll, use: dotnet myapp.dllFor more information on the dotnet driver, see the .NET Core Command Line Tools (CLI) topic.In order to run the application, the dotnet run command resolves the dependencies of the application that are outside of the shared runtime from the NuGet cache. Because it uses cached dependencies, it&#39;s not recommended to use dotnet run to run applications in production. Instead, create a deployment using the dotnet publish command and deploy the published output.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_DotNet_DotNetRunSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.DotNet.DotNetRunSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_DotNet_DotNetRunSettings" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings" class="text-break">
+Class DotNetRunSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L290"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.DotNet.html">DotNet</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The <code>dotnet run</code> command provides a convenient option to run your application from the source code with one command. It's useful for fast iterative development from the command line. The command depends on the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-build"><code>dotnet build</code></a> command to build the code. Any requirements for the build, such as that the project must be restored first, apply to <code>dotnet run</code> as well.</p><p>Output files are written into the default location, which is <code>bin/&lt;configuration&gt;/&lt;target&gt;</code>. For example if you have a <code>netcoreapp1.0</code> application and you run <code>dotnet run</code>, the output is placed in <code>bin/Debug/netcoreapp1.0</code>. Files are overwritten as needed. Temporary files are placed in the <code>obj</code> directory.</p><p>If the project specifies multiple frameworks, executing <code>dotnet run</code> results in an error unless the <code>-f|--framework &lt;FRAMEWORK&gt;</code> option is used to specify the framework.</p><p>The <code>dotnet run</code> command is used in the context of projects, not built assemblies. If you're trying to run a framework-dependent application DLL instead, you must use <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet">dotnet</a> without a command. For example, to run <code>myapp.dll</code>, use: <code>dotnet myapp.dll</code></p><p>For more information on the <code>dotnet</code> driver, see the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/index">.NET Core Command Line Tools (CLI)</a> topic.</p><p>In order to run the application, the <code>dotnet run</code> command resolves the dependencies of the application that are outside of the shared runtime from the NuGet cache. Because it uses cached dependencies, it's not recommended to use <code>dotnet run</code> to run applications in production. Instead, <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/index">create a deployment</a> using the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish"><code>dotnet publish</code></a> command and deploy the published output.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class DotNetRunSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">DotNetRunSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddApplicationArguments__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.AddApplicationArguments&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddApplicationArguments__1___0_System_String___">DotNetRunSettingsExtensions.AddApplicationArguments&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.AddAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddAuthors__1___0_System_String___">DotNetRunSettingsExtensions.AddAuthors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddNoWarns__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRunSettingsExtensions.AddNoWarns&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddNoWarns__1___0_System_Int32___">DotNetRunSettingsExtensions.AddNoWarns&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddPackageTags__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.AddPackageTags&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddPackageTags__1___0_System_String___">DotNetRunSettingsExtensions.AddPackageTags&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddProperty__1___0_System_String_System_Object_">DotNetRunSettingsExtensions.AddProperty&lt;T&gt;(T, string, object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddSources__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.AddSources&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddSources__1___0_System_String___">DotNetRunSettingsExtensions.AddSources&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddWarningsAsErrors__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRunSettingsExtensions.AddWarningsAsErrors&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_AddWarningsAsErrors__1___0_System_Int32___">DotNetRunSettingsExtensions.AddWarningsAsErrors&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ClearApplicationArguments__1___0_">DotNetRunSettingsExtensions.ClearApplicationArguments&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ClearProperties__1___0_">DotNetRunSettingsExtensions.ClearProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ClearSources__1___0_">DotNetRunSettingsExtensions.ClearSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableContinuousIntegrationBuild__1___0_">DotNetRunSettingsExtensions.DisableContinuousIntegrationBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableDeterministicSourcePaths__1___0_">DotNetRunSettingsExtensions.DisableDeterministicSourcePaths&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableDeterministic__1___0_">DotNetRunSettingsExtensions.DisableDeterministic&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableDisableBuildServers__1___0_">DotNetRunSettingsExtensions.DisableDisableBuildServers&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableDisableParallel__1___0_">DotNetRunSettingsExtensions.DisableDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableForceEvaluate__1___0_">DotNetRunSettingsExtensions.DisableForceEvaluate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableForce__1___0_">DotNetRunSettingsExtensions.DisableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableIgnoreFailedSources__1___0_">DotNetRunSettingsExtensions.DisableIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableInteractive__1___0_">DotNetRunSettingsExtensions.DisableInteractive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableLockedMode__1___0_">DotNetRunSettingsExtensions.DisableLockedMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableNoBuild__1___0_">DotNetRunSettingsExtensions.DisableNoBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableNoCache__1___0_">DotNetRunSettingsExtensions.DisableNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableNoDependencies__1___0_">DotNetRunSettingsExtensions.DisableNoDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableNoLaunchProfile__1___0_">DotNetRunSettingsExtensions.DisableNoLaunchProfile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableNoRestore__1___0_">DotNetRunSettingsExtensions.DisableNoRestore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableNoSelfContained__1___0_">DotNetRunSettingsExtensions.DisableNoSelfContained&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisablePackageRequireLicenseAcceptance__1___0_">DotNetRunSettingsExtensions.DisablePackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisablePublishReadyToRun__1___0_">DotNetRunSettingsExtensions.DisablePublishReadyToRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisablePublishSingleFile__1___0_">DotNetRunSettingsExtensions.DisablePublishSingleFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisablePublishTrimmed__1___0_">DotNetRunSettingsExtensions.DisablePublishTrimmed&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableRunCodeAnalysis__1___0_">DotNetRunSettingsExtensions.DisableRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableSelfContained__1___0_">DotNetRunSettingsExtensions.DisableSelfContained&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableTreatWarningsAsErrors__1___0_">DotNetRunSettingsExtensions.DisableTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_DisableUseLockFile__1___0_">DotNetRunSettingsExtensions.DisableUseLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableContinuousIntegrationBuild__1___0_">DotNetRunSettingsExtensions.EnableContinuousIntegrationBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableDeterministicSourcePaths__1___0_">DotNetRunSettingsExtensions.EnableDeterministicSourcePaths&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableDeterministic__1___0_">DotNetRunSettingsExtensions.EnableDeterministic&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableDisableBuildServers__1___0_">DotNetRunSettingsExtensions.EnableDisableBuildServers&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableDisableParallel__1___0_">DotNetRunSettingsExtensions.EnableDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableForceEvaluate__1___0_">DotNetRunSettingsExtensions.EnableForceEvaluate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableForce__1___0_">DotNetRunSettingsExtensions.EnableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableIgnoreFailedSources__1___0_">DotNetRunSettingsExtensions.EnableIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableInteractive__1___0_">DotNetRunSettingsExtensions.EnableInteractive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableLockedMode__1___0_">DotNetRunSettingsExtensions.EnableLockedMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableNoBuild__1___0_">DotNetRunSettingsExtensions.EnableNoBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableNoCache__1___0_">DotNetRunSettingsExtensions.EnableNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableNoDependencies__1___0_">DotNetRunSettingsExtensions.EnableNoDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableNoLaunchProfile__1___0_">DotNetRunSettingsExtensions.EnableNoLaunchProfile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableNoRestore__1___0_">DotNetRunSettingsExtensions.EnableNoRestore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableNoSelfContained__1___0_">DotNetRunSettingsExtensions.EnableNoSelfContained&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnablePackageRequireLicenseAcceptance__1___0_">DotNetRunSettingsExtensions.EnablePackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnablePublishReadyToRun__1___0_">DotNetRunSettingsExtensions.EnablePublishReadyToRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnablePublishSingleFile__1___0_">DotNetRunSettingsExtensions.EnablePublishSingleFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnablePublishTrimmed__1___0_">DotNetRunSettingsExtensions.EnablePublishTrimmed&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableRunCodeAnalysis__1___0_">DotNetRunSettingsExtensions.EnableRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableSelfContained__1___0_">DotNetRunSettingsExtensions.EnableSelfContained&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableTreatWarningsAsErrors__1___0_">DotNetRunSettingsExtensions.EnableTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_EnableUseLockFile__1___0_">DotNetRunSettingsExtensions.EnableUseLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveApplicationArguments__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.RemoveApplicationArguments&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveApplicationArguments__1___0_System_String___">DotNetRunSettingsExtensions.RemoveApplicationArguments&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.RemoveAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveAuthors__1___0_System_String___">DotNetRunSettingsExtensions.RemoveAuthors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveNoWarns__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRunSettingsExtensions.RemoveNoWarns&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveNoWarns__1___0_System_Int32___">DotNetRunSettingsExtensions.RemoveNoWarns&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemovePackageTags__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.RemovePackageTags&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemovePackageTags__1___0_System_String___">DotNetRunSettingsExtensions.RemovePackageTags&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveProperty__1___0_System_String_">DotNetRunSettingsExtensions.RemoveProperty&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveSources__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.RemoveSources&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveSources__1___0_System_String___">DotNetRunSettingsExtensions.RemoveSources&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveWarningsAsErrors__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRunSettingsExtensions.RemoveWarningsAsErrors&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_RemoveWarningsAsErrors__1___0_System_Int32___">DotNetRunSettingsExtensions.RemoveWarningsAsErrors&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetArchitecture__1___0_">DotNetRunSettingsExtensions.ResetArchitecture&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetArtifactsPath__1___0_">DotNetRunSettingsExtensions.ResetArtifactsPath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetAssemblyVersion__1___0_">DotNetRunSettingsExtensions.ResetAssemblyVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetAuthors__1___0_">DotNetRunSettingsExtensions.ResetAuthors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetConfiguration__1___0_">DotNetRunSettingsExtensions.ResetConfiguration&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetContinuousIntegrationBuild__1___0_">DotNetRunSettingsExtensions.ResetContinuousIntegrationBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetCopyright__1___0_">DotNetRunSettingsExtensions.ResetCopyright&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetDescription__1___0_">DotNetRunSettingsExtensions.ResetDescription&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetDeterministicSourcePaths__1___0_">DotNetRunSettingsExtensions.ResetDeterministicSourcePaths&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetDeterministic__1___0_">DotNetRunSettingsExtensions.ResetDeterministic&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetDisableBuildServers__1___0_">DotNetRunSettingsExtensions.ResetDisableBuildServers&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetDisableParallel__1___0_">DotNetRunSettingsExtensions.ResetDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetFileVersion__1___0_">DotNetRunSettingsExtensions.ResetFileVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetForceEvaluate__1___0_">DotNetRunSettingsExtensions.ResetForceEvaluate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetForce__1___0_">DotNetRunSettingsExtensions.ResetForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetFramework__1___0_">DotNetRunSettingsExtensions.ResetFramework&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetIgnoreFailedSources__1___0_">DotNetRunSettingsExtensions.ResetIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetInformationalVersion__1___0_">DotNetRunSettingsExtensions.ResetInformationalVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetInteractive__1___0_">DotNetRunSettingsExtensions.ResetInteractive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetLaunchProfile__1___0_">DotNetRunSettingsExtensions.ResetLaunchProfile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetLockFilePath__1___0_">DotNetRunSettingsExtensions.ResetLockFilePath&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetLockedMode__1___0_">DotNetRunSettingsExtensions.ResetLockedMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetNoBuild__1___0_">DotNetRunSettingsExtensions.ResetNoBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetNoCache__1___0_">DotNetRunSettingsExtensions.ResetNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetNoDependencies__1___0_">DotNetRunSettingsExtensions.ResetNoDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetNoLaunchProfile__1___0_">DotNetRunSettingsExtensions.ResetNoLaunchProfile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetNoRestore__1___0_">DotNetRunSettingsExtensions.ResetNoRestore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetNoSelfContained__1___0_">DotNetRunSettingsExtensions.ResetNoSelfContained&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetNoWarn__1___0_">DotNetRunSettingsExtensions.ResetNoWarn&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetOperatingSystem__1___0_">DotNetRunSettingsExtensions.ResetOperatingSystem&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPackageDirectory__1___0_">DotNetRunSettingsExtensions.ResetPackageDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPackageIconUrl__1___0_">DotNetRunSettingsExtensions.ResetPackageIconUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPackageId__1___0_">DotNetRunSettingsExtensions.ResetPackageId&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPackageLicenseUrl__1___0_">DotNetRunSettingsExtensions.ResetPackageLicenseUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPackageProjectUrl__1___0_">DotNetRunSettingsExtensions.ResetPackageProjectUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPackageReleaseNotes__1___0_">DotNetRunSettingsExtensions.ResetPackageReleaseNotes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPackageRequireLicenseAcceptance__1___0_">DotNetRunSettingsExtensions.ResetPackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPackageTags__1___0_">DotNetRunSettingsExtensions.ResetPackageTags&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPlatform__1___0_">DotNetRunSettingsExtensions.ResetPlatform&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetProjectFile__1___0_">DotNetRunSettingsExtensions.ResetProjectFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPublishProfile__1___0_">DotNetRunSettingsExtensions.ResetPublishProfile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPublishReadyToRun__1___0_">DotNetRunSettingsExtensions.ResetPublishReadyToRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPublishSingleFile__1___0_">DotNetRunSettingsExtensions.ResetPublishSingleFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetPublishTrimmed__1___0_">DotNetRunSettingsExtensions.ResetPublishTrimmed&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetRepositoryType__1___0_">DotNetRunSettingsExtensions.ResetRepositoryType&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetRepositoryUrl__1___0_">DotNetRunSettingsExtensions.ResetRepositoryUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetRunCodeAnalysis__1___0_">DotNetRunSettingsExtensions.ResetRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetRuntime__1___0_">DotNetRunSettingsExtensions.ResetRuntime&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetSelfContained__1___0_">DotNetRunSettingsExtensions.ResetSelfContained&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetSymbolPackageFormat__1___0_">DotNetRunSettingsExtensions.ResetSymbolPackageFormat&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetTitle__1___0_">DotNetRunSettingsExtensions.ResetTitle&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetTreatWarningsAsErrors__1___0_">DotNetRunSettingsExtensions.ResetTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetUseLockFile__1___0_">DotNetRunSettingsExtensions.ResetUseLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetVerbosity__1___0_">DotNetRunSettingsExtensions.ResetVerbosity&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetVersionPrefix__1___0_">DotNetRunSettingsExtensions.ResetVersionPrefix&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetVersion__1___0_">DotNetRunSettingsExtensions.ResetVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetWarningLevel__1___0_">DotNetRunSettingsExtensions.ResetWarningLevel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ResetWarningsAsErrors__1___0_">DotNetRunSettingsExtensions.ResetWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetApplicationArguments__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.SetApplicationArguments&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetApplicationArguments__1___0_System_String___">DotNetRunSettingsExtensions.SetApplicationArguments&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetArchitecture__1___0_System_String_">DotNetRunSettingsExtensions.SetArchitecture&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetArtifactsPath__1___0_System_String_">DotNetRunSettingsExtensions.SetArtifactsPath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetAssemblyVersion__1___0_System_String_">DotNetRunSettingsExtensions.SetAssemblyVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.SetAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetAuthors__1___0_System_String___">DotNetRunSettingsExtensions.SetAuthors&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetConfiguration__1___0_System_String_">DotNetRunSettingsExtensions.SetConfiguration&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetContinuousIntegrationBuild__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetContinuousIntegrationBuild&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetCopyright__1___0_System_String_">DotNetRunSettingsExtensions.SetCopyright&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetDescription__1___0_System_String_">DotNetRunSettingsExtensions.SetDescription&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetDeterministicSourcePaths__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetDeterministicSourcePaths&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetDeterministic__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetDeterministic&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetDisableBuildServers__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetDisableBuildServers&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetDisableParallel__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetDisableParallel&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetFileVersion__1___0_System_String_">DotNetRunSettingsExtensions.SetFileVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetForceEvaluate__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetForceEvaluate&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetForce&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetFramework__1___0_System_String_">DotNetRunSettingsExtensions.SetFramework&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetIgnoreFailedSources__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetIgnoreFailedSources&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetInformationalVersion__1___0_System_String_">DotNetRunSettingsExtensions.SetInformationalVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetInteractive__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetInteractive&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetLaunchProfile__1___0_System_String_">DotNetRunSettingsExtensions.SetLaunchProfile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetLockFilePath__1___0_System_String_">DotNetRunSettingsExtensions.SetLockFilePath&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetLockedMode__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetLockedMode&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetNoBuild__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetNoBuild&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetNoCache__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetNoCache&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetNoDependencies__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetNoDependencies&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetNoLaunchProfile__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetNoLaunchProfile&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetNoRestore__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetNoRestore&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetNoSelfContained__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetNoSelfContained&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetNoWarns__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRunSettingsExtensions.SetNoWarns&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetNoWarns__1___0_System_Int32___">DotNetRunSettingsExtensions.SetNoWarns&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetOperatingSystem__1___0_System_String_">DotNetRunSettingsExtensions.SetOperatingSystem&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPackageDirectory__1___0_System_String_">DotNetRunSettingsExtensions.SetPackageDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPackageIconUrl__1___0_System_String_">DotNetRunSettingsExtensions.SetPackageIconUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPackageId__1___0_System_String_">DotNetRunSettingsExtensions.SetPackageId&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPackageLicenseUrl__1___0_System_String_">DotNetRunSettingsExtensions.SetPackageLicenseUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPackageProjectUrl__1___0_System_String_">DotNetRunSettingsExtensions.SetPackageProjectUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPackageReleaseNotes__1___0_System_String_">DotNetRunSettingsExtensions.SetPackageReleaseNotes&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPackageRequireLicenseAcceptance__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetPackageRequireLicenseAcceptance&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPackageTags__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.SetPackageTags&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPackageTags__1___0_System_String___">DotNetRunSettingsExtensions.SetPackageTags&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPlatform__1___0_System_String_">DotNetRunSettingsExtensions.SetPlatform&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetProjectFile__1___0_System_String_">DotNetRunSettingsExtensions.SetProjectFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetProperties__1___0_System_Collections_Generic_IDictionary_System_String_System_Object__">DotNetRunSettingsExtensions.SetProperties&lt;T&gt;(T, IDictionary&lt;string, object&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetProperty__1___0_System_String_System_Object_">DotNetRunSettingsExtensions.SetProperty&lt;T&gt;(T, string, object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPublishProfile__1___0_System_String_">DotNetRunSettingsExtensions.SetPublishProfile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPublishReadyToRun__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetPublishReadyToRun&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPublishSingleFile__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetPublishSingleFile&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetPublishTrimmed__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetPublishTrimmed&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetRepositoryType__1___0_System_String_">DotNetRunSettingsExtensions.SetRepositoryType&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetRepositoryUrl__1___0_System_String_">DotNetRunSettingsExtensions.SetRepositoryUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetRunCodeAnalysis__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetRunCodeAnalysis&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetRuntime__1___0_System_String_">DotNetRunSettingsExtensions.SetRuntime&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetSelfContained__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetSelfContained&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetSources__1___0_System_Collections_Generic_IEnumerable_System_String__">DotNetRunSettingsExtensions.SetSources&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetSources__1___0_System_String___">DotNetRunSettingsExtensions.SetSources&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetSymbolPackageFormat__1___0_Nuke_Common_Tools_DotNet_DotNetSymbolPackageFormat_">DotNetRunSettingsExtensions.SetSymbolPackageFormat&lt;T&gt;(T, DotNetSymbolPackageFormat)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetTitle__1___0_System_String_">DotNetRunSettingsExtensions.SetTitle&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetTreatWarningsAsErrors__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetTreatWarningsAsErrors&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetUseLockFile__1___0_System_Nullable_System_Boolean__">DotNetRunSettingsExtensions.SetUseLockFile&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetVerbosity__1___0_Nuke_Common_Tools_DotNet_DotNetVerbosity_">DotNetRunSettingsExtensions.SetVerbosity&lt;T&gt;(T, DotNetVerbosity)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetVersionPrefix__1___0_System_String_">DotNetRunSettingsExtensions.SetVersionPrefix&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetVersion__1___0_System_String_">DotNetRunSettingsExtensions.SetVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetWarningLevel__1___0_System_Nullable_System_Int32__">DotNetRunSettingsExtensions.SetWarningLevel&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetWarningsAsErrors__1___0_System_Collections_Generic_IEnumerable_System_Int32__">DotNetRunSettingsExtensions.SetWarningsAsErrors&lt;T&gt;(T, IEnumerable&lt;int&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_SetWarningsAsErrors__1___0_System_Int32___">DotNetRunSettingsExtensions.SetWarningsAsErrors&lt;T&gt;(T, params int[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleContinuousIntegrationBuild__1___0_">DotNetRunSettingsExtensions.ToggleContinuousIntegrationBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleDeterministicSourcePaths__1___0_">DotNetRunSettingsExtensions.ToggleDeterministicSourcePaths&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleDeterministic__1___0_">DotNetRunSettingsExtensions.ToggleDeterministic&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleDisableBuildServers__1___0_">DotNetRunSettingsExtensions.ToggleDisableBuildServers&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleDisableParallel__1___0_">DotNetRunSettingsExtensions.ToggleDisableParallel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleForceEvaluate__1___0_">DotNetRunSettingsExtensions.ToggleForceEvaluate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleForce__1___0_">DotNetRunSettingsExtensions.ToggleForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleIgnoreFailedSources__1___0_">DotNetRunSettingsExtensions.ToggleIgnoreFailedSources&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleInteractive__1___0_">DotNetRunSettingsExtensions.ToggleInteractive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleLockedMode__1___0_">DotNetRunSettingsExtensions.ToggleLockedMode&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleNoBuild__1___0_">DotNetRunSettingsExtensions.ToggleNoBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleNoCache__1___0_">DotNetRunSettingsExtensions.ToggleNoCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleNoDependencies__1___0_">DotNetRunSettingsExtensions.ToggleNoDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleNoLaunchProfile__1___0_">DotNetRunSettingsExtensions.ToggleNoLaunchProfile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleNoRestore__1___0_">DotNetRunSettingsExtensions.ToggleNoRestore&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleNoSelfContained__1___0_">DotNetRunSettingsExtensions.ToggleNoSelfContained&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_TogglePackageRequireLicenseAcceptance__1___0_">DotNetRunSettingsExtensions.TogglePackageRequireLicenseAcceptance&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_TogglePublishReadyToRun__1___0_">DotNetRunSettingsExtensions.TogglePublishReadyToRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_TogglePublishSingleFile__1___0_">DotNetRunSettingsExtensions.TogglePublishSingleFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_TogglePublishTrimmed__1___0_">DotNetRunSettingsExtensions.TogglePublishTrimmed&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleRunCodeAnalysis__1___0_">DotNetRunSettingsExtensions.ToggleRunCodeAnalysis&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleSelfContained__1___0_">DotNetRunSettingsExtensions.ToggleSelfContained&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleTreatWarningsAsErrors__1___0_">DotNetRunSettingsExtensions.ToggleTreatWarningsAsErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettingsExtensions.html#Nuke_Common_Tools_DotNet_DotNetRunSettingsExtensions_ToggleUseLockFile__1___0_">DotNetRunSettingsExtensions.ToggleUseLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_ApplicationArguments">ApplicationArguments</a></li><li><code>--arch</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_Architecture">Architecture</a></li><li><code>--artifacts-path</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_ArtifactsPath">ArtifactsPath</a></li><li><code>--configuration</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_Configuration">Configuration</a></li><li><code>--disable-build-servers</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_DisableBuildServers">DisableBuildServers</a></li><li><code>--disable-parallel</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_DisableParallel">DisableParallel</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_Force">Force</a></li><li><code>--force-evaluate</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_ForceEvaluate">ForceEvaluate</a></li><li><code>--framework</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_Framework">Framework</a></li><li><code>--ignore-failed-sources</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_IgnoreFailedSources">IgnoreFailedSources</a></li><li><code>--interactive</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_Interactive">Interactive</a></li><li><code>--launch-profile</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_LaunchProfile">LaunchProfile</a></li><li><code>--lock-file-path</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_LockFilePath">LockFilePath</a></li><li><code>--locked-mode</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_LockedMode">LockedMode</a></li><li><code>--no-build</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_NoBuild">NoBuild</a></li><li><code>--no-cache</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_NoCache">NoCache</a></li><li><code>--no-dependencies</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_NoDependencies">NoDependencies</a></li><li><code>--no-launch-profile</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_NoLaunchProfile">NoLaunchProfile</a></li><li><code>--no-restore</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_NoRestore">NoRestore</a></li><li><code>--no-self-contained</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_NoSelfContained">NoSelfContained</a></li><li><code>--os</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_OperatingSystem">OperatingSystem</a></li><li><code>--packages</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_PackageDirectory">PackageDirectory</a></li><li><code>--project</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_ProjectFile">ProjectFile</a></li><li><code>--property</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_Properties">Properties</a></li><li><code>--runtime</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_Runtime">Runtime</a></li><li><code>--self-contained</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_SelfContained">SelfContained</a></li><li><code>--source</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_Sources">Sources</a></li><li><code>--use-lock-file</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_UseLockFile">UseLockFile</a></li><li><code>--verbosity</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetRunSettings.html#Nuke_Common_Tools_DotNet_DotNetRunSettings_Verbosity">Verbosity</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_ApplicationArguments_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.ApplicationArguments*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_ApplicationArguments" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.ApplicationArguments">
+  ApplicationArguments
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arguments passed to the application being run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ApplicationArguments { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Architecture_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Architecture*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Architecture" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Architecture">
+  Architecture
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L296"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the target architecture. This is a shorthand syntax for setting the <a href="https://learn.microsoft.com/en-us/dotnet/core/rid-catalog">Runtime Identifier (RID)</a>, where the provided value is combined with the default RID. For example, on a win-x64 machine, specifying --arch x86 sets the RID to win-x86. If you use this option, don't use the -r|--runtime option. Available since .NET 6 Preview 7.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Architecture { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_ArtifactsPath_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.ArtifactsPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_ArtifactsPath" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.ArtifactsPath">
+  ArtifactsPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L328"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>All build output files from the executed command will go in subfolders under the specified path, separated by project. For more information see <a href="https://learn.microsoft.com/en-us/dotnet/core/sdk/artifacts-output">Artifacts Output Layout</a>. Available since .NET 8 SDK.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ArtifactsPath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Configuration_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Configuration*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Configuration" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Configuration">
+  Configuration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L298"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configuration to use for building the project. The default value is Debug.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Configuration { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_DisableBuildServers_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.DisableBuildServers*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_DisableBuildServers" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.DisableBuildServers">
+  DisableBuildServers
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L300"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Force the command to ignore any persistent build servers. This option provides a consistent way to disable all use of build caching, which forces a build from scratch. A build that doesn't rely on caches is useful when the caches might be corrupted or incorrect for some reason. Available since .NET 7 SDK.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DisableBuildServers { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_DisableParallel_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.DisableParallel*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_DisableParallel" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.DisableParallel">
+  DisableParallel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L330"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Disables restoring multiple projects in parallel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DisableParallel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Force_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Force*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Force" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Force">
+  Force
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Forces all dependencies to be resolved even if the last restore was successful. This is equivalent to deleting the <em>project.assets.json</em> file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Force { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_ForceEvaluate_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.ForceEvaluate*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_ForceEvaluate" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.ForceEvaluate">
+  ForceEvaluate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L350"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Forces restore to reevaluate all dependencies even if a lock file already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ForceEvaluate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Framework_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Framework*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Framework" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Framework">
+  Framework
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L302"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Builds and runs the app using the specified framework. The framework must be specified in the project file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Framework { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_IgnoreFailedSources_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.IgnoreFailedSources*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_IgnoreFailedSources" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.IgnoreFailedSources">
+  IgnoreFailedSources
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L334"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only warn about failed sources if there are packages meeting the version requirement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnoreFailedSources { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Interactive_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Interactive*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Interactive" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Interactive">
+  Interactive
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L306"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows the command to stop and wait for user input or action. For example, to complete authentication. Available since .NET Core 3.0 SDK.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Interactive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_LaunchProfile_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.LaunchProfile*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_LaunchProfile" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.LaunchProfile">
+  LaunchProfile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L304"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the launch profile (if any) to use when launching the application. Launch profiles are defined in the <em>launchSettings.json</em> file and are typically called <code>Development</code>, <code>Staging</code> and <code>Production</code>. For more information, see <a href="https://docs.microsoft.com/en-us/aspnetcore/fundamentals/environments">Working with multiple environments</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LaunchProfile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_LockFilePath_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.LockFilePath*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_LockFilePath" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.LockFilePath">
+  LockFilePath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L348"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output location where project lock file is written. By default, this is 'PROJECT_ROOT\packages.lock.json'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LockFilePath { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_LockedMode_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.LockedMode*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_LockedMode" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.LockedMode">
+  LockedMode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L346"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't allow updating project lock file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? LockedMode { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoBuild_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoBuild" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoBuild">
+  NoBuild
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L308"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Doesn't build the project before running.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoBuild { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoCache_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoCache*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoCache" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoCache">
+  NoCache
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L336"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies to not cache packages and HTTP requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoCache { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoDependencies_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoDependencies*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoDependencies" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoDependencies">
+  NoDependencies
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L338"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>When restoring a project with project-to-project (P2P) references, restore the root project and not the references.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoDependencies { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoLaunchProfile_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoLaunchProfile*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoLaunchProfile" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoLaunchProfile">
+  NoLaunchProfile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L310"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Doesn't attempt to use <em>launchSettings.json</em> to configure the application.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoLaunchProfile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoRestore_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoRestore*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoRestore" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoRestore">
+  NoRestore
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L312"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Doesn't perform an implicit restore when running the command.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoRestore { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoSelfContained_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoSelfContained*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_NoSelfContained" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.NoSelfContained">
+  NoSelfContained
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L314"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Publish your application as a framework dependent application. A compatible .NET runtime must be installed on the target machine to run your application.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoSelfContained { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_OperatingSystem_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.OperatingSystem*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_OperatingSystem" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.OperatingSystem">
+  OperatingSystem
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the target operating system (OS). This is a shorthand syntax for setting the <a href="https://learn.microsoft.com/en-us/dotnet/core/rid-catalog">Runtime Identifier (RID)</a>, where the provided value is combined with the default RID. For example, on a win-x64 machine, specifying --os linux sets the RID to linux-x64. If you use this option, don't use the -r|--runtime option. Available since .NET 6.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string OperatingSystem { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_PackageDirectory_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.PackageDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_PackageDirectory" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.PackageDirectory">
+  PackageDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L340"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the directory for restored packages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PackageDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_ProjectFile_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.ProjectFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_ProjectFile" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.ProjectFile">
+  ProjectFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the path and name of the project file. (See the NOTE.) It defaults to the current directory if not specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProjectFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Properties_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Properties*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Properties" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Properties">
+  Properties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L352"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set or override the specified project-level properties, where name is the property name and value is the property value. Specify each property separately, or use a semicolon or comma to separate multiple properties, as the following example shows:</p><p><code>--property:WarningLevel=2;OutDir=bin\Debug</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;string, object&gt; Properties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Runtime_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Runtime*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Runtime" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Runtime">
+  Runtime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L320"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the target runtime. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog">RID catalog</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Runtime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_SelfContained_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.SelfContained*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_SelfContained" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.SelfContained">
+  SelfContained
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L322"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Publishes the .NET runtime with the application so the runtime doesn't need to be installed on the target machine. The default is <code>false</code>. However, when targeting .NET 7 or lower, the default is <code>true</code> if a runtime identifier is specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SelfContained { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Sources_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Sources*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Sources" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Sources">
+  Sources
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L342"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies a NuGet package source to use during the restore operation. This overrides all of the sources specified in the <em>NuGet.config</em> file(s). Multiple sources can be provided by specifying this option multiple times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Sources { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_UseLockFile_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.UseLockFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_UseLockFile" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.UseLockFile">
+  UseLockFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L344"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enables project lock file to be generated and used with restore.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseLockFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Verbosity_" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Verbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetRunSettings_Verbosity" data-uid="Nuke.Common.Tools.DotNet.DotNetRunSettings.Verbosity">
+  Verbosity
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the verbosity level of the command. Allowed values are <code>q[uiet]</code>, <code>m[inimal]</code>, <code>n[ormal]</code>, <code>d[etailed]</code>, and <code>diag[nostic]</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DotNetVerbosity Verbosity { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.DotNet.DotNetVerbosity.html">DotNetVerbosity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L290" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

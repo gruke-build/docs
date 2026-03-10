@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class StaticWebAppsDeploySettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class StaticWebAppsDeploySettingsExtensions | gruke ">
+      
+      <meta name="description" content="The Static Web Apps CLI, also known as SWA CLI, serves as a local development tool for Azure Static Web Apps. It can: Serve static app assets, or proxy to your app dev serverServe API requests, or proxy to APIs running in Azure Functions Core ToolsEmulate authentication and authorizationEmulate Static Web Apps configuration, including routingFor more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions" class="text-break">
+Class StaticWebAppsDeploySettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L219"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.StaticWebApps.html">StaticWebApps</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The Static Web Apps CLI, also known as SWA CLI, serves as a local development tool for <a href="https://docs.microsoft.com/azure/static-web-apps">Azure Static Web Apps</a>. It can:
+<ul><li>Serve static app assets, or proxy to your app dev server</li><li>Serve API requests, or proxy to APIs running in Azure Functions Core Tools</li><li>Emulate authentication and authorization</li><li>Emulate Static Web Apps configuration, including routing</li></ul><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/azure/static-web-apps/local-development">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class StaticWebAppsDeploySettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">StaticWebAppsDeploySettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--api-location</code> via <a class="xref" href="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettings.html#Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettings_ApiLocation">ApiLocation</a></li><li><code>--app-location</code> via <a class="xref" href="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettings.html#Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettings_AppLocation">AppLocation</a></li><li><code>--deployment-token</code> via <a class="xref" href="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettings.html#Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettings_DeploymentToken">DeploymentToken</a></li><li><code>--env</code> via <a class="xref" href="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettings.html#Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettings_Environment">Environment</a></li><li><code>--output-location</code> via <a class="xref" href="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettings.html#Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettings_OutputLocation">OutputLocation</a></li><li><code>--swa-config-location</code> via <a class="xref" href="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettings.html#Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettings_ConfigLocation">ConfigLocation</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetApiLocation_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetApiLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetApiLocation__1___0_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetApiLocation``1(``0)">
+  ResetApiLocation&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L236"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Directory containing the source code of the API application.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetApiLocation&lt;T&gt;(this T o) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetAppLocation_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetAppLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetAppLocation__1___0_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetAppLocation``1(``0)">
+  ResetAppLocation&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L228"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Directory containing the source code of the front-end application (default: <code>./</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAppLocation&lt;T&gt;(this T o) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetConfigLocation_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetConfigLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetConfigLocation__1___0_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetConfigLocation``1(``0)">
+  ResetConfigLocation&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L252"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Directory where the <em>staticwebapp.config.json</em> file is found (default: <code>./</code>)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetConfigLocation&lt;T&gt;(this T o) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetDeploymentToken_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetDeploymentToken*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetDeploymentToken__1___0_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetDeploymentToken``1(``0)">
+  ResetDeploymentToken&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L260"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Secret token used to authenticate with the Static Web Apps</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDeploymentToken&lt;T&gt;(this T o) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetEnvironment_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetEnvironment*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetEnvironment__1___0_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetEnvironment``1(``0)">
+  ResetEnvironment&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L268"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Type of deployment environment where to deploy the project (default: <code>preview</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetEnvironment&lt;T&gt;(this T o) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetOutputLocation_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetOutputLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_ResetOutputLocation__1___0_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.ResetOutputLocation``1(``0)">
+  ResetOutputLocation&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L244"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Directory containing the built source of the front-end application. The path is relative to <code>--app-location</code> (default: <code>./</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutputLocation&lt;T&gt;(this T o) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetApiLocation_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetApiLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetApiLocation__1___0_System_String_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetApiLocation``1(``0,System.String)">
+  SetApiLocation&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L233"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Directory containing the source code of the API application.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetApiLocation&lt;T&gt;(this T o, string v) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetAppLocation_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetAppLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetAppLocation__1___0_System_String_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetAppLocation``1(``0,System.String)">
+  SetAppLocation&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Directory containing the source code of the front-end application (default: <code>./</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAppLocation&lt;T&gt;(this T o, string v) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetConfigLocation_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetConfigLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetConfigLocation__1___0_System_String_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetConfigLocation``1(``0,System.String)">
+  SetConfigLocation&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Directory where the <em>staticwebapp.config.json</em> file is found (default: <code>./</code>)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetConfigLocation&lt;T&gt;(this T o, string v) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetDeploymentToken_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetDeploymentToken*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetDeploymentToken__1___0_System_String_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetDeploymentToken``1(``0,System.String)">
+  SetDeploymentToken&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Secret token used to authenticate with the Static Web Apps</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDeploymentToken&lt;T&gt;(this T o, string v) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetEnvironment_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetEnvironment*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetEnvironment__1___0_System_String_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetEnvironment``1(``0,System.String)">
+  SetEnvironment&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Type of deployment environment where to deploy the project (default: <code>preview</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetEnvironment&lt;T&gt;(this T o, string v) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetOutputLocation_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetOutputLocation*"></a>
+
+  <h3 id="Nuke_Common_Tools_StaticWebApps_StaticWebAppsDeploySettingsExtensions_SetOutputLocation__1___0_System_String_" data-uid="Nuke.Common.Tools.StaticWebApps.StaticWebAppsDeploySettingsExtensions.SetOutputLocation``1(``0,System.String)">
+  SetOutputLocation&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Directory containing the built source of the front-end application. The path is relative to <code>--app-location</code> (default: <code>./</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutputLocation&lt;T&gt;(this T o, string v) where T : StaticWebAppsDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/StaticWebApps/StaticWebApps.Generated.cs/#L219" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

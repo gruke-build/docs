@@ -1,0 +1,2574 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CoverletSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CoverletSettingsExtensions | gruke ">
+      
+      <meta name="description" content="Coverlet is a cross platform code coverage library for .NET Core, with support for line, branch and method coverage.The dotnet test command is used to execute unit tests in a given project. Unit tests are console application projects that have dependencies on the unit test framework (for example, MSTest, NUnit, or xUnit) and the dotnet test runner for the unit testing framework. These are packaged as NuGet packages and are restored as ordinary dependencies for the project.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions" class="text-break">
+Class CoverletSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/CoverletSettingsExtensions.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Coverlet.html">Coverlet</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p><code>Coverlet</code> is a cross platform code coverage library for .NET Core, with support for line, branch and method coverage.The <code>dotnet test</code> command is used to execute unit tests in a given project. Unit tests are console application projects that have dependencies on the unit test framework (for example, MSTest, NUnit, or xUnit) and the dotnet test runner for the unit testing framework. These are packaged as NuGet packages and are restored as ordinary dependencies for the project.</p><p>For more details, visit the <a href="https://github.com/tonerdo/coverlet/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class CoverletSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CoverletSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;assembly&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_Assembly">Assembly</a></li><li><code>--exclude</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_Exclude">Exclude</a></li><li><code>--exclude-by-file</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_ExcludeByFile">ExcludeByFile</a></li><li><code>--format</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_Format">Format</a></li><li><code>--include</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_Include">Include</a></li><li><code>--merge-with</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_MergeWith">MergeWith</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_Output">Output</a></li><li><code>--target</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_Target">Target</a></li><li><code>--targetargs</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_TargetArgs">TargetArgs</a></li><li><code>--threshold</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_Threshold">Threshold</a></li><li><code>--threshold-type</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_ThresholdType">ThresholdType</a></li><li><code>--version</code> via <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_Version">Version</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddExcludeByFile_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddExcludeByFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddExcludeByFile__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddExcludeByFile``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddExcludeByFile&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L226"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Glob patterns specifying source files to exclude.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddExcludeByFile&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddExcludeByFile_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddExcludeByFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddExcludeByFile__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddExcludeByFile``1(``0,System.String[])">
+  AddExcludeByFile&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L223"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Glob patterns specifying source files to exclude.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddExcludeByFile&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddExclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddExclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddExclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddExclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to exclude specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddExclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddExclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddExclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddExclude``1(``0,System.String[])">
+  AddExclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to exclude specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddExclude&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddFormat_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddFormat__1___0_Nuke_Common_Tools_Coverlet_CoverletOutputFormat___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddFormat``1(``0,Nuke.Common.Tools.Coverlet.CoverletOutputFormat[])">
+  AddFormat&lt;T&gt;(T, params CoverletOutputFormat[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Format of the generated coverage report.Can be specified multiple times to output multiple formats in a single run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFormat&lt;T&gt;(this T o, params CoverletOutputFormat[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletOutputFormat.html">CoverletOutputFormat</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddFormat_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddFormat__1___0_System_Collections_Generic_IEnumerable_Nuke_Common_Tools_Coverlet_CoverletOutputFormat__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddFormat``1(``0,System.Collections.Generic.IEnumerable{Nuke.Common.Tools.Coverlet.CoverletOutputFormat})">
+  AddFormat&lt;T&gt;(T, IEnumerable&lt;CoverletOutputFormat&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Format of the generated coverage report.Can be specified multiple times to output multiple formats in a single run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFormat&lt;T&gt;(this T o, IEnumerable&lt;CoverletOutputFormat&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletOutputFormat.html">CoverletOutputFormat</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddInclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddInclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddInclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddInclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to include specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddInclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddInclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddInclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddInclude``1(``0,System.String[])">
+  AddInclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to include specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddInclude&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddTargetArgs_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddTargetArgs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddTargetArgs__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddTargetArgs``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddTargetArgs&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arguments to be passed to the test runner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTargetArgs&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddTargetArgs_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddTargetArgs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_AddTargetArgs__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.AddTargetArgs``1(``0,System.String[])">
+  AddTargetArgs&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arguments to be passed to the test runner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTargetArgs&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ClearExcludeByFile_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ClearExcludeByFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ClearExcludeByFile__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ClearExcludeByFile``1(``0)">
+  ClearExcludeByFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Glob patterns specifying source files to exclude.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearExcludeByFile&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ClearExclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ClearExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ClearExclude__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ClearExclude``1(``0)">
+  ClearExclude&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to exclude specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearExclude&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ClearFormat_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ClearFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ClearFormat__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ClearFormat``1(``0)">
+  ClearFormat&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Format of the generated coverage report.Can be specified multiple times to output multiple formats in a single run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearFormat&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ClearInclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ClearInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ClearInclude__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ClearInclude``1(``0)">
+  ClearInclude&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L212"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to include specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearInclude&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ClearTargetArgs_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ClearTargetArgs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ClearTargetArgs__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ClearTargetArgs``1(``0)">
+  ClearTargetArgs&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arguments to be passed to the test runner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearTargetArgs&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_DisableVersion_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.DisableVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_DisableVersion__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.DisableVersion``1(``0)">
+  DisableVersion&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show version information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableVersion&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_EnableVersion_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.EnableVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_EnableVersion__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.EnableVersion``1(``0)">
+  EnableVersion&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L246"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show version information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableVersion&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveExcludeByFile_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveExcludeByFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveExcludeByFile__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveExcludeByFile``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveExcludeByFile&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Glob patterns specifying source files to exclude.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveExcludeByFile&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveExcludeByFile_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveExcludeByFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveExcludeByFile__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveExcludeByFile``1(``0,System.String[])">
+  RemoveExcludeByFile&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Glob patterns specifying source files to exclude.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveExcludeByFile&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveExclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveExclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveExclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveExclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to exclude specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveExclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveExclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveExclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveExclude``1(``0,System.String[])">
+  RemoveExclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to exclude specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveExclude&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveFormat_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveFormat__1___0_Nuke_Common_Tools_Coverlet_CoverletOutputFormat___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveFormat``1(``0,Nuke.Common.Tools.Coverlet.CoverletOutputFormat[])">
+  RemoveFormat&lt;T&gt;(T, params CoverletOutputFormat[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Format of the generated coverage report.Can be specified multiple times to output multiple formats in a single run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFormat&lt;T&gt;(this T o, params CoverletOutputFormat[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletOutputFormat.html">CoverletOutputFormat</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveFormat_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveFormat__1___0_System_Collections_Generic_IEnumerable_Nuke_Common_Tools_Coverlet_CoverletOutputFormat__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveFormat``1(``0,System.Collections.Generic.IEnumerable{Nuke.Common.Tools.Coverlet.CoverletOutputFormat})">
+  RemoveFormat&lt;T&gt;(T, IEnumerable&lt;CoverletOutputFormat&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L147"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Format of the generated coverage report.Can be specified multiple times to output multiple formats in a single run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFormat&lt;T&gt;(this T o, IEnumerable&lt;CoverletOutputFormat&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletOutputFormat.html">CoverletOutputFormat</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveInclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveInclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveInclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveInclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to include specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveInclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveInclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveInclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveInclude``1(``0,System.String[])">
+  RemoveInclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to include specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveInclude&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveTargetArgs_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveTargetArgs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveTargetArgs__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveTargetArgs``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveTargetArgs&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arguments to be passed to the test runner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTargetArgs&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveTargetArgs_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveTargetArgs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_RemoveTargetArgs__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.RemoveTargetArgs``1(``0,System.String[])">
+  RemoveTargetArgs&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arguments to be passed to the test runner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTargetArgs&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetAssembly_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetAssembly*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetAssembly__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetAssembly``1(``0)">
+  ResetAssembly&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to the test assembly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAssembly&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetMergeWith_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetMergeWith*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetMergeWith__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetMergeWith``1(``0)">
+  ResetMergeWith&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L260"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to existing coverage result to merge.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetMergeWith&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetOutput_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetOutput__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetOutput``1(``0)">
+  ResetOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output of the generated coverage report</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutput&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetTargetSettings_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetTargetSettings*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetTargetSettings_Nuke_Common_Tools_Coverlet_CoverletSettings_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetTargetSettings(Nuke.Common.Tools.Coverlet.CoverletSettings)">
+  ResetTargetSettings(CoverletSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/CoverletSettingsExtensions.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>Resets <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_Target">Target</a> and <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_TargetArgs">TargetArgs</a>.</em></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static CoverletSettings ResetTargetSettings(this CoverletSettings toolSettings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>toolSettings</code> <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html">CoverletSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html">CoverletSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetTarget_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetTarget*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetTarget__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetTarget``1(``0)">
+  ResetTarget&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to the test runner application.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTarget&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetThresholdType_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetThresholdType*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetThresholdType__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetThresholdType``1(``0)">
+  ResetThresholdType&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Coverage type to apply the threshold to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetThresholdType&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetThreshold_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetThreshold*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetThreshold__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetThreshold``1(``0)">
+  ResetThreshold&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exits with error if the coverage % is below value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetThreshold&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetVersion_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ResetVersion__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ResetVersion``1(``0)">
+  ResetVersion&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L243"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show version information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVersion&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetAssembly_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetAssembly*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetAssembly__1___0_System_String_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetAssembly``1(``0,System.String)">
+  SetAssembly&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to the test assembly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAssembly&lt;T&gt;(this T o, string v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetExcludeByFile_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetExcludeByFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetExcludeByFile__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetExcludeByFile``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetExcludeByFile&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Glob patterns specifying source files to exclude.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetExcludeByFile&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetExcludeByFile_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetExcludeByFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetExcludeByFile__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetExcludeByFile``1(``0,System.String[])">
+  SetExcludeByFile&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L217"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Glob patterns specifying source files to exclude.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetExcludeByFile&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetExclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetExclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetExclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetExclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to exclude specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetExclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetExclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetExclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetExclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetExclude``1(``0,System.String[])">
+  SetExclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to exclude specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetExclude&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetFormat_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetFormat__1___0_Nuke_Common_Tools_Coverlet_CoverletOutputFormat___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetFormat``1(``0,Nuke.Common.Tools.Coverlet.CoverletOutputFormat[])">
+  SetFormat&lt;T&gt;(T, params CoverletOutputFormat[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Format of the generated coverage report.Can be specified multiple times to output multiple formats in a single run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFormat&lt;T&gt;(this T o, params CoverletOutputFormat[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletOutputFormat.html">CoverletOutputFormat</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetFormat_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetFormat__1___0_System_Collections_Generic_IEnumerable_Nuke_Common_Tools_Coverlet_CoverletOutputFormat__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetFormat``1(``0,System.Collections.Generic.IEnumerable{Nuke.Common.Tools.Coverlet.CoverletOutputFormat})">
+  SetFormat&lt;T&gt;(T, IEnumerable&lt;CoverletOutputFormat&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Format of the generated coverage report.Can be specified multiple times to output multiple formats in a single run.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFormat&lt;T&gt;(this T o, IEnumerable&lt;CoverletOutputFormat&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletOutputFormat.html">CoverletOutputFormat</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetInclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetInclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetInclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetInclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to include specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetInclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetInclude_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetInclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetInclude``1(``0,System.String[])">
+  SetInclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filter expressions to include specific modules and types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetInclude&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetMergeWith_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetMergeWith*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetMergeWith__1___0_System_String_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetMergeWith``1(``0,System.String)">
+  SetMergeWith&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to existing coverage result to merge.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetMergeWith&lt;T&gt;(this T o, string v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetOutput_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetOutput__1___0_System_String_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetOutput``1(``0,System.String)">
+  SetOutput&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output of the generated coverage report</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutput&lt;T&gt;(this T o, string v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetTargetArgs_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetTargetArgs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetTargetArgs__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetTargetArgs``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetTargetArgs&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arguments to be passed to the test runner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTargetArgs&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetTargetArgs_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetTargetArgs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetTargetArgs__1___0_System_String___" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetTargetArgs``1(``0,System.String[])">
+  SetTargetArgs&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Arguments to be passed to the test runner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTargetArgs&lt;T&gt;(this T o, params string[] v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetTargetSettings_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetTargetSettings*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetTargetSettings_Nuke_Common_Tools_Coverlet_CoverletSettings_Nuke_Common_Tooling_ToolOptions_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetTargetSettings(Nuke.Common.Tools.Coverlet.CoverletSettings,Nuke.Common.Tooling.ToolOptions)">
+  SetTargetSettings(CoverletSettings, ToolOptions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/CoverletSettingsExtensions.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p><em>Sets <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_Target">Target</a> and <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html#Nuke_Common_Tools_Coverlet_CoverletSettings_TargetArgs">TargetArgs</a> to the values defined by <code class="paramref">targetSettings</code>.</em></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static CoverletSettings SetTargetSettings(this CoverletSettings toolSettings, ToolOptions targetSettings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>toolSettings</code> <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html">CoverletSettings</a></dt>
+    <dd></dd>
+    <dt><code>targetSettings</code> <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletSettings.html">CoverletSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetTarget_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetTarget*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetTarget__1___0_System_String_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetTarget``1(``0,System.String)">
+  SetTarget&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to the test runner application.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTarget&lt;T&gt;(this T o, string v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetThresholdType_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetThresholdType*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetThresholdType__1___0_Nuke_Common_Tools_Coverlet_CoverletThresholdType_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetThresholdType``1(``0,Nuke.Common.Tools.Coverlet.CoverletThresholdType)">
+  SetThresholdType&lt;T&gt;(T, CoverletThresholdType)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Coverage type to apply the threshold to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetThresholdType&lt;T&gt;(this T o, CoverletThresholdType v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.Coverlet.CoverletThresholdType.html">CoverletThresholdType</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetThreshold_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetThreshold*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetThreshold__1___0_System_Nullable_System_Int32__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetThreshold``1(``0,System.Nullable{System.Int32})">
+  SetThreshold&lt;T&gt;(T, int?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exits with error if the coverage % is below value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetThreshold&lt;T&gt;(this T o, int? v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetVersion_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_SetVersion__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.SetVersion``1(``0,System.Nullable{System.Boolean})">
+  SetVersion&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L240"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show version information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVersion&lt;T&gt;(this T o, bool? v) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ToggleVersion_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ToggleVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Coverlet_CoverletSettingsExtensions_ToggleVersion__1___0_" data-uid="Nuke.Common.Tools.Coverlet.CoverletSettingsExtensions.ToggleVersion``1(``0)">
+  ToggleVersion&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/Coverlet.Generated.cs/#L252"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show version information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleVersion&lt;T&gt;(this T o) where T : CoverletSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Coverlet/CoverletSettingsExtensions.cs/#L12" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class KubernetesConvertSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class KubernetesConvertSettings | gruke ">
+      
+      <meta name="description" content="Convert config files between different API versions. Both YAML and JSON formats are accepted. The command takes filename, directory, or URL as input, and convert it into format of version specified by --output-version flag. If target version is not specified or not supported, convert to latest version. The default output will be printed to stdout in YAML format. One can use -o option to change to output destination.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings" class="text-break">
+Class KubernetesConvertSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L1291"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Kubernetes.html">Kubernetes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Convert config files between different API versions. Both YAML and JSON formats are accepted. The command takes filename, directory, or URL as input, and convert it into format of version specified by --output-version flag. If target version is not specified or not supported, convert to latest version. The default output will be printed to stdout in YAML format. One can use -o option to change to output destination.</p><p>For more details, visit the <a href="https://kubernetes.io/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class KubernetesConvertSettings : KubernetesOptionsBase, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html">KubernetesOptionsBase</a></div>
+      <div><span class="xref">KubernetesConvertSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Alsologtostderr">KubernetesOptionsBase.Alsologtostderr</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_As">KubernetesOptionsBase.As</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_AsGroup">KubernetesOptionsBase.AsGroup</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CacheDir">KubernetesOptionsBase.CacheDir</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CertificateAuthority">KubernetesOptionsBase.CertificateAuthority</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientCertificate">KubernetesOptionsBase.ClientCertificate</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientKey">KubernetesOptionsBase.ClientKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Cluster">KubernetesOptionsBase.Cluster</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Context">KubernetesOptionsBase.Context</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_InsecureSkipTlsVerify">KubernetesOptionsBase.InsecureSkipTlsVerify</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Kubeconfig">KubernetesOptionsBase.Kubeconfig</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogBacktraceAt">KubernetesOptionsBase.LogBacktraceAt</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogDir">KubernetesOptionsBase.LogDir</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Logtostderr">KubernetesOptionsBase.Logtostderr</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_MatchServerVersion">KubernetesOptionsBase.MatchServerVersion</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Namespace">KubernetesOptionsBase.Namespace</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_RequestTimeout">KubernetesOptionsBase.RequestTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Server">KubernetesOptionsBase.Server</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Stderrthreshold">KubernetesOptionsBase.Stderrthreshold</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Token">KubernetesOptionsBase.Token</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_User">KubernetesOptionsBase.User</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_V">KubernetesOptionsBase.V</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Vmodule">KubernetesOptionsBase.Vmodule</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_AddFilename__1___0_System_Collections_Generic_IEnumerable_System_String__">KubernetesConvertSettingsExtensions.AddFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_AddFilename__1___0_System_String___">KubernetesConvertSettingsExtensions.AddFilename&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ClearFilename__1___0_">KubernetesConvertSettingsExtensions.ClearFilename&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableAllowMissingTemplateKeys__1___0_">KubernetesConvertSettingsExtensions.DisableAllowMissingTemplateKeys&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableLocal__1___0_">KubernetesConvertSettingsExtensions.DisableLocal&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableRecursive__1___0_">KubernetesConvertSettingsExtensions.DisableRecursive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_DisableValidate__1___0_">KubernetesConvertSettingsExtensions.DisableValidate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableAllowMissingTemplateKeys__1___0_">KubernetesConvertSettingsExtensions.EnableAllowMissingTemplateKeys&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableLocal__1___0_">KubernetesConvertSettingsExtensions.EnableLocal&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableRecursive__1___0_">KubernetesConvertSettingsExtensions.EnableRecursive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_EnableValidate__1___0_">KubernetesConvertSettingsExtensions.EnableValidate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_RemoveFilename__1___0_System_Collections_Generic_IEnumerable_System_String__">KubernetesConvertSettingsExtensions.RemoveFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_RemoveFilename__1___0_System_String___">KubernetesConvertSettingsExtensions.RemoveFilename&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetAllowMissingTemplateKeys__1___0_">KubernetesConvertSettingsExtensions.ResetAllowMissingTemplateKeys&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetLocal__1___0_">KubernetesConvertSettingsExtensions.ResetLocal&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetOutputVersion__1___0_">KubernetesConvertSettingsExtensions.ResetOutputVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetOutput__1___0_">KubernetesConvertSettingsExtensions.ResetOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetRecursive__1___0_">KubernetesConvertSettingsExtensions.ResetRecursive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetTemplate__1___0_">KubernetesConvertSettingsExtensions.ResetTemplate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ResetValidate__1___0_">KubernetesConvertSettingsExtensions.ResetValidate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetAllowMissingTemplateKeys__1___0_System_Nullable_System_Boolean__">KubernetesConvertSettingsExtensions.SetAllowMissingTemplateKeys&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetFilename__1___0_System_Collections_Generic_IEnumerable_System_String__">KubernetesConvertSettingsExtensions.SetFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetFilename__1___0_System_String___">KubernetesConvertSettingsExtensions.SetFilename&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetLocal__1___0_System_Nullable_System_Boolean__">KubernetesConvertSettingsExtensions.SetLocal&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetOutputVersion__1___0_System_String_">KubernetesConvertSettingsExtensions.SetOutputVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetOutput__1___0_Nuke_Common_Tools_Kubernetes_KubernetesConvertOutput_">KubernetesConvertSettingsExtensions.SetOutput&lt;T&gt;(T, KubernetesConvertOutput)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetRecursive__1___0_System_Nullable_System_Boolean__">KubernetesConvertSettingsExtensions.SetRecursive&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetTemplate__1___0_System_String_">KubernetesConvertSettingsExtensions.SetTemplate&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_SetValidate__1___0_System_Nullable_System_Boolean__">KubernetesConvertSettingsExtensions.SetValidate&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleAllowMissingTemplateKeys__1___0_">KubernetesConvertSettingsExtensions.ToggleAllowMissingTemplateKeys&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleLocal__1___0_">KubernetesConvertSettingsExtensions.ToggleLocal&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleRecursive__1___0_">KubernetesConvertSettingsExtensions.ToggleRecursive&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettingsExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettingsExtensions_ToggleValidate__1___0_">KubernetesConvertSettingsExtensions.ToggleValidate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_AddAsGroup__1___0_System_Collections_Generic_IEnumerable_System_String__">KubernetesOptionsBaseExtensions.AddAsGroup&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_AddAsGroup__1___0_System_String___">KubernetesOptionsBaseExtensions.AddAsGroup&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_AddVmodule__1___0_System_String_System_String_">KubernetesOptionsBaseExtensions.AddVmodule&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ClearAsGroup__1___0_">KubernetesOptionsBaseExtensions.ClearAsGroup&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ClearVmodule__1___0_">KubernetesOptionsBaseExtensions.ClearVmodule&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_DisableAlsologtostderr__1___0_">KubernetesOptionsBaseExtensions.DisableAlsologtostderr&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_DisableInsecureSkipTlsVerify__1___0_">KubernetesOptionsBaseExtensions.DisableInsecureSkipTlsVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_DisableLogtostderr__1___0_">KubernetesOptionsBaseExtensions.DisableLogtostderr&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_DisableMatchServerVersion__1___0_">KubernetesOptionsBaseExtensions.DisableMatchServerVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_EnableAlsologtostderr__1___0_">KubernetesOptionsBaseExtensions.EnableAlsologtostderr&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_EnableInsecureSkipTlsVerify__1___0_">KubernetesOptionsBaseExtensions.EnableInsecureSkipTlsVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_EnableLogtostderr__1___0_">KubernetesOptionsBaseExtensions.EnableLogtostderr&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_EnableMatchServerVersion__1___0_">KubernetesOptionsBaseExtensions.EnableMatchServerVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_RemoveAsGroup__1___0_System_Collections_Generic_IEnumerable_System_String__">KubernetesOptionsBaseExtensions.RemoveAsGroup&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_RemoveAsGroup__1___0_System_String___">KubernetesOptionsBaseExtensions.RemoveAsGroup&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_RemoveVmodule__1___0_System_String_">KubernetesOptionsBaseExtensions.RemoveVmodule&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetAlsologtostderr__1___0_">KubernetesOptionsBaseExtensions.ResetAlsologtostderr&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetAs__1___0_">KubernetesOptionsBaseExtensions.ResetAs&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetCacheDir__1___0_">KubernetesOptionsBaseExtensions.ResetCacheDir&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetCertificateAuthority__1___0_">KubernetesOptionsBaseExtensions.ResetCertificateAuthority&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetClientCertificate__1___0_">KubernetesOptionsBaseExtensions.ResetClientCertificate&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetClientKey__1___0_">KubernetesOptionsBaseExtensions.ResetClientKey&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetCluster__1___0_">KubernetesOptionsBaseExtensions.ResetCluster&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetContext__1___0_">KubernetesOptionsBaseExtensions.ResetContext&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetInsecureSkipTlsVerify__1___0_">KubernetesOptionsBaseExtensions.ResetInsecureSkipTlsVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetKubeconfig__1___0_">KubernetesOptionsBaseExtensions.ResetKubeconfig&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetLogBacktraceAt__1___0_">KubernetesOptionsBaseExtensions.ResetLogBacktraceAt&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetLogDir__1___0_">KubernetesOptionsBaseExtensions.ResetLogDir&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetLogtostderr__1___0_">KubernetesOptionsBaseExtensions.ResetLogtostderr&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetMatchServerVersion__1___0_">KubernetesOptionsBaseExtensions.ResetMatchServerVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetNamespace__1___0_">KubernetesOptionsBaseExtensions.ResetNamespace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetRequestTimeout__1___0_">KubernetesOptionsBaseExtensions.ResetRequestTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetServer__1___0_">KubernetesOptionsBaseExtensions.ResetServer&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetStderrthreshold__1___0_">KubernetesOptionsBaseExtensions.ResetStderrthreshold&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetToken__1___0_">KubernetesOptionsBaseExtensions.ResetToken&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetUser__1___0_">KubernetesOptionsBaseExtensions.ResetUser&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ResetV__1___0_">KubernetesOptionsBaseExtensions.ResetV&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetAlsologtostderr__1___0_System_Nullable_System_Boolean__">KubernetesOptionsBaseExtensions.SetAlsologtostderr&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetAsGroup__1___0_System_Collections_Generic_IEnumerable_System_String__">KubernetesOptionsBaseExtensions.SetAsGroup&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetAsGroup__1___0_System_String___">KubernetesOptionsBaseExtensions.SetAsGroup&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetAs__1___0_System_String_">KubernetesOptionsBaseExtensions.SetAs&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetCacheDir__1___0_System_String_">KubernetesOptionsBaseExtensions.SetCacheDir&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetCertificateAuthority__1___0_System_String_">KubernetesOptionsBaseExtensions.SetCertificateAuthority&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetClientCertificate__1___0_System_String_">KubernetesOptionsBaseExtensions.SetClientCertificate&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetClientKey__1___0_System_String_">KubernetesOptionsBaseExtensions.SetClientKey&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetCluster__1___0_System_String_">KubernetesOptionsBaseExtensions.SetCluster&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetContext__1___0_System_String_">KubernetesOptionsBaseExtensions.SetContext&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetInsecureSkipTlsVerify__1___0_System_Nullable_System_Boolean__">KubernetesOptionsBaseExtensions.SetInsecureSkipTlsVerify&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetKubeconfig__1___0_System_String_">KubernetesOptionsBaseExtensions.SetKubeconfig&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetLogBacktraceAt__1___0_System_String_">KubernetesOptionsBaseExtensions.SetLogBacktraceAt&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetLogDir__1___0_System_String_">KubernetesOptionsBaseExtensions.SetLogDir&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetLogtostderr__1___0_System_Nullable_System_Boolean__">KubernetesOptionsBaseExtensions.SetLogtostderr&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetMatchServerVersion__1___0_System_Nullable_System_Boolean__">KubernetesOptionsBaseExtensions.SetMatchServerVersion&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetNamespace__1___0_System_String_">KubernetesOptionsBaseExtensions.SetNamespace&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetRequestTimeout__1___0_System_String_">KubernetesOptionsBaseExtensions.SetRequestTimeout&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetServer__1___0_System_String_">KubernetesOptionsBaseExtensions.SetServer&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetStderrthreshold__1___0_System_Nullable_System_Int32__">KubernetesOptionsBaseExtensions.SetStderrthreshold&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetToken__1___0_System_String_">KubernetesOptionsBaseExtensions.SetToken&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetUser__1___0_System_String_">KubernetesOptionsBaseExtensions.SetUser&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetV__1___0_System_Nullable_System_Int32__">KubernetesOptionsBaseExtensions.SetV&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetVmodule__1___0_System_Collections_Generic_IDictionary_System_String_System_String__">KubernetesOptionsBaseExtensions.SetVmodule&lt;T&gt;(T, IDictionary&lt;string, string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_SetVmodule__1___0_System_String_System_String_">KubernetesOptionsBaseExtensions.SetVmodule&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ToggleAlsologtostderr__1___0_">KubernetesOptionsBaseExtensions.ToggleAlsologtostderr&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ToggleInsecureSkipTlsVerify__1___0_">KubernetesOptionsBaseExtensions.ToggleInsecureSkipTlsVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ToggleLogtostderr__1___0_">KubernetesOptionsBaseExtensions.ToggleLogtostderr&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBaseExtensions.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBaseExtensions_ToggleMatchServerVersion__1___0_">KubernetesOptionsBaseExtensions.ToggleMatchServerVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--allow-missing-template-keys</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_AllowMissingTemplateKeys">AllowMissingTemplateKeys</a></li><li><code>--alsologtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Alsologtostderr">Alsologtostderr</a></li><li><code>--as</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_As">As</a></li><li><code>--as-group</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_AsGroup">AsGroup</a></li><li><code>--cache-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CacheDir">CacheDir</a></li><li><code>--certificate-authority</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CertificateAuthority">CertificateAuthority</a></li><li><code>--client-certificate</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientCertificate">ClientCertificate</a></li><li><code>--client-key</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientKey">ClientKey</a></li><li><code>--cluster</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Cluster">Cluster</a></li><li><code>--context</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Context">Context</a></li><li><code>--filename</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Filename">Filename</a></li><li><code>--insecure-skip-tls-verify</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_InsecureSkipTlsVerify">InsecureSkipTlsVerify</a></li><li><code>--kubeconfig</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Kubeconfig">Kubeconfig</a></li><li><code>--local</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Local">Local</a></li><li><code>--log-backtrace-at</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogBacktraceAt">LogBacktraceAt</a></li><li><code>--log-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogDir">LogDir</a></li><li><code>--logtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Logtostderr">Logtostderr</a></li><li><code>--match-server-version</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_MatchServerVersion">MatchServerVersion</a></li><li><code>--namespace</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Namespace">Namespace</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Output">Output</a></li><li><code>--output-version</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_OutputVersion">OutputVersion</a></li><li><code>--recursive</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Recursive">Recursive</a></li><li><code>--request-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_RequestTimeout">RequestTimeout</a></li><li><code>--server</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Server">Server</a></li><li><code>--stderrthreshold</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Stderrthreshold">Stderrthreshold</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Template">Template</a></li><li><code>--token</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Token">Token</a></li><li><code>--user</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_User">User</a></li><li><code>--v</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_V">V</a></li><li><code>--validate</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Validate">Validate</a></li><li><code>--vmodule</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Vmodule">Vmodule</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_AllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.AllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_AllowMissingTemplateKeys" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.AllowMissingTemplateKeys">
+  AllowMissingTemplateKeys
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L1297"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? AllowMissingTemplateKeys { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Filename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Filename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Filename" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Filename">
+  Filename
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L1299"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files to need to get converted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Filename { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Local_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Local*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Local" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Local">
+  Local
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L1301"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, convert will NOT try to contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Local { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Output_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Output*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Output" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Output">
+  Output
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L1303"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output format. One of: json|yaml|name|go-template|go-template-file|templatefile|template|jsonpath|jsonpath-file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KubernetesConvertOutput Output { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesConvertOutput.html">KubernetesConvertOutput</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_OutputVersion_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.OutputVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_OutputVersion" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.OutputVersion">
+  OutputVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L1305"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output the formatted object with the given group version (for ex: 'extensions/v1beta1').).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string OutputVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Recursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Recursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Recursive" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Recursive">
+  Recursive
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L1307"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Recursive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Template_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Template*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Template" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Template">
+  Template
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L1309"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Template { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Validate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Validate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesConvertSettings_Validate" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesConvertSettings.Validate">
+  Validate
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L1311"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, use a schema to validate the input before sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Validate { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L1291" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

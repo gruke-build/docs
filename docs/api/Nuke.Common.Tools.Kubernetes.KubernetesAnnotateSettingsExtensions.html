@@ -1,0 +1,3215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class KubernetesAnnotateSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class KubernetesAnnotateSettingsExtensions | gruke ">
+      
+      <meta name="description" content="Update the annotations on one or more resources All Kubernetes objects support the ability to store additional data with the object as annotations. Annotations are key/value pairs that can be larger than labels and include arbitrary string values such as structured JSON. Tools and system extensions may use annotations to store their own data. Attempting to set an annotation that already exists will fail unless --overwrite is set. If --resource-version is specified and does not match the current resource version on the server the command will fail.Use &quot;kubectl api-resources&quot; for a complete list of supported resources.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions" class="text-break">
+Class KubernetesAnnotateSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3292"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Kubernetes.html">Kubernetes</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Update the annotations on one or more resources All Kubernetes objects support the ability to store additional data with the object as annotations. Annotations are key/value pairs that can be larger than labels and include arbitrary string values such as structured JSON. Tools and system extensions may use annotations to store their own data. Attempting to set an annotation that already exists will fail unless --overwrite is set. If --resource-version is specified and does not match the current resource version on the server the command will fail.Use "kubectl api-resources" for a complete list of supported resources.</p><p>For more details, visit the <a href="https://kubernetes.io/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class KubernetesAnnotateSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">KubernetesAnnotateSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;annotations&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_Annotations">Annotations</a></li><li><code>&lt;typeName&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_TypeName">TypeName</a></li><li><code>--all</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_All">All</a></li><li><code>--allow-missing-template-keys</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_AllowMissingTemplateKeys">AllowMissingTemplateKeys</a></li><li><code>--alsologtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Alsologtostderr">Alsologtostderr</a></li><li><code>--as</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_As">As</a></li><li><code>--as-group</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_AsGroup">AsGroup</a></li><li><code>--cache-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CacheDir">CacheDir</a></li><li><code>--certificate-authority</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_CertificateAuthority">CertificateAuthority</a></li><li><code>--client-certificate</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientCertificate">ClientCertificate</a></li><li><code>--client-key</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_ClientKey">ClientKey</a></li><li><code>--cluster</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Cluster">Cluster</a></li><li><code>--context</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Context">Context</a></li><li><code>--dry-run</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_DryRun">DryRun</a></li><li><code>--field-selector</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_FieldSelector">FieldSelector</a></li><li><code>--filename</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_Filename">Filename</a></li><li><code>--include-uninitialized</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_IncludeUninitialized">IncludeUninitialized</a></li><li><code>--insecure-skip-tls-verify</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_InsecureSkipTlsVerify">InsecureSkipTlsVerify</a></li><li><code>--kubeconfig</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Kubeconfig">Kubeconfig</a></li><li><code>--local</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_Local">Local</a></li><li><code>--log-backtrace-at</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogBacktraceAt">LogBacktraceAt</a></li><li><code>--log-dir</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_LogDir">LogDir</a></li><li><code>--logtostderr</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Logtostderr">Logtostderr</a></li><li><code>--match-server-version</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_MatchServerVersion">MatchServerVersion</a></li><li><code>--namespace</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Namespace">Namespace</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_Output">Output</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_Overwrite">Overwrite</a></li><li><code>--record</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_Record">Record</a></li><li><code>--recursive</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_Recursive">Recursive</a></li><li><code>--request-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_RequestTimeout">RequestTimeout</a></li><li><code>--resource-version</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_ResourceVersion">ResourceVersion</a></li><li><code>--selector</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_Selector">Selector</a></li><li><code>--server</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Server">Server</a></li><li><code>--stderrthreshold</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Stderrthreshold">Stderrthreshold</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettings.html#Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettings_Template">Template</a></li><li><code>--token</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Token">Token</a></li><li><code>--user</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_User">User</a></li><li><code>--v</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_V">V</a></li><li><code>--vmodule</code> via <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesOptionsBase.html#Nuke_Common_Tools_Kubernetes_KubernetesOptionsBase_Vmodule">Vmodule</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_AddAnnotation_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.AddAnnotation*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_AddAnnotation__1___0_System_String_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.AddAnnotation``1(``0,System.String,System.String)">
+  AddAnnotation&lt;T&gt;(T, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3327"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The annotations to set on the ressource</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddAnnotation&lt;T&gt;(this T o, string k, string v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_AddFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.AddFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_AddFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.AddFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3406"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to update the annotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_AddFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.AddFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_AddFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.AddFilename``1(``0,System.String[])">
+  AddFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3403"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to update the annotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_AddTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.AddTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_AddTypeName__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.AddTypeName``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddTypeName&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3307"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTypeName&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_AddTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.AddTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_AddTypeName__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.AddTypeName``1(``0,System.String[])">
+  AddTypeName&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3304"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddTypeName&lt;T&gt;(this T o, params string[] v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ClearAnnotations_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ClearAnnotations*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ClearAnnotations__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ClearAnnotations``1(``0)">
+  ClearAnnotations&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3333"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The annotations to set on the ressource</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearAnnotations&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ClearFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ClearFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ClearFilename__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ClearFilename``1(``0)">
+  ClearFilename&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3415"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to update the annotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearFilename&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ClearTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ClearTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ClearTypeName__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ClearTypeName``1(``0)">
+  ClearTypeName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearTypeName&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableAll``1(``0)">
+  DisableAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3347"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select all resources, including uninitialized ones, in the namespace of the specified resource types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableAll&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableAllowMissingTemplateKeys``1(``0)">
+  DisableAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3364"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableDryRun_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableDryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableDryRun__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableDryRun``1(``0)">
+  DisableDryRun&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3381"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, only print the object that would be sent, without sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDryRun&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableIncludeUninitialized_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableIncludeUninitialized*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableIncludeUninitialized__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableIncludeUninitialized``1(``0)">
+  DisableIncludeUninitialized&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3429"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the kubectl command applies to uninitialized objects. If explicitly set to false, this flag overrides other flags that make the kubectl commands apply to uninitialized objects, e.g., &quot;--all&quot;. Objects with empty metadata.initializers are regarded as initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableIncludeUninitialized&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableLocal_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableLocal__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableLocal``1(``0)">
+  DisableLocal&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3446"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, annotation will NOT contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableLocal&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableOverwrite_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableOverwrite__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableOverwrite``1(``0)">
+  DisableOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3471"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, allow annotations to be overwritten, otherwise reject annotation updates that overwrite existing annotations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableOverwrite&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableRecord_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableRecord*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableRecord__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableRecord``1(``0)">
+  DisableRecord&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3488"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableRecord&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_DisableRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.DisableRecursive``1(``0)">
+  DisableRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3505"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableRecursive&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableAll``1(``0)">
+  EnableAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3344"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select all resources, including uninitialized ones, in the namespace of the specified resource types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableAll&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableAllowMissingTemplateKeys``1(``0)">
+  EnableAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3361"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableDryRun_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableDryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableDryRun__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableDryRun``1(``0)">
+  EnableDryRun&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3378"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, only print the object that would be sent, without sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDryRun&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableIncludeUninitialized_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableIncludeUninitialized*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableIncludeUninitialized__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableIncludeUninitialized``1(``0)">
+  EnableIncludeUninitialized&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3426"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the kubectl command applies to uninitialized objects. If explicitly set to false, this flag overrides other flags that make the kubectl commands apply to uninitialized objects, e.g., &quot;--all&quot;. Objects with empty metadata.initializers are regarded as initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableIncludeUninitialized&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableLocal_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableLocal__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableLocal``1(``0)">
+  EnableLocal&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3443"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, annotation will NOT contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableLocal&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableOverwrite_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableOverwrite__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableOverwrite``1(``0)">
+  EnableOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3468"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, allow annotations to be overwritten, otherwise reject annotation updates that overwrite existing annotations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableOverwrite&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableRecord_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableRecord*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableRecord__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableRecord``1(``0)">
+  EnableRecord&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3485"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableRecord&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_EnableRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.EnableRecursive``1(``0)">
+  EnableRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3502"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableRecursive&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_RemoveAnnotation_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.RemoveAnnotation*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_RemoveAnnotation__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.RemoveAnnotation``1(``0,System.String)">
+  RemoveAnnotation&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3330"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The annotations to set on the ressource</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveAnnotation&lt;T&gt;(this T o, string k) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_RemoveFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.RemoveFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_RemoveFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.RemoveFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3412"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to update the annotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_RemoveFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.RemoveFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_RemoveFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.RemoveFilename``1(``0,System.String[])">
+  RemoveFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3409"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to update the annotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_RemoveTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.RemoveTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_RemoveTypeName__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.RemoveTypeName``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveTypeName&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3313"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTypeName&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_RemoveTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.RemoveTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_RemoveTypeName__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.RemoveTypeName``1(``0,System.String[])">
+  RemoveTypeName&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3310"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveTypeName&lt;T&gt;(this T o, params string[] v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetAll``1(``0)">
+  ResetAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3341"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select all resources, including uninitialized ones, in the namespace of the specified resource types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAll&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetAllowMissingTemplateKeys``1(``0)">
+  ResetAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3358"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetDryRun_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetDryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetDryRun__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetDryRun``1(``0)">
+  ResetDryRun&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3375"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, only print the object that would be sent, without sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDryRun&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetFieldSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetFieldSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetFieldSelector__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetFieldSelector``1(``0)">
+  ResetFieldSelector&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3392"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selector (field query) to filter on, supports '=', '==', and '!='.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFieldSelector&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetIncludeUninitialized_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetIncludeUninitialized*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetIncludeUninitialized__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetIncludeUninitialized``1(``0)">
+  ResetIncludeUninitialized&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3423"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the kubectl command applies to uninitialized objects. If explicitly set to false, this flag overrides other flags that make the kubectl commands apply to uninitialized objects, e.g., &quot;--all&quot;. Objects with empty metadata.initializers are regarded as initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetIncludeUninitialized&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetLocal_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetLocal__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetLocal``1(``0)">
+  ResetLocal&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3440"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, annotation will NOT contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetLocal&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetOutput__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetOutput``1(``0)">
+  ResetOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3457"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output format. One of: json|yaml|name|templatefile|template|go-template|go-template-file|jsonpath|jsonpath-file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutput&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetOverwrite_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetOverwrite__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetOverwrite``1(``0)">
+  ResetOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3465"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, allow annotations to be overwritten, otherwise reject annotation updates that overwrite existing annotations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOverwrite&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetRecord_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetRecord*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetRecord__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetRecord``1(``0)">
+  ResetRecord&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3482"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRecord&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetRecursive``1(``0)">
+  ResetRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3499"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRecursive&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetResourceVersion_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetResourceVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetResourceVersion__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetResourceVersion``1(``0)">
+  ResetResourceVersion&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3516"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If non-empty, the annotation update will only succeed if this is the current resource-version for the object. Only valid when specifying a single resource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetResourceVersion&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetSelector__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetSelector``1(``0)">
+  ResetSelector&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3524"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selector (label query) to filter on, not including uninitialized ones, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSelector&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetTemplate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ResetTemplate__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ResetTemplate``1(``0)">
+  ResetTemplate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3532"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTemplate&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetAll__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetAll``1(``0,System.Nullable{System.Boolean})">
+  SetAll&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3338"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select all resources, including uninitialized ones, in the namespace of the specified resource types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAll&lt;T&gt;(this T o, bool? v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetAllowMissingTemplateKeys__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetAllowMissingTemplateKeys``1(``0,System.Nullable{System.Boolean})">
+  SetAllowMissingTemplateKeys&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3355"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAllowMissingTemplateKeys&lt;T&gt;(this T o, bool? v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetAnnotation_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetAnnotation*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetAnnotation__1___0_System_String_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetAnnotation``1(``0,System.String,System.String)">
+  SetAnnotation&lt;T&gt;(T, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The annotations to set on the ressource</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAnnotation&lt;T&gt;(this T o, string k, string v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>k</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetAnnotations_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetAnnotations*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetAnnotations__1___0_System_Collections_Generic_IDictionary_System_String_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetAnnotations``1(``0,System.Collections.Generic.IDictionary{System.String,System.String})">
+  SetAnnotations&lt;T&gt;(T, IDictionary&lt;string, string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3321"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The annotations to set on the ressource</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAnnotations&lt;T&gt;(this T o, IDictionary&lt;string, string&gt; v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetDryRun_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetDryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetDryRun__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetDryRun``1(``0,System.Nullable{System.Boolean})">
+  SetDryRun&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3372"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, only print the object that would be sent, without sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDryRun&lt;T&gt;(this T o, bool? v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetFieldSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetFieldSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetFieldSelector__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetFieldSelector``1(``0,System.String)">
+  SetFieldSelector&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3389"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selector (field query) to filter on, supports '=', '==', and '!='.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFieldSelector&lt;T&gt;(this T o, string v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetFilename__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetFilename``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetFilename&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3400"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to update the annotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFilename&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetFilename_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetFilename*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetFilename__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetFilename``1(``0,System.String[])">
+  SetFilename&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3397"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Filename, directory, or URL to files identifying the resource to update the annotation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFilename&lt;T&gt;(this T o, params string[] v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetIncludeUninitialized_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetIncludeUninitialized*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetIncludeUninitialized__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetIncludeUninitialized``1(``0,System.Nullable{System.Boolean})">
+  SetIncludeUninitialized&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3420"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the kubectl command applies to uninitialized objects. If explicitly set to false, this flag overrides other flags that make the kubectl commands apply to uninitialized objects, e.g., &quot;--all&quot;. Objects with empty metadata.initializers are regarded as initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetIncludeUninitialized&lt;T&gt;(this T o, bool? v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetLocal_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetLocal__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetLocal``1(``0,System.Nullable{System.Boolean})">
+  SetLocal&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3437"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, annotation will NOT contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetLocal&lt;T&gt;(this T o, bool? v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetOutput__1___0_Nuke_Common_Tools_Kubernetes_KubernetesAnnotateOutput_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetOutput``1(``0,Nuke.Common.Tools.Kubernetes.KubernetesAnnotateOutput)">
+  SetOutput&lt;T&gt;(T, KubernetesAnnotateOutput)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3454"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output format. One of: json|yaml|name|templatefile|template|go-template|go-template-file|jsonpath|jsonpath-file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutput&lt;T&gt;(this T o, KubernetesAnnotateOutput v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateOutput.html">KubernetesAnnotateOutput</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetOverwrite_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetOverwrite__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetOverwrite``1(``0,System.Nullable{System.Boolean})">
+  SetOverwrite&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3462"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, allow annotations to be overwritten, otherwise reject annotation updates that overwrite existing annotations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOverwrite&lt;T&gt;(this T o, bool? v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetRecord_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetRecord*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetRecord__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetRecord``1(``0,System.Nullable{System.Boolean})">
+  SetRecord&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3479"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRecord&lt;T&gt;(this T o, bool? v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetRecursive__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetRecursive``1(``0,System.Nullable{System.Boolean})">
+  SetRecursive&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3496"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRecursive&lt;T&gt;(this T o, bool? v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetResourceVersion_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetResourceVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetResourceVersion__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetResourceVersion``1(``0,System.String)">
+  SetResourceVersion&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3513"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If non-empty, the annotation update will only succeed if this is the current resource-version for the object. Only valid when specifying a single resource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetResourceVersion&lt;T&gt;(this T o, string v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetSelector_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetSelector*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetSelector__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetSelector``1(``0,System.String)">
+  SetSelector&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3521"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Selector (label query) to filter on, not including uninitialized ones, supports '=', '==', and '!='.(e.g. -l key1=value1,key2=value2).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSelector&lt;T&gt;(this T o, string v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetTemplate_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetTemplate__1___0_System_String_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetTemplate``1(``0,System.String)">
+  SetTemplate&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3529"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTemplate&lt;T&gt;(this T o, string v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetTypeName__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetTypeName``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetTypeName&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3301"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTypeName&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetTypeName_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetTypeName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_SetTypeName__1___0_System_String___" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.SetTypeName``1(``0,System.String[])">
+  SetTypeName&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3298"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type or/and name of the ressource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTypeName&lt;T&gt;(this T o, params string[] v) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleAll_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleAll__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleAll``1(``0)">
+  ToggleAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3350"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Select all resources, including uninitialized ones, in the namespace of the specified resource types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleAll&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleAllowMissingTemplateKeys_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleAllowMissingTemplateKeys*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleAllowMissingTemplateKeys__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleAllowMissingTemplateKeys``1(``0)">
+  ToggleAllowMissingTemplateKeys&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3367"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleAllowMissingTemplateKeys&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleDryRun_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleDryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleDryRun__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleDryRun``1(``0)">
+  ToggleDryRun&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3384"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, only print the object that would be sent, without sending it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDryRun&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleIncludeUninitialized_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleIncludeUninitialized*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleIncludeUninitialized__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleIncludeUninitialized``1(``0)">
+  ToggleIncludeUninitialized&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3432"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, the kubectl command applies to uninitialized objects. If explicitly set to false, this flag overrides other flags that make the kubectl commands apply to uninitialized objects, e.g., &quot;--all&quot;. Objects with empty metadata.initializers are regarded as initialized.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleIncludeUninitialized&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleLocal_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleLocal*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleLocal__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleLocal``1(``0)">
+  ToggleLocal&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3449"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, annotation will NOT contact api-server but run locally.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleLocal&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleOverwrite_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleOverwrite__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleOverwrite``1(``0)">
+  ToggleOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3474"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If true, allow annotations to be overwritten, otherwise reject annotation updates that overwrite existing annotations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleOverwrite&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleRecord_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleRecord*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleRecord__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleRecord``1(``0)">
+  ToggleRecord&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3491"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Record current kubectl command in the resource annotation. If set to false, do not record the command. If set to true, record the command. If not set, default to updating the existing annotation value only if one already exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleRecord&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleRecursive_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleRecursive*"></a>
+
+  <h3 id="Nuke_Common_Tools_Kubernetes_KubernetesAnnotateSettingsExtensions_ToggleRecursive__1___0_" data-uid="Nuke.Common.Tools.Kubernetes.KubernetesAnnotateSettingsExtensions.ToggleRecursive``1(``0)">
+  ToggleRecursive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3508"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleRecursive&lt;T&gt;(this T o) where T : KubernetesAnnotateSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Kubernetes/Kubernetes.Generated.cs/#L3292" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

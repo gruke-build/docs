@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SpecFlowTasks | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SpecFlowTasks | gruke ">
+      
+      <meta name="description" content="Use SpecFlow to define, manage and automatically execute human-readable acceptance tests in .NET projects. Writing easily understandable tests is a cornerstone of the BDD paradigm and also helps build up a living documentation of your system.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_SpecFlow_SpecFlowTasks.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.SpecFlow.SpecFlowTasks%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks">
+
+
+
+  <h1 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks" class="text-break">
+Class SpecFlowTasks  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.SpecFlow.html">SpecFlow</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Use SpecFlow to define, manage and automatically execute human-readable acceptance tests in .NET projects. Writing easily understandable tests is a cornerstone of the BDD paradigm and also helps build up a living documentation of your system.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class SpecFlowTasks : ToolTasks, IRequireNuGetPackage, IRequireTool, IRequireToolWithVersion</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolTasks.html">ToolTasks</a></div>
+      <div><span class="xref">SpecFlowTasks</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IRequireNuGetPackage.html">IRequireNuGetPackage</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.IRequireTool.html">IRequireTool</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.IRequireToolWithVersion.html">IRequireToolWithVersion</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetLogger_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetLogger(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetToolPath_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetToolPath(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Run__1___0_">ToolTasks.Run&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Run__2___0_">ToolTasks.Run&lt;TOptions, TResult&gt;(TOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetExitHandler_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetExitHandler(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_PreProcess__1___0_">ToolTasks.PreProcess&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_PostProcess_Nuke_Common_Tooling_ToolOptions_">ToolTasks.PostProcess(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetResult__1_Nuke_Common_Tooling_ToolOptions_System_Collections_Generic_IReadOnlyCollection_Nuke_Common_Tooling_Output__">ToolTasks.GetResult&lt;T&gt;(ToolOptions, IReadOnlyCollection&lt;Output&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Run_Nuke_Common_Tooling_ArgumentStringHandler_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Action_Nuke_Common_Tooling_OutputType_System_String__System_Func_Nuke_Common_Tooling_IProcess_System_Object__">ToolTasks.Run(ArgumentStringHandler, string, IReadOnlyDictionary&lt;string, string&gt;, int?, bool?, bool?, Action&lt;OutputType, string&gt;, Func&lt;IProcess, object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_StartProcess_System_String_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Action_Nuke_Common_Tooling_OutputType_System_String__System_Func_System_String_System_String__">ToolTasks.StartProcess(string, string, IReadOnlyDictionary&lt;string, string&gt;, int?, bool?, bool?, Action&lt;OutputType, string&gt;, Func&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Resolve__1">ToolTasks.Resolve&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetToolPathInternal_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetToolPathInternal(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_SetToolPath_System_String_">ToolTasks.SetToolPath(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_PackageExecutable" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.PackageExecutable">
+  PackageExecutable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string PackageExecutable = &quot;specflow.exe&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_PackageId" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.PackageId">
+  PackageId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string PackageId = &quot;SpecFlow&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowPath_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowPath" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowPath">
+  SpecFlowPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string SpecFlowPath { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlow_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlow*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlow_Nuke_Common_Tooling_ArgumentStringHandler_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Action_Nuke_Common_Tooling_OutputType_System_String__System_Func_Nuke_Common_Tooling_IProcess_System_Object__" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlow(Nuke.Common.Tooling.ArgumentStringHandler,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Action{Nuke.Common.Tooling.OutputType,System.String},System.Func{Nuke.Common.Tooling.IProcess,System.Object})">
+  SpecFlow(ArgumentStringHandler, string, IReadOnlyDictionary&lt;string, string&gt;, int?, bool?, bool?, Action&lt;OutputType, string&gt;, Func&lt;IProcess, object&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use SpecFlow to define, manage and automatically execute human-readable acceptance tests in .NET projects. Writing easily understandable tests is a cornerstone of the BDD paradigm and also helps build up a living documentation of your system.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlow(ArgumentStringHandler arguments, string workingDirectory = null, IReadOnlyDictionary&lt;string, string&gt; environmentVariables = null, int? timeout = null, bool? logOutput = null, bool? logInvocation = null, Action&lt;OutputType, string&gt; logger = null, Func&lt;IProcess, object&gt; exitHandler = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arguments</code> <a class="xref" href="Nuke.Common.Tooling.ArgumentStringHandler.html">ArgumentStringHandler</a></dt>
+    <dd></dd>
+    <dt><code>workingDirectory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>environmentVariables</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>timeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>logOutput</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>logInvocation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="Nuke.Common.Tooling.OutputType.html">OutputType</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>exitHandler</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="Nuke.Common.Tooling.IProcess.html">IProcess</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowAbout_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowAbout*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowAbout_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowAboutSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowAbout(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.SpecFlow.SpecFlowAboutSettings},System.Int32,System.Boolean)">
+  SpecFlowAbout(CombinatorialConfigure&lt;SpecFlowAboutSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe about</code> to display information such as your version number, build date and license information (licensee, upgrade until date/expiry date).</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(SpecFlowAboutSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; SpecFlowAbout(CombinatorialConfigure&lt;SpecFlowAboutSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowAboutSettings.html">SpecFlowAboutSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowAboutSettings.html">SpecFlowAboutSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowaboutsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowaboutsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowAbout_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowAboutSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowAbout_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowAbout*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowAbout_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowAboutSettings__" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowAbout(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.SpecFlow.SpecFlowAboutSettings})">
+  SpecFlowAbout(Configure&lt;SpecFlowAboutSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe about</code> to display information such as your version number, build date and license information (licensee, upgrade until date/expiry date).</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowAbout(Configure&lt;SpecFlowAboutSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowAboutSettings.html">SpecFlowAboutSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowAbout_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowAboutSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowAbout_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowAbout*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowAbout_Nuke_Common_Tools_SpecFlow_SpecFlowAboutSettings_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowAbout(Nuke.Common.Tools.SpecFlow.SpecFlowAboutSettings)">
+  SpecFlowAbout(SpecFlowAboutSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe about</code> to display information such as your version number, build date and license information (licensee, upgrade until date/expiry date).</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowAbout(SpecFlowAboutSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowAboutSettings.html">SpecFlowAboutSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowAbout_Nuke_Common_Tools_SpecFlow_SpecFlowAboutSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowBuildServerRun_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowBuildServerRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowBuildServerRun_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowBuildServerRun(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings},System.Int32,System.Boolean)">
+  SpecFlowBuildServerRun(CombinatorialConfigure&lt;SpecFlowBuildServerRunSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe buildserverrun</code> to execute your tests in build server mode.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(SpecFlowBuildServerRunSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; SpecFlowBuildServerRun(CombinatorialConfigure&lt;SpecFlowBuildServerRunSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html">SpecFlowBuildServerRunSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html">SpecFlowBuildServerRunSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowbuildserverrunsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowbuildserverrunsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowBuildServerRun_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;target&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_Target">Target</a></li><li><code>/basefolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_BaseFolder">BaseFolder</a></li><li><code>/buildserver</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_BuildServerName">BuildServerName</a></li><li><code>/filter</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_Filter">Filter</a></li><li><code>/log</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_LogFile">LogFile</a></li><li><code>/outputfolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_OutputFolder">OutputFolder</a></li><li><code>/report</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_ReportFile">ReportFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowBuildServerRun_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowBuildServerRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowBuildServerRun_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings__" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowBuildServerRun(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings})">
+  SpecFlowBuildServerRun(Configure&lt;SpecFlowBuildServerRunSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe buildserverrun</code> to execute your tests in build server mode.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowBuildServerRun(Configure&lt;SpecFlowBuildServerRunSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html">SpecFlowBuildServerRunSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowBuildServerRun_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;target&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_Target">Target</a></li><li><code>/basefolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_BaseFolder">BaseFolder</a></li><li><code>/buildserver</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_BuildServerName">BuildServerName</a></li><li><code>/filter</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_Filter">Filter</a></li><li><code>/log</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_LogFile">LogFile</a></li><li><code>/outputfolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_OutputFolder">OutputFolder</a></li><li><code>/report</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_ReportFile">ReportFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowBuildServerRun_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowBuildServerRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowBuildServerRun_Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowBuildServerRun(Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings)">
+  SpecFlowBuildServerRun(SpecFlowBuildServerRunSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe buildserverrun</code> to execute your tests in build server mode.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowBuildServerRun(SpecFlowBuildServerRunSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html">SpecFlowBuildServerRunSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowBuildServerRun_Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;target&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_Target">Target</a></li><li><code>/basefolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_BaseFolder">BaseFolder</a></li><li><code>/buildserver</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_BuildServerName">BuildServerName</a></li><li><code>/filter</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_Filter">Filter</a></li><li><code>/log</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_LogFile">LogFile</a></li><li><code>/outputfolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_OutputFolder">OutputFolder</a></li><li><code>/report</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowBuildServerRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowBuildServerRunSettings_ReportFile">ReportFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowMSTestExecutionReport_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowMSTestExecutionReport*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowMSTestExecutionReport_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowMSTestExecutionReport(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings},System.Int32,System.Boolean)">
+  SpecFlowMSTestExecutionReport(CombinatorialConfigure&lt;SpecFlowMSTestExecutionReportSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This report provides a formatted HTML report of a test execution. The report contains a summary about the executed tests and the result and also a detailed report for the individual scenario executions.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(SpecFlowMSTestExecutionReportSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; SpecFlowMSTestExecutionReport(CombinatorialConfigure&lt;SpecFlowMSTestExecutionReportSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html">SpecFlowMSTestExecutionReportSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html">SpecFlowMSTestExecutionReportSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowmstestexecutionreportsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowmstestexecutionreportsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowMSTestExecutionReport_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;projectFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_ProjectFile">ProjectFile</a></li><li><code>/out</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_OutputFile">OutputFile</a></li><li><code>/testResult</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_TestResult">TestResult</a></li><li><code>/xsltFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_XsltFile">XsltFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowMSTestExecutionReport_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowMSTestExecutionReport*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowMSTestExecutionReport_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings__" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowMSTestExecutionReport(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings})">
+  SpecFlowMSTestExecutionReport(Configure&lt;SpecFlowMSTestExecutionReportSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This report provides a formatted HTML report of a test execution. The report contains a summary about the executed tests and the result and also a detailed report for the individual scenario executions.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowMSTestExecutionReport(Configure&lt;SpecFlowMSTestExecutionReportSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html">SpecFlowMSTestExecutionReportSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowMSTestExecutionReport_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;projectFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_ProjectFile">ProjectFile</a></li><li><code>/out</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_OutputFile">OutputFile</a></li><li><code>/testResult</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_TestResult">TestResult</a></li><li><code>/xsltFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_XsltFile">XsltFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowMSTestExecutionReport_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowMSTestExecutionReport*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowMSTestExecutionReport_Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowMSTestExecutionReport(Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings)">
+  SpecFlowMSTestExecutionReport(SpecFlowMSTestExecutionReportSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This report provides a formatted HTML report of a test execution. The report contains a summary about the executed tests and the result and also a detailed report for the individual scenario executions.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowMSTestExecutionReport(SpecFlowMSTestExecutionReportSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html">SpecFlowMSTestExecutionReportSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowMSTestExecutionReport_Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;projectFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_ProjectFile">ProjectFile</a></li><li><code>/out</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_OutputFile">OutputFile</a></li><li><code>/testResult</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_TestResult">TestResult</a></li><li><code>/xsltFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowMSTestExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowMSTestExecutionReportSettings_XsltFile">XsltFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowNUnitExecutionReport_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowNUnitExecutionReport*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowNUnitExecutionReport_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowNUnitExecutionReport(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings},System.Int32,System.Boolean)">
+  SpecFlowNUnitExecutionReport(CombinatorialConfigure&lt;SpecFlowNUnitExecutionReportSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This report provides a formatted HTML report of a test execution. The report contains a summary about the executed tests and the result and also a detailed report for the individual scenario executions.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(SpecFlowNUnitExecutionReportSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; SpecFlowNUnitExecutionReport(CombinatorialConfigure&lt;SpecFlowNUnitExecutionReportSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html">SpecFlowNUnitExecutionReportSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html">SpecFlowNUnitExecutionReportSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflownunitexecutionreportsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflownunitexecutionreportsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowNUnitExecutionReport_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--FeatureLanguage</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_FeatureLanguage">FeatureLanguage</a></li><li><code>--OutputFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_OutputFile">OutputFile</a></li><li><code>--ProjectFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_ProjectFile">ProjectFile</a></li><li><code>--ProjectName</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_ProjectName">ProjectName</a></li><li><code>--testOutput</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_TestOutput">TestOutput</a></li><li><code>--xmlTestResult</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_XmlTestResult">XmlTestResult</a></li><li><code>--XsltFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_XsltFile">XsltFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowNUnitExecutionReport_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowNUnitExecutionReport*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowNUnitExecutionReport_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings__" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowNUnitExecutionReport(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings})">
+  SpecFlowNUnitExecutionReport(Configure&lt;SpecFlowNUnitExecutionReportSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This report provides a formatted HTML report of a test execution. The report contains a summary about the executed tests and the result and also a detailed report for the individual scenario executions.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowNUnitExecutionReport(Configure&lt;SpecFlowNUnitExecutionReportSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html">SpecFlowNUnitExecutionReportSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowNUnitExecutionReport_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--FeatureLanguage</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_FeatureLanguage">FeatureLanguage</a></li><li><code>--OutputFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_OutputFile">OutputFile</a></li><li><code>--ProjectFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_ProjectFile">ProjectFile</a></li><li><code>--ProjectName</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_ProjectName">ProjectName</a></li><li><code>--testOutput</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_TestOutput">TestOutput</a></li><li><code>--xmlTestResult</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_XmlTestResult">XmlTestResult</a></li><li><code>--XsltFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_XsltFile">XsltFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowNUnitExecutionReport_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowNUnitExecutionReport*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowNUnitExecutionReport_Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowNUnitExecutionReport(Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings)">
+  SpecFlowNUnitExecutionReport(SpecFlowNUnitExecutionReportSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This report provides a formatted HTML report of a test execution. The report contains a summary about the executed tests and the result and also a detailed report for the individual scenario executions.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowNUnitExecutionReport(SpecFlowNUnitExecutionReportSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html">SpecFlowNUnitExecutionReportSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowNUnitExecutionReport_Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--FeatureLanguage</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_FeatureLanguage">FeatureLanguage</a></li><li><code>--OutputFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_OutputFile">OutputFile</a></li><li><code>--ProjectFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_ProjectFile">ProjectFile</a></li><li><code>--ProjectName</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_ProjectName">ProjectName</a></li><li><code>--testOutput</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_TestOutput">TestOutput</a></li><li><code>--xmlTestResult</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_XmlTestResult">XmlTestResult</a></li><li><code>--XsltFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowNUnitExecutionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowNUnitExecutionReportSettings_XsltFile">XsltFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRegister_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRegister*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRegister_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRegister(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings},System.Int32,System.Boolean)">
+  SpecFlowRegister(CombinatorialConfigure&lt;SpecFlowRegisterSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe register</code> to register your SpecFlow+ license. You only need to register your license once per user per machine. The license is valid for all SpecFlow+ components.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(SpecFlowRegisterSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; SpecFlowRegister(CombinatorialConfigure&lt;SpecFlowRegisterSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings.html">SpecFlowRegisterSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings.html">SpecFlowRegisterSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowregistersettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowregistersettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRegister_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;issuedTo&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings_IssuedTo">IssuedTo</a></li><li><code>&lt;licenseKey&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings_LicenseKey">LicenseKey</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRegister_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRegister*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRegister_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings__" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRegister(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings})">
+  SpecFlowRegister(Configure&lt;SpecFlowRegisterSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe register</code> to register your SpecFlow+ license. You only need to register your license once per user per machine. The license is valid for all SpecFlow+ components.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowRegister(Configure&lt;SpecFlowRegisterSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings.html">SpecFlowRegisterSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRegister_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;issuedTo&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings_IssuedTo">IssuedTo</a></li><li><code>&lt;licenseKey&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings_LicenseKey">LicenseKey</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRegister_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRegister*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRegister_Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRegister(Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings)">
+  SpecFlowRegister(SpecFlowRegisterSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe register</code> to register your SpecFlow+ license. You only need to register your license once per user per machine. The license is valid for all SpecFlow+ components.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowRegister(SpecFlowRegisterSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings.html">SpecFlowRegisterSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRegister_Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;issuedTo&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings_IssuedTo">IssuedTo</a></li><li><code>&lt;licenseKey&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRegisterSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRegisterSettings_LicenseKey">LicenseKey</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRun_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRun_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRun(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings},System.Int32,System.Boolean)">
+  SpecFlowRun(CombinatorialConfigure&lt;SpecFlowRunSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe run</code> to execute your tests.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(SpecFlowRunSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; SpecFlowRun(CombinatorialConfigure&lt;SpecFlowRunSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html">SpecFlowRunSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html">SpecFlowRunSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowrunsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowrunsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRun_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>/basefolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_BaseFolder">BaseFolder</a></li><li><code>/debug</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_Debug">Debug</a></li><li><code>/filter</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_Filter">Filter</a></li><li><code>/log</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_LogFile">LogFile</a></li><li><code>/outputfolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_OutputFolder">OutputFolder</a></li><li><code>/report</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_ReportFile">ReportFile</a></li><li><code>/toolIntegration</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_ToolIntegration">ToolIntegration</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRun_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRun_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings__" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRun(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings})">
+  SpecFlowRun(Configure&lt;SpecFlowRunSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe run</code> to execute your tests.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowRun(Configure&lt;SpecFlowRunSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html">SpecFlowRunSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRun_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>/basefolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_BaseFolder">BaseFolder</a></li><li><code>/debug</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_Debug">Debug</a></li><li><code>/filter</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_Filter">Filter</a></li><li><code>/log</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_LogFile">LogFile</a></li><li><code>/outputfolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_OutputFolder">OutputFolder</a></li><li><code>/report</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_ReportFile">ReportFile</a></li><li><code>/toolIntegration</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_ToolIntegration">ToolIntegration</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRun_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRun_Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowRun(Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings)">
+  SpecFlowRun(SpecFlowRunSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe run</code> to execute your tests.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowRun(SpecFlowRunSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html">SpecFlowRunSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowRun_Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>/basefolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_BaseFolder">BaseFolder</a></li><li><code>/debug</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_Debug">Debug</a></li><li><code>/filter</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_Filter">Filter</a></li><li><code>/log</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_LogFile">LogFile</a></li><li><code>/outputfolder</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_OutputFolder">OutputFolder</a></li><li><code>/report</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_ReportFile">ReportFile</a></li><li><code>/toolIntegration</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowRunSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowRunSettings_ToolIntegration">ToolIntegration</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowStepDefinitionReport_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowStepDefinitionReport*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowStepDefinitionReport_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowStepDefinitionReport(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings},System.Int32,System.Boolean)">
+  SpecFlowStepDefinitionReport(CombinatorialConfigure&lt;SpecFlowStepDefinitionReportSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This report shows the usage and binding status of the steps for the entire project. You can use this report to find both unused code in the automation layer and scenario steps that have no definition yet.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(SpecFlowStepDefinitionReportSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; SpecFlowStepDefinitionReport(CombinatorialConfigure&lt;SpecFlowStepDefinitionReportSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html">SpecFlowStepDefinitionReportSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html">SpecFlowStepDefinitionReportSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowstepdefinitionreportsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowstepdefinitionreportsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowStepDefinitionReport_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;projectFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_ProjectFile">ProjectFile</a></li><li><code>/out</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_OutputFile">OutputFile</a></li><li><code>/testResult</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_BinFolder">BinFolder</a></li><li><code>/xsltFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_XsltFile">XsltFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowStepDefinitionReport_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowStepDefinitionReport*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowStepDefinitionReport_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings__" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowStepDefinitionReport(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings})">
+  SpecFlowStepDefinitionReport(Configure&lt;SpecFlowStepDefinitionReportSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This report shows the usage and binding status of the steps for the entire project. You can use this report to find both unused code in the automation layer and scenario steps that have no definition yet.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowStepDefinitionReport(Configure&lt;SpecFlowStepDefinitionReportSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html">SpecFlowStepDefinitionReportSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowStepDefinitionReport_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;projectFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_ProjectFile">ProjectFile</a></li><li><code>/out</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_OutputFile">OutputFile</a></li><li><code>/testResult</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_BinFolder">BinFolder</a></li><li><code>/xsltFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_XsltFile">XsltFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowStepDefinitionReport_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowStepDefinitionReport*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowStepDefinitionReport_Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowStepDefinitionReport(Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings)">
+  SpecFlowStepDefinitionReport(SpecFlowStepDefinitionReportSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This report shows the usage and binding status of the steps for the entire project. You can use this report to find both unused code in the automation layer and scenario steps that have no definition yet.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowStepDefinitionReport(SpecFlowStepDefinitionReportSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html">SpecFlowStepDefinitionReportSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowStepDefinitionReport_Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;projectFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_ProjectFile">ProjectFile</a></li><li><code>/out</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_OutputFile">OutputFile</a></li><li><code>/testResult</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_BinFolder">BinFolder</a></li><li><code>/xsltFile</code> via <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowStepDefinitionReportSettings.html#Nuke_Common_Tools_SpecFlow_SpecFlowStepDefinitionReportSettings_XsltFile">XsltFile</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowUnregister_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowUnregister*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowUnregister_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowUnregisterSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowUnregister(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.SpecFlow.SpecFlowUnregisterSettings},System.Int32,System.Boolean)">
+  SpecFlowUnregister(CombinatorialConfigure&lt;SpecFlowUnregisterSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe unregister</code> to unregister your SpecFlow+ license.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(SpecFlowUnregisterSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; SpecFlowUnregister(CombinatorialConfigure&lt;SpecFlowUnregisterSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowUnregisterSettings.html">SpecFlowUnregisterSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowUnregisterSettings.html">SpecFlowUnregisterSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowunregistersettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.specflow.specflowunregistersettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowUnregister_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_SpecFlow_SpecFlowUnregisterSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowUnregister_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowUnregister*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowUnregister_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowUnregisterSettings__" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowUnregister(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.SpecFlow.SpecFlowUnregisterSettings})">
+  SpecFlowUnregister(Configure&lt;SpecFlowUnregisterSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe unregister</code> to unregister your SpecFlow+ license.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowUnregister(Configure&lt;SpecFlowUnregisterSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowUnregisterSettings.html">SpecFlowUnregisterSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowUnregister_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_SpecFlow_SpecFlowUnregisterSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowUnregister_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowUnregister*"></a>
+
+  <h3 id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowUnregister_Nuke_Common_Tools_SpecFlow_SpecFlowUnregisterSettings_" data-uid="Nuke.Common.Tools.SpecFlow.SpecFlowTasks.SpecFlowUnregister(Nuke.Common.Tools.SpecFlow.SpecFlowUnregisterSettings)">
+  SpecFlowUnregister(SpecFlowUnregisterSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use <code>SpecRun.exe unregister</code> to unregister your SpecFlow+ license.</p><p>For more details, visit the <a href="https://specflow.org/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; SpecFlowUnregister(SpecFlowUnregisterSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.SpecFlow.SpecFlowUnregisterSettings.html">SpecFlowUnregisterSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_SpecFlow_SpecFlowTasks_SpecFlowUnregister_Nuke_Common_Tools_SpecFlow_SpecFlowUnregisterSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/SpecFlow/SpecFlow.Generated.cs/#L25" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

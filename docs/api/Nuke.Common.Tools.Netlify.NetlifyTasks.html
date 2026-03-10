@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class NetlifyTasks | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NetlifyTasks | gruke ">
+      
+      <meta name="description" content="Netlify’s command line interface (CLI) lets you configure continuous deployment straight from the command line. You can use Netlify CLI to run a local development server that you can share with others, run a local build and plugins, and deploy your site.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Netlify_NetlifyTasks.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Netlify.NetlifyTasks%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks">
+
+
+
+  <h1 id="Nuke_Common_Tools_Netlify_NetlifyTasks" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks" class="text-break">
+Class NetlifyTasks  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/NetlifyTasks.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Netlify.html">Netlify</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class NetlifyTasks : ToolTasks, IRequirePathTool, IRequireTool</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolTasks.html">ToolTasks</a></div>
+      <div><span class="xref">NetlifyTasks</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IRequirePathTool.html">IRequirePathTool</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.IRequireTool.html">IRequireTool</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetLogger_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetLogger(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetToolPath_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetToolPath(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Run__1___0_">ToolTasks.Run&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Run__2___0_">ToolTasks.Run&lt;TOptions, TResult&gt;(TOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetExitHandler_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetExitHandler(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_PreProcess__1___0_">ToolTasks.PreProcess&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_PostProcess_Nuke_Common_Tooling_ToolOptions_">ToolTasks.PostProcess(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Run_Nuke_Common_Tooling_ArgumentStringHandler_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Action_Nuke_Common_Tooling_OutputType_System_String__System_Func_Nuke_Common_Tooling_IProcess_System_Object__">ToolTasks.Run(ArgumentStringHandler, string, IReadOnlyDictionary&lt;string, string&gt;, int?, bool?, bool?, Action&lt;OutputType, string&gt;, Func&lt;IProcess, object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_StartProcess_System_String_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Action_Nuke_Common_Tooling_OutputType_System_String__System_Func_System_String_System_String__">ToolTasks.StartProcess(string, string, IReadOnlyDictionary&lt;string, string&gt;, int?, bool?, bool?, Action&lt;OutputType, string&gt;, Func&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Resolve__1">ToolTasks.Resolve&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetToolPathInternal_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetToolPathInternal(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_SetToolPath_System_String_">ToolTasks.SetToolPath(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_PathExecutable" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.PathExecutable">
+  PathExecutable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string PathExecutable = &quot;npx&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyPath_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifyPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyPath" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifyPath">
+  NetlifyPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string NetlifyPath { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_GetResult_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.GetResult*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_GetResult__1_Nuke_Common_Tooling_ToolOptions_System_Collections_Generic_IReadOnlyCollection_Nuke_Common_Tooling_Output__" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.GetResult``1(Nuke.Common.Tooling.ToolOptions,System.Collections.Generic.IReadOnlyCollection{Nuke.Common.Tooling.Output})">
+  GetResult&lt;T&gt;(ToolOptions, IReadOnlyCollection&lt;Output&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/NetlifyTasks.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override object GetResult&lt;T&gt;(ToolOptions options, IReadOnlyCollection&lt;Output&gt; output)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></dt>
+    <dd></dd>
+    <dt><code>output</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_Netlify_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.Netlify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_Netlify_Nuke_Common_Tooling_ArgumentStringHandler_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Action_Nuke_Common_Tooling_OutputType_System_String__System_Func_Nuke_Common_Tooling_IProcess_System_Object__" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.Netlify(Nuke.Common.Tooling.ArgumentStringHandler,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Action{Nuke.Common.Tooling.OutputType,System.String},System.Func{Nuke.Common.Tooling.IProcess,System.Object})">
+  Netlify(ArgumentStringHandler, string, IReadOnlyDictionary&lt;string, string&gt;, int?, bool?, bool?, Action&lt;OutputType, string&gt;, Func&lt;IProcess, object&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; Netlify(ArgumentStringHandler arguments, string workingDirectory = null, IReadOnlyDictionary&lt;string, string&gt; environmentVariables = null, int? timeout = null, bool? logOutput = null, bool? logInvocation = null, Action&lt;OutputType, string&gt; logger = null, Func&lt;IProcess, object&gt; exitHandler = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arguments</code> <a class="xref" href="Nuke.Common.Tooling.ArgumentStringHandler.html">ArgumentStringHandler</a></dt>
+    <dd></dd>
+    <dt><code>workingDirectory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>environmentVariables</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>timeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>logOutput</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>logInvocation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="Nuke.Common.Tooling.OutputType.html">OutputType</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>exitHandler</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="Nuke.Common.Tooling.IProcess.html">IProcess</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyDeploy_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifyDeploy*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyDeploy_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_Netlify_NetlifyDeploySettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifyDeploy(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.Netlify.NetlifyDeploySettings},System.Int32,System.Boolean)">
+  NetlifyDeploy(CombinatorialConfigure&lt;NetlifyDeploySettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(NetlifyDeploySettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; NetlifyDeploy(CombinatorialConfigure&lt;NetlifyDeploySettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html">NetlifyDeploySettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html">NetlifyDeploySettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.netlify.netlifydeploysettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.netlify.netlifydeploysettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyDeploy_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_Netlify_NetlifyDeploySettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--alias</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Alias">Alias</a></li><li><code>--auth</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Auth">Auth</a></li><li><code>--branch</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Branch">Branch</a></li><li><code>--build</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Build">Build</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Debug">Debug</a></li><li><code>--dir</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Directory">Directory</a></li><li><code>--functions</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Functions">Functions</a></li><li><code>--httpProxy</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_HttpProxy">HttpProxy</a></li><li><code>--httpProxyCertificateFilename</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_HttpProxyCertificateFileName">HttpProxyCertificateFileName</a></li><li><code>--json</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Json">Json</a></li><li><code>--message</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Message">Message</a></li><li><code>--open</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Open">Open</a></li><li><code>--prod</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Production">Production</a></li><li><code>--prodIfUnlocked</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_ProductionIfUnlocked">ProductionIfUnlocked</a></li><li><code>--site</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Site">Site</a></li><li><code>--timeout</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Timeout">Timeout</a></li><li><code>--trigger</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Trigger">Trigger</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyDeploy_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifyDeploy*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyDeploy_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_Netlify_NetlifyDeploySettings__" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifyDeploy(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.Netlify.NetlifyDeploySettings})">
+  NetlifyDeploy(Configure&lt;NetlifyDeploySettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; NetlifyDeploy(Configure&lt;NetlifyDeploySettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html">NetlifyDeploySettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyDeploy_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_Netlify_NetlifyDeploySettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--alias</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Alias">Alias</a></li><li><code>--auth</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Auth">Auth</a></li><li><code>--branch</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Branch">Branch</a></li><li><code>--build</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Build">Build</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Debug">Debug</a></li><li><code>--dir</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Directory">Directory</a></li><li><code>--functions</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Functions">Functions</a></li><li><code>--httpProxy</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_HttpProxy">HttpProxy</a></li><li><code>--httpProxyCertificateFilename</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_HttpProxyCertificateFileName">HttpProxyCertificateFileName</a></li><li><code>--json</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Json">Json</a></li><li><code>--message</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Message">Message</a></li><li><code>--open</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Open">Open</a></li><li><code>--prod</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Production">Production</a></li><li><code>--prodIfUnlocked</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_ProductionIfUnlocked">ProductionIfUnlocked</a></li><li><code>--site</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Site">Site</a></li><li><code>--timeout</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Timeout">Timeout</a></li><li><code>--trigger</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Trigger">Trigger</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyDeploy_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifyDeploy*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyDeploy_Nuke_Common_Tools_Netlify_NetlifyDeploySettings_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifyDeploy(Nuke.Common.Tools.Netlify.NetlifyDeploySettings)">
+  NetlifyDeploy(NetlifyDeploySettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; NetlifyDeploy(NetlifyDeploySettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html">NetlifyDeploySettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifyDeploy_Nuke_Common_Tools_Netlify_NetlifyDeploySettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--alias</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Alias">Alias</a></li><li><code>--auth</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Auth">Auth</a></li><li><code>--branch</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Branch">Branch</a></li><li><code>--build</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Build">Build</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Debug">Debug</a></li><li><code>--dir</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Directory">Directory</a></li><li><code>--functions</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Functions">Functions</a></li><li><code>--httpProxy</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_HttpProxy">HttpProxy</a></li><li><code>--httpProxyCertificateFilename</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_HttpProxyCertificateFileName">HttpProxyCertificateFileName</a></li><li><code>--json</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Json">Json</a></li><li><code>--message</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Message">Message</a></li><li><code>--open</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Open">Open</a></li><li><code>--prod</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Production">Production</a></li><li><code>--prodIfUnlocked</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_ProductionIfUnlocked">ProductionIfUnlocked</a></li><li><code>--site</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Site">Site</a></li><li><code>--timeout</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Timeout">Timeout</a></li><li><code>--trigger</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Trigger">Trigger</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesCreate_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesCreate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesCreate_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesCreate(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings},System.Int32,System.Boolean)">
+  NetlifySitesCreate(CombinatorialConfigure&lt;NetlifySitesCreateSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(NetlifySitesCreateSettings Settings, string Result, IReadOnlyCollection&lt;Output&gt; Output)&gt; NetlifySitesCreate(CombinatorialConfigure&lt;NetlifySitesCreateSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html">NetlifySitesCreateSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html">NetlifySitesCreateSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.netlify.netlifysitescreatesettings,system.string,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.netlify.netlifysitescreatesettings,system.string,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.result">Result</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.netlify.netlifysitescreatesettings,system.string,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesCreate_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--account-slug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_AccountSlug">AccountSlug</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_Debug">Debug</a></li><li><code>--httpProxy</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_HttpProxy">HttpProxy</a></li><li><code>--httpProxyCertificateFilename</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_HttpProxyCertificateFileName">HttpProxyCertificateFileName</a></li><li><code>--manual</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_Manual">Manual</a></li><li><code>--name</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_Name">Name</a></li><li><code>--with-ci</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_WithCI">WithCI</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesCreate_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesCreate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesCreate_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings__" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesCreate(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings})">
+  NetlifySitesCreate(Configure&lt;NetlifySitesCreateSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (string Result, IReadOnlyCollection&lt;Output&gt; Output) NetlifySitesCreate(Configure&lt;NetlifySitesCreateSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html">NetlifySitesCreateSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.result">Result</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesCreate_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--account-slug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_AccountSlug">AccountSlug</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_Debug">Debug</a></li><li><code>--httpProxy</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_HttpProxy">HttpProxy</a></li><li><code>--httpProxyCertificateFilename</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_HttpProxyCertificateFileName">HttpProxyCertificateFileName</a></li><li><code>--manual</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_Manual">Manual</a></li><li><code>--name</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_Name">Name</a></li><li><code>--with-ci</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_WithCI">WithCI</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesCreate_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesCreate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesCreate_Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesCreate(Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings)">
+  NetlifySitesCreate(NetlifySitesCreateSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static (string Result, IReadOnlyCollection&lt;Output&gt; Output) NetlifySitesCreate(NetlifySitesCreateSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html">NetlifySitesCreateSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.result">Result</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesCreate_Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--account-slug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_AccountSlug">AccountSlug</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_Debug">Debug</a></li><li><code>--httpProxy</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_HttpProxy">HttpProxy</a></li><li><code>--httpProxyCertificateFilename</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_HttpProxyCertificateFileName">HttpProxyCertificateFileName</a></li><li><code>--manual</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_Manual">Manual</a></li><li><code>--name</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_Name">Name</a></li><li><code>--with-ci</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesCreateSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesCreateSettings_WithCI">WithCI</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesDelete_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesDelete*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesDelete_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesDelete(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings},System.Int32,System.Boolean)">
+  NetlifySitesDelete(CombinatorialConfigure&lt;NetlifySitesDeleteSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(NetlifySitesDeleteSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; NetlifySitesDelete(CombinatorialConfigure&lt;NetlifySitesDeleteSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html">NetlifySitesDeleteSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html">NetlifySitesDeleteSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.netlify.netlifysitesdeletesettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.netlify.netlifysitesdeletesettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesDelete_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;siteId&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_SiteId">SiteId</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_Debug">Debug</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_Force">Force</a></li><li><code>--httpProxy</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_HttpProxy">HttpProxy</a></li><li><code>--httpProxyCertificateFilename</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_HttpProxyCertificateFileName">HttpProxyCertificateFileName</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesDelete_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesDelete*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesDelete_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings__" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesDelete(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings})">
+  NetlifySitesDelete(Configure&lt;NetlifySitesDeleteSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; NetlifySitesDelete(Configure&lt;NetlifySitesDeleteSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html">NetlifySitesDeleteSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesDelete_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;siteId&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_SiteId">SiteId</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_Debug">Debug</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_Force">Force</a></li><li><code>--httpProxy</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_HttpProxy">HttpProxy</a></li><li><code>--httpProxyCertificateFilename</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_HttpProxyCertificateFileName">HttpProxyCertificateFileName</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesDelete_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesDelete*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesDelete_Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_" data-uid="Nuke.Common.Tools.Netlify.NetlifyTasks.NetlifySitesDelete(Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings)">
+  NetlifySitesDelete(NetlifySitesDeleteSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; NetlifySitesDelete(NetlifySitesDeleteSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html">NetlifySitesDeleteSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_Netlify_NetlifyTasks_NetlifySitesDelete_Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;siteId&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_SiteId">SiteId</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_Debug">Debug</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_Force">Force</a></li><li><code>--httpProxy</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_HttpProxy">HttpProxy</a></li><li><code>--httpProxyCertificateFilename</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifySitesDeleteSettings.html#Nuke_Common_Tools_Netlify_NetlifySitesDeleteSettings_HttpProxyCertificateFileName">HttpProxyCertificateFileName</a></li></ul>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/NetlifyTasks.cs/#L13" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

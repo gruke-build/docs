@@ -1,0 +1,3670 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class HelmListSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class HelmListSettingsExtensions | gruke ">
+      
+      <meta name="description" content="This command lists all of the releases. By default, it lists only releases that are deployed or failed. Flags like &#39;--deleted&#39; and &#39;--all&#39; will alter this behavior. Such flags can be combined: &#39;--deleted --failed&#39;. By default, items are sorted alphabetically. Use the &#39;-d&#39; flag to sort by release date. If an argument is provided, it will be treated as a filter. Filters are regular expressions (Perl compatible) that are applied to the list of releases. Only items that match the filter will be returned. 	$ helm list &#39;ara[a-z]+&#39; 	NAME            	UPDATED                 	CHART 	maudlin-arachnid	Mon May  9 16:07:08 2016	alpine-0.1.0 If no results are found, &#39;helm list&#39; will exit 0, but with no output (or in the case of no &#39;-q&#39; flag, only headers). By default, up to 256 items may be returned. To limit this, use the &#39;--max&#39; flag. Setting &#39;--max&#39; to 0 will not return all results. Rather, it will return the server&#39;s default, which may be much higher than 256. Pairing the &#39;--max&#39; flag with the &#39;--offset&#39; flag allows you to page through results.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Helm_HelmListSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Helm.HelmListSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions" class="text-break">
+Class HelmListSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3825"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Helm.html">Helm</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>This command lists all of the releases. By default, it lists only releases that are deployed or failed. Flags like '--deleted' and '--all' will alter this behavior. Such flags can be combined: '--deleted --failed'. By default, items are sorted alphabetically. Use the '-d' flag to sort by release date. If an argument is provided, it will be treated as a filter. Filters are regular expressions (Perl compatible) that are applied to the list of releases. Only items that match the filter will be returned. 	$ helm list 'ara[a-z]+' 	NAME            	UPDATED                 	CHART 	maudlin-arachnid	Mon May  9 16:07:08 2016	alpine-0.1.0 If no results are found, 'helm list' will exit 0, but with no output (or in the case of no '-q' flag, only headers). By default, up to 256 items may be returned. To limit this, use the '--max' flag. Setting '--max' to 0 will not return all results. Rather, it will return the server's default, which may be much higher than 256. Pairing the '--max' flag with the '--offset' flag allows you to page through results.</p><p>For more details, visit the <a href="https://helm.sh/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class HelmListSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">HelmListSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;filter&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Filter">Filter</a></li><li><code>--all</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_All">All</a></li><li><code>--chart-name</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_ChartName">ChartName</a></li><li><code>--col-width</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_ColWidth">ColWidth</a></li><li><code>--date</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Date">Date</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Debug">Debug</a></li><li><code>--deleted</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Deleted">Deleted</a></li><li><code>--deleting</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Deleting">Deleting</a></li><li><code>--deployed</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Deployed">Deployed</a></li><li><code>--failed</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Failed">Failed</a></li><li><code>--home</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Home">Home</a></li><li><code>--host</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Host">Host</a></li><li><code>--kube-context</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_KubeContext">KubeContext</a></li><li><code>--kubeconfig</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Kubeconfig">Kubeconfig</a></li><li><code>--max</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Max">Max</a></li><li><code>--namespace</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Namespace">Namespace</a></li><li><code>--offset</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Offset">Offset</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Output">Output</a></li><li><code>--pending</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Pending">Pending</a></li><li><code>--reverse</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Reverse">Reverse</a></li><li><code>--short</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Short">Short</a></li><li><code>--tiller-connection-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerConnectionTimeout">TillerConnectionTimeout</a></li><li><code>--tiller-namespace</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerNamespace">TillerNamespace</a></li><li><code>--tls</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_Tls">Tls</a></li><li><code>--tls-ca-cert</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_TlsCaCert">TlsCaCert</a></li><li><code>--tls-cert</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_TlsCert">TlsCert</a></li><li><code>--tls-hostname</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_TlsHostname">TlsHostname</a></li><li><code>--tls-key</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_TlsKey">TlsKey</a></li><li><code>--tls-verify</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmListSettings.html#Nuke_Common_Tools_Helm_HelmListSettings_TlsVerify">TlsVerify</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableAll_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableAll__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableAll``1(``0)">
+  DisableAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3840"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show all releases, not just the ones marked DEPLOYED.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableAll&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableChartName_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableChartName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableChartName__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableChartName``1(``0)">
+  DisableChartName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3857"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sort by chart name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableChartName&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableDate_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableDate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableDate__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableDate``1(``0)">
+  DisableDate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3882"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sort by release date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDate&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableDeleted_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableDeleted*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableDeleted__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableDeleted``1(``0)">
+  DisableDeleted&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3899"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show deleted releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDeleted&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableDeleting_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableDeleting*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableDeleting__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableDeleting``1(``0)">
+  DisableDeleting&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3916"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show releases that are currently being deleted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDeleting&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableDeployed_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableDeployed*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableDeployed__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableDeployed``1(``0)">
+  DisableDeployed&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3933"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show deployed releases. If no other is specified, this will be automatically enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDeployed&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableFailed_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableFailed*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableFailed__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableFailed``1(``0)">
+  DisableFailed&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3950"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show failed releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableFailed&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisablePending_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisablePending*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisablePending__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisablePending``1(``0)">
+  DisablePending&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3999"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show pending releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisablePending&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableReverse_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableReverse*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableReverse__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableReverse``1(``0)">
+  DisableReverse&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4016"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reverse the sort order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableReverse&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableShort_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableShort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableShort__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableShort``1(``0)">
+  DisableShort&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4033"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output short (quiet) listing format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableShort&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableTlsVerify_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableTlsVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableTlsVerify__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableTlsVerify``1(``0)">
+  DisableTlsVerify&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4099"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TLS for request and verify remote.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableTlsVerify&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableTls_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableTls*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_DisableTls__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.DisableTls``1(``0)">
+  DisableTls&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4050"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TLS for request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableTls&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableAll_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableAll__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableAll``1(``0)">
+  EnableAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3837"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show all releases, not just the ones marked DEPLOYED.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableAll&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableChartName_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableChartName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableChartName__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableChartName``1(``0)">
+  EnableChartName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3854"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sort by chart name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableChartName&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableDate_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableDate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableDate__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableDate``1(``0)">
+  EnableDate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3879"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sort by release date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDate&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableDeleted_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableDeleted*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableDeleted__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableDeleted``1(``0)">
+  EnableDeleted&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3896"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show deleted releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDeleted&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableDeleting_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableDeleting*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableDeleting__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableDeleting``1(``0)">
+  EnableDeleting&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3913"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show releases that are currently being deleted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDeleting&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableDeployed_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableDeployed*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableDeployed__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableDeployed``1(``0)">
+  EnableDeployed&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3930"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show deployed releases. If no other is specified, this will be automatically enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDeployed&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableFailed_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableFailed*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableFailed__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableFailed``1(``0)">
+  EnableFailed&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3947"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show failed releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableFailed&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnablePending_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnablePending*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnablePending__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnablePending``1(``0)">
+  EnablePending&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3996"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show pending releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnablePending&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableReverse_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableReverse*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableReverse__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableReverse``1(``0)">
+  EnableReverse&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4013"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reverse the sort order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableReverse&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableShort_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableShort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableShort__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableShort``1(``0)">
+  EnableShort&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4030"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output short (quiet) listing format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableShort&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableTlsVerify_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableTlsVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableTlsVerify__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableTlsVerify``1(``0)">
+  EnableTlsVerify&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4096"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TLS for request and verify remote.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableTlsVerify&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableTls_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableTls*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_EnableTls__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.EnableTls``1(``0)">
+  EnableTls&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4047"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TLS for request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableTls&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetAll_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetAll__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetAll``1(``0)">
+  ResetAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3834"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show all releases, not just the ones marked DEPLOYED.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAll&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetChartName_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetChartName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetChartName__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetChartName``1(``0)">
+  ResetChartName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3851"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sort by chart name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetChartName&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetColWidth_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetColWidth*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetColWidth__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetColWidth``1(``0)">
+  ResetColWidth&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3868"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the max column width of output (default 60).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetColWidth&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetDate_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetDate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetDate__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetDate``1(``0)">
+  ResetDate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3876"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sort by release date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDate&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetDeleted_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetDeleted*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetDeleted__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetDeleted``1(``0)">
+  ResetDeleted&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3893"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show deleted releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDeleted&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetDeleting_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetDeleting*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetDeleting__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetDeleting``1(``0)">
+  ResetDeleting&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3910"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show releases that are currently being deleted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDeleting&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetDeployed_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetDeployed*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetDeployed__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetDeployed``1(``0)">
+  ResetDeployed&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3927"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show deployed releases. If no other is specified, this will be automatically enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDeployed&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetFailed_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetFailed*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetFailed__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetFailed``1(``0)">
+  ResetFailed&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3944"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show failed releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFailed&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetFilter_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetFilter*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetFilter__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetFilter``1(``0)">
+  ResetFilter&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The filter to use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFilter&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetMax_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetMax*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetMax__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetMax``1(``0)">
+  ResetMax&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3961"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Maximum number of releases to fetch (default 256).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetMax&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetNamespace_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetNamespace*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetNamespace__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetNamespace``1(``0)">
+  ResetNamespace&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3969"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show releases within a specific namespace.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNamespace&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetOffset_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetOffset*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetOffset__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetOffset``1(``0)">
+  ResetOffset&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3977"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Next release name in the list, used to offset from start value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOffset&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetOutput_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetOutput__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetOutput``1(``0)">
+  ResetOutput&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3985"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output the specified format (json or yaml).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutput&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetPending_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetPending*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetPending__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetPending``1(``0)">
+  ResetPending&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3993"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show pending releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPending&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetReverse_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetReverse*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetReverse__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetReverse``1(``0)">
+  ResetReverse&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4010"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reverse the sort order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetReverse&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetShort_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetShort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetShort__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetShort``1(``0)">
+  ResetShort&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4027"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output short (quiet) listing format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetShort&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTlsCaCert_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTlsCaCert*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTlsCaCert__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTlsCaCert``1(``0)">
+  ResetTlsCaCert&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4061"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to TLS CA certificate file (default &quot;$HELM_HOME/ca.pem&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTlsCaCert&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTlsCert_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTlsCert*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTlsCert__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTlsCert``1(``0)">
+  ResetTlsCert&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4069"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to TLS certificate file (default &quot;$HELM_HOME/cert.pem&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTlsCert&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTlsHostname_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTlsHostname*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTlsHostname__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTlsHostname``1(``0)">
+  ResetTlsHostname&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4077"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The server name used to verify the hostname on the returned certificates from the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTlsHostname&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTlsKey_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTlsKey*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTlsKey__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTlsKey``1(``0)">
+  ResetTlsKey&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4085"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to TLS key file (default &quot;$HELM_HOME/key.pem&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTlsKey&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTlsVerify_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTlsVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTlsVerify__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTlsVerify``1(``0)">
+  ResetTlsVerify&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4093"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TLS for request and verify remote.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTlsVerify&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTls_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTls*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ResetTls__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ResetTls``1(``0)">
+  ResetTls&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4044"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TLS for request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTls&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetAll_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetAll__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetAll``1(``0,System.Nullable{System.Boolean})">
+  SetAll&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3831"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show all releases, not just the ones marked DEPLOYED.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAll&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetChartName_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetChartName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetChartName__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetChartName``1(``0,System.Nullable{System.Boolean})">
+  SetChartName&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3848"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sort by chart name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetChartName&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetColWidth_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetColWidth*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetColWidth__1___0_System_Nullable_System_UInt32__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetColWidth``1(``0,System.Nullable{System.UInt32})">
+  SetColWidth&lt;T&gt;(T, uint?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3865"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the max column width of output (default 60).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetColWidth&lt;T&gt;(this T o, uint? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetDate_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetDate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetDate__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetDate``1(``0,System.Nullable{System.Boolean})">
+  SetDate&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3873"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sort by release date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDate&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetDeleted_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetDeleted*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetDeleted__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetDeleted``1(``0,System.Nullable{System.Boolean})">
+  SetDeleted&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3890"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show deleted releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDeleted&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetDeleting_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetDeleting*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetDeleting__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetDeleting``1(``0,System.Nullable{System.Boolean})">
+  SetDeleting&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3907"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show releases that are currently being deleted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDeleting&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetDeployed_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetDeployed*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetDeployed__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetDeployed``1(``0,System.Nullable{System.Boolean})">
+  SetDeployed&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3924"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show deployed releases. If no other is specified, this will be automatically enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDeployed&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetFailed_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetFailed*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetFailed__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetFailed``1(``0,System.Nullable{System.Boolean})">
+  SetFailed&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3941"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show failed releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFailed&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetFilter_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetFilter*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetFilter__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetFilter``1(``0,System.String)">
+  SetFilter&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The filter to use.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFilter&lt;T&gt;(this T o, string v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetMax_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetMax*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetMax__1___0_System_Nullable_System_Int64__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetMax``1(``0,System.Nullable{System.Int64})">
+  SetMax&lt;T&gt;(T, long?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3958"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Maximum number of releases to fetch (default 256).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetMax&lt;T&gt;(this T o, long? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetNamespace_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetNamespace*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetNamespace__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetNamespace``1(``0,System.String)">
+  SetNamespace&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3966"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show releases within a specific namespace.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNamespace&lt;T&gt;(this T o, string v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetOffset_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetOffset*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetOffset__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetOffset``1(``0,System.String)">
+  SetOffset&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3974"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Next release name in the list, used to offset from start value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOffset&lt;T&gt;(this T o, string v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetOutput_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetOutput__1___0_Nuke_Common_Tools_Helm_HelmOutputFormat_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetOutput``1(``0,Nuke.Common.Tools.Helm.HelmOutputFormat)">
+  SetOutput&lt;T&gt;(T, HelmOutputFormat)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3982"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output the specified format (json or yaml).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutput&lt;T&gt;(this T o, HelmOutputFormat v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.Helm.HelmOutputFormat.html">HelmOutputFormat</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetPending_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetPending*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetPending__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetPending``1(``0,System.Nullable{System.Boolean})">
+  SetPending&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3990"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show pending releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPending&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetReverse_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetReverse*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetReverse__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetReverse``1(``0,System.Nullable{System.Boolean})">
+  SetReverse&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4007"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reverse the sort order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetReverse&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetShort_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetShort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetShort__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetShort``1(``0,System.Nullable{System.Boolean})">
+  SetShort&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4024"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output short (quiet) listing format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetShort&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTlsCaCert_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTlsCaCert*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTlsCaCert__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTlsCaCert``1(``0,System.String)">
+  SetTlsCaCert&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4058"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to TLS CA certificate file (default &quot;$HELM_HOME/ca.pem&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTlsCaCert&lt;T&gt;(this T o, string v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTlsCert_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTlsCert*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTlsCert__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTlsCert``1(``0,System.String)">
+  SetTlsCert&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4066"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to TLS certificate file (default &quot;$HELM_HOME/cert.pem&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTlsCert&lt;T&gt;(this T o, string v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTlsHostname_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTlsHostname*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTlsHostname__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTlsHostname``1(``0,System.String)">
+  SetTlsHostname&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4074"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The server name used to verify the hostname on the returned certificates from the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTlsHostname&lt;T&gt;(this T o, string v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTlsKey_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTlsKey*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTlsKey__1___0_System_String_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTlsKey``1(``0,System.String)">
+  SetTlsKey&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4082"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to TLS key file (default &quot;$HELM_HOME/key.pem&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTlsKey&lt;T&gt;(this T o, string v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTlsVerify_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTlsVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTlsVerify__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTlsVerify``1(``0,System.Nullable{System.Boolean})">
+  SetTlsVerify&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4090"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TLS for request and verify remote.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTlsVerify&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTls_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTls*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_SetTls__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.SetTls``1(``0,System.Nullable{System.Boolean})">
+  SetTls&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4041"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TLS for request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTls&lt;T&gt;(this T o, bool? v) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleAll_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleAll*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleAll__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleAll``1(``0)">
+  ToggleAll&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3843"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show all releases, not just the ones marked DEPLOYED.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleAll&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleChartName_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleChartName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleChartName__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleChartName``1(``0)">
+  ToggleChartName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3860"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sort by chart name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleChartName&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleDate_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleDate*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleDate__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleDate``1(``0)">
+  ToggleDate&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3885"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sort by release date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDate&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleDeleted_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleDeleted*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleDeleted__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleDeleted``1(``0)">
+  ToggleDeleted&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3902"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show deleted releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDeleted&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleDeleting_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleDeleting*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleDeleting__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleDeleting``1(``0)">
+  ToggleDeleting&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3919"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show releases that are currently being deleted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDeleting&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleDeployed_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleDeployed*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleDeployed__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleDeployed``1(``0)">
+  ToggleDeployed&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3936"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show deployed releases. If no other is specified, this will be automatically enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDeployed&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleFailed_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleFailed*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleFailed__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleFailed``1(``0)">
+  ToggleFailed&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3953"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show failed releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleFailed&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_TogglePending_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.TogglePending*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_TogglePending__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.TogglePending``1(``0)">
+  TogglePending&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4002"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show pending releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T TogglePending&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleReverse_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleReverse*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleReverse__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleReverse``1(``0)">
+  ToggleReverse&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4019"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reverse the sort order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleReverse&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleShort_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleShort*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleShort__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleShort``1(``0)">
+  ToggleShort&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4036"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output short (quiet) listing format.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleShort&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleTlsVerify_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleTlsVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleTlsVerify__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleTlsVerify``1(``0)">
+  ToggleTlsVerify&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TLS for request and verify remote.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleTlsVerify&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleTls_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleTls*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmListSettingsExtensions_ToggleTls__1___0_" data-uid="Nuke.Common.Tools.Helm.HelmListSettingsExtensions.ToggleTls``1(``0)">
+  ToggleTls&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L4053"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TLS for request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleTls&lt;T&gt;(this T o) where T : HelmListSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L3825" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class HelmInitSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class HelmInitSettings | gruke ">
+      
+      <meta name="description" content="This command installs Tiller (the Helm server-side component) onto your Kubernetes Cluster and sets up local configuration in $HELM_HOME (default ~/.helm/). As with the rest of the Helm commands, &#39;helm init&#39; discovers Kubernetes clusters by reading $KUBECONFIG (default &#39;~/.kube/config&#39;) and using the default context. To set up just a local environment, use &#39;--client-only&#39;. That will configure $HELM_HOME, but not attempt to connect to a Kubernetes cluster and install the Tiller deployment. When installing Tiller, &#39;helm init&#39; will attempt to install the latest released version. You can specify an alternative image with &#39;--tiller-image&#39;. For those frequently working on the latest code, the flag &#39;--canary-image&#39; will install the latest pre-release version of Tiller (e.g. the HEAD commit in the GitHub repository on the master branch). To dump a manifest containing the Tiller deployment YAML, combine the &#39;--dry-run&#39; and &#39;--debug&#39; flags.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Helm_HelmInitSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Helm.HelmInitSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Helm.HelmInitSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_Helm_HelmInitSettings" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings" class="text-break">
+Class HelmInitSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L637"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Helm.html">Helm</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>This command installs Tiller (the Helm server-side component) onto your Kubernetes Cluster and sets up local configuration in $HELM_HOME (default ~/.helm/). As with the rest of the Helm commands, 'helm init' discovers Kubernetes clusters by reading $KUBECONFIG (default '~/.kube/config') and using the default context. To set up just a local environment, use '--client-only'. That will configure $HELM_HOME, but not attempt to connect to a Kubernetes cluster and install the Tiller deployment. When installing Tiller, 'helm init' will attempt to install the latest released version. You can specify an alternative image with '--tiller-image'. For those frequently working on the latest code, the flag '--canary-image' will install the latest pre-release version of Tiller (e.g. the HEAD commit in the GitHub repository on the master branch). To dump a manifest containing the Tiller deployment YAML, combine the '--dry-run' and '--debug' flags.</p><p>For more details, visit the <a href="https://helm.sh/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class HelmInitSettings : HelmOptionsBase, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html">HelmOptionsBase</a></div>
+      <div><span class="xref">HelmInitSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Debug">HelmOptionsBase.Debug</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Home">HelmOptionsBase.Home</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Host">HelmOptionsBase.Host</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_KubeContext">HelmOptionsBase.KubeContext</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Kubeconfig">HelmOptionsBase.Kubeconfig</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerConnectionTimeout">HelmOptionsBase.TillerConnectionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerNamespace">HelmOptionsBase.TillerNamespace</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_AddOverride__1___0_System_String_System_Object_">HelmInitSettingsExtensions.AddOverride&lt;T&gt;(T, string, object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ClearOverride__1___0_">HelmInitSettingsExtensions.ClearOverride&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableAutomountServiceAccountToken__1___0_">HelmInitSettingsExtensions.DisableAutomountServiceAccountToken&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableCanaryImage__1___0_">HelmInitSettingsExtensions.DisableCanaryImage&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableClientOnly__1___0_">HelmInitSettingsExtensions.DisableClientOnly&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableDryRun__1___0_">HelmInitSettingsExtensions.DisableDryRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableForceUpgrade__1___0_">HelmInitSettingsExtensions.DisableForceUpgrade&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableNetHost__1___0_">HelmInitSettingsExtensions.DisableNetHost&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableSkipRefresh__1___0_">HelmInitSettingsExtensions.DisableSkipRefresh&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableTillerTlsVerify__1___0_">HelmInitSettingsExtensions.DisableTillerTlsVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableTillerTls__1___0_">HelmInitSettingsExtensions.DisableTillerTls&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableUpgrade__1___0_">HelmInitSettingsExtensions.DisableUpgrade&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_DisableWait__1___0_">HelmInitSettingsExtensions.DisableWait&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableAutomountServiceAccountToken__1___0_">HelmInitSettingsExtensions.EnableAutomountServiceAccountToken&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableCanaryImage__1___0_">HelmInitSettingsExtensions.EnableCanaryImage&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableClientOnly__1___0_">HelmInitSettingsExtensions.EnableClientOnly&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableDryRun__1___0_">HelmInitSettingsExtensions.EnableDryRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableForceUpgrade__1___0_">HelmInitSettingsExtensions.EnableForceUpgrade&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableNetHost__1___0_">HelmInitSettingsExtensions.EnableNetHost&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableSkipRefresh__1___0_">HelmInitSettingsExtensions.EnableSkipRefresh&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableTillerTlsVerify__1___0_">HelmInitSettingsExtensions.EnableTillerTlsVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableTillerTls__1___0_">HelmInitSettingsExtensions.EnableTillerTls&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableUpgrade__1___0_">HelmInitSettingsExtensions.EnableUpgrade&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_EnableWait__1___0_">HelmInitSettingsExtensions.EnableWait&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_RemoveOverride__1___0_System_String_">HelmInitSettingsExtensions.RemoveOverride&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetAutomountServiceAccountToken__1___0_">HelmInitSettingsExtensions.ResetAutomountServiceAccountToken&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetCanaryImage__1___0_">HelmInitSettingsExtensions.ResetCanaryImage&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetClientOnly__1___0_">HelmInitSettingsExtensions.ResetClientOnly&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetDryRun__1___0_">HelmInitSettingsExtensions.ResetDryRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetForceUpgrade__1___0_">HelmInitSettingsExtensions.ResetForceUpgrade&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetHistoryMax__1___0_">HelmInitSettingsExtensions.ResetHistoryMax&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetLocalRepoUrl__1___0_">HelmInitSettingsExtensions.ResetLocalRepoUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetNetHost__1___0_">HelmInitSettingsExtensions.ResetNetHost&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetNodeSelectors__1___0_">HelmInitSettingsExtensions.ResetNodeSelectors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetOutput__1___0_">HelmInitSettingsExtensions.ResetOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetReplicas__1___0_">HelmInitSettingsExtensions.ResetReplicas&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetServiceAccount__1___0_">HelmInitSettingsExtensions.ResetServiceAccount&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetSkipRefresh__1___0_">HelmInitSettingsExtensions.ResetSkipRefresh&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetStableRepoUrl__1___0_">HelmInitSettingsExtensions.ResetStableRepoUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetTillerImage__1___0_">HelmInitSettingsExtensions.ResetTillerImage&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetTillerTlsCert__1___0_">HelmInitSettingsExtensions.ResetTillerTlsCert&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetTillerTlsHostname__1___0_">HelmInitSettingsExtensions.ResetTillerTlsHostname&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetTillerTlsKey__1___0_">HelmInitSettingsExtensions.ResetTillerTlsKey&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetTillerTlsVerify__1___0_">HelmInitSettingsExtensions.ResetTillerTlsVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetTillerTls__1___0_">HelmInitSettingsExtensions.ResetTillerTls&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetTlsCaCert__1___0_">HelmInitSettingsExtensions.ResetTlsCaCert&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetUpgrade__1___0_">HelmInitSettingsExtensions.ResetUpgrade&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ResetWait__1___0_">HelmInitSettingsExtensions.ResetWait&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetAutomountServiceAccountToken__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetAutomountServiceAccountToken&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetCanaryImage__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetCanaryImage&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetClientOnly__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetClientOnly&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetDryRun__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetDryRun&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetForceUpgrade__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetForceUpgrade&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetHistoryMax__1___0_System_Nullable_System_Int64__">HelmInitSettingsExtensions.SetHistoryMax&lt;T&gt;(T, long?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetLocalRepoUrl__1___0_System_String_">HelmInitSettingsExtensions.SetLocalRepoUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetNetHost__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetNetHost&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetNodeSelectors__1___0_System_String_">HelmInitSettingsExtensions.SetNodeSelectors&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetOutput__1___0_Nuke_Common_Tools_Helm_HelmOutputFormat_">HelmInitSettingsExtensions.SetOutput&lt;T&gt;(T, HelmOutputFormat)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetOverride__1___0_System_Collections_Generic_IDictionary_System_String_System_Object__">HelmInitSettingsExtensions.SetOverride&lt;T&gt;(T, IDictionary&lt;string, object&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetOverride__1___0_System_String_System_Object_">HelmInitSettingsExtensions.SetOverride&lt;T&gt;(T, string, object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetReplicas__1___0_System_Nullable_System_Int64__">HelmInitSettingsExtensions.SetReplicas&lt;T&gt;(T, long?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetServiceAccount__1___0_System_String_">HelmInitSettingsExtensions.SetServiceAccount&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetSkipRefresh__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetSkipRefresh&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetStableRepoUrl__1___0_System_String_">HelmInitSettingsExtensions.SetStableRepoUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetTillerImage__1___0_System_String_">HelmInitSettingsExtensions.SetTillerImage&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetTillerTlsCert__1___0_System_String_">HelmInitSettingsExtensions.SetTillerTlsCert&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetTillerTlsHostname__1___0_System_String_">HelmInitSettingsExtensions.SetTillerTlsHostname&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetTillerTlsKey__1___0_System_String_">HelmInitSettingsExtensions.SetTillerTlsKey&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetTillerTlsVerify__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetTillerTlsVerify&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetTillerTls__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetTillerTls&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetTlsCaCert__1___0_System_String_">HelmInitSettingsExtensions.SetTlsCaCert&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetUpgrade__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetUpgrade&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_SetWait__1___0_System_Nullable_System_Boolean__">HelmInitSettingsExtensions.SetWait&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleAutomountServiceAccountToken__1___0_">HelmInitSettingsExtensions.ToggleAutomountServiceAccountToken&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleCanaryImage__1___0_">HelmInitSettingsExtensions.ToggleCanaryImage&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleClientOnly__1___0_">HelmInitSettingsExtensions.ToggleClientOnly&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleDryRun__1___0_">HelmInitSettingsExtensions.ToggleDryRun&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleForceUpgrade__1___0_">HelmInitSettingsExtensions.ToggleForceUpgrade&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleNetHost__1___0_">HelmInitSettingsExtensions.ToggleNetHost&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleSkipRefresh__1___0_">HelmInitSettingsExtensions.ToggleSkipRefresh&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleTillerTlsVerify__1___0_">HelmInitSettingsExtensions.ToggleTillerTlsVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleTillerTls__1___0_">HelmInitSettingsExtensions.ToggleTillerTls&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleUpgrade__1___0_">HelmInitSettingsExtensions.ToggleUpgrade&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmInitSettingsExtensions_ToggleWait__1___0_">HelmInitSettingsExtensions.ToggleWait&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_DisableDebug__1___0_">HelmOptionsBaseExtensions.DisableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_EnableDebug__1___0_">HelmOptionsBaseExtensions.EnableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetDebug__1___0_">HelmOptionsBaseExtensions.ResetDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetHome__1___0_">HelmOptionsBaseExtensions.ResetHome&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetHost__1___0_">HelmOptionsBaseExtensions.ResetHost&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetKubeContext__1___0_">HelmOptionsBaseExtensions.ResetKubeContext&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetKubeconfig__1___0_">HelmOptionsBaseExtensions.ResetKubeconfig&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetTillerConnectionTimeout__1___0_">HelmOptionsBaseExtensions.ResetTillerConnectionTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetTillerNamespace__1___0_">HelmOptionsBaseExtensions.ResetTillerNamespace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetDebug__1___0_System_Nullable_System_Boolean__">HelmOptionsBaseExtensions.SetDebug&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetHome__1___0_System_String_">HelmOptionsBaseExtensions.SetHome&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetHost__1___0_System_String_">HelmOptionsBaseExtensions.SetHost&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetKubeContext__1___0_System_String_">HelmOptionsBaseExtensions.SetKubeContext&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetKubeconfig__1___0_System_String_">HelmOptionsBaseExtensions.SetKubeconfig&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetTillerConnectionTimeout__1___0_System_Nullable_System_Int64__">HelmOptionsBaseExtensions.SetTillerConnectionTimeout&lt;T&gt;(T, long?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetTillerNamespace__1___0_System_String_">HelmOptionsBaseExtensions.SetTillerNamespace&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ToggleDebug__1___0_">HelmOptionsBaseExtensions.ToggleDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_Helm_HelmInitSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--automount-service-account-token</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_AutomountServiceAccountToken">AutomountServiceAccountToken</a></li><li><code>--canary-image</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_CanaryImage">CanaryImage</a></li><li><code>--client-only</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_ClientOnly">ClientOnly</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Debug">Debug</a></li><li><code>--dry-run</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_DryRun">DryRun</a></li><li><code>--force-upgrade</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_ForceUpgrade">ForceUpgrade</a></li><li><code>--history-max</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_HistoryMax">HistoryMax</a></li><li><code>--home</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Home">Home</a></li><li><code>--host</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Host">Host</a></li><li><code>--kube-context</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_KubeContext">KubeContext</a></li><li><code>--kubeconfig</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Kubeconfig">Kubeconfig</a></li><li><code>--local-repo-url</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_LocalRepoUrl">LocalRepoUrl</a></li><li><code>--net-host</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_NetHost">NetHost</a></li><li><code>--node-selectors</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_NodeSelectors">NodeSelectors</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_Output">Output</a></li><li><code>--override</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_Override">Override</a></li><li><code>--replicas</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_Replicas">Replicas</a></li><li><code>--service-account</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_ServiceAccount">ServiceAccount</a></li><li><code>--skip-refresh</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_SkipRefresh">SkipRefresh</a></li><li><code>--stable-repo-url</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_StableRepoUrl">StableRepoUrl</a></li><li><code>--tiller-connection-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerConnectionTimeout">TillerConnectionTimeout</a></li><li><code>--tiller-image</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_TillerImage">TillerImage</a></li><li><code>--tiller-namespace</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerNamespace">TillerNamespace</a></li><li><code>--tiller-tls</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_TillerTls">TillerTls</a></li><li><code>--tiller-tls-cert</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsCert">TillerTlsCert</a></li><li><code>--tiller-tls-hostname</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsHostname">TillerTlsHostname</a></li><li><code>--tiller-tls-key</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsKey">TillerTlsKey</a></li><li><code>--tiller-tls-verify</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsVerify">TillerTlsVerify</a></li><li><code>--tls-ca-cert</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_TlsCaCert">TlsCaCert</a></li><li><code>--upgrade</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_Upgrade">Upgrade</a></li><li><code>--wait</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmInitSettings.html#Nuke_Common_Tools_Helm_HelmInitSettings_Wait">Wait</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_AutomountServiceAccountToken_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.AutomountServiceAccountToken*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_AutomountServiceAccountToken" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.AutomountServiceAccountToken">
+  AutomountServiceAccountToken
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L643"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Auto-mount the given service account to tiller (default true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? AutomountServiceAccountToken { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_CanaryImage_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.CanaryImage*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_CanaryImage" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.CanaryImage">
+  CanaryImage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L645"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use the canary Tiller image.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? CanaryImage { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_ClientOnly_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.ClientOnly*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_ClientOnly" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.ClientOnly">
+  ClientOnly
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L647"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If set does not install Tiller.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ClientOnly { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_DryRun_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.DryRun*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_DryRun" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.DryRun">
+  DryRun
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L649"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not install local or remote.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DryRun { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_ForceUpgrade_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.ForceUpgrade*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_ForceUpgrade" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.ForceUpgrade">
+  ForceUpgrade
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L651"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Force upgrade of Tiller to the current helm version.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ForceUpgrade { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_HistoryMax_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.HistoryMax*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_HistoryMax" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.HistoryMax">
+  HistoryMax
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L653"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Limit the maximum number of revisions saved per release. Use 0 for no limit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long? HistoryMax { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_LocalRepoUrl_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.LocalRepoUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_LocalRepoUrl" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.LocalRepoUrl">
+  LocalRepoUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L655"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>URL for local repository (default &quot;http://127.0.0.1:8879/charts&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LocalRepoUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_NetHost_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.NetHost*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_NetHost" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.NetHost">
+  NetHost
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L657"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Install Tiller with net=host.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NetHost { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_NodeSelectors_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.NodeSelectors*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_NodeSelectors" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.NodeSelectors">
+  NodeSelectors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L659"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Labels to specify the node on which Tiller is installed (app=tiller,helm=rocks).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string NodeSelectors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_Output_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.Output*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_Output" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.Output">
+  Output
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L661"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Skip installation and output Tiller's manifest in specified format (json or yaml).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HelmOutputFormat Output { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.Helm.HelmOutputFormat.html">HelmOutputFormat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_Override_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.Override*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_Override" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.Override">
+  Override
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L663"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Override values for the Tiller Deployment manifest (can specify multiple or separate values with commas: key1=val1,key2=val2).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;string, object&gt; Override { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_Replicas_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.Replicas*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_Replicas" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.Replicas">
+  Replicas
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L665"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Amount of tiller instances to run on the cluster (default 1).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long? Replicas { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_ServiceAccount_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.ServiceAccount*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_ServiceAccount" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.ServiceAccount">
+  ServiceAccount
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L667"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Name of service account.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ServiceAccount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_SkipRefresh_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.SkipRefresh*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_SkipRefresh" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.SkipRefresh">
+  SkipRefresh
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L669"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not refresh (download) the local repository cache.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SkipRefresh { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_StableRepoUrl_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.StableRepoUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_StableRepoUrl" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.StableRepoUrl">
+  StableRepoUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L671"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>URL for stable repository (default &quot;https://kubernetes-charts.storage.googleapis.com&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StableRepoUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerImage_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerImage*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerImage" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerImage">
+  TillerImage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L673"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Override Tiller image.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TillerImage { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerTls_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerTls*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerTls" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerTls">
+  TillerTls
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L675"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Install Tiller with TLS enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? TillerTls { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsCert_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerTlsCert*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsCert" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerTlsCert">
+  TillerTlsCert
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L677"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to TLS certificate file to install with Tiller.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TillerTlsCert { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsHostname_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerTlsHostname*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsHostname" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerTlsHostname">
+  TillerTlsHostname
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L679"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The server name used to verify the hostname on the returned certificates from Tiller.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TillerTlsHostname { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsKey_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerTlsKey*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsKey" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerTlsKey">
+  TillerTlsKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L681"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to TLS key file to install with Tiller.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TillerTlsKey { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsVerify_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerTlsVerify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_TillerTlsVerify" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TillerTlsVerify">
+  TillerTlsVerify
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L683"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Install Tiller with TLS enabled and to verify remote certificates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? TillerTlsVerify { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_TlsCaCert_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TlsCaCert*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_TlsCaCert" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.TlsCaCert">
+  TlsCaCert
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L685"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to CA root certificate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TlsCaCert { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_Upgrade_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.Upgrade*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_Upgrade" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.Upgrade">
+  Upgrade
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L687"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Upgrade if Tiller is already installed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Upgrade { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmInitSettings_Wait_" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.Wait*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmInitSettings_Wait" data-uid="Nuke.Common.Tools.Helm.HelmInitSettings.Wait">
+  Wait
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L689"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Block until Tiller is running and ready to receive requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Wait { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L637" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

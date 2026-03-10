@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GitReleaseManagerExportSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GitReleaseManagerExportSettingsExtensions | gruke ">
+      
+      <meta name="description" content="Exports all the Release Notes in markdown format.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions" class="text-break">
+Class GitReleaseManagerExportSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L515"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.GitReleaseManager.html">GitReleaseManager</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Exports all the Release Notes in markdown format.</p><p>For more details, visit the <a href="https://gitreleasemanager.readthedocs.io">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class GitReleaseManagerExportSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">GitReleaseManagerExportSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--fileOutputPath</code> via <a class="xref" href="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettings.html#Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettings_FileOutputPath">FileOutputPath</a></li><li><code>--logFilePath</code> via <a class="xref" href="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettings.html#Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettings_LogFilePath">LogFilePath</a></li><li><code>--owner</code> via <a class="xref" href="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettings.html#Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettings_RepositoryOwner">RepositoryOwner</a></li><li><code>--password</code> via <a class="xref" href="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettings.html#Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettings_Password">Password</a></li><li><code>--repository</code> via <a class="xref" href="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettings.html#Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettings_RepositoryName">RepositoryName</a></li><li><code>--tagName</code> via <a class="xref" href="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettings.html#Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettings_TagName">TagName</a></li><li><code>--targetDirectory</code> via <a class="xref" href="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettings.html#Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettings_TargetDirectory">TargetDirectory</a></li><li><code>--token</code> via <a class="xref" href="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettings.html#Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettings_Token">Token</a></li><li><code>--username</code> via <a class="xref" href="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettings.html#Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettings_UserName">UserName</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetFileOutputPath_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetFileOutputPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetFileOutputPath__1___0_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetFileOutputPath``1(``0)">
+  ResetFileOutputPath&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L532"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to the file export releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFileOutputPath&lt;T&gt;(this T o) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetLogFilePath_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetLogFilePath*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetLogFilePath__1___0_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetLogFilePath``1(``0)">
+  ResetLogFilePath&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L580"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to where log file should be created. Defaults is <em>logging to console</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetLogFilePath&lt;T&gt;(this T o) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetPassword_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetPassword*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetPassword__1___0_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetPassword``1(``0)">
+  ResetPassword&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L548"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The password to access GitHub with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPassword&lt;T&gt;(this T o) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetRepositoryName_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetRepositoryName*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetRepositoryName__1___0_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetRepositoryName``1(``0)">
+  ResetRepositoryName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L564"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the repository.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRepositoryName&lt;T&gt;(this T o) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetRepositoryOwner_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetRepositoryOwner*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetRepositoryOwner__1___0_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetRepositoryOwner``1(``0)">
+  ResetRepositoryOwner&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L556"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The owner of the repository.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRepositoryOwner&lt;T&gt;(this T o) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetTagName_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetTagName*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetTagName__1___0_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetTagName``1(``0)">
+  ResetTagName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L524"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the release. Typically this is the generated SemVer Version Number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTagName&lt;T&gt;(this T o) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetTargetDirectory_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetTargetDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetTargetDirectory__1___0_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetTargetDirectory``1(``0)">
+  ResetTargetDirectory&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L572"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The directory on which GitReleaseManager should be executed. Default is <em>current directory</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTargetDirectory&lt;T&gt;(this T o) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetToken_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetToken*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetToken__1___0_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetToken``1(``0)">
+  ResetToken&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L588"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The access token to access GitHub with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetToken&lt;T&gt;(this T o) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetUserName_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetUserName*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_ResetUserName__1___0_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.ResetUserName``1(``0)">
+  ResetUserName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L540"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The username to access GitHub with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetUserName&lt;T&gt;(this T o) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetFileOutputPath_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetFileOutputPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetFileOutputPath__1___0_System_String_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetFileOutputPath``1(``0,System.String)">
+  SetFileOutputPath&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L529"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to the file export releases.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFileOutputPath&lt;T&gt;(this T o, string v) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetLogFilePath_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetLogFilePath*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetLogFilePath__1___0_System_String_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetLogFilePath``1(``0,System.String)">
+  SetLogFilePath&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L577"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Path to where log file should be created. Defaults is <em>logging to console</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetLogFilePath&lt;T&gt;(this T o, string v) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetPassword_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetPassword*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetPassword__1___0_System_String_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetPassword``1(``0,System.String)">
+  SetPassword&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L545"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The password to access GitHub with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPassword&lt;T&gt;(this T o, string v) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetRepositoryName_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetRepositoryName*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetRepositoryName__1___0_System_String_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetRepositoryName``1(``0,System.String)">
+  SetRepositoryName&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L561"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the repository.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRepositoryName&lt;T&gt;(this T o, string v) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetRepositoryOwner_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetRepositoryOwner*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetRepositoryOwner__1___0_System_String_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetRepositoryOwner``1(``0,System.String)">
+  SetRepositoryOwner&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L553"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The owner of the repository.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRepositoryOwner&lt;T&gt;(this T o, string v) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetTagName_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetTagName*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetTagName__1___0_System_String_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetTagName``1(``0,System.String)">
+  SetTagName&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L521"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the release. Typically this is the generated SemVer Version Number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTagName&lt;T&gt;(this T o, string v) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetTargetDirectory_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetTargetDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetTargetDirectory__1___0_System_String_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetTargetDirectory``1(``0,System.String)">
+  SetTargetDirectory&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L569"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The directory on which GitReleaseManager should be executed. Default is <em>current directory</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTargetDirectory&lt;T&gt;(this T o, string v) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetToken_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetToken*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetToken__1___0_System_String_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetToken``1(``0,System.String)">
+  SetToken&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L585"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The access token to access GitHub with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetToken&lt;T&gt;(this T o, string v) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetUserName_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetUserName*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitReleaseManager_GitReleaseManagerExportSettingsExtensions_SetUserName__1___0_System_String_" data-uid="Nuke.Common.Tools.GitReleaseManager.GitReleaseManagerExportSettingsExtensions.SetUserName``1(``0,System.String)">
+  SetUserName&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L537"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The username to access GitHub with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetUserName&lt;T&gt;(this T o, string v) where T : GitReleaseManagerExportSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitReleaseManager/GitReleaseManager.Generated.cs/#L515" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

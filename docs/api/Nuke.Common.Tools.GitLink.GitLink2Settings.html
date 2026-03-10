@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GitLink2Settings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GitLink2Settings | gruke ">
+      
+      <meta name="description" content="GitLink makes symbol servers obsolete which saves you both time with uploading source files with symbols and the user no longer has to specify custom symbol servers (such as symbolsource.org). The advantage of GitLink is that it is fully customized for Git. It also works with GitHub or BitBucket urls so it does not require a local git repository to work. This makes it perfectly usable in continuous integration servers such as Continua CI. Updating all the pdb files is very fast. A solution with over 85 projects will be handled in less than 30 seconds. When using GitLink, the user no longer has to specify symbol servers. The only requirement is to ensure the check the Enable source server support option in Visual Studio.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_GitLink_GitLink2Settings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.GitLink.GitLink2Settings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings">
+
+
+
+  <h1 id="Nuke_Common_Tools_GitLink_GitLink2Settings" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings" class="text-break">
+Class GitLink2Settings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.GitLink.html">GitLink</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>GitLink makes symbol servers obsolete which saves you both time with uploading source files with symbols and the user no longer has to specify custom symbol servers (such as symbolsource.org). The advantage of GitLink is that it is fully customized for Git. It also works with GitHub or BitBucket urls so it does not require a local git repository to work. This makes it perfectly usable in continuous integration servers such as Continua CI. Updating all the pdb files is very fast. A solution with over 85 projects will be handled in less than 30 seconds. When using GitLink, the user no longer has to specify symbol servers. The only requirement is to ensure the check the Enable source server support option in Visual Studio.</p><p>For more details, visit the <a href="https://github.com/GitTools/GitLink/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class GitLink2Settings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">GitLink2Settings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_DisableDebug__1___0_">GitLink2SettingsExtensions.DisableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_DisableErrorsAsWarnings__1___0_">GitLink2SettingsExtensions.DisableErrorsAsWarnings&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_DisableSkipVerification__1___0_">GitLink2SettingsExtensions.DisableSkipVerification&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_DisableUsePowershell__1___0_">GitLink2SettingsExtensions.DisableUsePowershell&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_EnableDebug__1___0_">GitLink2SettingsExtensions.EnableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_EnableErrorsAsWarnings__1___0_">GitLink2SettingsExtensions.EnableErrorsAsWarnings&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_EnableSkipVerification__1___0_">GitLink2SettingsExtensions.EnableSkipVerification&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_EnableUsePowershell__1___0_">GitLink2SettingsExtensions.EnableUsePowershell&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetBranchName__1___0_">GitLink2SettingsExtensions.ResetBranchName&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetCommitSha__1___0_">GitLink2SettingsExtensions.ResetCommitSha&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetConfiguration__1___0_">GitLink2SettingsExtensions.ResetConfiguration&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetDebug__1___0_">GitLink2SettingsExtensions.ResetDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetErrorsAsWarnings__1___0_">GitLink2SettingsExtensions.ResetErrorsAsWarnings&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetFile__1___0_">GitLink2SettingsExtensions.ResetFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetLogFile__1___0_">GitLink2SettingsExtensions.ResetLogFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetPdbDirectory__1___0_">GitLink2SettingsExtensions.ResetPdbDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetPlatform__1___0_">GitLink2SettingsExtensions.ResetPlatform&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetRepositoryUrl__1___0_">GitLink2SettingsExtensions.ResetRepositoryUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetSkipVerification__1___0_">GitLink2SettingsExtensions.ResetSkipVerification&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetSolutionDirectory__1___0_">GitLink2SettingsExtensions.ResetSolutionDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ResetUsePowershell__1___0_">GitLink2SettingsExtensions.ResetUsePowershell&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetBranchName__1___0_System_String_">GitLink2SettingsExtensions.SetBranchName&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetCommitSha__1___0_System_String_">GitLink2SettingsExtensions.SetCommitSha&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetConfiguration__1___0_System_String_">GitLink2SettingsExtensions.SetConfiguration&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetDebug__1___0_System_Nullable_System_Boolean__">GitLink2SettingsExtensions.SetDebug&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetErrorsAsWarnings__1___0_System_Nullable_System_Boolean__">GitLink2SettingsExtensions.SetErrorsAsWarnings&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetFile__1___0_System_String_">GitLink2SettingsExtensions.SetFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetLogFile__1___0_System_String_">GitLink2SettingsExtensions.SetLogFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetPdbDirectory__1___0_System_String_">GitLink2SettingsExtensions.SetPdbDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetPlatform__1___0_System_String_">GitLink2SettingsExtensions.SetPlatform&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetRepositoryUrl__1___0_System_String_">GitLink2SettingsExtensions.SetRepositoryUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetSkipVerification__1___0_System_Nullable_System_Boolean__">GitLink2SettingsExtensions.SetSkipVerification&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetSolutionDirectory__1___0_System_String_">GitLink2SettingsExtensions.SetSolutionDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_SetUsePowershell__1___0_System_Nullable_System_Boolean__">GitLink2SettingsExtensions.SetUsePowershell&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ToggleDebug__1___0_">GitLink2SettingsExtensions.ToggleDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ToggleErrorsAsWarnings__1___0_">GitLink2SettingsExtensions.ToggleErrorsAsWarnings&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ToggleSkipVerification__1___0_">GitLink2SettingsExtensions.ToggleSkipVerification&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2SettingsExtensions.html#Nuke_Common_Tools_GitLink_GitLink2SettingsExtensions_ToggleUsePowershell__1___0_">GitLink2SettingsExtensions.ToggleUsePowershell&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_GitLink_GitLink2Settings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;solutionDirectory&gt;</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_SolutionDirectory">SolutionDirectory</a></li><li><code>-b</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_BranchName">BranchName</a></li><li><code>-c</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_Configuration">Configuration</a></li><li><code>-d</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_PdbDirectory">PdbDirectory</a></li><li><code>-debug</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_Debug">Debug</a></li><li><code>-errorsaswarnings</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_ErrorsAsWarnings">ErrorsAsWarnings</a></li><li><code>-f</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_File">File</a></li><li><code>-l</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_LogFile">LogFile</a></li><li><code>-p</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_Platform">Platform</a></li><li><code>-powershell</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_UsePowershell">UsePowershell</a></li><li><code>-s</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_CommitSha">CommitSha</a></li><li><code>-skipverify</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_SkipVerification">SkipVerification</a></li><li><code>-u</code> via <a class="xref" href="Nuke.Common.Tools.GitLink.GitLink2Settings.html#Nuke_Common_Tools_GitLink_GitLink2Settings_RepositoryUrl">RepositoryUrl</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_BranchName_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.BranchName*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_BranchName" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.BranchName">
+  BranchName
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Name of the branch to use on the remote repository.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BranchName { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_CommitSha_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.CommitSha*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_CommitSha" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.CommitSha">
+  CommitSha
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The SHA-1 hash of the commit.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CommitSha { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_Configuration_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.Configuration*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_Configuration" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.Configuration">
+  Configuration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Name of the configuration, default value is 'Release'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Configuration { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_Debug_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.Debug*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_Debug" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.Debug">
+  Debug
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enables debug mode with special dumps of msbuild.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Debug { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_ErrorsAsWarnings_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.ErrorsAsWarnings*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_ErrorsAsWarnings" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.ErrorsAsWarnings">
+  ErrorsAsWarnings
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't fail on errors, but treat them as warnings instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ErrorsAsWarnings { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_File_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.File*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_File" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.File">
+  File
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Solution file name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string File { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_LogFile_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.LogFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_LogFile" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.LogFile">
+  LogFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The log file to write to.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LogFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_PdbDirectory_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.PdbDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_PdbDirectory" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.PdbDirectory">
+  PdbDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The directory where pdb files exists, default value is the normal project output directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PdbDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_Platform_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.Platform*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_Platform" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.Platform">
+  Platform
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Name of the platform, default value is 'AnyCPU'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Platform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_RepositoryUrl_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.RepositoryUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_RepositoryUrl" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.RepositoryUrl">
+  RepositoryUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Url to remote git repository.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string RepositoryUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_SkipVerification_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.SkipVerification*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_SkipVerification" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.SkipVerification">
+  SkipVerification
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Skip pdb verification in case it causes issues (it's a formality anyway)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? SkipVerification { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_SolutionDirectory_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.SolutionDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_SolutionDirectory" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.SolutionDirectory">
+  SolutionDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The directory containing the solution with the pdb files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SolutionDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_GitLink_GitLink2Settings_UsePowershell_" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.UsePowershell*"></a>
+
+  <h3 id="Nuke_Common_Tools_GitLink_GitLink2Settings_UsePowershell" data-uid="Nuke.Common.Tools.GitLink.GitLink2Settings.UsePowershell">
+  UsePowershell
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use an indexing strategy that won't rely on SRCSRV http support, but use a powershell command for URL download instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UsePowershell { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/GitLink/GitLink.Generated.cs/#L52" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

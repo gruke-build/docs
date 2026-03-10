@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class HelmFetchSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class HelmFetchSettings | gruke ">
+      
+      <meta name="description" content="Retrieve a package from a package repository, and download it locally. This is useful for fetching packages to inspect, modify, or repackage. It can also be used to perform cryptographic verification of a chart without installing the chart. There are options for unpacking the chart after download. This will create a directory for the chart and uncompress into that directory. If the --verify flag is specified, the requested chart MUST have a provenance file, and MUST pass the verification process. Failure in any part of this will result in an error, and the chart will not be saved locally.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Helm_HelmFetchSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Helm.HelmFetchSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_Helm_HelmFetchSettings" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings" class="text-break">
+Class HelmFetchSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L431"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Helm.html">Helm</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Retrieve a package from a package repository, and download it locally. This is useful for fetching packages to inspect, modify, or repackage. It can also be used to perform cryptographic verification of a chart without installing the chart. There are options for unpacking the chart after download. This will create a directory for the chart and uncompress into that directory. If the --verify flag is specified, the requested chart MUST have a provenance file, and MUST pass the verification process. Failure in any part of this will result in an error, and the chart will not be saved locally.</p><p>For more details, visit the <a href="https://helm.sh/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class HelmFetchSettings : HelmOptionsBase, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html">HelmOptionsBase</a></div>
+      <div><span class="xref">HelmFetchSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Debug">HelmOptionsBase.Debug</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Home">HelmOptionsBase.Home</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Host">HelmOptionsBase.Host</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_KubeContext">HelmOptionsBase.KubeContext</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Kubeconfig">HelmOptionsBase.Kubeconfig</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerConnectionTimeout">HelmOptionsBase.TillerConnectionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerNamespace">HelmOptionsBase.TillerNamespace</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_AddCharts__1___0_System_Collections_Generic_IEnumerable_System_String__">HelmFetchSettingsExtensions.AddCharts&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_AddCharts__1___0_System_String___">HelmFetchSettingsExtensions.AddCharts&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ClearCharts__1___0_">HelmFetchSettingsExtensions.ClearCharts&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_DisableDevel__1___0_">HelmFetchSettingsExtensions.DisableDevel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_DisableProv__1___0_">HelmFetchSettingsExtensions.DisableProv&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_DisableUntar__1___0_">HelmFetchSettingsExtensions.DisableUntar&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_DisableVerify__1___0_">HelmFetchSettingsExtensions.DisableVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_EnableDevel__1___0_">HelmFetchSettingsExtensions.EnableDevel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_EnableProv__1___0_">HelmFetchSettingsExtensions.EnableProv&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_EnableUntar__1___0_">HelmFetchSettingsExtensions.EnableUntar&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_EnableVerify__1___0_">HelmFetchSettingsExtensions.EnableVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_RemoveCharts__1___0_System_Collections_Generic_IEnumerable_System_String__">HelmFetchSettingsExtensions.RemoveCharts&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_RemoveCharts__1___0_System_String___">HelmFetchSettingsExtensions.RemoveCharts&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetCaFile__1___0_">HelmFetchSettingsExtensions.ResetCaFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetCertFile__1___0_">HelmFetchSettingsExtensions.ResetCertFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetDestination__1___0_">HelmFetchSettingsExtensions.ResetDestination&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetDevel__1___0_">HelmFetchSettingsExtensions.ResetDevel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetKeyFile__1___0_">HelmFetchSettingsExtensions.ResetKeyFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetKeyring__1___0_">HelmFetchSettingsExtensions.ResetKeyring&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetPassword__1___0_">HelmFetchSettingsExtensions.ResetPassword&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetProv__1___0_">HelmFetchSettingsExtensions.ResetProv&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetRepo__1___0_">HelmFetchSettingsExtensions.ResetRepo&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetUntar__1___0_">HelmFetchSettingsExtensions.ResetUntar&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetUntardir__1___0_">HelmFetchSettingsExtensions.ResetUntardir&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetUsername__1___0_">HelmFetchSettingsExtensions.ResetUsername&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetVerify__1___0_">HelmFetchSettingsExtensions.ResetVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ResetVersion__1___0_">HelmFetchSettingsExtensions.ResetVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetCaFile__1___0_System_String_">HelmFetchSettingsExtensions.SetCaFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetCertFile__1___0_System_String_">HelmFetchSettingsExtensions.SetCertFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetCharts__1___0_System_Collections_Generic_IEnumerable_System_String__">HelmFetchSettingsExtensions.SetCharts&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetCharts__1___0_System_String___">HelmFetchSettingsExtensions.SetCharts&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetDestination__1___0_System_String_">HelmFetchSettingsExtensions.SetDestination&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetDevel__1___0_System_Nullable_System_Boolean__">HelmFetchSettingsExtensions.SetDevel&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetKeyFile__1___0_System_String_">HelmFetchSettingsExtensions.SetKeyFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetKeyring__1___0_System_String_">HelmFetchSettingsExtensions.SetKeyring&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetPassword__1___0_System_String_">HelmFetchSettingsExtensions.SetPassword&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetProv__1___0_System_Nullable_System_Boolean__">HelmFetchSettingsExtensions.SetProv&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetRepo__1___0_System_String_">HelmFetchSettingsExtensions.SetRepo&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetUntar__1___0_System_Nullable_System_Boolean__">HelmFetchSettingsExtensions.SetUntar&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetUntardir__1___0_System_String_">HelmFetchSettingsExtensions.SetUntardir&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetUsername__1___0_System_String_">HelmFetchSettingsExtensions.SetUsername&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetVerify__1___0_System_Nullable_System_Boolean__">HelmFetchSettingsExtensions.SetVerify&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_SetVersion__1___0_System_String_">HelmFetchSettingsExtensions.SetVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ToggleDevel__1___0_">HelmFetchSettingsExtensions.ToggleDevel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ToggleProv__1___0_">HelmFetchSettingsExtensions.ToggleProv&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ToggleUntar__1___0_">HelmFetchSettingsExtensions.ToggleUntar&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettingsExtensions.html#Nuke_Common_Tools_Helm_HelmFetchSettingsExtensions_ToggleVerify__1___0_">HelmFetchSettingsExtensions.ToggleVerify&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_DisableDebug__1___0_">HelmOptionsBaseExtensions.DisableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_EnableDebug__1___0_">HelmOptionsBaseExtensions.EnableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetDebug__1___0_">HelmOptionsBaseExtensions.ResetDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetHome__1___0_">HelmOptionsBaseExtensions.ResetHome&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetHost__1___0_">HelmOptionsBaseExtensions.ResetHost&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetKubeContext__1___0_">HelmOptionsBaseExtensions.ResetKubeContext&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetKubeconfig__1___0_">HelmOptionsBaseExtensions.ResetKubeconfig&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetTillerConnectionTimeout__1___0_">HelmOptionsBaseExtensions.ResetTillerConnectionTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ResetTillerNamespace__1___0_">HelmOptionsBaseExtensions.ResetTillerNamespace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetDebug__1___0_System_Nullable_System_Boolean__">HelmOptionsBaseExtensions.SetDebug&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetHome__1___0_System_String_">HelmOptionsBaseExtensions.SetHome&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetHost__1___0_System_String_">HelmOptionsBaseExtensions.SetHost&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetKubeContext__1___0_System_String_">HelmOptionsBaseExtensions.SetKubeContext&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetKubeconfig__1___0_System_String_">HelmOptionsBaseExtensions.SetKubeconfig&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetTillerConnectionTimeout__1___0_System_Nullable_System_Int64__">HelmOptionsBaseExtensions.SetTillerConnectionTimeout&lt;T&gt;(T, long?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_SetTillerNamespace__1___0_System_String_">HelmOptionsBaseExtensions.SetTillerNamespace&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBaseExtensions.html#Nuke_Common_Tools_Helm_HelmOptionsBaseExtensions_ToggleDebug__1___0_">HelmOptionsBaseExtensions.ToggleDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_Helm_HelmFetchSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;charts&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Charts">Charts</a></li><li><code>--ca-file</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_CaFile">CaFile</a></li><li><code>--cert-file</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_CertFile">CertFile</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Debug">Debug</a></li><li><code>--destination</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Destination">Destination</a></li><li><code>--devel</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Devel">Devel</a></li><li><code>--home</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Home">Home</a></li><li><code>--host</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Host">Host</a></li><li><code>--key-file</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_KeyFile">KeyFile</a></li><li><code>--keyring</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Keyring">Keyring</a></li><li><code>--kube-context</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_KubeContext">KubeContext</a></li><li><code>--kubeconfig</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_Kubeconfig">Kubeconfig</a></li><li><code>--password</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Password">Password</a></li><li><code>--prov</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Prov">Prov</a></li><li><code>--repo</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Repo">Repo</a></li><li><code>--tiller-connection-timeout</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerConnectionTimeout">TillerConnectionTimeout</a></li><li><code>--tiller-namespace</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmOptionsBase.html#Nuke_Common_Tools_Helm_HelmOptionsBase_TillerNamespace">TillerNamespace</a></li><li><code>--untar</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Untar">Untar</a></li><li><code>--untardir</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Untardir">Untardir</a></li><li><code>--username</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Username">Username</a></li><li><code>--verify</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Verify">Verify</a></li><li><code>--version</code> via <a class="xref" href="Nuke.Common.Tools.Helm.HelmFetchSettings.html#Nuke_Common_Tools_Helm_HelmFetchSettings_Version">Version</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_CaFile_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.CaFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_CaFile" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.CaFile">
+  CaFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L437"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verify certificates of HTTPS-enabled servers using this CA bundle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CaFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_CertFile_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.CertFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_CertFile" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.CertFile">
+  CertFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L439"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Identify HTTPS client using this SSL certificate file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string CertFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Charts_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Charts*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Charts" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Charts">
+  Charts
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L465"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The charts to fetch. Can either be specified by <code>repoName/chartName</code> or directly by an url.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Charts { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Destination_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Destination*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Destination" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Destination">
+  Destination
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L441"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Location to write the chart. If this and tardir are specified, tardir is appended to this (default &quot;.&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Destination { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Devel_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Devel*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Devel" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Devel">
+  Devel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L443"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use development versions, too. Equivalent to version '&gt;0.0.0-0'. If --version is set, this is ignored.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Devel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_KeyFile_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.KeyFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_KeyFile" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.KeyFile">
+  KeyFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L445"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Identify HTTPS client using this SSL key file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string KeyFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Keyring_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Keyring*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Keyring" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Keyring">
+  Keyring
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L447"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Keyring containing public keys (default &quot;~/.gnupg/pubring.gpg&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Keyring { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Password_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Password*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Password" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Password">
+  Password
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L449"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository password.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Password { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Prov_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Prov*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Prov" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Prov">
+  Prov
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L451"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fetch the provenance file, but don't perform verification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Prov { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Repo_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Repo*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Repo" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Repo">
+  Repo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L453"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository url where to locate the requested chart.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Repo { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Untar_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Untar*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Untar" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Untar">
+  Untar
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L455"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If set to true, will untar the chart after downloading it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Untar { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Untardir_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Untardir*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Untardir" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Untardir">
+  Untardir
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L457"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If untar is specified, this flag specifies the name of the directory into which the chart is expanded (default &quot;.&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Untardir { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Username_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Username*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Username" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Username">
+  Username
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L459"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Chart repository username.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Username { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Verify_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Verify*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Verify" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Verify">
+  Verify
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L461"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Verify the package against its signature.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Verify { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Helm_HelmFetchSettings_Version_" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Version*"></a>
+
+  <h3 id="Nuke_Common_Tools_Helm_HelmFetchSettings_Version" data-uid="Nuke.Common.Tools.Helm.HelmFetchSettings.Version">
+  Version
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L463"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specific version of a chart. Without this, the latest version is fetched.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Version { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Helm/Helm.Generated.cs/#L431" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

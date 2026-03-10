@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PathConstruction | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PathConstruction | gruke ">
+      
+      <meta name="description" content="Provides an abstraction for generating Windows/Unix/UNC-compliant file-system paths independently of the underlying operating system. Usages should be restricted to the moment of construction, i.e., avoid using it as part of an API. Casting a string with (RelativePath) will construct any intermediate part of a path using the specific separators for the currently running operating-system. By using (WinRelativePath) and (UnixRelativePath) other separators can be used intentionally. Casting with (AbsolutePath) ensures that the path is rooted as Windows/Unix/UNC-path. The operators / and + allow to append sub-directories. Resulting paths are automatically normalized if possible. So C:\foo\..\bar\. will become C:\bar.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_IO_PathConstruction.md&amp;value=---%0Auid%3A%20Nuke.Common.IO.PathConstruction%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.IO.PathConstruction">
+
+
+
+  <h1 id="Nuke_Common_IO_PathConstruction" data-uid="Nuke.Common.IO.PathConstruction" class="text-break">
+Class PathConstruction  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.IO.html">IO</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Utilities.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provides an abstraction for generating Windows/Unix/UNC-compliant
+file-system paths independently of the underlying operating system. Usages should be restricted to the moment
+of construction, i.e., avoid using it as part of an API.</p>
+<p>Casting a string with <code>(RelativePath)</code> will construct any intermediate part of a path using the specific separators
+for the currently running operating-system. By using <code>(WinRelativePath)</code> and <code>(UnixRelativePath)</code> other separators can be
+used intentionally. Casting with <code>(AbsolutePath)</code> ensures that the path is rooted as Windows/Unix/UNC-path. The operators
+<code>/</code> and <code>+</code> allow to append sub-directories.</p>
+<p>Resulting paths are automatically normalized if possible. So <code>C:\foo\..\bar\.</code> will become <code>C:\bar</code>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+public static class PathConstruction</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">PathConstruction</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_IO_PathConstruction_examples">Examples</h2>
+  <pre><code class="lang-csharp">string relativePath = (RelativePath) "foo" / "bar";
+// On Windows:   relativePath == "foo\bar"
+// On Unix:      relativePath == "foo/bar"</code></pre>
+<pre><code class="lang-csharp">string winPath = (WinPath) "foo" / "bar"; // "foo\bar";
+string unixPath = (UnixPath) "foo" / "bar";   // "foo/bar";</code></pre>
+<pre><code class="lang-csharp">string absolutePath1 = (AbsolutePath) RootDirectory / "foo" / "bar";
+string absolutePath2 = (AbsolutePath) "foo" / "bar"  // Throws exception</code></pre>
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_IO_PathConstruction_Combine_" data-uid="Nuke.Common.IO.PathConstruction.Combine*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_Combine_System_String_System_String_System_Nullable_System_Char__" data-uid="Nuke.Common.IO.PathConstruction.Combine(System.String,System.String,System.Nullable{System.Char})">
+  Combine(string, string, char?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Combine(string left, string right, char? separator = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>separator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_Contains_" data-uid="Nuke.Common.IO.PathConstruction.Contains*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_Contains_Nuke_Common_IO_AbsolutePath_System_String_" data-uid="Nuke.Common.IO.PathConstruction.Contains(Nuke.Common.IO.AbsolutePath,System.String)">
+  Contains(AbsolutePath, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Contains(this AbsolutePath basePath, string destinationPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>basePath</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+    <dt><code>destinationPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_GetPathRoot_" data-uid="Nuke.Common.IO.PathConstruction.GetPathRoot*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_GetPathRoot_System_String_" data-uid="Nuke.Common.IO.PathConstruction.GetPathRoot(System.String)">
+  GetPathRoot(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CanBeNull]
+public static string GetPathRoot(string path)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_GetRelativePath_" data-uid="Nuke.Common.IO.PathConstruction.GetRelativePath*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_GetRelativePath_System_String_System_String_" data-uid="Nuke.Common.IO.PathConstruction.GetRelativePath(System.String,System.String)">
+  GetRelativePath(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+[CodeTemplate(&quot;PathConstruction.GetRelativePath($expr{&#39;Nuke.Common.IO.AbsolutePath&#39;, true}$, $args$)&quot;, ReplaceTemplate = &quot;$expr$.GetRelativePathTo($args$)&quot;, ReplaceMessage = &quot;Replace with $expr$.GetRelativePathTo($args$)&quot;, Message = &quot;WARNING: GetRelativePath is obsolete&quot;)]
+[CodeTemplate(&quot;GetRelativePath($expr{&#39;Nuke.Common.IO.AbsolutePath&#39;, true}$, $args$)&quot;, ReplaceTemplate = &quot;$expr$.GetRelativePathTo($args$)&quot;, ReplaceMessage = &quot;Replace with $expr$.GetRelativePathTo($args$)&quot;, Message = &quot;WARNING: GetRelativePath is obsolete&quot;)]
+public static string GetRelativePath(string basePath, string destinationPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>basePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>destinationPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_GetRelativePathTo_" data-uid="Nuke.Common.IO.PathConstruction.GetRelativePathTo*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_GetRelativePathTo_Nuke_Common_IO_AbsolutePath_System_String_" data-uid="Nuke.Common.IO.PathConstruction.GetRelativePathTo(Nuke.Common.IO.AbsolutePath,System.String)">
+  GetRelativePathTo(AbsolutePath, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static RelativePath GetRelativePathTo(this AbsolutePath basePath, string destinationPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>basePath</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+    <dt><code>destinationPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.RelativePath.html">RelativePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_GetUnixRelativePath_" data-uid="Nuke.Common.IO.PathConstruction.GetUnixRelativePath*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_GetUnixRelativePath_System_String_System_String_" data-uid="Nuke.Common.IO.PathConstruction.GetUnixRelativePath(System.String,System.String)">
+  GetUnixRelativePath(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static UnixRelativePath GetUnixRelativePath(string basePath, string destinationPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>basePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>destinationPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.UnixRelativePath.html">UnixRelativePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_GetUnixRelativePathTo_" data-uid="Nuke.Common.IO.PathConstruction.GetUnixRelativePathTo*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_GetUnixRelativePathTo_Nuke_Common_IO_AbsolutePath_System_String_" data-uid="Nuke.Common.IO.PathConstruction.GetUnixRelativePathTo(Nuke.Common.IO.AbsolutePath,System.String)">
+  GetUnixRelativePathTo(AbsolutePath, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UnixRelativePath GetUnixRelativePathTo(this AbsolutePath basePath, string destinationPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>basePath</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+    <dt><code>destinationPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.UnixRelativePath.html">UnixRelativePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_GetWinRelativePath_" data-uid="Nuke.Common.IO.PathConstruction.GetWinRelativePath*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_GetWinRelativePath_System_String_System_String_" data-uid="Nuke.Common.IO.PathConstruction.GetWinRelativePath(System.String,System.String)">
+  GetWinRelativePath(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static WinRelativePath GetWinRelativePath(string basePath, string destinationPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>basePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>destinationPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.WinRelativePath.html">WinRelativePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_GetWinRelativePathTo_" data-uid="Nuke.Common.IO.PathConstruction.GetWinRelativePathTo*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_GetWinRelativePathTo_Nuke_Common_IO_AbsolutePath_System_String_" data-uid="Nuke.Common.IO.PathConstruction.GetWinRelativePathTo(Nuke.Common.IO.AbsolutePath,System.String)">
+  GetWinRelativePathTo(AbsolutePath, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WinRelativePath GetWinRelativePathTo(this AbsolutePath basePath, string destinationPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>basePath</code> <a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+    <dt><code>destinationPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.WinRelativePath.html">WinRelativePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_HasPathRoot_" data-uid="Nuke.Common.IO.PathConstruction.HasPathRoot*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_HasPathRoot_System_String_" data-uid="Nuke.Common.IO.PathConstruction.HasPathRoot(System.String)">
+  HasPathRoot(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool HasPathRoot(string path)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_IsDescendantPath_" data-uid="Nuke.Common.IO.PathConstruction.IsDescendantPath*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_IsDescendantPath_System_String_System_String_" data-uid="Nuke.Common.IO.PathConstruction.IsDescendantPath(System.String,System.String)">
+  IsDescendantPath(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+[CodeTemplate(&quot;PathConstruction.IsDescendantPath($expr{&#39;Nuke.Common.IO.AbsolutePath&#39;, true}$, $args$)&quot;, ReplaceTemplate = &quot;$expr$.Contains($args$)&quot;, ReplaceMessage = &quot;Replace with $expr$.Contains($args$)&quot;, Message = &quot;WARNING: IsDescendantPath is obsolete&quot;)]
+[CodeTemplate(&quot;IsDescendantPath($expr{&#39;Nuke.Common.IO.AbsolutePath&#39;, true}$, $args$)&quot;, ReplaceTemplate = &quot;$expr$.Contains($args$)&quot;, ReplaceMessage = &quot;Replace with $expr$.Contains($args$)&quot;, Message = &quot;WARNING: IsDescendantPath is obsolete&quot;)]
+public static bool IsDescendantPath(string basePath, string destinationPath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>basePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>destinationPath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_NormalizePath_" data-uid="Nuke.Common.IO.PathConstruction.NormalizePath*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_NormalizePath_System_String_System_Nullable_System_Char__" data-uid="Nuke.Common.IO.PathConstruction.NormalizePath(System.String,System.Nullable{System.Char})">
+  NormalizePath(string, char?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L222"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string NormalizePath(string path, char? separator = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>separator</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_ToUnixRelativePath_" data-uid="Nuke.Common.IO.PathConstruction.ToUnixRelativePath*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_ToUnixRelativePath_Nuke_Common_IO_RelativePath_" data-uid="Nuke.Common.IO.PathConstruction.ToUnixRelativePath(Nuke.Common.IO.RelativePath)">
+  ToUnixRelativePath(RelativePath)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static UnixRelativePath ToUnixRelativePath(this RelativePath path)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="Nuke.Common.IO.RelativePath.html">RelativePath</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.UnixRelativePath.html">UnixRelativePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_IO_PathConstruction_ToWinRelativePath_" data-uid="Nuke.Common.IO.PathConstruction.ToWinRelativePath*"></a>
+
+  <h3 id="Nuke_Common_IO_PathConstruction_ToWinRelativePath_Nuke_Common_IO_RelativePath_" data-uid="Nuke.Common.IO.PathConstruction.ToWinRelativePath(Nuke.Common.IO.RelativePath)">
+  ToWinRelativePath(RelativePath)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static WinRelativePath ToWinRelativePath(this RelativePath path)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="Nuke.Common.IO.RelativePath.html">RelativePath</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.WinRelativePath.html">WinRelativePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Utilities/IO/PathConstruction.cs/#L41" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

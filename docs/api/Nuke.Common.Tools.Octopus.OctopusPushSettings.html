@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class OctopusPushSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OctopusPushSettings | gruke ">
+      
+      <meta name="description" content="The Octo.exe push command can push any of the supported packages types listed on this page.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Octopus_OctopusPushSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Octopus.OctopusPushSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_Octopus_OctopusPushSettings" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings" class="text-break">
+Class OctopusPushSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Octopus.html">Octopus</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The <code>Octo.exe push</code> command can push any of the supported packages types listed on this <a href="https://octopus.com/docs/packaging-applications/supported-packages">page</a>.</p><p>For more details, visit the <a href="https://octopus.com/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class OctopusPushSettings : ToolOptions, IOptions, IToolOptionsWithFramework</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">OctopusPushSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.IToolOptionsWithFramework.html">IToolOptionsWithFramework</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_AddPackage__1___0_System_Collections_Generic_IEnumerable_System_String__">OctopusPushSettingsExtensions.AddPackage&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_AddPackage__1___0_System_String___">OctopusPushSettingsExtensions.AddPackage&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ClearPackage__1___0_">OctopusPushSettingsExtensions.ClearPackage&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_DisableDebug__1___0_">OctopusPushSettingsExtensions.DisableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_DisableEnableServiceMessages__1___0_">OctopusPushSettingsExtensions.DisableEnableServiceMessages&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_DisableIgnoreSslErrors__1___0_">OctopusPushSettingsExtensions.DisableIgnoreSslErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_DisableReplaceExisting__1___0_">OctopusPushSettingsExtensions.DisableReplaceExisting&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_EnableDebug__1___0_">OctopusPushSettingsExtensions.EnableDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_EnableEnableServiceMessages__1___0_">OctopusPushSettingsExtensions.EnableEnableServiceMessages&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_EnableIgnoreSslErrors__1___0_">OctopusPushSettingsExtensions.EnableIgnoreSslErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_EnableReplaceExisting__1___0_">OctopusPushSettingsExtensions.EnableReplaceExisting&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_RemovePackage__1___0_System_Collections_Generic_IEnumerable_System_String__">OctopusPushSettingsExtensions.RemovePackage&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_RemovePackage__1___0_System_String___">OctopusPushSettingsExtensions.RemovePackage&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetApiKey__1___0_">OctopusPushSettingsExtensions.ResetApiKey&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetConfigFile__1___0_">OctopusPushSettingsExtensions.ResetConfigFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetDebug__1___0_">OctopusPushSettingsExtensions.ResetDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetEnableServiceMessages__1___0_">OctopusPushSettingsExtensions.ResetEnableServiceMessages&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetIgnoreSslErrors__1___0_">OctopusPushSettingsExtensions.ResetIgnoreSslErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetLogLevel__1___0_">OctopusPushSettingsExtensions.ResetLogLevel&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetPassword__1___0_">OctopusPushSettingsExtensions.ResetPassword&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetProxyPassword__1___0_">OctopusPushSettingsExtensions.ResetProxyPassword&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetProxyUsername__1___0_">OctopusPushSettingsExtensions.ResetProxyUsername&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetProxy__1___0_">OctopusPushSettingsExtensions.ResetProxy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetReplaceExisting__1___0_">OctopusPushSettingsExtensions.ResetReplaceExisting&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetServer__1___0_">OctopusPushSettingsExtensions.ResetServer&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetSpace__1___0_">OctopusPushSettingsExtensions.ResetSpace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetTimeout__1___0_">OctopusPushSettingsExtensions.ResetTimeout&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ResetUsername__1___0_">OctopusPushSettingsExtensions.ResetUsername&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetApiKey__1___0_System_String_">OctopusPushSettingsExtensions.SetApiKey&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetConfigFile__1___0_System_String_">OctopusPushSettingsExtensions.SetConfigFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetDebug__1___0_System_Nullable_System_Boolean__">OctopusPushSettingsExtensions.SetDebug&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetEnableServiceMessages__1___0_System_Nullable_System_Boolean__">OctopusPushSettingsExtensions.SetEnableServiceMessages&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetIgnoreSslErrors__1___0_System_Nullable_System_Boolean__">OctopusPushSettingsExtensions.SetIgnoreSslErrors&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetLogLevel__1___0_System_String_">OctopusPushSettingsExtensions.SetLogLevel&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetPackage__1___0_System_Collections_Generic_IEnumerable_System_String__">OctopusPushSettingsExtensions.SetPackage&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetPackage__1___0_System_String___">OctopusPushSettingsExtensions.SetPackage&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetPassword__1___0_System_String_">OctopusPushSettingsExtensions.SetPassword&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetProxyPassword__1___0_System_String_">OctopusPushSettingsExtensions.SetProxyPassword&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetProxyUsername__1___0_System_String_">OctopusPushSettingsExtensions.SetProxyUsername&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetProxy__1___0_System_String_">OctopusPushSettingsExtensions.SetProxy&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetReplaceExisting__1___0_System_Nullable_System_Boolean__">OctopusPushSettingsExtensions.SetReplaceExisting&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetServer__1___0_System_String_">OctopusPushSettingsExtensions.SetServer&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetSpace__1___0_System_String_">OctopusPushSettingsExtensions.SetSpace&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetTimeout__1___0_System_Nullable_System_Int32__">OctopusPushSettingsExtensions.SetTimeout&lt;T&gt;(T, int?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_SetUsername__1___0_System_String_">OctopusPushSettingsExtensions.SetUsername&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ToggleDebug__1___0_">OctopusPushSettingsExtensions.ToggleDebug&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ToggleEnableServiceMessages__1___0_">OctopusPushSettingsExtensions.ToggleEnableServiceMessages&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ToggleIgnoreSslErrors__1___0_">OctopusPushSettingsExtensions.ToggleIgnoreSslErrors&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettingsExtensions.html#Nuke_Common_Tools_Octopus_OctopusPushSettingsExtensions_ToggleReplaceExisting__1___0_">OctopusPushSettingsExtensions.ToggleReplaceExisting&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--apiKey</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_ApiKey">ApiKey</a></li><li><code>--configFile</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_ConfigFile">ConfigFile</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_Debug">Debug</a></li><li><code>--enableServiceMessages</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_EnableServiceMessages">EnableServiceMessages</a></li><li><code>--ignoreSslErrors</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_IgnoreSslErrors">IgnoreSslErrors</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_LogLevel">LogLevel</a></li><li><code>--package</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_Package">Package</a></li><li><code>--pass</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_Password">Password</a></li><li><code>--proxy</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_Proxy">Proxy</a></li><li><code>--proxyPass</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_ProxyPassword">ProxyPassword</a></li><li><code>--proxyUser</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_ProxyUsername">ProxyUsername</a></li><li><code>--replace-existing</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_ReplaceExisting">ReplaceExisting</a></li><li><code>--server</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_Server">Server</a></li><li><code>--space</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_Space">Space</a></li><li><code>--timeout</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_Timeout">Timeout</a></li><li><code>--user</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPushSettings.html#Nuke_Common_Tools_Octopus_OctopusPushSettings_Username">Username</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_ApiKey_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.ApiKey*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_ApiKey" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.ApiKey">
+  ApiKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Your API key. Get this from the user profile page. Your must provide an apiKey or username and password. If the guest account is enabled, a key of API-GUEST can be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ApiKey { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_ConfigFile_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.ConfigFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_ConfigFile" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.ConfigFile">
+  ConfigFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Text file of default values, with one 'key = value' per line.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConfigFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Debug_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Debug*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Debug" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Debug">
+  Debug
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable debug logging.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Debug { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_EnableServiceMessages_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.EnableServiceMessages*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_EnableServiceMessages" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.EnableServiceMessages">
+  EnableServiceMessages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable TeamCity or Team Foundation Build service messages when logging.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? EnableServiceMessages { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_IgnoreSslErrors_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.IgnoreSslErrors*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_IgnoreSslErrors" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.IgnoreSslErrors">
+  IgnoreSslErrors
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Set this flag if your Octopus server uses HTTPS but the certificate is not trusted on this machine. Any certificate errors will be ignored. WARNING: this option may create a security vulnerability.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnoreSslErrors { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_LogLevel_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.LogLevel*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_LogLevel" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.LogLevel">
+  LogLevel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The log level. Valid options are verbose, debug, information, warning, error and fatal. Defaults to 'debug'.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LogLevel { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Package_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Package*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Package" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Package">
+  Package
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Package file to push.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Package { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Password_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Password*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Password" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Password">
+  Password
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Password to use when authenticating with the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Password { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Proxy_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Proxy*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Proxy" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Proxy">
+  Proxy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The URI of the proxy to use, e.g., <a href="http://example.com:8080">http://example.com:8080</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Proxy { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_ProxyPassword_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.ProxyPassword*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_ProxyPassword" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.ProxyPassword">
+  ProxyPassword
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The password for the proxy. If both the username and password are omitted and proxyAddress is specified, the default credentials are used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProxyPassword { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_ProxyUsername_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.ProxyUsername*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_ProxyUsername" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.ProxyUsername">
+  ProxyUsername
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The username for the proxy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProxyUsername { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_ReplaceExisting_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.ReplaceExisting*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_ReplaceExisting" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.ReplaceExisting">
+  ReplaceExisting
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>If the package already exists in the repository, the default behavior is to reject the new package being pushed. You can pass this flag to overwrite the existing package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ReplaceExisting { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Server_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Server*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Server" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Server">
+  Server
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The base URL for your Octopus server - e.g., http://your-octopus/</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Server { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Space_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Space*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Space" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Space">
+  Space
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of a space within which this command will be executed. The default space will be used if it is omitted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Space { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Timeout_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Timeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Timeout" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Timeout">
+  Timeout
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Timeout in seconds for network operations. Default is 600.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Timeout { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Username_" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Username*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPushSettings_Username" data-uid="Nuke.Common.Tools.Octopus.OctopusPushSettings.Username">
+  Username
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Username to use when authenticating with the server. Your must provide an apiKey or username and password.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Username { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L110" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

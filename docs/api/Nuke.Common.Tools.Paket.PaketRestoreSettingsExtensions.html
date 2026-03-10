@@ -1,0 +1,2587 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PaketRestoreSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PaketRestoreSettingsExtensions | gruke ">
+      
+      <meta name="description" content="Paket is a dependency manager for .NET and mono projects, which is designed to work well with NuGet packages and also enables referencing files directly from Git repositories or any HTTP resource. It enables precise and predictable control over what packages the projects within your application reference.If you want to learn how to use Paket then read the Getting started tutorial and take a look at the FAQs.If you are already using NuGet for package management in your solution then you can learn about the upgrade process in the convert from NuGet section.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions" class="text-break">
+Class PaketRestoreSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L475"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Paket.html">Paket</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Paket is a dependency manager for .NET and mono projects, which is designed to work well with <a href="https://www.nuget.org/">NuGet</a> packages and also enables referencing files directly from <a href="https://fsprojects.github.io/Paket/git-dependencies.html">Git repositories</a> or any <a href="https://fsprojects.github.io/Paket/http-dependencies.html">HTTP resource</a>. It enables precise and predictable control over what packages the projects within your application reference.</p><p>If you want to learn how to use Paket then read the <a href="https://fsprojects.github.io/Paket/getting-started.html"><em>Getting started</em> tutorial</a> and take a look at the <a href="https://fsprojects.github.io/Paket/faq.html">FAQs</a>.</p><p>If you are already using NuGet for package management in your solution then you can learn about the upgrade process in the <a href="https://fsprojects.github.io/Paket/getting-started.html#Automatic-NuGet-conversion">convert from NuGet</a> section.</p><p>For more details, visit the <a href="https://fsprojects.github.io/paket">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class PaketRestoreSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">PaketRestoreSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--fail-on-checks</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_FailOnChecks">FailOnChecks</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_Force">Force</a></li><li><code>--from-bootstrapper</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_FromBootstrapper">FromBootstrapper</a></li><li><code>--group</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_DependencyGroup">DependencyGroup</a></li><li><code>--ignore-checks</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_IgnoreChecks">IgnoreChecks</a></li><li><code>--log-file</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_LogFile">LogFile</a></li><li><code>--only-referenced</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_OnlyReferenced">OnlyReferenced</a></li><li><code>--project</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_ProjectFile">ProjectFile</a></li><li><code>--references-files</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_ReferencesFiles">ReferencesFiles</a></li><li><code>--silent</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_Silent">Silent</a></li><li><code>--target-framework</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_TargetFramework">TargetFramework</a></li><li><code>--touch-affected-refs</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_TouchAffectedRefs">TouchAffectedRefs</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_Verbose">Verbose</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_AddReferencesFiles_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.AddReferencesFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_AddReferencesFiles__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.AddReferencesFiles``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddReferencesFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L591"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore packages from a paket.references file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddReferencesFiles&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_AddReferencesFiles_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.AddReferencesFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_AddReferencesFiles__1___0_System_String___" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.AddReferencesFiles``1(``0,System.String[])">
+  AddReferencesFiles&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L588"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore packages from a paket.references file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddReferencesFiles&lt;T&gt;(this T o, params string[] v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ClearReferencesFiles_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ClearReferencesFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ClearReferencesFiles__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ClearReferencesFiles``1(``0)">
+  ClearReferencesFiles&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L600"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore packages from a paket.references file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearReferencesFiles&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableFailOnChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableFailOnChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableFailOnChecks__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableFailOnChecks``1(``0)">
+  DisableFailOnChecks&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L558"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Abort if any checks fail.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableFailOnChecks&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableForce_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableForce__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableForce``1(``0)">
+  DisableForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L490"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Force download and reinstallation of all dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableForce&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableFromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableFromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableFromBootstrapper__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableFromBootstrapper``1(``0)">
+  DisableFromBootstrapper&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L664"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableFromBootstrapper&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableIgnoreChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableIgnoreChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableIgnoreChecks__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableIgnoreChecks``1(``0)">
+  DisableIgnoreChecks&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L541"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not check if paket.dependencies and paket.lock are in sync.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableIgnoreChecks&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableOnlyReferenced_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableOnlyReferenced*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableOnlyReferenced__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableOnlyReferenced``1(``0)">
+  DisableOnlyReferenced&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L507"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only restore packages that are referenced by paket.references files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableOnlyReferenced&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableSilent_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableSilent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableSilent__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableSilent``1(``0)">
+  DisableSilent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L622"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableSilent&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableTouchAffectedRefs_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableTouchAffectedRefs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableTouchAffectedRefs__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableTouchAffectedRefs``1(``0)">
+  DisableTouchAffectedRefs&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L524"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Touches project files referencing packages which are being restored, to help incremental build tools detecting the change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableTouchAffectedRefs&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableVerbose_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableVerbose__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.DisableVerbose``1(``0)">
+  DisableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L639"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableVerbose&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableFailOnChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableFailOnChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableFailOnChecks__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableFailOnChecks``1(``0)">
+  EnableFailOnChecks&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L555"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Abort if any checks fail.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableFailOnChecks&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableForce_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableForce__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableForce``1(``0)">
+  EnableForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L487"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Force download and reinstallation of all dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableForce&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableFromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableFromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableFromBootstrapper__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableFromBootstrapper``1(``0)">
+  EnableFromBootstrapper&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L661"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableFromBootstrapper&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableIgnoreChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableIgnoreChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableIgnoreChecks__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableIgnoreChecks``1(``0)">
+  EnableIgnoreChecks&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L538"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not check if paket.dependencies and paket.lock are in sync.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableIgnoreChecks&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableOnlyReferenced_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableOnlyReferenced*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableOnlyReferenced__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableOnlyReferenced``1(``0)">
+  EnableOnlyReferenced&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L504"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only restore packages that are referenced by paket.references files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableOnlyReferenced&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableSilent_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableSilent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableSilent__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableSilent``1(``0)">
+  EnableSilent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L619"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableSilent&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableTouchAffectedRefs_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableTouchAffectedRefs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableTouchAffectedRefs__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableTouchAffectedRefs``1(``0)">
+  EnableTouchAffectedRefs&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L521"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Touches project files referencing packages which are being restored, to help incremental build tools detecting the change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableTouchAffectedRefs&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableVerbose_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableVerbose__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.EnableVerbose``1(``0)">
+  EnableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L636"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableVerbose&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_RemoveReferencesFiles_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.RemoveReferencesFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_RemoveReferencesFiles__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.RemoveReferencesFiles``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveReferencesFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L597"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore packages from a paket.references file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveReferencesFiles&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_RemoveReferencesFiles_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.RemoveReferencesFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_RemoveReferencesFiles__1___0_System_String___" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.RemoveReferencesFiles``1(``0,System.String[])">
+  RemoveReferencesFiles&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L594"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore packages from a paket.references file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveReferencesFiles&lt;T&gt;(this T o, params string[] v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetDependencyGroup_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetDependencyGroup*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetDependencyGroup__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetDependencyGroup``1(``0)">
+  ResetDependencyGroup&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L569"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore dependencies of a single group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDependencyGroup&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetFailOnChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetFailOnChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetFailOnChecks__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetFailOnChecks``1(``0)">
+  ResetFailOnChecks&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L552"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Abort if any checks fail.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFailOnChecks&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetForce_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetForce__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetForce``1(``0)">
+  ResetForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L484"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Force download and reinstallation of all dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetForce&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetFromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetFromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetFromBootstrapper__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetFromBootstrapper``1(``0)">
+  ResetFromBootstrapper&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L658"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFromBootstrapper&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetIgnoreChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetIgnoreChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetIgnoreChecks__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetIgnoreChecks``1(``0)">
+  ResetIgnoreChecks&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L535"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not check if paket.dependencies and paket.lock are in sync.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetIgnoreChecks&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetLogFile_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetLogFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetLogFile__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetLogFile``1(``0)">
+  ResetLogFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L650"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print output to a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetLogFile&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetOnlyReferenced_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetOnlyReferenced*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetOnlyReferenced__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetOnlyReferenced``1(``0)">
+  ResetOnlyReferenced&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L501"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only restore packages that are referenced by paket.references files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOnlyReferenced&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetProjectFile_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetProjectFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetProjectFile__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetProjectFile``1(``0)">
+  ResetProjectFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L577"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore dependencies of a single project.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetProjectFile&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetSilent_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetSilent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetSilent__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetSilent``1(``0)">
+  ResetSilent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L616"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSilent&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetTargetFramework_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetTargetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetTargetFramework__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetTargetFramework``1(``0)">
+  ResetTargetFramework&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L608"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore only for the specified target framework.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTargetFramework&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetTouchAffectedRefs_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetTouchAffectedRefs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetTouchAffectedRefs__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetTouchAffectedRefs``1(``0)">
+  ResetTouchAffectedRefs&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L518"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Touches project files referencing packages which are being restored, to help incremental build tools detecting the change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTouchAffectedRefs&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetVerbose_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetVerbose__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ResetVerbose``1(``0)">
+  ResetVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L633"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVerbose&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetDependencyGroup_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetDependencyGroup*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetDependencyGroup__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetDependencyGroup``1(``0,System.String)">
+  SetDependencyGroup&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L566"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore dependencies of a single group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDependencyGroup&lt;T&gt;(this T o, string v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetFailOnChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetFailOnChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetFailOnChecks__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetFailOnChecks``1(``0,System.Nullable{System.Boolean})">
+  SetFailOnChecks&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L549"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Abort if any checks fail.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFailOnChecks&lt;T&gt;(this T o, bool? v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetForce_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetForce``1(``0,System.Nullable{System.Boolean})">
+  SetForce&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L481"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Force download and reinstallation of all dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetForce&lt;T&gt;(this T o, bool? v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetFromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetFromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetFromBootstrapper__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetFromBootstrapper``1(``0,System.Nullable{System.Boolean})">
+  SetFromBootstrapper&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L655"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFromBootstrapper&lt;T&gt;(this T o, bool? v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetIgnoreChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetIgnoreChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetIgnoreChecks__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetIgnoreChecks``1(``0,System.Nullable{System.Boolean})">
+  SetIgnoreChecks&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L532"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not check if paket.dependencies and paket.lock are in sync.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetIgnoreChecks&lt;T&gt;(this T o, bool? v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetLogFile_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetLogFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetLogFile__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetLogFile``1(``0,System.String)">
+  SetLogFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L647"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print output to a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetLogFile&lt;T&gt;(this T o, string v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetOnlyReferenced_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetOnlyReferenced*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetOnlyReferenced__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetOnlyReferenced``1(``0,System.Nullable{System.Boolean})">
+  SetOnlyReferenced&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L498"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only restore packages that are referenced by paket.references files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOnlyReferenced&lt;T&gt;(this T o, bool? v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetProjectFile_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetProjectFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetProjectFile__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetProjectFile``1(``0,System.String)">
+  SetProjectFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L574"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore dependencies of a single project.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProjectFile&lt;T&gt;(this T o, string v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetReferencesFiles_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetReferencesFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetReferencesFiles__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetReferencesFiles``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetReferencesFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L585"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore packages from a paket.references file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetReferencesFiles&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetReferencesFiles_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetReferencesFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetReferencesFiles__1___0_System_String___" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetReferencesFiles``1(``0,System.String[])">
+  SetReferencesFiles&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L582"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore packages from a paket.references file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetReferencesFiles&lt;T&gt;(this T o, params string[] v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetSilent_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetSilent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetSilent__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetSilent``1(``0,System.Nullable{System.Boolean})">
+  SetSilent&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L613"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSilent&lt;T&gt;(this T o, bool? v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetTargetFramework_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetTargetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetTargetFramework__1___0_System_String_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetTargetFramework``1(``0,System.String)">
+  SetTargetFramework&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L605"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore only for the specified target framework.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTargetFramework&lt;T&gt;(this T o, string v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetTouchAffectedRefs_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetTouchAffectedRefs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetTouchAffectedRefs__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetTouchAffectedRefs``1(``0,System.Nullable{System.Boolean})">
+  SetTouchAffectedRefs&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L515"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Touches project files referencing packages which are being restored, to help incremental build tools detecting the change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTouchAffectedRefs&lt;T&gt;(this T o, bool? v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetVerbose_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.SetVerbose``1(``0,System.Nullable{System.Boolean})">
+  SetVerbose&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L630"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVerbose&lt;T&gt;(this T o, bool? v) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleFailOnChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleFailOnChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleFailOnChecks__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleFailOnChecks``1(``0)">
+  ToggleFailOnChecks&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L561"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Abort if any checks fail.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleFailOnChecks&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleForce_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleForce__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleForce``1(``0)">
+  ToggleForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L493"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Force download and reinstallation of all dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleForce&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleFromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleFromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleFromBootstrapper__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleFromBootstrapper``1(``0)">
+  ToggleFromBootstrapper&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L667"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleFromBootstrapper&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleIgnoreChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleIgnoreChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleIgnoreChecks__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleIgnoreChecks``1(``0)">
+  ToggleIgnoreChecks&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L544"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not check if paket.dependencies and paket.lock are in sync.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleIgnoreChecks&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleOnlyReferenced_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleOnlyReferenced*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleOnlyReferenced__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleOnlyReferenced``1(``0)">
+  ToggleOnlyReferenced&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L510"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only restore packages that are referenced by paket.references files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleOnlyReferenced&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleSilent_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleSilent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleSilent__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleSilent``1(``0)">
+  ToggleSilent&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L625"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleSilent&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleTouchAffectedRefs_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleTouchAffectedRefs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleTouchAffectedRefs__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleTouchAffectedRefs``1(``0)">
+  ToggleTouchAffectedRefs&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L527"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Touches project files referencing packages which are being restored, to help incremental build tools detecting the change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleTouchAffectedRefs&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleVerbose_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleVerbose__1___0_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.ToggleVerbose``1(``0)">
+  ToggleVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L642"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleVerbose&lt;T&gt;(this T o) where T : PaketRestoreSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L475" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

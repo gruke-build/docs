@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class NSwagTypesToSwaggerSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NSwagTypesToSwaggerSettings | gruke ">
+      
+      <meta name="description" content="The project combines the functionality of Swashbuckle (Swagger generation) and AutoRest (client generation) in one toolchain. This way a lot of incompatibilites can be avoided and features which are not well described by the Swagger specification or JSON Schema are better supported (e.g. inheritance, enum and reference handling). The NSwag project heavily uses NJsonSchema for .NET for JSON Schema handling and C#/TypeScript class/interface generation.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings" class="text-break">
+Class NSwagTypesToSwaggerSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L243"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.NSwag.html">NSwag</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The project combines the functionality of Swashbuckle (Swagger generation) and AutoRest (client generation) in one toolchain. This way a lot of incompatibilites can be avoided and features which are not well described by the Swagger specification or JSON Schema are better supported (e.g. <a href="https://github.com/NJsonSchema/NJsonSchema/wiki/Inheritance">inheritance</a>, <a href="https://github.com/NJsonSchema/NJsonSchema/wiki/Enums">enum</a> and reference handling). The NSwag project heavily uses <a href="http://njsonschema.org/">NJsonSchema for .NET</a> for JSON Schema handling and C#/TypeScript class/interface generation.</p><p>For more details, visit the <a href="https://github.com/RSuter/NSwag">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class NSwagTypesToSwaggerSettings : ToolOptions, IOptions, IToolOptionsWithFramework</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">NSwagTypesToSwaggerSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.IToolOptionsWithFramework.html">IToolOptionsWithFramework</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_AddAssembly__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagTypesToSwaggerSettingsExtensions.AddAssembly&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_AddAssembly__1___0_System_String___">NSwagTypesToSwaggerSettingsExtensions.AddAssembly&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_AddClassNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagTypesToSwaggerSettingsExtensions.AddClassNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_AddClassNames__1___0_System_String___">NSwagTypesToSwaggerSettingsExtensions.AddClassNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_AddReferencePaths__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagTypesToSwaggerSettingsExtensions.AddReferencePaths&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_AddReferencePaths__1___0_System_String___">NSwagTypesToSwaggerSettingsExtensions.AddReferencePaths&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ClearAssembly__1___0_">NSwagTypesToSwaggerSettingsExtensions.ClearAssembly&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ClearClassNames__1___0_">NSwagTypesToSwaggerSettingsExtensions.ClearClassNames&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ClearReferencePaths__1___0_">NSwagTypesToSwaggerSettingsExtensions.ClearReferencePaths&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_DisableAllowReferencesWithProperties__1___0_">NSwagTypesToSwaggerSettingsExtensions.DisableAllowReferencesWithProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_DisableFlattenInheritanceHierarchy__1___0_">NSwagTypesToSwaggerSettingsExtensions.DisableFlattenInheritanceHierarchy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_DisableGenerateKnownTypes__1___0_">NSwagTypesToSwaggerSettingsExtensions.DisableGenerateKnownTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_DisableGenerateXmlObjects__1___0_">NSwagTypesToSwaggerSettingsExtensions.DisableGenerateXmlObjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_DisableIgnoreObsoleteProperties__1___0_">NSwagTypesToSwaggerSettingsExtensions.DisableIgnoreObsoleteProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_DisableUseNuGetCache__1___0_">NSwagTypesToSwaggerSettingsExtensions.DisableUseNuGetCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_EnableAllowReferencesWithProperties__1___0_">NSwagTypesToSwaggerSettingsExtensions.EnableAllowReferencesWithProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_EnableFlattenInheritanceHierarchy__1___0_">NSwagTypesToSwaggerSettingsExtensions.EnableFlattenInheritanceHierarchy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_EnableGenerateKnownTypes__1___0_">NSwagTypesToSwaggerSettingsExtensions.EnableGenerateKnownTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_EnableGenerateXmlObjects__1___0_">NSwagTypesToSwaggerSettingsExtensions.EnableGenerateXmlObjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_EnableIgnoreObsoleteProperties__1___0_">NSwagTypesToSwaggerSettingsExtensions.EnableIgnoreObsoleteProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_EnableUseNuGetCache__1___0_">NSwagTypesToSwaggerSettingsExtensions.EnableUseNuGetCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_RemoveAssembly__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagTypesToSwaggerSettingsExtensions.RemoveAssembly&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_RemoveAssembly__1___0_System_String___">NSwagTypesToSwaggerSettingsExtensions.RemoveAssembly&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_RemoveClassNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagTypesToSwaggerSettingsExtensions.RemoveClassNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_RemoveClassNames__1___0_System_String___">NSwagTypesToSwaggerSettingsExtensions.RemoveClassNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_RemoveReferencePaths__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagTypesToSwaggerSettingsExtensions.RemoveReferencePaths&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_RemoveReferencePaths__1___0_System_String___">NSwagTypesToSwaggerSettingsExtensions.RemoveReferencePaths&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetAllowReferencesWithProperties__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetAllowReferencesWithProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetAssemblyConfig__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetAssemblyConfig&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetDefaultDictionaryValueReferenceTypeNullHandling__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetDefaultDictionaryValueReferenceTypeNullHandling&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetDefaultEnumHandling__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetDefaultEnumHandling&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetDefaultPropertyNameHandling__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetDefaultPropertyNameHandling&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetDefaultReferenceTypeNullHandling__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetDefaultReferenceTypeNullHandling&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetFlattenInheritanceHierarchy__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetFlattenInheritanceHierarchy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetGenerateKnownTypes__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetGenerateKnownTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetGenerateXmlObjects__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetGenerateXmlObjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetIgnoreObsoleteProperties__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetIgnoreObsoleteProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetOutputType__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetOutputType&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetOutput__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ResetUseNuGetCache__1___0_">NSwagTypesToSwaggerSettingsExtensions.ResetUseNuGetCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetAllowReferencesWithProperties__1___0_System_Nullable_System_Boolean__">NSwagTypesToSwaggerSettingsExtensions.SetAllowReferencesWithProperties&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetAssemblyConfig__1___0_System_String_">NSwagTypesToSwaggerSettingsExtensions.SetAssemblyConfig&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetAssembly__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagTypesToSwaggerSettingsExtensions.SetAssembly&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetAssembly__1___0_System_String___">NSwagTypesToSwaggerSettingsExtensions.SetAssembly&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetClassNames__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagTypesToSwaggerSettingsExtensions.SetClassNames&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetClassNames__1___0_System_String___">NSwagTypesToSwaggerSettingsExtensions.SetClassNames&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetDefaultDictionaryValueReferenceTypeNullHandling__1___0_Nuke_Common_Tools_NSwag_ReferenceTypeNullHandling_">NSwagTypesToSwaggerSettingsExtensions.SetDefaultDictionaryValueReferenceTypeNullHandling&lt;T&gt;(T, ReferenceTypeNullHandling)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetDefaultEnumHandling__1___0_Nuke_Common_Tools_NSwag_EnumHandling_">NSwagTypesToSwaggerSettingsExtensions.SetDefaultEnumHandling&lt;T&gt;(T, EnumHandling)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetDefaultPropertyNameHandling__1___0_Nuke_Common_Tools_NSwag_PropertyNameHandling_">NSwagTypesToSwaggerSettingsExtensions.SetDefaultPropertyNameHandling&lt;T&gt;(T, PropertyNameHandling)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetDefaultReferenceTypeNullHandling__1___0_Nuke_Common_Tools_NSwag_ReferenceTypeNullHandling_">NSwagTypesToSwaggerSettingsExtensions.SetDefaultReferenceTypeNullHandling&lt;T&gt;(T, ReferenceTypeNullHandling)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetFlattenInheritanceHierarchy__1___0_System_Nullable_System_Boolean__">NSwagTypesToSwaggerSettingsExtensions.SetFlattenInheritanceHierarchy&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetGenerateKnownTypes__1___0_System_Nullable_System_Boolean__">NSwagTypesToSwaggerSettingsExtensions.SetGenerateKnownTypes&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetGenerateXmlObjects__1___0_System_Nullable_System_Boolean__">NSwagTypesToSwaggerSettingsExtensions.SetGenerateXmlObjects&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetIgnoreObsoleteProperties__1___0_System_Nullable_System_Boolean__">NSwagTypesToSwaggerSettingsExtensions.SetIgnoreObsoleteProperties&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetOutputType__1___0_Nuke_Common_Tools_NSwag_SchemaType_">NSwagTypesToSwaggerSettingsExtensions.SetOutputType&lt;T&gt;(T, SchemaType)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetOutput__1___0_System_String_">NSwagTypesToSwaggerSettingsExtensions.SetOutput&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetReferencePaths__1___0_System_Collections_Generic_IEnumerable_System_String__">NSwagTypesToSwaggerSettingsExtensions.SetReferencePaths&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetReferencePaths__1___0_System_String___">NSwagTypesToSwaggerSettingsExtensions.SetReferencePaths&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_SetUseNuGetCache__1___0_System_Nullable_System_Boolean__">NSwagTypesToSwaggerSettingsExtensions.SetUseNuGetCache&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ToggleAllowReferencesWithProperties__1___0_">NSwagTypesToSwaggerSettingsExtensions.ToggleAllowReferencesWithProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ToggleFlattenInheritanceHierarchy__1___0_">NSwagTypesToSwaggerSettingsExtensions.ToggleFlattenInheritanceHierarchy&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ToggleGenerateKnownTypes__1___0_">NSwagTypesToSwaggerSettingsExtensions.ToggleGenerateKnownTypes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ToggleGenerateXmlObjects__1___0_">NSwagTypesToSwaggerSettingsExtensions.ToggleGenerateXmlObjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ToggleIgnoreObsoleteProperties__1___0_">NSwagTypesToSwaggerSettingsExtensions.ToggleIgnoreObsoleteProperties&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettingsExtensions.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettingsExtensions_ToggleUseNuGetCache__1___0_">NSwagTypesToSwaggerSettingsExtensions.ToggleUseNuGetCache&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>/AllowReferencesWithProperties</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_AllowReferencesWithProperties">AllowReferencesWithProperties</a></li><li><code>/Assembly</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_Assembly">Assembly</a></li><li><code>/AssemblyConfig</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_AssemblyConfig">AssemblyConfig</a></li><li><code>/ClassNames</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_ClassNames">ClassNames</a></li><li><code>/DefaultDictionaryValueReferenceTypeNullHandling</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultDictionaryValueReferenceTypeNullHandling">DefaultDictionaryValueReferenceTypeNullHandling</a></li><li><code>/DefaultEnumHandling</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultEnumHandling">DefaultEnumHandling</a></li><li><code>/DefaultPropertyNameHandling</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultPropertyNameHandling">DefaultPropertyNameHandling</a></li><li><code>/DefaultReferenceTypeNullHandling</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultReferenceTypeNullHandling">DefaultReferenceTypeNullHandling</a></li><li><code>/FlattenInheritanceHierarchy</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_FlattenInheritanceHierarchy">FlattenInheritanceHierarchy</a></li><li><code>/GenerateKnownTypes</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_GenerateKnownTypes">GenerateKnownTypes</a></li><li><code>/GenerateXmlObjects</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_GenerateXmlObjects">GenerateXmlObjects</a></li><li><code>/IgnoreObsoleteProperties</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_IgnoreObsoleteProperties">IgnoreObsoleteProperties</a></li><li><code>/Output</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_Output">Output</a></li><li><code>/OutputType</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_OutputType">OutputType</a></li><li><code>/ReferencePaths</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_ReferencePaths">ReferencePaths</a></li><li><code>/UseNuGetCache</code> via <a class="xref" href="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.html#Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_UseNuGetCache">UseNuGetCache</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_AllowReferencesWithProperties_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.AllowReferencesWithProperties*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_AllowReferencesWithProperties" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.AllowReferencesWithProperties">
+  AllowReferencesWithProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use $ref references even if additional properties are defined on the object (otherwise allOf/oneOf with $ref is used, default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? AllowReferencesWithProperties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_Assembly_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.Assembly*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_Assembly" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.Assembly">
+  Assembly
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The path or paths to the .NET assemblies (comma separated).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Assembly { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_AssemblyConfig_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.AssemblyConfig*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_AssemblyConfig" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.AssemblyConfig">
+  AssemblyConfig
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L275"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The path to the assembly App.config or Web.config (optional).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AssemblyConfig { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_ClassNames_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.ClassNames*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_ClassNames" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.ClassNames">
+  ClassNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The class names.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ClassNames { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultDictionaryValueReferenceTypeNullHandling_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.DefaultDictionaryValueReferenceTypeNullHandling*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultDictionaryValueReferenceTypeNullHandling" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.DefaultDictionaryValueReferenceTypeNullHandling">
+  DefaultDictionaryValueReferenceTypeNullHandling
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L253"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default reference type null handling of dictionary value types (NotNull (default) or Null).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReferenceTypeNullHandling DefaultDictionaryValueReferenceTypeNullHandling { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.ReferenceTypeNullHandling.html">ReferenceTypeNullHandling</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultEnumHandling_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.DefaultEnumHandling*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultEnumHandling" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.DefaultEnumHandling">
+  DefaultEnumHandling
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default enum handling ('String' or 'Integer'), default: Integer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EnumHandling DefaultEnumHandling { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.EnumHandling.html">EnumHandling</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultPropertyNameHandling_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.DefaultPropertyNameHandling*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultPropertyNameHandling" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.DefaultPropertyNameHandling">
+  DefaultPropertyNameHandling
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default property name handling ('Default' or 'CamelCase').</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PropertyNameHandling DefaultPropertyNameHandling { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.PropertyNameHandling.html">PropertyNameHandling</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultReferenceTypeNullHandling_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.DefaultReferenceTypeNullHandling*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_DefaultReferenceTypeNullHandling" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.DefaultReferenceTypeNullHandling">
+  DefaultReferenceTypeNullHandling
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default reference type null handling (Null (default) or NotNull).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReferenceTypeNullHandling DefaultReferenceTypeNullHandling { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.ReferenceTypeNullHandling.html">ReferenceTypeNullHandling</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_FlattenInheritanceHierarchy_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.FlattenInheritanceHierarchy*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_FlattenInheritanceHierarchy" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.FlattenInheritanceHierarchy">
+  FlattenInheritanceHierarchy
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L261"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Flatten the inheritance hierarchy instead of using allOf to describe inheritance (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? FlattenInheritanceHierarchy { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_GenerateKnownTypes_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.GenerateKnownTypes*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_GenerateKnownTypes" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.GenerateKnownTypes">
+  GenerateKnownTypes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L263"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate schemas for types in KnownTypeAttribute attributes (default: true).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateKnownTypes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_GenerateXmlObjects_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.GenerateXmlObjects*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_GenerateXmlObjects" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.GenerateXmlObjects">
+  GenerateXmlObjects
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate xmlObject representation for definitions (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GenerateXmlObjects { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_IgnoreObsoleteProperties_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.IgnoreObsoleteProperties*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_IgnoreObsoleteProperties" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.IgnoreObsoleteProperties">
+  IgnoreObsoleteProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Ignore properties with the ObsoleteAttribute (default: false).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnoreObsoleteProperties { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_Output_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.Output*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_Output" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.Output">
+  Output
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L269"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The output file path (optional).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Output { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_OutputType_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.OutputType*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_OutputType" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.OutputType">
+  OutputType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L271"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the output schema type, ignored when UseDocumentProvider is enabled (Swagger2|OpenApi3, default: Swagger2).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SchemaType OutputType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.Tools.NSwag.SchemaType.html">SchemaType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_ReferencePaths_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.ReferencePaths*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_ReferencePaths" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.ReferencePaths">
+  ReferencePaths
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L277"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The paths to search for referenced assembly files (comma separated).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ReferencePaths { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_UseNuGetCache_" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.UseNuGetCache*"></a>
+
+  <h3 id="Nuke_Common_Tools_NSwag_NSwagTypesToSwaggerSettings_UseNuGetCache" data-uid="Nuke.Common.Tools.NSwag.NSwagTypesToSwaggerSettings.UseNuGetCache">
+  UseNuGetCache
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L279"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines if local Nuget's cache folder should be put in the ReferencePaths by default</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseNuGetCache { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/NSwag/NSwag.Generated.cs/#L243" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

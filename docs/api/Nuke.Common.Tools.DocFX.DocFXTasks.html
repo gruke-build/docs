@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DocFXTasks | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DocFXTasks | gruke ">
+      
+      <meta name="description" content="DocFX is an API documentation generator for .NET, and currently it supports C# and VB. It generates API reference documentation from triple-slash comments in your source code. It also allows you to use Markdown files to create additional topics such as tutorials and how-tos, and to customize the generated reference documentation. DocFX builds a static HTML website from your source code and Markdown files, which can be easily hosted on any web servers (for example, github.io). Also, DocFX provides you the flexibility to customize the layout and style of your website through templates. If you are interested in creating your own website with your own styles, you can follow how to create custom template to create custom templates.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_DocFX_DocFXTasks.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.DocFX.DocFXTasks%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.DocFX.DocFXTasks">
+
+
+
+  <h1 id="Nuke_Common_Tools_DocFX_DocFXTasks" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks" class="text-break">
+Class DocFXTasks  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFXTasks.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.DocFX.html">DocFX</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>DocFX is an API documentation generator for .NET, and currently it supports C# and VB. It generates API reference documentation from triple-slash comments in your source code. It also allows you to use Markdown files to create additional topics such as tutorials and how-tos, and to customize the generated reference documentation. DocFX builds a static HTML website from your source code and Markdown files, which can be easily hosted on any web servers (for example, <em>github.io</em>). Also, DocFX provides you the flexibility to customize the layout and style of your website through templates. If you are interested in creating your own website with your own styles, you can follow <a href="http://dotnet.github.io/docfx/tutorial/howto_create_custom_template.html">how to create custom template</a> to create custom templates.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+[LogLevelPattern(LogEventLevel.Warning, &quot;^\\[\\d\\d\\-\\d\\d\\-\\d\\d\\s\\d\\d\\:\\d\\d\\:\\d\\d\\.\\d\\d\\d\\]Info\\:\\[ExtractMetadata\\]No\\ files\\ are\\ found&quot;)]
+[LogLevelPattern(LogEventLevel.Warning, &quot;^\\[\\d\\d\\-\\d\\d\\-\\d\\d\\s\\d\\d\\:\\d\\d\\:\\d\\d\\.\\d\\d\\d\\]Warning\\:&quot;)]
+[LogLevelPattern(LogEventLevel.Error, &quot;^\\[\\d\\d\\-\\d\\d\\-\\d\\d\\s\\d\\d\\:\\d\\d\\:\\d\\d\\.\\d\\d\\d\\]Error\\:&quot;)]
+public class DocFXTasks : ToolTasks, IRequireNuGetPackage, IRequireTool, IRequireToolWithVersion</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolTasks.html">ToolTasks</a></div>
+      <div><span class="xref">DocFXTasks</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IRequireNuGetPackage.html">IRequireNuGetPackage</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.IRequireTool.html">IRequireTool</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.IRequireToolWithVersion.html">IRequireToolWithVersion</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetLogger_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetLogger(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetToolPath_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetToolPath(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Run__1___0_">ToolTasks.Run&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Run__2___0_">ToolTasks.Run&lt;TOptions, TResult&gt;(TOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetExitHandler_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetExitHandler(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_PreProcess__1___0_">ToolTasks.PreProcess&lt;T&gt;(T)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_PostProcess_Nuke_Common_Tooling_ToolOptions_">ToolTasks.PostProcess(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetResult__1_Nuke_Common_Tooling_ToolOptions_System_Collections_Generic_IReadOnlyCollection_Nuke_Common_Tooling_Output__">ToolTasks.GetResult&lt;T&gt;(ToolOptions, IReadOnlyCollection&lt;Output&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Run_Nuke_Common_Tooling_ArgumentStringHandler_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Action_Nuke_Common_Tooling_OutputType_System_String__System_Func_Nuke_Common_Tooling_IProcess_System_Object__">ToolTasks.Run(ArgumentStringHandler, string, IReadOnlyDictionary&lt;string, string&gt;, int?, bool?, bool?, Action&lt;OutputType, string&gt;, Func&lt;IProcess, object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_StartProcess_System_String_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Action_Nuke_Common_Tooling_OutputType_System_String__System_Func_System_String_System_String__">ToolTasks.StartProcess(string, string, IReadOnlyDictionary&lt;string, string&gt;, int?, bool?, bool?, Action&lt;OutputType, string&gt;, Func&lt;string, string&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_Resolve__1">ToolTasks.Resolve&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_GetToolPathInternal_Nuke_Common_Tooling_ToolOptions_">ToolTasks.GetToolPathInternal(ToolOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolTasks.html#Nuke_Common_Tooling_ToolTasks_SetToolPath_System_String_">ToolTasks.SetToolPath(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_PackageExecutable" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.PackageExecutable">
+  PackageExecutable
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string PackageExecutable = &quot;docfx.exe&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_PackageId" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.PackageId">
+  PackageId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string PackageId = &quot;docfx.console&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPath_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXPath*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPath" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXPath">
+  DocFXPath
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string DocFXPath { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFX_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFX*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFX_Nuke_Common_Tooling_ArgumentStringHandler_System_String_System_Collections_Generic_IReadOnlyDictionary_System_String_System_String__System_Nullable_System_Int32__System_Nullable_System_Boolean__System_Nullable_System_Boolean__System_Action_Nuke_Common_Tooling_OutputType_System_String__System_Func_Nuke_Common_Tooling_IProcess_System_Object__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFX(Nuke.Common.Tooling.ArgumentStringHandler,System.String,System.Collections.Generic.IReadOnlyDictionary{System.String,System.String},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Action{Nuke.Common.Tooling.OutputType,System.String},System.Func{Nuke.Common.Tooling.IProcess,System.Object})">
+  DocFX(ArgumentStringHandler, string, IReadOnlyDictionary&lt;string, string&gt;, int?, bool?, bool?, Action&lt;OutputType, string&gt;, Func&lt;IProcess, object&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>DocFX is an API documentation generator for .NET, and currently it supports C# and VB. It generates API reference documentation from triple-slash comments in your source code. It also allows you to use Markdown files to create additional topics such as tutorials and how-tos, and to customize the generated reference documentation. DocFX builds a static HTML website from your source code and Markdown files, which can be easily hosted on any web servers (for example, <em>github.io</em>). Also, DocFX provides you the flexibility to customize the layout and style of your website through templates. If you are interested in creating your own website with your own styles, you can follow <a href="http://dotnet.github.io/docfx/tutorial/howto_create_custom_template.html">how to create custom template</a> to create custom templates.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFX(ArgumentStringHandler arguments, string workingDirectory = null, IReadOnlyDictionary&lt;string, string&gt; environmentVariables = null, int? timeout = null, bool? logOutput = null, bool? logInvocation = null, Action&lt;OutputType, string&gt; logger = null, Func&lt;IProcess, object&gt; exitHandler = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>arguments</code> <a class="xref" href="Nuke.Common.Tooling.ArgumentStringHandler.html">ArgumentStringHandler</a></dt>
+    <dd></dd>
+    <dt><code>workingDirectory</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>environmentVariables</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>timeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+    <dt><code>logOutput</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>logInvocation</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="Nuke.Common.Tooling.OutputType.html">OutputType</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>exitHandler</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="Nuke.Common.Tooling.IProcess.html">IProcess</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXBuild_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXBuild_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXBuildSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXBuild(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.DocFX.DocFXBuildSettings},System.Int32,System.Boolean)">
+  DocFXBuild(CombinatorialConfigure&lt;DocFXBuildSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate client-only website combining API in YAML files and conceptual files.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(DocFXBuildSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; DocFXBuild(CombinatorialConfigure&lt;DocFXBuildSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html">DocFXBuildSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html">DocFXBuildSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxbuildsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxbuildsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXBuild_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXBuildSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;configFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ConfigFile">ConfigFile</a></li><li><code>--changesFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ChangesFile">ChangesFile</a></li><li><code>--cleanupCacheHistory</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_CleanupCacheHistory">CleanupCacheHistory</a></li><li><code>--content</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Content">Content</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_CorrelationId">CorrelationId</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_EnableDebugMode">EnableDebugMode</a></li><li><code>--debugOutput</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_OutputFolderForDebugFiles">OutputFolderForDebugFiles</a></li><li><code>--disableGitFeatures</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_DisableGitFeatures">DisableGitFeatures</a></li><li><code>--dryRun</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_DryRun">DryRun</a></li><li><code>--exportRawModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ExportRawModel">ExportRawModel</a></li><li><code>--exportViewModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ExportViewModel">ExportViewModel</a></li><li><code>--falName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_FALName">FALName</a></li><li><code>--fileMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_FileMetadataFilePath">FileMetadataFilePath</a></li><li><code>--fileMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_FileMetadataFilePaths">FileMetadataFilePaths</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ForceRebuild">ForceRebuild</a></li><li><code>--forcePostProcess</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ForcePostProcess">ForcePostProcess</a></li><li><code>--globalMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_GlobalMetadata">GlobalMetadata</a></li><li><code>--globalMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_GlobalMetadataFilePath">GlobalMetadataFilePath</a></li><li><code>--globalMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_GlobalMetadataFilePaths">GlobalMetadataFilePaths</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--hostname</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Host">Host</a></li><li><code>--intermediateFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_IntermediateFolder">IntermediateFolder</a></li><li><code>--keepFileLink</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_KeepFileLink">KeepFileLink</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_LogLevel">LogLevel</a></li><li><code>--lruSize</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_LruSize">LruSize</a></li><li><code>--markdownEngineName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_MarkdownEngineName">MarkdownEngineName</a></li><li><code>--markdownEngineProperties</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_MarkdownEngineProperties">MarkdownEngineProperties</a></li><li><code>--maxParallelism</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_MaxParallelism">MaxParallelism</a></li><li><code>--noLangKeyword</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_NoLangKeyword">NoLangKeyword</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_OutputFolder">OutputFolder</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Overwrite">Overwrite</a></li><li><code>--port</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Port">Port</a></li><li><code>--postProcessors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_PostProcessors">PostProcessors</a></li><li><code>--rawModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_RawModelOutputFolder">RawModelOutputFolder</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_RepoRoot">RepoRoot</a></li><li><code>--resource</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Resource">Resource</a></li><li><code>--schemaLicense</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_SchemaLicense">SchemaLicense</a></li><li><code>--serve</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Serve">Serve</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Templates">Templates</a></li><li><code>--theme</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Themes">Themes</a></li><li><code>--viewModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ViewModelOutputFolder">ViewModelOutputFolder</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_WarningsAsErrors">WarningsAsErrors</a></li><li><code>--xref</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_XRefMaps">XRefMaps</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXBuild_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXBuild_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXBuildSettings__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXBuild(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.DocFX.DocFXBuildSettings})">
+  DocFXBuild(Configure&lt;DocFXBuildSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate client-only website combining API in YAML files and conceptual files.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXBuild(Configure&lt;DocFXBuildSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html">DocFXBuildSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXBuild_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXBuildSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;configFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ConfigFile">ConfigFile</a></li><li><code>--changesFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ChangesFile">ChangesFile</a></li><li><code>--cleanupCacheHistory</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_CleanupCacheHistory">CleanupCacheHistory</a></li><li><code>--content</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Content">Content</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_CorrelationId">CorrelationId</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_EnableDebugMode">EnableDebugMode</a></li><li><code>--debugOutput</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_OutputFolderForDebugFiles">OutputFolderForDebugFiles</a></li><li><code>--disableGitFeatures</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_DisableGitFeatures">DisableGitFeatures</a></li><li><code>--dryRun</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_DryRun">DryRun</a></li><li><code>--exportRawModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ExportRawModel">ExportRawModel</a></li><li><code>--exportViewModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ExportViewModel">ExportViewModel</a></li><li><code>--falName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_FALName">FALName</a></li><li><code>--fileMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_FileMetadataFilePath">FileMetadataFilePath</a></li><li><code>--fileMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_FileMetadataFilePaths">FileMetadataFilePaths</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ForceRebuild">ForceRebuild</a></li><li><code>--forcePostProcess</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ForcePostProcess">ForcePostProcess</a></li><li><code>--globalMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_GlobalMetadata">GlobalMetadata</a></li><li><code>--globalMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_GlobalMetadataFilePath">GlobalMetadataFilePath</a></li><li><code>--globalMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_GlobalMetadataFilePaths">GlobalMetadataFilePaths</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--hostname</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Host">Host</a></li><li><code>--intermediateFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_IntermediateFolder">IntermediateFolder</a></li><li><code>--keepFileLink</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_KeepFileLink">KeepFileLink</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_LogLevel">LogLevel</a></li><li><code>--lruSize</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_LruSize">LruSize</a></li><li><code>--markdownEngineName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_MarkdownEngineName">MarkdownEngineName</a></li><li><code>--markdownEngineProperties</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_MarkdownEngineProperties">MarkdownEngineProperties</a></li><li><code>--maxParallelism</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_MaxParallelism">MaxParallelism</a></li><li><code>--noLangKeyword</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_NoLangKeyword">NoLangKeyword</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_OutputFolder">OutputFolder</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Overwrite">Overwrite</a></li><li><code>--port</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Port">Port</a></li><li><code>--postProcessors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_PostProcessors">PostProcessors</a></li><li><code>--rawModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_RawModelOutputFolder">RawModelOutputFolder</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_RepoRoot">RepoRoot</a></li><li><code>--resource</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Resource">Resource</a></li><li><code>--schemaLicense</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_SchemaLicense">SchemaLicense</a></li><li><code>--serve</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Serve">Serve</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Templates">Templates</a></li><li><code>--theme</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Themes">Themes</a></li><li><code>--viewModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ViewModelOutputFolder">ViewModelOutputFolder</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_WarningsAsErrors">WarningsAsErrors</a></li><li><code>--xref</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_XRefMaps">XRefMaps</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXBuild_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXBuild_Nuke_Common_Tools_DocFX_DocFXBuildSettings_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXBuild(Nuke.Common.Tools.DocFX.DocFXBuildSettings)">
+  DocFXBuild(DocFXBuildSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate client-only website combining API in YAML files and conceptual files.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXBuild(DocFXBuildSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html">DocFXBuildSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXBuild_Nuke_Common_Tools_DocFX_DocFXBuildSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;configFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ConfigFile">ConfigFile</a></li><li><code>--changesFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ChangesFile">ChangesFile</a></li><li><code>--cleanupCacheHistory</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_CleanupCacheHistory">CleanupCacheHistory</a></li><li><code>--content</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Content">Content</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_CorrelationId">CorrelationId</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_EnableDebugMode">EnableDebugMode</a></li><li><code>--debugOutput</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_OutputFolderForDebugFiles">OutputFolderForDebugFiles</a></li><li><code>--disableGitFeatures</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_DisableGitFeatures">DisableGitFeatures</a></li><li><code>--dryRun</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_DryRun">DryRun</a></li><li><code>--exportRawModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ExportRawModel">ExportRawModel</a></li><li><code>--exportViewModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ExportViewModel">ExportViewModel</a></li><li><code>--falName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_FALName">FALName</a></li><li><code>--fileMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_FileMetadataFilePath">FileMetadataFilePath</a></li><li><code>--fileMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_FileMetadataFilePaths">FileMetadataFilePaths</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ForceRebuild">ForceRebuild</a></li><li><code>--forcePostProcess</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ForcePostProcess">ForcePostProcess</a></li><li><code>--globalMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_GlobalMetadata">GlobalMetadata</a></li><li><code>--globalMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_GlobalMetadataFilePath">GlobalMetadataFilePath</a></li><li><code>--globalMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_GlobalMetadataFilePaths">GlobalMetadataFilePaths</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--hostname</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Host">Host</a></li><li><code>--intermediateFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_IntermediateFolder">IntermediateFolder</a></li><li><code>--keepFileLink</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_KeepFileLink">KeepFileLink</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_LogLevel">LogLevel</a></li><li><code>--lruSize</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_LruSize">LruSize</a></li><li><code>--markdownEngineName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_MarkdownEngineName">MarkdownEngineName</a></li><li><code>--markdownEngineProperties</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_MarkdownEngineProperties">MarkdownEngineProperties</a></li><li><code>--maxParallelism</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_MaxParallelism">MaxParallelism</a></li><li><code>--noLangKeyword</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_NoLangKeyword">NoLangKeyword</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_OutputFolder">OutputFolder</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Overwrite">Overwrite</a></li><li><code>--port</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Port">Port</a></li><li><code>--postProcessors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_PostProcessors">PostProcessors</a></li><li><code>--rawModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_RawModelOutputFolder">RawModelOutputFolder</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_RepoRoot">RepoRoot</a></li><li><code>--resource</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Resource">Resource</a></li><li><code>--schemaLicense</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_SchemaLicense">SchemaLicense</a></li><li><code>--serve</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Serve">Serve</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Templates">Templates</a></li><li><code>--theme</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_Themes">Themes</a></li><li><code>--viewModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_ViewModelOutputFolder">ViewModelOutputFolder</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_WarningsAsErrors">WarningsAsErrors</a></li><li><code>--xref</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXBuildSettings.html#Nuke_Common_Tools_DocFX_DocFXBuildSettings_XRefMaps">XRefMaps</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDependency_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDependency*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDependency_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXDependencySettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDependency(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.DocFX.DocFXDependencySettings},System.Int32,System.Boolean)">
+  DocFXDependency(CombinatorialConfigure&lt;DocFXDependencySettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Export dependency file.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(DocFXDependencySettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; DocFXDependency(CombinatorialConfigure&lt;DocFXDependencySettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html">DocFXDependencySettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html">DocFXDependencySettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxdependencysettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxdependencysettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDependency_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXDependencySettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;dependencyFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_DependencyFile">DependencyFile</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--intermediateFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_IntermediateFolder">IntermediateFolder</a></li><li><code>--version</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_VersionName">VersionName</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDependency_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDependency*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDependency_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXDependencySettings__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDependency(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.DocFX.DocFXDependencySettings})">
+  DocFXDependency(Configure&lt;DocFXDependencySettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Export dependency file.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXDependency(Configure&lt;DocFXDependencySettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html">DocFXDependencySettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDependency_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXDependencySettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;dependencyFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_DependencyFile">DependencyFile</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--intermediateFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_IntermediateFolder">IntermediateFolder</a></li><li><code>--version</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_VersionName">VersionName</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDependency_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDependency*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDependency_Nuke_Common_Tools_DocFX_DocFXDependencySettings_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDependency(Nuke.Common.Tools.DocFX.DocFXDependencySettings)">
+  DocFXDependency(DocFXDependencySettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Export dependency file.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXDependency(DocFXDependencySettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html">DocFXDependencySettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDependency_Nuke_Common_Tools_DocFX_DocFXDependencySettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;dependencyFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_DependencyFile">DependencyFile</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--intermediateFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_IntermediateFolder">IntermediateFolder</a></li><li><code>--version</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDependencySettings.html#Nuke_Common_Tools_DocFX_DocFXDependencySettings_VersionName">VersionName</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDownload_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDownload*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDownload_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXDownloadSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDownload(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.DocFX.DocFXDownloadSettings},System.Int32,System.Boolean)">
+  DocFXDownload(CombinatorialConfigure&lt;DocFXDownloadSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Download remote xref map file and create an xref archive in local.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(DocFXDownloadSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; DocFXDownload(CombinatorialConfigure&lt;DocFXDownloadSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html">DocFXDownloadSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html">DocFXDownloadSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxdownloadsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxdownloadsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDownload_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXDownloadSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;archiveFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html#Nuke_Common_Tools_DocFX_DocFXDownloadSettings_ArchiveFile">ArchiveFile</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html#Nuke_Common_Tools_DocFX_DocFXDownloadSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--xref</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html#Nuke_Common_Tools_DocFX_DocFXDownloadSettings_Uri">Uri</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDownload_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDownload*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDownload_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXDownloadSettings__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDownload(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.DocFX.DocFXDownloadSettings})">
+  DocFXDownload(Configure&lt;DocFXDownloadSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Download remote xref map file and create an xref archive in local.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXDownload(Configure&lt;DocFXDownloadSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html">DocFXDownloadSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDownload_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXDownloadSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;archiveFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html#Nuke_Common_Tools_DocFX_DocFXDownloadSettings_ArchiveFile">ArchiveFile</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html#Nuke_Common_Tools_DocFX_DocFXDownloadSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--xref</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html#Nuke_Common_Tools_DocFX_DocFXDownloadSettings_Uri">Uri</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDownload_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDownload*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDownload_Nuke_Common_Tools_DocFX_DocFXDownloadSettings_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXDownload(Nuke.Common.Tools.DocFX.DocFXDownloadSettings)">
+  DocFXDownload(DocFXDownloadSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Download remote xref map file and create an xref archive in local.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXDownload(DocFXDownloadSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html">DocFXDownloadSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXDownload_Nuke_Common_Tools_DocFX_DocFXDownloadSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;archiveFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html#Nuke_Common_Tools_DocFX_DocFXDownloadSettings_ArchiveFile">ArchiveFile</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html#Nuke_Common_Tools_DocFX_DocFXDownloadSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--xref</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXDownloadSettings.html#Nuke_Common_Tools_DocFX_DocFXDownloadSettings_Uri">Uri</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXHelp_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXHelp*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXHelp_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXHelpSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXHelp(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.DocFX.DocFXHelpSettings},System.Int32,System.Boolean)">
+  DocFXHelp(CombinatorialConfigure&lt;DocFXHelpSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get an overall guide for the command and sub-commands.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(DocFXHelpSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; DocFXHelp(CombinatorialConfigure&lt;DocFXHelpSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXHelpSettings.html">DocFXHelpSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXHelpSettings.html">DocFXHelpSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxhelpsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxhelpsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXHelp_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXHelpSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;command&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXHelpSettings.html#Nuke_Common_Tools_DocFX_DocFXHelpSettings_Command">Command</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXHelp_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXHelp*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXHelp_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXHelpSettings__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXHelp(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.DocFX.DocFXHelpSettings})">
+  DocFXHelp(Configure&lt;DocFXHelpSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get an overall guide for the command and sub-commands.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXHelp(Configure&lt;DocFXHelpSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXHelpSettings.html">DocFXHelpSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXHelp_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXHelpSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;command&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXHelpSettings.html#Nuke_Common_Tools_DocFX_DocFXHelpSettings_Command">Command</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXHelp_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXHelp*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXHelp_Nuke_Common_Tools_DocFX_DocFXHelpSettings_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXHelp(Nuke.Common.Tools.DocFX.DocFXHelpSettings)">
+  DocFXHelp(DocFXHelpSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get an overall guide for the command and sub-commands.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXHelp(DocFXHelpSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXHelpSettings.html">DocFXHelpSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXHelp_Nuke_Common_Tools_DocFX_DocFXHelpSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;command&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXHelpSettings.html#Nuke_Common_Tools_DocFX_DocFXHelpSettings_Command">Command</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXInit_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXInit*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXInit_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXInitSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXInit(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.DocFX.DocFXInitSettings},System.Int32,System.Boolean)">
+  DocFXInit(CombinatorialConfigure&lt;DocFXInitSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate an initial docfx.json following the instructions.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(DocFXInitSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; DocFXInit(CombinatorialConfigure&lt;DocFXInitSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html">DocFXInitSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html">DocFXInitSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxinitsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxinitsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXInit_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXInitSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--apiGlobPattern</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_ApiSourceGlobPattern">ApiSourceGlobPattern</a></li><li><code>--apiSourceFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_ApiSourceFolder">ApiSourceFolder</a></li><li><code>--file</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_OnlyConfigFile">OnlyConfigFile</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_OutputFolder">OutputFolder</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_Overwrite">Overwrite</a></li><li><code>--quiet</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_Quiet">Quiet</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXInit_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXInit*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXInit_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXInitSettings__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXInit(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.DocFX.DocFXInitSettings})">
+  DocFXInit(Configure&lt;DocFXInitSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate an initial docfx.json following the instructions.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXInit(Configure&lt;DocFXInitSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html">DocFXInitSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXInit_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXInitSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--apiGlobPattern</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_ApiSourceGlobPattern">ApiSourceGlobPattern</a></li><li><code>--apiSourceFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_ApiSourceFolder">ApiSourceFolder</a></li><li><code>--file</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_OnlyConfigFile">OnlyConfigFile</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_OutputFolder">OutputFolder</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_Overwrite">Overwrite</a></li><li><code>--quiet</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_Quiet">Quiet</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXInit_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXInit*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXInit_Nuke_Common_Tools_DocFX_DocFXInitSettings_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXInit(Nuke.Common.Tools.DocFX.DocFXInitSettings)">
+  DocFXInit(DocFXInitSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate an initial docfx.json following the instructions.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXInit(DocFXInitSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html">DocFXInitSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXInit_Nuke_Common_Tools_DocFX_DocFXInitSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--apiGlobPattern</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_ApiSourceGlobPattern">ApiSourceGlobPattern</a></li><li><code>--apiSourceFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_ApiSourceFolder">ApiSourceFolder</a></li><li><code>--file</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_OnlyConfigFile">OnlyConfigFile</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_OutputFolder">OutputFolder</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_Overwrite">Overwrite</a></li><li><code>--quiet</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXInitSettings.html#Nuke_Common_Tools_DocFX_DocFXInitSettings_Quiet">Quiet</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMerge_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMerge*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMerge_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXMergeSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMerge(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.DocFX.DocFXMergeSettings},System.Int32,System.Boolean)">
+  DocFXMerge(CombinatorialConfigure&lt;DocFXMergeSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Merge .net base API in YAML files and toc files.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(DocFXMergeSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; DocFXMerge(CombinatorialConfigure&lt;DocFXMergeSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html">DocFXMergeSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html">DocFXMergeSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxmergesettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxmergesettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMerge_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXMergeSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;configFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_ConfigFile">ConfigFile</a></li><li><code>--content</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_Content">Content</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_CorrelationId">CorrelationId</a></li><li><code>--fileMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_FileMetadataFilePath">FileMetadataFilePath</a></li><li><code>--globalMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_GlobalMetadata">GlobalMetadata</a></li><li><code>--globalMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_GlobalMetadataFilePath">GlobalMetadataFilePath</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_LogLevel">LogLevel</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_RepoRoot">RepoRoot</a></li><li><code>--tocMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_TocMetadata">TocMetadata</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_WarningsAsErrors">WarningsAsErrors</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMerge_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMerge*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMerge_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXMergeSettings__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMerge(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.DocFX.DocFXMergeSettings})">
+  DocFXMerge(Configure&lt;DocFXMergeSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Merge .net base API in YAML files and toc files.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXMerge(Configure&lt;DocFXMergeSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html">DocFXMergeSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMerge_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXMergeSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;configFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_ConfigFile">ConfigFile</a></li><li><code>--content</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_Content">Content</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_CorrelationId">CorrelationId</a></li><li><code>--fileMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_FileMetadataFilePath">FileMetadataFilePath</a></li><li><code>--globalMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_GlobalMetadata">GlobalMetadata</a></li><li><code>--globalMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_GlobalMetadataFilePath">GlobalMetadataFilePath</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_LogLevel">LogLevel</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_RepoRoot">RepoRoot</a></li><li><code>--tocMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_TocMetadata">TocMetadata</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_WarningsAsErrors">WarningsAsErrors</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMerge_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMerge*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMerge_Nuke_Common_Tools_DocFX_DocFXMergeSettings_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMerge(Nuke.Common.Tools.DocFX.DocFXMergeSettings)">
+  DocFXMerge(DocFXMergeSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Merge .net base API in YAML files and toc files.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXMerge(DocFXMergeSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html">DocFXMergeSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMerge_Nuke_Common_Tools_DocFX_DocFXMergeSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;configFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_ConfigFile">ConfigFile</a></li><li><code>--content</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_Content">Content</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_CorrelationId">CorrelationId</a></li><li><code>--fileMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_FileMetadataFilePath">FileMetadataFilePath</a></li><li><code>--globalMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_GlobalMetadata">GlobalMetadata</a></li><li><code>--globalMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_GlobalMetadataFilePath">GlobalMetadataFilePath</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_LogLevel">LogLevel</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_RepoRoot">RepoRoot</a></li><li><code>--tocMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_TocMetadata">TocMetadata</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMergeSettings.html#Nuke_Common_Tools_DocFX_DocFXMergeSettings_WarningsAsErrors">WarningsAsErrors</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMetadata_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMetadata*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMetadata_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXMetadataSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMetadata(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.DocFX.DocFXMetadataSettings},System.Int32,System.Boolean)">
+  DocFXMetadata(CombinatorialConfigure&lt;DocFXMetadataSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate YAML files from source code.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(DocFXMetadataSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; DocFXMetadata(CombinatorialConfigure&lt;DocFXMetadataSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html">DocFXMetadataSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html">DocFXMetadataSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxmetadatasettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxmetadatasettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMetadata_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXMetadataSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;projects&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_Projects">Projects</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_CorrelationId">CorrelationId</a></li><li><code>--disableDefaultFilter</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_DisableDefaultFilter">DisableDefaultFilter</a></li><li><code>--disableGitFeatures</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_DisableGitFeatures">DisableGitFeatures</a></li><li><code>--filter</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_FilterConfigFile">FilterConfigFile</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_ForceRebuild">ForceRebuild</a></li><li><code>--globalNamespaceId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_GlobalNamespaceId">GlobalNamespaceId</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_LogLevel">LogLevel</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_OutputFolder">OutputFolder</a></li><li><code>--property</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_MSBuildProperties">MSBuildProperties</a></li><li><code>--raw</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_PreserveRawInlineComments">PreserveRawInlineComments</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_RepoRoot">RepoRoot</a></li><li><code>--shouldSkipMarkup</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_ShouldSkipMarkup">ShouldSkipMarkup</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_WarningsAsErrors">WarningsAsErrors</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMetadata_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMetadata*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMetadata_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXMetadataSettings__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMetadata(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.DocFX.DocFXMetadataSettings})">
+  DocFXMetadata(Configure&lt;DocFXMetadataSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate YAML files from source code.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXMetadata(Configure&lt;DocFXMetadataSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html">DocFXMetadataSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMetadata_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXMetadataSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;projects&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_Projects">Projects</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_CorrelationId">CorrelationId</a></li><li><code>--disableDefaultFilter</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_DisableDefaultFilter">DisableDefaultFilter</a></li><li><code>--disableGitFeatures</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_DisableGitFeatures">DisableGitFeatures</a></li><li><code>--filter</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_FilterConfigFile">FilterConfigFile</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_ForceRebuild">ForceRebuild</a></li><li><code>--globalNamespaceId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_GlobalNamespaceId">GlobalNamespaceId</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_LogLevel">LogLevel</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_OutputFolder">OutputFolder</a></li><li><code>--property</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_MSBuildProperties">MSBuildProperties</a></li><li><code>--raw</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_PreserveRawInlineComments">PreserveRawInlineComments</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_RepoRoot">RepoRoot</a></li><li><code>--shouldSkipMarkup</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_ShouldSkipMarkup">ShouldSkipMarkup</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_WarningsAsErrors">WarningsAsErrors</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMetadata_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMetadata*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMetadata_Nuke_Common_Tools_DocFX_DocFXMetadataSettings_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXMetadata(Nuke.Common.Tools.DocFX.DocFXMetadataSettings)">
+  DocFXMetadata(DocFXMetadataSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate YAML files from source code.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXMetadata(DocFXMetadataSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html">DocFXMetadataSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXMetadata_Nuke_Common_Tools_DocFX_DocFXMetadataSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;projects&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_Projects">Projects</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_CorrelationId">CorrelationId</a></li><li><code>--disableDefaultFilter</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_DisableDefaultFilter">DisableDefaultFilter</a></li><li><code>--disableGitFeatures</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_DisableGitFeatures">DisableGitFeatures</a></li><li><code>--filter</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_FilterConfigFile">FilterConfigFile</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_ForceRebuild">ForceRebuild</a></li><li><code>--globalNamespaceId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_GlobalNamespaceId">GlobalNamespaceId</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_LogLevel">LogLevel</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_OutputFolder">OutputFolder</a></li><li><code>--property</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_MSBuildProperties">MSBuildProperties</a></li><li><code>--raw</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_PreserveRawInlineComments">PreserveRawInlineComments</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_RepoRoot">RepoRoot</a></li><li><code>--shouldSkipMarkup</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_ShouldSkipMarkup">ShouldSkipMarkup</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXMetadataSettings.html#Nuke_Common_Tools_DocFX_DocFXMetadataSettings_WarningsAsErrors">WarningsAsErrors</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPdf_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXPdf*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPdf_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXPdfSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXPdf(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.DocFX.DocFXPdfSettings},System.Int32,System.Boolean)">
+  DocFXPdf(CombinatorialConfigure&lt;DocFXPdfSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate pdf file.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(DocFXPdfSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; DocFXPdf(CombinatorialConfigure&lt;DocFXPdfSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html">DocFXPdfSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html">DocFXPdfSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxpdfsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxpdfsettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPdf_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXPdfSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;configFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ConfigFile">ConfigFile</a></li><li><code>--basePath</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_BasePath">BasePath</a></li><li><code>--changesFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ChangesFile">ChangesFile</a></li><li><code>--cleanupCacheHistory</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_CleanupCacheHistory">CleanupCacheHistory</a></li><li><code>--content</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Content">Content</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_CorrelationId">CorrelationId</a></li><li><code>--css</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_CssFilePath">CssFilePath</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_EnableDebugMode">EnableDebugMode</a></li><li><code>--debugOutput</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_OutputFolderForDebugFiles">OutputFolderForDebugFiles</a></li><li><code>--disableGitFeatures</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_DisableGitFeatures">DisableGitFeatures</a></li><li><code>--dryRun</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_DryRun">DryRun</a></li><li><code>--errorHandling</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LoadErrorHandling">LoadErrorHandling</a></li><li><code>--excludedTocs</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ExcludedTocs">ExcludedTocs</a></li><li><code>--exportRawModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ExportRawModel">ExportRawModel</a></li><li><code>--exportViewModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ExportViewModel">ExportViewModel</a></li><li><code>--falName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_FALName">FALName</a></li><li><code>--fileMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_FileMetadataFilePath">FileMetadataFilePath</a></li><li><code>--fileMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_FileMetadataFilePaths">FileMetadataFilePaths</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ForceRebuild">ForceRebuild</a></li><li><code>--forcePostProcess</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ForcePostProcess">ForcePostProcess</a></li><li><code>--generatesAppendices</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GeneratesAppendices">GeneratesAppendices</a></li><li><code>--generatesExternalLink</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GeneratesExternalLink">GeneratesExternalLink</a></li><li><code>--globalMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GlobalMetadata">GlobalMetadata</a></li><li><code>--globalMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GlobalMetadataFilePath">GlobalMetadataFilePath</a></li><li><code>--globalMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GlobalMetadataFilePaths">GlobalMetadataFilePaths</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--host</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_PdfHost">PdfHost</a></li><li><code>--hostname</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Host">Host</a></li><li><code>--intermediateFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_IntermediateFolder">IntermediateFolder</a></li><li><code>--keepFileLink</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_KeepFileLink">KeepFileLink</a></li><li><code>--keepRawFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_KeepRawFiles">KeepRawFiles</a></li><li><code>--locale</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Locale">Locale</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LogLevel">LogLevel</a></li><li><code>--lruSize</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LruSize">LruSize</a></li><li><code>--markdownEngineName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_MarkdownEngineName">MarkdownEngineName</a></li><li><code>--markdownEngineProperties</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_MarkdownEngineProperties">MarkdownEngineProperties</a></li><li><code>--maxParallelism</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_MaxParallelism">MaxParallelism</a></li><li><code>--name</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Name">Name</a></li><li><code>--noLangKeyword</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_NoLangKeyword">NoLangKeyword</a></li><li><code>--noStdin</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_NoInputStreamArgs">NoInputStreamArgs</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_OutputFolder">OutputFolder</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Overwrite">Overwrite</a></li><li><code>--port</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Port">Port</a></li><li><code>--postProcessors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_PostProcessors">PostProcessors</a></li><li><code>--rawModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_RawModelOutputFolder">RawModelOutputFolder</a></li><li><code>--rawOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_RawOutputFolder">RawOutputFolder</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_RepoRoot">RepoRoot</a></li><li><code>--resource</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Resource">Resource</a></li><li><code>--schemaLicense</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_SchemaLicense">SchemaLicense</a></li><li><code>--serve</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Serve">Serve</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Templates">Templates</a></li><li><code>--theme</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Themes">Themes</a></li><li><code>--viewModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ViewModelOutputFolder">ViewModelOutputFolder</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_WarningsAsErrors">WarningsAsErrors</a></li><li><code>--xref</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_XRefMaps">XRefMaps</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPdf_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXPdf*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPdf_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXPdfSettings__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXPdf(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.DocFX.DocFXPdfSettings})">
+  DocFXPdf(Configure&lt;DocFXPdfSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate pdf file.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXPdf(Configure&lt;DocFXPdfSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html">DocFXPdfSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPdf_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXPdfSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;configFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ConfigFile">ConfigFile</a></li><li><code>--basePath</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_BasePath">BasePath</a></li><li><code>--changesFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ChangesFile">ChangesFile</a></li><li><code>--cleanupCacheHistory</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_CleanupCacheHistory">CleanupCacheHistory</a></li><li><code>--content</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Content">Content</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_CorrelationId">CorrelationId</a></li><li><code>--css</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_CssFilePath">CssFilePath</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_EnableDebugMode">EnableDebugMode</a></li><li><code>--debugOutput</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_OutputFolderForDebugFiles">OutputFolderForDebugFiles</a></li><li><code>--disableGitFeatures</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_DisableGitFeatures">DisableGitFeatures</a></li><li><code>--dryRun</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_DryRun">DryRun</a></li><li><code>--errorHandling</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LoadErrorHandling">LoadErrorHandling</a></li><li><code>--excludedTocs</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ExcludedTocs">ExcludedTocs</a></li><li><code>--exportRawModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ExportRawModel">ExportRawModel</a></li><li><code>--exportViewModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ExportViewModel">ExportViewModel</a></li><li><code>--falName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_FALName">FALName</a></li><li><code>--fileMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_FileMetadataFilePath">FileMetadataFilePath</a></li><li><code>--fileMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_FileMetadataFilePaths">FileMetadataFilePaths</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ForceRebuild">ForceRebuild</a></li><li><code>--forcePostProcess</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ForcePostProcess">ForcePostProcess</a></li><li><code>--generatesAppendices</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GeneratesAppendices">GeneratesAppendices</a></li><li><code>--generatesExternalLink</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GeneratesExternalLink">GeneratesExternalLink</a></li><li><code>--globalMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GlobalMetadata">GlobalMetadata</a></li><li><code>--globalMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GlobalMetadataFilePath">GlobalMetadataFilePath</a></li><li><code>--globalMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GlobalMetadataFilePaths">GlobalMetadataFilePaths</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--host</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_PdfHost">PdfHost</a></li><li><code>--hostname</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Host">Host</a></li><li><code>--intermediateFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_IntermediateFolder">IntermediateFolder</a></li><li><code>--keepFileLink</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_KeepFileLink">KeepFileLink</a></li><li><code>--keepRawFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_KeepRawFiles">KeepRawFiles</a></li><li><code>--locale</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Locale">Locale</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LogLevel">LogLevel</a></li><li><code>--lruSize</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LruSize">LruSize</a></li><li><code>--markdownEngineName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_MarkdownEngineName">MarkdownEngineName</a></li><li><code>--markdownEngineProperties</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_MarkdownEngineProperties">MarkdownEngineProperties</a></li><li><code>--maxParallelism</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_MaxParallelism">MaxParallelism</a></li><li><code>--name</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Name">Name</a></li><li><code>--noLangKeyword</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_NoLangKeyword">NoLangKeyword</a></li><li><code>--noStdin</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_NoInputStreamArgs">NoInputStreamArgs</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_OutputFolder">OutputFolder</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Overwrite">Overwrite</a></li><li><code>--port</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Port">Port</a></li><li><code>--postProcessors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_PostProcessors">PostProcessors</a></li><li><code>--rawModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_RawModelOutputFolder">RawModelOutputFolder</a></li><li><code>--rawOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_RawOutputFolder">RawOutputFolder</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_RepoRoot">RepoRoot</a></li><li><code>--resource</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Resource">Resource</a></li><li><code>--schemaLicense</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_SchemaLicense">SchemaLicense</a></li><li><code>--serve</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Serve">Serve</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Templates">Templates</a></li><li><code>--theme</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Themes">Themes</a></li><li><code>--viewModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ViewModelOutputFolder">ViewModelOutputFolder</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_WarningsAsErrors">WarningsAsErrors</a></li><li><code>--xref</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_XRefMaps">XRefMaps</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPdf_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXPdf*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPdf_Nuke_Common_Tools_DocFX_DocFXPdfSettings_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXPdf(Nuke.Common.Tools.DocFX.DocFXPdfSettings)">
+  DocFXPdf(DocFXPdfSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generate pdf file.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXPdf(DocFXPdfSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html">DocFXPdfSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXPdf_Nuke_Common_Tools_DocFX_DocFXPdfSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;configFile&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ConfigFile">ConfigFile</a></li><li><code>--basePath</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_BasePath">BasePath</a></li><li><code>--changesFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ChangesFile">ChangesFile</a></li><li><code>--cleanupCacheHistory</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_CleanupCacheHistory">CleanupCacheHistory</a></li><li><code>--content</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Content">Content</a></li><li><code>--correlationId</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_CorrelationId">CorrelationId</a></li><li><code>--css</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_CssFilePath">CssFilePath</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_EnableDebugMode">EnableDebugMode</a></li><li><code>--debugOutput</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_OutputFolderForDebugFiles">OutputFolderForDebugFiles</a></li><li><code>--disableGitFeatures</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_DisableGitFeatures">DisableGitFeatures</a></li><li><code>--dryRun</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_DryRun">DryRun</a></li><li><code>--errorHandling</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LoadErrorHandling">LoadErrorHandling</a></li><li><code>--excludedTocs</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ExcludedTocs">ExcludedTocs</a></li><li><code>--exportRawModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ExportRawModel">ExportRawModel</a></li><li><code>--exportViewModel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ExportViewModel">ExportViewModel</a></li><li><code>--falName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_FALName">FALName</a></li><li><code>--fileMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_FileMetadataFilePath">FileMetadataFilePath</a></li><li><code>--fileMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_FileMetadataFilePaths">FileMetadataFilePaths</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ForceRebuild">ForceRebuild</a></li><li><code>--forcePostProcess</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ForcePostProcess">ForcePostProcess</a></li><li><code>--generatesAppendices</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GeneratesAppendices">GeneratesAppendices</a></li><li><code>--generatesExternalLink</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GeneratesExternalLink">GeneratesExternalLink</a></li><li><code>--globalMetadata</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GlobalMetadata">GlobalMetadata</a></li><li><code>--globalMetadataFile</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GlobalMetadataFilePath">GlobalMetadataFilePath</a></li><li><code>--globalMetadataFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_GlobalMetadataFilePaths">GlobalMetadataFilePaths</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--host</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_PdfHost">PdfHost</a></li><li><code>--hostname</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Host">Host</a></li><li><code>--intermediateFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_IntermediateFolder">IntermediateFolder</a></li><li><code>--keepFileLink</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_KeepFileLink">KeepFileLink</a></li><li><code>--keepRawFiles</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_KeepRawFiles">KeepRawFiles</a></li><li><code>--locale</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Locale">Locale</a></li><li><code>--log</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LogFilePath">LogFilePath</a></li><li><code>--logLevel</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LogLevel">LogLevel</a></li><li><code>--lruSize</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_LruSize">LruSize</a></li><li><code>--markdownEngineName</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_MarkdownEngineName">MarkdownEngineName</a></li><li><code>--markdownEngineProperties</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_MarkdownEngineProperties">MarkdownEngineProperties</a></li><li><code>--maxParallelism</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_MaxParallelism">MaxParallelism</a></li><li><code>--name</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Name">Name</a></li><li><code>--noLangKeyword</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_NoLangKeyword">NoLangKeyword</a></li><li><code>--noStdin</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_NoInputStreamArgs">NoInputStreamArgs</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_OutputFolder">OutputFolder</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Overwrite">Overwrite</a></li><li><code>--port</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Port">Port</a></li><li><code>--postProcessors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_PostProcessors">PostProcessors</a></li><li><code>--rawModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_RawModelOutputFolder">RawModelOutputFolder</a></li><li><code>--rawOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_RawOutputFolder">RawOutputFolder</a></li><li><code>--repositoryRoot</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_RepoRoot">RepoRoot</a></li><li><code>--resource</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Resource">Resource</a></li><li><code>--schemaLicense</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_SchemaLicense">SchemaLicense</a></li><li><code>--serve</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Serve">Serve</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Templates">Templates</a></li><li><code>--theme</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_Themes">Themes</a></li><li><code>--viewModelOutputFolder</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_ViewModelOutputFolder">ViewModelOutputFolder</a></li><li><code>--warningsAsErrors</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_WarningsAsErrors">WarningsAsErrors</a></li><li><code>--xref</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXPdfSettings.html#Nuke_Common_Tools_DocFX_DocFXPdfSettings_XRefMaps">XRefMaps</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXServe_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXServe*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXServe_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXServeSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXServe(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.DocFX.DocFXServeSettings},System.Int32,System.Boolean)">
+  DocFXServe(CombinatorialConfigure&lt;DocFXServeSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L97"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Host a local static website.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(DocFXServeSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; DocFXServe(CombinatorialConfigure&lt;DocFXServeSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html">DocFXServeSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html">DocFXServeSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxservesettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxservesettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXServe_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXServeSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;folder&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_Folder">Folder</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--hostname</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_Host">Host</a></li><li><code>--port</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_Port">Port</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXServe_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXServe*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXServe_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXServeSettings__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXServe(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.DocFX.DocFXServeSettings})">
+  DocFXServe(Configure&lt;DocFXServeSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Host a local static website.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXServe(Configure&lt;DocFXServeSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html">DocFXServeSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXServe_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXServeSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;folder&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_Folder">Folder</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--hostname</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_Host">Host</a></li><li><code>--port</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_Port">Port</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXServe_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXServe*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXServe_Nuke_Common_Tools_DocFX_DocFXServeSettings_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXServe(Nuke.Common.Tools.DocFX.DocFXServeSettings)">
+  DocFXServe(DocFXServeSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Host a local static website.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXServe(DocFXServeSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html">DocFXServeSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXServe_Nuke_Common_Tools_DocFX_DocFXServeSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;folder&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_Folder">Folder</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--hostname</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_Host">Host</a></li><li><code>--port</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXServeSettings.html#Nuke_Common_Tools_DocFX_DocFXServeSettings_Port">Port</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXTemplate_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXTemplate_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXTemplateSettings__System_Int32_System_Boolean_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXTemplate(Nuke.Common.Tooling.CombinatorialConfigure{Nuke.Common.Tools.DocFX.DocFXTemplateSettings},System.Int32,System.Boolean)">
+  DocFXTemplate(CombinatorialConfigure&lt;DocFXTemplateSettings&gt;, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List or export existing template.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;(DocFXTemplateSettings Settings, IReadOnlyCollection&lt;Output&gt; Output)&gt; DocFXTemplate(CombinatorialConfigure&lt;DocFXTemplateSettings&gt; configurator, int degreeOfParallelism = 1, bool completeOnFailure = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.CombinatorialConfigure-1.html">CombinatorialConfigure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html">DocFXTemplateSettings</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>degreeOfParallelism</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>completeOnFailure</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html">DocFXTemplateSettings</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxtemplatesettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.settings">Settings</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt; <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-nuke.common.tools.docfx.docfxtemplatesettings,system.collections.generic.ireadonlycollection-nuke.common.tooling.output--.output">Output</a>)&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXTemplate_Nuke_Common_Tooling_CombinatorialConfigure_Nuke_Common_Tools_DocFX_DocFXTemplateSettings__System_Int32_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;command&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_Command">Command</a></li><li><code>--all</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_All">All</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_OutputFolder">OutputFolder</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXTemplate_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXTemplate_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXTemplateSettings__" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXTemplate(Nuke.Common.Tooling.Configure{Nuke.Common.Tools.DocFX.DocFXTemplateSettings})">
+  DocFXTemplate(Configure&lt;DocFXTemplateSettings&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List or export existing template.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXTemplate(Configure&lt;DocFXTemplateSettings&gt; configurator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configurator</code> <a class="xref" href="Nuke.Common.Tooling.Configure-1.html">Configure</a>&lt;<a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html">DocFXTemplateSettings</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXTemplate_Nuke_Common_Tooling_Configure_Nuke_Common_Tools_DocFX_DocFXTemplateSettings___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;command&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_Command">Command</a></li><li><code>--all</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_All">All</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_OutputFolder">OutputFolder</a></li></ul>
+</div>
+
+
+
+
+  <a id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXTemplate_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXTemplate*"></a>
+
+  <h3 id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXTemplate_Nuke_Common_Tools_DocFX_DocFXTemplateSettings_" data-uid="Nuke.Common.Tools.DocFX.DocFXTasks.DocFXTemplate(Nuke.Common.Tools.DocFX.DocFXTemplateSettings)">
+  DocFXTemplate(DocFXTemplateSettings)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFX.Generated.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List or export existing template.</p><p>For more details, visit the <a href="https://dotnet.github.io/docfx/">official website</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IReadOnlyCollection&lt;Output&gt; DocFXTemplate(DocFXTemplateSettings options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html">DocFXTemplateSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlycollection-1">IReadOnlyCollection</a>&lt;<a class="xref" href="Nuke.Common.Tooling.Output.html">Output</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_Tools_DocFX_DocFXTasks_DocFXTemplate_Nuke_Common_Tools_DocFX_DocFXTemplateSettings__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;command&gt;</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_Command">Command</a></li><li><code>--all</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_All">All</a></li><li><code>--help</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_PrintHelpMessage">PrintHelpMessage</a></li><li><code>--output</code> via <a class="xref" href="Nuke.Common.Tools.DocFX.DocFXTemplateSettings.html#Nuke_Common_Tools_DocFX_DocFXTemplateSettings_OutputFolder">OutputFolder</a></li></ul>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DocFX/DocFXTasks.cs/#L10" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

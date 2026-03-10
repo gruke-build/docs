@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PaketPackSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PaketPackSettings | gruke ">
+      
+      <meta name="description" content="Paket is a dependency manager for .NET and mono projects, which is designed to work well with NuGet packages and also enables referencing files directly from Git repositories or any HTTP resource. It enables precise and predictable control over what packages the projects within your application reference.If you want to learn how to use Paket then read the Getting started tutorial and take a look at the FAQs.If you are already using NuGet for package management in your solution then you can learn about the upgrade process in the convert from NuGet section.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Paket_PaketPackSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Paket.PaketPackSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Paket.PaketPackSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_Paket_PaketPackSettings" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings" class="text-break">
+Class PaketPackSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L169"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Paket.html">Paket</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Paket is a dependency manager for .NET and mono projects, which is designed to work well with <a href="https://www.nuget.org/">NuGet</a> packages and also enables referencing files directly from <a href="https://fsprojects.github.io/Paket/git-dependencies.html">Git repositories</a> or any <a href="https://fsprojects.github.io/Paket/http-dependencies.html">HTTP resource</a>. It enables precise and predictable control over what packages the projects within your application reference.</p><p>If you want to learn how to use Paket then read the <a href="https://fsprojects.github.io/Paket/getting-started.html"><em>Getting started</em> tutorial</a> and take a look at the <a href="https://fsprojects.github.io/Paket/faq.html">FAQs</a>.</p><p>If you are already using NuGet for package management in your solution then you can learn about the upgrade process in the <a href="https://fsprojects.github.io/Paket/getting-started.html#Automatic-NuGet-conversion">convert from NuGet</a> section.</p><p>For more details, visit the <a href="https://fsprojects.github.io/paket">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class PaketPackSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">PaketPackSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_AddExclude__1___0_System_Collections_Generic_IEnumerable_System_String__">PaketPackSettingsExtensions.AddExclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_AddExclude__1___0_System_String___">PaketPackSettingsExtensions.AddExclude&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_AddSpecificVersion__1___0_System_String_System_String_">PaketPackSettingsExtensions.AddSpecificVersion&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ClearExclude__1___0_">PaketPackSettingsExtensions.ClearExclude&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ClearSpecificVersions__1___0_">PaketPackSettingsExtensions.ClearSpecificVersions&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableFromBootstrapper__1___0_">PaketPackSettingsExtensions.DisableFromBootstrapper&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableIncludeReferencedProjects__1___0_">PaketPackSettingsExtensions.DisableIncludeReferencedProjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableLockDependencies__1___0_">PaketPackSettingsExtensions.DisableLockDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableMinimumFromLockFile__1___0_">PaketPackSettingsExtensions.DisableMinimumFromLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisablePinProjectReferences__1___0_">PaketPackSettingsExtensions.DisablePinProjectReferences&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableSilent__1___0_">PaketPackSettingsExtensions.DisableSilent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableSymbols__1___0_">PaketPackSettingsExtensions.DisableSymbols&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_DisableVerbose__1___0_">PaketPackSettingsExtensions.DisableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableFromBootstrapper__1___0_">PaketPackSettingsExtensions.EnableFromBootstrapper&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableIncludeReferencedProjects__1___0_">PaketPackSettingsExtensions.EnableIncludeReferencedProjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableLockDependencies__1___0_">PaketPackSettingsExtensions.EnableLockDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableMinimumFromLockFile__1___0_">PaketPackSettingsExtensions.EnableMinimumFromLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnablePinProjectReferences__1___0_">PaketPackSettingsExtensions.EnablePinProjectReferences&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableSilent__1___0_">PaketPackSettingsExtensions.EnableSilent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableSymbols__1___0_">PaketPackSettingsExtensions.EnableSymbols&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_EnableVerbose__1___0_">PaketPackSettingsExtensions.EnableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_RemoveExclude__1___0_System_Collections_Generic_IEnumerable_System_String__">PaketPackSettingsExtensions.RemoveExclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_RemoveExclude__1___0_System_String___">PaketPackSettingsExtensions.RemoveExclude&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_RemoveSpecificVersion__1___0_System_String_">PaketPackSettingsExtensions.RemoveSpecificVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetBuildConfiguration__1___0_">PaketPackSettingsExtensions.ResetBuildConfiguration&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetBuildPlatform__1___0_">PaketPackSettingsExtensions.ResetBuildPlatform&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetFromBootstrapper__1___0_">PaketPackSettingsExtensions.ResetFromBootstrapper&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetIncludeReferencedProjects__1___0_">PaketPackSettingsExtensions.ResetIncludeReferencedProjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetLockDependencies__1___0_">PaketPackSettingsExtensions.ResetLockDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetLogFile__1___0_">PaketPackSettingsExtensions.ResetLogFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetMinimumFromLockFile__1___0_">PaketPackSettingsExtensions.ResetMinimumFromLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetOutputDirectory__1___0_">PaketPackSettingsExtensions.ResetOutputDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetPackageVersion__1___0_">PaketPackSettingsExtensions.ResetPackageVersion&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetPinProjectReferences__1___0_">PaketPackSettingsExtensions.ResetPinProjectReferences&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetProjectUrl__1___0_">PaketPackSettingsExtensions.ResetProjectUrl&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetReleaseNotes__1___0_">PaketPackSettingsExtensions.ResetReleaseNotes&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetSilent__1___0_">PaketPackSettingsExtensions.ResetSilent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetSymbols__1___0_">PaketPackSettingsExtensions.ResetSymbols&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetTemplateFile__1___0_">PaketPackSettingsExtensions.ResetTemplateFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ResetVerbose__1___0_">PaketPackSettingsExtensions.ResetVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetBuildConfiguration__1___0_System_String_">PaketPackSettingsExtensions.SetBuildConfiguration&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetBuildPlatform__1___0_System_String_">PaketPackSettingsExtensions.SetBuildPlatform&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetExclude__1___0_System_Collections_Generic_IEnumerable_System_String__">PaketPackSettingsExtensions.SetExclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetExclude__1___0_System_String___">PaketPackSettingsExtensions.SetExclude&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetFromBootstrapper__1___0_System_Nullable_System_Boolean__">PaketPackSettingsExtensions.SetFromBootstrapper&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetIncludeReferencedProjects__1___0_System_Nullable_System_Boolean__">PaketPackSettingsExtensions.SetIncludeReferencedProjects&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetLockDependencies__1___0_System_Nullable_System_Boolean__">PaketPackSettingsExtensions.SetLockDependencies&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetLogFile__1___0_System_String_">PaketPackSettingsExtensions.SetLogFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetMinimumFromLockFile__1___0_System_Nullable_System_Boolean__">PaketPackSettingsExtensions.SetMinimumFromLockFile&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetOutputDirectory__1___0_System_String_">PaketPackSettingsExtensions.SetOutputDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetPackageVersion__1___0_System_String_">PaketPackSettingsExtensions.SetPackageVersion&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetPinProjectReferences__1___0_System_Nullable_System_Boolean__">PaketPackSettingsExtensions.SetPinProjectReferences&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetProjectUrl__1___0_System_String_">PaketPackSettingsExtensions.SetProjectUrl&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetReleaseNotes__1___0_System_String_">PaketPackSettingsExtensions.SetReleaseNotes&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSilent__1___0_System_Nullable_System_Boolean__">PaketPackSettingsExtensions.SetSilent&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSpecificVersion__1___0_System_String_System_String_">PaketPackSettingsExtensions.SetSpecificVersion&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSpecificVersions__1___0_System_Collections_Generic_IDictionary_System_String_System_String__">PaketPackSettingsExtensions.SetSpecificVersions&lt;T&gt;(T, IDictionary&lt;string, string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetSymbols__1___0_System_Nullable_System_Boolean__">PaketPackSettingsExtensions.SetSymbols&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetTemplateFile__1___0_System_String_">PaketPackSettingsExtensions.SetTemplateFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__">PaketPackSettingsExtensions.SetVerbose&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleFromBootstrapper__1___0_">PaketPackSettingsExtensions.ToggleFromBootstrapper&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleIncludeReferencedProjects__1___0_">PaketPackSettingsExtensions.ToggleIncludeReferencedProjects&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleLockDependencies__1___0_">PaketPackSettingsExtensions.ToggleLockDependencies&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleMinimumFromLockFile__1___0_">PaketPackSettingsExtensions.ToggleMinimumFromLockFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_TogglePinProjectReferences__1___0_">PaketPackSettingsExtensions.TogglePinProjectReferences&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleSilent__1___0_">PaketPackSettingsExtensions.ToggleSilent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleSymbols__1___0_">PaketPackSettingsExtensions.ToggleSymbols&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketPackSettingsExtensions_ToggleVerbose__1___0_">PaketPackSettingsExtensions.ToggleVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_Paket_PaketPackSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;outputDirectory&gt;</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_OutputDirectory">OutputDirectory</a></li><li><code>--build-config</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_BuildConfiguration">BuildConfiguration</a></li><li><code>--build-platform</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_BuildPlatform">BuildPlatform</a></li><li><code>--exclude</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_Exclude">Exclude</a></li><li><code>--from-bootstrapper</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_FromBootstrapper">FromBootstrapper</a></li><li><code>--include-referenced-projects</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_IncludeReferencedProjects">IncludeReferencedProjects</a></li><li><code>--lock-dependencies</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_LockDependencies">LockDependencies</a></li><li><code>--log-file</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_LogFile">LogFile</a></li><li><code>--minimum-from-lock-file</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_MinimumFromLockFile">MinimumFromLockFile</a></li><li><code>--pin-project-references</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_PinProjectReferences">PinProjectReferences</a></li><li><code>--project-url</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_ProjectUrl">ProjectUrl</a></li><li><code>--release-notes</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_ReleaseNotes">ReleaseNotes</a></li><li><code>--silent</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_Silent">Silent</a></li><li><code>--specific-version</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_SpecificVersions">SpecificVersions</a></li><li><code>--symbols</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_Symbols">Symbols</a></li><li><code>--template</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_TemplateFile">TemplateFile</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_Verbose">Verbose</a></li><li><code>--version</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketPackSettings.html#Nuke_Common_Tools_Paket_PaketPackSettings_PackageVersion">PackageVersion</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_BuildConfiguration_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.BuildConfiguration*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_BuildConfiguration" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.BuildConfiguration">
+  BuildConfiguration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build configuration that should be packaged. Default is <em>Release</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BuildConfiguration { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_BuildPlatform_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.BuildPlatform*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_BuildPlatform" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.BuildPlatform">
+  BuildPlatform
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build platform that should be packaged. Default is <em>check all known platform targets</em>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BuildPlatform { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_Exclude_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.Exclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_Exclude" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.Exclude">
+  Exclude
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Exclude paket.template file by package ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Exclude { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_FromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.FromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_FromBootstrapper" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.FromBootstrapper">
+  FromBootstrapper
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? FromBootstrapper { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_IncludeReferencedProjects_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.IncludeReferencedProjects*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_IncludeReferencedProjects" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.IncludeReferencedProjects">
+  IncludeReferencedProjects
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L199"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Include symbol/source from referenced projects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IncludeReferencedProjects { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_LockDependencies_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.LockDependencies*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_LockDependencies" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.LockDependencies">
+  LockDependencies
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? LockDependencies { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_LogFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.LogFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_LogFile" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.LogFile">
+  LogFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print output to a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LogFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_MinimumFromLockFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.MinimumFromLockFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_MinimumFromLockFile" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.MinimumFromLockFile">
+  MinimumFromLockFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L193"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use version requirements from paket.lock instead of paket.dependencies, and add them as a minimum version. <code>--lock-dependencies</code> will over-ride this option.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? MinimumFromLockFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_OutputDirectory_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.OutputDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_OutputDirectory" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.OutputDirectory">
+  OutputDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L175"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output directory for .nupkg files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string OutputDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_PackageVersion_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.PackageVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_PackageVersion" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.PackageVersion">
+  PackageVersion
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Version of the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PackageVersion { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_PinProjectReferences_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.PinProjectReferences*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_PinProjectReferences" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.PinProjectReferences">
+  PinProjectReferences
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pin dependencies generated from project references (=) instead of using minimum (&gt;=) for version specification.  If <code>--lock-dependencies</code> is specified, project references will be pinned even if this option is not specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? PinProjectReferences { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_ProjectUrl_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.ProjectUrl*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_ProjectUrl" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.ProjectUrl">
+  ProjectUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Url to the projects home page.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProjectUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_ReleaseNotes_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.ReleaseNotes*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_ReleaseNotes" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.ReleaseNotes">
+  ReleaseNotes
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify release notes for the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReleaseNotes { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_Silent_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.Silent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_Silent" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.Silent">
+  Silent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L203"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Silent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_SpecificVersions_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.SpecificVersions*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_SpecificVersions" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.SpecificVersions">
+  SpecificVersions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L187"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Package IDs with version numbers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyDictionary&lt;string, string&gt; SpecificVersions { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_Symbols_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.Symbols*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_Symbols" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.Symbols">
+  Symbols
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Build symbol/source packages in addition to library/content packages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Symbols { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_TemplateFile_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.TemplateFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_TemplateFile" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.TemplateFile">
+  TemplateFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L183"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pack a single paket.template file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TemplateFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketPackSettings_Verbose_" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.Verbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketPackSettings_Verbose" data-uid="Nuke.Common.Tools.Paket.PaketPackSettings.Verbose">
+  Verbose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L205"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Verbose { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L169" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

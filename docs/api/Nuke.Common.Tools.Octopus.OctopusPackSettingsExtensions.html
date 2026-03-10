@@ -1,0 +1,2124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class OctopusPackSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OctopusPackSettingsExtensions | gruke ">
+      
+      <meta name="description" content="The Octo.exe pack command provides a number of other useful parameters that can be used to customize the way your package gets created, such as output folder, files to include and release notes.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions" class="text-break">
+Class OctopusPackSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L374"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Octopus.html">Octopus</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The <code>Octo.exe pack</code> command provides a number of other useful parameters that can be used to customize the way your package gets created, such as output folder, files to include and release notes.</p><p>For more details, visit the <a href="https://octopus.com/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class OctopusPackSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">OctopusPackSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--author</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_Authors">Authors</a></li><li><code>--basePath</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_BasePath">BasePath</a></li><li><code>--description</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_Description">Description</a></li><li><code>--format</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_Format">Format</a></li><li><code>--id</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_Id">Id</a></li><li><code>--include</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_Include">Include</a></li><li><code>--outFolder</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_OutputFolder">OutputFolder</a></li><li><code>--overwrite</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_Overwrite">Overwrite</a></li><li><code>--releaseNotes</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_ReleaseNotes">ReleaseNotes</a></li><li><code>--releaseNotesFile</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_ReleaseNotesFile">ReleaseNotesFile</a></li><li><code>--title</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_Title">Title</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_Verbose">Verbose</a></li><li><code>--version</code> via <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackSettings.html#Nuke_Common_Tools_Octopus_OctopusPackSettings_Version">Version</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_AddAuthors_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.AddAuthors*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_AddAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.AddAuthors``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L446"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add an author to the package metadata. Defaults to the current user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddAuthors&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_AddAuthors_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.AddAuthors*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_AddAuthors__1___0_System_String___" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.AddAuthors``1(``0,System.String[])">
+  AddAuthors&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L443"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add an author to the package metadata. Defaults to the current user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddAuthors&lt;T&gt;(this T o, params string[] v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_AddInclude_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.AddInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_AddInclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.AddInclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  AddInclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L501"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a file pattern to include, relative to the base path. E.g. <code>/bin/-*.dll</code> - if none are specified, defaults to <code>**</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddInclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_AddInclude_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.AddInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_AddInclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.AddInclude``1(``0,System.String[])">
+  AddInclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L498"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a file pattern to include, relative to the base path. E.g. <code>/bin/-*.dll</code> - if none are specified, defaults to <code>**</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T AddInclude&lt;T&gt;(this T o, params string[] v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ClearAuthors_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ClearAuthors*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ClearAuthors__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ClearAuthors``1(``0)">
+  ClearAuthors&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L455"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add an author to the package metadata. Defaults to the current user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearAuthors&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ClearInclude_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ClearInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ClearInclude__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ClearInclude``1(``0)">
+  ClearInclude&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L510"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a file pattern to include, relative to the base path. E.g. <code>/bin/-*.dll</code> - if none are specified, defaults to <code>**</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ClearInclude&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_DisableOverwrite_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.DisableOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_DisableOverwrite__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.DisableOverwrite``1(``0)">
+  DisableOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L524"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allow an existing package file of the same ID/version to be overwritten.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableOverwrite&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_DisableVerbose_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.DisableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_DisableVerbose__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.DisableVerbose``1(``0)">
+  DisableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L429"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List more detailed output. E.g. Which files are being added.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableVerbose&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_EnableOverwrite_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.EnableOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_EnableOverwrite__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.EnableOverwrite``1(``0)">
+  EnableOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L521"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allow an existing package file of the same ID/version to be overwritten.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableOverwrite&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_EnableVerbose_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.EnableVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_EnableVerbose__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.EnableVerbose``1(``0)">
+  EnableVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L426"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List more detailed output. E.g. Which files are being added.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableVerbose&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_RemoveAuthors_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.RemoveAuthors*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_RemoveAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.RemoveAuthors``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L452"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add an author to the package metadata. Defaults to the current user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveAuthors&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_RemoveAuthors_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.RemoveAuthors*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_RemoveAuthors__1___0_System_String___" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.RemoveAuthors``1(``0,System.String[])">
+  RemoveAuthors&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L449"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add an author to the package metadata. Defaults to the current user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveAuthors&lt;T&gt;(this T o, params string[] v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_RemoveInclude_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.RemoveInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_RemoveInclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.RemoveInclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  RemoveInclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L507"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a file pattern to include, relative to the base path. E.g. <code>/bin/-*.dll</code> - if none are specified, defaults to <code>**</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveInclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_RemoveInclude_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.RemoveInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_RemoveInclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.RemoveInclude``1(``0,System.String[])">
+  RemoveInclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L504"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a file pattern to include, relative to the base path. E.g. <code>/bin/-*.dll</code> - if none are specified, defaults to <code>**</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T RemoveInclude&lt;T&gt;(this T o, params string[] v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetBasePath_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetBasePath*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetBasePath__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetBasePath``1(``0)">
+  ResetBasePath&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L415"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The root folder containing files and folders to pack. Defaults to <code>.</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetBasePath&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetDescription_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetDescription*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetDescription__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetDescription``1(``0)">
+  ResetDescription&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L471"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A description of the package. Defaults to a generic description.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDescription&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetFormat_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetFormat__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetFormat``1(``0)">
+  ResetFormat&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L391"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Package format. Options are: NuPkg, Zip. Defaults to NuPkg, though we recommend Zip going forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFormat&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetFramework_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetFramework__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetFramework``1(``0)">
+  ResetFramework&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L535"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFramework&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetId_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetId*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetId__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetId``1(``0)">
+  ResetId&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L383"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The ID of the package. E.g. <code>MyCompany.MyApp</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetId&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetOutputFolder_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetOutputFolder*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetOutputFolder__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetOutputFolder``1(``0)">
+  ResetOutputFolder&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L407"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The folder into which the generated NUPKG file will be written. Defaults to <code>.</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOutputFolder&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetOverwrite_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetOverwrite__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetOverwrite``1(``0)">
+  ResetOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L518"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allow an existing package file of the same ID/version to be overwritten.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOverwrite&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetReleaseNotesFile_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetReleaseNotesFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetReleaseNotesFile__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetReleaseNotesFile``1(``0)">
+  ResetReleaseNotesFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L487"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A file containing release notes for this version of the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetReleaseNotesFile&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetReleaseNotes_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetReleaseNotes*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetReleaseNotes__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetReleaseNotes``1(``0)">
+  ResetReleaseNotes&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L479"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Release notes for this version of the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetReleaseNotes&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetTitle_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetTitle*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetTitle__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetTitle``1(``0)">
+  ResetTitle&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L463"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The title of the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTitle&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetVerbose_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetVerbose__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetVerbose``1(``0)">
+  ResetVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L423"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List more detailed output. E.g. Which files are being added.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVerbose&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetVersion_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ResetVersion__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ResetVersion``1(``0)">
+  ResetVersion&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L399"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The version of the package; must be a valid SemVer. Defaults to a timestamp-based version.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVersion&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetAuthors_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetAuthors*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetAuthors__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetAuthors``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetAuthors&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L440"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add an author to the package metadata. Defaults to the current user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAuthors&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetAuthors_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetAuthors*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetAuthors__1___0_System_String___" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetAuthors``1(``0,System.String[])">
+  SetAuthors&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L437"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add an author to the package metadata. Defaults to the current user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAuthors&lt;T&gt;(this T o, params string[] v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetBasePath_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetBasePath*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetBasePath__1___0_System_String_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetBasePath``1(``0,System.String)">
+  SetBasePath&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L412"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The root folder containing files and folders to pack. Defaults to <code>.</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetBasePath&lt;T&gt;(this T o, string v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetDescription_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetDescription*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetDescription__1___0_System_String_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetDescription``1(``0,System.String)">
+  SetDescription&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L468"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A description of the package. Defaults to a generic description.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDescription&lt;T&gt;(this T o, string v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetFormat_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetFormat*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetFormat__1___0_Nuke_Common_Tools_Octopus_OctopusPackFormat_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetFormat``1(``0,Nuke.Common.Tools.Octopus.OctopusPackFormat)">
+  SetFormat&lt;T&gt;(T, OctopusPackFormat)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L388"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Package format. Options are: NuPkg, Zip. Defaults to NuPkg, though we recommend Zip going forward.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFormat&lt;T&gt;(this T o, OctopusPackFormat v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.Octopus.OctopusPackFormat.html">OctopusPackFormat</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetFramework_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetFramework__1___0_System_String_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetFramework``1(``0,System.String)">
+  SetFramework&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L532"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFramework&lt;T&gt;(this T o, string v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetId_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetId*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetId__1___0_System_String_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetId``1(``0,System.String)">
+  SetId&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L380"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The ID of the package. E.g. <code>MyCompany.MyApp</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetId&lt;T&gt;(this T o, string v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetInclude_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetInclude__1___0_System_Collections_Generic_IEnumerable_System_String__" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetInclude``1(``0,System.Collections.Generic.IEnumerable{System.String})">
+  SetInclude&lt;T&gt;(T, IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L495"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a file pattern to include, relative to the base path. E.g. <code>/bin/-*.dll</code> - if none are specified, defaults to <code>**</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetInclude&lt;T&gt;(this T o, IEnumerable&lt;string&gt; v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetInclude_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetInclude*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetInclude__1___0_System_String___" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetInclude``1(``0,System.String[])">
+  SetInclude&lt;T&gt;(T, params string[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L492"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a file pattern to include, relative to the base path. E.g. <code>/bin/-*.dll</code> - if none are specified, defaults to <code>**</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetInclude&lt;T&gt;(this T o, params string[] v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetOutputFolder_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetOutputFolder*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetOutputFolder__1___0_System_String_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetOutputFolder``1(``0,System.String)">
+  SetOutputFolder&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L404"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The folder into which the generated NUPKG file will be written. Defaults to <code>.</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOutputFolder&lt;T&gt;(this T o, string v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetOverwrite_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetOverwrite__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetOverwrite``1(``0,System.Nullable{System.Boolean})">
+  SetOverwrite&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L515"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allow an existing package file of the same ID/version to be overwritten.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOverwrite&lt;T&gt;(this T o, bool? v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetReleaseNotesFile_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetReleaseNotesFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetReleaseNotesFile__1___0_System_String_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetReleaseNotesFile``1(``0,System.String)">
+  SetReleaseNotesFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L484"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A file containing release notes for this version of the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetReleaseNotesFile&lt;T&gt;(this T o, string v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetReleaseNotes_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetReleaseNotes*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetReleaseNotes__1___0_System_String_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetReleaseNotes``1(``0,System.String)">
+  SetReleaseNotes&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L476"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Release notes for this version of the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetReleaseNotes&lt;T&gt;(this T o, string v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetTitle_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetTitle*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetTitle__1___0_System_String_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetTitle``1(``0,System.String)">
+  SetTitle&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L460"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The title of the package.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTitle&lt;T&gt;(this T o, string v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetVerbose_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetVerbose``1(``0,System.Nullable{System.Boolean})">
+  SetVerbose&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L420"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List more detailed output. E.g. Which files are being added.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVerbose&lt;T&gt;(this T o, bool? v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetVersion_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetVersion*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_SetVersion__1___0_System_String_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.SetVersion``1(``0,System.String)">
+  SetVersion&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L396"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The version of the package; must be a valid SemVer. Defaults to a timestamp-based version.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVersion&lt;T&gt;(this T o, string v) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ToggleOverwrite_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ToggleOverwrite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ToggleOverwrite__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ToggleOverwrite``1(``0)">
+  ToggleOverwrite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L527"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allow an existing package file of the same ID/version to be overwritten.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleOverwrite&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ToggleVerbose_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ToggleVerbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Octopus_OctopusPackSettingsExtensions_ToggleVerbose__1___0_" data-uid="Nuke.Common.Tools.Octopus.OctopusPackSettingsExtensions.ToggleVerbose``1(``0)">
+  ToggleVerbose&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L432"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>List more detailed output. E.g. Which files are being added.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleVerbose&lt;T&gt;(this T o) where T : OctopusPackSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Octopus/Octopus.Generated.cs/#L374" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

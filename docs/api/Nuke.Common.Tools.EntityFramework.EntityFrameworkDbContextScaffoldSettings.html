@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class EntityFrameworkDbContextScaffoldSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class EntityFrameworkDbContextScaffoldSettings | gruke ">
+      
+      <meta name="description" content="The dotnet-ef dbcontext scaffold command is used to generate code for a DbContext and entity types for a database. In order for this command to generate an entity type, the database table must have a primary key.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings" class="text-break">
+Class EntityFrameworkDbContextScaffoldSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L247"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.EntityFramework.html">EntityFramework</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The <code>dotnet-ef dbcontext scaffold</code> command is used to generate code for a <code>DbContext</code> and entity types for a database. In order for this command to generate an entity type, the database table must have a primary key.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class EntityFrameworkDbContextScaffoldSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">EntityFrameworkDbContextScaffoldSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddSchemas__1___0_System_Collections_Generic_IEnumerable_System_String__">EntityFrameworkDbContextScaffoldSettingsExtensions.AddSchemas&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddSchemas__1___0_System_String___">EntityFrameworkDbContextScaffoldSettingsExtensions.AddSchemas&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddTables__1___0_System_Collections_Generic_IEnumerable_System_String__">EntityFrameworkDbContextScaffoldSettingsExtensions.AddTables&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_AddTables__1___0_System_String___">EntityFrameworkDbContextScaffoldSettingsExtensions.AddTables&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ClearSchemas__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ClearSchemas&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ClearTables__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ClearTables&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableDataAnnotations__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.DisableDataAnnotations&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableForce__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.DisableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableJson__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.DisableJson&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoBuild__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoColor__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoColor&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoOnConfiguring__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoOnConfiguring&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableNoPluralize__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.DisableNoPluralize&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisablePrefixOutput__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.DisablePrefixOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableUseDatabaseNames__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.DisableUseDatabaseNames&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_DisableVerbose__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.DisableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableDataAnnotations__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.EnableDataAnnotations&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableForce__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.EnableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableJson__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.EnableJson&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoBuild__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoColor__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoColor&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoOnConfiguring__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoOnConfiguring&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableNoPluralize__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.EnableNoPluralize&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnablePrefixOutput__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.EnablePrefixOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableUseDatabaseNames__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.EnableUseDatabaseNames&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_EnableVerbose__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.EnableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveSchemas__1___0_System_Collections_Generic_IEnumerable_System_String__">EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveSchemas&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveSchemas__1___0_System_String___">EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveSchemas&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveTables__1___0_System_Collections_Generic_IEnumerable_System_String__">EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveTables&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_RemoveTables__1___0_System_String___">EntityFrameworkDbContextScaffoldSettingsExtensions.RemoveTables&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetConfiguration__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetConfiguration&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetConnection__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetConnection&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetContextDirectory__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetContextDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetContextNamespace__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetContextNamespace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetContext__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetContext&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetDataAnnotations__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetDataAnnotations&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetForce__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetFramework__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetFramework&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetJson__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetJson&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNamespace__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNamespace&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoBuild__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoColor__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoColor&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoOnConfiguring__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoOnConfiguring&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetNoPluralize__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetNoPluralize&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetOutputDirectory__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetOutputDirectory&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetPrefixOutput__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetPrefixOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetProject__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetProject&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetProvider__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetProvider&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetRuntime__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetRuntime&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetStartupProject__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetStartupProject&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetUseDatabaseNames__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetUseDatabaseNames&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ResetVerbose__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ResetVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetConfiguration__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetConfiguration&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetConnection__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetConnection&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetContextDirectory__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetContextDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetContextNamespace__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetContextNamespace&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetContext__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetContext&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetDataAnnotations__1___0_System_Nullable_System_Boolean__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetDataAnnotations&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetForce&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetFramework__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetFramework&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetJson__1___0_System_Nullable_System_Boolean__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetJson&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNamespace__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetNamespace&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoBuild__1___0_System_Nullable_System_Boolean__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoBuild&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoColor__1___0_System_Nullable_System_Boolean__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoColor&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoOnConfiguring__1___0_System_Nullable_System_Boolean__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoOnConfiguring&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetNoPluralize__1___0_System_Nullable_System_Boolean__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetNoPluralize&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetOutputDirectory__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetOutputDirectory&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetPrefixOutput__1___0_System_Nullable_System_Boolean__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetPrefixOutput&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetProject__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetProject&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetProvider__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetProvider&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetRuntime__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetRuntime&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetSchemas__1___0_System_Collections_Generic_IEnumerable_System_String__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetSchemas&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetSchemas__1___0_System_String___">EntityFrameworkDbContextScaffoldSettingsExtensions.SetSchemas&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetStartupProject__1___0_System_String_">EntityFrameworkDbContextScaffoldSettingsExtensions.SetStartupProject&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetTables__1___0_System_Collections_Generic_IEnumerable_System_String__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetTables&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetTables__1___0_System_String___">EntityFrameworkDbContextScaffoldSettingsExtensions.SetTables&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetUseDatabaseNames__1___0_System_Nullable_System_Boolean__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetUseDatabaseNames&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__">EntityFrameworkDbContextScaffoldSettingsExtensions.SetVerbose&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleDataAnnotations__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleDataAnnotations&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleForce__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleJson__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleJson&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoBuild__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoBuild&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoColor__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoColor&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoOnConfiguring__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoOnConfiguring&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleNoPluralize__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleNoPluralize&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_TogglePrefixOutput__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.TogglePrefixOutput&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleUseDatabaseNames__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleUseDatabaseNames&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettingsExtensions.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettingsExtensions_ToggleVerbose__1___0_">EntityFrameworkDbContextScaffoldSettingsExtensions.ToggleVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;connection&gt;</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Connection">Connection</a></li><li><code>&lt;provider&gt;</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Provider">Provider</a></li><li><code>--configuration</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Configuration">Configuration</a></li><li><code>--context</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Context">Context</a></li><li><code>--context-dir</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_ContextDirectory">ContextDirectory</a></li><li><code>--context-namespace</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_ContextNamespace">ContextNamespace</a></li><li><code>--data-annotations</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_DataAnnotations">DataAnnotations</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Force">Force</a></li><li><code>--framework</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Framework">Framework</a></li><li><code>--json</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Json">Json</a></li><li><code>--namespace</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Namespace">Namespace</a></li><li><code>--no-build</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoBuild">NoBuild</a></li><li><code>--no-color</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoColor">NoColor</a></li><li><code>--no-onconfiguring</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoOnConfiguring">NoOnConfiguring</a></li><li><code>--no-pluralize</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoPluralize">NoPluralize</a></li><li><code>--output-dir</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_OutputDirectory">OutputDirectory</a></li><li><code>--prefix-output</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_PrefixOutput">PrefixOutput</a></li><li><code>--project</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Project">Project</a></li><li><code>--runtime</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Runtime">Runtime</a></li><li><code>--schema</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Schemas">Schemas</a></li><li><code>--startup-project</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_StartupProject">StartupProject</a></li><li><code>--table</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Tables">Tables</a></li><li><code>--use-database-names</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_UseDatabaseNames">UseDatabaseNames</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.html#Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Verbose">Verbose</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Configuration_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Configuration*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Configuration" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Configuration">
+  Configuration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L289"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The build configuration, for example: <code>Debug</code> or <code>Release.</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Configuration { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Connection_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Connection*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Connection" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Connection">
+  Connection
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L253"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The connection string to the database. For ASP.NET Core 2.x projects, the value can be <em>name=&lt;name of connection string&gt;</em>. In that case the name comes from the configuration sources that are set up for the project.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Connection { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Context_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Context*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Context" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Context">
+  Context
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the <code>DbContext</code> class to generate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Context { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_ContextDirectory_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.ContextDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_ContextDirectory" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.ContextDirectory">
+  ContextDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L261"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The directory to put the <code>DbContext</code> class file in. Paths are relative to the project directory. Namespaces are derived from the folder names.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ContextDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_ContextNamespace_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.ContextNamespace*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_ContextNamespace" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.ContextNamespace">
+  ContextNamespace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L263"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The namespace to use for the generated <code>DbContext</code> class. Note: overrides <code>--namespace</code>. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ContextNamespace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_DataAnnotations_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.DataAnnotations*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_DataAnnotations" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.DataAnnotations">
+  DataAnnotations
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use attributes to configure the model (where possible). If this option is omitted, only the fluent API is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? DataAnnotations { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Force_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Force*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Force" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Force">
+  Force
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Overwrite existing files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Force { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Framework_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Framework*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Framework" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Framework">
+  Framework
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L287"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks#supported-target-framework-versions">Target Framework Moniker</a> for the <a href="https://docs.microsoft.com/en-us/dotnet/standard/frameworks">target framework</a>. Use when the project file specifies multiple target frameworks, and you want to select one of them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Framework { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Json_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Json*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Json" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Json">
+  Json
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L281"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show JSON output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Json { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Namespace_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Namespace*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Namespace" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Namespace">
+  Namespace
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L269"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The namespace to use for all generated classes. Defaults to generated from the root namespace and the output directory. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Namespace { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoBuild_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.NoBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoBuild" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.NoBuild">
+  NoBuild
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L293"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't build the project. Intended to be used when the build is up-to-date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoBuild { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoColor_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.NoColor*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoColor" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.NoColor">
+  NoColor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L295"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't colorize output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoColor { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoOnConfiguring_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.NoOnConfiguring*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoOnConfiguring" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.NoOnConfiguring">
+  NoOnConfiguring
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L277"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses generation of the <code>OnConfiguring</code> method in the generated <code>DbContext</code> class. Added in EF Core 5.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoOnConfiguring { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoPluralize_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.NoPluralize*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_NoPluralize" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.NoPluralize">
+  NoPluralize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L279"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Don't use the pluralizer. Added in EF Core 5.0</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? NoPluralize { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_OutputDirectory_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.OutputDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_OutputDirectory" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.OutputDirectory">
+  OutputDirectory
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The directory to put entity class files in. Paths are relative to the project directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string OutputDirectory { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_PrefixOutput_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.PrefixOutput*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_PrefixOutput" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.PrefixOutput">
+  PrefixOutput
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L297"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prefix output with level.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? PrefixOutput { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Project_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Project*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Project" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Project">
+  Project
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L283"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Relative path to the project folder of the target project. Default value is the current folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Project { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Provider_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Provider*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Provider" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Provider">
+  Provider
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The provider to use. Typically this is the name of the NuGet package, for example: <code>Microsoft.EntityFrameworkCore.SqlServer.</code></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Provider { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Runtime_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Runtime*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Runtime" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Runtime">
+  Runtime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L291"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The identifier of the target runtime to restore packages for. For a list of Runtime Identifiers (RIDs), see the <a href="https://docs.microsoft.com/en-us/dotnet/core/rid-catalog">RID catalog</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Runtime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Schemas_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Schemas*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Schemas" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Schemas">
+  Schemas
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L271"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The schemas of tables to generate entity types for. To specify multiple schemas, repeat <code>--schema</code> for each one. If this option is omitted, all schemas are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Schemas { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_StartupProject_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.StartupProject*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_StartupProject" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.StartupProject">
+  StartupProject
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Relative path to the project folder of the startup project. Default value is the current folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string StartupProject { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Tables_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Tables*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Tables" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Tables">
+  Tables
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The tables to generate entity types for. To specify multiple tables, repeat <code>-t</code> or <code>--table</code> for each one. If this option is omitted, all tables are included.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; Tables { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_UseDatabaseNames_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.UseDatabaseNames*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_UseDatabaseNames" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.UseDatabaseNames">
+  UseDatabaseNames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L275"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Use table and column names exactly as they appear in the database. If this option is omitted, database names are changed to more closely conform to C# name style conventions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? UseDatabaseNames { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Verbose_" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Verbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_EntityFramework_EntityFrameworkDbContextScaffoldSettings_Verbose" data-uid="Nuke.Common.Tools.EntityFramework.EntityFrameworkDbContextScaffoldSettings.Verbose">
+  Verbose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L299"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Show verbose output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Verbose { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/EntityFramework/EntityFramework.Generated.cs/#L247" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

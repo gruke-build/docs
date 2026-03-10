@@ -1,0 +1,2589 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class NetlifyDeploySettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NetlifyDeploySettingsExtensions | gruke ">
+      
+      <meta name="description" content="Netlify’s command line interface (CLI) lets you configure continuous deployment straight from the command line. You can use Netlify CLI to run a local development server that you can share with others, run a local build and plugins, and deploy your site.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions" class="text-break">
+Class NetlifyDeploySettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Netlify.html">Netlify</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Netlify’s command line interface (CLI) lets you configure <a href="https://docs.netlify.com/cli/get-started/#continuous-deployment">continuous deployment</a> straight from the command line. You can use Netlify CLI to <a href="https://docs.netlify.com/cli/get-started/#run-a-local-development-environment">run a local development server</a> that you can share with others, <a href="https://docs.netlify.com/cli/get-started/#run-builds-locally">run a local build and plugins</a>, and <a href="https://docs.netlify.com/cli/get-started/#manual-deploys">deploy your site</a>.</p><p>For more details, visit the <a href="https://docs.netlify.com/cli/get-started/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class NetlifyDeploySettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">NetlifyDeploySettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--alias</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Alias">Alias</a></li><li><code>--auth</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Auth">Auth</a></li><li><code>--branch</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Branch">Branch</a></li><li><code>--build</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Build">Build</a></li><li><code>--debug</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Debug">Debug</a></li><li><code>--dir</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Directory">Directory</a></li><li><code>--functions</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Functions">Functions</a></li><li><code>--httpProxy</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_HttpProxy">HttpProxy</a></li><li><code>--httpProxyCertificateFilename</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_HttpProxyCertificateFileName">HttpProxyCertificateFileName</a></li><li><code>--json</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Json">Json</a></li><li><code>--message</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Message">Message</a></li><li><code>--open</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Open">Open</a></li><li><code>--prod</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Production">Production</a></li><li><code>--prodIfUnlocked</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_ProductionIfUnlocked">ProductionIfUnlocked</a></li><li><code>--site</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Site">Site</a></li><li><code>--timeout</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Timeout">Timeout</a></li><li><code>--trigger</code> via <a class="xref" href="Nuke.Common.Tools.Netlify.NetlifyDeploySettings.html#Nuke_Common_Tools_Netlify_NetlifyDeploySettings_Trigger">Trigger</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableBuild_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableBuild__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableBuild``1(``0)">
+  DisableBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L307"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Run build command before deploying.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableBuild&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableDebug_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableDebug*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableDebug__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableDebug``1(``0)">
+  DisableDebug&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print debugging information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDebug&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableJson_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableJson__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableJson``1(``0)">
+  DisableJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output deployment data as JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableJson&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableOpen_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableOpen*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableOpen__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableOpen``1(``0)">
+  DisableOpen&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Open site after deploy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableOpen&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableProductionIfUnlocked_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableProductionIfUnlocked*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableProductionIfUnlocked__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableProductionIfUnlocked``1(``0)">
+  DisableProductionIfUnlocked&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deploy to production if unlocked, create a draft otherwise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableProductionIfUnlocked&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableProduction_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableProduction*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableProduction__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableProduction``1(``0)">
+  DisableProduction&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deploy to production.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableProduction&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableTrigger_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableTrigger*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_DisableTrigger__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.DisableTrigger``1(``0)">
+  DisableTrigger&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L290"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Trigger a new build of your site on Netlify without uploading local files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableTrigger&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableBuild_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableBuild__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableBuild``1(``0)">
+  EnableBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L304"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Run build command before deploying.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableBuild&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableDebug_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableDebug*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableDebug__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableDebug``1(``0)">
+  EnableDebug&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L321"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print debugging information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDebug&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableJson_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableJson__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableJson``1(``0)">
+  EnableJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L262"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output deployment data as JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableJson&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableOpen_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableOpen*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableOpen__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableOpen``1(``0)">
+  EnableOpen&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Open site after deploy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableOpen&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableProductionIfUnlocked_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableProductionIfUnlocked*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableProductionIfUnlocked__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableProductionIfUnlocked``1(``0)">
+  EnableProductionIfUnlocked&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deploy to production if unlocked, create a draft otherwise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableProductionIfUnlocked&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableProduction_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableProduction*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableProduction__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableProduction``1(``0)">
+  EnableProduction&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deploy to production.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableProduction&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableTrigger_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableTrigger*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_EnableTrigger__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.EnableTrigger``1(``0)">
+  EnableTrigger&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L287"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Trigger a new build of your site on Netlify without uploading local files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableTrigger&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetAlias_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetAlias*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetAlias__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetAlias``1(``0)">
+  ResetAlias&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L202"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the alias for deployment, the string at the beginning of the deploy subdomain. Useful for creating predictable deployment URLs. Avoid setting an alias string to the same value as a deployed branch.</p>
+<pre><code class="lang-csharp">alias doesn’t</code></pre>
+<p>create a branch deploy and can’t be used in conjunction with the branch subdomain feature. Maximum 37 characters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAlias&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetAuth_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetAuth*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetAuth__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetAuth``1(``0)">
+  ResetAuth&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L243"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify auth token to deploy with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAuth&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetBranch_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetBranch*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetBranch__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetBranch``1(``0)">
+  ResetBranch&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L210"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Serves the same functionality as --alias. Deprecated and will be removed in future versions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetBranch&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetBuild_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetBuild__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetBuild``1(``0)">
+  ResetBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L301"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Run build command before deploying.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetBuild&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetDebug_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetDebug*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetDebug__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetDebug``1(``0)">
+  ResetDebug&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print debugging information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDebug&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetDirectory_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetDirectory__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetDirectory``1(``0)">
+  ResetDirectory&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify a folder to deploy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDirectory&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetFunctions_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetFunctions*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetFunctions__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetFunctions``1(``0)">
+  ResetFunctions&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L160"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify a functions folder to deploy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetFunctions&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetHttpProxyCertificateFileName_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetHttpProxyCertificateFileName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetHttpProxyCertificateFileName__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetHttpProxyCertificateFileName``1(``0)">
+  ResetHttpProxyCertificateFileName&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L343"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Certificate file to use when connecting using a proxy server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetHttpProxyCertificateFileName&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetHttpProxy_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetHttpProxy*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetHttpProxy__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetHttpProxy``1(``0)">
+  ResetHttpProxy&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L335"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Proxy server address to route requests through.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetHttpProxy&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetJson_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetJson__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetJson``1(``0)">
+  ResetJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output deployment data as JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetJson&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetMessage_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetMessage*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetMessage__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetMessage``1(``0)">
+  ResetMessage&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L235"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A short message to include in the deploy log.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetMessage&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetOpen_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetOpen*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetOpen__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetOpen``1(``0)">
+  ResetOpen&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L218"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Open site after deploy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetOpen&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetProductionIfUnlocked_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetProductionIfUnlocked*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetProductionIfUnlocked__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetProductionIfUnlocked``1(``0)">
+  ResetProductionIfUnlocked&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deploy to production if unlocked, create a draft otherwise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetProductionIfUnlocked&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetProduction_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetProduction*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetProduction__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetProduction``1(``0)">
+  ResetProduction&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deploy to production.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetProduction&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetSite_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetSite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetSite__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetSite``1(``0)">
+  ResetSite&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify auth token to deploy with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSite&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetTimeout_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetTimeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetTimeout__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetTimeout``1(``0)">
+  ResetTimeout&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L276"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Timeout to wait for deployment to finish.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTimeout&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetTrigger_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetTrigger*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ResetTrigger__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ResetTrigger``1(``0)">
+  ResetTrigger&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L284"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Trigger a new build of your site on Netlify without uploading local files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTrigger&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetAlias_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetAlias*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetAlias__1___0_System_String_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetAlias``1(``0,System.String)">
+  SetAlias&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L199"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the alias for deployment, the string at the beginning of the deploy subdomain. Useful for creating predictable deployment URLs. Avoid setting an alias string to the same value as a deployed branch.</p>
+<pre><code class="lang-csharp">alias doesn’t</code></pre>
+<p>create a branch deploy and can’t be used in conjunction with the branch subdomain feature. Maximum 37 characters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAlias&lt;T&gt;(this T o, string v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetAuth_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetAuth*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetAuth__1___0_System_String_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetAuth``1(``0,System.String)">
+  SetAuth&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L240"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify auth token to deploy with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAuth&lt;T&gt;(this T o, string v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetBranch_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetBranch*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetBranch__1___0_System_String_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetBranch``1(``0,System.String)">
+  SetBranch&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Serves the same functionality as --alias. Deprecated and will be removed in future versions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetBranch&lt;T&gt;(this T o, string v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetBuild_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetBuild__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetBuild``1(``0,System.Nullable{System.Boolean})">
+  SetBuild&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L298"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Run build command before deploying.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetBuild&lt;T&gt;(this T o, bool? v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetDebug_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetDebug*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetDebug__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetDebug``1(``0,System.Nullable{System.Boolean})">
+  SetDebug&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L315"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print debugging information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDebug&lt;T&gt;(this T o, bool? v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetDirectory_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetDirectory*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetDirectory__1___0_System_String_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetDirectory``1(``0,System.String)">
+  SetDirectory&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify a folder to deploy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDirectory&lt;T&gt;(this T o, string v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetFunctions_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetFunctions*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetFunctions__1___0_System_String_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetFunctions``1(``0,System.String)">
+  SetFunctions&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify a functions folder to deploy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetFunctions&lt;T&gt;(this T o, string v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetHttpProxyCertificateFileName_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetHttpProxyCertificateFileName*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetHttpProxyCertificateFileName__1___0_System_String_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetHttpProxyCertificateFileName``1(``0,System.String)">
+  SetHttpProxyCertificateFileName&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L340"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Certificate file to use when connecting using a proxy server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetHttpProxyCertificateFileName&lt;T&gt;(this T o, string v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetHttpProxy_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetHttpProxy*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetHttpProxy__1___0_System_String_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetHttpProxy``1(``0,System.String)">
+  SetHttpProxy&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Proxy server address to route requests through.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetHttpProxy&lt;T&gt;(this T o, string v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetJson_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetJson__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetJson``1(``0,System.Nullable{System.Boolean})">
+  SetJson&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L256"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output deployment data as JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetJson&lt;T&gt;(this T o, bool? v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetMessage_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetMessage*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetMessage__1___0_System_String_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetMessage``1(``0,System.String)">
+  SetMessage&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A short message to include in the deploy log.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetMessage&lt;T&gt;(this T o, string v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetOpen_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetOpen*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetOpen__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetOpen``1(``0,System.Nullable{System.Boolean})">
+  SetOpen&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L215"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Open site after deploy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetOpen&lt;T&gt;(this T o, bool? v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetProductionIfUnlocked_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetProductionIfUnlocked*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetProductionIfUnlocked__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetProductionIfUnlocked``1(``0,System.Nullable{System.Boolean})">
+  SetProductionIfUnlocked&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deploy to production if unlocked, create a draft otherwise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProductionIfUnlocked&lt;T&gt;(this T o, bool? v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetProduction_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetProduction*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetProduction__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetProduction``1(``0,System.Nullable{System.Boolean})">
+  SetProduction&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deploy to production.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetProduction&lt;T&gt;(this T o, bool? v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetSite_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetSite*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetSite__1___0_System_String_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetSite``1(``0,System.String)">
+  SetSite&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L248"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Netlify auth token to deploy with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSite&lt;T&gt;(this T o, string v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetTimeout_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetTimeout*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetTimeout__1___0_System_String_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetTimeout``1(``0,System.String)">
+  SetTimeout&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Timeout to wait for deployment to finish.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTimeout&lt;T&gt;(this T o, string v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetTrigger_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetTrigger*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_SetTrigger__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.SetTrigger``1(``0,System.Nullable{System.Boolean})">
+  SetTrigger&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L281"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Trigger a new build of your site on Netlify without uploading local files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTrigger&lt;T&gt;(this T o, bool? v) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleBuild_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleBuild*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleBuild__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleBuild``1(``0)">
+  ToggleBuild&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L310"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Run build command before deploying.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleBuild&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleDebug_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleDebug*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleDebug__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleDebug``1(``0)">
+  ToggleDebug&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L327"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print debugging information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDebug&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleJson_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleJson*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleJson__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleJson``1(``0)">
+  ToggleJson&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L268"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Output deployment data as JSON.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleJson&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleOpen_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleOpen*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleOpen__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleOpen``1(``0)">
+  ToggleOpen&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L227"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Open site after deploy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleOpen&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleProductionIfUnlocked_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleProductionIfUnlocked*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleProductionIfUnlocked__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleProductionIfUnlocked``1(``0)">
+  ToggleProductionIfUnlocked&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deploy to production if unlocked, create a draft otherwise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleProductionIfUnlocked&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleProduction_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleProduction*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleProduction__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleProduction``1(``0)">
+  ToggleProduction&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deploy to production.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleProduction&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleTrigger_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleTrigger*"></a>
+
+  <h3 id="Nuke_Common_Tools_Netlify_NetlifyDeploySettingsExtensions_ToggleTrigger__1___0_" data-uid="Nuke.Common.Tools.Netlify.NetlifyDeploySettingsExtensions.ToggleTrigger``1(``0)">
+  ToggleTrigger&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L293"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Trigger a new build of your site on Netlify without uploading local files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleTrigger&lt;T&gt;(this T o) where T : NetlifyDeploySettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Netlify/Netlify.Generated.cs/#L143" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

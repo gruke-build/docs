@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DotNetWorkloadRepairSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DotNetWorkloadRepairSettingsExtensions | gruke ">
+      
+      <meta name="description" content="The dotnet workload repair  command reinstalls all installed workloads. Workloads are made up of multiple workload packs and it&#39;s possible to get into a state where some installed successfully but others didn&#39;t. For example, a dotnet workload install command might not finish installing because of a dropped internet connection.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions" class="text-break">
+Class DotNetWorkloadRepairSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8477"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.DotNet.html">DotNet</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The <code>dotnet workload repair</code>  command reinstalls all installed workloads. Workloads are made up of multiple workload packs and it's possible to get into a state where some installed successfully but others didn't. For example, a dotnet workload install command might not finish installing because of a dropped internet connection.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class DotNetWorkloadRepairSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">DotNetWorkloadRepairSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--configFile</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettings.html#Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettings_ConfigFile">ConfigFile</a></li><li><code>--disable-parallel</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettings.html#Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettings_DisableParallel">DisableParallel</a></li><li><code>--ignore-failed-sources</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettings.html#Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettings_IgnoreFailedSources">IgnoreFailedSources</a></li><li><code>--include-previews</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettings.html#Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettings_IncludePreviews">IncludePreviews</a></li><li><code>--interactive</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettings.html#Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettings_Interactive">Interactive</a></li><li><code>--no-cache</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettings.html#Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettings_NoCache">NoCache</a></li><li><code>--skip-sign-check</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettings.html#Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettings_SkipSignCheck">SkipSignCheck</a></li><li><code>--source</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettings.html#Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettings_Source">Source</a></li><li><code>--temp-dir</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettings.html#Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettings_TempDir">TempDir</a></li><li><code>--verbosity</code> via <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettings.html#Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettings_Verbosity">Verbosity</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableDisableParallel_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableDisableParallel*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableDisableParallel__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableDisableParallel``1(``0)">
+  DisableDisableParallel&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8500"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents restoring multiple projects in parallel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableDisableParallel&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableIgnoreFailedSources_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableIgnoreFailedSources*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableIgnoreFailedSources__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableIgnoreFailedSources``1(``0)">
+  DisableIgnoreFailedSources&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8517"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Treats package source failures as warnings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableIgnoreFailedSources&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableIncludePreviews_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableIncludePreviews*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableIncludePreviews__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableIncludePreviews``1(``0)">
+  DisableIncludePreviews&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8534"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows prerelease workload manifests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableIncludePreviews&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableInteractive_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableInteractive__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableInteractive``1(``0)">
+  DisableInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8551"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows the command to stop and wait for user input or action. For example, to complete authentication.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableInteractive&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableNoCache_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableNoCache*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableNoCache__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableNoCache``1(``0)">
+  DisableNoCache&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8568"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents caching of packages and http requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoCache&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableSkipSignCheck_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableSkipSignCheck*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_DisableSkipSignCheck__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.DisableSkipSignCheck``1(``0)">
+  DisableSkipSignCheck&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8585"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Skipping the nuget package signature verification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableSkipSignCheck&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableDisableParallel_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableDisableParallel*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableDisableParallel__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableDisableParallel``1(``0)">
+  EnableDisableParallel&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8497"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents restoring multiple projects in parallel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableDisableParallel&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableIgnoreFailedSources_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableIgnoreFailedSources*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableIgnoreFailedSources__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableIgnoreFailedSources``1(``0)">
+  EnableIgnoreFailedSources&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8514"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Treats package source failures as warnings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableIgnoreFailedSources&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableIncludePreviews_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableIncludePreviews*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableIncludePreviews__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableIncludePreviews``1(``0)">
+  EnableIncludePreviews&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8531"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows prerelease workload manifests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableIncludePreviews&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableInteractive_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableInteractive__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableInteractive``1(``0)">
+  EnableInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8548"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows the command to stop and wait for user input or action. For example, to complete authentication.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableInteractive&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableNoCache_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableNoCache*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableNoCache__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableNoCache``1(``0)">
+  EnableNoCache&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8565"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents caching of packages and http requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoCache&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableSkipSignCheck_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableSkipSignCheck*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_EnableSkipSignCheck__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.EnableSkipSignCheck``1(``0)">
+  EnableSkipSignCheck&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8582"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Skipping the nuget package signature verification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableSkipSignCheck&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetConfigFile_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetConfigFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetConfigFile__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetConfigFile``1(``0)">
+  ResetConfigFile&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8486"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The NuGet configuration file (nuget.config) to use. If specified, only the settings from this file will be used. If not specified, the hierarchy of configuration files from the current directory will be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetConfigFile&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetDisableParallel_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetDisableParallel*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetDisableParallel__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetDisableParallel``1(``0)">
+  ResetDisableParallel&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8494"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents restoring multiple projects in parallel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetDisableParallel&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetIgnoreFailedSources_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetIgnoreFailedSources*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetIgnoreFailedSources__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetIgnoreFailedSources``1(``0)">
+  ResetIgnoreFailedSources&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8511"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Treats package source failures as warnings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetIgnoreFailedSources&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetIncludePreviews_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetIncludePreviews*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetIncludePreviews__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetIncludePreviews``1(``0)">
+  ResetIncludePreviews&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8528"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows prerelease workload manifests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetIncludePreviews&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetInteractive_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetInteractive__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetInteractive``1(``0)">
+  ResetInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8545"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows the command to stop and wait for user input or action. For example, to complete authentication.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetInteractive&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetNoCache_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetNoCache*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetNoCache__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetNoCache``1(``0)">
+  ResetNoCache&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8562"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents caching of packages and http requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoCache&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetSkipSignCheck_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetSkipSignCheck*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetSkipSignCheck__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetSkipSignCheck``1(``0)">
+  ResetSkipSignCheck&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8579"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Skipping the nuget package signature verification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSkipSignCheck&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetSource_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetSource*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetSource__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetSource``1(``0)">
+  ResetSource&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8596"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the URI of the NuGet package source to use. This setting overrides all of the sources specified in the nuget.config files. Multiple sources can be provided by specifying this option multiple times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetSource&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetTempDir_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetTempDir*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetTempDir__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetTempDir``1(``0)">
+  ResetTempDir&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8604"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the temporary directory used to download and extract NuGet packages (must be secure).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetTempDir&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetVerbosity_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetVerbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ResetVerbosity__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ResetVerbosity``1(``0)">
+  ResetVerbosity&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8612"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the verbosity level of the command. Allowed values are <code>q[uiet]</code>, <code>m[inimal]</code>, <code>n[ormal]</code>, <code>d[etailed]</code>, and <code>diag[nostic]</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetVerbosity&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetConfigFile_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetConfigFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetConfigFile__1___0_System_String_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetConfigFile``1(``0,System.String)">
+  SetConfigFile&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8483"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The NuGet configuration file (nuget.config) to use. If specified, only the settings from this file will be used. If not specified, the hierarchy of configuration files from the current directory will be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetConfigFile&lt;T&gt;(this T o, string v) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetDisableParallel_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetDisableParallel*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetDisableParallel__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetDisableParallel``1(``0,System.Nullable{System.Boolean})">
+  SetDisableParallel&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8491"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents restoring multiple projects in parallel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetDisableParallel&lt;T&gt;(this T o, bool? v) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetIgnoreFailedSources_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetIgnoreFailedSources*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetIgnoreFailedSources__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetIgnoreFailedSources``1(``0,System.Nullable{System.Boolean})">
+  SetIgnoreFailedSources&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8508"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Treats package source failures as warnings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetIgnoreFailedSources&lt;T&gt;(this T o, bool? v) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetIncludePreviews_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetIncludePreviews*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetIncludePreviews__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetIncludePreviews``1(``0,System.Nullable{System.Boolean})">
+  SetIncludePreviews&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8525"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows prerelease workload manifests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetIncludePreviews&lt;T&gt;(this T o, bool? v) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetInteractive_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetInteractive__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetInteractive``1(``0,System.Nullable{System.Boolean})">
+  SetInteractive&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8542"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows the command to stop and wait for user input or action. For example, to complete authentication.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetInteractive&lt;T&gt;(this T o, bool? v) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetNoCache_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetNoCache*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetNoCache__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetNoCache``1(``0,System.Nullable{System.Boolean})">
+  SetNoCache&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8559"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents caching of packages and http requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoCache&lt;T&gt;(this T o, bool? v) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetSkipSignCheck_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetSkipSignCheck*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetSkipSignCheck__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetSkipSignCheck``1(``0,System.Nullable{System.Boolean})">
+  SetSkipSignCheck&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8576"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Skipping the nuget package signature verification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSkipSignCheck&lt;T&gt;(this T o, bool? v) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetSource_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetSource*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetSource__1___0_System_String_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetSource``1(``0,System.String)">
+  SetSource&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8593"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specifies the URI of the NuGet package source to use. This setting overrides all of the sources specified in the nuget.config files. Multiple sources can be provided by specifying this option multiple times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetSource&lt;T&gt;(this T o, string v) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetTempDir_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetTempDir*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetTempDir__1___0_System_String_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetTempDir``1(``0,System.String)">
+  SetTempDir&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8601"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Specify the temporary directory used to download and extract NuGet packages (must be secure).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetTempDir&lt;T&gt;(this T o, string v) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetVerbosity_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetVerbosity*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_SetVerbosity__1___0_Nuke_Common_Tools_DotNet_DotNetVerbosity_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.SetVerbosity``1(``0,Nuke.Common.Tools.DotNet.DotNetVerbosity)">
+  SetVerbosity&lt;T&gt;(T, DotNetVerbosity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8609"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the verbosity level of the command. Allowed values are <code>q[uiet]</code>, <code>m[inimal]</code>, <code>n[ormal]</code>, <code>d[etailed]</code>, and <code>diag[nostic]</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetVerbosity&lt;T&gt;(this T o, DotNetVerbosity v) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="Nuke.Common.Tools.DotNet.DotNetVerbosity.html">DotNetVerbosity</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleDisableParallel_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleDisableParallel*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleDisableParallel__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleDisableParallel``1(``0)">
+  ToggleDisableParallel&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8503"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents restoring multiple projects in parallel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleDisableParallel&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleIgnoreFailedSources_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleIgnoreFailedSources*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleIgnoreFailedSources__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleIgnoreFailedSources``1(``0)">
+  ToggleIgnoreFailedSources&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8520"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Treats package source failures as warnings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleIgnoreFailedSources&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleIncludePreviews_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleIncludePreviews*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleIncludePreviews__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleIncludePreviews``1(``0)">
+  ToggleIncludePreviews&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8537"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows prerelease workload manifests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleIncludePreviews&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleInteractive_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleInteractive*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleInteractive__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleInteractive``1(``0)">
+  ToggleInteractive&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8554"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Allows the command to stop and wait for user input or action. For example, to complete authentication.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleInteractive&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleNoCache_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleNoCache*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleNoCache__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleNoCache``1(``0)">
+  ToggleNoCache&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8571"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Prevents caching of packages and http requests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoCache&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleSkipSignCheck_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleSkipSignCheck*"></a>
+
+  <h3 id="Nuke_Common_Tools_DotNet_DotNetWorkloadRepairSettingsExtensions_ToggleSkipSignCheck__1___0_" data-uid="Nuke.Common.Tools.DotNet.DotNetWorkloadRepairSettingsExtensions.ToggleSkipSignCheck``1(``0)">
+  ToggleSkipSignCheck&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8588"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Skipping the nuget package signature verification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleSkipSignCheck&lt;T&gt;(this T o) where T : DotNetWorkloadRepairSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/DotNet/DotNet.Generated.cs/#L8477" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

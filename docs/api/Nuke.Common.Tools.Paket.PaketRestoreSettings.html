@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PaketRestoreSettings | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PaketRestoreSettings | gruke ">
+      
+      <meta name="description" content="Paket is a dependency manager for .NET and mono projects, which is designed to work well with NuGet packages and also enables referencing files directly from Git repositories or any HTTP resource. It enables precise and predictable control over what packages the projects within your application reference.If you want to learn how to use Paket then read the Getting started tutorial and take a look at the FAQs.If you are already using NuGet for package management in your solution then you can learn about the upgrade process in the convert from NuGet section.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_Paket_PaketRestoreSettings.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.Paket.PaketRestoreSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings">
+
+
+
+  <h1 id="Nuke_Common_Tools_Paket_PaketRestoreSettings" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings" class="text-break">
+Class PaketRestoreSettings  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.Paket.html">Paket</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Paket is a dependency manager for .NET and mono projects, which is designed to work well with <a href="https://www.nuget.org/">NuGet</a> packages and also enables referencing files directly from <a href="https://fsprojects.github.io/Paket/git-dependencies.html">Git repositories</a> or any <a href="https://fsprojects.github.io/Paket/http-dependencies.html">HTTP resource</a>. It enables precise and predictable control over what packages the projects within your application reference.</p><p>If you want to learn how to use Paket then read the <a href="https://fsprojects.github.io/Paket/getting-started.html"><em>Getting started</em> tutorial</a> and take a look at the <a href="https://fsprojects.github.io/Paket/faq.html">FAQs</a>.</p><p>If you are already using NuGet for package management in your solution then you can learn about the upgrade process in the <a href="https://fsprojects.github.io/Paket/getting-started.html#Automatic-NuGet-conversion">convert from NuGet</a> section.</p><p>For more details, visit the <a href="https://fsprojects.github.io/paket">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public class PaketRestoreSettings : ToolOptions, IOptions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.Options.html">Options</a></div>
+      <div><a class="xref" href="Nuke.Common.Tooling.ToolOptions.html">ToolOptions</a></div>
+      <div><span class="xref">PaketRestoreSettings</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="Nuke.Common.Tooling.IOptions.html">IOptions</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessToolPath">ToolOptions.ProcessToolPath</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessWorkingDirectory">ToolOptions.ProcessWorkingDirectory</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessEnvironmentVariables">ToolOptions.ProcessEnvironmentVariables</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExecutionTimeout">ToolOptions.ProcessExecutionTimeout</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessOutputLogging">ToolOptions.ProcessOutputLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessInvocationLogging">ToolOptions.ProcessInvocationLogging</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessExitHandling">ToolOptions.ProcessExitHandling</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessRedactedSecrets">ToolOptions.ProcessRedactedSecrets</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.ToolOptions.html#Nuke_Common_Tooling_ToolOptions_ProcessAdditionalArguments">ToolOptions.ProcessAdditionalArguments</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_InternalOptions">Options.InternalOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Set__1_System_Linq_Expressions_Expression_System_Func___0___System_Object_">Options.Set&lt;T&gt;(Expression&lt;Func&lt;T&gt;&gt;, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="Nuke.Common.Tooling.Options.html#Nuke_Common_Tooling_Options_Get__1_System_Linq_Expressions_Expression_System_Func_System_Object___">Options.Get&lt;T&gt;(Expression&lt;Func&lt;object&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Nuke.Common.Assert.html#Nuke_Common_Assert_NotNull__1___0_System_String_System_String_">Assert.NotNull&lt;T&gt;(T, string, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_AddReferencesFiles__1___0_System_Collections_Generic_IEnumerable_System_String__">PaketRestoreSettingsExtensions.AddReferencesFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_AddReferencesFiles__1___0_System_String___">PaketRestoreSettingsExtensions.AddReferencesFiles&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ClearReferencesFiles__1___0_">PaketRestoreSettingsExtensions.ClearReferencesFiles&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableFailOnChecks__1___0_">PaketRestoreSettingsExtensions.DisableFailOnChecks&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableForce__1___0_">PaketRestoreSettingsExtensions.DisableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableFromBootstrapper__1___0_">PaketRestoreSettingsExtensions.DisableFromBootstrapper&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableIgnoreChecks__1___0_">PaketRestoreSettingsExtensions.DisableIgnoreChecks&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableOnlyReferenced__1___0_">PaketRestoreSettingsExtensions.DisableOnlyReferenced&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableSilent__1___0_">PaketRestoreSettingsExtensions.DisableSilent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableTouchAffectedRefs__1___0_">PaketRestoreSettingsExtensions.DisableTouchAffectedRefs&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_DisableVerbose__1___0_">PaketRestoreSettingsExtensions.DisableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableFailOnChecks__1___0_">PaketRestoreSettingsExtensions.EnableFailOnChecks&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableForce__1___0_">PaketRestoreSettingsExtensions.EnableForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableFromBootstrapper__1___0_">PaketRestoreSettingsExtensions.EnableFromBootstrapper&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableIgnoreChecks__1___0_">PaketRestoreSettingsExtensions.EnableIgnoreChecks&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableOnlyReferenced__1___0_">PaketRestoreSettingsExtensions.EnableOnlyReferenced&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableSilent__1___0_">PaketRestoreSettingsExtensions.EnableSilent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableTouchAffectedRefs__1___0_">PaketRestoreSettingsExtensions.EnableTouchAffectedRefs&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_EnableVerbose__1___0_">PaketRestoreSettingsExtensions.EnableVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_RemoveReferencesFiles__1___0_System_Collections_Generic_IEnumerable_System_String__">PaketRestoreSettingsExtensions.RemoveReferencesFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_RemoveReferencesFiles__1___0_System_String___">PaketRestoreSettingsExtensions.RemoveReferencesFiles&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetDependencyGroup__1___0_">PaketRestoreSettingsExtensions.ResetDependencyGroup&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetFailOnChecks__1___0_">PaketRestoreSettingsExtensions.ResetFailOnChecks&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetForce__1___0_">PaketRestoreSettingsExtensions.ResetForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetFromBootstrapper__1___0_">PaketRestoreSettingsExtensions.ResetFromBootstrapper&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetIgnoreChecks__1___0_">PaketRestoreSettingsExtensions.ResetIgnoreChecks&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetLogFile__1___0_">PaketRestoreSettingsExtensions.ResetLogFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetOnlyReferenced__1___0_">PaketRestoreSettingsExtensions.ResetOnlyReferenced&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetProjectFile__1___0_">PaketRestoreSettingsExtensions.ResetProjectFile&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetSilent__1___0_">PaketRestoreSettingsExtensions.ResetSilent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetTargetFramework__1___0_">PaketRestoreSettingsExtensions.ResetTargetFramework&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetTouchAffectedRefs__1___0_">PaketRestoreSettingsExtensions.ResetTouchAffectedRefs&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ResetVerbose__1___0_">PaketRestoreSettingsExtensions.ResetVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetDependencyGroup__1___0_System_String_">PaketRestoreSettingsExtensions.SetDependencyGroup&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetFailOnChecks__1___0_System_Nullable_System_Boolean__">PaketRestoreSettingsExtensions.SetFailOnChecks&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__">PaketRestoreSettingsExtensions.SetForce&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetFromBootstrapper__1___0_System_Nullable_System_Boolean__">PaketRestoreSettingsExtensions.SetFromBootstrapper&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetIgnoreChecks__1___0_System_Nullable_System_Boolean__">PaketRestoreSettingsExtensions.SetIgnoreChecks&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetLogFile__1___0_System_String_">PaketRestoreSettingsExtensions.SetLogFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetOnlyReferenced__1___0_System_Nullable_System_Boolean__">PaketRestoreSettingsExtensions.SetOnlyReferenced&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetProjectFile__1___0_System_String_">PaketRestoreSettingsExtensions.SetProjectFile&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetReferencesFiles__1___0_System_Collections_Generic_IEnumerable_System_String__">PaketRestoreSettingsExtensions.SetReferencesFiles&lt;T&gt;(T, IEnumerable&lt;string&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetReferencesFiles__1___0_System_String___">PaketRestoreSettingsExtensions.SetReferencesFiles&lt;T&gt;(T, params string[])</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetSilent__1___0_System_Nullable_System_Boolean__">PaketRestoreSettingsExtensions.SetSilent&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetTargetFramework__1___0_System_String_">PaketRestoreSettingsExtensions.SetTargetFramework&lt;T&gt;(T, string)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetTouchAffectedRefs__1___0_System_Nullable_System_Boolean__">PaketRestoreSettingsExtensions.SetTouchAffectedRefs&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_SetVerbose__1___0_System_Nullable_System_Boolean__">PaketRestoreSettingsExtensions.SetVerbose&lt;T&gt;(T, bool?)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleFailOnChecks__1___0_">PaketRestoreSettingsExtensions.ToggleFailOnChecks&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleForce__1___0_">PaketRestoreSettingsExtensions.ToggleForce&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleFromBootstrapper__1___0_">PaketRestoreSettingsExtensions.ToggleFromBootstrapper&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleIgnoreChecks__1___0_">PaketRestoreSettingsExtensions.ToggleIgnoreChecks&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleOnlyReferenced__1___0_">PaketRestoreSettingsExtensions.ToggleOnlyReferenced&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleSilent__1___0_">PaketRestoreSettingsExtensions.ToggleSilent&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleTouchAffectedRefs__1___0_">PaketRestoreSettingsExtensions.ToggleTouchAffectedRefs&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettingsExtensions.html#Nuke_Common_Tools_Paket_PaketRestoreSettingsExtensions_ToggleVerbose__1___0_">PaketRestoreSettingsExtensions.ToggleVerbose&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Concat__1___0_System_Collections_Generic_IEnumerable___0__">EnumerableExtensions.Concat&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_DescendantsAndSelf__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.DescendantsAndSelf&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0___0__System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, T&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_Descendants__1___0_System_Func___0_System_Collections_Generic_IEnumerable___0___System_Func___0_System_Boolean__">EnumerableExtensions.Descendants&lt;T&gt;(T, Func&lt;T, IEnumerable&lt;T&gt;&gt;, Func&lt;T, bool&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_ToPropertyDictionary__3___0_System_Func_System_Reflection_PropertyInfo___1__System_Func_System_Object___2__">EnumerableExtensions.ToPropertyDictionary&lt;T, TKey, TValue&gt;(T, Func&lt;PropertyInfo, TKey&gt;, Func&lt;object, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.JsonExtensions.html#Nuke_Common_Utilities_JsonExtensions_ToJson__1___0_Newtonsoft_Json_JsonSerializerSettings_Newtonsoft_Json_Formatting_">JsonExtensions.ToJson&lt;T&gt;(T, JsonSerializerSettings, Formatting)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Apply__2___0_System_Func___0___1__">ObjectExtensions.Apply&lt;TInput, TOutput&gt;(TInput, Func&lt;TInput, TOutput&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_Clone__1___0_">ObjectExtensions.Clone&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_WhenNotNull__2___0___1_System_Func___0___1___0__">ObjectExtensions.WhenNotNull&lt;T, TObject&gt;(T, TObject, Func&lt;T, TObject, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_When__1___0_System_Boolean_System_Func___0___0__">ObjectExtensions.When&lt;T&gt;(T, bool, Func&lt;T, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.XmlExtensions.html#Nuke_Common_Utilities_XmlExtensions_ToXml__1___0_System_Xml_Linq_SaveOptions_">XmlExtensions.ToXml&lt;T&gt;(T, SaveOptions)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Utilities.Text.Yaml.YamlExtensions.html#Nuke_Utilities_Text_Yaml_YamlExtensions_ToYaml__1___0_YamlDotNet_Serialization_SerializerBuilder_">YamlExtensions.ToYaml&lt;T&gt;(T, SerializerBuilder)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.Collections.EnumerableExtensions.html#Nuke_Common_Utilities_Collections_EnumerableExtensions_AsEnumerable__1_System_Object_">EnumerableExtensions.AsEnumerable&lt;T&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Nuke.Common.Utilities.ObjectExtensions.html#Nuke_Common_Utilities_ObjectExtensions_ToJObject_System_Object_Newtonsoft_Json_JsonSerializer_">ObjectExtensions.ToJObject(object, JsonSerializer)</a>
+  </div>
+  </dd></dl>
+
+
+
+  <h2 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>--fail-on-checks</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_FailOnChecks">FailOnChecks</a></li><li><code>--force</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_Force">Force</a></li><li><code>--from-bootstrapper</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_FromBootstrapper">FromBootstrapper</a></li><li><code>--group</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_DependencyGroup">DependencyGroup</a></li><li><code>--ignore-checks</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_IgnoreChecks">IgnoreChecks</a></li><li><code>--log-file</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_LogFile">LogFile</a></li><li><code>--only-referenced</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_OnlyReferenced">OnlyReferenced</a></li><li><code>--project</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_ProjectFile">ProjectFile</a></li><li><code>--references-files</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_ReferencesFiles">ReferencesFiles</a></li><li><code>--silent</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_Silent">Silent</a></li><li><code>--target-framework</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_TargetFramework">TargetFramework</a></li><li><code>--touch-affected-refs</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_TouchAffectedRefs">TouchAffectedRefs</a></li><li><code>--verbose</code> via <a class="xref" href="Nuke.Common.Tools.Paket.PaketRestoreSettings.html#Nuke_Common_Tools_Paket_PaketRestoreSettings_Verbose">Verbose</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_DependencyGroup_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.DependencyGroup*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_DependencyGroup" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.DependencyGroup">
+  DependencyGroup
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore dependencies of a single group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string DependencyGroup { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_FailOnChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.FailOnChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_FailOnChecks" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.FailOnChecks">
+  FailOnChecks
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Abort if any checks fail.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? FailOnChecks { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_Force_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.Force*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_Force" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.Force">
+  Force
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Force download and reinstallation of all dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Force { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_FromBootstrapper_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.FromBootstrapper*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_FromBootstrapper" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.FromBootstrapper">
+  FromBootstrapper
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Call coming from the <code>--run</code> feature of the bootstrapper.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? FromBootstrapper { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_IgnoreChecks_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.IgnoreChecks*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_IgnoreChecks" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.IgnoreChecks">
+  IgnoreChecks
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Do not check if paket.dependencies and paket.lock are in sync.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? IgnoreChecks { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_LogFile_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.LogFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_LogFile" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.LogFile">
+  LogFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print output to a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string LogFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_OnlyReferenced_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.OnlyReferenced*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_OnlyReferenced" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.OnlyReferenced">
+  OnlyReferenced
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L117"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Only restore packages that are referenced by paket.references files.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? OnlyReferenced { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_ProjectFile_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.ProjectFile*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_ProjectFile" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.ProjectFile">
+  ProjectFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore dependencies of a single project.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ProjectFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_ReferencesFiles_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.ReferencesFiles*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_ReferencesFiles" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.ReferencesFiles">
+  ReferencesFiles
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore packages from a paket.references file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;string&gt; ReferencesFiles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_Silent_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.Silent*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_Silent" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.Silent">
+  Silent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppress console output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Silent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_TargetFramework_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.TargetFramework*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_TargetFramework" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.TargetFramework">
+  TargetFramework
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Restore only for the specified target framework.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string TargetFramework { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_TouchAffectedRefs_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.TouchAffectedRefs*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_TouchAffectedRefs" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.TouchAffectedRefs">
+  TouchAffectedRefs
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Touches project files referencing packages which are being restored, to help incremental build tools detecting the change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? TouchAffectedRefs { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_Paket_PaketRestoreSettings_Verbose_" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.Verbose*"></a>
+
+  <h3 id="Nuke_Common_Tools_Paket_PaketRestoreSettings_Verbose" data-uid="Nuke.Common.Tools.Paket.PaketRestoreSettings.Verbose">
+  Verbose
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Print detailed information to the console.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? Verbose { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/Paket/Paket.Generated.cs/#L109" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

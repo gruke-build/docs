@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CorFlagsSettingsExtensions | gruke </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CorFlagsSettingsExtensions | gruke ">
+      
+      <meta name="description" content="The CorFlags Conversion tool allows you to configure the CorFlags section of the header of a portable executable image.For more details, visit the official website.">
+      <link rel="icon" href="../images/icon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/gruke-build/src/new/develop/apiSpec/new?filename=Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions.md&amp;value=---%0Auid%3A%20Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon-tiny.png" alt="gruke">
+            gruke
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions">
+
+
+
+  <h1 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions" class="text-break">
+Class CorFlagsSettingsExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Nuke.html">Nuke</a>.<a class="xref" href="Nuke.Common.html">Common</a>.<a class="xref" href="Nuke.Common.Tools.html">Tools</a>.<a class="xref" href="Nuke.Common.Tools.CorFlags.html">CorFlags</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Nuke.Common.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The CorFlags Conversion tool allows you to configure the CorFlags section of the header of a portable executable image.</p><p>For more details, visit the <a href="https://docs.microsoft.com/en-us/dotnet/framework/tools/corflags-exe-corflags-conversion-tool">official website</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[PublicAPI]
+[ExcludeFromCodeCoverage]
+public static class CorFlagsSettingsExtensions</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CorFlagsSettingsExtensions</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This is a <a href="https://gruke.readthedocs.io/release/common/cli-tools/#fluent-api">CLI wrapper with fluent API</a> that allows to modify the following arguments:</p><ul><li><code>&lt;assembly&gt;</code> via <a class="xref" href="Nuke.Common.Tools.CorFlags.CorFlagsSettings.html#Nuke_Common_Tools_CorFlags_CorFlagsSettings_Assembly">Assembly</a></li><li><code>-32BIT</code> via <a class="xref" href="Nuke.Common.Tools.CorFlags.CorFlagsSettings.html#Nuke_Common_Tools_CorFlags_CorFlagsSettings_Require32Bit">Require32Bit</a></li><li><code>-32BITPREF</code> via <a class="xref" href="Nuke.Common.Tools.CorFlags.CorFlagsSettings.html#Nuke_Common_Tools_CorFlags_CorFlagsSettings_Prefer32Bit">Prefer32Bit</a></li><li><code>-Force</code> via <a class="xref" href="Nuke.Common.Tools.CorFlags.CorFlagsSettings.html#Nuke_Common_Tools_CorFlags_CorFlagsSettings_Force">Force</a></li><li><code>-ILONLY</code> via <a class="xref" href="Nuke.Common.Tools.CorFlags.CorFlagsSettings.html#Nuke_Common_Tools_CorFlags_CorFlagsSettings_ILOnly">ILOnly</a></li><li><code>-nologo</code> via <a class="xref" href="Nuke.Common.Tools.CorFlags.CorFlagsSettings.html#Nuke_Common_Tools_CorFlags_CorFlagsSettings_NoLogo">NoLogo</a></li><li><code>-RevertCLRHeader</code> via <a class="xref" href="Nuke.Common.Tools.CorFlags.CorFlagsSettings.html#Nuke_Common_Tools_CorFlags_CorFlagsSettings_RevertCLRHeader">RevertCLRHeader</a></li><li><code>-UpgradeCLRHeader</code> via <a class="xref" href="Nuke.Common.Tools.CorFlags.CorFlagsSettings.html#Nuke_Common_Tools_CorFlags_CorFlagsSettings_UpgradeCLRHeader">UpgradeCLRHeader</a></li></ul>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableForce_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableForce__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableForce``1(``0)">
+  DisableForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Forces an update even if the assembly is strong-named. <em>Important</em>: If you update a strong-named assembly, you must sign it again before executing its code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableForce&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableILOnly_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableILOnly*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableILOnly__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableILOnly``1(``0)">
+  DisableILOnly&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L160"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the ILONLY flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableILOnly&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableNoLogo_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableNoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableNoLogo__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableNoLogo``1(``0)">
+  DisableNoLogo&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses the Microsoft startup banner display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableNoLogo&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisablePrefer32Bit_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisablePrefer32Bit*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisablePrefer32Bit__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisablePrefer32Bit``1(``0)">
+  DisablePrefer32Bit&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the 32BITPREFERRED flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisablePrefer32Bit&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableRequire32Bit_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableRequire32Bit*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableRequire32Bit__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableRequire32Bit``1(``0)">
+  DisableRequire32Bit&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L177"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the 32BITREQUIRED flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableRequire32Bit&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableRevertCLRHeader_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableRevertCLRHeader*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableRevertCLRHeader__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableRevertCLRHeader``1(``0)">
+  DisableRevertCLRHeader&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reverts the CLR header version to 2.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableRevertCLRHeader&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableUpgradeCLRHeader_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableUpgradeCLRHeader*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_DisableUpgradeCLRHeader__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.DisableUpgradeCLRHeader``1(``0)">
+  DisableUpgradeCLRHeader&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Upgrades the CLR header version to 2.5. <em>Note</em>: Assemblies must have a CLR header version of 2.5 or greater to run natively.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T DisableUpgradeCLRHeader&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableForce_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableForce__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableForce``1(``0)">
+  EnableForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L132"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Forces an update even if the assembly is strong-named. <em>Important</em>: If you update a strong-named assembly, you must sign it again before executing its code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableForce&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableILOnly_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableILOnly*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableILOnly__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableILOnly``1(``0)">
+  EnableILOnly&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the ILONLY flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableILOnly&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableNoLogo_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableNoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableNoLogo__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableNoLogo``1(``0)">
+  EnableNoLogo&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses the Microsoft startup banner display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableNoLogo&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnablePrefer32Bit_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnablePrefer32Bit*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnablePrefer32Bit__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnablePrefer32Bit``1(``0)">
+  EnablePrefer32Bit&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the 32BITPREFERRED flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnablePrefer32Bit&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableRequire32Bit_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableRequire32Bit*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableRequire32Bit__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableRequire32Bit``1(``0)">
+  EnableRequire32Bit&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the 32BITREQUIRED flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableRequire32Bit&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableRevertCLRHeader_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableRevertCLRHeader*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableRevertCLRHeader__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableRevertCLRHeader``1(``0)">
+  EnableRevertCLRHeader&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reverts the CLR header version to 2.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableRevertCLRHeader&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableUpgradeCLRHeader_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableUpgradeCLRHeader*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_EnableUpgradeCLRHeader__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.EnableUpgradeCLRHeader``1(``0)">
+  EnableUpgradeCLRHeader&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Upgrades the CLR header version to 2.5. <em>Note</em>: Assemblies must have a CLR header version of 2.5 or greater to run natively.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T EnableUpgradeCLRHeader&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetAssembly_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetAssembly*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetAssembly__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetAssembly``1(``0)">
+  ResetAssembly&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the assembly for which to configure the CorFlags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetAssembly&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetForce_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetForce__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetForce``1(``0)">
+  ResetForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Forces an update even if the assembly is strong-named. <em>Important</em>: If you update a strong-named assembly, you must sign it again before executing its code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetForce&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetILOnly_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetILOnly*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetILOnly__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetILOnly``1(``0)">
+  ResetILOnly&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the ILONLY flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetILOnly&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetNoLogo_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetNoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetNoLogo__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetNoLogo``1(``0)">
+  ResetNoLogo&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses the Microsoft startup banner display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetNoLogo&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetPrefer32Bit_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetPrefer32Bit*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetPrefer32Bit__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetPrefer32Bit``1(``0)">
+  ResetPrefer32Bit&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the 32BITPREFERRED flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetPrefer32Bit&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetRequire32Bit_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetRequire32Bit*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetRequire32Bit__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetRequire32Bit``1(``0)">
+  ResetRequire32Bit&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the 32BITREQUIRED flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRequire32Bit&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetRevertCLRHeader_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetRevertCLRHeader*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetRevertCLRHeader__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetRevertCLRHeader``1(``0)">
+  ResetRevertCLRHeader&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reverts the CLR header version to 2.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetRevertCLRHeader&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetUpgradeCLRHeader_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetUpgradeCLRHeader*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ResetUpgradeCLRHeader__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ResetUpgradeCLRHeader``1(``0)">
+  ResetUpgradeCLRHeader&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Upgrades the CLR header version to 2.5. <em>Note</em>: Assemblies must have a CLR header version of 2.5 or greater to run natively.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ResetUpgradeCLRHeader&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetAssembly_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetAssembly*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetAssembly__1___0_System_String_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetAssembly``1(``0,System.String)">
+  SetAssembly&lt;T&gt;(T, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L143"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The name of the assembly for which to configure the CorFlags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetAssembly&lt;T&gt;(this T o, string v) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetForce_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetForce__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetForce``1(``0,System.Nullable{System.Boolean})">
+  SetForce&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Forces an update even if the assembly is strong-named. <em>Important</em>: If you update a strong-named assembly, you must sign it again before executing its code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetForce&lt;T&gt;(this T o, bool? v) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetILOnly_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetILOnly*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetILOnly__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetILOnly``1(``0,System.Nullable{System.Boolean})">
+  SetILOnly&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the ILONLY flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetILOnly&lt;T&gt;(this T o, bool? v) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetNoLogo_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetNoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetNoLogo__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetNoLogo``1(``0,System.Nullable{System.Boolean})">
+  SetNoLogo&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses the Microsoft startup banner display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetNoLogo&lt;T&gt;(this T o, bool? v) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetPrefer32Bit_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetPrefer32Bit*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetPrefer32Bit__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetPrefer32Bit``1(``0,System.Nullable{System.Boolean})">
+  SetPrefer32Bit&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the 32BITPREFERRED flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetPrefer32Bit&lt;T&gt;(this T o, bool? v) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetRequire32Bit_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetRequire32Bit*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetRequire32Bit__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetRequire32Bit``1(``0,System.Nullable{System.Boolean})">
+  SetRequire32Bit&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the 32BITREQUIRED flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRequire32Bit&lt;T&gt;(this T o, bool? v) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetRevertCLRHeader_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetRevertCLRHeader*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetRevertCLRHeader__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetRevertCLRHeader``1(``0,System.Nullable{System.Boolean})">
+  SetRevertCLRHeader&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reverts the CLR header version to 2.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetRevertCLRHeader&lt;T&gt;(this T o, bool? v) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetUpgradeCLRHeader_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetUpgradeCLRHeader*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_SetUpgradeCLRHeader__1___0_System_Nullable_System_Boolean__" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.SetUpgradeCLRHeader``1(``0,System.Nullable{System.Boolean})">
+  SetUpgradeCLRHeader&lt;T&gt;(T, bool?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Upgrades the CLR header version to 2.5. <em>Note</em>: Assemblies must have a CLR header version of 2.5 or greater to run natively.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T SetUpgradeCLRHeader&lt;T&gt;(this T o, bool? v) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+    <dt><code>v</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleForce_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleForce*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleForce__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleForce``1(``0)">
+  ToggleForce&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Forces an update even if the assembly is strong-named. <em>Important</em>: If you update a strong-named assembly, you must sign it again before executing its code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleForce&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleILOnly_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleILOnly*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleILOnly__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleILOnly``1(``0)">
+  ToggleILOnly&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the ILONLY flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleILOnly&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleNoLogo_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleNoLogo*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleNoLogo__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleNoLogo``1(``0)">
+  ToggleNoLogo&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Suppresses the Microsoft startup banner display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleNoLogo&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_TogglePrefer32Bit_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.TogglePrefer32Bit*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_TogglePrefer32Bit__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.TogglePrefer32Bit``1(``0)">
+  TogglePrefer32Bit&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the 32BITPREFERRED flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T TogglePrefer32Bit&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleRequire32Bit_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleRequire32Bit*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleRequire32Bit__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleRequire32Bit``1(``0)">
+  ToggleRequire32Bit&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets/clears the 32BITREQUIRED flag.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleRequire32Bit&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleRevertCLRHeader_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleRevertCLRHeader*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleRevertCLRHeader__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleRevertCLRHeader``1(``0)">
+  ToggleRevertCLRHeader&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reverts the CLR header version to 2.0.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleRevertCLRHeader&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleUpgradeCLRHeader_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleUpgradeCLRHeader*"></a>
+
+  <h3 id="Nuke_Common_Tools_CorFlags_CorFlagsSettingsExtensions_ToggleUpgradeCLRHeader__1___0_" data-uid="Nuke.Common.Tools.CorFlags.CorFlagsSettingsExtensions.ToggleUpgradeCLRHeader``1(``0)">
+  ToggleUpgradeCLRHeader&lt;T&gt;(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L104"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Upgrades the CLR header version to 2.5. <em>Note</em>: Assemblies must have a CLR header version of 2.5 or greater to run natively.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Pure]
+public static T ToggleUpgradeCLRHeader&lt;T&gt;(this T o) where T : CorFlagsSettings</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>o</code> <span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/Tools/CorFlags/CorFlags.Generated.cs/#L69" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          The AKEless Build System for C#/.NET
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
