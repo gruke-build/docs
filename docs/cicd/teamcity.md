@@ -25,7 +25,7 @@ Target Print => _ => _
     });
 ```
 
-A full reference of available variables and their documentation can be found [here](https://gruke.readthedocs.io/docfx/api/Nuke.Common.CI.TeamCity.TeamCity.html).
+A full reference of available variables and their documentation can be found [here](https://nuke.greemdev.net/docfx/api/Nuke.Common.CI.TeamCity.TeamCity.html).
 
 ## Configuration Generation
 
