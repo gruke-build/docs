@@ -92,13 +92,8 @@
 </li>
 <li><p><strong>Fixes</strong></p>
 <ul>
-<li>fix: Allow <code>http://</code> URLs for GitLab &amp; Forgejo; requires opt-in.</li>
-<li><a href="https://github.com/gruke-build/src/pull/5">gruke-build/src#5</a>: Change ASCII art to reflect the actual project name.
-<ul>
-<li>Thanks <a href="https://github.com/ITaluone">@ITaluone</a>!</li>
-</ul>
-</li>
-<li>fix: Restored Latest/Latest Prerelease Global Tool behavior for creating a new project.
+<li>Allow <code>http://</code> URLs for GitLab &amp; Forgejo; requires opt-in.</li>
+<li>Restored Latest/Latest Prerelease Global Tool behavior for creating a new project.
 <ul>
 <li>Previously, the pre-release version checker was checking nuget.org's API for our pre-release packages. Our pre-releases are on GitLab.</li>
 <li>Additionally, it was using the outdated package ID <code>GreemDev.Nuke.Common</code>, which is now <code>GreemDev.Nuke</code> to package consumers.</li>
@@ -109,7 +104,14 @@
 </li>
 <li><p><strong>New Features</strong></p>
 <ul>
-<li>feature: Mostly complete <a href="https://docs.gradle.org/current/userguide/command_line_interface.html">Gradle CLI</a> support via <a href="https://nuke.greemdev.net/docfx/api/Nuke.Common.Tools.Gradle.GradleTasks.html"><code>GradleTasks</code></a>.
+<li>Unity Package builder API, via <a href="https://nuke.greemdev.net/docfx/api/Nuke.Common.Tools.Unity.UnityPackageBuilder.html"><code>UnityPackageBuilder</code></a>.
+<ul>
+<li>Derived from an open-source project made by <a href="https://github.com/FragileDeviations">@FragileDeviations</a>, <a href="https://git.weatherelectric.xyz/MabelAmber/UnityPackager">UnityPackager</a>.</li>
+<li>Allows the creation of <code>.unitypackage</code> files, without requiring Unity to be installed.</li>
+<li>All members of the builder are required. Failure to provide any will result in an assertion failure any way <code>Build()</code> is called.</li>
+</ul>
+</li>
+<li>Mostly complete <a href="https://docs.gradle.org/current/userguide/command_line_interface.html">Gradle CLI</a> support via <a href="https://nuke.greemdev.net/docfx/api/Nuke.Common.Tools.Gradle.GradleTasks.html"><code>GradleTasks</code></a>.
 <ul>
 <li>Simply call <code>Gradle(_ =&gt; _.SetTask(&quot;:yourTask&quot;).SetProcessWorkingDirectory(&quot;/path/to/project&quot;))</code>, and the tool will:
 <ul>
@@ -129,6 +131,11 @@
 </li>
 <li><p><strong>Project Maintenance</strong></p>
 <ul>
+<li><a href="https://github.com/gruke-build/src/pull/5">gruke-build/src#5</a>: Change ASCII art to reflect the actual project name.
+<ul>
+<li>Thanks <a href="https://github.com/ITaluone">@ITaluone</a>!</li>
+</ul>
+</li>
 <li>chore: Updated the .NET SDK Docker image versions used in some workflow generators</li>
 <li>chore: Regenerated <code>GreemDev.Nuke.Components.Forgejo</code> Kiota API client for <a href="https://forgejo.org/2026-04-release-v15-0/">Forgejo v15</a>.</li>
 <li>chore: The <code>Configuration.cs</code> file generated with a new GRUKE build script from the global tool now <a href="https://github.com/gruke-build/src/commit/6a6dc2d17b620f7ac8da9f287dc3bb9c2c80d864">has readonly members</a>.</li>
@@ -1668,7 +1675,7 @@
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <span>The next-generation .NET build automation system.<br>10.4.0-alpha.82 @ <a href="https://github.com/gruke-build/src/commit/581565971fdf16145255805a60f8703ca8096515">5815659</a></span>
+          <span>The next-generation .NET build automation system.<br>10.4.0-alpha.83 @ <a href="https://github.com/gruke-build/src/commit/451236ed1e1e20891529b6f76490d820e700319d">451236e</a></span>
         </div>
       </div>
     </footer>
