@@ -674,6 +674,99 @@ public class GitHubActions : Host, IBuildServer, IEnvironment&lt;GitHubActions&g
 
 
 
+  <a id="Nuke_Common_CI_GitHubActions_GitHubActions_OpenIdRequestToken_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.OpenIdRequestToken*"></a>
+
+  <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_OpenIdRequestToken" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.OpenIdRequestToken">
+  OpenIdRequestToken
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/GitHubActions/GitHubActions.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string OpenIdRequestToken { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_GitHubActions_GitHubActions_OpenIdRequestUrl_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.OpenIdRequestUrl*"></a>
+
+  <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_OpenIdRequestUrl" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.OpenIdRequestUrl">
+  OpenIdRequestUrl
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/GitHubActions/GitHubActions.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string OpenIdRequestUrl { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Nuke_Common_CI_GitHubActions_GitHubActions_OutputFile_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.OutputFile*"></a>
+
+  <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_OutputFile" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.OutputFile">
+  OutputFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/GitHubActions/GitHubActions.cs/#L153"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AbsolutePath OutputFile { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Nuke.Common.IO.AbsolutePath.html">AbsolutePath</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Nuke_Common_CI_GitHubActions_GitHubActions_PullRequestAction_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.PullRequestAction*"></a>
 
   <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_PullRequestAction" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.PullRequestAction">
@@ -1290,6 +1383,57 @@ public string Token { get; }</code></pre>
 
 
 
+  <a id="Nuke_Common_CI_GitHubActions_GitHubActions_GetNuGetApiKeyWithOpenIdAsync_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.GetNuGetApiKeyWithOpenIdAsync*"></a>
+
+  <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_GetNuGetApiKeyWithOpenIdAsync_System_String_System_String_System_String_System_Boolean_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.GetNuGetApiKeyWithOpenIdAsync(System.String,System.String,System.String,System.Boolean)">
+  GetNuGetApiKeyWithOpenIdAsync(string, string, string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/GitHubActions/GitHubActions.NuGetOpenID.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Obtain a short-lived NuGet API key by exchanging the GitHub OIDC token with any NuGet-compatible token service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ValueTask&lt;string&gt; GetNuGetApiKeyWithOpenIdAsync(string username, string tokenServiceUrl = &quot;https://www.nuget.org/api/v2/token&quot;, string audience = &quot;https://www.nuget.org&quot;, bool logRequestUrls = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>username</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Your NuGet account username.</p>
+</dd>
+    <dt><code>tokenServiceUrl</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>URL to your NuGet server's token endpoint</p>
+</dd>
+    <dt><code>audience</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>OIDC audience</p>
+</dd>
+    <dt><code>logRequestUrls</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Automatically log URLs requested (no auth information is shown)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>The short-lived API key returned by the NuGet token service.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_CI_GitHubActions_GitHubActions_GetNuGetApiKeyWithOpenIdAsync_System_String_System_String_System_String_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a C# reimplementation of the <a href="https://github.com/NuGet/login">NuGet/login</a> GitHub Actions reusable workflow.</p>
+</div>
+
+
+
+
   <a id="Nuke_Common_CI_GitHubActions_GitHubActions_Group_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.Group*"></a>
 
   <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_Group_System_String_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.Group(System.String)">
@@ -1387,6 +1531,38 @@ public string Token { get; }</code></pre>
 
 
 
+  <a id="Nuke_Common_CI_GitHubActions_GitHubActions_SetSecret_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.SetSecret*"></a>
+
+  <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_SetSecret_System_String_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.SetSecret(System.String)">
+  SetSecret(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/GitHubActions/GitHubActions.Theming.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Instructs the GitHub Actions UI to censor occurrences of the specified string in the log output viewer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSecret(string value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Nuke_Common_CI_GitHubActions_GitHubActions_WriteBlock_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.WriteBlock*"></a>
 
   <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_WriteBlock_System_String_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.WriteBlock(System.String)">
@@ -1427,7 +1603,7 @@ public string Token { get; }</code></pre>
 
   <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_WriteCommand_System_String_System_String_Nuke_Common_Tooling_Configure_System_Collections_Generic_Dictionary_System_String_System_Object___" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.WriteCommand(System.String,System.String,Nuke.Common.Tooling.Configure{System.Collections.Generic.Dictionary{System.String,System.Object}})">
   WriteCommand(string, string, Configure&lt;Dictionary&lt;string, object&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/GitHubActions/GitHubActions.Theming.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/GitHubActions/GitHubActions.Theming.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -1571,7 +1747,7 @@ public string Token { get; }</code></pre>
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <span>The next-generation .NET build automation system.<br>10.5.0-alpha.2 @ <a href="https://github.com/gruke-build/src/commit/79ef7b152188459d97c01372e3ab151220621feb">79ef7b1</a></span>
+          <span>The next-generation .NET build automation system.<br>10.5.0-alpha.6 @ <a href="https://github.com/gruke-build/src/commit/eba439644d390d1533b702c68cdd4f4c4c0448dc">eba4396</a></span>
         </div>
       </div>
     </footer>

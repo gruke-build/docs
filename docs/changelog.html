@@ -81,6 +81,17 @@
 <li>Providing this value enables automatic discussion linking for releases, and creates the discussion in the specified category.</li>
 </ul>
 </li>
+<li>NuGet Trusted Publishing support
+<ul>
+<li>Currently only supports GitHub, GitLab is going to be trickier since part of how it works there is in the actual workflow file logic (cursed)</li>
+<li>Call <code>GetNuGetApiKeyWithOpenIdAsync</code> on an instance of the <a href="https://nuke.greemdev.net/docfx/api/Nuke.Common.CI.GitHubActions.GitHubActions.html">GitHubActions</a> host type.
+<ul>
+<li>The inputs are the same as the official GitHub Actions reusable workflow, <a href="https://github.com/NuGet/login">NuGet/login</a>; because this code is simply a reimplementation, intended to let users of GRUKE take advantage of Trusted Publishing.</li>
+</ul>
+</li>
+<li>The value returned by this method can be used where you would normally use an API key. It will expire when the workflow is completed.</li>
+</ul>
+</li>
 </ul>
 <h2 id="1040--2026-10-10"><a href="https://github.com/gruke-build/src/compare/10.3.1...10.4.0">10.4.0</a> / 2026-10-10</h2>
 <ul>
@@ -1689,7 +1700,7 @@
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <span>The next-generation .NET build automation system.<br>10.5.0-alpha.2 @ <a href="https://github.com/gruke-build/src/commit/79ef7b152188459d97c01372e3ab151220621feb">79ef7b1</a></span>
+          <span>The next-generation .NET build automation system.<br>10.5.0-alpha.6 @ <a href="https://github.com/gruke-build/src/commit/eba439644d390d1533b702c68cdd4f4c4c0448dc">eba4396</a></span>
         </div>
       </div>
     </footer>
