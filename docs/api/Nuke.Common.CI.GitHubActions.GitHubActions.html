@@ -1383,19 +1383,19 @@ public string Token { get; }</code></pre>
 
 
 
-  <a id="Nuke_Common_CI_GitHubActions_GitHubActions_GetNuGetApiKeyWithOpenIdAsync_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.GetNuGetApiKeyWithOpenIdAsync*"></a>
+  <a id="Nuke_Common_CI_GitHubActions_GitHubActions_GetNuGetApiKeyWithOpenId_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.GetNuGetApiKeyWithOpenId*"></a>
 
-  <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_GetNuGetApiKeyWithOpenIdAsync_System_String_System_String_System_String_System_Boolean_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.GetNuGetApiKeyWithOpenIdAsync(System.String,System.String,System.String,System.Boolean)">
-  GetNuGetApiKeyWithOpenIdAsync(string, string, string, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/GitHubActions/GitHubActions.NuGetOpenID.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_GetNuGetApiKeyWithOpenId_System_String_System_String_System_String_System_Boolean_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.GetNuGetApiKeyWithOpenId(System.String,System.String,System.String,System.Boolean)">
+  GetNuGetApiKeyWithOpenId(string, string, string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/GitHubActions/GitHubActions.NuGetOpenID.cs/#L114"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Obtain a short-lived NuGet API key by exchanging the GitHub OIDC token with any NuGet-compatible token service.</p>
+  <div class="markdown level1 summary"><p>Synchronously obtain a short-lived NuGet API key by exchanging the GitHub OIDC token with any NuGet-compatible token service.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ValueTask&lt;string&gt; GetNuGetApiKeyWithOpenIdAsync(string username, string tokenServiceUrl = &quot;https://www.nuget.org/api/v2/token&quot;, string audience = &quot;https://www.nuget.org&quot;, bool logRequestUrls = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public string GetNuGetApiKeyWithOpenId(string username, string tokenServiceUrl = &quot;https://www.nuget.org/api/v2/token&quot;, string audience = &quot;https://www.nuget.org&quot;, bool logRequestUrls = true)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1416,7 +1416,58 @@ public string Token { get; }</code></pre>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The short-lived API key returned by the NuGet token service.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Nuke_Common_CI_GitHubActions_GitHubActions_GetNuGetApiKeyWithOpenId_System_String_System_String_System_String_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a C# reimplementation of the <a href="https://github.com/NuGet/login">NuGet/login</a> GitHub Actions reusable workflow.</p>
+</div>
+
+
+
+
+  <a id="Nuke_Common_CI_GitHubActions_GitHubActions_GetNuGetApiKeyWithOpenIdAsync_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.GetNuGetApiKeyWithOpenIdAsync*"></a>
+
+  <h3 id="Nuke_Common_CI_GitHubActions_GitHubActions_GetNuGetApiKeyWithOpenIdAsync_System_String_System_String_System_String_System_Boolean_" data-uid="Nuke.Common.CI.GitHubActions.GitHubActions.GetNuGetApiKeyWithOpenIdAsync(System.String,System.String,System.String,System.Boolean)">
+  GetNuGetApiKeyWithOpenIdAsync(string, string, string, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/gruke-build/src/blob/develop/source/Nuke.Common/CI/GitHubActions/GitHubActions.NuGetOpenID.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Asynchronously obtain a short-lived NuGet API key by exchanging the GitHub OIDC token with any NuGet-compatible token service</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;string&gt; GetNuGetApiKeyWithOpenIdAsync(string username, string tokenServiceUrl = &quot;https://www.nuget.org/api/v2/token&quot;, string audience = &quot;https://www.nuget.org&quot;, bool logRequestUrls = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>username</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Your NuGet account username.</p>
+</dd>
+    <dt><code>tokenServiceUrl</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>URL to your NuGet server's token endpoint</p>
+</dd>
+    <dt><code>audience</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>OIDC audience</p>
+</dd>
+    <dt><code>logRequestUrls</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Automatically log URLs requested (no auth information is shown)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd><p>The short-lived API key returned by the NuGet token service.</p>
 </dd>
   </dl>
@@ -1747,7 +1798,7 @@ public string Token { get; }</code></pre>
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          <span>The next-generation .NET build automation system.<br>10.5.0-alpha.7 @ <a href="https://github.com/gruke-build/src/commit/f92d3ba40a7bfa409e65ffd94953bb513277dc88">f92d3ba</a></span>
+          <span>The next-generation .NET build automation system.<br>10.5.0-alpha.9 @ <a href="https://github.com/gruke-build/src/commit/60afae4da063b25cc6e74d0f4db7bc0c70e79f1e">60afae4</a></span>
         </div>
       </div>
     </footer>
